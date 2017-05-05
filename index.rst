@@ -18,7 +18,7 @@ to an EMME installation as it will be required for several steps of this tutoria
 Contents:
 
 .. toctree::
-   :maxdepth: 10
+   :maxdepth: 4
 
    xtmf_intro
    toolbox
@@ -26,6 +26,7 @@ Contents:
 
 
    appendix
+   glossary
 
 
 * :ref:`search`

@@ -5,13 +5,13 @@ Overview
 -------------------------------------------------------------
 Importing a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, select ‘Open a Model System’ from the start menu. 
+For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, select ‘Open a Model System’ from the start menu.
 
 
 Creating a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If there is no existing model system that can be imported - a new blank one can be created from an open Project page. To create one, click "Create Model System" button
-at the bottom of the Project page. A prompt will appear requesting a name to given to the model system. 
+at the bottom of the Project page. A prompt will appear requesting a name to given to the model system.
 
 Cloning Model Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,24 +39,25 @@ XTMF 1.3 adds a new tab to the model system display. Any disabled modules part o
 
 Modules
 -------------------------------------------------------------
-Modules can have sub modules that customize the behaviour of the parent.  These submodules can either be a single module or optionally a list of modules.  
+Modules can have sub modules that customize the behaviour of the parent.  These submodules can either be a single module or optionally a list of modules.
 
 In XTMF GUI 1.3 lists of modules are represented by the   icon.  Lists can contain any number of modules including zero.  If a module’s border is green, it is optional but not currently filled out.  If a module has a red background with an (!), then it is a required module where none is currently selected for.  XTMF will not allow a model system to run if a required module has not been filled out.
- 
-In the example image we have a small model system that was previously made that has a zone system and loads up INRO’s EMME software using their Modeller interface using TMG’s Modeller Bridge.  From this point we can start adding in modules to automate EMME during the run. 
+
+In the example image we have a small model system that was previously made that has a zone system and loads up INRO’s EMME software using their Modeller interface using TMG’s Modeller Bridge.  From this point we can start adding in modules to automate EMME during the run.
 
 If you right click on Tools you will be prompted with a list of the possible modules that can be used.  Double click on any module to add it to the currently selected position.   In this case we selected a module that will export a matrix from EMME.
 
 Creating a Meta-Module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To create a Meta module right click on the module and select Meta-Module then click on [Convert To].  
+To create a Meta module right click on the module and select Meta-Module then click on [Convert To].
 
-Now that the meta-module has been created an extra parameter is added to the list, allowing you to select what file to load.  Since this process can have very similar parameter names another feature was added allowing you to change them. 
-An icon like the one shown on the left signifies that the module is a meta-module. 
+Now that the meta-module has been created an extra parameter is added to the list, allowing you to select what file to load.  Since this process can have very similar parameter names another feature was added allowing you to change them.
+An icon like the one shown on the left signifies that the module is a meta-module.
 
 Changing Module names and Descriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+Pressing F2 while a :ref:`module` is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module :ref:`module description`s can be added by pressing shift + f2
+(or through the context menu) on a selected module. 
 
 
 
@@ -64,7 +65,7 @@ Changing Module names and Descriptions
 
 Parameters
 -------------------------------------------------------------
-Most modules that are present in XTMF expose parameters to the end user that can be changed from the interface. Parameters allow the user to customize and control 
+Most modules that are present in XTMF expose parameters to the end user that can be changed from the interface. Parameters allow the user to customize and control
 how modules execute during a model system run.
 
 Typically, when a model system designer has given you a new model system instead of editing the model system you will instead be changing some of the parameters.
@@ -77,7 +78,7 @@ To change a parameters name right click on the parameter can select Rename.  Onc
 
 Using Quick Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Quick parameters provide an easy way to access the parameters that will be changed the most often.  Each parameter has a check box in the top left corner, in this image highlighted by the gold square.  If it is checked then this parameter will be added to the list of Quick Parameters. 
+Quick parameters provide an easy way to access the parameters that will be changed the most often.  Each parameter has a check box in the top left corner, in this image highlighted by the gold square.  If it is checked then this parameter will be added to the list of Quick Parameters.
 
 You can access the list of quick parameters by clicking on the Quick Parameter tab, or by pressing ‘Ctrl+Q’.  In the image the quick parameter tab is highlighted by the gold rectangle on the right hand side.
 
@@ -85,7 +86,7 @@ You can access the list of quick parameters by clicking on the Quick Parameter t
 
 Using Linked Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Linked Parameters are sets of parameters that have been linked together to share the same value.  The benefit of having this is immense for large model systems.  It also makes things easier when using the Multi-run framework as it allows you to specify linked parameters for editing during a run.  You can access linked parameters by right clicking on a parameter or by pressing (Ctrl+L). 
+Linked Parameters are sets of parameters that have been linked together to share the same value.  The benefit of having this is immense for large model systems.  It also makes things easier when using the Multi-run framework as it allows you to specify linked parameters for editing during a run.  You can access linked parameters by right clicking on a parameter or by pressing (Ctrl+L).
 
 To create a new linked parameter press the button in the bottom right corner.
 
