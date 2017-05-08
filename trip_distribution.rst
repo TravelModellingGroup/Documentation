@@ -2,7 +2,7 @@ Trip Distribution
 ##############################################################################
 
 Calculating Friction / Cost
-----------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 Before moving onto the next section, there needs to be some preliminary work creating a cost matrix representing travel time ( in this guide ) between zones. Travel times between zones is calculated by inserting a 0 demand matrix in EMME for both auto and transit. The next steps
 outline the preliminary set-up required to calculate the travel times for both auto and transit modes. A zero demand matrices are included as part
 of input files.
@@ -14,7 +14,7 @@ modules into the Frabitztown model system.
 
 Add a new module under ``Execute Tools from Modeller Resource`` of type: ``ExtraAttributeContextManager``.
 
-Copying Modules into a Frabitztown
+Copying Pre-existing Modules into Frabitztown
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Under the ``ExtraAttributeContextManager`` module just created copy and paste the xml [:ref:`AttributesToCreate`] into
 into the model system. Make sure the module ``AttributesToCreate`` is highlighted. You can directly copy XML text
@@ -77,13 +77,14 @@ what data this resource contains, and that is in fact a resource.
 
 .. topic:: Note
 
-   For a more detail introduction to ODMath, please see :ref:`ODMath`.
+   For a more detailed guide to using ODMath, please see :ref:`ODMath`.
 
 The output of OD Math will be the final cost matrix that will be used to generate trip distributions with a gravity model. Under the
 ``Data Sources`` module list, add two new ``Zone O D Information`` modules. Select their Reader as ``LoadEmme4BinaryMatrix`` and point one to
 ``TransitDemandMatrix.mtx`` and the other to ``AutoDemandMatrix.mtx``. Set each Data source name with with right-click context
 menu, or press F2 while the module is highlighted. Naming is required as the ODMath calculation performs resource / value lookup
-based on the name of the module referenced in the equation string. Change the ODMath Resource's parameter to ``e()^((0.02 * AUTO) + (0.03 * TRANSIT))``.
+based on the name of the module referenced in the equation string. Change the ODMath Resource's parameter to ``e()^((0.02 * AUTO) + (0.03 * TRANSIT))``. Here, ``AUTO`` and ``TRANSIT`` are the names that have been assigned
+to the two ``DataSource`` modules.
 
 For the sake of learning and debug purposes, some of this guide makes redundant steps in the model
 system construction process. It is not always necessary to write out every ``ODMath`` calculation to file. The calculated
@@ -93,6 +94,10 @@ To examine the output of the CostMatrix, add a new module under ``To Execute`` o
 of ``ODMatrix`` to ``ResourceLookup``. Enter the resource name that was chosen for the cost matrix calculation. When working with the module ``SaveAsCSVMatrix``, only one of ``ODMatrix`` and ``ODMatrixRaw`` can be used. Next, set the
 ``SaveLocation`` module to ``FilePathFromOutputDirectory`` and enter *CostMatrix.csv* as the output file name.
 
+.. topic:: Tip
+
+   When a model system makes constant use of resource modules, it can be helpful to bind the ResourceName as a linked paramaeter with ``ResourceLookup`` ``Resource Name`` parameter. When these parameters are linked, any update to the
+   resource name is automatically changed in the other modules that are connected through the linked paramaeter. Pressing ``ctrl+L`` with a paramaeter selected displays the linked paramater editor.
 
 Gravity Model
 ---------------------------------------------------------------------------

@@ -3,7 +3,7 @@ Required Files and Assumptions
 This part of the XTMF documentation assumes that the provided Frabitztown input files have already
 been downloaded and extracted.
 
-.. topic:: Note
+.. note::
 
     Frabitztown input files can be accessed at: http://tmg.utoronto.ca/doc/1.3/frabitztown.zip
 
@@ -26,7 +26,7 @@ within the "Frabitztown" project.
 At the bottom of the project page, click the button that is labelled "Create New Blank Model System". Enter "Frabitztown" here again,
 or another name of your choosing. Once you have chosen a name, click "OK" or press enter. A new model system will appear on the left
 hand side of the project page. There will be a small disclaimer warning that the model system requires additional setup -- this indicates
-that the model system is new and requires further setup to be in a runnable state.
+that the model system is new and requires further setup to be in a runnable / complete state.
 
 .. figure:: images/new_model_system.png
    :scale: 50 %
@@ -47,8 +47,7 @@ the model system in a new tab / page.
    A blank model system.
 
 
-The Frabitztown demo model system will make use of a module bundled as part of the main XTMF distribution. The module that will be used is called
-"BasicTravelDemandModel". To make this the model system' root module, select and right click the cell with the description "The root of the model system" and choose
+The Frabitztown demo model system will make use of a module bundled as part of the main XTMF distribution. The module that will be used is called ``BasicTravelDemandModel``. To make this the model system' root module, select and right click the cell with the description "The root of the model system" and choose
 "Set Module" from the context menu. A small dialog window will appear initially with a large list of modules that can serve as a "root" of a model system. Modules cannot be placed arbitrarily into model systems - only valid modules can be put into their proper slots. The list of modules shown are all those loaded by XTMF
 that can be the root of a model system. The filter text box can be used to quickly find the module being looked for. In this case, enter the first few characters of "BasicTravelDemandModel" to find it quickly. Double click the module to finally set it to the root of the model system.
 
@@ -56,26 +55,41 @@ that can be the root of a model system. The filter text box can be used to quick
    :scale: 50 %
    :align: center
 
-   Choosing *BasicTravelDemandModel* from the 'Select Module' window.
+   Choosing ``BasicTravelDemandModel`` from the 'Select Module' window.
 
 
-Once the module type is chosen, the model system display will contain new items in the grid view. The BasicTravelDemandModel defines as its children 4 sections
+Once the module type is chosen, the model system display will contain new items in the grid view. The ``BasicTravelDemandModel`` defines as its children 4 sections
 of modules.
 
 .. figure:: images/model_system_root.png
    :scale: 50 %
    :align: center
 
-   The root of the Frabitztown model system - (with *BasicTravelDemandModel* set as the root
+   The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root
    module).
 
+Basic Travel Demand Model Module Parameters
+*************************************************************************
+
+``Network Data``
+	 An optional module, this can be left unassigned for the purpose of this guide.
+
+``Resources``
+	 A list of resources that can be shared for modules throughout the model system.
+
+``To Execute``
+	 A list of modules that will be executed with the model sytem is run.
+
+``Zone System``
+	 A module that loads in zonal data for the model system. This information is sometimes required and referenced
+	 from other modules.
 
 
 Setting the Input Directory
 -------------------------------------------------------------------------------------
 Typically a relative input directory needs to be set for model systems. Specifying an input directory makes it easier to refer
 to files that need to be read-in. To set the base input directory, click on the module with description "The root of the model system". The right hand
-panel of the model system page will have option to specify the input directory to use as a base for this *BasicTravelDemandModel*.
+panel of the model system page will have option to specify the input directory to use as a base for this ``BasicTravelDemandModel``.
 
 .. figure:: images/base_input_directory.png
    :align: center
@@ -87,7 +101,7 @@ This location should be pointed to the directory that contains the input content
 
 Specifying the Zone System
 ==================================================================================
-The next step is to specify the zone system file for use in the *BasicTravelDemandModel*. The last child of the root module labelled "Zone System" is used to read-in
+The next step is to specify the zone system file for use in the ``BasicTravelDemandModel``. The last child of the root module labelled ``Zone System`` is used to read-in
 the zone system that will be used. Included with the Frabitztown documentation files is a file 'Zones.csv' - this file will be loaded by this module for use in the
 model system. Clicking on the module will display the parameters view on the right hand side of the XTMF interface. This module's default parameter configuration
 is generally in a prepared form by default.
@@ -98,25 +112,25 @@ Zones.csv
   A CSV file containing OD/ Zone information about the model system. Population, inner distance and other data items
   are contained within this file. This file also describes the total number of zones that exist in the model system.
 
-The region file (child module of) of *Zone System* can be left blank for the purpose of the demo.
+The region file (child module of) of ``Zone System`` can be left blank for the purpose of the demo.
 
-.. topic:: Note
+.. note::
 
    Zones.csv is required for modules that will be created later on in the model system. For instance, any modules
    that read OD (origin / destination) matrix data need to be aware of the zone system specifications.
 
 
-Establishing a connection with EMME
+Establishing a connection with Emme
 =====================================================================================
 The next part of the model system creation process is to establish a resource that manages XTMF's connection to EMME. To start, begin by adding a new child
-module under the module labelled "Resources". To do this, right click (or press ctrl + m with the module highlighted) and select the option [Add Module] from
-the context menu. The parent module "Resources" is considered a *collection*. (ie: it can have multiple child modules). Select the child module just added to open
-its list of parameters. Listed on the right there is a field called "Resource Name"; enter a descriptive name as an identifier for this module.
+module under the module labelled ``Resources``. To do this, right click (or press ctrl + m with the module highlighted) and select the option **Add Module** from
+the context menu. The parent module ``Resources`` is considered a ``collection``. (ie: it can have multiple child modules). Select the child module just added to open
+its list of parameters. Listed on the right is field called ``Resource Name``; enter a descriptive name as an identifier for this module.
 
-Next, a Data Source needs to be chosen for this resource. Since we are working with EMME, we want to set the module to *ModellerControllerDataSource*. This module allows
-XTMF to reference an EMME instance for use during the run process. Once the data source is chosen, the next step is to point the EMME resource to the correct
-project or input folder. Insert a *DirectorySeparatedPathFromInputDirectory* module into the Project Folder slot. Point the first parameter *DirectoryRelativeToInputDirectory* to the relative path of your input directory. The file name should point to the EMME project that will be loaded. Here Frabitztown
-is entered for this demo.
+Next, a Data Source needs to be chosen for this resource. Since we are working with EMME, we want to set the module to ``ModellerControllerDataSource``. This module allows
+XTMF to reference an Emme instance for use during the run process. Once the data source is chosen, the next step is to point the Emme resource to the correct
+project (input folder). Insert a ``DirectorySeparatedPathFromInputDirectory`` module into the Project Folder slot. Point the first parameter ``DirectoryRelativeToInputDirectory`` to the relative path of your input directory. The file name should point to the Emme project that will be loaded. Here Frabitztown
+is used for this guide.
 
 .. figure:: images/emme.png
    :scale: 50 %
@@ -125,15 +139,15 @@ is entered for this demo.
    Parameter display for choosing a path to the EMME project folder, along with the project file name.
 
 
-Under the "To Execute" module, add a new child module with the type *Execute Tools From Modeller Resource*. This allows us to begin calling tools that are defined
-within EMME or any loaded toolbox. From resource indicates that we will use the EMME resource defined earlier under the "Resources" module. When the module is expanded, assign "Resource Lookup" to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.
+Under the "To Execute" module, add a new child module with the type ``Execute Tools From Modeller Resource``. This allows us to begin calling tools that are defined
+within Emme or any loaded toolbox. From resource indicates that we will use the Emme resource defined earlier under the "Resources" module. When the module is expanded, assign "Resource Lookup" to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.
 
-.. topic:: Note
+.. seealso::
 
-   For more information regarding resources and their usage please see :ref:`Working with Resources`.
+   For more information regarding resources and their usage please see Working with Resources.
 
 .. figure:: images/emme_modeller_resource.png
    :scale: 50 %
    :align: center
 
-   Creating an EMME modeller resource.
+   Creating an Emme modeller resource.

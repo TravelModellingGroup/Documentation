@@ -26,7 +26,7 @@ For an iteration to be capable of computing new values, those resources calculat
 first be unloaded. This is required because *Resources* are calculated only once whenever they are first accessed
 by an executing module. The calculated value is persisted until either an unload occurs or another run has started.
 
-Under the iteration module, add child modules to *Iteration Modules* of type Resource for each of the resources
+Under the iteration module, add child modules to ``Iteration Modules`` of type Resource for each of the resources
 that were used in the previous steps.
 
 #. CostMatrixResource
@@ -41,9 +41,9 @@ into iteration modules' children. Under the *Tools* module, remove the module th
 the "0" demand matrix. This will need to be replaced with the new auto and travel time matrices
 that have been calculated.
 
-Add a module of type *ImportBinaryMatrixIntoEmmme* for both the auto and travel demand matrices. Remember
+Add a module of type ``ImportBinaryMatrixIntoEmmme*`` for both the auto and travel demand matrices. Remember
 to set unique matrix numbers for both demand matrices. Import into Scenario 11. The import modules
-should exist just under the *Extra Attribute Context Manager* module.
+should exist just under the ``Extra Attribute Context Manager`` module.
 
 .. figure:: images/import_auto_demand.png
    :scale: 50 %
@@ -51,14 +51,19 @@ should exist just under the *Extra Attribute Context Manager* module.
 
    Model System with import matrix into EMME active.
 
-For both transit and auto assignment, the *Class* modules need to have a value set to for "Time Matrix". This is the
+For both transit and auto assignment, the ``Class`` modules need to have a value set to for "Time Matrix". This is the
 matrix that will be exported for EMME and used as part of the calculation to prepare updated inputs for the
 next iteration. Set a unique value to both auto and transit. Make sure the field / property "Demand Matrix" is
 set to the same matrix number used in the demand matrix import modules.
 
+.. topic:: Note
+
+    It can be useful to rename the ``Class`` modules of each mode to something more specific. XTMF and ``TMGToolbox``
+    tools that export multi-class information from Emme refer to the name set on these ``Class`` modules.
+
 There should already exist two modules for exporting the new time matrices. If the corresponding matrix numbers do not
 match, update them to the correct values that match the ones just created. Update the type from *ExportMatrix...*
-to *ExportBinaryMatrixFromEmme* to export an .mtx file that will be used in the cost matrix resource.
+to ``ExportBinaryMatrixFromEmme`` to export an .mtx file that will be used in the cost matrix resource.
 
 Updating Travel Demand
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,12 +75,12 @@ matrices calculated each iteration. At the end of each iteration assignment, the
 will be exported from EMME and fed back into (iterated) the trip distribution calculations.
 
 This step will require recreating a new *CostMatrixResource* that reads in the network assignment's new
-travel time outputs. Create a new resource based on the previous Cost Matrix calculation and set the inputs (reader) to use the .mtx files created in the previous step with *ReadEmme4BinaryMatrix*.
+travel time outputs. Create a new resource based on the previous Cost Matrix calculation and set the inputs (reader) to use the .mtx files created in the previous step with ``ReadEmme4BinaryMatrix``.
 
-Under the children of "Iteration Modules", add a new module *SaveAsCSVMatrix* that will output a new cost matrix
+Under the children of "Iteration Modules", add a new module ``SaveAsCSVMatrix`` that will output a new cost matrix
 as a CSV file in the output directory. Simply use the same cost matrix resource already created.
 
-Next, the gravity model needs to be updated. Again, create a module with type *SaveAsCSVResource* that uses the previously made gravity model resource.
+Next, the gravity model needs to be updated. Again, create a module with type ``SaveAsCSVResource`` that uses the previously made gravity model resource.
 
 With the gravity model calculation completed, finally follow up with two modules that create a new output of the
 Transit demand and Auto demand resources.

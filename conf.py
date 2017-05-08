@@ -194,7 +194,7 @@ html_theme_options = {
     #
     # Options are nothing (default) or the name of a valid theme
     # such as "amelia" or "cosmo".
-    
+
 	'bootswatch_theme': 'Lumen',
 
     # Choose Bootstrap version.
@@ -281,7 +281,7 @@ html_static_path = ['_static']
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 #
 # html_show_copyright = True
-
+todo_include_todos=True
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
 # base URL from which the finished HTML is served.

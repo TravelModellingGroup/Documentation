@@ -2,7 +2,7 @@ Labeled Data
 ######################################################################
 
 Loading Data
--------------------------------------------------------------
+----------------------------------------------------------------------
 Data can be loaded from CSV files in the format of (Data Name, Value) using the LabeledDataFromCSV module.  For now the rest of the infrastructure assumes that the data is in System.Single format, so for now it is best to use that to fill in the free generic type.
 
 Aggregation

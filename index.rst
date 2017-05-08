@@ -6,6 +6,7 @@
 
 .. image:: images/tmg.png
    :align: right
+   :target: http://tmg.utoronto.ca
 
 
 
@@ -18,12 +19,10 @@ to an EMME installation as it will be required for several steps of this tutoria
 Contents:
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
    xtmf_intro
    toolbox
-
-
 
    appendix
    glossary
