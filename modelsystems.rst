@@ -56,10 +56,8 @@ An icon like the one shown on the left signifies that the module is a meta-modul
 
 Changing Module names and Descriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Pressing F2 while a :ref:`module` is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module :ref:`module description`s can be added by pressing shift + f2
-(or through the context menu) on a selected module. 
-
-
+Pressing F2 while a module is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module :ref:`module description`s can be added by pressing shift + f2
+(or through the context menu) on a selected module.
 
 
 

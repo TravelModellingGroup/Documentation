@@ -31,3 +31,8 @@ what module or section of the model system the error occured. Often times there 
 be tested for before running and will only become apparent once model system running has started.
 
 The output window contains line numbers for both the XTMF module and possible modules of python tools that may be called.
+
+Error Logs
+-------------------------------------------------------------------------------
+In the event that an error occurs during a model system run, in addition to a dialog window being presented,
+XTMF will output error details to file **XTMF.error.log** in the active run directory.

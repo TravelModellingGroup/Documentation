@@ -33,21 +33,21 @@ the parameter ``Time Matrix`` in the class module to 5.
    :scale: 50 %
    :align: center
 
-   [1] XTMF with the Multiclass road assignment module selected.
+   XTMF with the Multiclass road assignment module selected.
 
 .. figure:: images/multiclass_road_2.png
    :scale: 50 %
    :align: center
 
-   [2]XTMF with the single class road assignment module selected.
+   XTMF with the single class road assignment module selected.
 
 
-.. topic:: Note
+.. note::
 
     If the model system size becomes difficult to manage - remember to make use of the renaming (F2) and description (Shit + F2) commands that are available. Overriding modules names and descriptions can be useful for
     navigating the model system.
 
-Exporting EMME matrices to file.
+Exporting Emme matrices to file.
 -----------------------------------------------------------------------------------
 
 For sake of clarity, this tutorial includes this step to demonstrate how information might be extracted from a model system
@@ -57,15 +57,7 @@ during a run process. Typically these "debug" steps can be ignored in a producti
    :scale: 50 %
    :align: center
 
-   [3] A module for exporting the in vehicle travel time matrix.
-
-.. math::
-
-
-	\beta^1_{tivtt} = 0.03 \\
-	\beta^2_{aivtt} = 0.02
-	\\
-	e^{\beta{tivtt} + \beta{aivtt}}
+   A module for exporting the in vehicle travel time matrix.
 
 
 Calculating Cost / Friction Matrix with ODMath
@@ -75,7 +67,7 @@ Begin by scrolling to the top of the model system tree. Under resources, add a n
 to the module of type ``ODMath``. ODMath provides a useful set of tools to perform basic mathematical processing on matrices. Set the ``Resource Name`` to something memorable and descriptive like *CostMatrixResource* to help identify
 what data this resource contains, and that is in fact a resource.
 
-.. topic:: Note
+.. seealso::
 
    For a more detailed guide to using ODMath, please see :ref:`ODMath`.
 
@@ -85,6 +77,14 @@ The output of OD Math will be the final cost matrix that will be used to generat
 menu, or press F2 while the module is highlighted. Naming is required as the ODMath calculation performs resource / value lookup
 based on the name of the module referenced in the equation string. Change the ODMath Resource's parameter to ``e()^((0.02 * AUTO) + (0.03 * TRANSIT))``. Here, ``AUTO`` and ``TRANSIT`` are the names that have been assigned
 to the two ``DataSource`` modules.
+
+.. math::
+
+	\beta^1_{tivtt} = 0.03 \\
+	\beta^2_{aivtt} = 0.02
+	\\
+	e^{\beta{tivtt} + \beta{aivtt}}
+
 
 For the sake of learning and debug purposes, some of this guide makes redundant steps in the model
 system construction process. It is not always necessary to write out every ``ODMath`` calculation to file. The calculated
@@ -109,4 +109,4 @@ the trip generation matrix before calculating trip distributions.
 
    T_{ij} = \frac{A_j f(C_{ij}) K_{ij}}{\sum_{j=1}^{n} A_j f(C_{ij}) K_{ij}}
 
-Begin again by adding a ``GravityModel2D`` under Resources. For Attraction and Friction, use the ZoneProductions.csv and ZoneAttractions that are included with this guide's files as the input for those child modules. The Friction module should take the output from the previous step (*CostMatrix.csv*).
+Begin again by adding a ``GravityModel2D`` under Resources. For Attraction and Friction, use the *ZoneProductions.csv* and *ZoneAttractions.csv* files that are included with this guide's files as the input for those child modules. The Friction module should take the output from the previous step (*CostMatrix.csv*).

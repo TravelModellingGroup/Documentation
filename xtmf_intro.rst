@@ -4,8 +4,6 @@ XTMF User Guide
 .. image:: images/XTMF.png
    :align: right
 
-Contents:
-
 .. toctree::
    :maxdepth: 10
 
@@ -15,7 +13,7 @@ Contents:
    running
 
 
-   create
+   frabitztown
 
    programming
 

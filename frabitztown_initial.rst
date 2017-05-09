@@ -1,7 +1,29 @@
 Required Files and Assumptions
-============================================================================
+=======================================================================================
+
 This part of the XTMF documentation assumes that the provided Frabitztown input files have already
 been downloaded and extracted.
+
+ZoneAttractions.csv
+  A two-column CSV input file with the amount of attractions per zone.
+
+ZoneProductions.csv
+  A two-column CSV input file listing the amount of trip productions per zone.
+
+Zones.csv
+  A multi-column CSV input file total zone data for the Frabitztown network.
+
+ZeroDemandMatrix.311
+  A simple .311 Emme matrix filled with all zero values.
+
+EMME_TransitLine_Aggregation.csv
+  Transit line aggregation file for Emme.
+
+(Network Scenario Folder)
+  Additional input required for Frabitztown.
+
+(Frabitztown Network)
+  Emme project and data bank for Frabitztown.
 
 .. note::
 
@@ -36,7 +58,7 @@ that the model system is new and requires further setup to be in a runnable / co
 
 
 Starting the Frabitztown Model System Construction
--------------------------------------------------------------------------
+================================================================================
 With the Frabitztown project open in XTMF, double click the new Frabitztown model system that was made in the previous step. XTMF will now open
 the model system in a new tab / page.
 
@@ -69,7 +91,7 @@ of modules.
    module).
 
 Basic Travel Demand Model Module Parameters
-*************************************************************************
+------------------------------------------------------------------------------
 
 ``Network Data``
 	 An optional module, this can be left unassigned for the purpose of this guide.
@@ -122,7 +144,7 @@ The region file (child module of) of ``Zone System`` can be left blank for the p
 
 Establishing a connection with Emme
 =====================================================================================
-The next part of the model system creation process is to establish a resource that manages XTMF's connection to EMME. To start, begin by adding a new child
+The next part of the model system creation process is to establish a resource that manages XTMF's connection to Emme. To start, begin by adding a new child
 module under the module labelled ``Resources``. To do this, right click (or press ctrl + m with the module highlighted) and select the option **Add Module** from
 the context menu. The parent module ``Resources`` is considered a ``collection``. (ie: it can have multiple child modules). Select the child module just added to open
 its list of parameters. Listed on the right is field called ``Resource Name``; enter a descriptive name as an identifier for this module.
@@ -139,8 +161,8 @@ is used for this guide.
    Parameter display for choosing a path to the EMME project folder, along with the project file name.
 
 
-Under the "To Execute" module, add a new child module with the type ``Execute Tools From Modeller Resource``. This allows us to begin calling tools that are defined
-within Emme or any loaded toolbox. From resource indicates that we will use the Emme resource defined earlier under the "Resources" module. When the module is expanded, assign "Resource Lookup" to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.
+Under the ``To Execute`` module, add a new child module with the type ``Execute Tools From Modeller Resource``. This allows us to begin calling tools that are defined
+within Emme or any loaded toolbox. From resource indicates that we will use the Emme resource defined earlier under the "Resources" module. When the module is expanded, assign ``Resource Lookup`` to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.
 
 .. seealso::
 

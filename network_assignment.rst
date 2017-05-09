@@ -36,8 +36,8 @@ that were used in the previous steps.
 
 Iterating Assignment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Under Iteration modules, simply copy and paste the **Execute Tools from Modeller Resource** module
-into iteration modules' children. Under the *Tools* module, remove the module that imported
+Under Iteration modules, simply copy and paste the ``Execute Tools from Modeller Resource`` module
+into iteration modules' children. Under the ``Tools`` module, remove the module that imported
 the "0" demand matrix. This will need to be replaced with the new auto and travel time matrices
 that have been calculated.
 
@@ -56,7 +56,7 @@ matrix that will be exported for EMME and used as part of the calculation to pre
 next iteration. Set a unique value to both auto and transit. Make sure the field / property "Demand Matrix" is
 set to the same matrix number used in the demand matrix import modules.
 
-.. topic:: Note
+.. note::
 
     It can be useful to rename the ``Class`` modules of each mode to something more specific. XTMF and ``TMGToolbox``
     tools that export multi-class information from Emme refer to the name set on these ``Class`` modules.

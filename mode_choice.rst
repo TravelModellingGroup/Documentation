@@ -16,3 +16,5 @@ Add two more child ODMath module under resources. This module will need to read 
    :align: center
 
    ODMath mode choice calculation.
+
+In total, two matrices will be calculated utilizing ODMath. Each matrix will represent the demand for the auto and transit modes.
