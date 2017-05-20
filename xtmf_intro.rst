@@ -1,6 +1,9 @@
 XTMF User Guide
 ################################################################################
 
+
+
+
 .. image:: images/XTMF.png
    :align: right
 
@@ -11,10 +14,4 @@ XTMF User Guide
    projects
    modelsystems
    running
-
-
-   frabitztown
-
    programming
-
-   frameworks

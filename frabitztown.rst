@@ -1,5 +1,6 @@
 Frabitztown: A Model System from Start to Finish
 ###############################################################
+
 This part of the tutorial will go over builing a model system from start to finish. Included with this tutorial are the necessary
 input files that are required to work through the guide and replicate the output demonstrated here. This guide was written for XTMF 1.3 -
 other versions may not be suitable for use with this tutorial.

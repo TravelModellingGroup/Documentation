@@ -31,7 +31,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.mathjax', 'sphinx.ext.autosectionlabel']
+extensions = ['sphinx.ext.mathjax', 'sphinx.ext.autosectionlabel', 'sphinxcontrib.images','sphinx.util.compat','sphinx.ext.graphviz','alabaster']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -105,7 +105,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = ' vs'
+pygments_style = 'vs'
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
@@ -125,11 +125,23 @@ todo_include_todos = False
 # At the top.
 import sphinx_bootstrap_theme
 
+import sphinx_rtd_theme
+
+import alabaster
+
+#html_theme = "sphinx_rtd_theme"
+
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+html_theme = "alabaster"
+
+html_theme_path = [alabaster.get_path()]
+
 # ...
 
 # Activate the theme.
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+#html_theme = 'bootstrap'
+#html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -138,11 +150,22 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # html_theme_options = {}
 
 html_theme_options = {
-    # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "TMG Documentation",
 
+    'logo': 'tmg.png',
+    'logo_name': False,
+    'sidebar_width': '290px',
+    'page_width': '1240px',
+    'font_family': "'Lato', sans-serif;",
+    'head_font_family': "'Droid Sans', sans-serif;",
+    'show_related': True,
+    'show_powered_by': False,
+    'font_size': '0.90em'
+    # Navigation bar title. (Default: ``project`` value)
+    #'navbar_title': "TMG Documentation",
+    #'collapse_navigation': False,
+    #'nosidebar': False,
     # Tab name for entire site. (Default: "Site")
-    'navbar_site_name': "Travel Modelling Group Documentation",
+    #'navbar_site_name': "Travel Modelling Group Documentation",
 
     # A list of tuples containing pages or urls to link to.
     # Valid tuples should be in the following forms:
@@ -157,17 +180,17 @@ html_theme_options = {
     #],
 
     # Render the next and previous page links in navbar. (Default: true)
-    'navbar_sidebarrel': True,
+    #'navbar_sidebarrel': True,
 
     # Render the current pages TOC in the navbar. (Default: true)
-    'navbar_pagenav': True,
+    #'navbar_pagenav': True,
 
     # Tab name for the current pages TOC. (Default: "Page")
-    'navbar_pagenav_name': "Page",
+    #'navbar_pagenav_name': "Page",
 
     # Global TOC depth for "site" navbar tab. (Default: 1)
     # Switching to -1 shows all levels.
-    'globaltoc_depth': -1,
+    #'globaltoc_depth': -1,
 
     # Include hidden TOCs in Site navbar?
     #
@@ -176,32 +199,39 @@ html_theme_options = {
     # will break.
     #
     # Values: "true" (default) or "false"
-    'globaltoc_includehidden': "true",
+    #'globaltoc_includehidden': "true",
 
     # HTML navbar class (Default: "navbar") to attach to <div> element.
     # For black navbar, do "navbar navbar-inverse"
-    'navbar_class': "navbar navbar-inverse",
+    #'navbar_class': "navbar navbar-inverse",
 
     # Fix navigation bar to top of page?
     # Values: "true" (default) or "false"
-    'navbar_fixed_top': "true",
+    #'navbar_fixed_top': "true",
 
     # Location of link to source.
     # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "nav",
+    #'source_link_position': "nav",
 
     # Bootswatch (http://bootswatch.com/) theme.
     #
     # Options are nothing (default) or the name of a valid theme
     # such as "amelia" or "cosmo".
 
-	'bootswatch_theme': 'Lumen',
+	#'bootswatch_theme': 'Lumen',
 
     # Choose Bootstrap version.
     # Values: "3" (default) or "2" (in quotes)
-    'bootstrap_version': "3",
+    #'bootstrap_version': "3",
+
 
 }
+
+html_sidebars = {
+   '**': ['about.html','globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+}
+
 pygments_style = 'vs'
 
 # Add any paths that contain custom themes here, relative to this directory.

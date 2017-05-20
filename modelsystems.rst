@@ -48,25 +48,26 @@ In the example image we have a small model system that was previously made that 
 If you right click on Tools you will be prompted with a list of the possible modules that can be used.  Double click on any module to add it to the currently selected position.   In this case we selected a module that will export a matrix from EMME.
 
 Creating a Meta-Module
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To create a Meta module right click on the module and select Meta-Module then click on [Convert To].
 
 Now that the meta-module has been created an extra parameter is added to the list, allowing you to select what file to load.  Since this process can have very similar parameter names another feature was added allowing you to change them.
 An icon like the one shown on the left signifies that the module is a meta-module.
 
+
 Changing Module names and Descriptions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Pressing F2 while a module is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module :ref:`module description`s can be added by pressing shift + f2
-(or through the context menu) on a selected module.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Pressing F2 while a module is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module descriptions can be added by pressing shift + f2 (or through the context menu) on a selected module.
 
 
 
 Parameters
--------------------------------------------------------------
+-------------------------------------------------------------------------
 Most modules that are present in XTMF expose parameters to the end user that can be changed from the interface. Parameters allow the user to customize and control
 how modules execute during a model system run.
 
 Typically, when a model system designer has given you a new model system instead of editing the model system you will instead be changing some of the parameters.
+
 In this case we have selected the ‘Zone System’ module and have right clicked on the ‘Zone Cache File’ parameter. This will bring up a context menu that provides a number of different operations. From here we can copy the parameter’s name, select a file as the value of this parameter, or even open up the parameter if it is a file from the input directory. In addition, this will let you set the parameter as part of a linked parameter. You can of course change the text in the textbox to change the value of the parameter. Remember to save your changes or they will be discarded when the model system editing session has been closed. A dialog will warn you if you are going to close the model system session without saving.
 
 
@@ -75,15 +76,14 @@ Changing Parameter Names
 To change a parameters name right click on the parameter can select Rename.  Once you’ve done this you will get a rename adorner in which you can change the name of the parameter.  Parameters need to have a name that has non-whitespace characters.
 
 Using Quick Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Quick parameters provide an easy way to access the parameters that will be changed the most often.  Each parameter has a check box in the top left corner, in this image highlighted by the gold square.  If it is checked then this parameter will be added to the list of Quick Parameters.
 
 You can access the list of quick parameters by clicking on the Quick Parameter tab, or by pressing ‘Ctrl+Q’.  In the image the quick parameter tab is highlighted by the gold rectangle on the right hand side.
 
 
-
 Using Linked Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Linked Parameters are sets of parameters that have been linked together to share the same value.  The benefit of having this is immense for large model systems.  It also makes things easier when using the Multi-run framework as it allows you to specify linked parameters for editing during a run.  You can access linked parameters by right clicking on a parameter or by pressing (Ctrl+L).
 
 To create a new linked parameter press the button in the bottom right corner.
@@ -92,4 +92,5 @@ In this example we have created a new linked parameter called ‘Test Linked Par
 Once you have the value you want for your parameter press enter or double click on the linked parameter to add the currently selected parameter to the linked parameter set.
 
 After you’ve added your parameter to the linked parameter that linked parameter will be added to the recent linked parameter list.  You can quickly add another parameter to this linked parameter by selecting it through the parameter context menu.
+
 You can always use the full dialog to add a parameter to a linked parameter by selecting the linked parameter and pressing enter or double clicking on it.

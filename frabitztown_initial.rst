@@ -90,7 +90,21 @@ of modules.
    The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root
    module).
 
-Basic Travel Demand Model Module Parameters
+.. graph:: foo
+
+   graph [rankdir=LR];
+   "Basic Travel Demand Model"[shape=box];
+   "Network Data"[shape=box];
+   "To Execute"[shape=box];
+   "Resources"[shape=box];
+   "Basic Travel Demand Model" -- "Network Data";
+   "Basic Travel Demand Model" -- "Resources";
+   "Basic Travel Demand Model" -- "To Execute";
+   "Basic Travel Demand Model" -- "Zone System";
+
+
+
+Basic Travel Demand Model Modules
 ------------------------------------------------------------------------------
 
 ``Network Data``
@@ -122,7 +136,7 @@ panel of the model system page will have option to specify the input directory t
 This location should be pointed to the directory that contains the input contents for the model system.
 
 Specifying the Zone System
-==================================================================================
+====================================================================================
 The next step is to specify the zone system file for use in the ``BasicTravelDemandModel``. The last child of the root module labelled ``Zone System`` is used to read-in
 the zone system that will be used. Included with the Frabitztown documentation files is a file 'Zones.csv' - this file will be loaded by this module for use in the
 model system. Clicking on the module will display the parameters view on the right hand side of the XTMF interface. This module's default parameter configuration
@@ -146,10 +160,10 @@ Establishing a connection with Emme
 =====================================================================================
 The next part of the model system creation process is to establish a resource that manages XTMF's connection to Emme. To start, begin by adding a new child
 module under the module labelled ``Resources``. To do this, right click (or press ctrl + m with the module highlighted) and select the option **Add Module** from
-the context menu. The parent module ``Resources`` is considered a ``collection``. (ie: it can have multiple child modules). Select the child module just added to open
+the context menu. The parent module ``Resources`` is considered a ``collection``. (ie: a module that can have multiple child modules). Select the child module just added to open
 its list of parameters. Listed on the right is field called ``Resource Name``; enter a descriptive name as an identifier for this module.
 
-Next, a Data Source needs to be chosen for this resource. Since we are working with EMME, we want to set the module to ``ModellerControllerDataSource``. This module allows
+Next, a data source needs to be chosen for this resource. Since we are working with Emme, we want to set the module to type ``ModellerControllerDataSource``. This module allows
 XTMF to reference an Emme instance for use during the run process. Once the data source is chosen, the next step is to point the Emme resource to the correct
 project (input folder). Insert a ``DirectorySeparatedPathFromInputDirectory`` module into the Project Folder slot. Point the first parameter ``DirectoryRelativeToInputDirectory`` to the relative path of your input directory. The file name should point to the Emme project that will be loaded. Here Frabitztown
 is used for this guide.
@@ -158,7 +172,7 @@ is used for this guide.
    :scale: 50 %
    :align: center
 
-   Parameter display for choosing a path to the EMME project folder, along with the project file name.
+   Parameter display for choosing a path to the Emme project folder, along with the project file name.
 
 
 Under the ``To Execute`` module, add a new child module with the type ``Execute Tools From Modeller Resource``. This allows us to begin calling tools that are defined

@@ -40,6 +40,7 @@ The primary difference is that there is only one host, so no remote XTMF referen
 
 Host Events
 ----------------------------------------------------------
+
 The ‘XTMF.Networking.IHost’ also provides a number of events for connected remote clients.
 
 Typically you will not need to implement many of these however, new clients and disconnecting clients are very important in many cases.  For ‘client run complete’ and ‘all model system runs complete’ these refer to a second way of imagining how a host should operate.  You can optionally give the model system many different model systems to execute, and as clients connect / finish it will send them new model systems to run.  Typically once a client starts up their model system they will not want to stop running until the whole system has completed and to run different configurations a custom message is sent.  This allows you to load data once and then run as many parameters as you want instead of reloading each time and also avoid the overhead of sending model systems across the network and building them on the client side.

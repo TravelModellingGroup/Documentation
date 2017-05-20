@@ -70,7 +70,7 @@ The second type of reference is to your direct parent.
     set;
    }
 
-Parameters
+Modjule Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 One of the most important things for any module will be its parameters.  There are two different types of parameters in XTMF, ‘Parameter’, and ‘RuntimeParameter’.  A runtime parameter will be able to be edited locally in the project, where as a regular one will not.  In the TMG modules all parameters are runtime parameters allowing for the most flexibility for our end users.
 
