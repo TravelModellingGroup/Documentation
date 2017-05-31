@@ -9,6 +9,8 @@ The first section of the guide will go over the background of XTMF's test city, 
 required to build a test model system. The second section will outline the steps required to build the model system from the ground up. Included will be tips and suggestions for efficient usage of XTMF. Lastly, a simple scenario will be used to demonstrate the run process within model systems, and
 how to utilize their outputs.
 
+This guide requires that the user have access to the Emme software.
+
 
 .. toctree::
    modelsystem

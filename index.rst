@@ -12,7 +12,6 @@ This guide details an example model system / city to document the usage patterns
 a 4-step model system will be built using XTMF. An assumption is made that the end-user has access
 to an Emme installation as it will be required for several steps of this tutorial.
 
-
 .. toctree::
   :maxdepth: 3
 
