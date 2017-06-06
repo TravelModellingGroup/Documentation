@@ -4,7 +4,7 @@ The City of Frabitztown
 =====================================================================
 
 Information
-------------------------------------------------------------------
+---------------------------------------------------------------------
 Located in the far north, Frabitztown is a test model system put together for the purpose of testing both the XTMF software and model systems built within it.
 There are 13 zones and 1 planning district in Frabitztown - with a total population of 6,526. For simplicity, there exists only one class of employment within the model city: "General".
 
@@ -18,7 +18,7 @@ The actual population was manually sythensized to introduce congestion and other
 
 
 Population and Employment
--------------------------------------------------------------
+------------------------------------------------------------------
 ===========            ================            =================              ================
 Zone                   Population                  Work General                   Employment
 ===========            ================            =================              ================
