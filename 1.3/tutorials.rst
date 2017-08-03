@@ -2,4 +2,4 @@ XTMF Tutorials
 ########################################
 
 .. toctree::
-    exercises/ex1
+    exercises/ex1/ex1
