@@ -6,31 +6,34 @@ Exercise 1
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Create New Project named Frabitztown
 
-.. figure:: images/1.png
-   :scale: 25 %
+.. thumbnail:: images/1.png
    :align: center
+   :width: 25%
+   :class: tbclass
 
-
-
-.. figure:: images/2.png
-   :scale: 25 %
+.. thumbnail:: images/2.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.2 - Create a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Create New Model System name Exercise 2
 
-.. figure:: images/3.png
-   :scale: 25 %
+.. thumbnail:: images/3.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/4.png
-   :scale: 25 %
+.. thumbnail:: images/4.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/5.png
-   :scale: 25 %
+.. thumbnail:: images/5.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.3 - Create a Root Module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -39,17 +42,20 @@ Exercise 1
 * Double click on the Module type “BasicTravelDemandModel” or press “Enter”
 * Press Shift+F2 or right click and select “Edit Description” and write down the description “Trip Generation”
 
-.. figure:: images/6.png
-   :scale: 25 %
+.. thumbnail:: images/6.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/7.png
-   :scale: 25 %
+.. thumbnail:: images/7.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/8.png
-   :scale: 25 %
+.. thumbnail:: images/8.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 
 
@@ -62,9 +68,10 @@ Exercise 1
 *	Select parameter “Input Base Directory”
 *	Set the value to the location of the input directory
 
-.. figure:: images/9.png
-   :scale: 25 %
+.. thumbnail:: images/9.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.5 - Setting the Population Resource
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,41 +84,50 @@ Exercise 1
 * Change Reader to ReadOriginTextData
 * Update Parameter “File Name” to “Population.csv”
 
-.. figure:: images/10.png
-   :scale: 25 %
+.. thumbnail:: images/10.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/11.png
-   :scale: 25 %
+.. thumbnail:: images/11.png
+   :width:  25%
    :align: center
+   :class: tbclass
    
-.. figure:: images/12.png
-   :scale: 25 %
+.. thumbnail:: images/12.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/13.png
-   :scale: 25 %
+.. thumbnail:: images/13.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/14.png
-   :scale: 25 %
+.. thumbnail:: images/14.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/15.png
-   :scale: 25 %
+.. thumbnail:: images/15.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/16.png
-   :scale: 25 %
+.. thumbnail:: images/16.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/17.png
-   :scale: 25 %
+.. thumbnail:: images/17.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/18.png
-   :scale: 25 %
+.. thumbnail:: images/18.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.5 - Copy the Population Resource
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,37 +146,45 @@ Exercise 1
 * Select Reader
 * Change the parameter “File Name” to “EmploymentRate.csv”
 
-.. figure:: images/19.png
-   :scale: 25 %
+.. thumbnail:: images/19.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/20.png
-   :scale: 25 %
+.. thumbnail:: images/20.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/21.png
-   :scale: 25 %
+.. thumbnail:: images/21.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/43.png
-   :scale: 25 %
+.. thumbnail:: images/43.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/44.png
-   :scale: 25 %
+.. thumbnail:: images/44.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/45.png
-   :scale: 25 %
+.. thumbnail:: images/45.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/46.png
-   :scale: 25 %
+.. thumbnail:: images/46.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/47.png
-   :scale: 25 %
+.. thumbnail:: images/47.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.7 - Create Work Generation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -183,93 +207,115 @@ Exercise 1
 * Rename the second copy of Population to EmploymentRate
 * Change “EmploymentRate”’s parameter “Resource Name” to EmploymentRate
 
-.. figure:: images/22.png
-   :scale: 25 %
+.. thumbnail:: images/22.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/23.png
-   :scale: 25 %
+.. thumbnail:: images/23.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/24.png
-   :scale: 25 %
+.. thumbnail:: images/24.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/25.png
-   :scale: 25 %
+.. thumbnail:: images/25.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/26.png
-   :scale: 25 %
+.. thumbnail:: images/26.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/27.png
-   :scale: 25 %
+.. thumbnail:: images/27.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/28.png
-   :scale: 25 %
+.. thumbnail:: images/28.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/29.png
-   :scale: 25 %
+.. thumbnail:: images/29.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/30.png
-   :scale: 25 %
+.. thumbnail:: images/30.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/31.png
-   :scale: 25 %
+.. thumbnail:: images/31.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/32.png
-   :scale: 25 %
+.. thumbnail:: images/32.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/33.png
-   :scale: 25 %
+.. thumbnail:: images/33.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/34.png
-   :scale: 25 %
+.. thumbnail:: images/34.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/35.png
-   :scale: 25 %
+.. thumbnail:: images/35.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/36.png
-   :scale: 25 %
+.. thumbnail:: images/36.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/37.png
-   :scale: 25 %
+.. thumbnail:: images/37.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/38.png
-   :scale: 25 %
+.. thumbnail:: images/38.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/39.png
-   :scale: 25 %
+.. thumbnail:: images/39.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/40.png
-   :scale: 25 %
+.. thumbnail:: images/40.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/41.png
-   :scale: 25 %
+.. thumbnail:: images/41.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/42.png
-   :scale: 25 %
+.. thumbnail:: images/42.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/49.png
-   :scale: 25 %
+.. thumbnail:: images/49.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 1.8 Calculate Work Generation Expression
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -277,9 +323,10 @@ Exercise 1
 * Select the module 'Compute Work Trips By Zone'
 * Set expression to `Population * WorkParticipation * EmploymentRate`
 
-.. figure:: images/48.png
-   :scale: 25 %
+.. thumbnail:: images/48.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
 
 1.9 Create Save Work Generation
@@ -296,50 +343,62 @@ Exercise 1
 * Select the module named “Zone System”
 * Set the module type to “ZoneRetriever”
 
-.. figure:: images/51.png
-   :scale: 25 %
+.. thumbnail:: images/51.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/52.png
-   :scale: 25 %
+.. thumbnail:: images/52.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/53.png
-   :scale: 25 %
+.. thumbnail:: images/53.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/54.png
-   :scale: 25 %
+.. thumbnail:: images/54.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/55.png
-   :scale: 25 %
+.. thumbnail:: images/55.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/56.png
-   :scale: 25 %
+.. thumbnail:: images/56.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/57.png
-   :scale: 25 %
+.. thumbnail:: images/57.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/58.png
-   :scale: 25 %
+.. thumbnail:: images/58.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/59.png
-   :scale: 25 %
+.. thumbnail:: images/59.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/60.png
-   :scale: 25 %
+.. thumbnail:: images/60.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/61.png
-   :scale: 25 %
+.. thumbnail:: images/61.png
+   :width:  25%
    :align: center
+   :class: tbclass
 
-.. figure:: images/62.png
-   :scale: 25 %
+.. thumbnail:: images/62.png
+   :width:  25%
    :align: center
+   :class: tbclass
