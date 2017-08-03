@@ -113,41 +113,233 @@ Exercise 1
    :scale: 25 %
    :align: center
 
-•	Copy Population and Paste it to Resources
-o	Click on the Population module and press Ctrl+C or right click and select “Copy”
-o	Click on “Resources” and paste by pressing Ctrl+V or right click and selecting “Paste”
-o	Click on the bottom Population and press F2 or right click and select “Rename”
-o	Type in “WorkParticipation” and then press Enter.
-o	Expand the module, and expand again the Data Source submodule
-o	Select Reader
-o	Change the parameter “File Name” to “WorkParticipationRate.csv”
-•	Create Work Generation
-o	Select Resources and add a new module by pressing Ctrl+M or by right clicking and selecting “Add Module”.
-o	Select the type “Resource”
-o	Rename the module “Work Generation”
-o	Change the parameter “Resource Name” to “WorkGeneration”
-o	Select sub-module Data Source.
-o	Set the module type to VectorMath by pressing Ctrl+M or right clicking and selecting “Set Module”
-o	Change the name of the module to “Compute Work Trips By Zone”
-o	Select Data Sources
-o	Add a new module by pressing Ctrl+M or right clicking and selecting “Add Module”
-o	Search and select the type “RemoteDataSource`1” a second window will come up asking for the sub-type.  Search for and select the type “DataStructure.SparseArray`1”.  Another window will come up for the subtype of the SparseArray.  Now search and select the type “System.Single”.
-o	Rename this module “Population”
-o	Change the parameter “Resource Name” to “Population”
-o	Copy Population and paste it into Compute Work Trips By Zone’s Data Sources.
-o	Rename the second copy of Population to “WorkParticipation”
-o	Change “WorkParticipations”’s parameter “Resource Name” to “WorkParticipation”
-Update vector math:
-	Set expression to population * work participation
-•	Create Save Work Generation
-o	Select To Execute and add a module of the type “SaveSparseArrayToCSV”
-o	Select the created module and rename it to “Save Work Generation”
-o	Expand the module and select Data.
-o	Set the module type of Data to “ResourceLookup”
-o	Change the parameter “Resource Name” to “WorkGeneration”
-o	Select the module “Output To”
-o	Set the module type of “Output To” to "FilePathFromOuputDirectory".
-o	Change the value of the parameter “File From Output Directory” to “WorkGeneration.csv”
-•	Create Zone System
-o	Select the module named “Zone System”
-o	Set the module type to “ZoneRetriever”
+1.5 - Copy the Population Resource
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Click on the Population module and press Ctrl+C or right click and select “Copy”
+* Click on “Resources” and paste by pressing Ctrl+V or right click and selecting “Paste”
+* Click on the bottom Population and press F2 or right click and select “Rename”
+* Type in “WorkParticipation” and then press Enter.
+* Expand the module, and expand again the Data Source submodule
+* Select Reader
+* Change the parameter “File Name” to “WorkParticipationRate.csv”
+* Click on the Population module and press Ctrl+C or right click and select “Copy”
+* Click on “Resources” and paste by pressing Ctrl+V or right click and selecting “Paste”
+* Click on last Population and press F2 or right click and select “Rename”
+* Type in “EmploymentRate” and then press Enter.
+* Expand the module, and expand again the Data Source submodule
+* Select Reader
+* Change the parameter “File Name” to “EmploymentRate.csv”
+
+.. figure:: images/19.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/20.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/21.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/43.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/44.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/45.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/46.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/47.png
+   :scale: 25 %
+   :align: center
+
+1.7 - Create Work Generation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Select Resources and add a new module by pressing Ctrl+M or by right clicking and selecting “Add Module”.
+* Select the type “Resource”
+* Rename the module “Work Generation”
+* Change the parameter “Resource Name” to “WorkGeneration”
+* Select sub-module Data Source.
+* Set the module type to VectorMath by pressing Ctrl+M or right clicking and selecting “Set Module”
+* Change the name of the module to “Compute Work Trips By Zone”
+* Select Data Sources
+* Add a new module by pressing Ctrl+M or right clicking and selecting “Add Module”
+* Search and select the type “RemoteDataSource`1” a second window will come up asking for the sub-type.  Search for and select the type “DataStructure.SparseArray`1”.  Another window will come up for the subtype of the SparseArray.  Now search and select the type “System.Single”.
+* Rename this module “Population”
+* Change the parameter “Resource Name” to “Population”
+* Copy Population and paste it into Compute Work Trips By Zone’s Data Sources.
+* Rename the second copy of Population to “WorkParticipation”
+* Change “WorkParticipations”’s parameter “Resource Name” to “WorkParticipation”
+* Copy Population and paste it into Compute Work Trips By Zone’s Data Sources.
+* Rename the second copy of Population to EmploymentRate
+* Change “EmploymentRate”’s parameter “Resource Name” to EmploymentRate
+
+.. figure:: images/22.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/23.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/24.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/25.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/26.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/27.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/28.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/29.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/30.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/31.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/32.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/33.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/34.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/35.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/36.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/37.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/38.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/39.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/40.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/41.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/42.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/49.png
+   :scale: 25 %
+   :align: center
+
+1.8 Calculate Work Generation Expression
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* Select the module 'Compute Work Trips By Zone'
+* Set expression to `Population * WorkParticipation * EmploymentRate`
+
+.. figure:: images/48.png
+   :scale: 25 %
+   :align: center
+
+
+1.9 Create Save Work Generation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Select To Execute and add a module of the type “SaveSparseArrayToCSV”
+* Select the created module and rename it to “Save Work Generation”
+* Expand the module and select Data.
+* Set the module type of Data to “ResourceLookup”
+* Change the parameter “Resource Name” to “WorkGeneration”
+* Select the module “Output To”
+* Set the module type of “Output To” to "FilePathFromOuputDirectory".
+* Change the value of the parameter “File From Output Directory” to “WorkGeneration.csv”
+* Create Zone System
+* Select the module named “Zone System”
+* Set the module type to “ZoneRetriever”
+
+.. figure:: images/51.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/52.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/53.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/54.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/55.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/56.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/57.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/58.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/59.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/60.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/61.png
+   :scale: 25 %
+   :align: center
+
+.. figure:: images/62.png
+   :scale: 25 %
+   :align: center
