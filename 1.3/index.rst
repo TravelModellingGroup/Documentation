@@ -16,6 +16,7 @@ to an Emme installation as it will be required for several steps of this tutoria
   :maxdepth: 3
 
   xtmf_intro
+  tutorials
   frabitztown
   frameworks
   toolbox
