@@ -369,7 +369,7 @@ Exercise 1
    :class: tbclass
    :group: 7
 
-1.8 Calculate Work Generation Expression
+1.8 - Calculate Work Generation Expression
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Select the module 'Compute Work Trips By Zone'
@@ -382,7 +382,7 @@ Exercise 1
    :group: 8
 
 
-1.9 Create Save Work Generation
+1.9 - Create Save Work Generation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * Select To Execute and add a module of the type “SaveSparseArrayToCSV”
 * Select the created module and rename it to “Save Work Generation”

@@ -13,52 +13,47 @@ After opening EMME, the start-up screen should appear like Figure 1
 *Note: This is EMME 4.3.3, yours may look different*
 
 .. thumbnail:: images/1.png
-   :width: auto
-   :align: center
-   :class: tbclass
-   :group: 2
-   :title: Figure 1
+    :align: center
+    :class: tbclass
+    :group: 2
+    :title: Figure 1
+
 
 The first step would be to click “File”->”New”->”Project” (see Figure 2). This would bring up the Create Project Window (see Figure 3)
 
 .. thumbnail:: images/2.png
-   :width: auto
-   :align: center
-   :class: tbclass
-   :group: 2
-   :title: Figure 2
+    :align: center
+    :class: tbclass
+    :group: 2
+    :title: Figure 2
 
 It is recommended to use Frabitztown as the name of the Project (see Figure 3). The Description and Project Location is left up to the user to decide and save where they see fit. After finishing, select “Next”.
 
 .. thumbnail:: images/3.png
-   :width: auto
-   :align: center
-   :class: tbclass
-   :group: 2
-   :title: Figure 3
+    :align: center
+    :class: tbclass
+    :group: 2
+    :title: Figure 3
 
 In the next screen entitled “Import Existing Data”, select “Create an empty Project” and then the “Next” button as seen in Figure 4.
 
 .. thumbnail:: images/4.png
-   :width: auto
-   :align: center
-   :class: tbclass
-   :group: 2
-   :title: Figure 4
+    :align: center
+    :class: tbclass
+    :group: 2
+    :title: Figure 4
 
 The following screen requires input for the dimensions of the database. It is recommended to use the dimensions specified in Figure 5. After they are inputted, please click “Next”.
 
 .. thumbnail:: images/5.png
-   :width: auto
-   :align: center
-   :class: tbclass
-   :group: 2
-   :title: Figure 5
+    :align: center
+    :class: tbclass
+    :group: 2
+    :title: Figure 5
 
 In the next screen, “Database Initialization” the “Length of 1 user coordinate unit” should be changed to 0.001. The other inputs should match the image below. The title of the database and the title of the first scenario are both left up to the user to decide. However, they can both be blank, as shown in Figure 6. 
 
 .. thumbnail:: images/6.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 2
@@ -104,7 +99,6 @@ In the summary window, please verify that all the information is correct and the
 *Note: that the Project Name that was specified by the user should be the same as the name shown beside “Creating Project” and the Project Location will be shown beside “Project File” followed by “/ProjectName.emp”.*
 
 .. thumbnail:: images/11.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 2
@@ -113,7 +107,6 @@ In the summary window, please verify that all the information is correct and the
 This leads to the project being created and the General Worksheet being opened (see Figure 12). 
 
 .. thumbnail:: images/12.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 2
@@ -127,7 +120,6 @@ As XTMF and the TMG Toolbox are both required to run the Frabitztown Area Model,
 After creating an empty project in EMME (see Section 1.1), adding the toolbox is done by clicking “File” -> “Project Settings” (see Figure 13)
 
 .. thumbnail:: images/13.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -138,7 +130,6 @@ This brings up the Project Settings window (Figure 14)
 *Note: Your project path will appear beside “Path”*
 
 .. thumbnail:: images/14.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -147,7 +138,6 @@ This brings up the Project Settings window (Figure 14)
 After this appears, click “Modeller” as it appears on the left side list (Figure 15)
 
 .. thumbnail:: images/15.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -156,21 +146,19 @@ After this appears, click “Modeller” as it appears on the left side list (Fi
 To add the toolbox, double click the “<New>” message as it appears in the Toolboxes list. This leads to the file explorer icon being shown on the right side of the window, as seen in Figure 16. 
 
 .. thumbnail:: images/16.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
    :title: Figure 16
 
 Please click the file explorer icon and navigate to the place where XTMF is saved. The TMG Toolbox will be stored in the following path
-Your XTMF Main Directory\Modules\TMG_Toolbox.mtbx
+Your XTMF Main Directory\\Modules\\TMG_Toolbox.mtbx
 
-For Example, if my XTMF main directory is “C:\Users\John Smith\Documents\XTMF” then the TMG Toolbox will be found in “C:\Users\John Smith\Documents\XTMF\Modules\TMG_Toolbox.mtbx”
+For Example, if my XTMF main directory is “C:\\Users\\John Smith\\Documents\\XTMF” then the TMG Toolbox will be found in “C:\\Users\\John Smith\\Documents\\XTMF\\Modules\\TMG_Toolbox.mtbx”
 
 *IMPORTANT: After the TMG Toolbox has been added, please click anywhere in the white space of the “Toolboxes” List such that “<New>” appears again. This is shown in the Figure 17. Only after it appears, click “OK”.*
 
 .. thumbnail:: images/17.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -179,7 +167,6 @@ For Example, if my XTMF main directory is “C:\Users\John Smith\Documents\XTMF�
 Finally, in order to ensure the project settings are saved, click “File” -> “Save Project Settings” (Figure 18)
 
 .. thumbnail:: images/18.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -188,7 +175,6 @@ Finally, in order to ensure the project settings are saved, click “File” -> 
 Now when opening Modeller by using “Tools” -> “Modeller” (Figure 19) or by clicking the “Modeller” icon (Figure 20), the TMG Toolbox will appear in the list of Toolboxes (Figure 21). 
 
 .. thumbnail:: images/19.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -196,7 +182,6 @@ Now when opening Modeller by using “Tools” -> “Modeller” (Figure 19) or 
 
 
 .. thumbnail:: images/20.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -204,7 +189,6 @@ Now when opening Modeller by using “Tools” -> “Modeller” (Figure 19) or 
 
 
 .. thumbnail:: images/21.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 3
@@ -217,7 +201,6 @@ This section imports the Frabitztown Network into your EMME project using the Fr
 To begin with, add the TMG Toolbox (see Section 1.2), open modeller, click “TMG Toolbox”, double click “Input Output”, and then double click “Import Network Package” to get to the “Import Network Package” tool page (Figure 22)
 
 .. thumbnail:: images/22.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
@@ -226,7 +209,6 @@ To begin with, add the TMG Toolbox (see Section 1.2), open modeller, click “TM
 Under “Network Package File” click “Browse” and navigate to the location where the Frabitztown network package was saved. The rest of the inputs should be similar to Figure 23. It is recommended to use Scenario 11 for this network package.
 
 .. thumbnail:: images/23.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
@@ -237,7 +219,6 @@ When this is done, click the “Run” button and wait for it to finish importin
 After it is done importing, close Modeller and press “Refresh” on the “Refresh Data” dialogue that pops up (Figure 24)
 
 .. thumbnail:: images/24.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
@@ -246,7 +227,6 @@ After it is done importing, close Modeller and press “Refresh” on the “Ref
 In order to see the network, the correct scenario needs to be the primary scenario. To change scenarios, click the “Explorer” pane found on the bottom left side of the screen (Figure 25)
 
 .. thumbnail:: images/25.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
@@ -255,7 +235,6 @@ In order to see the network, the correct scenario needs to be the primary scenar
 Then click the drop down icon beside “All Scenarios” and right click on “Scen. 11 (--- --)…” and press “Replace Primary Scenario” (Figure 26).
 
 .. thumbnail:: images/26.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
@@ -264,7 +243,6 @@ Then click the drop down icon beside “All Scenarios” and right click on “S
 The network will then appear on the screen as shown in Figure 27.
 
 .. thumbnail:: images/27.png
-   :width: auto
    :align: center
    :class: tbclass
    :group: 4
