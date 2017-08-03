@@ -10,11 +10,13 @@ Exercise 1
    :align: center
    :width: 25%
    :class: tbclass
+   :group: 1
 
 .. thumbnail:: images/2.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 1
 
 1.2 - Create a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -24,16 +26,19 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 2
 
 .. thumbnail:: images/4.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 2
 
 .. thumbnail:: images/5.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 2
 
 1.3 - Create a Root Module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,16 +51,19 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 3
 
 .. thumbnail:: images/7.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 3
 
 .. thumbnail:: images/8.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 3
 
 
 
@@ -72,6 +80,7 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 4
 
 1.5 - Setting the Population Resource
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,46 +97,55 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/11.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
    
 .. thumbnail:: images/12.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/13.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/14.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/15.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/16.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/17.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 .. thumbnail:: images/18.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 5
 
 1.5 - Copy the Population Resource
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,41 +168,53 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
 
 .. thumbnail:: images/20.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
+
 
 .. thumbnail:: images/21.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
+
 
 .. thumbnail:: images/43.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
+
 
 .. thumbnail:: images/44.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
+
 
 .. thumbnail:: images/45.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
 
 .. thumbnail:: images/46.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
 
 .. thumbnail:: images/47.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 6
 
 1.7 - Create Work Generation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,111 +241,133 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/23.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/24.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/25.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/26.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/27.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/28.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/29.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/30.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/31.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/32.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/33.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/34.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/35.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/36.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/37.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/38.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/39.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/40.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/41.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/42.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 .. thumbnail:: images/49.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 7
 
 1.8 Calculate Work Generation Expression
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -327,6 +379,7 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 8
 
 
 1.9 Create Save Work Generation
@@ -347,58 +400,70 @@ Exercise 1
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/52.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/53.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/54.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/55.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/56.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/57.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/58.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/59.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/60.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/61.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
 
 .. thumbnail:: images/62.png
    :width:  25%
    :align: center
    :class: tbclass
+   :group: 9
