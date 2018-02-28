@@ -91,10 +91,43 @@ There are a number of built-in functions to help facilitate more complicated cal
 ==============            ====================           =====================
 Function Name             Parameter Type                   Output Type
 ==============            ====================           =====================
-Tranpose                  Matrix                          Matrix
-Tranpose                  Vector                          Vector
-SumRows                   Vector                          Vector (Vertical)
-SumColumns                Matrix                          Vector (Horizontal)
+Abs                       Matrix                          Matrix
+Abs                       Scalar                          Scalar
+Abs                       Vector                          Vector
+Avg                       Vector                          Scalar
+Avg                       Matrix                          Scalar
+AvgColumns                Matrix                          Vector (Vertical)
+AvgRows                   Matrix                          Vector (Horizontal)
 AsHorizontal              Vector                          Vector (Horizontal)
 AsVertical                Vector                          Vector (Vertical)
+E                         <None>                          Scalar
+IdentityMatrix            Matrix                          Matrix
+IdentityMatrix            Vector                          Matrix
+If                        Scalar,Scalar,Scalar            Scalar
+If                        Scalar,Matrix,Matrix            Matrix
+If                        Scalar,Vector,Vector            Vector
+If                        Vector,Scalar,Scalar            Vector
+If                        Vector,Matrix,Matrix            Matrix
+If                        Vector,Vector,Vector            Vector
+If                        Matrix,Matrix,Matrix            Matrix
+IfNaN                     Scalar,Scalar                   Scalar
+IfNaN                     Vector,Vector                   Vector
+IfNaN                     Matrix,Matrix                   Matrix
+Length                    Matrix                          Scalar
+Length                    Vector                          Scalar
+LengthColumns             Matrix                          Vector
+LengthRows                Matrix                          Vector
+Log                       Scalar                          Scalar
+Log                       Vector                          Vector
+Log                       Matrix                          Matrix
+Matrix                    Vector                          Matrix
+Pi                        <None>                          Scalar
+Sum                       Vector                          Scalar
+Sum                       Matrix                          Scalar
+SumColumns                Matrix                          Vector (Horizontal)
+SumRows                   Vector                          Vector (Vertical)
+Tranpose                  Matrix                          Matrix
+Tranpose                  Vector                          Vector
+ZeroMatrix                Matrix                          Matrix
+ZeroMatrix                Vector                          Matrix
 ==============            ====================           =====================
