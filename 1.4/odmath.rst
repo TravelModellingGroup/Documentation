@@ -83,6 +83,20 @@ Vectors can also be used in arithmetic.  In the following we define C as a Verti
     \end{bmatrix}
 
 The following is the difference between the basic arithmetic with vertical and horizontal vectors applied to A:
+    .. math::
+    
+      A + C =
+      \begin{bmatrix}
+        2 & 3 \\
+        6 & 7
+      \end{bmatrix}
+
+    .. math::
+      A + D =
+      \begin{bmatrix}
+        1 & 2 \\
+        1 & 0.75
+      \end{bmatrix}
 
 Functions
 --------------------------------------------------------------------------
