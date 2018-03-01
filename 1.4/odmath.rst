@@ -98,50 +98,72 @@ The following is the difference between the basic arithmetic with vertical and h
         1 & 0.75
       \end{bmatrix}
 
+Comparisons
+--------------------------------------------------------------------------
+For certain functions comparisons are required.  If a comparison is true, a 1 is the result otherwise 0.
+The comparison operators are <, >, <=, >=, == (equal), != (not equal), | (or), and & (and).
+
+  .. math::
+    A = \begin{bmatrix}
+       1 & 2          \\
+       3 & 4
+    \end{bmatrix}   \
+    , F = 
+    \begin{bmatrix}
+      4 & 3 \\
+      2 & 1
+    \end{bmatrix}
+  .. math::
+    A < F =
+    \begin{bmatrix}
+      1 & 1 \\
+      0 & 0
+    \end{bmatrix}
+
 Functions
 --------------------------------------------------------------------------
 There are a number of built-in functions to help facilitate more complicated calculations.  A function call is structured as ‘functionName(parameter1,parameter2,…,parameter)’.  In the table below we can see a quick reference of all of the functions, their input types, and output times.
 
-==============            ====================           =====================
-Function Name             Parameter Type                   Output Type
-==============            ====================           =====================
-Abs                       Matrix                          Matrix
-Abs                       Scalar                          Scalar
-Abs                       Vector                          Vector
-Avg                       Vector                          Scalar
-Avg                       Matrix                          Scalar
-AvgColumns                Matrix                          Vector (Vertical)
-AvgRows                   Matrix                          Vector (Horizontal)
-AsHorizontal              Vector                          Vector (Horizontal)
-AsVertical                Vector                          Vector (Vertical)
-E                         <None>                          Scalar
-IdentityMatrix            Matrix                          Matrix
-IdentityMatrix            Vector                          Matrix
-If                        Scalar,Scalar,Scalar            Scalar
-If                        Scalar,Matrix,Matrix            Matrix
-If                        Scalar,Vector,Vector            Vector
-If                        Vector,Scalar,Scalar            Vector
-If                        Vector,Matrix,Matrix            Matrix
-If                        Vector,Vector,Vector            Vector
-If                        Matrix,Matrix,Matrix            Matrix
-IfNaN                     Scalar,Scalar                   Scalar
-IfNaN                     Vector,Vector                   Vector
-IfNaN                     Matrix,Matrix                   Matrix
-Length                    Matrix                          Scalar
-Length                    Vector                          Scalar
-LengthColumns             Matrix                          Vector
-LengthRows                Matrix                          Vector
-Log                       Scalar                          Scalar
-Log                       Vector                          Vector
-Log                       Matrix                          Matrix
-Matrix                    Vector                          Matrix
-Pi                        <None>                          Scalar
-Sum                       Vector                          Scalar
-Sum                       Matrix                          Scalar
-SumColumns                Matrix                          Vector (Horizontal)
-SumRows                   Vector                          Vector (Vertical)
-Tranpose                  Matrix                          Matrix
-Tranpose                  Vector                          Vector
-ZeroMatrix                Matrix                          Matrix
-ZeroMatrix                Vector                          Matrix
-==============            ====================           =====================
+=================================================================== ====================           =====================
+Function Name                                                       Parameter Type                   Output Type
+=================================================================== ====================           =====================
+:doc:`abs<framework/ODMath/Functions/Abs>`                          Matrix                          Matrix
+:doc:`abs<framework/ODMath/Functions/Abs>`                          Scalar                          Scalar
+:doc:`abs<framework/ODMath/Functions/Abs>`                          Vector                          Vector
+:doc:`AsHorizontal<framework/ODMath/Functions/AsHorizontal>`        Vector                          Vector (Horizontal)
+:doc:`AsVertical<framework/ODMath/Functions/AsVertical>`            Vector                          Vector (Vertical)
+:doc:`Avg<framework/ODMath/Functions/Avg>`                          Vector                          Scalar
+:doc:`Avg<framework/ODMath/Functions/Avg>`                          Matrix                          Scalar
+:doc:`AvgColumns<framework/ODMath/Functions/AvgColumns>`            Matrix                          Vector (Vertical)
+:doc:`AvgRows<framework/ODMath/Functions/AvgRows>`                  Matrix                          Vector (Horizontal)
+:doc:`E<framework/ODMath/Functions/E>`                              <None>                          Scalar
+:doc:`IdentityMatrix<framework/ODMath/Functions/IdentityMatrix>`    Matrix                          Matrix
+:doc:`IdentityMatrix<framework/ODMath/Functions/IdentityMatrix>`    Vector                          Matrix
+:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Scalar,Scalar            Scalar
+:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Matrix,Matrix            Matrix
+:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Vector,Vector            Vector
+:doc:`If<framework/ODMath/Functions/If>`                            Vector,Scalar,Scalar            Vector
+:doc:`If<framework/ODMath/Functions/If>`                            Vector,Matrix,Matrix            Matrix
+:doc:`If<framework/ODMath/Functions/If>`                            Vector,Vector,Vector            Vector
+:doc:`If<framework/ODMath/Functions/If>`                            Matrix,Matrix,Matrix            Matrix
+:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Scalar,Scalar                   Scalar
+:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Vector,Vector                   Vector
+:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Matrix,Matrix                   Matrix
+:doc:`Length<framework/ODMath/Functions/Length>`                    Matrix                          Scalar
+:doc:`Length<framework/ODMath/Functions/Length>`                    Vector                          Scalar
+:doc:`LengthColumns<framework/ODMath/Functions/LengthColumns>`      Matrix                          Vector
+:doc:`LengthRows<framework/ODMath/Functions/LengthRows>`            Matrix                          Vector
+:doc:`Log<framework/ODMath/Functions/Log>`                          Scalar                          Scalar
+:doc:`Log<framework/ODMath/Functions/Log>`                          Vector                          Vector
+:doc:`Log<framework/ODMath/Functions/Log>`                          Matrix                          Matrix
+:doc:`Matrix<framework/ODMath/Functions/Matrix>`                    Vector                          Matrix
+:doc:`Pi<framework/ODMath/Functions/Pi>`                            <None>                          Scalar
+:doc:`Sum<framework/ODMath/Functions/Sum>`                          Vector                          Scalar
+:doc:`Sum<framework/ODMath/Functions/Sum>`                          Matrix                          Scalar
+:doc:`SumColumns<framework/ODMath/Functions/SumColumns>`            Matrix                          Vector (Horizontal)
+:doc:`SumRows<framework/ODMath/Functions/SumRows>`                  Vector                          Vector (Vertical)
+:doc:`Transpose<framework/ODMath/Functions/Transpose>`              Matrix                          Matrix
+:doc:`Transpose<framework/ODMath/Functions/Transpose>`              Vector                          Vector
+:doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Matrix                          Matrix
+:doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Vector                          Matrix
+=================================================================== ====================           =====================
