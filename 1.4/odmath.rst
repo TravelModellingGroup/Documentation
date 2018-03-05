@@ -149,10 +149,7 @@ There are a number of built-in functions to help facilitate more complicated cal
 
 =================================================================== ====================           =====================
 Function Name                                                       Parameter Type                   Output Type
-=================================================================== ====================           =====================
-:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Scalar,Scalar                   Scalar
-:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Vector,Vector                   Vector
-:doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Matrix,Matrix                   Matrix
+===============================-==================================== ====================           =====================
 :doc:`Length<framework/ODMath/Functions/Length>`                    Matrix                          Scalar
 :doc:`Length<framework/ODMath/Functions/Length>`                    Vector                          Scalar
 :doc:`LengthColumns<framework/ODMath/Functions/LengthColumns>`      Matrix                          Vector
