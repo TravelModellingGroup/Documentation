@@ -124,12 +124,32 @@ Functions
 --------------------------------------------------------------------------
 There are a number of built-in functions to help facilitate more complicated calculations.  A function call is structured as ‘functionName(parameter1,parameter2,…,parameter)’.  In the table below we can see a quick reference of all of the functions, their input types, and output times.
 
+.. toctree::
+   framework/ODMath/Functions/Abs
+   framework/ODMath/Functions/AsHorizontal
+   framework/ODMath/Functions/AsVertical
+   framework/ODMath/Functions/Avg
+   framework/ODMath/Functions/AvgColumns
+   framework/ODMath/Functions/AvgRows
+   framework/ODMath/Functions/E
+   framework/ODMath/Functions/IdentityMatrix
+   framework/ODMath/Functions/If
+   framework/ODMath/Functions/IfNaN
+   framework/ODMath/Functions/Length
+   framework/ODMath/Functions/LengthColumns
+   framework/ODMath/Functions/LengthRows
+   framework/ODMath/Functions/Log
+   framework/ODMath/Functions/Matrix
+   framework/ODMath/Functions/Pi
+   framework/ODMath/Functions/Sum
+   framework/ODMath/Functions/SumColumns
+   framework/ODMath/Functions/SumRows
+   framework/ODMath/Functions/Transpose
+   framework/ODMath/Functions/ZeroMatrix
+
 =================================================================== ====================           =====================
 Function Name                                                       Parameter Type                   Output Type
 =================================================================== ====================           =====================
-:doc:`abs<framework/ODMath/Functions/Abs>`                          Matrix                          Matrix
-:doc:`abs<framework/ODMath/Functions/Abs>`                          Scalar                          Scalar
-:doc:`abs<framework/ODMath/Functions/Abs>`                          Vector                          Vector
 :doc:`AsHorizontal<framework/ODMath/Functions/AsHorizontal>`        Vector                          Vector (Horizontal)
 :doc:`AsVertical<framework/ODMath/Functions/AsVertical>`            Vector                          Vector (Vertical)
 :doc:`Avg<framework/ODMath/Functions/Avg>`                          Vector                          Scalar

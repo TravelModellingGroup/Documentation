@@ -1,4 +1,4 @@
-.. _ODMath_Functions_Transpose::
-  Transpose
-  ---------------------------------------------
-  Stub
+==============
+Transpose
+==============
+Stub
