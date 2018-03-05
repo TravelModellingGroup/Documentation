@@ -1,4 +1,4 @@
 ==============
 Pi
 ==============
-Stub
+No parameters, returns 3.14159274

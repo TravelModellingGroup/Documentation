@@ -146,21 +146,3 @@ There are a number of built-in functions to help facilitate more complicated cal
    framework/ODMath/Functions/SumRows
    framework/ODMath/Functions/Transpose
    framework/ODMath/Functions/ZeroMatrix
-
-=================================================================== =====================           ====================
-Function Name                                                       Parameter Type                  Output Type
-=================================================================== =====================           ====================
-:doc:`Log<framework/ODMath/Functions/Log>`                          Scalar                          Scalar
-:doc:`Log<framework/ODMath/Functions/Log>`                          Vector                          Vector
-:doc:`Log<framework/ODMath/Functions/Log>`                          Matrix                          Matrix
-:doc:`Matrix<framework/ODMath/Functions/Matrix>`                    Vector                          Matrix
-:doc:`Pi<framework/ODMath/Functions/Pi>`                            <None>                          Scalar
-:doc:`Sum<framework/ODMath/Functions/Sum>`                          Vector                          Scalar
-:doc:`Sum<framework/ODMath/Functions/Sum>`                          Matrix                          Scalar
-:doc:`SumColumns<framework/ODMath/Functions/SumColumns>`            Matrix                          Vector (Horizontal)
-:doc:`SumRows<framework/ODMath/Functions/SumRows>`                  Vector                          Vector (Vertical)
-:doc:`Transpose<framework/ODMath/Functions/Transpose>`              Matrix                          Matrix
-:doc:`Transpose<framework/ODMath/Functions/Transpose>`              Vector                          Vector
-:doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Matrix                          Matrix
-:doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Vector                          Matrix
-=================================================================== =====================           ====================
