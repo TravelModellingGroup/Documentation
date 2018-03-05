@@ -6,6 +6,11 @@ ODMath is a special calculus designed for travel demand modelling.  Unlike algeb
 This is helpful for expressing utility calculations or performing similar calculations for each OD pair.  Some basic examples of the calculus are shown below.  In addition
 to basic arithmetic operations there are numerous functions that also work on a similar principle.
 
+There are three TMG modules that allow access to this processing utility working with the three data types.
+  *  TMG.Frameworks.Data.Processing.ODMath (Matrix)
+  *  TMG.Frameworks.Data.Processing.VectorMath (Vector)
+  *  TMG.Frameworks.Data.Processing.ScalarMath (Scalar)
+
 Basic Arithmetic
 --------------------------------------------------------------------------
 For example, define two matrices A and B.
