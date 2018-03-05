@@ -20,7 +20,7 @@ This applies the absolute function to a single parameter either a scalar, vector
        -1 & 3
     \end{bmatrix}
 
-Abs(Scalar)
+Abs(Scalar) = Scalar
 --------------------------------------------------------------------------
 .. math::
     Abs(-1) = 1
@@ -28,7 +28,7 @@ Abs(Scalar)
 .. math::
     Abs(1) = 1
 
-Abs(Vector)
+Abs(Vector) = Vector
 --------------------------------------------------------------------------
 The orientation of the vector will be maintained in the resulting vector.
 
@@ -37,7 +37,7 @@ The orientation of the vector will be maintained in the resulting vector.
        1 & 3
     \end{bmatrix}
 
-Abs(Matrix)
+Abs(Matrix) = Matrix
 --------------------------------------------------------------------------
 .. math::
     Abs(A) = \begin{bmatrix}

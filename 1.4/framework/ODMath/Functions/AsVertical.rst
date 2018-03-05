@@ -23,14 +23,14 @@ use the vector with matrices it is usually necessary to assign it to be either v
     \end{bmatrix}
 
 
-AsVertical(Scalar)
+AsVertical(Scalar)  = ERROR
 -----------------------------
 If executed with a scalar it will throw an exception.
 
 .. math::
   AsHorizontal(1) = ERROR
 
-AsVertical(Vector)
+AsVertical(Vector) = Vector
 -----------------------------
 When operating on a vector it will force it to be horizontal.
 
@@ -48,7 +48,7 @@ Applying AsHorizontal to a vector that is already horizontal is allowed.
       3
     \end{bmatrix}
 
-AsVertical(Matrix)
+AsVertical(Matrix) = ERROR
 -----------------------------
 If executed with a matrix it will throw an exception.
 

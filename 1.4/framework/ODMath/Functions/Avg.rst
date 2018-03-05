@@ -19,24 +19,19 @@ Avg
        -1 & 3
     \end{bmatrix}
 
-Avg(Scalar)
+Avg(Scalar) = ERROR
 --------------------------------------------------------------------------
 .. math::
     Avg(-1) = ERROR
 
-Avg(Vector)
+Avg(Vector) = Scalar
 --------------------------------------------------------------------------
 The orientation of the vector will be maintained in the resulting vector.
 
 .. math::
-    Avg(C) = \begin{bmatrix}
-       1 & 3
-    \end{bmatrix}
+    Avg(C) = 1
 
-Avg(Matrix)
+Avg(Matrix) = Scalar
 --------------------------------------------------------------------------
 .. math::
-    Abs(A) = \begin{bmatrix}
-       1 & 2          \\
-       3 & 4
-    \end{bmatrix}
+    Avg(A) = 0

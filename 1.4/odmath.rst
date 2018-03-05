@@ -150,22 +150,6 @@ There are a number of built-in functions to help facilitate more complicated cal
 =================================================================== ====================           =====================
 Function Name                                                       Parameter Type                   Output Type
 =================================================================== ====================           =====================
-:doc:`AsHorizontal<framework/ODMath/Functions/AsHorizontal>`        Vector                          Vector (Horizontal)
-:doc:`AsVertical<framework/ODMath/Functions/AsVertical>`            Vector                          Vector (Vertical)
-:doc:`Avg<framework/ODMath/Functions/Avg>`                          Vector                          Scalar
-:doc:`Avg<framework/ODMath/Functions/Avg>`                          Matrix                          Scalar
-:doc:`AvgColumns<framework/ODMath/Functions/AvgColumns>`            Matrix                          Vector (Vertical)
-:doc:`AvgRows<framework/ODMath/Functions/AvgRows>`                  Matrix                          Vector (Horizontal)
-:doc:`E<framework/ODMath/Functions/E>`                              <None>                          Scalar
-:doc:`IdentityMatrix<framework/ODMath/Functions/IdentityMatrix>`    Matrix                          Matrix
-:doc:`IdentityMatrix<framework/ODMath/Functions/IdentityMatrix>`    Vector                          Matrix
-:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Scalar,Scalar            Scalar
-:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Matrix,Matrix            Matrix
-:doc:`If<framework/ODMath/Functions/If>`                            Scalar,Vector,Vector            Vector
-:doc:`If<framework/ODMath/Functions/If>`                            Vector,Scalar,Scalar            Vector
-:doc:`If<framework/ODMath/Functions/If>`                            Vector,Matrix,Matrix            Matrix
-:doc:`If<framework/ODMath/Functions/If>`                            Vector,Vector,Vector            Vector
-:doc:`If<framework/ODMath/Functions/If>`                            Matrix,Matrix,Matrix            Matrix
 :doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Scalar,Scalar                   Scalar
 :doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Vector,Vector                   Vector
 :doc:`IfNaN<framework/ODMath/Functions/IfNaN>`                      Matrix,Matrix                   Matrix
