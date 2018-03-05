@@ -3,6 +3,6 @@ TMG Frameworks
 
 .. toctree::
    multirun
-   odmath
+   framework/odmath
    labeleddata
    estimation

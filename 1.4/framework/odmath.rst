@@ -2,6 +2,9 @@
 
 Data Processing with ODMath
 ###########################################################
+ODMath is a special calculus designed for travel demand modelling.  Unlike algebraic matrices when multiplying or dividing the operation is done to each respective cell.
+This is helpful for expressing utility calculations or performing similar calculations for each OD pair.  Some basic examples of the calculus are shown below.  In addition
+to basic arithmetic operations there are numerous functions that also work on a similar principle.
 
 Basic Arithmetic
 --------------------------------------------------------------------------
@@ -9,7 +12,6 @@ For example, define two matrices A and B.
 
 
 .. math::
-
     A = \begin{bmatrix}
        1 & 2          \\
        3 & 4
@@ -22,7 +24,6 @@ For example, define two matrices A and B.
 If we used the expression string ‘2 * A + B’ we would get the following.
 
 .. math::
-
     2 \times A + B = \begin{bmatrix}
        4 & 8          \\
        12 & 16
@@ -31,7 +32,6 @@ If we used the expression string ‘2 * A + B’ we would get the following.
 You can also use brackets to change the order of operations.
 
 .. math::
-
     2 \times (A + B) = \begin{bmatrix}
        6 & 12          \\
        18 & 24
@@ -40,7 +40,6 @@ You can also use brackets to change the order of operations.
 Division can also be performed using ‘B / A’.
 
 .. math::
-
     B / A = \begin{bmatrix}
        2 & 2          \\
        2 & 2
@@ -49,7 +48,6 @@ Division can also be performed using ‘B / A’.
 Multiplication ‘A * B’ would result in:
 
 .. math::
-
     A \times B = \begin{bmatrix}
        2 & 8          \\
        18 & 32
@@ -58,7 +56,6 @@ Multiplication ‘A * B’ would result in:
 Powers ‘A ^ B’ would result in:
 
 .. math::
-
     A ^ B &= \begin{bmatrix}
        1 & 16          \\
        729 & 65536
@@ -69,8 +66,6 @@ Vectors
 Vectors can also be used in arithmetic.  In the following we define C as a Vertical matrix, and D is a Horizontal matrix.  If a matrix is loaded from a data source it will not have a directionality and must be given one before being used with matrices.
 
 .. math::
-
-
     C =
     \begin{bmatrix}
        1 \\
@@ -84,7 +79,6 @@ Vectors can also be used in arithmetic.  In the following we define C as a Verti
 
 The following is the difference between the basic arithmetic with vertical and horizontal vectors applied to A:
     .. math::
-    
       A + C =
       \begin{bmatrix}
         2 & 3 \\
@@ -113,6 +107,7 @@ The comparison operators are <, >, <=, >=, == (equal), != (not equal), | (or), a
       4 & 3 \\
       2 & 1
     \end{bmatrix}
+
   .. math::
     A < F =
     \begin{bmatrix}
@@ -125,24 +120,24 @@ Functions
 There are a number of built-in functions to help facilitate more complicated calculations.  A function call is structured as ‘functionName(parameter1,parameter2,…,parameter)’.  In the table below we can see a quick reference of all of the functions, their input types, and output times.
 
 .. toctree::
-   framework/ODMath/Functions/Abs
-   framework/ODMath/Functions/AsHorizontal
-   framework/ODMath/Functions/AsVertical
-   framework/ODMath/Functions/Avg
-   framework/ODMath/Functions/AvgColumns
-   framework/ODMath/Functions/AvgRows
-   framework/ODMath/Functions/E
-   framework/ODMath/Functions/IdentityMatrix
-   framework/ODMath/Functions/If
-   framework/ODMath/Functions/IfNaN
-   framework/ODMath/Functions/Length
-   framework/ODMath/Functions/LengthColumns
-   framework/ODMath/Functions/LengthRows
-   framework/ODMath/Functions/Log
-   framework/ODMath/Functions/Matrix
-   framework/ODMath/Functions/Pi
-   framework/ODMath/Functions/Sum
-   framework/ODMath/Functions/SumColumns
-   framework/ODMath/Functions/SumRows
-   framework/ODMath/Functions/Transpose
-   framework/ODMath/Functions/ZeroMatrix
+   ODMath/Functions/Abs
+   ODMath/Functions/AsHorizontal
+   ODMath/Functions/AsVertical
+   ODMath/Functions/Avg
+   ODMath/Functions/AvgColumns
+   ODMath/Functions/AvgRows
+   ODMath/Functions/E
+   ODMath/Functions/IdentityMatrix
+   ODMath/Functions/If
+   ODMath/Functions/IfNaN
+   ODMath/Functions/Length
+   ODMath/Functions/LengthColumns
+   ODMath/Functions/LengthRows
+   ODMath/Functions/Log
+   ODMath/Functions/Matrix
+   ODMath/Functions/Pi
+   ODMath/Functions/Sum
+   ODMath/Functions/SumColumns
+   ODMath/Functions/SumRows
+   ODMath/Functions/Transpose
+   ODMath/Functions/ZeroMatrix
