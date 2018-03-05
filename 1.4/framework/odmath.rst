@@ -125,6 +125,8 @@ Functions
 There are a number of built-in functions to help facilitate more complicated calculations.  A function call is structured as ‘functionName(parameter1,parameter2,…,parameter)’.  In the table below we can see a quick reference of all of the functions, their input types, and output times.
 
 .. toctree::
+   :maxdepth: 1
+
    ODMath/Functions/Abs
    ODMath/Functions/AsHorizontal
    ODMath/Functions/AsVertical
