@@ -147,13 +147,9 @@ There are a number of built-in functions to help facilitate more complicated cal
    framework/ODMath/Functions/Transpose
    framework/ODMath/Functions/ZeroMatrix
 
-=================================================================== ====================           =====================
-Function Name                                                       Parameter Type                   Output Type
-===============================-==================================== ====================           =====================
-:doc:`Length<framework/ODMath/Functions/Length>`                    Matrix                          Scalar
-:doc:`Length<framework/ODMath/Functions/Length>`                    Vector                          Scalar
-:doc:`LengthColumns<framework/ODMath/Functions/LengthColumns>`      Matrix                          Vector
-:doc:`LengthRows<framework/ODMath/Functions/LengthRows>`            Matrix                          Vector
+=================================================================== =====================           ====================
+Function Name                                                       Parameter Type                  Output Type
+=================================================================== =====================           ====================
 :doc:`Log<framework/ODMath/Functions/Log>`                          Scalar                          Scalar
 :doc:`Log<framework/ODMath/Functions/Log>`                          Vector                          Vector
 :doc:`Log<framework/ODMath/Functions/Log>`                          Matrix                          Matrix
@@ -167,4 +163,4 @@ Function Name                                                       Parameter Ty
 :doc:`Transpose<framework/ODMath/Functions/Transpose>`              Vector                          Vector
 :doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Matrix                          Matrix
 :doc:`ZeroMatrix<framework/ODMath/Functions/ZeroMatrix>`            Vector                          Matrix
-=================================================================== ====================           =====================
+=================================================================== =====================           ====================
