@@ -10,6 +10,7 @@ XTMF User Guide
 .. toctree::
    :maxdepth: 10
 
+   whats_new
    xtmf
    projects
    modelsystems
