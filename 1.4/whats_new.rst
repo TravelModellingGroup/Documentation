@@ -14,6 +14,9 @@ standard File menu for application actions. This has been removed and replaced w
 more similarily to native Windows applications. The menu has been placed in a sidebar which can be called from any section or tab of
 the XTMF.Gui application.
 
+Theming has also been substantially improved. Palette and light/dark settings are provided by the Material theme and XTMF no longer uses
+the previous colour palettes (forest green, etc).
+
 Unified Runs Under the Scheduler Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Model system runs will now appear under the same window: the Scheduler window. The scheduler window introduces two run lists "active" and "finished",
