@@ -49,11 +49,10 @@ XTMF 1.3 added the ability to create a local configuration from the settings pag
 
 Changing the Look and Feel of XTMF
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Version 1.3 of XTMF offers the ability for users to change the appearance of their XTMF interface. Bundled with XTMF are 4 different colour schemes to choose from: Light Theme (default), Dark Theme, Forest Theme and Warm Theme. Appearances are set on the XTMF settings page.
+Version 1.4 of XTMF offers the ability for users to change the appearance of their XTMF interface with palettes and swatches provided by the underlying "Material" look and feel. Under the Settings page,
+users are free to choose from a multitude of primary and accent colours. In addition to primary and accent colours, a light and dark theme setting is also available. A dark theme will replace all window backgrounds
+with a close-to-black colour, whereas the light theme will maintain the standard light - white colours for the backgrounds.
 
-The XTMF is set locally for the active configuration of the XTMF instance.
-
-Creating Interface Customizations
+Creating a Custom Interface Customization
 ---------------------------------------------------------
-XTMF provides basic support for the ability to skin and customize the user interface. The appendix includes a reference theme that can be modified
-to create a more personalized colour and brush set.
+XTMF no longer provides support for customization which was available in 1.3 Please use the built-in colour and palette chooser when deciding on a new customization.
