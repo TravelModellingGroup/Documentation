@@ -2,7 +2,8 @@ Running Model Systems
 ####################################################
 Understanding Runs
 =====================================================================================
-In previous versions of XTMF model system runs were launched in a separate tab page in the XTMF interface. XTMF 1.3 migrates the run information into a dock-able pane apart of the main interface. It is now easier to flip between active tabs, projects and model systems while still being able to observe the active run.
+In previous versions of XTMF model system runs were launched in a separate tab page in the XTMF interface. In 1.3, runs were docked into the bottom part of the model system display. XTMF 1.4 makes further changes and now introduces the "Sheduler" display which
+collects all runs under the same easy-to-access hub. 
 
 A new run can be started by first opening the model system you wish to use. Next, XTMF provides two shortcuts to start the run process: Keypress F5 or simply click the “Run Model System” button located above the model system tree view.
 
