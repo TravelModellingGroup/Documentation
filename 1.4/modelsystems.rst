@@ -5,18 +5,21 @@ Overview
 -------------------------------------------------------------
 Importing a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, select ‘Open a Model System’ from the start menu.
+For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, click the hamburger menu in the top left and
+choose the option "import a model system" from the floating menu list in the bottom right. 
 
 
 Creating a Model System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If there is no existing model system that can be imported - a new blank one can be created from an open Project page. To create one, click "Create Model System" button
-at the bottom of the Project page. A prompt will appear requesting a name to given to the model system.
+at the bottom of the Project page. A prompt will appear requesting a name to given to the model system. You can access a specific project page by opening one (or creating one) using the global
+XTMF menu.
 
 Cloning Model Systems
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Before you edit a model system it can be helpful to create a copy (clone) of it to ensure you have a backup.  In order to do this, from the project screen right click on the model system and select ‘Copy Model System’.
-The copied model system will have standard clipboard behaviour. Once copied, you can press Ctrl +V (or right click and select ‘Paste Model System’) to clone it into the active project. When pasting (cloning), you will be asked to assign a name to the new clone of the model system.
+The copied model system will have standard clipboard behaviour. Once copied, you can press Ctrl +V (or right click and select ‘Paste Model System’) to clone it into the active project. When pasting (cloning),
+ you will be asked to assign a name to the new clone of the model system.
 Model system cloning is available across projects. You can copy / paste (clone) a model system into any other active project in XTMF.
 
 
