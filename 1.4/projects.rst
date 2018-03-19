@@ -13,12 +13,12 @@ Otherwise you can just press Enter or click on the button ‘OK’ to create the
 
 Interacting with Projects
 ==========================================================
-If you instead want to load a project, or work with your projects, you can either click on Open Project from the Start screen or through the menu at File -> Open -> Project.  Doing so will bring up a screen as shown here.   From this we can work with the different projects that we have.  You can additionally create a new project, rename projects, clone projects, delete them, and of course open them by double clicking or selecting the project and pressing enter.
-Most actions besides loading a project cannot be done if the project is currently open.
+If you instead want to load a project, or work with your projects, you can either click on open project from the "Start Page" that is displayed when XTMF first loads, or through the side menu by clicking
+on the hamburger menu icon then choosing "New Project".
 
 Importing a Model System into a Project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To import a model system selected the Import button at the bottom of the project page.  This will bring up a dialog to select what project to import.  Double click or select and press enter to select the model system you want to import.  Please use the search box to help find the model system that you want to import if you have many.
+To import a model system selected the Import buttom from the action list in the bottom right hand corner (+).  This will bring up a dialog to select what project to import.  Double click or select and press enter to select the model system you want to import.  Please use the search box to help find the model system that you want to import if you have many.
 Once you’ve selected a model system you will be prompted to name what it will be called within your project. In the next image I’ve decided to name the model system ‘Demo’.
 
 Finally, we have our project setup with our model system imported into it.
