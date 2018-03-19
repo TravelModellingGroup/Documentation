@@ -10,35 +10,13 @@ to work with projects and model systems, the underlying format of the XTMF work-
 and projects can be active at the same time.
 
 
-Main Menu
+Window Menu
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+XTMF 1.4 now uses a single global menu for all user-end operations. Pressing the hamburger menu icon in the top
+left of the XTMF window will open the side-bar menu. The side-bar menu has everything from creating new projects to launching
+the scheduler window for an overview of all active and completed model system runs.
 
-At the top of the main XTMF window is the menu bar. Operations for new projects and model systems can be
-found under the file menu.
 
-File Menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The File Menu provides options to create new model systems and projects, opening model systems and projects,
-saving functionality, updating and options to close the XTMF application.
-
-Edit Menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The edit menu provides options for undo / redo when a model system is open. The run
-
-Run Menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The run menu provides options for starting a  model system run or the option to launch a remote client.
-
-View Menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The view menu provides options to relaunch tabs or windows that might have been closed recently, such as the
-start page or settings page. If a run is currently active, an option is provided to re-display the run pane
-if it had been previously closed.
-
-Help Menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The help menu provides options to retrieve details about the currently running version of XTMF as well as
-providing a link to documentation for all of the currently active / installed modules.
 
 Start Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,7 +30,10 @@ Otherwise you can just press Enter or click on the button ‘OK’ to create the
 
 Help Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+The XTMF help window enumerates all modules that have been identified (and loaded) from the file system. Navigating through
+the module list will display its properties in the right hand pane. The documentation text included with the module is provided 
+on a module-level bases. If documentation is missing for a specific module, it is the responsibility of the module author to provide
+any documentation related text for its proper usage within XTMF.
 
 
 
