@@ -15,4 +15,5 @@ XTMF User Guide
    projects
    modelsystems
    running
+   scheduler
    programming
