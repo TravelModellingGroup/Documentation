@@ -117,15 +117,7 @@ pygments_style = 'vs'
 todo_include_todos = False
 
 
-# -- Options for HTML output ----------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# At the top.
-import sphinx_bootstrap_theme
-
-import sphinx_rtd_theme
 
 import alabaster
 

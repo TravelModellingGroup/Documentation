@@ -2,6 +2,8 @@ Getting Familiar with XTMF
 ===================================================================
 
 
+
+
 The XTMF Interface
 ---------------------------------------------------------
 
@@ -56,3 +58,8 @@ with a close-to-black colour, whereas the light theme will maintain the standard
 Creating a Custom Interface Customization
 ---------------------------------------------------------
 XTMF no longer provides support for customization which was available in 1.3 Please use the built-in colour and palette chooser when deciding on a new customization.
+
+
+.. figure:: images/xtmf_1.png
+   :scale: 50 %
+   :align: center
