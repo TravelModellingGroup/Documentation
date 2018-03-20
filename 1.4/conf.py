@@ -31,6 +31,9 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+#from docutils.parsers.rst import Directive, directives
+
 extensions = ['sphinx.ext.mathjax', 'sphinx.ext.autosectionlabel', 'sphinx.util.compat','sphinx.ext.graphviz','alabaster']
 
 # Add any paths that contain templates here, relative to this directory.
@@ -438,3 +441,7 @@ def setup(app):
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+
+images_config = {
+    'backend': 'LightBox2'
+}
