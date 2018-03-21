@@ -1,4 +1,63 @@
 {
+
+"pdf": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api-vb/**.yml"
+        ],
+        "exclude": [
+
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "tmgtoolbox/**.md",
+          "tmgtoolbox/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**",
+
+        ]
+      },
+      {
+        "files": "toc.yml"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**"
+        ]
+      }
+    ],
+    "dest": "_site_pdf"
+  },
+
   "metadata": [
     {
       "src": [
@@ -15,6 +74,16 @@
     }
   ],
   "build": {
+  "globalMetadata": {
+    "_appTitle": "Travel Modelling Group Documentation",
+    "_gitContribute": {
+      "repo": "https://github.com/TravelModellingGroup",
+      "branch": "dev",
+      "apiSpecFolder": "docs-ref-overwrite"
+    },
+    "_appLogoPath":"images/tmg.png",
+    "_appFooter": "©2018, Travel Modelling Group"
+  },
     "content": [
       {
         "files": [
@@ -26,6 +95,8 @@
         "files": [
           "articles/**.md",
           "articles/**/toc.yml",
+          "tmgtoolbox/**.md",
+          "tmgtoolbox/**/toc.yml",
           "toc.yml",
           "*.md"
         ]

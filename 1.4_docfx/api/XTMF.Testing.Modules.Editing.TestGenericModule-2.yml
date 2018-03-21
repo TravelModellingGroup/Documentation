@@ -31,7 +31,9 @@ items:
     - id: I
     content.vb: >-
       Public Class TestGenericModule(Of H, I)
+
           Inherits NonGenericBase(Of Single, H, I)
+
           Implements IGenericInterface(Of Single, Single, H, I), IModule
   inheritance:
   - System.Object
