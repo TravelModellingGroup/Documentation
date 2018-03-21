@@ -1,4 +1,4 @@
-Required Files and Assumptions
+Initial Setup
 =======================================================================================
 
 This part of the XTMF documentation assumes that the provided Frabitztown input files have already
@@ -31,7 +31,7 @@ EMME_TransitLine_Aggregation.csv
 
 
 Creating the Project
-============================================================================
+----------------------------------------------------------------------
 Once XTMF is opened click "New Project". Enter Frabitztown as the project name and press enter. When the project is created,
 XTMF will automatically be redirected to the project page. The next step is to create a new :term:`model system` that will be contained
 within the "Frabitztown" project.
@@ -71,7 +71,7 @@ that the model system is new and requires further setup to be in a runnable / co
 
 
 Starting the Frabitztown Model System Construction
-================================================================================
+====================================================================================
 With the Frabitztown project open in XTMF, double click the new Frabitztown model system that was made in the previous step. XTMF will now open
 the model system in a new tab / page.
 
@@ -81,6 +81,8 @@ the model system in a new tab / page.
    The open Frabitztown Model System - in the initial blank state.
 
 
+Choosing the Root Module
+------------------------------------------------------------------------------------
 The Frabitztown demo model system will make use of a module bundled as part of the main XTMF distribution. The module that will be used is called ``BasicTravelDemandModel``. To make this the model system' root module, select and right click the cell with the description "The root of the model system" and choose
 "Set Module" from the context menu. A small dialog window will appear initially with a large list of modules that can serve as a "root" of a model system. Modules cannot be placed arbitrarily into model systems - only valid modules can be put into their proper slots. The list of modules shown are all those loaded by XTMF
 that can be the root of a model system. The filter text box can be used to quickly find the module being looked for. In this case, enter the first few characters of "BasicTravelDemandModel" to find it quickly. Double click the module to finally set it to the root of the model system.
@@ -123,6 +125,8 @@ of modules.
 
 
 
+
+
 Basic Travel Demand Model Modules
 ------------------------------------------------------------------------------
 
@@ -146,15 +150,59 @@ Typically a relative input directory needs to be set for model systems. Specifyi
 to files that need to be read-in. To set the base input directory, click on the module with description "The root of the model system". The right hand
 panel of the model system page will have option to specify the input directory to use as a base for this ``BasicTravelDemandModel``.
 
-.. thumbnail:: images/xtmf_000010.png
-   :align: center
-   :width: 50%
+.. thumbnail:: images/xtmf_000021.png
+   :width: 10%
+   :group: inputgroup
 
    Choosing a base input directory from the root module parameter display.
 
-.. thumbnail:: images/test.gif
-   :align: center
-   :width: 50%
+.. thumbnail:: images/xtmf_000022.png
+   :width: 10%
+   :group: inputgroup
+
+   Input base directory parameter highlighted.
+
+.. thumbnail:: images/xtmf_000023.png
+   :width: 10%
+   :group: inputgroup
+
+   Input base directory parameter highlighted.
+
+.. thumbnail:: images/xtmf_000024.png
+   :width: 10%
+   :group: inputgroup
+
+   Input base directory parameter highlighted.
+
+.. thumbnail:: images/xtmf_000025.png
+   :width: 10%
+   :group: inputgroup
+
+   Selecting the module ``ModellerControllerDataSource``.
+
+.. thumbnail:: images/xtmf_000026.png
+   :width: 10%
+   :group: inputgroup
+
+   Project Folder module highlighted.
+
+.. thumbnail:: images/xtmf_000027.png
+   :width: 10%
+   :group: inputgroup
+
+   Assigning a module type to Project Folder.
+
+.. thumbnail:: images/xtmf_000028.png
+   :width: 10%
+   :group: inputgroup
+
+   Selecting the ``FilePathFromInputDirectory module``.
+
+.. thumbnail:: images/xtmf_000029.png
+   :width: 10%
+   :group: inputgroup
+
+   Setting the input file parameter.
 
 
 This location should be pointed to the directory that contains the input contents for the model system.

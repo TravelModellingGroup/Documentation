@@ -1,5 +1,5 @@
 Trip Generation
-####################################################################################
+===============================================================================
 Part of the 4-Step model approach involves generating productions and attractions for each analysis zone. *Zones.csv* includes the relevant zonal data to create this information. For the sake of simplicity, the attractions and productions
 were manually synthesized for each analysis zone.
 
