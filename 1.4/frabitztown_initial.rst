@@ -27,7 +27,7 @@ EMME_TransitLine_Aggregation.csv
 
 .. note::
 
-    Frabitztown input files can be accessed at: http://tmg.utoronto.ca/doc/1.3/frabitztown.zip
+    Frabitztown input files can be accessed at: http://tmg.utoronto.ca/documentation/1.3/frabitztown.zip
 
 
 Creating the Project
@@ -38,8 +38,7 @@ within the "Frabitztown" project.
 
 
 
-.. figure:: images/new_project.png
-   :scale: 50 %
+.. thumbnail:: images/frabitztown_new_project.png
    :align: center
 
    Entering a name for a new project.
@@ -50,11 +49,25 @@ or another name of your choosing. Once you have chosen a name, click "OK" or pre
 hand side of the project page. There will be a small disclaimer warning that the model system requires additional setup -- this indicates
 that the model system is new and requires further setup to be in a runnable / complete state.
 
-.. figure:: images/new_model_system.png
-   :scale: 50 %
-   :align: center
 
-   Entering a name for the new model system.
+.. thumbnail:: images/frabitztown_create_model_system_1.png
+  :width: 25%
+  :group: modelsystem
+
+  From the floating action menu, select the "Create new model system" option.
+
+.. thumbnail:: images/frabitztown_create_model_system_2.png
+  :width: 25%
+  :group: modelsystem
+
+  Enter "Frabitztown Model System" into the dialog input to name the model system.
+
+.. thumbnail:: images/frabitztown_create_model_system_3.png
+  :width: 25%
+  :group: modelsystem
+
+  The model system has been created, shown on the left hand side.
+
 
 
 Starting the Frabitztown Model System Construction
@@ -62,11 +75,10 @@ Starting the Frabitztown Model System Construction
 With the Frabitztown project open in XTMF, double click the new Frabitztown model system that was made in the previous step. XTMF will now open
 the model system in a new tab / page.
 
-.. figure:: images/blank_model_system.png
-   :scale: 50 %
+.. thumbnail:: images/frabitztown_blank_model_system.png
    :align: center
 
-   A blank model system.
+   The open Frabitztown Model System - in the initial blank state.
 
 
 The Frabitztown demo model system will make use of a module bundled as part of the main XTMF distribution. The module that will be used is called ``BasicTravelDemandModel``. To make this the model system' root module, select and right click the cell with the description "The root of the model system" and choose

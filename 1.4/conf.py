@@ -28,10 +28,14 @@
 #
 # needs_sphinx = '1.0'
 
+from docutils.parsers.rst.directives.admonitions import BaseAdmonition
+from sphinx.util import compat
+compat.make_admonition = BaseAdmonition
+
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.mathjax', 'sphinx.ext.autosectionlabel', 'sphinx.util.compat','sphinx.ext.graphviz','alabaster']
+extensions = ['sphinx.ext.mathjax', 'sphinx.ext.autosectionlabel','sphinx.ext.graphviz','alabaster','sphinxcontrib.images']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -402,6 +406,9 @@ latex_logo = "images/tmg.png"
 #
 # latex_domain_indices = True
 
+images_config = {
+    'default_image_width': '50%'
+}
 
 # -- Options for manual page output ---------------------------------------
 
