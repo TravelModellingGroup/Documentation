@@ -122,6 +122,9 @@ todo_include_todos = False
 
 
 
+import sphinx_bootstrap_theme
+
+import sphinx_rtd_theme
 
 import alabaster
 
@@ -129,14 +132,14 @@ import alabaster
 
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-#html_theme = "alabaster"
+html_theme = "alabaster"
 
-#html_theme_path = [alabaster.get_path()]
+html_theme_path = [alabaster.get_path()]
 
-
-html_theme = "bootstrap"
-
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_sidebars = {
+   '**': ['about.html','globaltoc.html', 'sourcelink.html', 'searchbox.html'],
+   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+}
 
 
 # ...
@@ -150,7 +153,6 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 # documentation.
 #
 # html_theme_options = {}
-
 html_theme_options = {
 
     'logo': 'tmg.png',
@@ -161,8 +163,6 @@ html_theme_options = {
     'head_font_family': "'Droid Sans', sans-serif;",
     'show_related': True,
     'show_powered_by': False,
-    'font_size': '0.90em',
-    'bootswatch_theme':'Flatly'
     # Navigation bar title. (Default: ``project`` value)
     #'navbar_title': "TMG Documentation",
     #'collapse_navigation': False,
@@ -230,10 +230,6 @@ html_theme_options = {
 
 }
 
-html_sidebars = {
-   '**': [],
-   'using/windows': ['windowssidebar.html'],
-}
 
 pygments_style = 'vs'
 
@@ -252,7 +248,7 @@ pygments_style = 'vs'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-html_logo = 'images/tmg.png'
+#html_logo = 'images/tmg.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
