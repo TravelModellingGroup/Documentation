@@ -1,0 +1,2326 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Distributed.Modules.HostDistributionManager
+  commentId: T:TMG.Distributed.Modules.HostDistributionManager
+  id: HostDistributionManager
+  parent: TMG.Distributed.Modules
+  children:
+  - TMG.Distributed.Modules.HostDistributionManager.#ctor(XTMF.IConfiguration)
+  - TMG.Distributed.Modules.HostDistributionManager.AddTask(System.String)
+  - TMG.Distributed.Modules.HostDistributionManager.Client
+  - TMG.Distributed.Modules.HostDistributionManager.Dispose
+  - TMG.Distributed.Modules.HostDistributionManager.Dispose(System.Boolean)
+  - TMG.Distributed.Modules.HostDistributionManager.DistributionDataChannel
+  - TMG.Distributed.Modules.HostDistributionManager.ExitRequest
+  - TMG.Distributed.Modules.HostDistributionManager.Finalize
+  - TMG.Distributed.Modules.HostDistributionManager.Host
+  - TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+  - TMG.Distributed.Modules.HostDistributionManager.MainModelSystem
+  - TMG.Distributed.Modules.HostDistributionManager.Name
+  - TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+  - TMG.Distributed.Modules.HostDistributionManager.PreferPreviousClient
+  - TMG.Distributed.Modules.HostDistributionManager.Progress
+  - TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+  - TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation(System.String@)
+  - TMG.Distributed.Modules.HostDistributionManager.Start
+  - TMG.Distributed.Modules.HostDistributionManager.ToString
+  - TMG.Distributed.Modules.HostDistributionManager.WaitAll
+  - TMG.Distributed.Modules.HostDistributionManager.WaitAll(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: HostDistributionManager
+  nameWithType: HostDistributionManager
+  fullName: TMG.Distributed.Modules.HostDistributionManager
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HostDistributionManager
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 28
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: 'public class HostDistributionManager : IHostDistributionManager, IModelSystemTemplate, ISelfContainedModule, IModule, IDisposable'
+    content.vb: >-
+      Public Class HostDistributionManager
+          Implements IHostDistributionManager, IModelSystemTemplate, ISelfContainedModule, IModule, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Distributed.IHostDistributionManager
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.Distributed.Modules.HostDistributionManager.Client
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.Client
+  id: Client
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Client
+  nameWithType: HostDistributionManager.Client
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Client
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Client
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 33
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The client side model system to run.")]
+
+      public IClientDistributionManager Client { get; set; }
+    parameters: []
+    return:
+      type: TMG.Distributed.IClientDistributionManager
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The client side model system to run.")>
+
+      Public Property Client As IClientDistributionManager
+  overload: TMG.Distributed.Modules.HostDistributionManager.Client*
+  implements:
+  - TMG.Distributed.IHostDistributionManager.Client
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The client side model system to run.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.MainModelSystem
+  commentId: F:TMG.Distributed.Modules.HostDistributionManager.MainModelSystem
+  id: MainModelSystem
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: MainModelSystem
+  nameWithType: HostDistributionManager.MainModelSystem
+  fullName: TMG.Distributed.Modules.HostDistributionManager.MainModelSystem
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MainModelSystem
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 37
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The model system to execute on the host.")]
+
+      public IModelSystemTemplate MainModelSystem
+    return:
+      type: XTMF.IModelSystemTemplate
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The model system to execute on the host.")>
+
+      Public MainModelSystem As IModelSystemTemplate
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The model system to execute on the host.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.DistributionDataChannel
+  commentId: F:TMG.Distributed.Modules.HostDistributionManager.DistributionDataChannel
+  id: DistributionDataChannel
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: DistributionDataChannel
+  nameWithType: HostDistributionManager.DistributionDataChannel
+  fullName: TMG.Distributed.Modules.HostDistributionManager.DistributionDataChannel
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DistributionDataChannel
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 42
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: >-
+      [RunParameter("Distribution Data Channel", 0, "The networking channel to use for communicating with clients.")]
+
+      public int DistributionDataChannel
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Distribution Data Channel", 0, "The networking channel to use for communicating with clients.")>
+
+      Public DistributionDataChannel As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Distribution Data Channel
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The networking channel to use for communicating with clients.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.PreferPreviousClient
+  commentId: F:TMG.Distributed.Modules.HostDistributionManager.PreferPreviousClient
+  id: PreferPreviousClient
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: PreferPreviousClient
+  nameWithType: HostDistributionManager.PreferPreviousClient
+  fullName: TMG.Distributed.Modules.HostDistributionManager.PreferPreviousClient
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PreferPreviousClient
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 45
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: >-
+      [RunParameter("Prefer Previous Client", true, "Assign tasks to clients that have previously executed the task if available.")]
+
+      public bool PreferPreviousClient
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Prefer Previous Client", True, "Assign tasks to clients that have previously executed the task if available.")>
+
+      Public PreferPreviousClient As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Prefer Previous Client
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Assign tasks to clients that have previously executed the task if available.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.Host
+  commentId: F:TMG.Distributed.Modules.HostDistributionManager.Host
+  id: Host
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Host
+  nameWithType: HostDistributionManager.Host
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Host
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Host
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 50
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  summary: "\nThe link into XTMF Networking\n"
+  example: []
+  syntax:
+    content: public IHost Host
+    return:
+      type: XTMF.Networking.IHost
+    content.vb: Public Host As IHost
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: HostDistributionManager.InputBaseDirectory
+  fullName: TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 52
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: >-
+      [RunParameter("Input Base Directory", "../../Input", "The input directory for the model system.")]
+
+      public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Input Base Directory", "../../Input", "The input directory for the model system.")>
+
+      Public Property InputBaseDirectory As String
+  overload: TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Input Base Directory
+    - type: System.String
+      value: ../../Input
+    - type: System.String
+      value: The input directory for the model system.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.Name
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.Name
+  id: Name
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: HostDistributionManager.Name
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Name
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 55
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.Distributed.Modules.HostDistributionManager.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: HostDistributionManager.OutputBaseDirectory
+  fullName: TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 57
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.Progress
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.Progress
+  id: Progress
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: HostDistributionManager.Progress
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 59
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.Distributed.Modules.HostDistributionManager.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+  commentId: P:TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+  id: ProgressColour
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: HostDistributionManager.ProgressColour
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 67
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.Distributed.Modules.HostDistributionManager.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Distributed.Modules.HostDistributionManager.AddTask(System.String)
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.AddTask(System.String)
+  id: AddTask(System.String)
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: AddTask(String)
+  nameWithType: HostDistributionManager.AddTask(String)
+  fullName: TMG.Distributed.Modules.HostDistributionManager.AddTask(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddTask
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 75
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public void AddTask(string taskName)
+    parameters:
+    - id: taskName
+      type: System.String
+    content.vb: Public Sub AddTask(taskName As String)
+  overload: TMG.Distributed.Modules.HostDistributionManager.AddTask*
+  implements:
+  - TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.ExitRequest
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.ExitRequest
+  id: ExitRequest
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: HostDistributionManager.ExitRequest()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 90
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: TMG.Distributed.Modules.HostDistributionManager.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.#ctor(XTMF.IConfiguration)
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.#ctor(XTMF.IConfiguration)
+  id: '#ctor(XTMF.IConfiguration)'
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: HostDistributionManager(IConfiguration)
+  nameWithType: HostDistributionManager.HostDistributionManager(IConfiguration)
+  fullName: TMG.Distributed.Modules.HostDistributionManager.HostDistributionManager(XTMF.IConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 101
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public HostDistributionManager(IConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: XTMF.IConfiguration
+    content.vb: Public Sub New(configuration As IConfiguration)
+  overload: TMG.Distributed.Modules.HostDistributionManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation(System.String@)
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: HostDistributionManager.RuntimeValidation(ref String)
+  fullName: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 127
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: HostDistributionManager.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.Distributed.Modules.HostDistributionManager.Start
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.Start
+  id: Start
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: HostDistributionManager.Start()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 153
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: TMG.Distributed.Modules.HostDistributionManager.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.WaitAll
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.WaitAll
+  id: WaitAll
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: WaitAll()
+  nameWithType: HostDistributionManager.WaitAll()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.WaitAll()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitAll
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 318
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public void WaitAll()
+    content.vb: Public Sub WaitAll
+  overload: TMG.Distributed.Modules.HostDistributionManager.WaitAll*
+  implements:
+  - TMG.Distributed.IHostDistributionManager.WaitAll
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.WaitAll(System.Int32)
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.WaitAll(System.Int32)
+  id: WaitAll(System.Int32)
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: WaitAll(Int32)
+  nameWithType: HostDistributionManager.WaitAll(Int32)
+  fullName: TMG.Distributed.Modules.HostDistributionManager.WaitAll(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitAll
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 333
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public bool WaitAll(int timeoutMilliseconds)
+    parameters:
+    - id: timeoutMilliseconds
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function WaitAll(timeoutMilliseconds As Integer) As Boolean
+  overload: TMG.Distributed.Modules.HostDistributionManager.WaitAll*
+  implements:
+  - TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.Dispose
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.Dispose
+  id: Dispose
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: HostDistributionManager.Dispose()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 353
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: TMG.Distributed.Modules.HostDistributionManager.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Distributed.Modules.HostDistributionManager.Dispose(System.Boolean)
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: HostDistributionManager.Dispose(Boolean)
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 358
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: protected virtual void Dispose(bool managed)
+    parameters:
+    - id: managed
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(managed As Boolean)
+  overload: TMG.Distributed.Modules.HostDistributionManager.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: TMG.Distributed.Modules.HostDistributionManager.Finalize
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.Finalize
+  id: Finalize
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: HostDistributionManager.Finalize()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Finalize
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 366
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: TMG.Distributed.Modules.HostDistributionManager.Finalize*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: TMG.Distributed.Modules.HostDistributionManager.ToString
+  commentId: M:TMG.Distributed.Modules.HostDistributionManager.ToString
+  id: ToString
+  parent: TMG.Distributed.Modules.HostDistributionManager
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: HostDistributionManager.ToString()
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ToString()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Distributed/Modules/HostDistributionManager.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ToString
+    path: ../../../XTMF/Code/TMG.Distributed/Modules/HostDistributionManager.cs
+    startLine: 371
+  assemblies:
+  - TMG.Distributed
+  namespace: TMG.Distributed.Modules
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: TMG.Distributed.Modules.HostDistributionManager.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: TMG.Distributed.Modules
+  commentId: N:TMG.Distributed.Modules
+  isExternal: false
+  name: TMG.Distributed.Modules
+  nameWithType: TMG.Distributed.Modules
+  fullName: TMG.Distributed.Modules
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Distributed.IHostDistributionManager
+  commentId: T:TMG.Distributed.IHostDistributionManager
+  parent: TMG.Distributed
+  isExternal: false
+  name: IHostDistributionManager
+  nameWithType: IHostDistributionManager
+  fullName: TMG.Distributed.IHostDistributionManager
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  isExternal: false
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Distributed
+  commentId: N:TMG.Distributed
+  isExternal: false
+  name: TMG.Distributed
+  nameWithType: TMG.Distributed
+  fullName: TMG.Distributed
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.Distributed.Modules.HostDistributionManager.Client*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Client
+  isExternal: false
+  name: Client
+  nameWithType: HostDistributionManager.Client
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Client
+- uid: TMG.Distributed.IHostDistributionManager.Client
+  commentId: P:TMG.Distributed.IHostDistributionManager.Client
+  parent: TMG.Distributed.IHostDistributionManager
+  isExternal: false
+  name: Client
+  nameWithType: IHostDistributionManager.Client
+  fullName: TMG.Distributed.IHostDistributionManager.Client
+- uid: TMG.Distributed.IClientDistributionManager
+  commentId: T:TMG.Distributed.IClientDistributionManager
+  parent: TMG.Distributed
+  isExternal: false
+  name: IClientDistributionManager
+  nameWithType: IClientDistributionManager
+  fullName: TMG.Distributed.IClientDistributionManager
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.Networking.IHost
+  commentId: T:XTMF.Networking.IHost
+  parent: XTMF.Networking
+  isExternal: false
+  name: IHost
+  nameWithType: IHost
+  fullName: XTMF.Networking.IHost
+- uid: XTMF.Networking
+  commentId: N:XTMF.Networking
+  isExternal: false
+  name: XTMF.Networking
+  nameWithType: XTMF.Networking
+  fullName: XTMF.Networking
+- uid: TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: HostDistributionManager.InputBaseDirectory
+  fullName: TMG.Distributed.Modules.HostDistributionManager.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.Distributed.Modules.HostDistributionManager.Name*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Name
+  isExternal: false
+  name: Name
+  nameWithType: HostDistributionManager.Name
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: HostDistributionManager.OutputBaseDirectory
+  fullName: TMG.Distributed.Modules.HostDistributionManager.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: TMG.Distributed.Modules.HostDistributionManager.Progress*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: HostDistributionManager.Progress
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.Distributed.Modules.HostDistributionManager.ProgressColour*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: HostDistributionManager.ProgressColour
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.AddTask*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.AddTask
+  isExternal: false
+  name: AddTask
+  nameWithType: HostDistributionManager.AddTask
+  fullName: TMG.Distributed.Modules.HostDistributionManager.AddTask
+- uid: TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+  commentId: M:TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+  parent: TMG.Distributed.IHostDistributionManager
+  isExternal: true
+  name: AddTask(String)
+  nameWithType: IHostDistributionManager.AddTask(String)
+  fullName: TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+  spec.csharp:
+  - uid: TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+    name: AddTask
+    nameWithType: IHostDistributionManager.AddTask
+    fullName: TMG.Distributed.IHostDistributionManager.AddTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Distributed.IHostDistributionManager.AddTask(System.String)
+    name: AddTask
+    nameWithType: IHostDistributionManager.AddTask
+    fullName: TMG.Distributed.IHostDistributionManager.AddTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.ExitRequest*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.ExitRequest
+  isExternal: false
+  name: ExitRequest
+  nameWithType: HostDistributionManager.ExitRequest
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.#ctor*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.#ctor
+  isExternal: false
+  name: HostDistributionManager
+  nameWithType: HostDistributionManager.HostDistributionManager
+  fullName: TMG.Distributed.Modules.HostDistributionManager.HostDistributionManager
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: HostDistributionManager.RuntimeValidation
+  fullName: TMG.Distributed.Modules.HostDistributionManager.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.Start*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Start
+  isExternal: false
+  name: Start
+  nameWithType: HostDistributionManager.Start
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  isExternal: false
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.WaitAll*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.WaitAll
+  isExternal: false
+  name: WaitAll
+  nameWithType: HostDistributionManager.WaitAll
+  fullName: TMG.Distributed.Modules.HostDistributionManager.WaitAll
+- uid: TMG.Distributed.IHostDistributionManager.WaitAll
+  commentId: M:TMG.Distributed.IHostDistributionManager.WaitAll
+  parent: TMG.Distributed.IHostDistributionManager
+  isExternal: false
+  name: WaitAll()
+  nameWithType: IHostDistributionManager.WaitAll()
+  fullName: TMG.Distributed.IHostDistributionManager.WaitAll()
+  spec.csharp:
+  - uid: TMG.Distributed.IHostDistributionManager.WaitAll
+    name: WaitAll
+    nameWithType: IHostDistributionManager.WaitAll
+    fullName: TMG.Distributed.IHostDistributionManager.WaitAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Distributed.IHostDistributionManager.WaitAll
+    name: WaitAll
+    nameWithType: IHostDistributionManager.WaitAll
+    fullName: TMG.Distributed.IHostDistributionManager.WaitAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+  commentId: M:TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+  parent: TMG.Distributed.IHostDistributionManager
+  isExternal: true
+  name: WaitAll(Int32)
+  nameWithType: IHostDistributionManager.WaitAll(Int32)
+  fullName: TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+  spec.csharp:
+  - uid: TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+    name: WaitAll
+    nameWithType: IHostDistributionManager.WaitAll
+    fullName: TMG.Distributed.IHostDistributionManager.WaitAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Distributed.IHostDistributionManager.WaitAll(System.Int32)
+    name: WaitAll
+    nameWithType: IHostDistributionManager.WaitAll
+    fullName: TMG.Distributed.IHostDistributionManager.WaitAll
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.Dispose*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: HostDistributionManager.Dispose
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.Finalize*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.Finalize
+  isExternal: false
+  name: Finalize
+  nameWithType: HostDistributionManager.Finalize
+  fullName: TMG.Distributed.Modules.HostDistributionManager.Finalize
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Distributed.Modules.HostDistributionManager.ToString*
+  commentId: Overload:TMG.Distributed.Modules.HostDistributionManager.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: HostDistributionManager.ToString
+  fullName: TMG.Distributed.Modules.HostDistributionManager.ToString

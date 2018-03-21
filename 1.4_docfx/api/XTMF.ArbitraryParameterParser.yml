@@ -1,0 +1,479 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.ArbitraryParameterParser
+  commentId: T:XTMF.ArbitraryParameterParser
+  id: ArbitraryParameterParser
+  parent: XTMF
+  children:
+  - XTMF.ArbitraryParameterParser.ArbitraryParameterParse(System.Type,System.String,System.String@)
+  - XTMF.ArbitraryParameterParser.Check(System.Type,System.String,System.String@)
+  langs:
+  - csharp
+  - vb
+  name: ArbitraryParameterParser
+  nameWithType: ArbitraryParameterParser
+  fullName: XTMF.ArbitraryParameterParser
+  type: Class
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ArbitraryParameterParser
+    path: ../../../XTMF/Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+    startLine: 25
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: public static class ArbitraryParameterParser
+    content.vb: Public Module ArbitraryParameterParser
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: XTMF.ArbitraryParameterParser.ArbitraryParameterParse(System.Type,System.String,System.String@)
+  commentId: M:XTMF.ArbitraryParameterParser.ArbitraryParameterParse(System.Type,System.String,System.String@)
+  id: ArbitraryParameterParse(System.Type,System.String,System.String@)
+  parent: XTMF.ArbitraryParameterParser
+  langs:
+  - csharp
+  - vb
+  name: ArbitraryParameterParse(Type, String, ref String)
+  nameWithType: ArbitraryParameterParser.ArbitraryParameterParse(Type, String, ref String)
+  fullName: XTMF.ArbitraryParameterParser.ArbitraryParameterParse(System.Type, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ArbitraryParameterParse
+    path: ../../../XTMF/Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+    startLine: 37
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nParse the input for the given type\n"
+  example: []
+  syntax:
+    content: public static object ArbitraryParameterParse(Type t, string input, ref string error)
+    parameters:
+    - id: t
+      type: System.Type
+      description: The type to try to parse it with
+    - id: input
+      type: System.String
+      description: The string to parse
+    - id: error
+      type: System.String
+      description: An error returned if we are unable to parse the string
+    return:
+      type: System.Object
+      description: Null if we are unable to parse it, otherwise an object of the given type
+    content.vb: Public Shared Function ArbitraryParameterParse(t As Type, input As String, ByRef error As String) As Object
+  overload: XTMF.ArbitraryParameterParser.ArbitraryParameterParse*
+  nameWithType.vb: ArbitraryParameterParser.ArbitraryParameterParse(Type, String, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: XTMF.ArbitraryParameterParser.ArbitraryParameterParse(System.Type, System.String, ByRef System.String)
+  name.vb: ArbitraryParameterParse(Type, String, ByRef String)
+- uid: XTMF.ArbitraryParameterParser.Check(System.Type,System.String,System.String@)
+  commentId: M:XTMF.ArbitraryParameterParser.Check(System.Type,System.String,System.String@)
+  id: Check(System.Type,System.String,System.String@)
+  parent: XTMF.ArbitraryParameterParser
+  langs:
+  - csharp
+  - vb
+  name: Check(Type, String, ref String)
+  nameWithType: ArbitraryParameterParser.Check(Type, String, ref String)
+  fullName: XTMF.ArbitraryParameterParser.Check(System.Type, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Check
+    path: ../../../XTMF/Code/XTMFInterfaces/Attributes/ArbitraryParameterParser.cs
+    startLine: 112
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nCheck to make sure that the value can be converted\n"
+  example: []
+  syntax:
+    content: public static bool Check(Type type, string value, ref string error)
+    parameters:
+    - id: type
+      type: System.Type
+      description: The type to check
+    - id: value
+      type: System.String
+      description: The value held as a string
+    - id: error
+      type: System.String
+      description: Contains an error if this returns false
+    return:
+      type: System.Boolean
+      description: True if it is a value value, false otherwise with a reason inside of error.
+    content.vb: Public Shared Function Check(type As Type, value As String, ByRef error As String) As Boolean
+  overload: XTMF.ArbitraryParameterParser.Check*
+  nameWithType.vb: ArbitraryParameterParser.Check(Type, String, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: XTMF.ArbitraryParameterParser.Check(System.Type, System.String, ByRef System.String)
+  name.vb: Check(Type, String, ByRef String)
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.ArbitraryParameterParser.ArbitraryParameterParse*
+  commentId: Overload:XTMF.ArbitraryParameterParser.ArbitraryParameterParse
+  isExternal: false
+  name: ArbitraryParameterParse
+  nameWithType: ArbitraryParameterParser.ArbitraryParameterParse
+  fullName: XTMF.ArbitraryParameterParser.ArbitraryParameterParse
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.ArbitraryParameterParser.Check*
+  commentId: Overload:XTMF.ArbitraryParameterParser.Check
+  isExternal: false
+  name: Check
+  nameWithType: ArbitraryParameterParser.Check
+  fullName: XTMF.ArbitraryParameterParser.Check
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

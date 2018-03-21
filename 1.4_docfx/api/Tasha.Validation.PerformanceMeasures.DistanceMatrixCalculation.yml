@@ -1,0 +1,1043 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  commentId: T:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  id: DistanceMatrixCalculation
+  parent: Tasha.Validation.PerformanceMeasures
+  children:
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.CostPerKm
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute(TMG.Emme.Controller)
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ResultsFile
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation(System.String@)
+  - Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.TimePeriodToConsider
+  langs:
+  - csharp
+  - vb
+  name: DistanceMatrixCalculation
+  nameWithType: DistanceMatrixCalculation
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  type: Class
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DistanceMatrixCalculation
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 29
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: 'public class DistanceMatrixCalculation : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class DistanceMatrixCalculation
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ResultsFile
+  commentId: F:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ResultsFile
+  id: ResultsFile
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: ResultsFile
+  nameWithType: DistanceMatrixCalculation.ResultsFile
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ResultsFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ResultsFile
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 34
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "Where to save the distance matrices.")]
+
+      public FileLocation ResultsFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="Where to save the distance matrices.")>
+
+      Public ResultsFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: Where to save the distance matrices.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.CostPerKm
+  commentId: F:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.CostPerKm
+  id: CostPerKm
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: CostPerKm
+  nameWithType: DistanceMatrixCalculation.CostPerKm
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.CostPerKm
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CostPerKm
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 37
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: >-
+      [RunParameter("Cost per km", 0.153F, "Per km cost for auto assignment used in this model run")]
+
+      public float CostPerKm
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Cost per km", 0.153F, "Per km cost for auto assignment used in this model run")>
+
+      Public CostPerKm As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Cost per km
+    - type: System.Single
+      value: 0.152999997
+    - type: System.String
+      value: Per km cost for auto assignment used in this model run
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.TimePeriodToConsider
+  commentId: F:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.TimePeriodToConsider
+  id: TimePeriodToConsider
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: TimePeriodToConsider
+  nameWithType: DistanceMatrixCalculation.TimePeriodToConsider
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.TimePeriodToConsider
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TimePeriodToConsider
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 40
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The different boarding penalties to apply.")]
+
+      public DistanceMatrixCalculation.DistancesPerTimePeriod[] TimePeriodToConsider
+    return:
+      type: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod[]
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The different boarding penalties to apply.")>
+
+      Public TimePeriodToConsider As DistanceMatrixCalculation.DistancesPerTimePeriod()
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The different boarding penalties to apply.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+  commentId: P:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+  id: Name
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: DistanceMatrixCalculation.Name
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 78
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+  commentId: P:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+  id: Progress
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: DistanceMatrixCalculation.Progress
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 84
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+  commentId: P:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+  id: ProgressColour
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: DistanceMatrixCalculation.ProgressColour
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 90
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute(TMG.Emme.Controller)
+  commentId: M:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: DistanceMatrixCalculation.Execute(Controller)
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 95
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation(System.String@)
+  commentId: M:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: DistanceMatrixCalculation.RuntimeValidation(ref String)
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/Tasha.Validation/PerformanceMeasures/DistanceMatrix.cs
+    startLine: 120
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.PerformanceMeasures
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: DistanceMatrixCalculation.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: Tasha.Validation.PerformanceMeasures
+  commentId: N:Tasha.Validation.PerformanceMeasures
+  isExternal: false
+  name: Tasha.Validation.PerformanceMeasures
+  nameWithType: Tasha.Validation.PerformanceMeasures
+  fullName: Tasha.Validation.PerformanceMeasures
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Input.FileLocation
+  commentId: T:TMG.Input.FileLocation
+  parent: TMG.Input
+  isExternal: false
+  name: FileLocation
+  nameWithType: FileLocation
+  fullName: TMG.Input.FileLocation
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  isExternal: false
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod[]
+  name: DistanceMatrixCalculation.DistancesPerTimePeriod[]
+  nameWithType: DistanceMatrixCalculation.DistancesPerTimePeriod[]
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod[]
+  nameWithType.vb: DistanceMatrixCalculation.DistancesPerTimePeriod()
+  fullName.vb: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod()
+  name.vb: DistanceMatrixCalculation.DistancesPerTimePeriod()
+  spec.csharp:
+  - uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod
+    name: DistanceMatrixCalculation.DistancesPerTimePeriod
+    nameWithType: DistanceMatrixCalculation.DistancesPerTimePeriod
+    fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod
+    name: DistanceMatrixCalculation.DistancesPerTimePeriod
+    nameWithType: DistanceMatrixCalculation.DistancesPerTimePeriod
+    fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.DistancesPerTimePeriod
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name*
+  commentId: Overload:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+  isExternal: false
+  name: Name
+  nameWithType: DistanceMatrixCalculation.Name
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress*
+  commentId: Overload:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: DistanceMatrixCalculation.Progress
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour*
+  commentId: Overload:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: DistanceMatrixCalculation.ProgressColour
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute*
+  commentId: Overload:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: DistanceMatrixCalculation.Execute
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation*
+  commentId: Overload:Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: DistanceMatrixCalculation.RuntimeValidation
+  fullName: Tasha.Validation.PerformanceMeasures.DistanceMatrixCalculation.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

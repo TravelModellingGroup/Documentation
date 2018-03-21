@@ -1,0 +1,2196 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  commentId: T:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  id: SpatialDiscrimination
+  parent: TMG.GTAModel.Modes.UtilityComponents
+  children:
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationContained
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationPlanningDistrict
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationRegion
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationZone
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained(TMG.IZone,TMG.IZone)
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginContained
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginDestinationSame
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginPlanningDistrict
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginRegion
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginZone
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Root
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation(System.String@)
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation(System.String@)
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidDestinations
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidOrigins
+  langs:
+  - csharp
+  - vb
+  name: SpatialDiscrimination
+  nameWithType: SpatialDiscrimination
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SpatialDiscrimination
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 26
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: 'public abstract class SpatialDiscrimination : IUtilityComponent, IModule'
+    content.vb: >-
+      Public MustInherit Class SpatialDiscrimination
+          Implements IUtilityComponent, IModule
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - TMG.GTAModel.Modes.UtilityComponents.SpatialDiscriminationConstantUtilityComponent
+  implements:
+  - TMG.Modes.IUtilityComponent
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationContained
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationContained
+  id: DestinationContained
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: DestinationContained
+  nameWithType: SpatialDiscrimination.DestinationContained
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationContained
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DestinationContained
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 29
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Destination Contained", true, "This will only be applied if the destination is contained.  If false, it will only be applied if the destination is not contained.")]
+
+      public bool DestinationContained
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Destination Contained", True, "This will only be applied if the destination is contained.  If false, it will only be applied if the destination is not contained.")>
+
+      Public DestinationContained As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Destination Contained
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: This will only be applied if the destination is contained.  If false, it will only be applied if the destination is not contained.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationPlanningDistrict
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationPlanningDistrict
+  id: DestinationPlanningDistrict
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: DestinationPlanningDistrict
+  nameWithType: SpatialDiscrimination.DestinationPlanningDistrict
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationPlanningDistrict
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DestinationPlanningDistrict
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 32
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Destination Planning District", false, "The valid destinations refer to planning district numbers.")]
+
+      public bool DestinationPlanningDistrict
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Destination Planning District", False, "The valid destinations refer to planning district numbers.")>
+
+      Public DestinationPlanningDistrict As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Destination Planning District
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: The valid destinations refer to planning district numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationRegion
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationRegion
+  id: DestinationRegion
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: DestinationRegion
+  nameWithType: SpatialDiscrimination.DestinationRegion
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationRegion
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DestinationRegion
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 35
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Destination Region", true, "The valid destinations refer to region numbers.")]
+
+      public bool DestinationRegion
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Destination Region", True, "The valid destinations refer to region numbers.")>
+
+      Public DestinationRegion As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Destination Region
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: The valid destinations refer to region numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationZone
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationZone
+  id: DestinationZone
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: DestinationZone
+  nameWithType: SpatialDiscrimination.DestinationZone
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.DestinationZone
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DestinationZone
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 38
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Destination Zone", false, "The valid destinations refer to zone numbers.")]
+
+      public bool DestinationZone
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Destination Zone", False, "The valid destinations refer to zone numbers.")>
+
+      Public DestinationZone As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Destination Zone
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: The valid destinations refer to zone numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginContained
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginContained
+  id: OriginContained
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: OriginContained
+  nameWithType: SpatialDiscrimination.OriginContained
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginContained
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OriginContained
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Origin Contained", true, "This will only be applied if the origin is contained.  If false, it will only be applied if the origin is not contained.")]
+
+      public bool OriginContained
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Origin Contained", True, "This will only be applied if the origin is contained.  If false, it will only be applied if the origin is not contained.")>
+
+      Public OriginContained As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Origin Contained
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: This will only be applied if the origin is contained.  If false, it will only be applied if the origin is not contained.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginDestinationSame
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginDestinationSame
+  id: OriginDestinationSame
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: OriginDestinationSame
+  nameWithType: SpatialDiscrimination.OriginDestinationSame
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginDestinationSame
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OriginDestinationSame
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Origin Destination Same", false, "This will only be applied if the origin and destination are the same.")]
+
+      public bool OriginDestinationSame
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Origin Destination Same", False, "This will only be applied if the origin and destination are the same.")>
+
+      Public OriginDestinationSame As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Origin Destination Same
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: This will only be applied if the origin and destination are the same.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginPlanningDistrict
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginPlanningDistrict
+  id: OriginPlanningDistrict
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: OriginPlanningDistrict
+  nameWithType: SpatialDiscrimination.OriginPlanningDistrict
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginPlanningDistrict
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OriginPlanningDistrict
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 47
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Origin Planning District", false, "The valid origins refer to planning district numbers.")]
+
+      public bool OriginPlanningDistrict
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Origin Planning District", False, "The valid origins refer to planning district numbers.")>
+
+      Public OriginPlanningDistrict As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Origin Planning District
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: The valid origins refer to planning district numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginRegion
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginRegion
+  id: OriginRegion
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: OriginRegion
+  nameWithType: SpatialDiscrimination.OriginRegion
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginRegion
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OriginRegion
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 50
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Origin Region", true, "The valid origins refer to region numbers.")]
+
+      public bool OriginRegion
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Origin Region", True, "The valid origins refer to region numbers.")>
+
+      Public OriginRegion As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Origin Region
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: The valid origins refer to region numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginZone
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginZone
+  id: OriginZone
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: OriginZone
+  nameWithType: SpatialDiscrimination.OriginZone
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.OriginZone
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OriginZone
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 53
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Origin Zone", false, "The valid origins refer to zone numbers.")]
+
+      public bool OriginZone
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Origin Zone", False, "The valid origins refer to zone numbers.")>
+
+      Public OriginZone As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Origin Zone
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: The valid origins refer to zone numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Root
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Root
+  id: Root
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: SpatialDiscrimination.Root
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 56
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidDestinations
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidDestinations
+  id: ValidDestinations
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: ValidDestinations
+  nameWithType: SpatialDiscrimination.ValidDestinations
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidDestinations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidDestinations
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 59
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Valid Destinations", "1", typeof (RangeSet), "A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the destination.")]
+
+      public RangeSet ValidDestinations
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Valid Destinations", "1", GetType(RangeSet), "A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the destination.")>
+
+      Public ValidDestinations As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Valid Destinations
+    - type: System.String
+      value: "1"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the destination.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidOrigins
+  commentId: F:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidOrigins
+  id: ValidOrigins
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: ValidOrigins
+  nameWithType: SpatialDiscrimination.ValidOrigins
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ValidOrigins
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidOrigins
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 62
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Valid Origins", "1", typeof (RangeSet), "A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the origin.")]
+
+      public RangeSet ValidOrigins
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Valid Origins", "1", GetType(RangeSet), "A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the origin.")>
+
+      Public ValidOrigins As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Valid Origins
+    - type: System.String
+      value: "1"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: A set of ranges for region/Planning District numbers that will trigger this utility component to be included for the origin.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+  commentId: P:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+  id: Name
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SpatialDiscrimination.Name
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 64
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+  commentId: P:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+  id: Progress
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: SpatialDiscrimination.Progress
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 66
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+  commentId: P:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: SpatialDiscrimination.ProgressColour
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 71
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+  commentId: P:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+  id: UtilityComponentName
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: UtilityComponentName
+  nameWithType: SpatialDiscrimination.UtilityComponentName
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UtilityComponentName
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 76
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: >-
+      [RunParameter("Component Name", "", "The name of this Utility Component.  This name should be unique for each mode.")]
+
+      public string UtilityComponentName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Component Name", "", "The name of this Utility Component.  This name should be unique for each mode.")>
+
+      Public Property UtilityComponentName As String
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName*
+  implements:
+  - TMG.Modes.IUtilityComponent.UtilityComponentName
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Component Name
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: The name of this Utility Component.  This name should be unique for each mode.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: SpatialDiscrimination.CalculateV(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CalculateV
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 79
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public abstract float CalculateV(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public MustOverride Function CalculateV(origin As IZone, destination As IZone, time As Time) As Single
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV*
+  implements:
+  - TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: SpatialDiscrimination.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 81
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: SpatialDiscrimination.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained(TMG.IZone,TMG.IZone)
+  commentId: M:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained(TMG.IZone,TMG.IZone)
+  id: IsContained(TMG.IZone,TMG.IZone)
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: IsContained(IZone, IZone)
+  nameWithType: SpatialDiscrimination.IsContained(IZone, IZone)
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained(TMG.IZone, TMG.IZone)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsContained
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 114
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: protected bool IsContained(IZone origin, IZone destination)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    return:
+      type: System.Boolean
+    content.vb: Protected Function IsContained(origin As IZone, destination As IZone) As Boolean
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation(System.String@)
+  id: SubRuntimeValidation(System.String@)
+  parent: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination
+  langs:
+  - csharp
+  - vb
+  name: SubRuntimeValidation(ref String)
+  nameWithType: SpatialDiscrimination.SubRuntimeValidation(ref String)
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SubRuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/Modes/UtilityComponents/SpatialDiscrimination.cs
+    startLine: 125
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes.UtilityComponents
+  syntax:
+    content: protected abstract bool SubRuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected MustOverride Function SubRuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation*
+  nameWithType.vb: SpatialDiscrimination.SubRuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation(ByRef System.String)
+  name.vb: SubRuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.Modes.UtilityComponents
+  commentId: N:TMG.GTAModel.Modes.UtilityComponents
+  isExternal: false
+  name: TMG.GTAModel.Modes.UtilityComponents
+  nameWithType: TMG.GTAModel.Modes.UtilityComponents
+  fullName: TMG.GTAModel.Modes.UtilityComponents
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Modes.IUtilityComponent
+  commentId: T:TMG.Modes.IUtilityComponent
+  parent: TMG.Modes
+  isExternal: false
+  name: IUtilityComponent
+  nameWithType: IUtilityComponent
+  fullName: TMG.Modes.IUtilityComponent
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Modes
+  commentId: N:TMG.Modes
+  isExternal: false
+  name: TMG.Modes
+  nameWithType: TMG.Modes
+  fullName: TMG.Modes
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: Datastructure.RangeSet
+  commentId: T:Datastructure.RangeSet
+  parent: Datastructure
+  isExternal: false
+  name: RangeSet
+  nameWithType: RangeSet
+  fullName: Datastructure.RangeSet
+- uid: Datastructure
+  commentId: N:Datastructure
+  isExternal: false
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+  isExternal: false
+  name: Name
+  nameWithType: SpatialDiscrimination.Name
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: SpatialDiscrimination.Progress
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: SpatialDiscrimination.ProgressColour
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+  isExternal: false
+  name: UtilityComponentName
+  nameWithType: SpatialDiscrimination.UtilityComponentName
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.UtilityComponentName
+- uid: TMG.Modes.IUtilityComponent.UtilityComponentName
+  commentId: P:TMG.Modes.IUtilityComponent.UtilityComponentName
+  parent: TMG.Modes.IUtilityComponent
+  isExternal: false
+  name: UtilityComponentName
+  nameWithType: IUtilityComponent.UtilityComponentName
+  fullName: TMG.Modes.IUtilityComponent.UtilityComponentName
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV
+  isExternal: false
+  name: CalculateV
+  nameWithType: SpatialDiscrimination.CalculateV
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.CalculateV
+- uid: TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.Modes.IUtilityComponent
+  isExternal: false
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: IUtilityComponent.CalculateV(IZone, IZone, Time)
+  fullName: TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IUtilityComponent.CalculateV
+    fullName: TMG.Modes.IUtilityComponent.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Modes.IUtilityComponent.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IUtilityComponent.CalculateV
+    fullName: TMG.Modes.IUtilityComponent.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  isExternal: false
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: SpatialDiscrimination.RuntimeValidation
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained
+  isExternal: false
+  name: IsContained
+  nameWithType: SpatialDiscrimination.IsContained
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.IsContained
+- uid: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation*
+  commentId: Overload:TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation
+  isExternal: false
+  name: SubRuntimeValidation
+  nameWithType: SpatialDiscrimination.SubRuntimeValidation
+  fullName: TMG.GTAModel.Modes.UtilityComponents.SpatialDiscrimination.SubRuntimeValidation

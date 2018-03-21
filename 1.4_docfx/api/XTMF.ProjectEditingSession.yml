@@ -1,0 +1,2271 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.ProjectEditingSession
+  commentId: T:XTMF.ProjectEditingSession
+  id: ProjectEditingSession
+  parent: XTMF
+  children:
+  - XTMF.ProjectEditingSession.#ctor(XTMF.Project,XTMF.XTMFRuntime)
+  - XTMF.ProjectEditingSession.AddExternalModelSystem(XTMF.IModelSystem,System.String,System.String@)
+  - XTMF.ProjectEditingSession.AddModelSystem(System.String,System.String@)
+  - XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String,System.String@)
+  - XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String@)
+  - XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String,System.String@)
+  - XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String@)
+  - XTMF.ProjectEditingSession.CloneModelSystem(XTMF.IModelSystemStructure,System.String@)
+  - XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  - XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.XTMFRuntime,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.ILinkedParameter},System.String,System.String,System.String@)
+  - XTMF.ProjectEditingSession.CloneModelSystemToProjectAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  - XTMF.ProjectEditingSession.CloneProjectAs(System.String,System.String@)
+  - XTMF.ProjectEditingSession.DeleteProject(System.String@)
+  - XTMF.ProjectEditingSession.Dispose
+  - XTMF.ProjectEditingSession.EditModelSystem(System.Int32)
+  - XTMF.ProjectEditingSession.ExportModelSystem(System.Int32,System.String,System.String@)
+  - XTMF.ProjectEditingSession.ExportModelSystemAsString(System.Int32,System.String@,System.String@)
+  - XTMF.ProjectEditingSession.ExportModelSystemAsString(XTMF.ModelSystemModel,System.String@,System.String@)
+  - XTMF.ProjectEditingSession.GetConfiguration
+  - XTMF.ProjectEditingSession.GetPreviousRuns
+  - XTMF.ProjectEditingSession.GetRuntime
+  - XTMF.ProjectEditingSession.ImportModelSystemFromFile(System.String,System.String,System.String@)
+  - XTMF.ProjectEditingSession.ImportModelSystemFromString(System.String,System.String,System.String@)
+  - XTMF.ProjectEditingSession.LoadPreviousRun(System.String,System.String@,XTMF.ModelSystemEditingSession@)
+  - XTMF.ProjectEditingSession.ModelSystemNameChanged
+  - XTMF.ProjectEditingSession.ModelSystemSaved
+  - XTMF.ProjectEditingSession.MoveModelSystem(System.Int32,System.Int32,System.String@)
+  - XTMF.ProjectEditingSession.Name
+  - XTMF.ProjectEditingSession.NameChanged
+  - XTMF.ProjectEditingSession.Project
+  - XTMF.ProjectEditingSession.ProjectWasExternallySaved
+  - XTMF.ProjectEditingSession.ReameProject(System.String,System.String@)
+  - XTMF.ProjectEditingSession.RemoveModelSystem(System.Int32,System.String@)
+  - XTMF.ProjectEditingSession.RenameModelSystem(XTMF.IModelSystemStructure,System.String,System.String@)
+  - XTMF.ProjectEditingSession.SessionClosed
+  - XTMF.ProjectEditingSession.ValidateModelSystemName(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ProjectEditingSession
+  nameWithType: ProjectEditingSession
+  fullName: XTMF.ProjectEditingSession
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectEditingSession
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 29
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: 'public sealed class ProjectEditingSession : IDisposable'
+    content.vb: >-
+      Public NotInheritable Class ProjectEditingSession
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: XTMF.ProjectEditingSession.Project
+  commentId: F:XTMF.ProjectEditingSession.Project
+  id: Project
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: Project
+  nameWithType: ProjectEditingSession.Project
+  fullName: XTMF.ProjectEditingSession.Project
+  type: Field
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Project
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 37
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public Project Project
+    return:
+      type: XTMF.Project
+    content.vb: Public Project As Project
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.#ctor(XTMF.Project,XTMF.XTMFRuntime)
+  commentId: M:XTMF.ProjectEditingSession.#ctor(XTMF.Project,XTMF.XTMFRuntime)
+  id: '#ctor(XTMF.Project,XTMF.XTMFRuntime)'
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ProjectEditingSession(Project, XTMFRuntime)
+  nameWithType: ProjectEditingSession.ProjectEditingSession(Project, XTMFRuntime)
+  fullName: XTMF.ProjectEditingSession.ProjectEditingSession(XTMF.Project, XTMF.XTMFRuntime)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 41
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ProjectEditingSession(Project project, XTMFRuntime runtime)
+    parameters:
+    - id: project
+      type: XTMF.Project
+    - id: runtime
+      type: XTMF.XTMFRuntime
+    content.vb: Public Sub New(project As Project, runtime As XTMFRuntime)
+  overload: XTMF.ProjectEditingSession.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.ProjectWasExternallySaved
+  commentId: E:XTMF.ProjectEditingSession.ProjectWasExternallySaved
+  id: ProjectWasExternallySaved
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ProjectWasExternallySaved
+  nameWithType: ProjectEditingSession.ProjectWasExternallySaved
+  fullName: XTMF.ProjectEditingSession.ProjectWasExternallySaved
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectWasExternallySaved
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 52
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe project externally saved by a cloned project!\n"
+  example: []
+  syntax:
+    content: public event EventHandler ProjectWasExternallySaved
+    return:
+      type: System.EventHandler
+    content.vb: Public Event ProjectWasExternallySaved As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.Name
+  commentId: P:XTMF.ProjectEditingSession.Name
+  id: Name
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ProjectEditingSession.Name
+  fullName: XTMF.ProjectEditingSession.Name
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 84
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: XTMF.ProjectEditingSession.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.ProjectEditingSession.SessionClosed
+  commentId: E:XTMF.ProjectEditingSession.SessionClosed
+  id: SessionClosed
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: SessionClosed
+  nameWithType: ProjectEditingSession.SessionClosed
+  fullName: XTMF.ProjectEditingSession.SessionClosed
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SessionClosed
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 86
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event EventHandler SessionClosed
+    return:
+      type: System.EventHandler
+    content.vb: Public Event SessionClosed As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.NameChanged
+  commentId: E:XTMF.ProjectEditingSession.NameChanged
+  id: NameChanged
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: NameChanged
+  nameWithType: ProjectEditingSession.NameChanged
+  fullName: XTMF.ProjectEditingSession.NameChanged
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NameChanged
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 88
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event PropertyChangedEventHandler NameChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event NameChanged As PropertyChangedEventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.ModelSystemNameChanged
+  commentId: E:XTMF.ProjectEditingSession.ModelSystemNameChanged
+  id: ModelSystemNameChanged
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemNameChanged
+  nameWithType: ProjectEditingSession.ModelSystemNameChanged
+  fullName: XTMF.ProjectEditingSession.ModelSystemNameChanged
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemNameChanged
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 90
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event EventHandler ModelSystemNameChanged
+    return:
+      type: System.EventHandler
+    content.vb: Public Event ModelSystemNameChanged As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.ModelSystemSaved
+  commentId: E:XTMF.ProjectEditingSession.ModelSystemSaved
+  id: ModelSystemSaved
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemSaved
+  nameWithType: ProjectEditingSession.ModelSystemSaved
+  fullName: XTMF.ProjectEditingSession.ModelSystemSaved
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemSaved
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 92
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event EventHandler ModelSystemSaved
+    return:
+      type: System.EventHandler
+    content.vb: Public Event ModelSystemSaved As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.ReameProject(System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ReameProject(System.String,System.String@)
+  id: ReameProject(System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ReameProject(String, ref String)
+  nameWithType: ProjectEditingSession.ReameProject(String, ref String)
+  fullName: XTMF.ProjectEditingSession.ReameProject(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ReameProject
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 100
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAttempt to rename the project.  This name must be unique.\n"
+  example: []
+  syntax:
+    content: public bool ReameProject(string newName, ref string error)
+    parameters:
+    - id: newName
+      type: System.String
+      description: The name to save the project as
+    - id: error
+      type: System.String
+      description: The reason the call failed
+    return:
+      type: System.Boolean
+      description: True if the rename was successful, otherwise error will describe why it failed.
+    content.vb: Public Function ReameProject(newName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ReameProject*
+  nameWithType.vb: ProjectEditingSession.ReameProject(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ReameProject(System.String, ByRef System.String)
+  name.vb: ReameProject(String, ByRef String)
+- uid: XTMF.ProjectEditingSession.CloneProjectAs(System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.CloneProjectAs(System.String,System.String@)
+  id: CloneProjectAs(System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: CloneProjectAs(String, ref String)
+  nameWithType: ProjectEditingSession.CloneProjectAs(String, ref String)
+  fullName: XTMF.ProjectEditingSession.CloneProjectAs(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneProjectAs
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 120
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nCreate a cloned project with the given name\n"
+  example: []
+  syntax:
+    content: public bool CloneProjectAs(string name, ref string error)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the cloned project
+    - id: error
+      type: System.String
+      description: A description of the error
+    return:
+      type: System.Boolean
+      description: True if the clone succeeds, false otherwise
+    content.vb: Public Function CloneProjectAs(name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.CloneProjectAs*
+  nameWithType.vb: ProjectEditingSession.CloneProjectAs(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.CloneProjectAs(System.String, ByRef System.String)
+  name.vb: CloneProjectAs(String, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String@)
+  id: AddModelSystem(XTMF.ModelSystem,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddModelSystem(ModelSystem, ref String)
+  nameWithType: ProjectEditingSession.AddModelSystem(ModelSystem, ref String)
+  fullName: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 151
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a model system to the project\n"
+  example: []
+  syntax:
+    content: public bool AddModelSystem(ModelSystem modelSystem, ref string error)
+    parameters:
+    - id: modelSystem
+      type: XTMF.ModelSystem
+      description: The model system to add to the project
+    - id: error
+      type: System.String
+      description: An error message in case of failure
+    return:
+      type: System.Boolean
+      description: True if the model system was added successfully
+    content.vb: Public Function AddModelSystem(modelSystem As ModelSystem, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddModelSystem(ModelSystem, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem, ByRef System.String)
+  name.vb: AddModelSystem(ModelSystem, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddModelSystem(System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddModelSystem(System.String,System.String@)
+  id: AddModelSystem(System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddModelSystem(String, ref String)
+  nameWithType: ProjectEditingSession.AddModelSystem(String, ref String)
+  fullName: XTMF.ProjectEditingSession.AddModelSystem(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 176
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nCreate a new model system in the project with the given name\n"
+  example: []
+  syntax:
+    content: public bool AddModelSystem(string modelSystemName, ref string error)
+    parameters:
+    - id: modelSystemName
+      type: System.String
+      description: The name of the new model system
+    - id: error
+      type: System.String
+      description: If an error occurs this will contain a description
+    return:
+      type: System.Boolean
+      description: True if successful, false otherwise with error message.
+    content.vb: Public Function AddModelSystem(modelSystemName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddModelSystem(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddModelSystem(System.String, ByRef System.String)
+  name.vb: AddModelSystem(String, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem,System.String,System.String@)
+  id: AddModelSystem(XTMF.ModelSystem,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddModelSystem(ModelSystem, String, ref String)
+  nameWithType: ProjectEditingSession.AddModelSystem(ModelSystem, String, ref String)
+  fullName: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 198
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a model system to the project\n"
+  example: []
+  syntax:
+    content: public bool AddModelSystem(ModelSystem modelSystem, string newName, ref string error)
+    parameters:
+    - id: modelSystem
+      type: XTMF.ModelSystem
+      description: The model system to add to the project
+    - id: newName
+      type: System.String
+      description: The name to use for this new model system
+    - id: error
+      type: System.String
+      description: An error message in case of failure
+    return:
+      type: System.Boolean
+      description: True if the model system was added successfully
+    content.vb: Public Function AddModelSystem(modelSystem As ModelSystem, newName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddModelSystem(ModelSystem, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystem, System.String, ByRef System.String)
+  name.vb: AddModelSystem(ModelSystem, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.ImportModelSystemFromString(System.String,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ImportModelSystemFromString(System.String,System.String,System.String@)
+  id: ImportModelSystemFromString(System.String,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ImportModelSystemFromString(String, String, ref String)
+  nameWithType: ProjectEditingSession.ImportModelSystemFromString(String, String, ref String)
+  fullName: XTMF.ProjectEditingSession.ImportModelSystemFromString(System.String, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ImportModelSystemFromString
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 224
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nImport a model system into the project from a string.\n"
+  example: []
+  syntax:
+    content: public bool ImportModelSystemFromString(string modelSystemAsText, string name, ref string error)
+    parameters:
+    - id: modelSystemAsText
+      type: System.String
+      description: The text to convert into a model system
+    - id: name
+      type: System.String
+      description: The name of the model system
+    - id: error
+      type: System.String
+      description: A description of the error if one occurs
+    return:
+      type: System.Boolean
+      description: True if the model system was imported, false with a description otherwise.
+    content.vb: Public Function ImportModelSystemFromString(modelSystemAsText As String, name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ImportModelSystemFromString*
+  nameWithType.vb: ProjectEditingSession.ImportModelSystemFromString(String, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ImportModelSystemFromString(System.String, System.String, ByRef System.String)
+  name.vb: ImportModelSystemFromString(String, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.ImportModelSystemFromFile(System.String,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ImportModelSystemFromFile(System.String,System.String,System.String@)
+  id: ImportModelSystemFromFile(System.String,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ImportModelSystemFromFile(String, String, ref String)
+  nameWithType: ProjectEditingSession.ImportModelSystemFromFile(String, String, ref String)
+  fullName: XTMF.ProjectEditingSession.ImportModelSystemFromFile(System.String, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ImportModelSystemFromFile
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 241
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nImport a model system into the project from file.\n"
+  example: []
+  syntax:
+    content: public bool ImportModelSystemFromFile(string fileName, string modelSystemName, ref string error)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: The path of the file to load.
+    - id: modelSystemName
+      type: System.String
+      description: The name to assign to this new model system.
+    - id: error
+      type: System.String
+      description: A description of the error if one occurs
+    return:
+      type: System.Boolean
+      description: True if the model system was imported, false with a description otherwise.
+    content.vb: Public Function ImportModelSystemFromFile(fileName As String, modelSystemName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ImportModelSystemFromFile*
+  nameWithType.vb: ProjectEditingSession.ImportModelSystemFromFile(String, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ImportModelSystemFromFile(System.String, System.String, ByRef System.String)
+  name.vb: ImportModelSystemFromFile(String, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.ExportModelSystemAsString(XTMF.ModelSystemModel,System.String@,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ExportModelSystemAsString(XTMF.ModelSystemModel,System.String@,System.String@)
+  id: ExportModelSystemAsString(XTMF.ModelSystemModel,System.String@,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ExportModelSystemAsString(ModelSystemModel, out String, ref String)
+  nameWithType: ProjectEditingSession.ExportModelSystemAsString(ModelSystemModel, out String, ref String)
+  fullName: XTMF.ProjectEditingSession.ExportModelSystemAsString(XTMF.ModelSystemModel, out System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExportModelSystemAsString
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 258
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nExport the model system as a string.\n"
+  example: []
+  syntax:
+    content: public bool ExportModelSystemAsString(ModelSystemModel ms, out string modelSystemAsString, ref string error)
+    parameters:
+    - id: ms
+      type: XTMF.ModelSystemModel
+      description: The model system to export
+    - id: modelSystemAsString
+      type: System.String
+      description: The string to export the model system to.
+    - id: error
+      type: System.String
+      description: A description of the error if one occurs
+    return:
+      type: System.Boolean
+      description: True if successful, false with a description of the error.
+    content.vb: Public Function ExportModelSystemAsString(ms As ModelSystemModel, ByRef modelSystemAsString As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ExportModelSystemAsString*
+  nameWithType.vb: ProjectEditingSession.ExportModelSystemAsString(ModelSystemModel, ByRef String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ExportModelSystemAsString(XTMF.ModelSystemModel, ByRef System.String, ByRef System.String)
+  name.vb: ExportModelSystemAsString(ModelSystemModel, ByRef String, ByRef String)
+- uid: XTMF.ProjectEditingSession.ExportModelSystemAsString(System.Int32,System.String@,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ExportModelSystemAsString(System.Int32,System.String@,System.String@)
+  id: ExportModelSystemAsString(System.Int32,System.String@,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ExportModelSystemAsString(Int32, out String, ref String)
+  nameWithType: ProjectEditingSession.ExportModelSystemAsString(Int32, out String, ref String)
+  fullName: XTMF.ProjectEditingSession.ExportModelSystemAsString(System.Int32, out System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExportModelSystemAsString
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 266
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool ExportModelSystemAsString(int modelSystemIndex, out string modelSystemAsString, ref string error)
+    parameters:
+    - id: modelSystemIndex
+      type: System.Int32
+    - id: modelSystemAsString
+      type: System.String
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExportModelSystemAsString(modelSystemIndex As Integer, ByRef modelSystemAsString As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ExportModelSystemAsString*
+  nameWithType.vb: ProjectEditingSession.ExportModelSystemAsString(Int32, ByRef String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ExportModelSystemAsString(System.Int32, ByRef System.String, ByRef System.String)
+  name.vb: ExportModelSystemAsString(Int32, ByRef String, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String@)
+  id: AddModelSystem(XTMF.ModelSystemModel,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddModelSystem(ModelSystemModel, ref String)
+  nameWithType: ProjectEditingSession.AddModelSystem(ModelSystemModel, ref String)
+  fullName: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 280
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a model system to the project\n"
+  example: []
+  syntax:
+    content: public bool AddModelSystem(ModelSystemModel modelSystem, ref string error)
+    parameters:
+    - id: modelSystem
+      type: XTMF.ModelSystemModel
+      description: The model system to add to the project
+    - id: error
+      type: System.String
+      description: An error message in case of failure
+    return:
+      type: System.Boolean
+      description: True if the model system was added successfully
+    content.vb: Public Function AddModelSystem(modelSystem As ModelSystemModel, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddModelSystem(ModelSystemModel, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel, ByRef System.String)
+  name.vb: AddModelSystem(ModelSystemModel, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel,System.String,System.String@)
+  id: AddModelSystem(XTMF.ModelSystemModel,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddModelSystem(ModelSystemModel, String, ref String)
+  nameWithType: ProjectEditingSession.AddModelSystem(ModelSystemModel, String, ref String)
+  fullName: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 296
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a model system to the project\n"
+  example: []
+  syntax:
+    content: public bool AddModelSystem(ModelSystemModel modelSystem, string newName, ref string error)
+    parameters:
+    - id: modelSystem
+      type: XTMF.ModelSystemModel
+      description: The model system to add to the project
+    - id: newName
+      type: System.String
+      description: The name to use for this new model system
+    - id: error
+      type: System.String
+      description: An error message in case of failure
+    return:
+      type: System.Boolean
+      description: True if the model system was added successfully
+    content.vb: Public Function AddModelSystem(modelSystem As ModelSystemModel, newName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddModelSystem(ModelSystemModel, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddModelSystem(XTMF.ModelSystemModel, System.String, ByRef System.String)
+  name.vb: AddModelSystem(ModelSystemModel, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.RenameModelSystem(XTMF.IModelSystemStructure,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.RenameModelSystem(XTMF.IModelSystemStructure,System.String,System.String@)
+  id: RenameModelSystem(XTMF.IModelSystemStructure,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: RenameModelSystem(IModelSystemStructure, String, ref String)
+  nameWithType: ProjectEditingSession.RenameModelSystem(IModelSystemStructure, String, ref String)
+  fullName: XTMF.ProjectEditingSession.RenameModelSystem(XTMF.IModelSystemStructure, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RenameModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 312
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nRenames the model system within the project\n"
+  example: []
+  syntax:
+    content: public bool RenameModelSystem(IModelSystemStructure root, string newName, ref string error)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: The root structure of the model system to rename
+    - id: newName
+      type: System.String
+      description: The name to set this model system to.
+    - id: error
+      type: System.String
+      description: An error message that describes why this operation has failed.
+    return:
+      type: System.Boolean
+      description: True if the model system was renamed, if not the error will describe why not.
+    content.vb: Public Function RenameModelSystem(root As IModelSystemStructure, newName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.RenameModelSystem*
+  nameWithType.vb: ProjectEditingSession.RenameModelSystem(IModelSystemStructure, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.RenameModelSystem(XTMF.IModelSystemStructure, System.String, ByRef System.String)
+  name.vb: RenameModelSystem(IModelSystemStructure, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  id: CloneModelSystemAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: CloneModelSystemAs(IModelSystemStructure, String, ref String)
+  nameWithType: ProjectEditingSession.CloneModelSystemAs(IModelSystemStructure, String, ref String)
+  fullName: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.IModelSystemStructure, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneModelSystemAs
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 345
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nClone the given model system with a new name\n"
+  example: []
+  syntax:
+    content: public bool CloneModelSystemAs(IModelSystemStructure root, string name, ref string error)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: ''
+    - id: name
+      type: System.String
+      description: ''
+    - id: error
+      type: System.String
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Function CloneModelSystemAs(root As IModelSystemStructure, name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.CloneModelSystemAs*
+  nameWithType.vb: ProjectEditingSession.CloneModelSystemAs(IModelSystemStructure, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.IModelSystemStructure, System.String, ByRef System.String)
+  name.vb: CloneModelSystemAs(IModelSystemStructure, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.XTMFRuntime,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.ILinkedParameter},System.String,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.XTMFRuntime,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.ILinkedParameter},System.String,System.String,System.String@)
+  id: CloneModelSystemAs(XTMF.XTMFRuntime,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.ILinkedParameter},System.String,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: CloneModelSystemAs(XTMFRuntime, IModelSystemStructure, List<ILinkedParameter>, String, String, ref String)
+  nameWithType: ProjectEditingSession.CloneModelSystemAs(XTMFRuntime, IModelSystemStructure, List<ILinkedParameter>, String, String, ref String)
+  fullName: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.XTMFRuntime, XTMF.IModelSystemStructure, System.Collections.Generic.List<XTMF.ILinkedParameter>, System.String, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneModelSystemAs
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 377
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nClone the given model system with a new name\n"
+  example: []
+  syntax:
+    content: public static bool CloneModelSystemAs(XTMFRuntime runtime, IModelSystemStructure root, List<ILinkedParameter> linkedParameters, string description, string name, ref string error)
+    parameters:
+    - id: runtime
+      type: XTMF.XTMFRuntime
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: ''
+    - id: linkedParameters
+      type: System.Collections.Generic.List{XTMF.ILinkedParameter}
+    - id: description
+      type: System.String
+    - id: name
+      type: System.String
+      description: ''
+    - id: error
+      type: System.String
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function CloneModelSystemAs(runtime As XTMFRuntime, root As IModelSystemStructure, linkedParameters As List(Of ILinkedParameter), description As String, name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.CloneModelSystemAs*
+  nameWithType.vb: ProjectEditingSession.CloneModelSystemAs(XTMFRuntime, IModelSystemStructure, List(Of ILinkedParameter), String, String, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: XTMF.ProjectEditingSession.CloneModelSystemAs(XTMF.XTMFRuntime, XTMF.IModelSystemStructure, System.Collections.Generic.List(Of XTMF.ILinkedParameter), System.String, System.String, ByRef System.String)
+  name.vb: CloneModelSystemAs(XTMFRuntime, IModelSystemStructure, List(Of ILinkedParameter), String, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.ExportModelSystem(System.Int32,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.ExportModelSystem(System.Int32,System.String,System.String@)
+  id: ExportModelSystem(System.Int32,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ExportModelSystem(Int32, String, ref String)
+  nameWithType: ProjectEditingSession.ExportModelSystem(Int32, String, ref String)
+  fullName: XTMF.ProjectEditingSession.ExportModelSystem(System.Int32, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExportModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 397
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nExport a model system within a project to file.\n"
+  example: []
+  syntax:
+    content: public bool ExportModelSystem(int modelSystemIndex, string fileName, ref string error)
+    parameters:
+    - id: modelSystemIndex
+      type: System.Int32
+      description: The index of the model system to export
+    - id: fileName
+      type: System.String
+      description: The name of the file to save it to.
+    - id: error
+      type: System.String
+      description: A description of the error that occurred if one did.
+    return:
+      type: System.Boolean
+      description: False if there was an error, true otherwise.
+    content.vb: Public Function ExportModelSystem(modelSystemIndex As Integer, fileName As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ExportModelSystem*
+  nameWithType.vb: ProjectEditingSession.ExportModelSystem(Int32, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.ExportModelSystem(System.Int32, System.String, ByRef System.String)
+  name.vb: ExportModelSystem(Int32, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.AddExternalModelSystem(XTMF.IModelSystem,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.AddExternalModelSystem(XTMF.IModelSystem,System.String,System.String@)
+  id: AddExternalModelSystem(XTMF.IModelSystem,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: AddExternalModelSystem(IModelSystem, String, ref String)
+  nameWithType: ProjectEditingSession.AddExternalModelSystem(IModelSystem, String, ref String)
+  fullName: XTMF.ProjectEditingSession.AddExternalModelSystem(XTMF.IModelSystem, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddExternalModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 414
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool AddExternalModelSystem(IModelSystem system, string name, ref string error)
+    parameters:
+    - id: system
+      type: XTMF.IModelSystem
+    - id: name
+      type: System.String
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function AddExternalModelSystem(system As IModelSystem, name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.AddExternalModelSystem*
+  nameWithType.vb: ProjectEditingSession.AddExternalModelSystem(IModelSystem, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.AddExternalModelSystem(XTMF.IModelSystem, System.String, ByRef System.String)
+  name.vb: AddExternalModelSystem(IModelSystem, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.CloneModelSystem(XTMF.IModelSystemStructure,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.CloneModelSystem(XTMF.IModelSystemStructure,System.String@)
+  id: CloneModelSystem(XTMF.IModelSystemStructure,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: CloneModelSystem(IModelSystemStructure, ref String)
+  nameWithType: ProjectEditingSession.CloneModelSystem(IModelSystemStructure, ref String)
+  fullName: XTMF.ProjectEditingSession.CloneModelSystem(XTMF.IModelSystemStructure, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 428
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ModelSystem CloneModelSystem(IModelSystemStructure root, ref string error)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+    - id: error
+      type: System.String
+    return:
+      type: XTMF.ModelSystem
+    content.vb: Public Function CloneModelSystem(root As IModelSystemStructure, ByRef error As String) As ModelSystem
+  overload: XTMF.ProjectEditingSession.CloneModelSystem*
+  nameWithType.vb: ProjectEditingSession.CloneModelSystem(IModelSystemStructure, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.CloneModelSystem(XTMF.IModelSystemStructure, ByRef System.String)
+  name.vb: CloneModelSystem(IModelSystemStructure, ByRef String)
+- uid: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.CloneModelSystemToProjectAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  id: CloneModelSystemToProjectAs(XTMF.IModelSystemStructure,System.String,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: CloneModelSystemToProjectAs(IModelSystemStructure, String, ref String)
+  nameWithType: ProjectEditingSession.CloneModelSystemToProjectAs(IModelSystemStructure, String, ref String)
+  fullName: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs(XTMF.IModelSystemStructure, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneModelSystemToProjectAs
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 430
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool CloneModelSystemToProjectAs(IModelSystemStructure root, string name, ref string error)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+    - id: name
+      type: System.String
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function CloneModelSystemToProjectAs(root As IModelSystemStructure, name As String, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs*
+  nameWithType.vb: ProjectEditingSession.CloneModelSystemToProjectAs(IModelSystemStructure, String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs(XTMF.IModelSystemStructure, System.String, ByRef System.String)
+  name.vb: CloneModelSystemToProjectAs(IModelSystemStructure, String, ByRef String)
+- uid: XTMF.ProjectEditingSession.RemoveModelSystem(System.Int32,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.RemoveModelSystem(System.Int32,System.String@)
+  id: RemoveModelSystem(System.Int32,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: RemoveModelSystem(Int32, ref String)
+  nameWithType: ProjectEditingSession.RemoveModelSystem(Int32, ref String)
+  fullName: XTMF.ProjectEditingSession.RemoveModelSystem(System.Int32, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RemoveModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 473
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nRemoves a model system from the project\n"
+  example: []
+  syntax:
+    content: public bool RemoveModelSystem(int index, ref string error)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The index to remove
+    - id: error
+      type: System.String
+      description: An error message in case of failure
+    return:
+      type: System.Boolean
+      description: True if the model system was removed successfully.
+    content.vb: Public Function RemoveModelSystem(index As Integer, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.RemoveModelSystem*
+  nameWithType.vb: ProjectEditingSession.RemoveModelSystem(Int32, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.RemoveModelSystem(System.Int32, ByRef System.String)
+  name.vb: RemoveModelSystem(Int32, ByRef String)
+- uid: XTMF.ProjectEditingSession.GetPreviousRuns
+  commentId: M:XTMF.ProjectEditingSession.GetPreviousRuns
+  id: GetPreviousRuns
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: GetPreviousRuns()
+  nameWithType: ProjectEditingSession.GetPreviousRuns()
+  fullName: XTMF.ProjectEditingSession.GetPreviousRuns()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetPreviousRuns
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 508
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGet a list of previous runs for this project.\n"
+  example: []
+  syntax:
+    content: public List<string> GetPreviousRuns()
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: A list of paths to directories containing
+    content.vb: Public Function GetPreviousRuns As List(Of String)
+  overload: XTMF.ProjectEditingSession.GetPreviousRuns*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.LoadPreviousRun(System.String,System.String@,XTMF.ModelSystemEditingSession@)
+  commentId: M:XTMF.ProjectEditingSession.LoadPreviousRun(System.String,System.String@,XTMF.ModelSystemEditingSession@)
+  id: LoadPreviousRun(System.String,System.String@,XTMF.ModelSystemEditingSession@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: LoadPreviousRun(String, ref String, out ModelSystemEditingSession)
+  nameWithType: ProjectEditingSession.LoadPreviousRun(String, ref String, out ModelSystemEditingSession)
+  fullName: XTMF.ProjectEditingSession.LoadPreviousRun(System.String, ref System.String, out XTMF.ModelSystemEditingSession)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LoadPreviousRun
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 522
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nLoad a previous run from file\n"
+  example: []
+  syntax:
+    content: public bool LoadPreviousRun(string path, ref string error, out ModelSystemEditingSession session)
+    parameters:
+    - id: path
+      type: System.String
+      description: The directory the previous run was in.
+    - id: error
+      type: System.String
+      description: An error in case of failure
+    - id: session
+      type: XTMF.ModelSystemEditingSession
+    return:
+      type: System.Boolean
+      description: An editing session if successful, null otherwise.
+    content.vb: Public Function LoadPreviousRun(path As String, ByRef error As String, ByRef session As ModelSystemEditingSession) As Boolean
+  overload: XTMF.ProjectEditingSession.LoadPreviousRun*
+  nameWithType.vb: ProjectEditingSession.LoadPreviousRun(String, ByRef String, ByRef ModelSystemEditingSession)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.LoadPreviousRun(System.String, ByRef System.String, ByRef XTMF.ModelSystemEditingSession)
+  name.vb: LoadPreviousRun(String, ByRef String, ByRef ModelSystemEditingSession)
+- uid: XTMF.ProjectEditingSession.MoveModelSystem(System.Int32,System.Int32,System.String@)
+  commentId: M:XTMF.ProjectEditingSession.MoveModelSystem(System.Int32,System.Int32,System.String@)
+  id: MoveModelSystem(System.Int32,System.Int32,System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: MoveModelSystem(Int32, Int32, ref String)
+  nameWithType: ProjectEditingSession.MoveModelSystem(Int32, Int32, ref String)
+  fullName: XTMF.ProjectEditingSession.MoveModelSystem(System.Int32, System.Int32, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MoveModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 563
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nMove the model systems inside of a project.\n"
+  example: []
+  syntax:
+    content: public bool MoveModelSystem(int currentIndex, int newIndex, ref string error)
+    parameters:
+    - id: currentIndex
+      type: System.Int32
+      description: The index to move
+    - id: newIndex
+      type: System.Int32
+      description: The new index for the model system
+    - id: error
+      type: System.String
+      description: If there is a failure this will contain a message
+    return:
+      type: System.Boolean
+      description: True if successful, false otherwise
+    content.vb: Public Function MoveModelSystem(currentIndex As Integer, newIndex As Integer, ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.MoveModelSystem*
+  nameWithType.vb: ProjectEditingSession.MoveModelSystem(Int32, Int32, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.MoveModelSystem(System.Int32, System.Int32, ByRef System.String)
+  name.vb: MoveModelSystem(Int32, Int32, ByRef String)
+- uid: XTMF.ProjectEditingSession.GetConfiguration
+  commentId: M:XTMF.ProjectEditingSession.GetConfiguration
+  id: GetConfiguration
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: GetConfiguration()
+  nameWithType: ProjectEditingSession.GetConfiguration()
+  fullName: XTMF.ProjectEditingSession.GetConfiguration()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetConfiguration
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 605
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGets the configuration for the XTMF runtime environment\n"
+  example: []
+  syntax:
+    content: public IConfiguration GetConfiguration()
+    return:
+      type: XTMF.IConfiguration
+      description: ''
+    content.vb: Public Function GetConfiguration As IConfiguration
+  overload: XTMF.ProjectEditingSession.GetConfiguration*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.EditModelSystem(System.Int32)
+  commentId: M:XTMF.ProjectEditingSession.EditModelSystem(System.Int32)
+  id: EditModelSystem(System.Int32)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: EditModelSystem(Int32)
+  nameWithType: ProjectEditingSession.EditModelSystem(Int32)
+  fullName: XTMF.ProjectEditingSession.EditModelSystem(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EditModelSystem
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 611
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nEdit a model system inside of the project\n"
+  example: []
+  syntax:
+    content: public ModelSystemEditingSession EditModelSystem(int modelSystemIndex)
+    parameters:
+    - id: modelSystemIndex
+      type: System.Int32
+      description: The index of the model system inside of the project
+    return:
+      type: XTMF.ModelSystemEditingSession
+    content.vb: Public Function EditModelSystem(modelSystemIndex As Integer) As ModelSystemEditingSession
+  overload: XTMF.ProjectEditingSession.EditModelSystem*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.Dispose
+  commentId: M:XTMF.ProjectEditingSession.Dispose
+  id: Dispose
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: ProjectEditingSession.Dispose()
+  fullName: XTMF.ProjectEditingSession.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 673
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nClose the session and all model editing sessions connected to it.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: XTMF.ProjectEditingSession.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.DeleteProject(System.String@)
+  commentId: M:XTMF.ProjectEditingSession.DeleteProject(System.String@)
+  id: DeleteProject(System.String@)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: DeleteProject(ref String)
+  nameWithType: ProjectEditingSession.DeleteProject(ref String)
+  fullName: XTMF.ProjectEditingSession.DeleteProject(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DeleteProject
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 690
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool DeleteProject(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function DeleteProject(ByRef error As String) As Boolean
+  overload: XTMF.ProjectEditingSession.DeleteProject*
+  nameWithType.vb: ProjectEditingSession.DeleteProject(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ProjectEditingSession.DeleteProject(ByRef System.String)
+  name.vb: DeleteProject(ByRef String)
+- uid: XTMF.ProjectEditingSession.GetRuntime
+  commentId: M:XTMF.ProjectEditingSession.GetRuntime
+  id: GetRuntime
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: GetRuntime()
+  nameWithType: ProjectEditingSession.GetRuntime()
+  fullName: XTMF.ProjectEditingSession.GetRuntime()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetRuntime
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 697
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public XTMFRuntime GetRuntime()
+    return:
+      type: XTMF.XTMFRuntime
+    content.vb: Public Function GetRuntime As XTMFRuntime
+  overload: XTMF.ProjectEditingSession.GetRuntime*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ProjectEditingSession.ValidateModelSystemName(System.String)
+  commentId: M:XTMF.ProjectEditingSession.ValidateModelSystemName(System.String)
+  id: ValidateModelSystemName(System.String)
+  parent: XTMF.ProjectEditingSession
+  langs:
+  - csharp
+  - vb
+  name: ValidateModelSystemName(String)
+  nameWithType: ProjectEditingSession.ValidateModelSystemName(String)
+  fullName: XTMF.ProjectEditingSession.ValidateModelSystemName(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ProjectEditingSession.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidateModelSystemName
+    path: ../../../XTMF/Code/XTMF1.1/Editing/ProjectEditingSession.cs
+    startLine: 699
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool ValidateModelSystemName(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function ValidateModelSystemName(name As String) As Boolean
+  overload: XTMF.ProjectEditingSession.ValidateModelSystemName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.Project
+  commentId: T:XTMF.Project
+  parent: XTMF
+  isExternal: false
+  name: Project
+  nameWithType: Project
+  fullName: XTMF.Project
+- uid: XTMF.ProjectEditingSession.#ctor*
+  commentId: Overload:XTMF.ProjectEditingSession.#ctor
+  isExternal: false
+  name: ProjectEditingSession
+  nameWithType: ProjectEditingSession.ProjectEditingSession
+  fullName: XTMF.ProjectEditingSession.ProjectEditingSession
+- uid: XTMF.XTMFRuntime
+  commentId: T:XTMF.XTMFRuntime
+  parent: XTMF
+  isExternal: false
+  name: XTMFRuntime
+  nameWithType: XTMFRuntime
+  fullName: XTMF.XTMFRuntime
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: XTMF.ProjectEditingSession.Name*
+  commentId: Overload:XTMF.ProjectEditingSession.Name
+  isExternal: false
+  name: Name
+  nameWithType: ProjectEditingSession.Name
+  fullName: XTMF.ProjectEditingSession.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: false
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: XTMF.ProjectEditingSession.ReameProject*
+  commentId: Overload:XTMF.ProjectEditingSession.ReameProject
+  isExternal: false
+  name: ReameProject
+  nameWithType: ProjectEditingSession.ReameProject
+  fullName: XTMF.ProjectEditingSession.ReameProject
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.ProjectEditingSession.CloneProjectAs*
+  commentId: Overload:XTMF.ProjectEditingSession.CloneProjectAs
+  isExternal: false
+  name: CloneProjectAs
+  nameWithType: ProjectEditingSession.CloneProjectAs
+  fullName: XTMF.ProjectEditingSession.CloneProjectAs
+- uid: XTMF.ProjectEditingSession.AddModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.AddModelSystem
+  isExternal: false
+  name: AddModelSystem
+  nameWithType: ProjectEditingSession.AddModelSystem
+  fullName: XTMF.ProjectEditingSession.AddModelSystem
+- uid: XTMF.ModelSystem
+  commentId: T:XTMF.ModelSystem
+  parent: XTMF
+  isExternal: false
+  name: ModelSystem
+  nameWithType: ModelSystem
+  fullName: XTMF.ModelSystem
+- uid: XTMF.ProjectEditingSession.ImportModelSystemFromString*
+  commentId: Overload:XTMF.ProjectEditingSession.ImportModelSystemFromString
+  isExternal: false
+  name: ImportModelSystemFromString
+  nameWithType: ProjectEditingSession.ImportModelSystemFromString
+  fullName: XTMF.ProjectEditingSession.ImportModelSystemFromString
+- uid: XTMF.ProjectEditingSession.ImportModelSystemFromFile*
+  commentId: Overload:XTMF.ProjectEditingSession.ImportModelSystemFromFile
+  isExternal: false
+  name: ImportModelSystemFromFile
+  nameWithType: ProjectEditingSession.ImportModelSystemFromFile
+  fullName: XTMF.ProjectEditingSession.ImportModelSystemFromFile
+- uid: XTMF.ProjectEditingSession.ExportModelSystemAsString*
+  commentId: Overload:XTMF.ProjectEditingSession.ExportModelSystemAsString
+  isExternal: false
+  name: ExportModelSystemAsString
+  nameWithType: ProjectEditingSession.ExportModelSystemAsString
+  fullName: XTMF.ProjectEditingSession.ExportModelSystemAsString
+- uid: XTMF.ModelSystemModel
+  commentId: T:XTMF.ModelSystemModel
+  parent: XTMF
+  isExternal: false
+  name: ModelSystemModel
+  nameWithType: ModelSystemModel
+  fullName: XTMF.ModelSystemModel
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XTMF.ProjectEditingSession.RenameModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.RenameModelSystem
+  isExternal: false
+  name: RenameModelSystem
+  nameWithType: ProjectEditingSession.RenameModelSystem
+  fullName: XTMF.ProjectEditingSession.RenameModelSystem
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: XTMF.ProjectEditingSession.CloneModelSystemAs*
+  commentId: Overload:XTMF.ProjectEditingSession.CloneModelSystemAs
+  isExternal: false
+  name: CloneModelSystemAs
+  nameWithType: ProjectEditingSession.CloneModelSystemAs
+  fullName: XTMF.ProjectEditingSession.CloneModelSystemAs
+- uid: System.Collections.Generic.List{XTMF.ILinkedParameter}
+  commentId: T:System.Collections.Generic.List{XTMF.ILinkedParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ILinkedParameter>
+  nameWithType: List<ILinkedParameter>
+  fullName: System.Collections.Generic.List<XTMF.ILinkedParameter>
+  nameWithType.vb: List(Of ILinkedParameter)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ILinkedParameter)
+  name.vb: List(Of ILinkedParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ILinkedParameter
+    name: ILinkedParameter
+    nameWithType: ILinkedParameter
+    fullName: XTMF.ILinkedParameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ILinkedParameter
+    name: ILinkedParameter
+    nameWithType: ILinkedParameter
+    fullName: XTMF.ILinkedParameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.ProjectEditingSession.ExportModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.ExportModelSystem
+  isExternal: false
+  name: ExportModelSystem
+  nameWithType: ProjectEditingSession.ExportModelSystem
+  fullName: XTMF.ProjectEditingSession.ExportModelSystem
+- uid: XTMF.ProjectEditingSession.AddExternalModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.AddExternalModelSystem
+  isExternal: false
+  name: AddExternalModelSystem
+  nameWithType: ProjectEditingSession.AddExternalModelSystem
+  fullName: XTMF.ProjectEditingSession.AddExternalModelSystem
+- uid: XTMF.IModelSystem
+  commentId: T:XTMF.IModelSystem
+  parent: XTMF
+  isExternal: false
+  name: IModelSystem
+  nameWithType: IModelSystem
+  fullName: XTMF.IModelSystem
+- uid: XTMF.ProjectEditingSession.CloneModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.CloneModelSystem
+  isExternal: false
+  name: CloneModelSystem
+  nameWithType: ProjectEditingSession.CloneModelSystem
+  fullName: XTMF.ProjectEditingSession.CloneModelSystem
+- uid: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs*
+  commentId: Overload:XTMF.ProjectEditingSession.CloneModelSystemToProjectAs
+  isExternal: false
+  name: CloneModelSystemToProjectAs
+  nameWithType: ProjectEditingSession.CloneModelSystemToProjectAs
+  fullName: XTMF.ProjectEditingSession.CloneModelSystemToProjectAs
+- uid: XTMF.ProjectEditingSession.RemoveModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.RemoveModelSystem
+  isExternal: false
+  name: RemoveModelSystem
+  nameWithType: ProjectEditingSession.RemoveModelSystem
+  fullName: XTMF.ProjectEditingSession.RemoveModelSystem
+- uid: XTMF.ProjectEditingSession.GetPreviousRuns*
+  commentId: Overload:XTMF.ProjectEditingSession.GetPreviousRuns
+  isExternal: false
+  name: GetPreviousRuns
+  nameWithType: ProjectEditingSession.GetPreviousRuns
+  fullName: XTMF.ProjectEditingSession.GetPreviousRuns
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<String>
+  nameWithType: List<String>
+  fullName: System.Collections.Generic.List<System.String>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of System.String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.ProjectEditingSession.LoadPreviousRun*
+  commentId: Overload:XTMF.ProjectEditingSession.LoadPreviousRun
+  isExternal: false
+  name: LoadPreviousRun
+  nameWithType: ProjectEditingSession.LoadPreviousRun
+  fullName: XTMF.ProjectEditingSession.LoadPreviousRun
+- uid: XTMF.ModelSystemEditingSession
+  commentId: T:XTMF.ModelSystemEditingSession
+  parent: XTMF
+  isExternal: false
+  name: ModelSystemEditingSession
+  nameWithType: ModelSystemEditingSession
+  fullName: XTMF.ModelSystemEditingSession
+- uid: XTMF.ProjectEditingSession.MoveModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.MoveModelSystem
+  isExternal: false
+  name: MoveModelSystem
+  nameWithType: ProjectEditingSession.MoveModelSystem
+  fullName: XTMF.ProjectEditingSession.MoveModelSystem
+- uid: XTMF.ProjectEditingSession.GetConfiguration*
+  commentId: Overload:XTMF.ProjectEditingSession.GetConfiguration
+  isExternal: false
+  name: GetConfiguration
+  nameWithType: ProjectEditingSession.GetConfiguration
+  fullName: XTMF.ProjectEditingSession.GetConfiguration
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: XTMF.ProjectEditingSession.EditModelSystem*
+  commentId: Overload:XTMF.ProjectEditingSession.EditModelSystem
+  isExternal: false
+  name: EditModelSystem
+  nameWithType: ProjectEditingSession.EditModelSystem
+  fullName: XTMF.ProjectEditingSession.EditModelSystem
+- uid: XTMF.ProjectEditingSession.Dispose*
+  commentId: Overload:XTMF.ProjectEditingSession.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: ProjectEditingSession.Dispose
+  fullName: XTMF.ProjectEditingSession.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.ProjectEditingSession.DeleteProject*
+  commentId: Overload:XTMF.ProjectEditingSession.DeleteProject
+  isExternal: false
+  name: DeleteProject
+  nameWithType: ProjectEditingSession.DeleteProject
+  fullName: XTMF.ProjectEditingSession.DeleteProject
+- uid: XTMF.ProjectEditingSession.GetRuntime*
+  commentId: Overload:XTMF.ProjectEditingSession.GetRuntime
+  isExternal: false
+  name: GetRuntime
+  nameWithType: ProjectEditingSession.GetRuntime
+  fullName: XTMF.ProjectEditingSession.GetRuntime
+- uid: XTMF.ProjectEditingSession.ValidateModelSystemName*
+  commentId: Overload:XTMF.ProjectEditingSession.ValidateModelSystemName
+  isExternal: false
+  name: ValidateModelSystemName
+  nameWithType: ProjectEditingSession.ValidateModelSystemName
+  fullName: XTMF.ProjectEditingSession.ValidateModelSystemName

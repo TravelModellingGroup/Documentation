@@ -1,0 +1,1082 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  id: IModelSystemStructure
+  parent: XTMF
+  children:
+  - XTMF.IModelSystemStructure.Add(System.String,System.Type)
+  - XTMF.IModelSystemStructure.Add(XTMF.IModelSystemStructure)
+  - XTMF.IModelSystemStructure.Children
+  - XTMF.IModelSystemStructure.Clone
+  - XTMF.IModelSystemStructure.CreateCollectionMember(System.Type)
+  - XTMF.IModelSystemStructure.Description
+  - XTMF.IModelSystemStructure.GetPossibleModules(XTMF.IModelSystemStructure)
+  - XTMF.IModelSystemStructure.IsCollection
+  - XTMF.IModelSystemStructure.IsMetaModule
+  - XTMF.IModelSystemStructure.Module
+  - XTMF.IModelSystemStructure.Name
+  - XTMF.IModelSystemStructure.Parameters
+  - XTMF.IModelSystemStructure.ParentFieldName
+  - XTMF.IModelSystemStructure.ParentFieldType
+  - XTMF.IModelSystemStructure.Required
+  - XTMF.IModelSystemStructure.Save(System.IO.Stream)
+  - XTMF.IModelSystemStructure.Save(System.String)
+  - XTMF.IModelSystemStructure.Save(System.Xml.XmlWriter)
+  - XTMF.IModelSystemStructure.Type
+  - XTMF.IModelSystemStructure.Validate(System.String@,XTMF.IModelSystemStructure)
+  langs:
+  - csharp
+  - vb
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+  type: Interface
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IModelSystemStructure
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 29
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nDefines a meta structure for the model system\nAllowing for recursive definition in a tree format\n"
+  example: []
+  syntax:
+    content: public interface IModelSystemStructure
+    content.vb: Public Interface IModelSystemStructure
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: XTMF.IModelSystemStructure.Children
+  commentId: P:XTMF.IModelSystemStructure.Children
+  id: Children
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: IModelSystemStructure.Children
+  fullName: XTMF.IModelSystemStructure.Children
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Children
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 34
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe children of this element\n"
+  example: []
+  syntax:
+    content: IList<IModelSystemStructure> Children { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{XTMF.IModelSystemStructure}
+    content.vb: ReadOnly Property Children As IList(Of IModelSystemStructure)
+  overload: XTMF.IModelSystemStructure.Children*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IModelSystemStructure.Description
+  commentId: P:XTMF.IModelSystemStructure.Description
+  id: Description
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: IModelSystemStructure.Description
+  fullName: XTMF.IModelSystemStructure.Description
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Description
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 39
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nWhat this Element is used for\n"
+  example: []
+  syntax:
+    content: string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Description As String
+  overload: XTMF.IModelSystemStructure.Description*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.IsCollection
+  commentId: P:XTMF.IModelSystemStructure.IsCollection
+  id: IsCollection
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: IsCollection
+  nameWithType: IModelSystemStructure.IsCollection
+  fullName: XTMF.IModelSystemStructure.IsCollection
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsCollection
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 48
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nCheck to see if this ProjectStructure is in fact a collection node.\n"
+  remarks: "\nIf this is a collection node the Type and Model fields are invalid and instead you\nshould be using the CollectionMembers property.\n"
+  example: []
+  syntax:
+    content: bool IsCollection { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsCollection As Boolean
+  overload: XTMF.IModelSystemStructure.IsCollection*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IModelSystemStructure.Module
+  commentId: P:XTMF.IModelSystemStructure.Module
+  id: Module
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Module
+  nameWithType: IModelSystemStructure.Module
+  fullName: XTMF.IModelSystemStructure.Module
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Module
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 53
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe actual model that this represents\n"
+  example: []
+  syntax:
+    content: IModule Module { get; set; }
+    parameters: []
+    return:
+      type: XTMF.IModule
+    content.vb: Property Module As IModule
+  overload: XTMF.IModelSystemStructure.Module*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.Name
+  commentId: P:XTMF.IModelSystemStructure.Name
+  id: Name
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: IModelSystemStructure.Name
+  fullName: XTMF.IModelSystemStructure.Name
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 58
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe name of the element\n"
+  example: []
+  syntax:
+    content: string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property Name As String
+  overload: XTMF.IModelSystemStructure.Name*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.Parameters
+  commentId: P:XTMF.IModelSystemStructure.Parameters
+  id: Parameters
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Parameters
+  nameWithType: IModelSystemStructure.Parameters
+  fullName: XTMF.IModelSystemStructure.Parameters
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parameters
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 63
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: IModuleParameters Parameters { get; set; }
+    parameters: []
+    return:
+      type: XTMF.IModuleParameters
+    content.vb: Property Parameters As IModuleParameters
+  overload: XTMF.IModelSystemStructure.Parameters*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.ParentFieldName
+  commentId: P:XTMF.IModelSystemStructure.ParentFieldName
+  id: ParentFieldName
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: ParentFieldName
+  nameWithType: IModelSystemStructure.ParentFieldName
+  fullName: XTMF.IModelSystemStructure.ParentFieldName
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParentFieldName
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 65
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: string ParentFieldName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Property ParentFieldName As String
+  overload: XTMF.IModelSystemStructure.ParentFieldName*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.ParentFieldType
+  commentId: P:XTMF.IModelSystemStructure.ParentFieldType
+  id: ParentFieldType
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: ParentFieldType
+  nameWithType: IModelSystemStructure.ParentFieldType
+  fullName: XTMF.IModelSystemStructure.ParentFieldType
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParentFieldType
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 70
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe type that we need to fit into\n"
+  example: []
+  syntax:
+    content: Type ParentFieldType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Property ParentFieldType As Type
+  overload: XTMF.IModelSystemStructure.ParentFieldType*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.Required
+  commentId: P:XTMF.IModelSystemStructure.Required
+  id: Required
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Required
+  nameWithType: IModelSystemStructure.Required
+  fullName: XTMF.IModelSystemStructure.Required
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Required
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 77
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nIs it required to have a value set for this\npoint in the structure to be\nable to execute\n"
+  example: []
+  syntax:
+    content: bool Required { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property Required As Boolean
+  overload: XTMF.IModelSystemStructure.Required*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.Type
+  commentId: P:XTMF.IModelSystemStructure.Type
+  id: Type
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: IModelSystemStructure.Type
+  fullName: XTMF.IModelSystemStructure.Type
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Type
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 82
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe type of the element\n"
+  example: []
+  syntax:
+    content: Type Type { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Property Type As Type
+  overload: XTMF.IModelSystemStructure.Type*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.IsMetaModule
+  commentId: P:XTMF.IModelSystemStructure.IsMetaModule
+  id: IsMetaModule
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: IsMetaModule
+  nameWithType: IModelSystemStructure.IsMetaModule
+  fullName: XTMF.IModelSystemStructure.IsMetaModule
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsMetaModule
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 88
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nNotify if the model system structure\nshould behave like a meta module\n"
+  example: []
+  syntax:
+    content: bool IsMetaModule { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Property IsMetaModule As Boolean
+  overload: XTMF.IModelSystemStructure.IsMetaModule*
+  modifiers.csharp:
+  - get
+  - set
+- uid: XTMF.IModelSystemStructure.Add(System.String,System.Type)
+  commentId: M:XTMF.IModelSystemStructure.Add(System.String,System.Type)
+  id: Add(System.String,System.Type)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Add(String, Type)
+  nameWithType: IModelSystemStructure.Add(String, Type)
+  fullName: XTMF.IModelSystemStructure.Add(System.String, System.Type)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 95
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nAdd a new child node\n"
+  example: []
+  syntax:
+    content: void Add(string name, Type type)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the child
+    - id: type
+      type: System.Type
+      description: The type of the child
+    content.vb: Sub Add(name As String, type As Type)
+  overload: XTMF.IModelSystemStructure.Add*
+- uid: XTMF.IModelSystemStructure.Add(XTMF.IModelSystemStructure)
+  commentId: M:XTMF.IModelSystemStructure.Add(XTMF.IModelSystemStructure)
+  id: Add(XTMF.IModelSystemStructure)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Add(IModelSystemStructure)
+  nameWithType: IModelSystemStructure.Add(IModelSystemStructure)
+  fullName: XTMF.IModelSystemStructure.Add(XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 101
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nAdd a new child node\n"
+  example: []
+  syntax:
+    content: void Add(IModelSystemStructure p)
+    parameters:
+    - id: p
+      type: XTMF.IModelSystemStructure
+      description: ''
+    content.vb: Sub Add(p As IModelSystemStructure)
+  overload: XTMF.IModelSystemStructure.Add*
+- uid: XTMF.IModelSystemStructure.Clone
+  commentId: M:XTMF.IModelSystemStructure.Clone
+  id: Clone
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: IModelSystemStructure.Clone()
+  fullName: XTMF.IModelSystemStructure.Clone()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Clone
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 107
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nMake an exact copy of this model system structure\n"
+  example: []
+  syntax:
+    content: IModelSystemStructure Clone()
+    return:
+      type: XTMF.IModelSystemStructure
+      description: A copy of this model system structure including all children
+    content.vb: Function Clone As IModelSystemStructure
+  overload: XTMF.IModelSystemStructure.Clone*
+- uid: XTMF.IModelSystemStructure.CreateCollectionMember(System.Type)
+  commentId: M:XTMF.IModelSystemStructure.CreateCollectionMember(System.Type)
+  id: CreateCollectionMember(System.Type)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: CreateCollectionMember(Type)
+  nameWithType: IModelSystemStructure.CreateCollectionMember(Type)
+  fullName: XTMF.IModelSystemStructure.CreateCollectionMember(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateCollectionMember
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 115
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nCreate a new IProjectStructure that can be used as a\ncollection member\n"
+  example: []
+  syntax:
+    content: IModelSystemStructure CreateCollectionMember(Type newType)
+    parameters:
+    - id: newType
+      type: System.Type
+      description: The type to make it from
+    return:
+      type: XTMF.IModelSystemStructure
+      description: The newly created project structure
+    content.vb: Function CreateCollectionMember(newType As Type) As IModelSystemStructure
+  overload: XTMF.IModelSystemStructure.CreateCollectionMember*
+- uid: XTMF.IModelSystemStructure.GetPossibleModules(XTMF.IModelSystemStructure)
+  commentId: M:XTMF.IModelSystemStructure.GetPossibleModules(XTMF.IModelSystemStructure)
+  id: GetPossibleModules(XTMF.IModelSystemStructure)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: GetPossibleModules(IModelSystemStructure)
+  nameWithType: IModelSystemStructure.GetPossibleModules(IModelSystemStructure)
+  fullName: XTMF.IModelSystemStructure.GetPossibleModules(XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetPossibleModules
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 122
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: List<Type> GetPossibleModules(IModelSystemStructure topModule)
+    parameters:
+    - id: topModule
+      type: XTMF.IModelSystemStructure
+      description: ''
+    return:
+      type: System.Collections.Generic.List{System.Type}
+      description: ''
+    content.vb: Function GetPossibleModules(topModule As IModelSystemStructure) As List(Of Type)
+  overload: XTMF.IModelSystemStructure.GetPossibleModules*
+- uid: XTMF.IModelSystemStructure.Save(System.String)
+  commentId: M:XTMF.IModelSystemStructure.Save(System.String)
+  id: Save(System.String)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Save(String)
+  nameWithType: IModelSystemStructure.Save(String)
+  fullName: XTMF.IModelSystemStructure.Save(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Save
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 127
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nSave the model system to disk\n"
+  example: []
+  syntax:
+    content: void Save(string fileName)
+    parameters:
+    - id: fileName
+      type: System.String
+    content.vb: Sub Save(fileName As String)
+  overload: XTMF.IModelSystemStructure.Save*
+- uid: XTMF.IModelSystemStructure.Save(System.IO.Stream)
+  commentId: M:XTMF.IModelSystemStructure.Save(System.IO.Stream)
+  id: Save(System.IO.Stream)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Save(Stream)
+  nameWithType: IModelSystemStructure.Save(Stream)
+  fullName: XTMF.IModelSystemStructure.Save(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Save
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 129
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: void Save(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    content.vb: Sub Save(stream As Stream)
+  overload: XTMF.IModelSystemStructure.Save*
+- uid: XTMF.IModelSystemStructure.Save(System.Xml.XmlWriter)
+  commentId: M:XTMF.IModelSystemStructure.Save(System.Xml.XmlWriter)
+  id: Save(System.Xml.XmlWriter)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Save(XmlWriter)
+  nameWithType: IModelSystemStructure.Save(XmlWriter)
+  fullName: XTMF.IModelSystemStructure.Save(System.Xml.XmlWriter)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Save
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 131
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: void Save(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    content.vb: Sub Save(writer As XmlWriter)
+  overload: XTMF.IModelSystemStructure.Save*
+- uid: XTMF.IModelSystemStructure.Validate(System.String@,XTMF.IModelSystemStructure)
+  commentId: M:XTMF.IModelSystemStructure.Validate(System.String@,XTMF.IModelSystemStructure)
+  id: Validate(System.String@,XTMF.IModelSystemStructure)
+  parent: XTMF.IModelSystemStructure
+  langs:
+  - csharp
+  - vb
+  name: Validate(ref String, IModelSystemStructure)
+  nameWithType: IModelSystemStructure.Validate(ref String, IModelSystemStructure)
+  fullName: XTMF.IModelSystemStructure.Validate(ref System.String, XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Validate
+    path: ../../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemStructure.cs
+    startLine: 139
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nValidate the project structure\n"
+  example: []
+  syntax:
+    content: bool Validate(ref string error, IModelSystemStructure parent = null)
+    parameters:
+    - id: error
+      type: System.String
+      description: A message returned if there is an error found providing additional information
+    - id: parent
+      type: XTMF.IModelSystemStructure
+      description: ''
+    return:
+      type: System.Boolean
+      description: If the ProjectStructure is valid (able to be created into an executable model system)
+    content.vb: Function Validate(ByRef error As String, parent As IModelSystemStructure = Nothing) As Boolean
+  overload: XTMF.IModelSystemStructure.Validate*
+  nameWithType.vb: IModelSystemStructure.Validate(ByRef String, IModelSystemStructure)
+  fullName.vb: XTMF.IModelSystemStructure.Validate(ByRef System.String, XTMF.IModelSystemStructure)
+  name.vb: Validate(ByRef String, IModelSystemStructure)
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: XTMF.IModelSystemStructure.Children*
+  commentId: Overload:XTMF.IModelSystemStructure.Children
+  isExternal: false
+  name: Children
+  nameWithType: IModelSystemStructure.Children
+  fullName: XTMF.IModelSystemStructure.Children
+- uid: System.Collections.Generic.IList{XTMF.IModelSystemStructure}
+  commentId: T:System.Collections.Generic.IList{XTMF.IModelSystemStructure}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<IModelSystemStructure>
+  nameWithType: IList<IModelSystemStructure>
+  fullName: System.Collections.Generic.IList<XTMF.IModelSystemStructure>
+  nameWithType.vb: IList(Of IModelSystemStructure)
+  fullName.vb: System.Collections.Generic.IList(Of XTMF.IModelSystemStructure)
+  name.vb: IList(Of IModelSystemStructure)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IModelSystemStructure
+    name: IModelSystemStructure
+    nameWithType: IModelSystemStructure
+    fullName: XTMF.IModelSystemStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IModelSystemStructure
+    name: IModelSystemStructure
+    nameWithType: IModelSystemStructure
+    fullName: XTMF.IModelSystemStructure
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.IModelSystemStructure.Description*
+  commentId: Overload:XTMF.IModelSystemStructure.Description
+  isExternal: false
+  name: Description
+  nameWithType: IModelSystemStructure.Description
+  fullName: XTMF.IModelSystemStructure.Description
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.IModelSystemStructure.IsCollection*
+  commentId: Overload:XTMF.IModelSystemStructure.IsCollection
+  isExternal: false
+  name: IsCollection
+  nameWithType: IModelSystemStructure.IsCollection
+  fullName: XTMF.IModelSystemStructure.IsCollection
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.IModelSystemStructure.Module*
+  commentId: Overload:XTMF.IModelSystemStructure.Module
+  isExternal: false
+  name: Module
+  nameWithType: IModelSystemStructure.Module
+  fullName: XTMF.IModelSystemStructure.Module
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: XTMF.IModelSystemStructure.Name*
+  commentId: Overload:XTMF.IModelSystemStructure.Name
+  isExternal: false
+  name: Name
+  nameWithType: IModelSystemStructure.Name
+  fullName: XTMF.IModelSystemStructure.Name
+- uid: XTMF.IModelSystemStructure.Parameters*
+  commentId: Overload:XTMF.IModelSystemStructure.Parameters
+  isExternal: false
+  name: Parameters
+  nameWithType: IModelSystemStructure.Parameters
+  fullName: XTMF.IModelSystemStructure.Parameters
+- uid: XTMF.IModuleParameters
+  commentId: T:XTMF.IModuleParameters
+  parent: XTMF
+  isExternal: false
+  name: IModuleParameters
+  nameWithType: IModuleParameters
+  fullName: XTMF.IModuleParameters
+- uid: XTMF.IModelSystemStructure.ParentFieldName*
+  commentId: Overload:XTMF.IModelSystemStructure.ParentFieldName
+  isExternal: false
+  name: ParentFieldName
+  nameWithType: IModelSystemStructure.ParentFieldName
+  fullName: XTMF.IModelSystemStructure.ParentFieldName
+- uid: XTMF.IModelSystemStructure.ParentFieldType*
+  commentId: Overload:XTMF.IModelSystemStructure.ParentFieldType
+  isExternal: false
+  name: ParentFieldType
+  nameWithType: IModelSystemStructure.ParentFieldType
+  fullName: XTMF.IModelSystemStructure.ParentFieldType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: XTMF.IModelSystemStructure.Required*
+  commentId: Overload:XTMF.IModelSystemStructure.Required
+  isExternal: false
+  name: Required
+  nameWithType: IModelSystemStructure.Required
+  fullName: XTMF.IModelSystemStructure.Required
+- uid: XTMF.IModelSystemStructure.Type*
+  commentId: Overload:XTMF.IModelSystemStructure.Type
+  isExternal: false
+  name: Type
+  nameWithType: IModelSystemStructure.Type
+  fullName: XTMF.IModelSystemStructure.Type
+- uid: XTMF.IModelSystemStructure.IsMetaModule*
+  commentId: Overload:XTMF.IModelSystemStructure.IsMetaModule
+  isExternal: false
+  name: IsMetaModule
+  nameWithType: IModelSystemStructure.IsMetaModule
+  fullName: XTMF.IModelSystemStructure.IsMetaModule
+- uid: XTMF.IModelSystemStructure.Add*
+  commentId: Overload:XTMF.IModelSystemStructure.Add
+  isExternal: false
+  name: Add
+  nameWithType: IModelSystemStructure.Add
+  fullName: XTMF.IModelSystemStructure.Add
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: XTMF.IModelSystemStructure.Clone*
+  commentId: Overload:XTMF.IModelSystemStructure.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: IModelSystemStructure.Clone
+  fullName: XTMF.IModelSystemStructure.Clone
+- uid: XTMF.IModelSystemStructure.CreateCollectionMember*
+  commentId: Overload:XTMF.IModelSystemStructure.CreateCollectionMember
+  isExternal: false
+  name: CreateCollectionMember
+  nameWithType: IModelSystemStructure.CreateCollectionMember
+  fullName: XTMF.IModelSystemStructure.CreateCollectionMember
+- uid: XTMF.IModelSystemStructure.GetPossibleModules*
+  commentId: Overload:XTMF.IModelSystemStructure.GetPossibleModules
+  isExternal: false
+  name: GetPossibleModules
+  nameWithType: IModelSystemStructure.GetPossibleModules
+  fullName: XTMF.IModelSystemStructure.GetPossibleModules
+- uid: System.Collections.Generic.List{System.Type}
+  commentId: T:System.Collections.Generic.List{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Type>
+  nameWithType: List<Type>
+  fullName: System.Collections.Generic.List<System.Type>
+  nameWithType.vb: List(Of Type)
+  fullName.vb: System.Collections.Generic.List(Of System.Type)
+  name.vb: List(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModelSystemStructure.Save*
+  commentId: Overload:XTMF.IModelSystemStructure.Save
+  isExternal: false
+  name: Save
+  nameWithType: IModelSystemStructure.Save
+  fullName: XTMF.IModelSystemStructure.Save
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: System.Xml.XmlWriter
+  commentId: T:System.Xml.XmlWriter
+  parent: System.Xml
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml
+  commentId: N:System.Xml
+  isExternal: false
+  name: System.Xml
+  nameWithType: System.Xml
+  fullName: System.Xml
+- uid: XTMF.IModelSystemStructure.Validate*
+  commentId: Overload:XTMF.IModelSystemStructure.Validate
+  isExternal: false
+  name: Validate
+  nameWithType: IModelSystemStructure.Validate
+  fullName: XTMF.IModelSystemStructure.Validate

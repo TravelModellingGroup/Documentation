@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.AgentBased.Tours.ITrip
+  commentId: T:TMG.AgentBased.Tours.ITrip
+  id: ITrip
+  parent: TMG.AgentBased.Tours
+  children:
+  - TMG.AgentBased.Tours.ITrip.ActivityStartTime
+  - TMG.AgentBased.Tours.ITrip.ChosenMode
+  - TMG.AgentBased.Tours.ITrip.DepartureTime
+  - TMG.AgentBased.Tours.ITrip.Destination
+  - TMG.AgentBased.Tours.ITrip.DestinationActivity
+  - TMG.AgentBased.Tours.ITrip.IntermediateChain
+  - TMG.AgentBased.Tours.ITrip.Origin
+  - TMG.AgentBased.Tours.ITrip.TripChain
+  - TMG.AgentBased.Tours.ITrip.TripIndex
+  langs:
+  - csharp
+  - vb
+  name: ITrip
+  nameWithType: ITrip
+  fullName: TMG.AgentBased.Tours.ITrip
+  type: Interface
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ITrip
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 26
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThis interface describes the basic\nrequirements for what a trip is.\n"
+  example: []
+  syntax:
+    content: public interface ITrip
+    content.vb: Public Interface ITrip
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: TMG.AgentBased.Tours.ITrip.ActivityStartTime
+  commentId: P:TMG.AgentBased.Tours.ITrip.ActivityStartTime
+  id: ActivityStartTime
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: ActivityStartTime
+  nameWithType: ITrip.ActivityStartTime
+  fullName: TMG.AgentBased.Tours.ITrip.ActivityStartTime
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ActivityStartTime
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 31
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe time that the\n"
+  example: []
+  syntax:
+    content: Time ActivityStartTime { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: Property ActivityStartTime As Time
+  overload: TMG.AgentBased.Tours.ITrip.ActivityStartTime*
+  modifiers.csharp:
+  - get
+  - set
+- uid: TMG.AgentBased.Tours.ITrip.ChosenMode
+  commentId: P:TMG.AgentBased.Tours.ITrip.ChosenMode
+  id: ChosenMode
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: ChosenMode
+  nameWithType: ITrip.ChosenMode
+  fullName: TMG.AgentBased.Tours.ITrip.ChosenMode
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ChosenMode
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 38
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThis is the chosen primary mode.\nIt will not reflect changes when adding\nIntermediate chains\n"
+  example: []
+  syntax:
+    content: IMode ChosenMode { get; set; }
+    parameters: []
+    return:
+      type: TMG.IMode
+    content.vb: Property ChosenMode As IMode
+  overload: TMG.AgentBased.Tours.ITrip.ChosenMode*
+  modifiers.csharp:
+  - get
+  - set
+- uid: TMG.AgentBased.Tours.ITrip.DepartureTime
+  commentId: P:TMG.AgentBased.Tours.ITrip.DepartureTime
+  id: DepartureTime
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: DepartureTime
+  nameWithType: ITrip.DepartureTime
+  fullName: TMG.AgentBased.Tours.ITrip.DepartureTime
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DepartureTime
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 43
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe time that the trip leaves at\n"
+  example: []
+  syntax:
+    content: Time DepartureTime { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: Property DepartureTime As Time
+  overload: TMG.AgentBased.Tours.ITrip.DepartureTime*
+  modifiers.csharp:
+  - get
+  - set
+- uid: TMG.AgentBased.Tours.ITrip.Destination
+  commentId: P:TMG.AgentBased.Tours.ITrip.Destination
+  id: Destination
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: Destination
+  nameWithType: ITrip.Destination
+  fullName: TMG.AgentBased.Tours.ITrip.Destination
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Destination
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 48
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe location that this trip ends at\n"
+  example: []
+  syntax:
+    content: IZone Destination { get; }
+    parameters: []
+    return:
+      type: TMG.IZone
+    content.vb: ReadOnly Property Destination As IZone
+  overload: TMG.AgentBased.Tours.ITrip.Destination*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Tours.ITrip.DestinationActivity
+  commentId: P:TMG.AgentBased.Tours.ITrip.DestinationActivity
+  id: DestinationActivity
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: DestinationActivity
+  nameWithType: ITrip.DestinationActivity
+  fullName: TMG.AgentBased.Tours.ITrip.DestinationActivity
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DestinationActivity
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 53
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe activity that the person is going to.\n"
+  example: []
+  syntax:
+    content: IActivity DestinationActivity { get; }
+    parameters: []
+    return:
+      type: TMG.AgentBased.Tours.IActivity
+    content.vb: ReadOnly Property DestinationActivity As IActivity
+  overload: TMG.AgentBased.Tours.ITrip.DestinationActivity*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Tours.ITrip.IntermediateChain
+  commentId: P:TMG.AgentBased.Tours.ITrip.IntermediateChain
+  id: IntermediateChain
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: IntermediateChain
+  nameWithType: ITrip.IntermediateChain
+  fullName: TMG.AgentBased.Tours.ITrip.IntermediateChain
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IntermediateChain
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 60
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nIf this trip is going to be diverted\nfrom its original destination, this\nfield will contain the replaned tour.\n"
+  example: []
+  syntax:
+    content: ITripChain IntermediateChain { get; set; }
+    parameters: []
+    return:
+      type: TMG.AgentBased.Tours.ITripChain
+    content.vb: Property IntermediateChain As ITripChain
+  overload: TMG.AgentBased.Tours.ITrip.IntermediateChain*
+  modifiers.csharp:
+  - get
+  - set
+- uid: TMG.AgentBased.Tours.ITrip.Origin
+  commentId: P:TMG.AgentBased.Tours.ITrip.Origin
+  id: Origin
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: Origin
+  nameWithType: ITrip.Origin
+  fullName: TMG.AgentBased.Tours.ITrip.Origin
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Origin
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 65
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe location that this trip starts at\n"
+  example: []
+  syntax:
+    content: IZone Origin { get; }
+    parameters: []
+    return:
+      type: TMG.IZone
+    content.vb: ReadOnly Property Origin As IZone
+  overload: TMG.AgentBased.Tours.ITrip.Origin*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Tours.ITrip.TripChain
+  commentId: P:TMG.AgentBased.Tours.ITrip.TripChain
+  id: TripChain
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: TripChain
+  nameWithType: ITrip.TripChain
+  fullName: TMG.AgentBased.Tours.ITrip.TripChain
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TripChain
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 70
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe trip chain that this trip belongs to\n"
+  example: []
+  syntax:
+    content: ITripChain TripChain { get; }
+    parameters: []
+    return:
+      type: TMG.AgentBased.Tours.ITripChain
+    content.vb: ReadOnly Property TripChain As ITripChain
+  overload: TMG.AgentBased.Tours.ITrip.TripChain*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Tours.ITrip.TripIndex
+  commentId: P:TMG.AgentBased.Tours.ITrip.TripIndex
+  id: TripIndex
+  parent: TMG.AgentBased.Tours.ITrip
+  langs:
+  - csharp
+  - vb
+  name: TripIndex
+  nameWithType: ITrip.TripIndex
+  fullName: TMG.AgentBased.Tours.ITrip.TripIndex
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TripIndex
+    path: ../../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITrip.cs
+    startLine: 76
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe index into the trip chain for\nthis trip\n"
+  example: []
+  syntax:
+    content: int TripIndex { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property TripIndex As Integer
+  overload: TMG.AgentBased.Tours.ITrip.TripIndex*
+  modifiers.csharp:
+  - get
+  - set
+references:
+- uid: TMG.AgentBased.Tours
+  commentId: N:TMG.AgentBased.Tours
+  isExternal: false
+  name: TMG.AgentBased.Tours
+  nameWithType: TMG.AgentBased.Tours
+  fullName: TMG.AgentBased.Tours
+- uid: TMG.AgentBased.Tours.ITrip.ActivityStartTime*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.ActivityStartTime
+  isExternal: false
+  name: ActivityStartTime
+  nameWithType: ITrip.ActivityStartTime
+  fullName: TMG.AgentBased.Tours.ITrip.ActivityStartTime
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  isExternal: false
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.AgentBased.Tours.ITrip.ChosenMode*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.ChosenMode
+  isExternal: false
+  name: ChosenMode
+  nameWithType: ITrip.ChosenMode
+  fullName: TMG.AgentBased.Tours.ITrip.ChosenMode
+- uid: TMG.IMode
+  commentId: T:TMG.IMode
+  parent: TMG
+  isExternal: false
+  name: IMode
+  nameWithType: IMode
+  fullName: TMG.IMode
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.AgentBased.Tours.ITrip.DepartureTime*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.DepartureTime
+  isExternal: false
+  name: DepartureTime
+  nameWithType: ITrip.DepartureTime
+  fullName: TMG.AgentBased.Tours.ITrip.DepartureTime
+- uid: TMG.AgentBased.Tours.ITrip.Destination*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.Destination
+  isExternal: false
+  name: Destination
+  nameWithType: ITrip.Destination
+  fullName: TMG.AgentBased.Tours.ITrip.Destination
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: TMG.AgentBased.Tours.ITrip.DestinationActivity*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.DestinationActivity
+  isExternal: false
+  name: DestinationActivity
+  nameWithType: ITrip.DestinationActivity
+  fullName: TMG.AgentBased.Tours.ITrip.DestinationActivity
+- uid: TMG.AgentBased.Tours.IActivity
+  commentId: T:TMG.AgentBased.Tours.IActivity
+  parent: TMG.AgentBased.Tours
+  isExternal: false
+  name: IActivity
+  nameWithType: IActivity
+  fullName: TMG.AgentBased.Tours.IActivity
+- uid: TMG.AgentBased.Tours.ITrip.IntermediateChain*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.IntermediateChain
+  isExternal: false
+  name: IntermediateChain
+  nameWithType: ITrip.IntermediateChain
+  fullName: TMG.AgentBased.Tours.ITrip.IntermediateChain
+- uid: TMG.AgentBased.Tours.ITripChain
+  commentId: T:TMG.AgentBased.Tours.ITripChain
+  parent: TMG.AgentBased.Tours
+  isExternal: false
+  name: ITripChain
+  nameWithType: ITripChain
+  fullName: TMG.AgentBased.Tours.ITripChain
+- uid: TMG.AgentBased.Tours.ITrip.Origin*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.Origin
+  isExternal: false
+  name: Origin
+  nameWithType: ITrip.Origin
+  fullName: TMG.AgentBased.Tours.ITrip.Origin
+- uid: TMG.AgentBased.Tours.ITrip.TripChain*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.TripChain
+  isExternal: false
+  name: TripChain
+  nameWithType: ITrip.TripChain
+  fullName: TMG.AgentBased.Tours.ITrip.TripChain
+- uid: TMG.AgentBased.Tours.ITrip.TripIndex*
+  commentId: Overload:TMG.AgentBased.Tours.ITrip.TripIndex
+  isExternal: false
+  name: TripIndex
+  nameWithType: ITrip.TripIndex
+  fullName: TMG.AgentBased.Tours.ITrip.TripIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,2230 @@
+### YamlMime:ManagedReference
+items:
+- uid: DYL.Tasha.WorkLocation
+  commentId: T:DYL.Tasha.WorkLocation
+  id: WorkLocation
+  parent: DYL.Tasha
+  children:
+  - DYL.Tasha.WorkLocation.beta_dis_G
+  - DYL.Tasha.WorkLocation.beta_dis_M
+  - DYL.Tasha.WorkLocation.beta_dis_P
+  - DYL.Tasha.WorkLocation.beta_dis_S
+  - DYL.Tasha.WorkLocation.beta_occ_G
+  - DYL.Tasha.WorkLocation.beta_occ_M
+  - DYL.Tasha.WorkLocation.beta_occ_P
+  - DYL.Tasha.WorkLocation.beta_occ_S
+  - DYL.Tasha.WorkLocation.Load
+  - DYL.Tasha.WorkLocation.Name
+  - DYL.Tasha.WorkLocation.ProduceResult(Tasha.Common.ITashaPerson)
+  - DYL.Tasha.WorkLocation.Progress
+  - DYL.Tasha.WorkLocation.ProgressColour
+  - DYL.Tasha.WorkLocation.RandomSeed
+  - DYL.Tasha.WorkLocation.Root
+  - DYL.Tasha.WorkLocation.RuntimeValidation(System.String@)
+  - DYL.Tasha.WorkLocation.Unload
+  langs:
+  - csharp
+  - vb
+  name: WorkLocation
+  nameWithType: WorkLocation
+  fullName: DYL.Tasha.WorkLocation
+  type: Class
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkLocation
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 26
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: 'public sealed class WorkLocation : ICalculation<ITashaPerson, IZone>, IModule'
+    content.vb: >-
+      Public NotInheritable Class WorkLocation
+          Implements ICalculation(Of ITashaPerson, IZone), IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: DYL.Tasha.WorkLocation.beta_dis_G
+  commentId: F:DYL.Tasha.WorkLocation.beta_dis_G
+  id: beta_dis_G
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_dis_G
+  nameWithType: WorkLocation.beta_dis_G
+  fullName: DYL.Tasha.WorkLocation.beta_dis_G
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_dis_G
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 29
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_dis_G", 0F, "The distance factor applied for the general occupation location choice")]
+
+      public float beta_dis_G
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_dis_G", 0F, "The distance factor applied for the general occupation location choice")>
+
+      Public beta_dis_G As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_dis_G
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The distance factor applied for the general occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_dis_M
+  commentId: F:DYL.Tasha.WorkLocation.beta_dis_M
+  id: beta_dis_M
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_dis_M
+  nameWithType: WorkLocation.beta_dis_M
+  fullName: DYL.Tasha.WorkLocation.beta_dis_M
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_dis_M
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 32
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_dis_M", 0F, "The distance factor applied for the manufactoring occupation location choice")]
+
+      public float beta_dis_M
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_dis_M", 0F, "The distance factor applied for the manufactoring occupation location choice")>
+
+      Public beta_dis_M As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_dis_M
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The distance factor applied for the manufactoring occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_dis_P
+  commentId: F:DYL.Tasha.WorkLocation.beta_dis_P
+  id: beta_dis_P
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_dis_P
+  nameWithType: WorkLocation.beta_dis_P
+  fullName: DYL.Tasha.WorkLocation.beta_dis_P
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_dis_P
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 35
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_dis_P", 0F, "The distance factor applied for the prefessional occupation location choice")]
+
+      public float beta_dis_P
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_dis_P", 0F, "The distance factor applied for the prefessional occupation location choice")>
+
+      Public beta_dis_P As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_dis_P
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The distance factor applied for the prefessional occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_dis_S
+  commentId: F:DYL.Tasha.WorkLocation.beta_dis_S
+  id: beta_dis_S
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_dis_S
+  nameWithType: WorkLocation.beta_dis_S
+  fullName: DYL.Tasha.WorkLocation.beta_dis_S
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_dis_S
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 38
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_dis_S", 0F, "The distance factor applied for the sale occupation location choice")]
+
+      public float beta_dis_S
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_dis_S", 0F, "The distance factor applied for the sale occupation location choice")>
+
+      Public beta_dis_S As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_dis_S
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The distance factor applied for the sale occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_occ_G
+  commentId: F:DYL.Tasha.WorkLocation.beta_occ_G
+  id: beta_occ_G
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_occ_G
+  nameWithType: WorkLocation.beta_occ_G
+  fullName: DYL.Tasha.WorkLocation.beta_occ_G
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_occ_G
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 41
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_occ_G", 0F, "The occupation number factor applied for the general occupation location choice")]
+
+      public float beta_occ_G
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_occ_G", 0F, "The occupation number factor applied for the general occupation location choice")>
+
+      Public beta_occ_G As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_occ_G
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The occupation number factor applied for the general occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_occ_M
+  commentId: F:DYL.Tasha.WorkLocation.beta_occ_M
+  id: beta_occ_M
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_occ_M
+  nameWithType: WorkLocation.beta_occ_M
+  fullName: DYL.Tasha.WorkLocation.beta_occ_M
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_occ_M
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 44
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_occ_M", 0F, "The occupation number factor applied for the manufactoring occupation location choice")]
+
+      public float beta_occ_M
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_occ_M", 0F, "The occupation number factor applied for the manufactoring occupation location choice")>
+
+      Public beta_occ_M As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_occ_M
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The occupation number factor applied for the manufactoring occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_occ_P
+  commentId: F:DYL.Tasha.WorkLocation.beta_occ_P
+  id: beta_occ_P
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_occ_P
+  nameWithType: WorkLocation.beta_occ_P
+  fullName: DYL.Tasha.WorkLocation.beta_occ_P
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_occ_P
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 47
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_occ_P", 0F, "The occupation number factor applied for the prefessional occupation location choice")]
+
+      public float beta_occ_P
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_occ_P", 0F, "The occupation number factor applied for the prefessional occupation location choice")>
+
+      Public beta_occ_P As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_occ_P
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The occupation number factor applied for the prefessional occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.beta_occ_S
+  commentId: F:DYL.Tasha.WorkLocation.beta_occ_S
+  id: beta_occ_S
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: beta_occ_S
+  nameWithType: WorkLocation.beta_occ_S
+  fullName: DYL.Tasha.WorkLocation.beta_occ_S
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: beta_occ_S
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 50
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("beta_occ_S", 0F, "The occupation number factor applied for the sale occupation location choice")]
+
+      public float beta_occ_S
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("beta_occ_S", 0F, "The occupation number factor applied for the sale occupation location choice")>
+
+      Public beta_occ_S As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: beta_occ_S
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The occupation number factor applied for the sale occupation location choice
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.RandomSeed
+  commentId: F:DYL.Tasha.WorkLocation.RandomSeed
+  id: RandomSeed
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: RandomSeed
+  nameWithType: WorkLocation.RandomSeed
+  fullName: DYL.Tasha.WorkLocation.RandomSeed
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RandomSeed
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 53
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: >-
+      [RunParameter("RandomSeed", 12345, "The RandomSeed for the work location choice caculation")]
+
+      public int RandomSeed
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("RandomSeed", 12345, "The RandomSeed for the work location choice caculation")>
+
+      Public RandomSeed As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: RandomSeed
+    - type: System.Int32
+      value: 12345
+    - type: System.String
+      value: The RandomSeed for the work location choice caculation
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.Root
+  commentId: F:DYL.Tasha.WorkLocation.Root
+  id: Root
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: WorkLocation.Root
+  fullName: DYL.Tasha.WorkLocation.Root
+  type: Field
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 56
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.Name
+  commentId: P:DYL.Tasha.WorkLocation.Name
+  id: Name
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: WorkLocation.Name
+  fullName: DYL.Tasha.WorkLocation.Name
+  type: Property
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 58
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: DYL.Tasha.WorkLocation.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.Progress
+  commentId: P:DYL.Tasha.WorkLocation.Progress
+  id: Progress
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: WorkLocation.Progress
+  fullName: DYL.Tasha.WorkLocation.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 64
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: DYL.Tasha.WorkLocation.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DYL.Tasha.WorkLocation.ProgressColour
+  commentId: P:DYL.Tasha.WorkLocation.ProgressColour
+  id: ProgressColour
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: WorkLocation.ProgressColour
+  fullName: DYL.Tasha.WorkLocation.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 69
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: DYL.Tasha.WorkLocation.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: DYL.Tasha.WorkLocation.Load
+  commentId: M:DYL.Tasha.WorkLocation.Load
+  id: Load
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: Load()
+  nameWithType: WorkLocation.Load()
+  fullName: DYL.Tasha.WorkLocation.Load()
+  type: Method
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Load
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 74
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public void Load()
+    content.vb: Public Sub Load
+  overload: DYL.Tasha.WorkLocation.Load*
+  implements:
+  - TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Load
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.ProduceResult(Tasha.Common.ITashaPerson)
+  commentId: M:DYL.Tasha.WorkLocation.ProduceResult(Tasha.Common.ITashaPerson)
+  id: ProduceResult(Tasha.Common.ITashaPerson)
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: ProduceResult(ITashaPerson)
+  nameWithType: WorkLocation.ProduceResult(ITashaPerson)
+  fullName: DYL.Tasha.WorkLocation.ProduceResult(Tasha.Common.ITashaPerson)
+  type: Method
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProduceResult
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 78
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public IZone ProduceResult(ITashaPerson person)
+    parameters:
+    - id: person
+      type: Tasha.Common.ITashaPerson
+    return:
+      type: TMG.IZone
+    content.vb: Public Function ProduceResult(person As ITashaPerson) As IZone
+  overload: DYL.Tasha.WorkLocation.ProduceResult*
+  implements:
+  - TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.ProduceResult(Tasha.Common.ITashaPerson)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: DYL.Tasha.WorkLocation.RuntimeValidation(System.String@)
+  commentId: M:DYL.Tasha.WorkLocation.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: WorkLocation.RuntimeValidation(ref String)
+  fullName: DYL.Tasha.WorkLocation.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 139
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: DYL.Tasha.WorkLocation.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: WorkLocation.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: DYL.Tasha.WorkLocation.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: DYL.Tasha.WorkLocation.Unload
+  commentId: M:DYL.Tasha.WorkLocation.Unload
+  id: Unload
+  parent: DYL.Tasha.WorkLocation
+  langs:
+  - csharp
+  - vb
+  name: Unload()
+  nameWithType: WorkLocation.Unload()
+  fullName: DYL.Tasha.WorkLocation.Unload()
+  type: Method
+  source:
+    remote:
+      path: Code/LocationAllocationModel/WorkLocation.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Unload
+    path: ../../../XTMF/Code/LocationAllocationModel/WorkLocation.cs
+    startLine: 144
+  assemblies:
+  - LocationAllocationModel
+  namespace: DYL.Tasha
+  syntax:
+    content: public void Unload()
+    content.vb: Public Sub Unload
+  overload: DYL.Tasha.WorkLocation.Unload*
+  implements:
+  - TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Unload
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: DYL.Tasha
+  commentId: N:DYL.Tasha
+  isExternal: false
+  name: DYL.Tasha
+  nameWithType: DYL.Tasha
+  fullName: DYL.Tasha
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  commentId: T:TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  parent: TMG
+  definition: TMG.ICalculation`2
+  name: ICalculation<ITashaPerson, IZone>
+  nameWithType: ICalculation<ITashaPerson, IZone>
+  fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>
+  nameWithType.vb: ICalculation(Of ITashaPerson, IZone)
+  fullName.vb: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone)
+  name.vb: ICalculation(Of ITashaPerson, IZone)
+  spec.csharp:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.ITashaPerson
+    name: ITashaPerson
+    nameWithType: ITashaPerson
+    fullName: Tasha.Common.ITashaPerson
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.ITashaPerson
+    name: ITashaPerson
+    nameWithType: ITashaPerson
+    fullName: Tasha.Common.ITashaPerson
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.ICalculation`2
+  commentId: T:TMG.ICalculation`2
+  isExternal: false
+  name: ICalculation<D, O>
+  nameWithType: ICalculation<D, O>
+  fullName: TMG.ICalculation<D, O>
+  nameWithType.vb: ICalculation(Of D, O)
+  fullName.vb: TMG.ICalculation(Of D, O)
+  name.vb: ICalculation(Of D, O)
+  spec.csharp:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: O
+    nameWithType: O
+    fullName: O
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: O
+    nameWithType: O
+    fullName: O
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: DYL.Tasha.WorkLocation.Name*
+  commentId: Overload:DYL.Tasha.WorkLocation.Name
+  isExternal: false
+  name: Name
+  nameWithType: WorkLocation.Name
+  fullName: DYL.Tasha.WorkLocation.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: DYL.Tasha.WorkLocation.Progress*
+  commentId: Overload:DYL.Tasha.WorkLocation.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: WorkLocation.Progress
+  fullName: DYL.Tasha.WorkLocation.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: DYL.Tasha.WorkLocation.ProgressColour*
+  commentId: Overload:DYL.Tasha.WorkLocation.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: WorkLocation.ProgressColour
+  fullName: DYL.Tasha.WorkLocation.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DYL.Tasha.WorkLocation.Load*
+  commentId: Overload:DYL.Tasha.WorkLocation.Load
+  isExternal: false
+  name: Load
+  nameWithType: WorkLocation.Load
+  fullName: DYL.Tasha.WorkLocation.Load
+- uid: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Load
+  commentId: M:TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Load
+  parent: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  definition: TMG.ICalculation`2.Load
+  name: Load()
+  nameWithType: ICalculation<ITashaPerson, IZone>.Load()
+  fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.Load()
+  nameWithType.vb: ICalculation(Of ITashaPerson, IZone).Load()
+  fullName.vb: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).Load()
+  spec.csharp:
+  - uid: TMG.ICalculation`2.Load
+    name: Load
+    nameWithType: ICalculation<ITashaPerson, IZone>.Load
+    fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.Load
+    name: Load
+    nameWithType: ICalculation(Of ITashaPerson, IZone).Load
+    fullName: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.ICalculation`2.Load
+  commentId: M:TMG.ICalculation`2.Load
+  isExternal: false
+  name: Load()
+  nameWithType: ICalculation<D, O>.Load()
+  fullName: TMG.ICalculation<D, O>.Load()
+  nameWithType.vb: ICalculation(Of D, O).Load()
+  fullName.vb: TMG.ICalculation(Of D, O).Load()
+  spec.csharp:
+  - uid: TMG.ICalculation`2.Load
+    name: Load
+    nameWithType: ICalculation<D, O>.Load
+    fullName: TMG.ICalculation<D, O>.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.Load
+    name: Load
+    nameWithType: ICalculation(Of D, O).Load
+    fullName: TMG.ICalculation(Of D, O).Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DYL.Tasha.WorkLocation.ProduceResult*
+  commentId: Overload:DYL.Tasha.WorkLocation.ProduceResult
+  isExternal: false
+  name: ProduceResult
+  nameWithType: WorkLocation.ProduceResult
+  fullName: DYL.Tasha.WorkLocation.ProduceResult
+- uid: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.ProduceResult(Tasha.Common.ITashaPerson)
+  commentId: M:TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.ProduceResult(Tasha.Common.ITashaPerson)
+  parent: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  definition: TMG.ICalculation`2.ProduceResult(`0)
+  name: ProduceResult(ITashaPerson)
+  nameWithType: ICalculation<ITashaPerson, IZone>.ProduceResult(ITashaPerson)
+  fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.ProduceResult(Tasha.Common.ITashaPerson)
+  nameWithType.vb: ICalculation(Of ITashaPerson, IZone).ProduceResult(ITashaPerson)
+  fullName.vb: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).ProduceResult(Tasha.Common.ITashaPerson)
+  spec.csharp:
+  - uid: TMG.ICalculation`2.ProduceResult(`0)
+    name: ProduceResult
+    nameWithType: ICalculation<ITashaPerson, IZone>.ProduceResult
+    fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.ProduceResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaPerson
+    name: ITashaPerson
+    nameWithType: ITashaPerson
+    fullName: Tasha.Common.ITashaPerson
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.ProduceResult(`0)
+    name: ProduceResult
+    nameWithType: ICalculation(Of ITashaPerson, IZone).ProduceResult
+    fullName: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).ProduceResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaPerson
+    name: ITashaPerson
+    nameWithType: ITashaPerson
+    fullName: Tasha.Common.ITashaPerson
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Common.ITashaPerson
+  commentId: T:Tasha.Common.ITashaPerson
+  parent: Tasha.Common
+  isExternal: false
+  name: ITashaPerson
+  nameWithType: ITashaPerson
+  fullName: Tasha.Common.ITashaPerson
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: TMG.ICalculation`2.ProduceResult(`0)
+  commentId: M:TMG.ICalculation`2.ProduceResult(`0)
+  isExternal: false
+  name: ProduceResult(D)
+  nameWithType: ICalculation<D, O>.ProduceResult(D)
+  fullName: TMG.ICalculation<D, O>.ProduceResult(D)
+  nameWithType.vb: ICalculation(Of D, O).ProduceResult(D)
+  fullName.vb: TMG.ICalculation(Of D, O).ProduceResult(D)
+  spec.csharp:
+  - uid: TMG.ICalculation`2.ProduceResult(`0)
+    name: ProduceResult
+    nameWithType: ICalculation<D, O>.ProduceResult
+    fullName: TMG.ICalculation<D, O>.ProduceResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.ProduceResult(`0)
+    name: ProduceResult
+    nameWithType: ICalculation(Of D, O).ProduceResult
+    fullName: TMG.ICalculation(Of D, O).ProduceResult
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Common
+  commentId: N:Tasha.Common
+  isExternal: false
+  name: Tasha.Common
+  nameWithType: Tasha.Common
+  fullName: Tasha.Common
+- uid: DYL.Tasha.WorkLocation.RuntimeValidation*
+  commentId: Overload:DYL.Tasha.WorkLocation.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: WorkLocation.RuntimeValidation
+  fullName: DYL.Tasha.WorkLocation.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: DYL.Tasha.WorkLocation.Unload*
+  commentId: Overload:DYL.Tasha.WorkLocation.Unload
+  isExternal: false
+  name: Unload
+  nameWithType: WorkLocation.Unload
+  fullName: DYL.Tasha.WorkLocation.Unload
+- uid: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Unload
+  commentId: M:TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}.Unload
+  parent: TMG.ICalculation{Tasha.Common.ITashaPerson,TMG.IZone}
+  definition: TMG.ICalculation`2.Unload
+  name: Unload()
+  nameWithType: ICalculation<ITashaPerson, IZone>.Unload()
+  fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.Unload()
+  nameWithType.vb: ICalculation(Of ITashaPerson, IZone).Unload()
+  fullName.vb: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).Unload()
+  spec.csharp:
+  - uid: TMG.ICalculation`2.Unload
+    name: Unload
+    nameWithType: ICalculation<ITashaPerson, IZone>.Unload
+    fullName: TMG.ICalculation<Tasha.Common.ITashaPerson, TMG.IZone>.Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.Unload
+    name: Unload
+    nameWithType: ICalculation(Of ITashaPerson, IZone).Unload
+    fullName: TMG.ICalculation(Of Tasha.Common.ITashaPerson, TMG.IZone).Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.ICalculation`2.Unload
+  commentId: M:TMG.ICalculation`2.Unload
+  isExternal: false
+  name: Unload()
+  nameWithType: ICalculation<D, O>.Unload()
+  fullName: TMG.ICalculation<D, O>.Unload()
+  nameWithType.vb: ICalculation(Of D, O).Unload()
+  fullName.vb: TMG.ICalculation(Of D, O).Unload()
+  spec.csharp:
+  - uid: TMG.ICalculation`2.Unload
+    name: Unload
+    nameWithType: ICalculation<D, O>.Unload
+    fullName: TMG.ICalculation<D, O>.Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ICalculation`2.Unload
+    name: Unload
+    nameWithType: ICalculation(Of D, O).Unload
+    fullName: TMG.ICalculation(Of D, O).Unload
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

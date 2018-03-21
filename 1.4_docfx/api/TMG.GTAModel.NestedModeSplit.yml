@@ -1,0 +1,2641 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NestedModeSplit
+  commentId: T:TMG.GTAModel.NestedModeSplit
+  id: NestedModeSplit
+  parent: TMG.GTAModel
+  children:
+  - TMG.GTAModel.NestedModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  - TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit
+  - TMG.GTAModel.NestedModeSplit.MinLogSum
+  - TMG.GTAModel.NestedModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  - TMG.GTAModel.NestedModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  - TMG.GTAModel.NestedModeSplit.Name
+  - TMG.GTAModel.NestedModeSplit.Progress
+  - TMG.GTAModel.NestedModeSplit.ProgressColour
+  - TMG.GTAModel.NestedModeSplit.Root
+  - TMG.GTAModel.NestedModeSplit.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NestedModeSplit.SaveDirectory
+  - TMG.GTAModel.NestedModeSplit.SaveUtilities
+  - TMG.GTAModel.NestedModeSplit.SimulationTime
+  - TMG.GTAModel.NestedModeSplit.SingleEnumerator(Datastructure.SparseTwinIndex{System.Single})
+  - TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  - TMG.GTAModel.NestedModeSplit.TimesRun
+  - TMG.GTAModel.NestedModeSplit.WriteModeSplit(TMG.TreeData{System.Single[]},TMG.IModeChoiceNode,System.String)
+  langs:
+  - csharp
+  - vb
+  name: NestedModeSplit
+  nameWithType: NestedModeSplit
+  fullName: TMG.GTAModel.NestedModeSplit
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NestedModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 33
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: 'public class NestedModeSplit : IInteractiveModeSplit, IMultiModeSplit, IModeSplit, IModule'
+    content.vb: >-
+      Public Class NestedModeSplit
+          Implements IInteractiveModeSplit, IMultiModeSplit, IModeSplit, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.ModeSplit.IInteractiveModeSplit
+  - TMG.IMultiModeSplit
+  - TMG.IModeSplit
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NestedModeSplit.Root
+  commentId: F:TMG.GTAModel.NestedModeSplit.Root
+  id: Root
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: NestedModeSplit.Root
+  fullName: TMG.GTAModel.NestedModeSplit.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public I4StepModel Root
+    return:
+      type: TMG.I4StepModel
+    content.vb: Public Root As I4StepModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.SaveDirectory
+  commentId: F:TMG.GTAModel.NestedModeSplit.SaveDirectory
+  id: SaveDirectory
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: SaveDirectory
+  nameWithType: NestedModeSplit.SaveDirectory
+  fullName: TMG.GTAModel.NestedModeSplit.SaveDirectory
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SaveDirectory
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Save Directory", "", typeof (FileFromOutputDirectory), "The directory to save the mode splits to.  Leave this blank to not.")]
+
+      public FileFromOutputDirectory SaveDirectory
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Save Directory", "", GetType(FileFromOutputDirectory), "The directory to save the mode splits to.  Leave this blank to not.")>
+
+      Public SaveDirectory As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Save Directory
+    - type: System.String
+      value: ''
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The directory to save the mode splits to.  Leave this blank to not.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.SaveUtilities
+  commentId: F:TMG.GTAModel.NestedModeSplit.SaveUtilities
+  id: SaveUtilities
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: SaveUtilities
+  nameWithType: NestedModeSplit.SaveUtilities
+  fullName: TMG.GTAModel.NestedModeSplit.SaveUtilities
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SaveUtilities
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 47
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Save Utilities", "", typeof (FileFromOutputDirectory), "The directory to save the utilities")]
+
+      public FileFromOutputDirectory SaveUtilities
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Save Utilities", "", GetType(FileFromOutputDirectory), "The directory to save the utilities")>
+
+      Public SaveUtilities As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Save Utilities
+    - type: System.String
+      value: ''
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The directory to save the utilities
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.SimulationTime
+  commentId: F:TMG.GTAModel.NestedModeSplit.SimulationTime
+  id: SimulationTime
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: SimulationTime
+  nameWithType: NestedModeSplit.SimulationTime
+  fullName: TMG.GTAModel.NestedModeSplit.SimulationTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SimulationTime
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 50
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Simulation Time", "7:00 AM", typeof (Time), "The time that this mode split will be running as.")]
+
+      public Time SimulationTime
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("Simulation Time", "7:00 AM", GetType(Time), "The time that this mode split will be running as.")>
+
+      Public SimulationTime As Time
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Simulation Time
+    - type: System.String
+      value: 7:00 AM
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The time that this mode split will be running as.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.TimesRun
+  commentId: F:TMG.GTAModel.NestedModeSplit.TimesRun
+  id: TimesRun
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: TimesRun
+  nameWithType: NestedModeSplit.TimesRun
+  fullName: TMG.GTAModel.NestedModeSplit.TimesRun
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TimesRun
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 52
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public int TimesRun
+    return:
+      type: System.Int32
+    content.vb: Public TimesRun As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.MinLogSum
+  commentId: P:TMG.GTAModel.NestedModeSplit.MinLogSum
+  id: MinLogSum
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: MinLogSum
+  nameWithType: NestedModeSplit.MinLogSum
+  fullName: TMG.GTAModel.NestedModeSplit.MinLogSum
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MinLogSum
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 62
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Min LogSum", -70F, "The cutoff point for the logsum term for nested mode choices.")]
+
+      public float MinLogSum { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Min LogSum", -70F, "The cutoff point for the logsum term for nested mode choices.")>
+
+      Public Property MinLogSum As Single
+  overload: TMG.GTAModel.NestedModeSplit.MinLogSum*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Min LogSum
+    - type: System.Single
+      value: -70
+    - type: System.String
+      value: The cutoff point for the logsum term for nested mode choices.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.Name
+  commentId: P:TMG.GTAModel.NestedModeSplit.Name
+  id: Name
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: NestedModeSplit.Name
+  fullName: TMG.GTAModel.NestedModeSplit.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 77
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NestedModeSplit.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.Progress
+  commentId: P:TMG.GTAModel.NestedModeSplit.Progress
+  id: Progress
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: NestedModeSplit.Progress
+  fullName: TMG.GTAModel.NestedModeSplit.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 83
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.NestedModeSplit.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.ProgressColour
+  commentId: P:TMG.GTAModel.NestedModeSplit.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: NestedModeSplit.ProgressColour
+  fullName: TMG.GTAModel.NestedModeSplit.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 89
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NestedModeSplit.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NestedModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  commentId: M:TMG.GTAModel.NestedModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  id: ComputeUtility(TMG.IZone,TMG.IZone)
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: ComputeUtility(IZone, IZone)
+  nameWithType: NestedModeSplit.ComputeUtility(IZone, IZone)
+  fullName: TMG.GTAModel.NestedModeSplit.ComputeUtility(TMG.IZone, TMG.IZone)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComputeUtility
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 94
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float ComputeUtility(IZone o, IZone d)
+    parameters:
+    - id: o
+      type: TMG.IZone
+    - id: d
+      type: TMG.IZone
+    return:
+      type: System.Single
+    content.vb: Public Function ComputeUtility(o As IZone, d As IZone) As Single
+  overload: TMG.GTAModel.NestedModeSplit.ComputeUtility*
+  implements:
+  - TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit
+  commentId: M:TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit
+  id: EndInterativeModeSplit
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: EndInterativeModeSplit()
+  nameWithType: NestedModeSplit.EndInterativeModeSplit()
+  fullName: TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EndInterativeModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 126
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void EndInterativeModeSplit()
+    content.vb: Public Sub
+  overload: TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit*
+  implements:
+  - TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  commentId: M:TMG.GTAModel.NestedModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  id: ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: ModeSplit(IEnumerable<SparseTwinIndex<Single>>, Int32)
+  nameWithType: NestedModeSplit.ModeSplit(IEnumerable<SparseTwinIndex<Single>>, Int32)
+  fullName: TMG.GTAModel.NestedModeSplit.ModeSplit(System.Collections.Generic.IEnumerable<Datastructure.SparseTwinIndex<System.Single>>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 135
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public List<TreeData<float[][]>> ModeSplit(IEnumerable<SparseTwinIndex<float>> flowMatrix, int numberOfCategories)
+    parameters:
+    - id: flowMatrix
+      type: System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+    - id: numberOfCategories
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{TMG.TreeData{System.Single[][]}}
+    content.vb: Public Function ModeSplit(flowMatrix As IEnumerable(Of SparseTwinIndex(Of Single)), numberOfCategories As Integer) As List(Of TreeData(Of Single()()))
+  overload: TMG.GTAModel.NestedModeSplit.ModeSplit*
+  implements:
+  - TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  nameWithType.vb: NestedModeSplit.ModeSplit(IEnumerable(Of SparseTwinIndex(Of Single)), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NestedModeSplit.ModeSplit(System.Collections.Generic.IEnumerable(Of Datastructure.SparseTwinIndex(Of System.Single)), System.Int32)
+  name.vb: ModeSplit(IEnumerable(Of SparseTwinIndex(Of Single)), Int32)
+- uid: TMG.GTAModel.NestedModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  commentId: M:TMG.GTAModel.NestedModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  id: ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: ModeSplit(SparseTwinIndex<Single>)
+  nameWithType: NestedModeSplit.ModeSplit(SparseTwinIndex<Single>)
+  fullName: TMG.GTAModel.NestedModeSplit.ModeSplit(Datastructure.SparseTwinIndex<System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 162
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public List<TreeData<float[][]>> ModeSplit(SparseTwinIndex<float> flowMatrix)
+    parameters:
+    - id: flowMatrix
+      type: Datastructure.SparseTwinIndex{System.Single}
+    return:
+      type: System.Collections.Generic.List{TMG.TreeData{System.Single[][]}}
+    content.vb: Public Function ModeSplit(flowMatrix As SparseTwinIndex(Of Single)) As List(Of TreeData(Of Single()()))
+  overload: TMG.GTAModel.NestedModeSplit.ModeSplit*
+  implements:
+  - TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  nameWithType.vb: NestedModeSplit.ModeSplit(SparseTwinIndex(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NestedModeSplit.ModeSplit(Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: ModeSplit(SparseTwinIndex(Of Single))
+- uid: TMG.GTAModel.NestedModeSplit.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NestedModeSplit.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: NestedModeSplit.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NestedModeSplit.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 167
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NestedModeSplit.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: NestedModeSplit.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NestedModeSplit.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.NestedModeSplit.SingleEnumerator(Datastructure.SparseTwinIndex{System.Single})
+  commentId: M:TMG.GTAModel.NestedModeSplit.SingleEnumerator(Datastructure.SparseTwinIndex{System.Single})
+  id: SingleEnumerator(Datastructure.SparseTwinIndex{System.Single})
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: SingleEnumerator(SparseTwinIndex<Single>)
+  nameWithType: NestedModeSplit.SingleEnumerator(SparseTwinIndex<Single>)
+  fullName: TMG.GTAModel.NestedModeSplit.SingleEnumerator(Datastructure.SparseTwinIndex<System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SingleEnumerator
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 172
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public IEnumerable<SparseTwinIndex<float>> SingleEnumerator(SparseTwinIndex<float> single)
+    parameters:
+    - id: single
+      type: Datastructure.SparseTwinIndex{System.Single}
+    return:
+      type: System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: Public Function SingleEnumerator(single As SparseTwinIndex(Of Single)) As IEnumerable(Of SparseTwinIndex(Of Single))
+  overload: TMG.GTAModel.NestedModeSplit.SingleEnumerator*
+  nameWithType.vb: NestedModeSplit.SingleEnumerator(SparseTwinIndex(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NestedModeSplit.SingleEnumerator(Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: SingleEnumerator(SparseTwinIndex(Of Single))
+- uid: TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  commentId: M:TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  id: StartNewInteractiveModeSplit(System.Int32)
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: StartNewInteractiveModeSplit(Int32)
+  nameWithType: NestedModeSplit.StartNewInteractiveModeSplit(Int32)
+  fullName: TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StartNewInteractiveModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 177
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void StartNewInteractiveModeSplit(int numberOfCategories)
+    parameters:
+    - id: numberOfCategories
+      type: System.Int32
+    content.vb: Public Sub StartNewInteractiveModeSplit(numberOfCategories As Integer)
+  overload: TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit*
+  implements:
+  - TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NestedModeSplit.WriteModeSplit(TMG.TreeData{System.Single[]},TMG.IModeChoiceNode,System.String)
+  commentId: M:TMG.GTAModel.NestedModeSplit.WriteModeSplit(TMG.TreeData{System.Single[]},TMG.IModeChoiceNode,System.String)
+  id: WriteModeSplit(TMG.TreeData{System.Single[]},TMG.IModeChoiceNode,System.String)
+  parent: TMG.GTAModel.NestedModeSplit
+  langs:
+  - csharp
+  - vb
+  name: WriteModeSplit(TreeData<Single[]>, IModeChoiceNode, String)
+  nameWithType: NestedModeSplit.WriteModeSplit(TreeData<Single[]>, IModeChoiceNode, String)
+  fullName: TMG.GTAModel.NestedModeSplit.WriteModeSplit(TMG.TreeData<System.Single[]>, TMG.IModeChoiceNode, System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NestedModeSplit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WriteModeSplit
+    path: ../../../XTMF/Code/GTAModel/NestedModeSplit.cs
+    startLine: 188
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: protected void WriteModeSplit(TreeData<float[]> split, IModeChoiceNode modeNode, string directoryName)
+    parameters:
+    - id: split
+      type: TMG.TreeData{System.Single[]}
+    - id: modeNode
+      type: TMG.IModeChoiceNode
+    - id: directoryName
+      type: System.String
+    content.vb: Protected Sub WriteModeSplit(split As TreeData(Of Single()), modeNode As IModeChoiceNode, directoryName As String)
+  overload: TMG.GTAModel.NestedModeSplit.WriteModeSplit*
+  nameWithType.vb: NestedModeSplit.WriteModeSplit(TreeData(Of Single()), IModeChoiceNode, String)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: TMG.GTAModel.NestedModeSplit.WriteModeSplit(TMG.TreeData(Of System.Single()), TMG.IModeChoiceNode, System.String)
+  name.vb: WriteModeSplit(TreeData(Of Single()), IModeChoiceNode, String)
+references:
+- uid: TMG.GTAModel
+  commentId: N:TMG.GTAModel
+  isExternal: false
+  name: TMG.GTAModel
+  nameWithType: TMG.GTAModel
+  fullName: TMG.GTAModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.ModeSplit.IInteractiveModeSplit
+  commentId: T:TMG.ModeSplit.IInteractiveModeSplit
+  parent: TMG.ModeSplit
+  isExternal: false
+  name: IInteractiveModeSplit
+  nameWithType: IInteractiveModeSplit
+  fullName: TMG.ModeSplit.IInteractiveModeSplit
+- uid: TMG.IMultiModeSplit
+  commentId: T:TMG.IMultiModeSplit
+  parent: TMG
+  isExternal: false
+  name: IMultiModeSplit
+  nameWithType: IMultiModeSplit
+  fullName: TMG.IMultiModeSplit
+- uid: TMG.IModeSplit
+  commentId: T:TMG.IModeSplit
+  parent: TMG
+  isExternal: false
+  name: IModeSplit
+  nameWithType: IModeSplit
+  fullName: TMG.IModeSplit
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.ModeSplit
+  commentId: N:TMG.ModeSplit
+  isExternal: false
+  name: TMG.ModeSplit
+  nameWithType: TMG.ModeSplit
+  fullName: TMG.ModeSplit
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.I4StepModel
+  commentId: T:TMG.I4StepModel
+  parent: TMG
+  isExternal: false
+  name: I4StepModel
+  nameWithType: I4StepModel
+  fullName: TMG.I4StepModel
+- uid: TMG.Input.FileFromOutputDirectory
+  commentId: T:TMG.Input.FileFromOutputDirectory
+  parent: TMG.Input
+  isExternal: false
+  name: FileFromOutputDirectory
+  nameWithType: FileFromOutputDirectory
+  fullName: TMG.Input.FileFromOutputDirectory
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  isExternal: false
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  isExternal: false
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.GTAModel.NestedModeSplit.MinLogSum*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.MinLogSum
+  isExternal: false
+  name: MinLogSum
+  nameWithType: NestedModeSplit.MinLogSum
+  fullName: TMG.GTAModel.NestedModeSplit.MinLogSum
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.NestedModeSplit.Name*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.Name
+  isExternal: false
+  name: Name
+  nameWithType: NestedModeSplit.Name
+  fullName: TMG.GTAModel.NestedModeSplit.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.NestedModeSplit.Progress*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: NestedModeSplit.Progress
+  fullName: TMG.GTAModel.NestedModeSplit.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.NestedModeSplit.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: NestedModeSplit.ProgressColour
+  fullName: TMG.GTAModel.NestedModeSplit.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NestedModeSplit.ComputeUtility*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.ComputeUtility
+  isExternal: false
+  name: ComputeUtility
+  nameWithType: NestedModeSplit.ComputeUtility
+  fullName: TMG.GTAModel.NestedModeSplit.ComputeUtility
+- uid: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  commentId: M:TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+  parent: TMG.ModeSplit.IInteractiveModeSplit
+  isExternal: false
+  name: ComputeUtility(IZone, IZone)
+  nameWithType: IInteractiveModeSplit.ComputeUtility(IZone, IZone)
+  fullName: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone, TMG.IZone)
+  spec.csharp:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+    name: ComputeUtility
+    nameWithType: IInteractiveModeSplit.ComputeUtility
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility(TMG.IZone,TMG.IZone)
+    name: ComputeUtility
+    nameWithType: IInteractiveModeSplit.ComputeUtility
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.ComputeUtility
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit
+  isExternal: false
+  name: EndInterativeModeSplit
+  nameWithType: NestedModeSplit.EndInterativeModeSplit
+  fullName: TMG.GTAModel.NestedModeSplit.EndInterativeModeSplit
+- uid: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+  commentId: M:TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+  parent: TMG.ModeSplit.IInteractiveModeSplit
+  isExternal: false
+  name: EndInterativeModeSplit()
+  nameWithType: IInteractiveModeSplit.EndInterativeModeSplit()
+  fullName: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit()
+  spec.csharp:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+    name: EndInterativeModeSplit
+    nameWithType: IInteractiveModeSplit.EndInterativeModeSplit
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+    name: EndInterativeModeSplit
+    nameWithType: IInteractiveModeSplit.EndInterativeModeSplit
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.EndInterativeModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NestedModeSplit.ModeSplit*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.ModeSplit
+  isExternal: false
+  name: ModeSplit
+  nameWithType: NestedModeSplit.ModeSplit
+  fullName: TMG.GTAModel.NestedModeSplit.ModeSplit
+- uid: TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  commentId: M:TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+  parent: TMG.IMultiModeSplit
+  isExternal: true
+  name: ModeSplit(IEnumerable<SparseTwinIndex<Single>>, Int32)
+  nameWithType: IMultiModeSplit.ModeSplit(IEnumerable<SparseTwinIndex<Single>>, Int32)
+  fullName: TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable<Datastructure.SparseTwinIndex<System.Single>>, System.Int32)
+  nameWithType.vb: IMultiModeSplit.ModeSplit(IEnumerable(Of SparseTwinIndex(Of Single)), Int32)
+  fullName.vb: TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable(Of Datastructure.SparseTwinIndex(Of System.Single)), System.Int32)
+  name.vb: ModeSplit(IEnumerable(Of SparseTwinIndex(Of Single)), Int32)
+  spec.csharp:
+  - uid: TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+    name: ModeSplit
+    nameWithType: IMultiModeSplit.ModeSplit
+    fullName: TMG.IMultiModeSplit.ModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IMultiModeSplit.ModeSplit(System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}},System.Int32)
+    name: ModeSplit
+    nameWithType: IMultiModeSplit.ModeSplit
+    fullName: TMG.IMultiModeSplit.ModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+  commentId: T:System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<SparseTwinIndex<Single>>
+  nameWithType: IEnumerable<SparseTwinIndex<Single>>
+  fullName: System.Collections.Generic.IEnumerable<Datastructure.SparseTwinIndex<System.Single>>
+  nameWithType.vb: IEnumerable(Of SparseTwinIndex(Of Single))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: IEnumerable(Of SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List{TMG.TreeData{System.Single[][]}}
+  commentId: T:System.Collections.Generic.List{TMG.TreeData{System.Single[][]}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<TreeData<Single[][]>>
+  nameWithType: List<TreeData<Single[][]>>
+  fullName: System.Collections.Generic.List<TMG.TreeData<System.Single[][]>>
+  nameWithType.vb: List(Of TreeData(Of Single()()))
+  fullName.vb: System.Collections.Generic.List(Of TMG.TreeData(Of System.Single()()))
+  name.vb: List(Of TreeData(Of Single()()))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  commentId: M:TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+  parent: TMG.IModeSplit
+  isExternal: true
+  name: ModeSplit(SparseTwinIndex<Single>)
+  nameWithType: IModeSplit.ModeSplit(SparseTwinIndex<Single>)
+  fullName: TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex<System.Single>)
+  nameWithType.vb: IModeSplit.ModeSplit(SparseTwinIndex(Of Single))
+  fullName.vb: TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: ModeSplit(SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+    name: ModeSplit
+    nameWithType: IModeSplit.ModeSplit
+    fullName: TMG.IModeSplit.ModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeSplit.ModeSplit(Datastructure.SparseTwinIndex{System.Single})
+    name: ModeSplit
+    nameWithType: IModeSplit.ModeSplit
+    fullName: TMG.IModeSplit.ModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex{System.Single}
+  commentId: T:Datastructure.SparseTwinIndex{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseTwinIndex`1
+  name: SparseTwinIndex<Single>
+  nameWithType: SparseTwinIndex<Single>
+  fullName: Datastructure.SparseTwinIndex<System.Single>
+  nameWithType.vb: SparseTwinIndex(Of Single)
+  fullName.vb: Datastructure.SparseTwinIndex(Of System.Single)
+  name.vb: SparseTwinIndex(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex`1
+  commentId: T:Datastructure.SparseTwinIndex`1
+  isExternal: false
+  name: SparseTwinIndex<T>
+  nameWithType: SparseTwinIndex<T>
+  fullName: Datastructure.SparseTwinIndex<T>
+  nameWithType.vb: SparseTwinIndex(Of T)
+  fullName.vb: Datastructure.SparseTwinIndex(Of T)
+  name.vb: SparseTwinIndex(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure
+  commentId: N:Datastructure
+  isExternal: false
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.GTAModel.NestedModeSplit.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: NestedModeSplit.RuntimeValidation
+  fullName: TMG.GTAModel.NestedModeSplit.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.NestedModeSplit.SingleEnumerator*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.SingleEnumerator
+  isExternal: false
+  name: SingleEnumerator
+  nameWithType: NestedModeSplit.SingleEnumerator
+  fullName: TMG.GTAModel.NestedModeSplit.SingleEnumerator
+- uid: TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit
+  isExternal: false
+  name: StartNewInteractiveModeSplit
+  nameWithType: NestedModeSplit.StartNewInteractiveModeSplit
+  fullName: TMG.GTAModel.NestedModeSplit.StartNewInteractiveModeSplit
+- uid: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  commentId: M:TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  parent: TMG.ModeSplit.IInteractiveModeSplit
+  isExternal: true
+  name: StartNewInteractiveModeSplit(Int32)
+  nameWithType: IInteractiveModeSplit.StartNewInteractiveModeSplit(Int32)
+  fullName: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+  spec.csharp:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+    name: StartNewInteractiveModeSplit
+    nameWithType: IInteractiveModeSplit.StartNewInteractiveModeSplit
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit(System.Int32)
+    name: StartNewInteractiveModeSplit
+    nameWithType: IInteractiveModeSplit.StartNewInteractiveModeSplit
+    fullName: TMG.ModeSplit.IInteractiveModeSplit.StartNewInteractiveModeSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NestedModeSplit.WriteModeSplit*
+  commentId: Overload:TMG.GTAModel.NestedModeSplit.WriteModeSplit
+  isExternal: false
+  name: WriteModeSplit
+  nameWithType: NestedModeSplit.WriteModeSplit
+  fullName: TMG.GTAModel.NestedModeSplit.WriteModeSplit
+- uid: TMG.TreeData{System.Single[]}
+  commentId: T:TMG.TreeData{System.Single[]}
+  parent: TMG
+  definition: TMG.TreeData`1
+  name: TreeData<Single[]>
+  nameWithType: TreeData<Single[]>
+  fullName: TMG.TreeData<System.Single[]>
+  nameWithType.vb: TreeData(Of Single())
+  fullName.vb: TMG.TreeData(Of System.Single())
+  name.vb: TreeData(Of Single())
+  spec.csharp:
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IModeChoiceNode
+  commentId: T:TMG.IModeChoiceNode
+  parent: TMG
+  isExternal: false
+  name: IModeChoiceNode
+  nameWithType: IModeChoiceNode
+  fullName: TMG.IModeChoiceNode
+- uid: TMG.TreeData`1
+  commentId: T:TMG.TreeData`1
+  isExternal: false
+  name: TreeData<T>
+  nameWithType: TreeData<T>
+  fullName: TMG.TreeData<T>
+  nameWithType.vb: TreeData(Of T)
+  fullName.vb: TMG.TreeData(Of T)
+  name.vb: TreeData(Of T)
+  spec.csharp:
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.TreeData`1
+    name: TreeData
+    nameWithType: TreeData
+    fullName: TMG.TreeData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

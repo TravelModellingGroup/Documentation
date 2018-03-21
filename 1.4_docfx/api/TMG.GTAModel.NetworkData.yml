@@ -1,0 +1,3964 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkData
+  commentId: T:TMG.GTAModel.NetworkData
+  id: NetworkData
+  parent: TMG.GTAModel
+  children:
+  - TMG.GTAModel.NetworkData.AMEndTime
+  - TMG.GTAModel.NetworkData.AMStartTime
+  - TMG.GTAModel.NetworkData.BaseAMTravelCostData
+  - TMG.GTAModel.NetworkData.BaseAMTravelTimeData
+  - TMG.GTAModel.NetworkData.BaseOffpeakTravelCostData
+  - TMG.GTAModel.NetworkData.BaseOffpeakTravelTimeData
+  - TMG.GTAModel.NetworkData.BasePMTravelCostData
+  - TMG.GTAModel.NetworkData.BasePMTravelTimeData
+  - TMG.GTAModel.NetworkData.Dispose
+  - TMG.GTAModel.NetworkData.Dispose(System.Boolean)
+  - TMG.GTAModel.NetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  - TMG.GTAModel.NetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  - TMG.GTAModel.NetworkData.GiveData
+  - TMG.GTAModel.NetworkData.HeaderBoolean
+  - TMG.GTAModel.NetworkData.IterativeRoot
+  - TMG.GTAModel.NetworkData.LoadData
+  - TMG.GTAModel.NetworkData.Loaded
+  - TMG.GTAModel.NetworkData.Name
+  - TMG.GTAModel.NetworkData.NetworkType
+  - TMG.GTAModel.NetworkData.ODC
+  - TMG.GTAModel.NetworkData.PMEndTime
+  - TMG.GTAModel.NetworkData.PMStartTime
+  - TMG.GTAModel.NetworkData.Progress
+  - TMG.GTAModel.NetworkData.ProgressColour
+  - TMG.GTAModel.NetworkData.RebuildDataOnSuccessiveLoads
+  - TMG.GTAModel.NetworkData.Root
+  - TMG.GTAModel.NetworkData.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  - TMG.GTAModel.NetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.NetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  - TMG.GTAModel.NetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.NetworkData.UnloadData
+  - TMG.GTAModel.NetworkData.UpdatedAMCostData
+  - TMG.GTAModel.NetworkData.UpdatedAMTravelTimeData
+  - TMG.GTAModel.NetworkData.UpdatedODC
+  - TMG.GTAModel.NetworkData.UpdatedOffpeakCostData
+  - TMG.GTAModel.NetworkData.UpdatedOffpeakTravelTimeData
+  - TMG.GTAModel.NetworkData.UpdatedPMCostData
+  - TMG.GTAModel.NetworkData.UpdatedPMTravelTimeData
+  - TMG.GTAModel.NetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  - TMG.GTAModel.NetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.NetworkData.Year
+  langs:
+  - csharp
+  - vb
+  name: NetworkData
+  nameWithType: NetworkData
+  fullName: TMG.GTAModel.NetworkData
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 27
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: 'public class NetworkData : INetworkData, IDataSource<INetworkData>, IDataSource, IModule, IDisposable'
+    content.vb: >-
+      Public Class NetworkData
+          Implements INetworkData, IDataSource(Of INetworkData), IDataSource, IModule, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.INetworkData
+  - XTMF.IDataSource{TMG.INetworkData}
+  - XTMF.IDataSource
+  - XTMF.IModule
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkData.AMEndTime
+  commentId: F:TMG.GTAModel.NetworkData.AMEndTime
+  id: AMEndTime
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: AMEndTime
+  nameWithType: NetworkData.AMEndTime
+  fullName: TMG.GTAModel.NetworkData.AMEndTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AMEndTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("AM End Time", "9:00", typeof (Time), "The end of the AM peak period.")]
+
+      public Time AMEndTime
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("AM End Time", "9:00", GetType(Time), "The end of the AM peak period.")>
+
+      Public AMEndTime As Time
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: AM End Time
+    - type: System.String
+      value: 9:00
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The end of the AM peak period.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.AMStartTime
+  commentId: F:TMG.GTAModel.NetworkData.AMStartTime
+  id: AMStartTime
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: AMStartTime
+  nameWithType: NetworkData.AMStartTime
+  fullName: TMG.GTAModel.NetworkData.AMStartTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AMStartTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 33
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("AM Start Time", "6:00", typeof (Time), "The start of the AM peak period.")]
+
+      public Time AMStartTime
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("AM Start Time", "6:00", GetType(Time), "The start of the AM peak period.")>
+
+      Public AMStartTime As Time
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: AM Start Time
+    - type: System.String
+      value: 6:00
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The start of the AM peak period.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BaseAMTravelCostData
+  commentId: F:TMG.GTAModel.NetworkData.BaseAMTravelCostData
+  id: BaseAMTravelCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BaseAMTravelCostData
+  nameWithType: NetworkData.BaseAMTravelCostData
+  fullName: TMG.GTAModel.NetworkData.BaseAMTravelCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BaseAMTravelCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 36
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base AM Cost Data", "BaseCacheData/AMAutoCosts.311", "The base AM network costs .311/csv file")]
+
+      public string BaseAMTravelCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base AM Cost Data", "BaseCacheData/AMAutoCosts.311", "The base AM network costs .311/csv file")>
+
+      Public BaseAMTravelCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base AM Cost Data
+    - type: System.String
+      value: BaseCacheData/AMAutoCosts.311
+    - type: System.String
+      value: The base AM network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BaseAMTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.BaseAMTravelTimeData
+  id: BaseAMTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BaseAMTravelTimeData
+  nameWithType: NetworkData.BaseAMTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.BaseAMTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BaseAMTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base AM Travel Time Data", "BaseCacheData/AMAutoTimes.311", "The base AM network times .311/csv file")]
+
+      public string BaseAMTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base AM Travel Time Data", "BaseCacheData/AMAutoTimes.311", "The base AM network times .311/csv file")>
+
+      Public BaseAMTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base AM Travel Time Data
+    - type: System.String
+      value: BaseCacheData/AMAutoTimes.311
+    - type: System.String
+      value: The base AM network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BaseOffpeakTravelCostData
+  commentId: F:TMG.GTAModel.NetworkData.BaseOffpeakTravelCostData
+  id: BaseOffpeakTravelCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BaseOffpeakTravelCostData
+  nameWithType: NetworkData.BaseOffpeakTravelCostData
+  fullName: TMG.GTAModel.NetworkData.BaseOffpeakTravelCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BaseOffpeakTravelCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base OP Cost Data", "BaseCacheData/OffpeakAutoCosts.311", "The base Offpeak network costs .311/csv file")]
+
+      public string BaseOffpeakTravelCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base OP Cost Data", "BaseCacheData/OffpeakAutoCosts.311", "The base Offpeak network costs .311/csv file")>
+
+      Public BaseOffpeakTravelCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base OP Cost Data
+    - type: System.String
+      value: BaseCacheData/OffpeakAutoCosts.311
+    - type: System.String
+      value: The base Offpeak network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BaseOffpeakTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.BaseOffpeakTravelTimeData
+  id: BaseOffpeakTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BaseOffpeakTravelTimeData
+  nameWithType: NetworkData.BaseOffpeakTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.BaseOffpeakTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BaseOffpeakTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 45
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base OP Travel Time Data", "BaseCacheData/OffpeakAutoTimes.311", "The base Offpeak network times .311/csv file")]
+
+      public string BaseOffpeakTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base OP Travel Time Data", "BaseCacheData/OffpeakAutoTimes.311", "The base Offpeak network times .311/csv file")>
+
+      Public BaseOffpeakTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base OP Travel Time Data
+    - type: System.String
+      value: BaseCacheData/OffpeakAutoTimes.311
+    - type: System.String
+      value: The base Offpeak network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BasePMTravelCostData
+  commentId: F:TMG.GTAModel.NetworkData.BasePMTravelCostData
+  id: BasePMTravelCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BasePMTravelCostData
+  nameWithType: NetworkData.BasePMTravelCostData
+  fullName: TMG.GTAModel.NetworkData.BasePMTravelCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BasePMTravelCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 48
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base PM Cost Data", "BaseCacheData/PMAutoCosts.311", "The base PM network costs .311/csv file")]
+
+      public string BasePMTravelCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base PM Cost Data", "BaseCacheData/PMAutoCosts.311", "The base PM network costs .311/csv file")>
+
+      Public BasePMTravelCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base PM Cost Data
+    - type: System.String
+      value: BaseCacheData/PMAutoCosts.311
+    - type: System.String
+      value: The base PM network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.BasePMTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.BasePMTravelTimeData
+  id: BasePMTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: BasePMTravelTimeData
+  nameWithType: NetworkData.BasePMTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.BasePMTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BasePMTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 51
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Base PM Travel Time Data", "BaseCacheData/PMAutoTimes.311", "The base PM network times .311/csv file")]
+
+      public string BasePMTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Base PM Travel Time Data", "BaseCacheData/PMAutoTimes.311", "The base PM network times .311/csv file")>
+
+      Public BasePMTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Base PM Travel Time Data
+    - type: System.String
+      value: BaseCacheData/PMAutoTimes.311
+    - type: System.String
+      value: The base PM network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.HeaderBoolean
+  commentId: F:TMG.GTAModel.NetworkData.HeaderBoolean
+  id: HeaderBoolean
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: HeaderBoolean
+  nameWithType: NetworkData.HeaderBoolean
+  fullName: TMG.GTAModel.NetworkData.HeaderBoolean
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HeaderBoolean
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 54
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Header", true, "When loading CSV data, will it contain a header?")]
+
+      public bool HeaderBoolean
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Header", True, "When loading CSV data, will it contain a header?")>
+
+      Public HeaderBoolean As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Header
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: When loading CSV data, will it contain a header?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.IterativeRoot
+  commentId: F:TMG.GTAModel.NetworkData.IterativeRoot
+  id: IterativeRoot
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: IterativeRoot
+  nameWithType: NetworkData.IterativeRoot
+  fullName: TMG.GTAModel.NetworkData.IterativeRoot
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IterativeRoot
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 60
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  summary: "\nAllows us to try to get the current iteration data\n"
+  example: []
+  syntax:
+    content: public IIterativeModel IterativeRoot
+    return:
+      type: TMG.IIterativeModel
+    content.vb: Public IterativeRoot As IIterativeModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.ODC
+  commentId: F:TMG.GTAModel.NetworkData.ODC
+  id: ODC
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: ODC
+  nameWithType: NetworkData.ODC
+  fullName: TMG.GTAModel.NetworkData.ODC
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ODC
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 63
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("First ODC File", "BaseCacheData/Auto.odc", "The location of the base Network Cache.")]
+
+      public string ODC
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("First ODC File", "BaseCacheData/Auto.odc", "The location of the base Network Cache.")>
+
+      Public ODC As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: First ODC File
+    - type: System.String
+      value: BaseCacheData/Auto.odc
+    - type: System.String
+      value: The location of the base Network Cache.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.PMEndTime
+  commentId: F:TMG.GTAModel.NetworkData.PMEndTime
+  id: PMEndTime
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: PMEndTime
+  nameWithType: NetworkData.PMEndTime
+  fullName: TMG.GTAModel.NetworkData.PMEndTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PMEndTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 66
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("PM End Time", "18:30", typeof (Time), "The end of the PM peak period.")]
+
+      public Time PMEndTime
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("PM End Time", "18:30", GetType(Time), "The end of the PM peak period.")>
+
+      Public PMEndTime As Time
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: PM End Time
+    - type: System.String
+      value: 18:30
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The end of the PM peak period.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.PMStartTime
+  commentId: F:TMG.GTAModel.NetworkData.PMStartTime
+  id: PMStartTime
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: PMStartTime
+  nameWithType: NetworkData.PMStartTime
+  fullName: TMG.GTAModel.NetworkData.PMStartTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PMStartTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 69
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("PM Start Time", "15:30", typeof (Time), "The start of the PM peak period.")]
+
+      public Time PMStartTime
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("PM Start Time", "15:30", GetType(Time), "The start of the PM peak period.")>
+
+      Public PMStartTime As Time
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: PM Start Time
+    - type: System.String
+      value: 15:30
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The start of the PM peak period.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.RebuildDataOnSuccessiveLoads
+  commentId: F:TMG.GTAModel.NetworkData.RebuildDataOnSuccessiveLoads
+  id: RebuildDataOnSuccessiveLoads
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: RebuildDataOnSuccessiveLoads
+  nameWithType: NetworkData.RebuildDataOnSuccessiveLoads
+  fullName: TMG.GTAModel.NetworkData.RebuildDataOnSuccessiveLoads
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RebuildDataOnSuccessiveLoads
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 72
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Rebuild Data", true, "Rebuild the data cache on successive iterations?")]
+
+      public bool RebuildDataOnSuccessiveLoads
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Rebuild Data", True, "Rebuild the data cache on successive iterations?")>
+
+      Public RebuildDataOnSuccessiveLoads As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Rebuild Data
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Rebuild the data cache on successive iterations?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Root
+  commentId: F:TMG.GTAModel.NetworkData.Root
+  id: Root
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: NetworkData.Root
+  fullName: TMG.GTAModel.NetworkData.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 75
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedAMCostData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedAMCostData
+  id: UpdatedAMCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAMCostData
+  nameWithType: NetworkData.UpdatedAMCostData
+  fullName: TMG.GTAModel.NetworkData.UpdatedAMCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedAMCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 78
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated AM Cost Data", "UpdatedCacheData/AMAutoCosts.311", "The updated AM network costs .311/csv file")]
+
+      public string UpdatedAMCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated AM Cost Data", "UpdatedCacheData/AMAutoCosts.311", "The updated AM network costs .311/csv file")>
+
+      Public UpdatedAMCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated AM Cost Data
+    - type: System.String
+      value: UpdatedCacheData/AMAutoCosts.311
+    - type: System.String
+      value: The updated AM network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedAMTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedAMTravelTimeData
+  id: UpdatedAMTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedAMTravelTimeData
+  nameWithType: NetworkData.UpdatedAMTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.UpdatedAMTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedAMTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 81
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated AM Travel Time Data", "UpdatedCacheData/AMAutoTimes.311", "The updated AM network times .311/csv file")]
+
+      public string UpdatedAMTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated AM Travel Time Data", "UpdatedCacheData/AMAutoTimes.311", "The updated AM network times .311/csv file")>
+
+      Public UpdatedAMTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated AM Travel Time Data
+    - type: System.String
+      value: UpdatedCacheData/AMAutoTimes.311
+    - type: System.String
+      value: The updated AM network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedODC
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedODC
+  id: UpdatedODC
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedODC
+  nameWithType: NetworkData.UpdatedODC
+  fullName: TMG.GTAModel.NetworkData.UpdatedODC
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedODC
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 84
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated ODC File", "UpdatedCacheData/Auto.odc", "The location of the updated Network Cache.")]
+
+      public string UpdatedODC
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated ODC File", "UpdatedCacheData/Auto.odc", "The location of the updated Network Cache.")>
+
+      Public UpdatedODC As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated ODC File
+    - type: System.String
+      value: UpdatedCacheData/Auto.odc
+    - type: System.String
+      value: The location of the updated Network Cache.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedOffpeakCostData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedOffpeakCostData
+  id: UpdatedOffpeakCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedOffpeakCostData
+  nameWithType: NetworkData.UpdatedOffpeakCostData
+  fullName: TMG.GTAModel.NetworkData.UpdatedOffpeakCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedOffpeakCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 87
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated OP Data", "UpdatedCacheData/OffpeakAutoCosts.311", "The updated Offpeak network costs .311/csv file")]
+
+      public string UpdatedOffpeakCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated OP Data", "UpdatedCacheData/OffpeakAutoCosts.311", "The updated Offpeak network costs .311/csv file")>
+
+      Public UpdatedOffpeakCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated OP Data
+    - type: System.String
+      value: UpdatedCacheData/OffpeakAutoCosts.311
+    - type: System.String
+      value: The updated Offpeak network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedOffpeakTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedOffpeakTravelTimeData
+  id: UpdatedOffpeakTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedOffpeakTravelTimeData
+  nameWithType: NetworkData.UpdatedOffpeakTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.UpdatedOffpeakTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedOffpeakTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 90
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated OP Travel Time Data", "UpdatedCacheData/OffpeakAutoTimes.311", "The updated Offpeak network times .311/csv file")]
+
+      public string UpdatedOffpeakTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated OP Travel Time Data", "UpdatedCacheData/OffpeakAutoTimes.311", "The updated Offpeak network times .311/csv file")>
+
+      Public UpdatedOffpeakTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated OP Travel Time Data
+    - type: System.String
+      value: UpdatedCacheData/OffpeakAutoTimes.311
+    - type: System.String
+      value: The updated Offpeak network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedPMCostData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedPMCostData
+  id: UpdatedPMCostData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedPMCostData
+  nameWithType: NetworkData.UpdatedPMCostData
+  fullName: TMG.GTAModel.NetworkData.UpdatedPMCostData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedPMCostData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 93
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated PM Cost Data", "UpdatedCacheData/PMAutoCosts.311", "The updated PM network costs .311/csv file")]
+
+      public string UpdatedPMCostData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated PM Cost Data", "UpdatedCacheData/PMAutoCosts.311", "The updated PM network costs .311/csv file")>
+
+      Public UpdatedPMCostData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated PM Cost Data
+    - type: System.String
+      value: UpdatedCacheData/PMAutoCosts.311
+    - type: System.String
+      value: The updated PM network costs .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UpdatedPMTravelTimeData
+  commentId: F:TMG.GTAModel.NetworkData.UpdatedPMTravelTimeData
+  id: UpdatedPMTravelTimeData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UpdatedPMTravelTimeData
+  nameWithType: NetworkData.UpdatedPMTravelTimeData
+  fullName: TMG.GTAModel.NetworkData.UpdatedPMTravelTimeData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdatedPMTravelTimeData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 96
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Updated PM Travel Time Data", "UpdatedCacheData/PMAutoTimes.311", "The updated PM network times .311/csv file")]
+
+      public string UpdatedPMTravelTimeData
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Updated PM Travel Time Data", "UpdatedCacheData/PMAutoTimes.311", "The updated PM network times .311/csv file")>
+
+      Public UpdatedPMTravelTimeData As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Updated PM Travel Time Data
+    - type: System.String
+      value: UpdatedCacheData/PMAutoTimes.311
+    - type: System.String
+      value: The updated PM network times .311/csv file
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Year
+  commentId: F:TMG.GTAModel.NetworkData.Year
+  id: Year
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Year
+  nameWithType: NetworkData.Year
+  fullName: TMG.GTAModel.NetworkData.Year
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Year
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 99
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Year", 2006, "The simulation year.  This number will be attached to the metadata when creating a new cache file.")]
+
+      public int Year
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Year", 2006, "The simulation year.  This number will be attached to the metadata when creating a new cache file.")>
+
+      Public Year As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Year
+    - type: System.Int32
+      value: 2006
+    - type: System.String
+      value: The simulation year.  This number will be attached to the metadata when creating a new cache file.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.NetworkType
+  commentId: P:TMG.GTAModel.NetworkData.NetworkType
+  id: NetworkType
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: NetworkType
+  nameWithType: NetworkData.NetworkType
+  fullName: TMG.GTAModel.NetworkData.NetworkType
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkType
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 120
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Network Type", "Auto", "The name of the network data contained in this NetworkData module")]
+
+      public string NetworkType { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Network Type", "Auto", "The name of the network data contained in this NetworkData module")>
+
+      Public Property NetworkType As String
+  overload: TMG.GTAModel.NetworkData.NetworkType*
+  implements:
+  - TMG.INetworkData.NetworkType
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Network Type
+    - type: System.String
+      value: Auto
+    - type: System.String
+      value: The name of the network data contained in this NetworkData module
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Progress
+  commentId: P:TMG.GTAModel.NetworkData.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: NetworkData.Progress
+  fullName: TMG.GTAModel.NetworkData.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 127
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.NetworkData.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkData.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkData.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: NetworkData.ProgressColour
+  fullName: TMG.GTAModel.NetworkData.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 132
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkData.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkData.Name
+  commentId: P:TMG.GTAModel.NetworkData.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: NetworkData.Name
+  fullName: TMG.GTAModel.NetworkData.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 137
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkData.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.GiveData
+  commentId: M:TMG.GTAModel.NetworkData.GiveData
+  id: GiveData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: GiveData()
+  nameWithType: NetworkData.GiveData()
+  fullName: TMG.GTAModel.NetworkData.GiveData()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GiveData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 143
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public INetworkData GiveData()
+    return:
+      type: TMG.INetworkData
+    content.vb: Public Function GiveData As INetworkData
+  overload: TMG.GTAModel.NetworkData.GiveData*
+  implements:
+  - XTMF.IDataSource{TMG.INetworkData}.GiveData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Loaded
+  commentId: P:TMG.GTAModel.NetworkData.Loaded
+  id: Loaded
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Loaded
+  nameWithType: NetworkData.Loaded
+  fullName: TMG.GTAModel.NetworkData.Loaded
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Loaded
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 148
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool Loaded { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Loaded As Boolean
+  overload: TMG.GTAModel.NetworkData.Loaded*
+  implements:
+  - XTMF.IDataSource.Loaded
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkData.LoadData
+  commentId: M:TMG.GTAModel.NetworkData.LoadData
+  id: LoadData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: LoadData()
+  nameWithType: NetworkData.LoadData()
+  fullName: TMG.GTAModel.NetworkData.LoadData()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LoadData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 153
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void LoadData()
+    content.vb: Public Sub LoadData
+  overload: TMG.GTAModel.NetworkData.LoadData*
+  implements:
+  - XTMF.IDataSource.LoadData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkData.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: NetworkData.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkData.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 179
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  summary: "\nThis is called before the start method as a way to pre-check that all of the parameters that are selected\nare in fact valid for this module.\n"
+  example: []
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+      description: A string that should be assigned a detailed error
+    return:
+      type: System.Boolean
+      description: If the validation was successful or if there was a problem
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkData.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: NetworkData.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkData.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.NetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: TravelCost(IZone, IZone, Time)
+  nameWithType: NetworkData.TravelCost(IZone, IZone, Time)
+  fullName: TMG.GTAModel.NetworkData.TravelCost(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelCost
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 186
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float TravelCost(IZone start, IZone end, Time time)
+    parameters:
+    - id: start
+      type: TMG.IZone
+    - id: end
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Function TravelCost(start As IZone, end As IZone, time As Time) As Single
+  overload: TMG.GTAModel.NetworkData.TravelCost*
+  implements:
+  - TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  id: TravelCost(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: TravelCost(Int32, Int32, Time)
+  nameWithType: NetworkData.TravelCost(Int32, Int32, Time)
+  fullName: TMG.GTAModel.NetworkData.TravelCost(System.Int32, System.Int32, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelCost
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 192
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float TravelCost(int flatOrigin, int flatDestination, Time time)
+    parameters:
+    - id: flatOrigin
+      type: System.Int32
+    - id: flatDestination
+      type: System.Int32
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Function TravelCost(flatOrigin As Integer, flatDestination As Integer, time As Time) As Single
+  overload: TMG.GTAModel.NetworkData.TravelCost*
+  implements:
+  - TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: NetworkData.TravelTime(IZone, IZone, Time)
+  fullName: TMG.GTAModel.NetworkData.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 199
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Time TravelTime(IZone start, IZone end, Time time)
+    parameters:
+    - id: start
+      type: TMG.IZone
+    - id: end
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: XTMF.Time
+    content.vb: Public Function TravelTime(start As IZone, end As IZone, time As Time) As Time
+  overload: TMG.GTAModel.NetworkData.TravelTime*
+  implements:
+  - TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  id: TravelTime(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: TravelTime(Int32, Int32, Time)
+  nameWithType: NetworkData.TravelTime(Int32, Int32, Time)
+  fullName: TMG.GTAModel.NetworkData.TravelTime(System.Int32, System.Int32, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelTime
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 205
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Time TravelTime(int flatOrigin, int flatDestination, Time time)
+    parameters:
+    - id: flatOrigin
+      type: System.Int32
+    - id: flatDestination
+      type: System.Int32
+    - id: time
+      type: XTMF.Time
+    return:
+      type: XTMF.Time
+    content.vb: Public Function TravelTime(flatOrigin As Integer, flatDestination As Integer, time As Time) As Time
+  overload: TMG.GTAModel.NetworkData.TravelTime*
+  implements:
+  - TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.UnloadData
+  commentId: M:TMG.GTAModel.NetworkData.UnloadData
+  id: UnloadData
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: UnloadData()
+  nameWithType: NetworkData.UnloadData()
+  fullName: TMG.GTAModel.NetworkData.UnloadData()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UnloadData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 212
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void UnloadData()
+    content.vb: Public Sub UnloadData
+  overload: TMG.GTAModel.NetworkData.UnloadData*
+  implements:
+  - XTMF.IDataSource.UnloadData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: ValidOd(IZone, IZone, Time)
+  nameWithType: NetworkData.ValidOd(IZone, IZone, Time)
+  fullName: TMG.GTAModel.NetworkData.ValidOd(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidOd
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 222
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool ValidOd(IZone start, IZone end, Time time)
+    parameters:
+    - id: start
+      type: TMG.IZone
+    - id: end
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Boolean
+    content.vb: Public Function ValidOd(start As IZone, end As IZone, time As Time) As Boolean
+  overload: TMG.GTAModel.NetworkData.ValidOd*
+  implements:
+  - TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.GTAModel.NetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  id: ValidOd(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: ValidOd(Int32, Int32, Time)
+  nameWithType: NetworkData.ValidOd(Int32, Int32, Time)
+  fullName: TMG.GTAModel.NetworkData.ValidOd(System.Int32, System.Int32, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidOd
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 227
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool ValidOd(int flatOrigin, int flatDestination, Time time)
+    parameters:
+    - id: flatOrigin
+      type: System.Int32
+    - id: flatDestination
+      type: System.Int32
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Boolean
+    content.vb: Public Function ValidOd(flatOrigin As Integer, flatDestination As Integer, time As Time) As Boolean
+  overload: TMG.GTAModel.NetworkData.ValidOd*
+  implements:
+  - TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Dispose
+  commentId: M:TMG.GTAModel.NetworkData.Dispose
+  id: Dispose
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: NetworkData.Dispose()
+  fullName: TMG.GTAModel.NetworkData.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 349
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: TMG.GTAModel.NetworkData.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkData.Dispose(System.Boolean)
+  commentId: M:TMG.GTAModel.NetworkData.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: NetworkData.Dispose(Boolean)
+  fullName: TMG.GTAModel.NetworkData.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 355
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: protected virtual void Dispose(bool all)
+    parameters:
+    - id: all
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(all As Boolean)
+  overload: TMG.GTAModel.NetworkData.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: TMG.GTAModel.NetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  commentId: M:TMG.GTAModel.NetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  id: GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: GetAllData(IZone, IZone, Time, out Time, out Single)
+  nameWithType: NetworkData.GetAllData(IZone, IZone, Time, out Time, out Single)
+  fullName: TMG.GTAModel.NetworkData.GetAllData(TMG.IZone, TMG.IZone, XTMF.Time, out XTMF.Time, out System.Single)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetAllData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 364
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool GetAllData(IZone start, IZone end, Time time, out Time ivtt, out float cost)
+    parameters:
+    - id: start
+      type: TMG.IZone
+    - id: end
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    - id: ivtt
+      type: XTMF.Time
+    - id: cost
+      type: System.Single
+    return:
+      type: System.Boolean
+    content.vb: Public Function GetAllData(start As IZone, end As IZone, time As Time, ByRef ivtt As Time, ByRef cost As Single) As Boolean
+  overload: TMG.GTAModel.NetworkData.GetAllData*
+  implements:
+  - TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  nameWithType.vb: NetworkData.GetAllData(IZone, IZone, Time, ByRef Time, ByRef Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkData.GetAllData(TMG.IZone, TMG.IZone, XTMF.Time, ByRef XTMF.Time, ByRef System.Single)
+  name.vb: GetAllData(IZone, IZone, Time, ByRef Time, ByRef Single)
+- uid: TMG.GTAModel.NetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  commentId: M:TMG.GTAModel.NetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  id: GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  parent: TMG.GTAModel.NetworkData
+  langs:
+  - csharp
+  - vb
+  name: GetAllData(Int32, Int32, Time, out Single, out Single)
+  nameWithType: NetworkData.GetAllData(Int32, Int32, Time, out Single, out Single)
+  fullName: TMG.GTAModel.NetworkData.GetAllData(System.Int32, System.Int32, XTMF.Time, out System.Single, out System.Single)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/NetworkData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetAllData
+    path: ../../../XTMF/Code/GTAModel/Input/NetworkData.cs
+    startLine: 369
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool GetAllData(int start, int end, Time time, out float ivtt, out float cost)
+    parameters:
+    - id: start
+      type: System.Int32
+    - id: end
+      type: System.Int32
+    - id: time
+      type: XTMF.Time
+    - id: ivtt
+      type: System.Single
+    - id: cost
+      type: System.Single
+    return:
+      type: System.Boolean
+    content.vb: Public Function GetAllData(start As Integer, end As Integer, time As Time, ByRef ivtt As Single, ByRef cost As Single) As Boolean
+  overload: TMG.GTAModel.NetworkData.GetAllData*
+  implements:
+  - TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  nameWithType.vb: NetworkData.GetAllData(Int32, Int32, Time, ByRef Single, ByRef Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkData.GetAllData(System.Int32, System.Int32, XTMF.Time, ByRef System.Single, ByRef System.Single)
+  name.vb: GetAllData(Int32, Int32, Time, ByRef Single, ByRef Single)
+references:
+- uid: TMG.GTAModel
+  commentId: N:TMG.GTAModel
+  isExternal: false
+  name: TMG.GTAModel
+  nameWithType: TMG.GTAModel
+  fullName: TMG.GTAModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.INetworkData
+  commentId: T:TMG.INetworkData
+  parent: TMG
+  isExternal: false
+  name: INetworkData
+  nameWithType: INetworkData
+  fullName: TMG.INetworkData
+- uid: XTMF.IDataSource{TMG.INetworkData}
+  commentId: T:XTMF.IDataSource{TMG.INetworkData}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<INetworkData>
+  nameWithType: IDataSource<INetworkData>
+  fullName: XTMF.IDataSource<TMG.INetworkData>
+  nameWithType.vb: IDataSource(Of INetworkData)
+  fullName.vb: XTMF.IDataSource(Of TMG.INetworkData)
+  name.vb: IDataSource(Of INetworkData)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource
+  commentId: T:XTMF.IDataSource
+  parent: XTMF
+  isExternal: false
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: XTMF.IDataSource
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  isExternal: false
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  isExternal: false
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.IIterativeModel
+  commentId: T:TMG.IIterativeModel
+  parent: TMG
+  isExternal: false
+  name: IIterativeModel
+  nameWithType: IIterativeModel
+  fullName: TMG.IIterativeModel
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.GTAModel.NetworkData.NetworkType*
+  commentId: Overload:TMG.GTAModel.NetworkData.NetworkType
+  isExternal: false
+  name: NetworkType
+  nameWithType: NetworkData.NetworkType
+  fullName: TMG.GTAModel.NetworkData.NetworkType
+- uid: TMG.INetworkData.NetworkType
+  commentId: P:TMG.INetworkData.NetworkType
+  parent: TMG.INetworkData
+  isExternal: false
+  name: NetworkType
+  nameWithType: INetworkData.NetworkType
+  fullName: TMG.INetworkData.NetworkType
+- uid: TMG.GTAModel.NetworkData.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkData.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: NetworkData.Progress
+  fullName: TMG.GTAModel.NetworkData.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.NetworkData.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkData.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: NetworkData.ProgressColour
+  fullName: TMG.GTAModel.NetworkData.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.Name*
+  commentId: Overload:TMG.GTAModel.NetworkData.Name
+  isExternal: false
+  name: Name
+  nameWithType: NetworkData.Name
+  fullName: TMG.GTAModel.NetworkData.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.NetworkData.GiveData*
+  commentId: Overload:TMG.GTAModel.NetworkData.GiveData
+  isExternal: false
+  name: GiveData
+  nameWithType: NetworkData.GiveData
+  fullName: TMG.GTAModel.NetworkData.GiveData
+- uid: XTMF.IDataSource{TMG.INetworkData}.GiveData
+  commentId: M:XTMF.IDataSource{TMG.INetworkData}.GiveData
+  parent: XTMF.IDataSource{TMG.INetworkData}
+  definition: XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<INetworkData>.GiveData()
+  fullName: XTMF.IDataSource<TMG.INetworkData>.GiveData()
+  nameWithType.vb: IDataSource(Of INetworkData).GiveData()
+  fullName.vb: XTMF.IDataSource(Of TMG.INetworkData).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<INetworkData>.GiveData
+    fullName: XTMF.IDataSource<TMG.INetworkData>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of INetworkData).GiveData
+    fullName: XTMF.IDataSource(Of TMG.INetworkData).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1.GiveData
+  commentId: M:XTMF.IDataSource`1.GiveData
+  isExternal: false
+  name: GiveData()
+  nameWithType: IDataSource<T>.GiveData()
+  fullName: XTMF.IDataSource<T>.GiveData()
+  nameWithType.vb: IDataSource(Of T).GiveData()
+  fullName.vb: XTMF.IDataSource(Of T).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<T>.GiveData
+    fullName: XTMF.IDataSource<T>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of T).GiveData
+    fullName: XTMF.IDataSource(Of T).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.Loaded*
+  commentId: Overload:TMG.GTAModel.NetworkData.Loaded
+  isExternal: false
+  name: Loaded
+  nameWithType: NetworkData.Loaded
+  fullName: TMG.GTAModel.NetworkData.Loaded
+- uid: XTMF.IDataSource.Loaded
+  commentId: P:XTMF.IDataSource.Loaded
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: Loaded
+  nameWithType: IDataSource.Loaded
+  fullName: XTMF.IDataSource.Loaded
+- uid: TMG.GTAModel.NetworkData.LoadData*
+  commentId: Overload:TMG.GTAModel.NetworkData.LoadData
+  isExternal: false
+  name: LoadData
+  nameWithType: NetworkData.LoadData
+  fullName: TMG.GTAModel.NetworkData.LoadData
+- uid: XTMF.IDataSource.LoadData
+  commentId: M:XTMF.IDataSource.LoadData
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: LoadData()
+  nameWithType: IDataSource.LoadData()
+  fullName: XTMF.IDataSource.LoadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkData.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: NetworkData.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkData.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.TravelCost*
+  commentId: Overload:TMG.GTAModel.NetworkData.TravelCost
+  isExternal: false
+  name: TravelCost
+  nameWithType: NetworkData.TravelCost
+  fullName: TMG.GTAModel.NetworkData.TravelCost
+- uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: false
+  name: TravelCost(IZone, IZone, Time)
+  nameWithType: INetworkData.TravelCost(IZone, IZone, Time)
+  fullName: TMG.INetworkData.TravelCost(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: TravelCost(Int32, Int32, Time)
+  nameWithType: INetworkData.TravelCost(Int32, Int32, Time)
+  fullName: TMG.INetworkData.TravelCost(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.TravelTime*
+  commentId: Overload:TMG.GTAModel.NetworkData.TravelTime
+  isExternal: false
+  name: TravelTime
+  nameWithType: NetworkData.TravelTime
+  fullName: TMG.GTAModel.NetworkData.TravelTime
+- uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: false
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: INetworkData.TravelTime(IZone, IZone, Time)
+  fullName: TMG.INetworkData.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: TravelTime(Int32, Int32, Time)
+  nameWithType: INetworkData.TravelTime(Int32, Int32, Time)
+  fullName: TMG.INetworkData.TravelTime(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.UnloadData*
+  commentId: Overload:TMG.GTAModel.NetworkData.UnloadData
+  isExternal: false
+  name: UnloadData
+  nameWithType: NetworkData.UnloadData
+  fullName: TMG.GTAModel.NetworkData.UnloadData
+- uid: XTMF.IDataSource.UnloadData
+  commentId: M:XTMF.IDataSource.UnloadData
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: UnloadData()
+  nameWithType: IDataSource.UnloadData()
+  fullName: XTMF.IDataSource.UnloadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.ValidOd*
+  commentId: Overload:TMG.GTAModel.NetworkData.ValidOd
+  isExternal: false
+  name: ValidOd
+  nameWithType: NetworkData.ValidOd
+  fullName: TMG.GTAModel.NetworkData.ValidOd
+- uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: false
+  name: ValidOd(IZone, IZone, Time)
+  nameWithType: INetworkData.ValidOd(IZone, IZone, Time)
+  fullName: TMG.INetworkData.ValidOd(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: ValidOd(Int32, Int32, Time)
+  nameWithType: INetworkData.ValidOd(Int32, Int32, Time)
+  fullName: TMG.INetworkData.ValidOd(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.Dispose*
+  commentId: Overload:TMG.GTAModel.NetworkData.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: NetworkData.Dispose
+  fullName: TMG.GTAModel.NetworkData.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkData.GetAllData*
+  commentId: Overload:TMG.GTAModel.NetworkData.GetAllData
+  isExternal: false
+  name: GetAllData
+  nameWithType: NetworkData.GetAllData
+  fullName: TMG.GTAModel.NetworkData.GetAllData
+- uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  commentId: M:TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: GetAllData(IZone, IZone, Time, Time, Single)
+  nameWithType: INetworkData.GetAllData(IZone, IZone, Time, Time, Single)
+  fullName: TMG.INetworkData.GetAllData(TMG.IZone, TMG.IZone, XTMF.Time, XTMF.Time, System.Single)
+  spec.csharp:
+  - uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  commentId: M:TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: GetAllData(Int32, Int32, Time, Single, Single)
+  nameWithType: INetworkData.GetAllData(Int32, Int32, Time, Single, Single)
+  fullName: TMG.INetworkData.GetAllData(System.Int32, System.Int32, XTMF.Time, System.Single, System.Single)
+  spec.csharp:
+  - uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

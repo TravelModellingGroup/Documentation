@@ -1,0 +1,1540 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  commentId: T:TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  id: V4TransitAssignment
+  parent: TMG.GTAModel.NetworkAssignment
+  children:
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.BoardingPerception
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.CongestionPerception
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.DemandMatrixNumber
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute(TMG.Emme.Controller)
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.GoTrainHeadwayFraction
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.HeadwayFractionAttribute
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.MaxIterations
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.NormalizedGap
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RelativeGap
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RepresentativeHourFactor
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ScenarioNumber
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WaitTimePerception
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionAttribute
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionNonToronto
+  - TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionToronto
+  langs:
+  - csharp
+  - vb
+  name: V4TransitAssignment
+  nameWithType: V4TransitAssignment
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: V4TransitAssignment
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 25
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: 'public class V4TransitAssignment : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class V4TransitAssignment
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ScenarioNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: V4TransitAssignment.ScenarioNumber
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 38
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Scenario Number", 0, "Emme Scenario Number")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario Number", 0, "Emme Scenario Number")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: Emme Scenario Number
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.DemandMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.DemandMatrixNumber
+  id: DemandMatrixNumber
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: DemandMatrixNumber
+  nameWithType: V4TransitAssignment.DemandMatrixNumber
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.DemandMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemandMatrixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Demand Matrix Number", 0, "The number of the full matrix containing transit demand ODs")]
+
+      public int DemandMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Demand Matrix Number", 0, "The number of the full matrix containing transit demand ODs")>
+
+      Public DemandMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demand Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the full matrix containing transit demand ODs
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.HeadwayFractionAttribute
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.HeadwayFractionAttribute
+  id: HeadwayFractionAttribute
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: HeadwayFractionAttribute
+  nameWithType: V4TransitAssignment.HeadwayFractionAttribute
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.HeadwayFractionAttribute
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HeadwayFractionAttribute
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Headway Fraction Attribute", "@hfrac", "The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.")]
+
+      public string HeadwayFractionAttribute
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Headway Fraction Attribute", "@hfrac", "The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.")>
+
+      Public HeadwayFractionAttribute As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Headway Fraction Attribute
+    - type: System.String
+      value: '@hfrac'
+    - type: System.String
+      value: The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionAttribute
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionAttribute
+  id: WalkPerceptionAttribute
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: WalkPerceptionAttribute
+  nameWithType: V4TransitAssignment.WalkPerceptionAttribute
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionAttribute
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkPerceptionAttribute
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 47
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Walk Perception Attribute", "@walkp", "The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.")]
+
+      public string WalkPerceptionAttribute
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Walk Perception Attribute", "@walkp", "The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.")>
+
+      Public WalkPerceptionAttribute As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Walk Perception Attribute
+    - type: System.String
+      value: '@walkp'
+    - type: System.String
+      value: The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.GoTrainHeadwayFraction
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.GoTrainHeadwayFraction
+  id: GoTrainHeadwayFraction
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: GoTrainHeadwayFraction
+  nameWithType: V4TransitAssignment.GoTrainHeadwayFraction
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.GoTrainHeadwayFraction
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GoTrainHeadwayFraction
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 54
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("GO Train Headway Fraction", 0.5F, "The headway fraction applied to GO Rail nodes (98000 <= i < 99000) only. Normally, the headway fraction is set to 0.5 which represents a uniform arrival of passengers at a stop, given an average wait time of 1/2 (0.5 *) the headway. GO Trains run on very infrequent schedules, so passengers try to time their arrival to coincide with the train's departure and thus experience less waiting time.")]
+
+      public float GoTrainHeadwayFraction
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("GO Train Headway Fraction", 0.5F, "The headway fraction applied to GO Rail nodes (98000 <= i < 99000) only. Normally, the headway fraction is set to 0.5 which represents a uniform arrival of passengers at a stop, given an average wait time of 1/2 (0.5 *) the headway. GO Trains run on very infrequent schedules, so passengers try to time their arrival to coincide with the train's departure and thus experience less waiting time.")>
+
+      Public GoTrainHeadwayFraction As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: GO Train Headway Fraction
+    - type: System.Single
+      value: 0.5
+    - type: System.String
+      value: The headway fraction applied to GO Rail nodes (98000 <= i < 99000) only. Normally, the headway fraction is set to 0.5 which represents a uniform arrival of passengers at a stop, given an average wait time of 1/2 (0.5 *) the headway. GO Trains run on very infrequent schedules, so passengers try to time their arrival to coincide with the train's departure and thus experience less waiting time.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WaitTimePerception
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WaitTimePerception
+  id: WaitTimePerception
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: WaitTimePerception
+  nameWithType: V4TransitAssignment.WaitTimePerception
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WaitTimePerception
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitTimePerception
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 57
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Wait Time Perception", 1F, "Perception factor applied to wait time component.")]
+
+      public float WaitTimePerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Wait Time Perception", 1F, "Perception factor applied to wait time component.")>
+
+      Public WaitTimePerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Time Perception
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Perception factor applied to wait time component.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionToronto
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionToronto
+  id: WalkPerceptionToronto
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: WalkPerceptionToronto
+  nameWithType: V4TransitAssignment.WalkPerceptionToronto
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionToronto
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkPerceptionToronto
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 60
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Toronto Walk Perception", 1F, "Perception factor applied to Toronto links & connectors. Hard-coded to NCS11 node numbers.")]
+
+      public float WalkPerceptionToronto
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Toronto Walk Perception", 1F, "Perception factor applied to Toronto links & connectors. Hard-coded to NCS11 node numbers.")>
+
+      Public WalkPerceptionToronto As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Toronto Walk Perception
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Perception factor applied to Toronto links & connectors. Hard-coded to NCS11 node numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionNonToronto
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionNonToronto
+  id: WalkPerceptionNonToronto
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: WalkPerceptionNonToronto
+  nameWithType: V4TransitAssignment.WalkPerceptionNonToronto
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.WalkPerceptionNonToronto
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkPerceptionNonToronto
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 63
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Non-Toronto Walk Perception", 1F, "Perception factor applied to non-Toronto links & connectors. Hard-coded to NCS11 node numbers.")]
+
+      public float WalkPerceptionNonToronto
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Non-Toronto Walk Perception", 1F, "Perception factor applied to non-Toronto links & connectors. Hard-coded to NCS11 node numbers.")>
+
+      Public WalkPerceptionNonToronto As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Non-Toronto Walk Perception
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Perception factor applied to non-Toronto links & connectors. Hard-coded to NCS11 node numbers.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.BoardingPerception
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.BoardingPerception
+  id: BoardingPerception
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: BoardingPerception
+  nameWithType: V4TransitAssignment.BoardingPerception
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.BoardingPerception
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BoardingPerception
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 66
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Boarding Penalty Perception", 0F, "Perception factor applied to boarding penalty component.")]
+
+      public float BoardingPerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Boarding Penalty Perception", 0F, "Perception factor applied to boarding penalty component.")>
+
+      Public BoardingPerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Boarding Penalty Perception
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: Perception factor applied to boarding penalty component.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.CongestionPerception
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.CongestionPerception
+  id: CongestionPerception
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: CongestionPerception
+  nameWithType: V4TransitAssignment.CongestionPerception
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.CongestionPerception
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CongestionPerception
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 69
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Congestion Penalty Perception", 0.15F, "Perception factor applied ton congestion penalty component.")]
+
+      public float CongestionPerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Congestion Penalty Perception", 0.15F, "Perception factor applied ton congestion penalty component.")>
+
+      Public CongestionPerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Congestion Penalty Perception
+    - type: System.Single
+      value: 0.150000006
+    - type: System.String
+      value: Perception factor applied ton congestion penalty component.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RepresentativeHourFactor
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RepresentativeHourFactor
+  id: RepresentativeHourFactor
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: RepresentativeHourFactor
+  nameWithType: V4TransitAssignment.RepresentativeHourFactor
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RepresentativeHourFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RepresentativeHourFactor
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 73
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Representative Hour Factor", 2.57F, "A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.")]
+
+      public float RepresentativeHourFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Representative Hour Factor", 2.57F, "A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.")>
+
+      Public RepresentativeHourFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Representative Hour Factor
+    - type: System.Single
+      value: 2.56999993
+    - type: System.String
+      value: A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.MaxIterations
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.MaxIterations
+  id: MaxIterations
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: MaxIterations
+  nameWithType: V4TransitAssignment.MaxIterations
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.MaxIterations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxIterations
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 78
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Iterations", 20, "Convergence criterion: The maximum number of iterations performed by the transit assignment.")]
+
+      public int MaxIterations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Iterations", 20, "Convergence criterion: The maximum number of iterations performed by the transit assignment.")>
+
+      Public MaxIterations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Iterations
+    - type: System.Int32
+      value: 20
+    - type: System.String
+      value: 'Convergence criterion: The maximum number of iterations performed by the transit assignment.'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.NormalizedGap
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.NormalizedGap
+  id: NormalizedGap
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: NormalizedGap
+  nameWithType: V4TransitAssignment.NormalizedGap
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.NormalizedGap
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NormalizedGap
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 81
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Normalized Gap", 0.01F, "Convergence criterion")]
+
+      public float NormalizedGap
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Normalized Gap", 0.01F, "Convergence criterion")>
+
+      Public NormalizedGap As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Normalized Gap
+    - type: System.Single
+      value: 0.00999999978
+    - type: System.String
+      value: Convergence criterion
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RelativeGap
+  commentId: F:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RelativeGap
+  id: RelativeGap
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: RelativeGap
+  nameWithType: V4TransitAssignment.RelativeGap
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RelativeGap
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RelativeGap
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 84
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Relative Gap", 0.001F, "Convergence criterion")]
+
+      public float RelativeGap
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Relative Gap", 0.001F, "Convergence criterion")>
+
+      Public RelativeGap As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Relative Gap
+    - type: System.Single
+      value: 0.00100000005
+    - type: System.String
+      value: Convergence criterion
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: V4TransitAssignment.Execute(Controller)
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 90
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+  commentId: P:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: V4TransitAssignment.Name
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 123
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+  commentId: P:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: V4TransitAssignment.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 129
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: V4TransitAssignment.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 135
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkAssignment.V4TransitAssignment
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: V4TransitAssignment.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/NetworkAssignment/V4TransitAssignment.cs
+    startLine: 140
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: V4TransitAssignment.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.NetworkAssignment
+  commentId: N:TMG.GTAModel.NetworkAssignment
+  isExternal: false
+  name: TMG.GTAModel.NetworkAssignment
+  nameWithType: TMG.GTAModel.NetworkAssignment
+  fullName: TMG.GTAModel.NetworkAssignment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: V4TransitAssignment.Execute
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+  isExternal: false
+  name: Name
+  nameWithType: V4TransitAssignment.Name
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: V4TransitAssignment.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: V4TransitAssignment.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: V4TransitAssignment.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkAssignment.V4TransitAssignment.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

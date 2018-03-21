@@ -1,0 +1,1811 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  commentId: T:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  id: ExtractTransitODVectors
+  parent: TMG.Emme.Tools.Analysis.Transit
+  children:
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggDestinationMatrixNumber
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggOriginMatrixNumber
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AutoODMatrixId
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute(TMG.Emme.Controller)
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineFilterExpression
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineODMatrixNumber
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation(System.String@)
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ScenarioNumber
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.StationCentroids
+  - TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ZoneCentroids
+  langs:
+  - csharp
+  - vb
+  name: ExtractTransitODVectors
+  nameWithType: ExtractTransitODVectors
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExtractTransitODVectors
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 23
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: 'public class ExtractTransitODVectors : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class ExtractTransitODVectors
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ScenarioNumber
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: ExtractTransitODVectors.ScenarioNumber
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 31
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Scenario Number", 0, "The scenario numbers to run against.")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario Number", 0, "The scenario numbers to run against.")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The scenario numbers to run against.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineFilterExpression
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineFilterExpression
+  id: LineFilterExpression
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: LineFilterExpression
+  nameWithType: ExtractTransitODVectors.LineFilterExpression
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineFilterExpression
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LineFilterExpression
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 34
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Line Filter Expression", "", "A filter to select what lines to include.")]
+
+      public string LineFilterExpression
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Line Filter Expression", "", "A filter to select what lines to include.")>
+
+      Public LineFilterExpression As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Line Filter Expression
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: A filter to select what lines to include.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineODMatrixNumber
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineODMatrixNumber
+  id: LineODMatrixNumber
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: LineODMatrixNumber
+  nameWithType: ExtractTransitODVectors.LineODMatrixNumber
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.LineODMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LineODMatrixNumber
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 38
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Line OD Matrix Number", 0, "The matrix to save the OD demand using the lines.")]
+
+      public int LineODMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Line OD Matrix Number", 0, "The matrix to save the OD demand using the lines.")>
+
+      Public LineODMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Line OD Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The matrix to save the OD demand using the lines.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggOriginMatrixNumber
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggOriginMatrixNumber
+  id: AggOriginMatrixNumber
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: AggOriginMatrixNumber
+  nameWithType: ExtractTransitODVectors.AggOriginMatrixNumber
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggOriginMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AggOriginMatrixNumber
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 41
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Aggregation Origin Matrix Number", 0, "The origin vector to save the summed demand going through the filter.")]
+
+      public int AggOriginMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Aggregation Origin Matrix Number", 0, "The origin vector to save the summed demand going through the filter.")>
+
+      Public AggOriginMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Aggregation Origin Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The origin vector to save the summed demand going through the filter.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggDestinationMatrixNumber
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggDestinationMatrixNumber
+  id: AggDestinationMatrixNumber
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: AggDestinationMatrixNumber
+  nameWithType: ExtractTransitODVectors.AggDestinationMatrixNumber
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AggDestinationMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AggDestinationMatrixNumber
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 44
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Aggregation Destination Matrix Number", 0, "The destination vector to save the summed demand going through the filter.")]
+
+      public int AggDestinationMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Aggregation Destination Matrix Number", 0, "The destination vector to save the summed demand going through the filter.")>
+
+      Public AggDestinationMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Aggregation Destination Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The destination vector to save the summed demand going through the filter.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AutoODMatrixId
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AutoODMatrixId
+  id: AutoODMatrixId
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: AutoODMatrixId
+  nameWithType: ExtractTransitODVectors.AutoODMatrixId
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.AutoODMatrixId
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AutoODMatrixId
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 48
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Auto OD Matrix Number", 0, "The auto OD demand matrix.")]
+
+      public int AutoODMatrixId
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Auto OD Matrix Number", 0, "The auto OD demand matrix.")>
+
+      Public AutoODMatrixId As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Auto OD Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The auto OD demand matrix.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ZoneCentroids
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ZoneCentroids
+  id: ZoneCentroids
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: ZoneCentroids
+  nameWithType: ExtractTransitODVectors.ZoneCentroids
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ZoneCentroids
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneCentroids
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 51
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Zone Centroids", "1-8999", typeof (RangeSet), "The regular TAZ zones to get the ODs for.")]
+
+      public RangeSet ZoneCentroids
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Zone Centroids", "1-8999", GetType(RangeSet), "The regular TAZ zones to get the ODs for.")>
+
+      Public ZoneCentroids As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Zone Centroids
+    - type: System.String
+      value: 1-8999
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: The regular TAZ zones to get the ODs for.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.StationCentroids
+  commentId: F:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.StationCentroids
+  id: StationCentroids
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: StationCentroids
+  nameWithType: ExtractTransitODVectors.StationCentroids
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.StationCentroids
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StationCentroids
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 54
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: >-
+      [RunParameter("Station Centroids", "9000-9999", typeof (RangeSet), "The zones that are used for access stations.")]
+
+      public RangeSet StationCentroids
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Station Centroids", "9000-9999", GetType(RangeSet), "The zones that are used for access stations.")>
+
+      Public StationCentroids As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Station Centroids
+    - type: System.String
+      value: 9000-9999
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: The zones that are used for access stations.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+  commentId: P:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+  id: Name
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ExtractTransitODVectors.Name
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 59
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+  commentId: P:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+  id: Progress
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ExtractTransitODVectors.Progress
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 61
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+  commentId: P:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+  id: ProgressColour
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ExtractTransitODVectors.ProgressColour
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 63
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: ExtractTransitODVectors.Execute(Controller)
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 65
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation(System.String@)
+  commentId: M:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ExtractTransitODVectors.RuntimeValidation(ref String)
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/TMG.Emme/Tools/Analysis/Transit/ExtractTransitODVectors.cs
+    startLine: 94
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.Tools.Analysis.Transit
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ExtractTransitODVectors.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.Emme.Tools.Analysis.Transit
+  commentId: N:TMG.Emme.Tools.Analysis.Transit
+  isExternal: false
+  name: TMG.Emme.Tools.Analysis.Transit
+  nameWithType: TMG.Emme.Tools.Analysis.Transit
+  fullName: TMG.Emme.Tools.Analysis.Transit
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Datastructure.RangeSet
+  commentId: T:Datastructure.RangeSet
+  parent: Datastructure
+  isExternal: false
+  name: RangeSet
+  nameWithType: RangeSet
+  fullName: Datastructure.RangeSet
+- uid: Datastructure
+  commentId: N:Datastructure
+  isExternal: false
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name*
+  commentId: Overload:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+  isExternal: false
+  name: Name
+  nameWithType: ExtractTransitODVectors.Name
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress*
+  commentId: Overload:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: ExtractTransitODVectors.Progress
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour*
+  commentId: Overload:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: ExtractTransitODVectors.ProgressColour
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute*
+  commentId: Overload:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: ExtractTransitODVectors.Execute
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation*
+  commentId: Overload:TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: ExtractTransitODVectors.RuntimeValidation
+  fullName: TMG.Emme.Tools.Analysis.Transit.ExtractTransitODVectors.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

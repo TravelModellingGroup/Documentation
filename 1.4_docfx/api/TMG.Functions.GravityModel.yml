@@ -1,0 +1,913 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Functions.GravityModel
+  commentId: T:TMG.Functions.GravityModel
+  id: GravityModel
+  parent: TMG.Functions
+  children:
+  - TMG.Functions.GravityModel.#ctor(Datastructure.SparseTwinIndex{System.Single},System.Action{System.Single},System.Single,System.Int32)
+  - TMG.Functions.GravityModel.#ctor(System.Func{System.Int32,System.Int32,System.Double},System.Action{System.Single},System.Single,System.Int32)
+  - TMG.Functions.GravityModel.ProcessFlow(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single},System.Int32[],Datastructure.SparseArray{System.Single})
+  langs:
+  - csharp
+  - vb
+  name: GravityModel
+  nameWithType: GravityModel
+  fullName: TMG.Functions.GravityModel
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Functions/GravityModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GravityModel
+    path: ../../../XTMF/Code/TMG.Functions/GravityModel.cs
+    startLine: 24
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public sealed class GravityModel
+    content.vb: Public NotInheritable Class GravityModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: TMG.Functions.GravityModel.#ctor(System.Func{System.Int32,System.Int32,System.Double},System.Action{System.Single},System.Single,System.Int32)
+  commentId: M:TMG.Functions.GravityModel.#ctor(System.Func{System.Int32,System.Int32,System.Double},System.Action{System.Single},System.Single,System.Int32)
+  id: '#ctor(System.Func{System.Int32,System.Int32,System.Double},System.Action{System.Single},System.Single,System.Int32)'
+  parent: TMG.Functions.GravityModel
+  langs:
+  - csharp
+  - vb
+  name: GravityModel(Func<Int32, Int32, Double>, Action<Single>, Single, Int32)
+  nameWithType: GravityModel.GravityModel(Func<Int32, Int32, Double>, Action<Single>, Single, Int32)
+  fullName: TMG.Functions.GravityModel.GravityModel(System.Func<System.Int32, System.Int32, System.Double>, System.Action<System.Single>, System.Single, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Code/TMG.Functions/GravityModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/Code/TMG.Functions/GravityModel.cs
+    startLine: 36
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public GravityModel(Func<int, int, double> frictionFunction, Action<float> progressCallback = null, float epsilon = 0.8F, int maxIterations = 100)
+    parameters:
+    - id: frictionFunction
+      type: System.Func{System.Int32,System.Int32,System.Double}
+    - id: progressCallback
+      type: System.Action{System.Single}
+    - id: epsilon
+      type: System.Single
+    - id: maxIterations
+      type: System.Int32
+    content.vb: Public Sub New(frictionFunction As Func(Of Integer, Integer, Double), progressCallback As Action(Of Single) = Nothing, epsilon As Single = 0.8F, maxIterations As Integer = 100)
+  overload: TMG.Functions.GravityModel.#ctor*
+  nameWithType.vb: GravityModel.GravityModel(Func(Of Int32, Int32, Double), Action(Of Single), Single, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Functions.GravityModel.GravityModel(System.Func(Of System.Int32, System.Int32, System.Double), System.Action(Of System.Single), System.Single, System.Int32)
+  name.vb: GravityModel(Func(Of Int32, Int32, Double), Action(Of Single), Single, Int32)
+- uid: TMG.Functions.GravityModel.#ctor(Datastructure.SparseTwinIndex{System.Single},System.Action{System.Single},System.Single,System.Int32)
+  commentId: M:TMG.Functions.GravityModel.#ctor(Datastructure.SparseTwinIndex{System.Single},System.Action{System.Single},System.Single,System.Int32)
+  id: '#ctor(Datastructure.SparseTwinIndex{System.Single},System.Action{System.Single},System.Single,System.Int32)'
+  parent: TMG.Functions.GravityModel
+  langs:
+  - csharp
+  - vb
+  name: GravityModel(SparseTwinIndex<Single>, Action<Single>, Single, Int32)
+  nameWithType: GravityModel.GravityModel(SparseTwinIndex<Single>, Action<Single>, Single, Int32)
+  fullName: TMG.Functions.GravityModel.GravityModel(Datastructure.SparseTwinIndex<System.Single>, System.Action<System.Single>, System.Single, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Code/TMG.Functions/GravityModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/Code/TMG.Functions/GravityModel.cs
+    startLine: 44
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public GravityModel(SparseTwinIndex<float> friction, Action<float> progressCallback = null, float epsilon = 0.8F, int maxIterations = 100)
+    parameters:
+    - id: friction
+      type: Datastructure.SparseTwinIndex{System.Single}
+    - id: progressCallback
+      type: System.Action{System.Single}
+    - id: epsilon
+      type: System.Single
+    - id: maxIterations
+      type: System.Int32
+    content.vb: Public Sub New(friction As SparseTwinIndex(Of Single), progressCallback As Action(Of Single) = Nothing, epsilon As Single = 0.8F, maxIterations As Integer = 100)
+  overload: TMG.Functions.GravityModel.#ctor*
+  nameWithType.vb: GravityModel.GravityModel(SparseTwinIndex(Of Single), Action(Of Single), Single, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Functions.GravityModel.GravityModel(Datastructure.SparseTwinIndex(Of System.Single), System.Action(Of System.Single), System.Single, System.Int32)
+  name.vb: GravityModel(SparseTwinIndex(Of Single), Action(Of Single), Single, Int32)
+- uid: TMG.Functions.GravityModel.ProcessFlow(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single},System.Int32[],Datastructure.SparseArray{System.Single})
+  commentId: M:TMG.Functions.GravityModel.ProcessFlow(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single},System.Int32[],Datastructure.SparseArray{System.Single})
+  id: ProcessFlow(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single},System.Int32[],Datastructure.SparseArray{System.Single})
+  parent: TMG.Functions.GravityModel
+  langs:
+  - csharp
+  - vb
+  name: ProcessFlow(SparseArray<Single>, SparseArray<Single>, Int32[], SparseArray<Single>)
+  nameWithType: GravityModel.ProcessFlow(SparseArray<Single>, SparseArray<Single>, Int32[], SparseArray<Single>)
+  fullName: TMG.Functions.GravityModel.ProcessFlow(Datastructure.SparseArray<System.Single>, Datastructure.SparseArray<System.Single>, System.Int32[], Datastructure.SparseArray<System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/GravityModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProcessFlow
+    path: ../../../XTMF/Code/TMG.Functions/GravityModel.cs
+    startLine: 52
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public SparseTwinIndex<float> ProcessFlow(SparseArray<float> o, SparseArray<float> d, int[] validIndexes, SparseArray<float> attractionStar = null)
+    parameters:
+    - id: o
+      type: Datastructure.SparseArray{System.Single}
+    - id: d
+      type: Datastructure.SparseArray{System.Single}
+    - id: validIndexes
+      type: System.Int32[]
+    - id: attractionStar
+      type: Datastructure.SparseArray{System.Single}
+    return:
+      type: Datastructure.SparseTwinIndex{System.Single}
+    content.vb: Public Function ProcessFlow(o As SparseArray(Of Single), d As SparseArray(Of Single), validIndexes As Integer(), attractionStar As SparseArray(Of Single) = Nothing) As SparseTwinIndex(Of Single)
+  overload: TMG.Functions.GravityModel.ProcessFlow*
+  nameWithType.vb: GravityModel.ProcessFlow(SparseArray(Of Single), SparseArray(Of Single), Int32(), SparseArray(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Functions.GravityModel.ProcessFlow(Datastructure.SparseArray(Of System.Single), Datastructure.SparseArray(Of System.Single), System.Int32(), Datastructure.SparseArray(Of System.Single))
+  name.vb: ProcessFlow(SparseArray(Of Single), SparseArray(Of Single), Int32(), SparseArray(Of Single))
+references:
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Functions.GravityModel.#ctor*
+  commentId: Overload:TMG.Functions.GravityModel.#ctor
+  isExternal: false
+  name: GravityModel
+  nameWithType: GravityModel.GravityModel
+  fullName: TMG.Functions.GravityModel.GravityModel
+- uid: System.Func{System.Int32,System.Int32,System.Double}
+  commentId: T:System.Func{System.Int32,System.Int32,System.Double}
+  parent: System
+  definition: System.Func`3
+  name: Func<Int32, Int32, Double>
+  nameWithType: Func<Int32, Int32, Double>
+  fullName: System.Func<System.Int32, System.Int32, System.Double>
+  nameWithType.vb: Func(Of Int32, Int32, Double)
+  fullName.vb: System.Func(Of System.Int32, System.Int32, System.Double)
+  name.vb: Func(Of Int32, Int32, Double)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  name: Action<Single>
+  nameWithType: Action<Single>
+  fullName: System.Action<System.Single>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of System.Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex{System.Single}
+  commentId: T:Datastructure.SparseTwinIndex{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseTwinIndex`1
+  name: SparseTwinIndex<Single>
+  nameWithType: SparseTwinIndex<Single>
+  fullName: Datastructure.SparseTwinIndex<System.Single>
+  nameWithType.vb: SparseTwinIndex(Of Single)
+  fullName.vb: Datastructure.SparseTwinIndex(Of System.Single)
+  name.vb: SparseTwinIndex(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex`1
+  commentId: T:Datastructure.SparseTwinIndex`1
+  isExternal: false
+  name: SparseTwinIndex<T>
+  nameWithType: SparseTwinIndex<T>
+  fullName: Datastructure.SparseTwinIndex<T>
+  nameWithType.vb: SparseTwinIndex(Of T)
+  fullName.vb: Datastructure.SparseTwinIndex(Of T)
+  name.vb: SparseTwinIndex(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure
+  commentId: N:Datastructure
+  isExternal: false
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.Functions.GravityModel.ProcessFlow*
+  commentId: Overload:TMG.Functions.GravityModel.ProcessFlow
+  isExternal: false
+  name: ProcessFlow
+  nameWithType: GravityModel.ProcessFlow
+  fullName: TMG.Functions.GravityModel.ProcessFlow
+- uid: Datastructure.SparseArray{System.Single}
+  commentId: T:Datastructure.SparseArray{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<Single>
+  nameWithType: SparseArray<Single>
+  fullName: Datastructure.SparseArray<System.Single>
+  nameWithType.vb: SparseArray(Of Single)
+  fullName.vb: Datastructure.SparseArray(Of System.Single)
+  name.vb: SparseArray(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32[]
+  name: Int32[]
+  nameWithType: Int32[]
+  fullName: System.Int32[]
+  nameWithType.vb: Int32()
+  fullName.vb: System.Int32()
+  name.vb: Int32()
+  spec.csharp:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Datastructure.SparseArray`1
+  commentId: T:Datastructure.SparseArray`1
+  isExternal: false
+  name: SparseArray<T>
+  nameWithType: SparseArray<T>
+  fullName: Datastructure.SparseArray<T>
+  nameWithType.vb: SparseArray(Of T)
+  fullName.vb: Datastructure.SparseArray(Of T)
+  name.vb: SparseArray(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

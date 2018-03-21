@@ -1,0 +1,555 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Frameworks.Data.Processing.AST.Expression
+  commentId: T:TMG.Frameworks.Data.Processing.AST.Expression
+  id: Expression
+  parent: TMG.Frameworks.Data.Processing.AST
+  children:
+  - TMG.Frameworks.Data.Processing.AST.Expression.#ctor(System.Int32)
+  - TMG.Frameworks.Data.Processing.AST.Expression.Compile(System.Char[],System.Int32,System.Int32,TMG.Frameworks.Data.Processing.AST.Expression@,System.String@)
+  langs:
+  - csharp
+  - vb
+  name: Expression
+  nameWithType: Expression
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Expression
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+    startLine: 25
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing.AST
+  syntax:
+    content: 'public abstract class Expression : AstNode'
+    content.vb: >-
+      Public MustInherit Class Expression
+          Inherits AstNode
+  inheritance:
+  - System.Object
+  - TMG.Frameworks.Data.Processing.AST.AstNode
+  derivedClasses:
+  - TMG.Frameworks.Data.Processing.AST.BinaryExpression
+  - TMG.Frameworks.Data.Processing.AST.FusedMultiplyAdd
+  - TMG.Frameworks.Data.Processing.AST.MonoExpression
+  - TMG.Frameworks.Data.Processing.AST.Value
+  inheritedMembers:
+  - TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: TMG.Frameworks.Data.Processing.AST.Expression.#ctor(System.Int32)
+  commentId: M:TMG.Frameworks.Data.Processing.AST.Expression.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: TMG.Frameworks.Data.Processing.AST.Expression
+  langs:
+  - csharp
+  - vb
+  name: Expression(Int32)
+  nameWithType: Expression.Expression(Int32)
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression.Expression(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+    startLine: 28
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing.AST
+  syntax:
+    content: public Expression(int start)
+    parameters:
+    - id: start
+      type: System.Int32
+    content.vb: Public Sub New(start As Integer)
+  overload: TMG.Frameworks.Data.Processing.AST.Expression.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.AST.Expression.Compile(System.Char[],System.Int32,System.Int32,TMG.Frameworks.Data.Processing.AST.Expression@,System.String@)
+  commentId: M:TMG.Frameworks.Data.Processing.AST.Expression.Compile(System.Char[],System.Int32,System.Int32,TMG.Frameworks.Data.Processing.AST.Expression@,System.String@)
+  id: Compile(System.Char[],System.Int32,System.Int32,TMG.Frameworks.Data.Processing.AST.Expression@,System.String@)
+  parent: TMG.Frameworks.Data.Processing.AST.Expression
+  langs:
+  - csharp
+  - vb
+  name: Compile(Char[], Int32, Int32, out Expression, ref String)
+  nameWithType: Expression.Compile(Char[], Int32, Int32, out Expression, ref String)
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression.Compile(System.Char[], System.Int32, System.Int32, out TMG.Frameworks.Data.Processing.AST.Expression, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Compile
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/AST/Expression.cs
+    startLine: 115
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing.AST
+  syntax:
+    content: public static bool Compile(char[] buffer, int start, int length, out Expression ex, ref string error)
+    parameters:
+    - id: buffer
+      type: System.Char[]
+    - id: start
+      type: System.Int32
+    - id: length
+      type: System.Int32
+    - id: ex
+      type: TMG.Frameworks.Data.Processing.AST.Expression
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function Compile(buffer As Char(), start As Integer, length As Integer, ByRef ex As Expression, ByRef error As String) As Boolean
+  overload: TMG.Frameworks.Data.Processing.AST.Expression.Compile*
+  nameWithType.vb: Expression.Compile(Char(), Int32, Int32, ByRef Expression, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Frameworks.Data.Processing.AST.Expression.Compile(System.Char(), System.Int32, System.Int32, ByRef TMG.Frameworks.Data.Processing.AST.Expression, ByRef System.String)
+  name.vb: Compile(Char(), Int32, Int32, ByRef Expression, ByRef String)
+references:
+- uid: TMG.Frameworks.Data.Processing.AST
+  commentId: N:TMG.Frameworks.Data.Processing.AST
+  isExternal: false
+  name: TMG.Frameworks.Data.Processing.AST
+  nameWithType: TMG.Frameworks.Data.Processing.AST
+  fullName: TMG.Frameworks.Data.Processing.AST
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Frameworks.Data.Processing.AST.AstNode
+  commentId: T:TMG.Frameworks.Data.Processing.AST.AstNode
+  parent: TMG.Frameworks.Data.Processing.AST
+  isExternal: false
+  name: AstNode
+  nameWithType: AstNode
+  fullName: TMG.Frameworks.Data.Processing.AST.AstNode
+- uid: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+  commentId: M:TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+  parent: TMG.Frameworks.Data.Processing.AST.AstNode
+  isExternal: false
+  name: Evaluate(IDataSource[])
+  nameWithType: AstNode.Evaluate(IDataSource[])
+  fullName: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+  nameWithType.vb: AstNode.Evaluate(IDataSource())
+  fullName.vb: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource())
+  name.vb: Evaluate(IDataSource())
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+    name: Evaluate
+    nameWithType: AstNode.Evaluate
+    fullName: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate(XTMF.IDataSource[])
+    name: Evaluate
+    nameWithType: AstNode.Evaluate
+    fullName: TMG.Frameworks.Data.Processing.AST.AstNode.Evaluate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Frameworks.Data.Processing.AST.Expression.#ctor*
+  commentId: Overload:TMG.Frameworks.Data.Processing.AST.Expression.#ctor
+  isExternal: false
+  name: Expression
+  nameWithType: Expression.Expression
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression.Expression
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.Frameworks.Data.Processing.AST.Expression.Compile*
+  commentId: Overload:TMG.Frameworks.Data.Processing.AST.Expression.Compile
+  isExternal: false
+  name: Compile
+  nameWithType: Expression.Compile
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression.Compile
+- uid: System.Char[]
+  name: Char[]
+  nameWithType: Char[]
+  fullName: System.Char[]
+  nameWithType.vb: Char()
+  fullName.vb: System.Char()
+  name.vb: Char()
+  spec.csharp:
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: TMG.Frameworks.Data.Processing.AST.Expression
+  commentId: T:TMG.Frameworks.Data.Processing.AST.Expression
+  parent: TMG.Frameworks.Data.Processing.AST
+  isExternal: false
+  name: Expression
+  nameWithType: Expression
+  fullName: TMG.Frameworks.Data.Processing.AST.Expression
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

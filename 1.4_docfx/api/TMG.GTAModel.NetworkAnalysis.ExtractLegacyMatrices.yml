@@ -1,0 +1,1435 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  commentId: T:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  id: ExtractLegacyMatrices
+  parent: TMG.GTAModel.NetworkAnalysis
+  children:
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.BoardingMatrixNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.CostMatixNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute(TMG.Emme.Controller)
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.FarePerception
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.InVehicleMatrixNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ModeString
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Root
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ScenarioNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.TotalTimeCutoff
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitMtrixNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitTimeCutoff
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkMatrixNumber
+  - TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkTimeCutoff
+  langs:
+  - csharp
+  - vb
+  name: ExtractLegacyMatrices
+  nameWithType: ExtractLegacyMatrices
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExtractLegacyMatrices
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 27
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: 'public class ExtractLegacyMatrices : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class ExtractLegacyMatrices
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.BoardingMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.BoardingMatrixNumber
+  id: BoardingMatrixNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: BoardingMatrixNumber
+  nameWithType: ExtractLegacyMatrices.BoardingMatrixNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.BoardingMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BoardingMatrixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 32
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Boarding Matrix Number", 0, "The number of the new or existing matrix to extract boarding times into. Set to 0 to forego extraction.")]
+
+      public int BoardingMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Boarding Matrix Number", 0, "The number of the new or existing matrix to extract boarding times into. Set to 0 to forego extraction.")>
+
+      Public BoardingMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Boarding Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the new or existing matrix to extract boarding times into. Set to 0 to forego extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.CostMatixNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.CostMatixNumber
+  id: CostMatixNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: CostMatixNumber
+  nameWithType: ExtractLegacyMatrices.CostMatixNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.CostMatixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CostMatixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 35
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Cost Matrix Number", 0, "The number of the new or existing matrix to extract transit costs into. Set to 0 to forego extraction.")]
+
+      public int CostMatixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Cost Matrix Number", 0, "The number of the new or existing matrix to extract transit costs into. Set to 0 to forego extraction.")>
+
+      Public CostMatixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Cost Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the new or existing matrix to extract transit costs into. Set to 0 to forego extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.FarePerception
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.FarePerception
+  id: FarePerception
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: FarePerception
+  nameWithType: ExtractLegacyMatrices.FarePerception
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.FarePerception
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FarePerception
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 38
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Fare Perception", 0F, "The fare perception used in the transit assignment. Set to 0 to dsiable cost matrix extraction.")]
+
+      public float FarePerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Fare Perception", 0F, "The fare perception used in the transit assignment. Set to 0 to dsiable cost matrix extraction.")>
+
+      Public FarePerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Fare Perception
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The fare perception used in the transit assignment. Set to 0 to dsiable cost matrix extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.InVehicleMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.InVehicleMatrixNumber
+  id: InVehicleMatrixNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: InVehicleMatrixNumber
+  nameWithType: ExtractLegacyMatrices.InVehicleMatrixNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.InVehicleMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InVehicleMatrixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("In Vehicle Matrix Number", 0, "The number of the new or existing matrix to extract in vehicle times into. Set to 0 to forego extraction.")]
+
+      public int InVehicleMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("In Vehicle Matrix Number", 0, "The number of the new or existing matrix to extract in vehicle times into. Set to 0 to forego extraction.")>
+
+      Public InVehicleMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: In Vehicle Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the new or existing matrix to extract in vehicle times into. Set to 0 to forego extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ModeString
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ModeString
+  id: ModeString
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: ModeString
+  nameWithType: ExtractLegacyMatrices.ModeString
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ModeString
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeString
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Mode List", "", "String of modes used in the transit assignment.")]
+
+      public string ModeString
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Mode List", "", "String of modes used in the transit assignment.")>
+
+      Public ModeString As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Mode List
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: String of modes used in the transit assignment.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Root
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Root
+  id: Root
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: ExtractLegacyMatrices.Root
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 47
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public IModelSystemTemplate Root
+    return:
+      type: XTMF.IModelSystemTemplate
+    content.vb: Public Root As IModelSystemTemplate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ScenarioNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: ExtractLegacyMatrices.ScenarioNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 50
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Scenario Number", 0, "The number of the Emme scenario with transit assignment results.")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario Number", 0, "The number of the Emme scenario with transit assignment results.")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the Emme scenario with transit assignment results.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.TotalTimeCutoff
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.TotalTimeCutoff
+  id: TotalTimeCutoff
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: TotalTimeCutoff
+  nameWithType: ExtractLegacyMatrices.TotalTimeCutoff
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.TotalTimeCutoff
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TotalTimeCutoff
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 53
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Total Time Cutoff", 150F, "Maximum total transit time for feasible transit OD pairs.")]
+
+      public float TotalTimeCutoff
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Total Time Cutoff", 150F, "Maximum total transit time for feasible transit OD pairs.")>
+
+      Public TotalTimeCutoff As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Total Time Cutoff
+    - type: System.Single
+      value: 150
+    - type: System.String
+      value: Maximum total transit time for feasible transit OD pairs.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitMtrixNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitMtrixNumber
+  id: WaitMtrixNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: WaitMtrixNumber
+  nameWithType: ExtractLegacyMatrices.WaitMtrixNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitMtrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitMtrixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 56
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Wait Matrix Number", 0, "The number of the new or existing matrix to extract waiting times into. Set to 0 to forego extraction.")]
+
+      public int WaitMtrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Wait Matrix Number", 0, "The number of the new or existing matrix to extract waiting times into. Set to 0 to forego extraction.")>
+
+      Public WaitMtrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the new or existing matrix to extract waiting times into. Set to 0 to forego extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitTimeCutoff
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitTimeCutoff
+  id: WaitTimeCutoff
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: WaitTimeCutoff
+  nameWithType: ExtractLegacyMatrices.WaitTimeCutoff
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WaitTimeCutoff
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitTimeCutoff
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 59
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Wait Time Cutoff", 40F, "Maximum wait time for feasible transit OD pairs.")]
+
+      public float WaitTimeCutoff
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Wait Time Cutoff", 40F, "Maximum wait time for feasible transit OD pairs.")>
+
+      Public WaitTimeCutoff As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Time Cutoff
+    - type: System.Single
+      value: 40
+    - type: System.String
+      value: Maximum wait time for feasible transit OD pairs.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkMatrixNumber
+  id: WalkMatrixNumber
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: WalkMatrixNumber
+  nameWithType: ExtractLegacyMatrices.WalkMatrixNumber
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkMatrixNumber
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 62
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Walk Matrix Number", 0, "The number of the new or existing matrix to extract walk times into. Set to 0 to forego extraction.")]
+
+      public int WalkMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Walk Matrix Number", 0, "The number of the new or existing matrix to extract walk times into. Set to 0 to forego extraction.")>
+
+      Public WalkMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Walk Matrix Number
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the new or existing matrix to extract walk times into. Set to 0 to forego extraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkTimeCutoff
+  commentId: F:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkTimeCutoff
+  id: WalkTimeCutoff
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: WalkTimeCutoff
+  nameWithType: ExtractLegacyMatrices.WalkTimeCutoff
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.WalkTimeCutoff
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkTimeCutoff
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 65
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: >-
+      [RunParameter("Walk Time Cutoff", 40F, "Maximum walk time for feasible transit OD pairs.")]
+
+      public float WalkTimeCutoff
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Walk Time Cutoff", 40F, "Maximum walk time for feasible transit OD pairs.")>
+
+      Public WalkTimeCutoff As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Walk Time Cutoff
+    - type: System.Single
+      value: 40
+    - type: System.String
+      value: Maximum walk time for feasible transit OD pairs.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+  commentId: P:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ExtractLegacyMatrices.Name
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 71
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+  commentId: P:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ExtractLegacyMatrices.Progress
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 77
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ExtractLegacyMatrices.ProgressColour
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 83
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: ExtractLegacyMatrices.Execute(Controller)
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 88
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ExtractLegacyMatrices.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/NetworkAnalysis/ExtractLegacyMatrices.cs
+    startLine: 133
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAnalysis
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ExtractLegacyMatrices.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.NetworkAnalysis
+  commentId: N:TMG.GTAModel.NetworkAnalysis
+  isExternal: false
+  name: TMG.GTAModel.NetworkAnalysis
+  nameWithType: TMG.GTAModel.NetworkAnalysis
+  fullName: TMG.GTAModel.NetworkAnalysis
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name*
+  commentId: Overload:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+  isExternal: false
+  name: Name
+  nameWithType: ExtractLegacyMatrices.Name
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: ExtractLegacyMatrices.Progress
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: ExtractLegacyMatrices.ProgressColour
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute*
+  commentId: Overload:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: ExtractLegacyMatrices.Execute
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: ExtractLegacyMatrices.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkAnalysis.ExtractLegacyMatrices.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

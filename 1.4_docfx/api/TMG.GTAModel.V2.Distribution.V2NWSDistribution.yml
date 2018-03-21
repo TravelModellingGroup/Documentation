@@ -1,0 +1,2097 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  commentId: T:TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  id: V2NWSDistribution
+  parent: TMG.GTAModel.V2.Distribution
+  children:
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.BaseYearObservations
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaximumError
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaxIterations
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.Root
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation(System.String@)
+  - TMG.GTAModel.V2.Distribution.V2NWSDistribution.SaveDistribution
+  langs:
+  - csharp
+  - vb
+  name: V2NWSDistribution
+  nameWithType: V2NWSDistribution
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: V2NWSDistribution
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 29
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: 'public class V2NWSDistribution : IDemographicDistribution, IModule'
+    content.vb: >-
+      Public Class V2NWSDistribution
+          Implements IDemographicDistribution, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.IDemographicDistribution
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.BaseYearObservations
+  commentId: F:TMG.GTAModel.V2.Distribution.V2NWSDistribution.BaseYearObservations
+  id: BaseYearObservations
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: BaseYearObservations
+  nameWithType: V2NWSDistribution.BaseYearObservations
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.BaseYearObservations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BaseYearObservations
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 32
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Base year zonal observations.", Required = true)]
+
+      public IDataSource<SparseTwinIndex<float>> BaseYearObservations
+    return:
+      type: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: >-
+      <SubModelInformation(Description:="Base year zonal observations.", Required:=True)>
+
+      Public BaseYearObservations As IDataSource(Of SparseTwinIndex(Of Single))
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Base year zonal observations.
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaximumError
+  commentId: F:TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaximumError
+  id: MaximumError
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: MaximumError
+  nameWithType: V2NWSDistribution.MaximumError
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaximumError
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaximumError
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 35
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: >-
+      [RunParameter("Maximim Error", 0.005F, "The maximum error for each zone allowed, where 0.01 would be 1%.")]
+
+      public float MaximumError
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Maximim Error", 0.005F, "The maximum error for each zone allowed, where 0.01 would be 1%.")>
+
+      Public MaximumError As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Maximim Error
+    - type: System.Single
+      value: 0.00499999989
+    - type: System.String
+      value: The maximum error for each zone allowed, where 0.01 would be 1%.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaxIterations
+  commentId: F:TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaxIterations
+  id: MaxIterations
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: MaxIterations
+  nameWithType: V2NWSDistribution.MaxIterations
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.MaxIterations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxIterations
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 38
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: >-
+      [RunParameter("Max Iterations", 10, "The maximum number of iterations to run for.  This will cut off the calculation even if the maximum error has not been reached.")]
+
+      public int MaxIterations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Max Iterations", 10, "The maximum number of iterations to run for.  This will cut off the calculation even if the maximum error has not been reached.")>
+
+      Public MaxIterations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Max Iterations
+    - type: System.Int32
+      value: 10
+    - type: System.String
+      value: The maximum number of iterations to run for.  This will cut off the calculation even if the maximum error has not been reached.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Root
+  commentId: F:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Root
+  id: Root
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: V2NWSDistribution.Root
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.SaveDistribution
+  commentId: F:TMG.GTAModel.V2.Distribution.V2NWSDistribution.SaveDistribution
+  id: SaveDistribution
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: SaveDistribution
+  nameWithType: V2NWSDistribution.SaveDistribution
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.SaveDistribution
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SaveDistribution
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: >-
+      [RunParameter("Save Location", "", "The location to save the data to, relative to the run directory.  Leave this blank to not save.")]
+
+      public string SaveDistribution
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Save Location", "", "The location to save the data to, relative to the run directory.  Leave this blank to not save.")>
+
+      Public SaveDistribution As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Save Location
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: The location to save the data to, relative to the run directory.  Leave this blank to not save.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+  commentId: P:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+  id: Name
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: V2NWSDistribution.Name
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 46
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+  commentId: P:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+  id: Progress
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: V2NWSDistribution.Progress
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 52
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+  commentId: P:TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: V2NWSDistribution.ProgressColour
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 57
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  commentId: M:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  id: Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: Distribute(IEnumerable<SparseArray<Single>>, IEnumerable<SparseArray<Single>>, IEnumerable<IDemographicCategory>)
+  nameWithType: V2NWSDistribution.Distribute(IEnumerable<SparseArray<Single>>, IEnumerable<SparseArray<Single>>, IEnumerable<IDemographicCategory>)
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute(System.Collections.Generic.IEnumerable<Datastructure.SparseArray<System.Single>>, System.Collections.Generic.IEnumerable<Datastructure.SparseArray<System.Single>>, System.Collections.Generic.IEnumerable<TMG.IDemographicCategory>)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Distribute
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 62
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public IEnumerable<SparseTwinIndex<float>> Distribute(IEnumerable<SparseArray<float>> productions, IEnumerable<SparseArray<float>> attractions, IEnumerable<IDemographicCategory> category)
+    parameters:
+    - id: productions
+      type: System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}}
+    - id: attractions
+      type: System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}}
+    - id: category
+      type: System.Collections.Generic.IEnumerable{TMG.IDemographicCategory}
+    return:
+      type: System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: Public Function Distribute(productions As IEnumerable(Of SparseArray(Of Single)), attractions As IEnumerable(Of SparseArray(Of Single)), category As IEnumerable(Of IDemographicCategory)) As IEnumerable(Of SparseTwinIndex(Of Single))
+  overload: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute*
+  implements:
+  - TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  nameWithType.vb: V2NWSDistribution.Distribute(IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of IDemographicCategory))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute(System.Collections.Generic.IEnumerable(Of Datastructure.SparseArray(Of System.Single)), System.Collections.Generic.IEnumerable(Of Datastructure.SparseArray(Of System.Single)), System.Collections.Generic.IEnumerable(Of TMG.IDemographicCategory))
+  name.vb: Distribute(IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of IDemographicCategory))
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.V2.Distribution.V2NWSDistribution
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: V2NWSDistribution.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/V2/Distribution/V2NWSDistribution.cs
+    startLine: 82
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Distribution
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: V2NWSDistribution.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.V2.Distribution
+  commentId: N:TMG.GTAModel.V2.Distribution
+  isExternal: false
+  name: TMG.GTAModel.V2.Distribution
+  nameWithType: TMG.GTAModel.V2.Distribution
+  fullName: TMG.GTAModel.V2.Distribution
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.IDemographicDistribution
+  commentId: T:TMG.IDemographicDistribution
+  parent: TMG
+  isExternal: false
+  name: IDemographicDistribution
+  nameWithType: IDemographicDistribution
+  fullName: TMG.IDemographicDistribution
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  commentId: T:XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<SparseTwinIndex<Single>>
+  nameWithType: IDataSource<SparseTwinIndex<Single>>
+  fullName: XTMF.IDataSource<Datastructure.SparseTwinIndex<System.Single>>
+  nameWithType.vb: IDataSource(Of SparseTwinIndex(Of Single))
+  fullName.vb: XTMF.IDataSource(Of Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: IDataSource(Of SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  isExternal: false
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name*
+  commentId: Overload:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+  isExternal: false
+  name: Name
+  nameWithType: V2NWSDistribution.Name
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress*
+  commentId: Overload:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: V2NWSDistribution.Progress
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour*
+  commentId: Overload:TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: V2NWSDistribution.ProgressColour
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute*
+  commentId: Overload:TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute
+  isExternal: false
+  name: Distribute
+  nameWithType: V2NWSDistribution.Distribute
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.Distribute
+- uid: TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  commentId: M:TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+  parent: TMG.IDemographicDistribution
+  isExternal: true
+  name: Distribute(IEnumerable<SparseArray<Single>>, IEnumerable<SparseArray<Single>>, IEnumerable<IDemographicCategory>)
+  nameWithType: IDemographicDistribution.Distribute(IEnumerable<SparseArray<Single>>, IEnumerable<SparseArray<Single>>, IEnumerable<IDemographicCategory>)
+  fullName: TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable<Datastructure.SparseArray<System.Single>>, System.Collections.Generic.IEnumerable<Datastructure.SparseArray<System.Single>>, System.Collections.Generic.IEnumerable<TMG.IDemographicCategory>)
+  nameWithType.vb: IDemographicDistribution.Distribute(IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of IDemographicCategory))
+  fullName.vb: TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable(Of Datastructure.SparseArray(Of System.Single)), System.Collections.Generic.IEnumerable(Of Datastructure.SparseArray(Of System.Single)), System.Collections.Generic.IEnumerable(Of TMG.IDemographicCategory))
+  name.vb: Distribute(IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of SparseArray(Of Single)), IEnumerable(Of IDemographicCategory))
+  spec.csharp:
+  - uid: TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+    name: Distribute
+    nameWithType: IDemographicDistribution.Distribute
+    fullName: TMG.IDemographicDistribution.Distribute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IDemographicCategory
+    name: IDemographicCategory
+    nameWithType: IDemographicCategory
+    fullName: TMG.IDemographicCategory
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IDemographicDistribution.Distribute(System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}},System.Collections.Generic.IEnumerable{TMG.IDemographicCategory})
+    name: Distribute
+    nameWithType: IDemographicDistribution.Distribute
+    fullName: TMG.IDemographicDistribution.Distribute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IDemographicCategory
+    name: IDemographicCategory
+    nameWithType: IDemographicCategory
+    fullName: TMG.IDemographicCategory
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}}
+  commentId: T:System.Collections.Generic.IEnumerable{Datastructure.SparseArray{System.Single}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<SparseArray<Single>>
+  nameWithType: IEnumerable<SparseArray<Single>>
+  fullName: System.Collections.Generic.IEnumerable<Datastructure.SparseArray<System.Single>>
+  nameWithType.vb: IEnumerable(Of SparseArray(Of Single))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Datastructure.SparseArray(Of System.Single))
+  name.vb: IEnumerable(Of SparseArray(Of Single))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{TMG.IDemographicCategory}
+  commentId: T:System.Collections.Generic.IEnumerable{TMG.IDemographicCategory}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<IDemographicCategory>
+  nameWithType: IEnumerable<IDemographicCategory>
+  fullName: System.Collections.Generic.IEnumerable<TMG.IDemographicCategory>
+  nameWithType.vb: IEnumerable(Of IDemographicCategory)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TMG.IDemographicCategory)
+  name.vb: IEnumerable(Of IDemographicCategory)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IDemographicCategory
+    name: IDemographicCategory
+    nameWithType: IDemographicCategory
+    fullName: TMG.IDemographicCategory
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IDemographicCategory
+    name: IDemographicCategory
+    nameWithType: IDemographicCategory
+    fullName: TMG.IDemographicCategory
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+  commentId: T:System.Collections.Generic.IEnumerable{Datastructure.SparseTwinIndex{System.Single}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<SparseTwinIndex<Single>>
+  nameWithType: IEnumerable<SparseTwinIndex<Single>>
+  fullName: System.Collections.Generic.IEnumerable<Datastructure.SparseTwinIndex<System.Single>>
+  nameWithType.vb: IEnumerable(Of SparseTwinIndex(Of Single))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: IEnumerable(Of SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: V2NWSDistribution.RuntimeValidation
+  fullName: TMG.GTAModel.V2.Distribution.V2NWSDistribution.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

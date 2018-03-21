@@ -1,0 +1,1224 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  commentId: T:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  id: ExportTalliesIntoEmmeAsMatrix
+  parent: TMG.GTAModel.NetworkAssignment
+  children:
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute(TMG.Emme.Controller)
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixDescription
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixId
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixName
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Root
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ScenarioNumber
+  - TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Tallies
+  langs:
+  - csharp
+  - vb
+  name: ExportTalliesIntoEmmeAsMatrix
+  nameWithType: ExportTalliesIntoEmmeAsMatrix
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExportTalliesIntoEmmeAsMatrix
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 29
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: 'public class ExportTalliesIntoEmmeAsMatrix : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class ExportTalliesIntoEmmeAsMatrix
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixDescription
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixDescription
+  id: MatrixDescription
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: MatrixDescription
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.MatrixDescription
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixDescription
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MatrixDescription
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 32
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Matrix Description", "", "The 40-character description of the matrix")]
+
+      public string MatrixDescription
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Matrix Description", "", "The 40-character description of the matrix")>
+
+      Public MatrixDescription As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Matrix Description
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: The 40-character description of the matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixId
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixId
+  id: MatrixId
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: MatrixId
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.MatrixId
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixId
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MatrixId
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 35
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Matrix Id", 10, "The matrix number (id) exported to Emme")]
+
+      public int MatrixId
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Matrix Id", 10, "The matrix number (id) exported to Emme")>
+
+      Public MatrixId As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Matrix Id
+    - type: System.Int32
+      value: 10
+    - type: System.String
+      value: The matrix number (id) exported to Emme
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixName
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixName
+  id: MatrixName
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: MatrixName
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.MatrixName
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.MatrixName
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MatrixName
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 38
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Matrix Name", "", "The 6-character name of the matrix")]
+
+      public string MatrixName
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Matrix Name", "", "The 6-character name of the matrix")>
+
+      Public MatrixName As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Matrix Name
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: The 6-character name of the matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Root
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Root
+  id: Root
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Root
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 41
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ScenarioNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.ScenarioNumber
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 44
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Scenario Number", 1, "For some reason is required, but shouldn't make a difference since Emme matrices are usually shared across all scenarios")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario Number", 1, "For some reason is required, but shouldn't make a difference since Emme matrices are usually shared across all scenarios")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario Number
+    - type: System.Int32
+      value: 1
+    - type: System.String
+      value: For some reason is required, but shouldn't make a difference since Emme matrices are usually shared across all scenarios
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Tallies
+  commentId: F:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Tallies
+  id: Tallies
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: Tallies
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Tallies
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Tallies
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Tallies
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 46
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public List<IModeAggregationTally> Tallies
+    return:
+      type: System.Collections.Generic.List{TMG.IModeAggregationTally}
+    content.vb: Public Tallies As List(Of IModeAggregationTally)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+  commentId: P:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Name
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 50
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+  commentId: P:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 56
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 62
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Execute(Controller)
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 67
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/GTAModel/Tally/ExportTalliesIntoEmmeAsMatrix.cs
+    startLine: 117
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.NetworkAssignment
+  commentId: N:TMG.GTAModel.NetworkAssignment
+  isExternal: false
+  name: TMG.GTAModel.NetworkAssignment
+  nameWithType: TMG.GTAModel.NetworkAssignment
+  fullName: TMG.GTAModel.NetworkAssignment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: System.Collections.Generic.List{TMG.IModeAggregationTally}
+  commentId: T:System.Collections.Generic.List{TMG.IModeAggregationTally}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModeAggregationTally>
+  nameWithType: List<IModeAggregationTally>
+  fullName: System.Collections.Generic.List<TMG.IModeAggregationTally>
+  nameWithType.vb: List(Of IModeAggregationTally)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IModeAggregationTally)
+  name.vb: List(Of IModeAggregationTally)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IModeAggregationTally
+    name: IModeAggregationTally
+    nameWithType: IModeAggregationTally
+    fullName: TMG.IModeAggregationTally
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IModeAggregationTally
+    name: IModeAggregationTally
+    nameWithType: IModeAggregationTally
+    fullName: TMG.IModeAggregationTally
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+  isExternal: false
+  name: Name
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Name
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.Execute
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: ExportTalliesIntoEmmeAsMatrix.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkAssignment.ExportTalliesIntoEmmeAsMatrix.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

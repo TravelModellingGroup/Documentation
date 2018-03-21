@@ -1,0 +1,2247 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D
+  commentId: T:TMG.Frameworks.Data.Processing.GravityModel2D
+  id: GravityModel2D
+  parent: TMG.Frameworks.Data.Processing
+  children:
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Attraction
+  - TMG.Frameworks.Data.Processing.GravityModel2D.BalanceFunction
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Friction
+  - TMG.Frameworks.Data.Processing.GravityModel2D.GiveData
+  - TMG.Frameworks.Data.Processing.GravityModel2D.LoadData
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+  - TMG.Frameworks.Data.Processing.GravityModel2D.MaximumError
+  - TMG.Frameworks.Data.Processing.GravityModel2D.MaxIterations
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Name
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Production
+  - TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+  - TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+  - TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation(System.String@)
+  - TMG.Frameworks.Data.Processing.GravityModel2D.UnloadAttraction
+  - TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData
+  - TMG.Frameworks.Data.Processing.GravityModel2D.UnloadFriction
+  - TMG.Frameworks.Data.Processing.GravityModel2D.UnloadProduction
+  langs:
+  - csharp
+  - vb
+  name: GravityModel2D
+  nameWithType: GravityModel2D
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GravityModel2D
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 25
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: 'public sealed class GravityModel2D : IDataSource<SparseTwinIndex<float>>, IDataSource, IModule'
+    content.vb: >-
+      Public NotInheritable Class GravityModel2D
+          Implements IDataSource(Of SparseTwinIndex(Of Single)), IDataSource, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  - XTMF.IDataSource
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+  commentId: P:TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+  id: Loaded
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Loaded
+  nameWithType: GravityModel2D.Loaded
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Loaded
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 28
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public bool Loaded { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property Loaded As Boolean
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.Loaded*
+  implements:
+  - XTMF.IDataSource.Loaded
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Name
+  commentId: P:TMG.Frameworks.Data.Processing.GravityModel2D.Name
+  id: Name
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: GravityModel2D.Name
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Name
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 33
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+  commentId: P:TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+  id: Progress
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: GravityModel2D.Progress
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 35
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+  commentId: P:TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+  id: ProgressColour
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: GravityModel2D.ProgressColour
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 37
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Production
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.Production
+  id: Production
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Production
+  nameWithType: GravityModel2D.Production
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Production
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Production
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 41
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public IDataSource<SparseArray<float>> Production
+    return:
+      type: XTMF.IDataSource{Datastructure.SparseArray{System.Single}}
+    content.vb: Public Production As IDataSource(Of SparseArray(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Attraction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.Attraction
+  id: Attraction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Attraction
+  nameWithType: GravityModel2D.Attraction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Attraction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Attraction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 43
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public IDataSource<SparseArray<float>> Attraction
+    return:
+      type: XTMF.IDataSource{Datastructure.SparseArray{System.Single}}
+    content.vb: Public Attraction As IDataSource(Of SparseArray(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Friction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.Friction
+  id: Friction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: Friction
+  nameWithType: GravityModel2D.Friction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Friction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Friction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 45
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public IDataSource<SparseTwinIndex<float>> Friction
+    return:
+      type: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: Public Friction As IDataSource(Of SparseTwinIndex(Of Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.MaximumError
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.MaximumError
+  id: MaximumError
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: MaximumError
+  nameWithType: GravityModel2D.MaximumError
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.MaximumError
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaximumError
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 48
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Maximum Error", 0.05F, "The maximum error allowed for each attraction.")]
+
+      public float MaximumError
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Maximum Error", 0.05F, "The maximum error allowed for each attraction.")>
+
+      Public MaximumError As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Maximum Error
+    - type: System.Single
+      value: 0.0500000007
+    - type: System.String
+      value: The maximum error allowed for each attraction.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.MaxIterations
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.MaxIterations
+  id: MaxIterations
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: MaxIterations
+  nameWithType: GravityModel2D.MaxIterations
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.MaxIterations
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxIterations
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 51
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Max Iterations", 100, "The maximum iterations that will be executed.  Even if the maximum error is no")]
+
+      public int MaxIterations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Max Iterations", 100, "The maximum iterations that will be executed.  Even if the maximum error is no")>
+
+      Public MaxIterations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Max Iterations
+    - type: System.Int32
+      value: 100
+    - type: System.String
+      value: The maximum iterations that will be executed.  Even if the maximum error is no
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadProduction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.UnloadProduction
+  id: UnloadProduction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: UnloadProduction
+  nameWithType: GravityModel2D.UnloadProduction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadProduction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UnloadProduction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 54
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Unload production", true, "Should we unload production if we load it?")]
+
+      public bool UnloadProduction
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Unload production", True, "Should we unload production if we load it?")>
+
+      Public UnloadProduction As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Unload production
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Should we unload production if we load it?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadAttraction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.UnloadAttraction
+  id: UnloadAttraction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: UnloadAttraction
+  nameWithType: GravityModel2D.UnloadAttraction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadAttraction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UnloadAttraction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 57
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Unload attraction", true, "Should we unload attraction if we load it?")]
+
+      public bool UnloadAttraction
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Unload attraction", True, "Should we unload attraction if we load it?")>
+
+      Public UnloadAttraction As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Unload attraction
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Should we unload attraction if we load it?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadFriction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.UnloadFriction
+  id: UnloadFriction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: UnloadFriction
+  nameWithType: GravityModel2D.UnloadFriction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadFriction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UnloadFriction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 60
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Unload friction", true, "Should we unload friction if we load it?")]
+
+      public bool UnloadFriction
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Unload friction", True, "Should we unload friction if we load it?")>
+
+      Public UnloadFriction As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Unload friction
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Should we unload friction if we load it?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.BalanceFunction
+  commentId: F:TMG.Frameworks.Data.Processing.GravityModel2D.BalanceFunction
+  id: BalanceFunction
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: BalanceFunction
+  nameWithType: GravityModel2D.BalanceFunction
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.BalanceFunction
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BalanceFunction
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 71
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: >-
+      [RunParameter("Production Attraction Balancing", "MatchToProduction", typeof (GravityModel2D.Balance), "The function to use in order to balance the production and attraction going into the gravity model.")]
+
+      public GravityModel2D.Balance BalanceFunction
+    return:
+      type: TMG.Frameworks.Data.Processing.GravityModel2D.Balance
+    content.vb: >-
+      <RunParameter("Production Attraction Balancing", "MatchToProduction", GetType(GravityModel2D.Balance), "The function to use in order to balance the production and attraction going into the gravity model.")>
+
+      Public BalanceFunction As GravityModel2D.Balance
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Production Attraction Balancing
+    - type: System.String
+      value: MatchToProduction
+    - type: System.Type
+      value: TMG.Frameworks.Data.Processing.GravityModel2D.Balance
+    - type: System.String
+      value: The function to use in order to balance the production and attraction going into the gravity model.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.GiveData
+  commentId: M:TMG.Frameworks.Data.Processing.GravityModel2D.GiveData
+  id: GiveData
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: GiveData()
+  nameWithType: GravityModel2D.GiveData()
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.GiveData()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GiveData
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 73
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public SparseTwinIndex<float> GiveData()
+    return:
+      type: Datastructure.SparseTwinIndex{System.Single}
+    content.vb: Public Function GiveData As SparseTwinIndex(Of Single)
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.GiveData*
+  implements:
+  - XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}.GiveData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.LoadData
+  commentId: M:TMG.Frameworks.Data.Processing.GravityModel2D.LoadData
+  id: LoadData
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: LoadData()
+  nameWithType: GravityModel2D.LoadData()
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.LoadData()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LoadData
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 78
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public void LoadData()
+    content.vb: Public Sub LoadData
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.LoadData*
+  implements:
+  - XTMF.IDataSource.LoadData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation(System.String@)
+  commentId: M:TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: GravityModel2D.RuntimeValidation(ref String)
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 166
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: GravityModel2D.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData
+  commentId: M:TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData
+  id: UnloadData
+  parent: TMG.Frameworks.Data.Processing.GravityModel2D
+  langs:
+  - csharp
+  - vb
+  name: UnloadData()
+  nameWithType: GravityModel2D.UnloadData()
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UnloadData
+    path: ../../../XTMF/Code/TMG.Frameworks/Data/Processing/GravityModel2D.cs
+    startLine: 171
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Processing
+  syntax:
+    content: public void UnloadData()
+    content.vb: Public Sub UnloadData
+  overload: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData*
+  implements:
+  - XTMF.IDataSource.UnloadData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: TMG.Frameworks.Data.Processing
+  commentId: N:TMG.Frameworks.Data.Processing
+  isExternal: false
+  name: TMG.Frameworks.Data.Processing
+  nameWithType: TMG.Frameworks.Data.Processing
+  fullName: TMG.Frameworks.Data.Processing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  commentId: T:XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<SparseTwinIndex<Single>>
+  nameWithType: IDataSource<SparseTwinIndex<Single>>
+  fullName: XTMF.IDataSource<Datastructure.SparseTwinIndex<System.Single>>
+  nameWithType.vb: IDataSource(Of SparseTwinIndex(Of Single))
+  fullName.vb: XTMF.IDataSource(Of Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: IDataSource(Of SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource
+  commentId: T:XTMF.IDataSource
+  parent: XTMF
+  isExternal: false
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: XTMF.IDataSource
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  isExternal: false
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Loaded*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+  isExternal: false
+  name: Loaded
+  nameWithType: GravityModel2D.Loaded
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Loaded
+- uid: XTMF.IDataSource.Loaded
+  commentId: P:XTMF.IDataSource.Loaded
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: Loaded
+  nameWithType: IDataSource.Loaded
+  fullName: XTMF.IDataSource.Loaded
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Name*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.Name
+  isExternal: false
+  name: Name
+  nameWithType: GravityModel2D.Name
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Progress*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: GravityModel2D.Progress
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: GravityModel2D.ProgressColour
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource{Datastructure.SparseArray{System.Single}}
+  commentId: T:XTMF.IDataSource{Datastructure.SparseArray{System.Single}}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<SparseArray<Single>>
+  nameWithType: IDataSource<SparseArray<Single>>
+  fullName: XTMF.IDataSource<Datastructure.SparseArray<System.Single>>
+  nameWithType.vb: IDataSource(Of SparseArray(Of Single))
+  fullName.vb: XTMF.IDataSource(Of Datastructure.SparseArray(Of System.Single))
+  name.vb: IDataSource(Of SparseArray(Of Single))
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.Balance
+  commentId: T:TMG.Frameworks.Data.Processing.GravityModel2D.Balance
+  parent: TMG.Frameworks.Data.Processing
+  isExternal: false
+  name: GravityModel2D.Balance
+  nameWithType: GravityModel2D.Balance
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.Balance
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.GiveData*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.GiveData
+  isExternal: false
+  name: GiveData
+  nameWithType: GravityModel2D.GiveData
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.GiveData
+- uid: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}.GiveData
+  commentId: M:XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}.GiveData
+  parent: XTMF.IDataSource{Datastructure.SparseTwinIndex{System.Single}}
+  definition: XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<SparseTwinIndex<Single>>.GiveData()
+  fullName: XTMF.IDataSource<Datastructure.SparseTwinIndex<System.Single>>.GiveData()
+  nameWithType.vb: IDataSource(Of SparseTwinIndex(Of Single)).GiveData()
+  fullName.vb: XTMF.IDataSource(Of Datastructure.SparseTwinIndex(Of System.Single)).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<SparseTwinIndex<Single>>.GiveData
+    fullName: XTMF.IDataSource<Datastructure.SparseTwinIndex<System.Single>>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of SparseTwinIndex(Of Single)).GiveData
+    fullName: XTMF.IDataSource(Of Datastructure.SparseTwinIndex(Of System.Single)).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex{System.Single}
+  commentId: T:Datastructure.SparseTwinIndex{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseTwinIndex`1
+  name: SparseTwinIndex<Single>
+  nameWithType: SparseTwinIndex<Single>
+  fullName: Datastructure.SparseTwinIndex<System.Single>
+  nameWithType.vb: SparseTwinIndex(Of Single)
+  fullName.vb: Datastructure.SparseTwinIndex(Of System.Single)
+  name.vb: SparseTwinIndex(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1.GiveData
+  commentId: M:XTMF.IDataSource`1.GiveData
+  isExternal: false
+  name: GiveData()
+  nameWithType: IDataSource<T>.GiveData()
+  fullName: XTMF.IDataSource<T>.GiveData()
+  nameWithType.vb: IDataSource(Of T).GiveData()
+  fullName.vb: XTMF.IDataSource(Of T).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<T>.GiveData
+    fullName: XTMF.IDataSource<T>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of T).GiveData
+    fullName: XTMF.IDataSource(Of T).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex`1
+  commentId: T:Datastructure.SparseTwinIndex`1
+  isExternal: false
+  name: SparseTwinIndex<T>
+  nameWithType: SparseTwinIndex<T>
+  fullName: Datastructure.SparseTwinIndex<T>
+  nameWithType.vb: SparseTwinIndex(Of T)
+  fullName.vb: Datastructure.SparseTwinIndex(Of T)
+  name.vb: SparseTwinIndex(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure
+  commentId: N:Datastructure
+  isExternal: false
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.LoadData*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.LoadData
+  isExternal: false
+  name: LoadData
+  nameWithType: GravityModel2D.LoadData
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.LoadData
+- uid: XTMF.IDataSource.LoadData
+  commentId: M:XTMF.IDataSource.LoadData
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: LoadData()
+  nameWithType: IDataSource.LoadData()
+  fullName: XTMF.IDataSource.LoadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: GravityModel2D.RuntimeValidation
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData*
+  commentId: Overload:TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData
+  isExternal: false
+  name: UnloadData
+  nameWithType: GravityModel2D.UnloadData
+  fullName: TMG.Frameworks.Data.Processing.GravityModel2D.UnloadData
+- uid: XTMF.IDataSource.UnloadData
+  commentId: M:XTMF.IDataSource.UnloadData
+  parent: XTMF.IDataSource
+  isExternal: false
+  name: UnloadData()
+  nameWithType: IDataSource.UnloadData()
+  fullName: XTMF.IDataSource.UnloadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
