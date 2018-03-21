@@ -5,10 +5,10 @@ were manually synthesized for each analysis zone.
 
 .. topic:: Input Files
 
-  ZoneAttractions.csv
+  EmploymentRate.csv
    This file contains total zonal attractions in third-normalized form.
 
-  ZoneProductions.csv
+  Population.csv
    This file contains total zonal productions in third-normalized form.
 
 These files are included as part of the input / resources downloaded that is accompanied with this guide. Zone totals

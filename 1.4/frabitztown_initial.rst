@@ -4,10 +4,10 @@ Required Files and Assumptions
 This part of the XTMF documentation assumes that the provided Frabitztown input files have already
 been downloaded and extracted.
 
-ZoneAttractions.csv
+EmploymentRate.csv
   A two-column CSV input file with the amount of attractions per zone.
 
-ZoneProductions.csv
+Population.csv
   A two-column CSV input file listing the amount of trip productions per zone.
 
 Zones.csv
@@ -27,7 +27,7 @@ EMME_TransitLine_Aggregation.csv
 
 .. note::
 
-    Frabitztown input files can be accessed at: http://tmg.utoronto.ca/documentation/1.3/frabitztown.zip
+    Frabitztown input files can be accessed at: http://tmg.utoronto.ca/documentation/1.4/frabitztown.zip
 
 
 Creating the Project
@@ -136,7 +136,7 @@ Basic Travel Demand Model Modules
 	 A list of modules that will be executed with the model sytem is run.
 
 ``Zone System``
-	 A module that loads in zonal data for the model system. This information is sometimes required and referenced
+	 A module that loads in zonal data for the model syrstem. This information is sometimes required and referenced
 	 from other modules.
 
 
@@ -151,6 +151,10 @@ panel of the model system page will have option to specify the input directory t
    :width: 50%
 
    Choosing a base input directory from the root module parameter display.
+
+.. thumbnail:: images/test.gif
+   :align: center
+   :width: 50%
 
 
 This location should be pointed to the directory that contains the input contents for the model system.
