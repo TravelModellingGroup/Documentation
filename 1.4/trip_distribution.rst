@@ -29,13 +29,17 @@ Under the "Tools" module of ``Execute Tools from Modeller Resource``, add a ``Mu
 set the Scenario ID (this is the scenario ID in EMME for the Frabitztown input provided). Next, add a child module ``Class`` under the module list ``Classes``. Update
 the parameter ``Time Matrix`` in the class module to 5.
 
-.. thumbnail:: images/multiclass_road_1.png
+.. thumbnail:: images/xtmf_000039.png
    :align: center
+   :width: 50%
+   :group: multiclass
 
    XTMF with the Multiclass road assignment module selected.
 
-.. thumbnail:: images/multiclass_road_2.png
+.. thumbnail:: images/xtmf_000038.png
    :align: center
+   :width: 50%
+   :group: multiclass
 
    XTMF with the single class road assignment module selected.
 
@@ -51,8 +55,9 @@ Exporting Emme matrices to file.
 For sake of clarity, this tutorial includes this step to demonstrate how information might be extracted from a model system
 during a run process. Typically these "debug" steps can be ignored in a production ready model system.
 
-.. thumbnail:: images/export_auto_emme.png
+.. thumbnail:: images/xtmf_000040.png
    :align: center
+   :width: 50%
 
    A module for exporting the in vehicle travel time matrix.
 

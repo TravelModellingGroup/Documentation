@@ -230,6 +230,16 @@ The region file (child module of) of ``Zone System`` can be left blank for the p
 
 Establishing a connection with Emme
 =====================================================================================
+
+
+Specify a resource name for the Resource module added in the previous step. This resource name will be required later when configuring the required modules to execute EMME.
+
+.. thumbnail:: images/xtmf_000030.png
+   :align: center
+   :width: 25%
+   :group: resourcename
+
+
 The next part of the model system creation process is to establish a resource that manages XTMF's connection to Emme. To start, begin by adding a new child
 module under the module labelled ``Resources``. To do this, right click (or press ctrl + m with the module highlighted) and select the option **Add Module** from
 the context menu. The parent module ``Resources`` is considered a ``collection``. (ie: a module that can have multiple child modules). Select the child module just added to open
@@ -240,12 +250,6 @@ XTMF to reference an Emme instance for use during the run process. Once the data
 project (input folder). Insert a ``DirectorySeparatedPathFromInputDirectory`` module into the Project Folder slot. Point the first parameter ``DirectoryRelativeToInputDirectory`` to the relative path of your input directory. The file name should point to the Emme project that will be loaded. Here Frabitztown
 is used for this guide.
 
-.. figure:: images/emme.png
-   :scale: 50 %
-   :align: center
-
-   Parameter display for choosing a path to the Emme project folder, along with the project file name.
-
 
 Under the ``To Execute`` module, add a new child module with the type ``Execute Tools From Modeller Resource``. This allows us to begin calling tools that are defined
 within Emme or any loaded toolbox. From resource indicates that we will use the Emme resource defined earlier under the "Resources" module. When the module is expanded, assign ``Resource Lookup`` to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.
@@ -254,8 +258,52 @@ within Emme or any loaded toolbox. From resource indicates that we will use the 
 
    For more information regarding resources and their usage please see Working with Resources.
 
-.. figure:: images/emme_modeller_resource.png
-   :scale: 50 %
+
+.. thumbnail:: images/xtmf_000031.png
+   :width: 10%
+   :group: modellerresource
+
+   Adding a module under ``To Execute``
+
+.. thumbnail:: images/xtmf_000032.png
+   :width: 10%
+   :group: modellerresource
+
+   Adding a module under ``To Execute`` - context menu.
+
+.. thumbnail:: images/xtmf_000033.png
+   :width: 10%
+   :group: modellerresource
+
+   Choosing module type ``ExecuteToolsFromModellerResource`.
+
+.. thumbnail:: images/xtmf_000034.png
+   :width: 10%
+   :group: modellerresource
+
+   Selecting the module ``Emme Modeller``.
+
+.. thumbnail:: images/xtmf_000035.png
+   :width: 10%
+   :group: modellerresource
+
+   Choosing the ``Resource Lookup`` module type.
+
+.. thumbnail:: images/xtmf_000036.png
+   :width: 10%
+   :group: modellerresource
+
+   Selecting the ``Resource Lookup`` module and specifying the EMME resource in the parameter section (right hand side).
+
+Importing the Frabitztown Network Package
+----------------------------------------------------------------------------------------
+
+Under the module ``Execute Tools from Modeller Resource``, add a new module of type ``Import Network Package``. Under its child ``Network Package`` module, choose 
+a module of type ``FilePathFromInputDirectory`` and direct the input path to the location of the Frabitztown network package which was downloaded.
+
+.. thumbnail:: images/xtmf_000037.png
+   :width: 25%
+   :group: modellerresource
    :align: center
 
-   Creating an Emme modeller resource.
+   Importing the Frabiztown Network Package into the active EMME project.

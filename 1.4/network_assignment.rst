@@ -13,10 +13,10 @@ The final parts of this model system are to find balance in the route assignment
 module under the the Model System's *To Execute* module of type *Iteration*. Under the modules parameters, set "Execution Iterations" to 4. Execute in Parallel should be left as false. The iteration module allows sections
 of the model system to be executed multiple times.
 
-.. figure:: images/auto_mode_choice.png
-   :scale: 50 %
+.. thumbnail:: images/xtmf_000042.png
    :align: center
-
+   :width: 50%
+   
    An iteration module.
 
 
@@ -45,9 +45,9 @@ Add a module of type ``ImportBinaryMatrixIntoEmmme*`` for both the auto and trav
 to set unique matrix numbers for both demand matrices. Import into Scenario 11. The import modules
 should exist just under the ``Extra Attribute Context Manager`` module.
 
-.. figure:: images/import_auto_demand.png
-   :scale: 50 %
+.. thumbnail:: images/xtmf_000042.png
    :align: center
+   :width: 50%
 
    Model System with import matrix into EMME active.
 
