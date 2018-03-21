@@ -85,9 +85,16 @@ The Frabitztown demo model system will make use of a module bundled as part of t
 "Set Module" from the context menu. A small dialog window will appear initially with a large list of modules that can serve as a "root" of a model system. Modules cannot be placed arbitrarily into model systems - only valid modules can be put into their proper slots. The list of modules shown are all those loaded by XTMF
 that can be the root of a model system. The filter text box can be used to quickly find the module being looked for. In this case, enter the first few characters of "BasicTravelDemandModel" to find it quickly. Double click the module to finally set it to the root of the model system.
 
-.. figure:: images/basic_travel_demand_model.png
-   :scale: 50 %
-   :align: center
+
+.. thumbnail:: images/xtmf_000008.png
+   :width: 25%
+   :group: RootModule
+
+   Root module context menu.
+
+.. thumbnail:: images/xtmf_000009.png
+   :width: 25%
+   :group: RootModule
 
    Choosing ``BasicTravelDemandModel`` from the 'Select Module' window.
 
@@ -95,8 +102,8 @@ that can be the root of a model system. The filter text box can be used to quick
 Once the module type is chosen, the model system display will contain new items in the grid view. The ``BasicTravelDemandModel`` defines as its children 4 sections
 of modules.
 
-.. figure:: images/model_system_root.png
-   :scale: 50 %
+.. thumbnail:: images/xtmf_000010.png
+   :width: 50%
    :align: center
 
    The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root
@@ -139,8 +146,9 @@ Typically a relative input directory needs to be set for model systems. Specifyi
 to files that need to be read-in. To set the base input directory, click on the module with description "The root of the model system". The right hand
 panel of the model system page will have option to specify the input directory to use as a base for this ``BasicTravelDemandModel``.
 
-.. figure:: images/base_input_directory.png
+.. thumbnail:: images/xtmf_000010.png
    :align: center
+   :width: 50%
 
    Choosing a base input directory from the root module parameter display.
 
