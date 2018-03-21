@@ -55,15 +55,15 @@ master_doc = 'index'
 html_show_sourcelink = False
 # General information about the project.
 project = 'Travel Modelling Group Documentation'
-copyright = '2017, Travel Modelling Group'
-author = 'Brendan T. Reilly and Bilal Yusuf'
+copyright = '2018, Travel Modelling Group'
+author = 'Brendan T. Reilly, James Vaughan and Bilal Yusuf'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '1.3'
+version = '1.4'
 # The full version, including alpha/beta/rc tags.
 release = ''
 #latex_elements = { 'releasename': '' }
@@ -121,15 +121,7 @@ pygments_style = 'vs'
 todo_include_todos = False
 
 
-# -- Options for HTML output ----------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
-# At the top.
-import sphinx_bootstrap_theme
-
-import sphinx_rtd_theme
 
 import alabaster
 
@@ -137,9 +129,15 @@ import alabaster
 
 #html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-html_theme = "alabaster"
+#html_theme = "alabaster"
 
-html_theme_path = [alabaster.get_path()]
+#html_theme_path = [alabaster.get_path()]
+
+
+html_theme = "bootstrap"
+
+html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+
 
 # ...
 
@@ -163,7 +161,8 @@ html_theme_options = {
     'head_font_family': "'Droid Sans', sans-serif;",
     'show_related': True,
     'show_powered_by': False,
-    'font_size': '0.90em'
+    'font_size': '0.90em',
+    'bootswatch_theme':'Flatly'
     # Navigation bar title. (Default: ``project`` value)
     #'navbar_title': "TMG Documentation",
     #'collapse_navigation': False,
@@ -232,8 +231,8 @@ html_theme_options = {
 }
 
 html_sidebars = {
-   '**': ['about.html','globaltoc.html', 'sourcelink.html', 'searchbox.html'],
-   'using/windows': ['windowssidebar.html', 'searchbox.html'],
+   '**': [],
+   'using/windows': ['windowssidebar.html'],
 }
 
 pygments_style = 'vs'
@@ -253,7 +252,7 @@ pygments_style = 'vs'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #
-# html_logo = None
+html_logo = 'images/tmg.png'
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -453,3 +452,7 @@ def setup(app):
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #
 # texinfo_no_detailmenu = False
+
+images_config = {
+    'backend': 'LightBox2'
+}
