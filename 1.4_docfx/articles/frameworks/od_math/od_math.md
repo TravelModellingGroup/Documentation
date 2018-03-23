@@ -15,9 +15,8 @@ For example, define two matrices A and B.
 \begin{equation} A = \begin{bmatrix}
       1 & 2          \\\\
       3 & 4
-\end{bmatrix} \end{equation}
-
-\begin{equation} B = \begin{bmatrix}
+\end{bmatrix},
+B = \begin{bmatrix}
     2 & 4          \\\\
     6 & 8
 \end{bmatrix} \end{equation}
