@@ -17,108 +17,107 @@ For example, define two matrices A and B.
       3 & 4
 \end{bmatrix} \end{equation}
 
-, \\
-
 \begin{equation} B = \begin{bmatrix}
     2 & 4          \\\\
     6 & 8
 \end{bmatrix} \end{equation}
 
 
-\\begin{equation}
-   E = mc^2
-\\end{equation}
+If we used the expression string `2 * A + B` we would get the following.
 
-If we used the expression string ‘2 * A + B’ we would get the following.
-
-.. math::
-    2 \times A + B = \begin{bmatrix}
-       4 & 8          \\
-       12 & 16
-    \end{bmatrix}
+\begin{equation}
+2 \times A + B = \begin{bmatrix}
+    4 & 8          \\\\
+    12 & 16
+\end{bmatrix} \end{equation}
 
 You can also use brackets to change the order of operations.
 
-.. math::
-    2 \times (A + B) = \begin{bmatrix}
-       6 & 12          \\
-       18 & 24
-    \end{bmatrix}
+\begin{equation}
+2 \times (A + B) = \begin{bmatrix}
+   6 & 12          \\\\
+   18 & 24
+\end{bmatrix} \end{equation}
 
-Division can also be performed using ‘B / A’.
+Division can also be performed using `B / A`.
 
-.. math::
-    B / A = \begin{bmatrix}
-       2 & 2          \\
-       2 & 2
-    \end{bmatrix}
+\begin{equation}
+B / A = \begin{bmatrix}
+    2 & 2          \\\\
+    2 & 2
+\end{bmatrix} \end{equation}
 
-Multiplication ‘A * B’ would result in:
+Multiplication `A * B` would result in:
 
-.. math::
-    A \times B = \begin{bmatrix}
-       2 & 8          \\
-       18 & 32
-    \end{bmatrix}
+\begin{equation}
+A \times B = \begin{bmatrix}
+    2 & 8          \\\\
+    18 & 32
+\end{bmatrix} \end{equation}
 
-Powers ‘A ^ B’ would result in:
+Powers `A ^ B` would result in:
 
-.. math::
-    A ^ B &= \begin{bmatrix}
-       1 & 16          \\
-       729 & 65536
-    \end{bmatrix}
+\begin{equation}
+A^B = \begin{bmatrix}
+    1 & 16          \\\\
+   729 & 65536
+\end{bmatrix} \end{equation}
 
 ## Vectors
 
 Vectors can also be used in arithmetic.  In the following we define C as a Vertical matrix, and D is a Horizontal matrix.  If a matrix is loaded from a data source it will not have a directionality and must be given one before being used with matrices.
 
-.. math::
-    C =
-    \begin{bmatrix}
-       1 \\
-       3
-    \end{bmatrix} \
-     , D =
-     \begin{bmatrix}
-       1 \\
-       3
-    \end{bmatrix}
+\begin{equation}
+C =
+\begin{bmatrix}
+    1 \\\\
+   3
+ \end{bmatrix} \end{equation}
+
+\begin{equation}
+D =
+ \begin{bmatrix}
+   1 \\\\
+    3
+\end{bmatrix} \end{equation}
 
 The following is the difference between the basic arithmetic with vertical and horizontal vectors applied to A:
-    .. math::
-      A + C =
-      \begin{bmatrix}
-        2 & 3 \\
-        6 & 7
-      \end{bmatrix}
 
-    .. math::
-      A + D =
-      \begin{bmatrix}
-        1 & 2 \\
-        1 & 0.75
-      \end{bmatrix}
+\begin{equation}
+A + C =
+\begin{bmatrix}
+  2 & 3 \\\\
+  6 & 7
+\end{bmatrix} \end{equation}
+
+\begin{equation}
+A + D =
+\begin{bmatrix}
+  1 & 2 \\\\
+  1 & 0.75
+\end{bmatrix} \end{equation}
 
 ## Comparisons
 
 For certain functions comparisons are required.  If a comparison is true, a 1 is the result otherwise 0.
 The comparison operators are <, >, <=, >=, == (equal), != (not equal), | (or), and & (and).
 
-  .. math::
-    A = \begin{bmatrix}
-       1 & 2          \\
+\begin{equation}
+A = \begin{bmatrix}
+       1 & 2          \\\\
        3 & 4
-    \end{bmatrix}   \
-    , F = 
-    \begin{bmatrix}
-      4 & 3 \\
-      2 & 1
-    \end{bmatrix}
+\end{bmatrix} \end{equation}
 
-  .. math::
-    A < F =
-    \begin{bmatrix}
-      1 & 1 \\
-      0 & 0
-    \end{bmatrix}
+\begin{equation}
+ F = 
+\begin{bmatrix}
+  4 & 3 \\\\
+  2 & 1
+\end{bmatrix} \end{equation}
+
+\begin{equation}
+A < F =
+  \begin{bmatrix}
+    1 & 1 \\\\
+    0 & 0
+  \end{bmatrix} \end{equation}
