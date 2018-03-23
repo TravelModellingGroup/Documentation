@@ -1,15 +1,14 @@
-Getting Familiar with XTMF
-===================================================================
+# Getting Familiar with XTMF
 
 
-
-
-The XTMF Interface
+## The XTMF Interface
 ---------------------------------------------------------
 
 XTMF 1.4 in its most basic form functions as a single window user experience. The interface allows the user
 to work with projects and model systems, the underlying format of the XTMF work-flow. Multiple model systems
 and projects can be active at the same time.
+
+![alt text](/images/xtmf_1.png "The Initial XTMF Interface")
 
 
 ### Window Menu
@@ -38,8 +37,7 @@ any documentation related text for its proper usage within XTMF.
 
 
 
-XTMF Settings
-----------------------------------------------------------
+## XTMF Settings
 
 
 ### Working with Multiple XTMF Installations
