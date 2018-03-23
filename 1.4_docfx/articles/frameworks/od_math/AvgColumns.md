@@ -1,44 +1,51 @@
-==============
-AvgColumns
-==============
+# AvgColumns
 
-.. math::
-    A = \begin{bmatrix}
-       -1 & 2          \\
-       3 & -4
-    \end{bmatrix}, \
-    B = \begin{bmatrix}
-       2 & 4          \\
-       6 & 8
-    \end{bmatrix}, \
-    C = \begin{bmatrix}
-       -1 \\
-       3
-    \end{bmatrix}, \
-    D = \begin{bmatrix}
-       -1 & 3
-    \end{bmatrix}
+\begin{equation}
+A = \begin{bmatrix}
+    -1 & 2          \\\\
+    3 & -4
+\end{bmatrix}, 
+B = \begin{bmatrix}
+    2 & 4          \\\\
+    6 & 8
+\end{bmatrix}, 
+C = \begin{bmatrix}
+    -1 \\\\
+    3
+\end{bmatrix}, 
+D = \begin{bmatrix}
+    -1 & 3
+\end{bmatrix}
+\end{equation}
 
-AvgColumns(Scalar) = ERROR
---------------------------------------------------------------------------
+### AvgColumns(Scalar) = ERROR
 
-.. math::
-    Avg(-1) = ERROR
+\begin{equation}
+Avg(-1) = ERROR
+\end{equation}
 
-AvgColumns(Vector) = ERROR
---------------------------------------------------------------------------
+> [!CAUTION]
+> If executed with a scalar it will throw an exception.
 
-.. math::
-    Avg(C) = ERROR
+### AvgColumns(Vector) = ERROR
 
-AvgColumns(Matrix) = Vector
---------------------------------------------------------------------------
-.. math::
-    AvgColumns(A) = \begin{bmatrix}
-      1 & -1
-    \end{bmatrix}
+\begin{equation}
+Avg(C) = ERROR
+\end{equation}
 
-.. math::
-    AvgColumns(B) = \begin{bmatrix}
-      4 & 6
-    \end{bmatrix}
+> [!CAUTION]
+> If executed with a vector it will throw an exception.
+
+### AvgColumns(Matrix) = Vector
+
+\begin{equation}
+AvgColumns(A) = \begin{bmatrix}
+    1 & -1
+\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+AvgColumns(B) = \begin{bmatrix}
+    4 & 6
+\end{bmatrix}
+\end{equation}

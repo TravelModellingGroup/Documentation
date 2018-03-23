@@ -1,6 +1,5 @@
-==============
-AvgColumns
-==============
+
+# AvgColumns
 
 .. math::
     A = \begin{bmatrix}
