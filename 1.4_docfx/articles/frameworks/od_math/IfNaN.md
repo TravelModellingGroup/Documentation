@@ -1,52 +1,51 @@
-==============
-IfNaN
-==============
+# IfNaN
 
 The first parameter is the regular value, the second is the value to use if the regular value is NaN (not a number).
 
-.. math::
-    A = \begin{bmatrix}
-       0 & 2          \\
-       4 & -4
-    \end{bmatrix}, \
-    B = \begin{bmatrix}
-       2 & 4          \\
-       6 & 8
-    \end{bmatrix}, \
-    C = \begin{bmatrix}
-       0 \\
-       4
-    \end{bmatrix}, \
-    D = \begin{bmatrix}
-       0 & 4
-    \end{bmatrix}
+\begin{equation}
+A = \begin{bmatrix}
+  0 & 2          \\\\
+  4 & -4
+\end{bmatrix}, 
+B = \begin{bmatrix}
+  2 & 4          \\\\
+  6 & 8
+\end{bmatrix}, 
+C = \begin{bmatrix}
+  0 \\\\
+  4
+\end{bmatrix}, 
+D = \begin{bmatrix}
+  0 & 4
+\end{bmatrix}
+\end{equation}
 
+### IfNaN(Matrix, Matrix) = Matrix
 
-IfNaN(Matrix, Matrix) = Matrix
-----------------------------------
+\begin{equation}
+IfNaN(100 / A, B) = \begin{bmatrix}
+  2 & 50 \\\\
+  25 & -25
+\end{bmatrix}
+\end{equation}
 
-.. math::
-  IfNaN(100 / A, B) = \begin{bmatrix}
-    2 & 50 \\
-    25 & -25
-  \end{bmatrix}
+### IfNaN(Vector,Vector) = Vector
 
-IfNaN(Vector,Vector) = Vector
----------------------------------
+\begin{equation}
+ifNaN(100 / C, C) = \begin{bmatrix}
+  0 \\\\ 
+  25
+\end{bmatrix}
+\end{equation}
 
-.. math::
-    ifNaN(100 / C, C) = \begin{bmatrix}
-      0 \\ 
-      25
-    \end{bmatrix}
+\begin{equation}
+ifNaN(100 / D, D) = \begin{bmatrix}
+  0 & 25
+\end{bmatrix}
+\end{equation}
 
-.. math::
-    ifNaN(100 / D, D) = \begin{bmatrix}
-      0 & 25
-    \end{bmatrix}
+### IfNaN(Scalar, Scalar) = Scalar
 
-IfNaN(Scalar, Scalar) = Scalar
----------------------------------
-
-.. math::
-    IfNaN(0 / 0, 1) = 1
+\begin{equation}
+IfNaN(0 / 0, 1) = 1
+\end{equation}
