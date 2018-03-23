@@ -1,54 +1,60 @@
-============================
-AsHorizontal
-============================
+# AsHorizontal
+
 Assigns a horizontal directionality to a vector.  A vector starts off as 'unassigned'.  In order to
 use the vector with matrices it is usually necessary to assign it to be either vertical or horizontal.
 
+\begin{equation}
+A = \begin{bmatrix}
+   -1 & 2          \\\\
+   3 & -4
+\end{bmatrix}, 
+B = \begin{bmatrix}
+   2 & 4          \\\\
+   6 & 8
+\end{bmatrix}, 
+C = \begin{bmatrix}
+    -1 \\\\
+   3
+\end{bmatrix}, 
+D = \begin{bmatrix}
+   -1 & 3
+\end{bmatrix}
+\end{equation}
 
-.. math::
-    A = \begin{bmatrix}
-       -1 & 2          \\
-       3 & -4
-    \end{bmatrix}, \
-    B = \begin{bmatrix}
-       2 & 4          \\
-       6 & 8
-    \end{bmatrix}, \
-    C = \begin{bmatrix}
-       -1 \\
-       3
-    \end{bmatrix}, \
-    D = \begin{bmatrix}
-       -1 & 3
-    \end{bmatrix}
+### AsHorizontal(Scalar) = ERROR
+
+\begin{equation}
+ AsHorizontal(1) = ERROR
+\end{equation}
 
 
-AsHorizontal(Scalar) = ERROR
------------------------------
-If executed with a scalar it will throw an exception.
+> [!CAUTION]
+> If executed with a scalar it will throw an exception.
 
-.. math::
-  AsHorizontal(1) = ERROR
 
-AsHorizontal(Vector) = Vector
------------------------------
+### AsHorizontal(Vector) = Vector
+
 When operating on a vector it will force it to be horizontal.
 
-.. math::
-    AsHorizontal(C) = \begin{bmatrix}
-      -1 & 3
-    \end{bmatrix}
+\begin{equation}
+AsHorizontal(C) = \begin{bmatrix}
+   -1 & 3
+\end{bmatrix}
+\end{equation}
 
 Applying AsHorizontal to a vector that is already horizontal is allowed.
 
-.. math::
-    AsHorizontal(D) = \begin{bmatrix}
-       -1 & 3 
-    \end{bmatrix}
+\begin{equation}
+AsHorizontal(D) = \begin{bmatrix}
+   -1 & 3 
+\end{bmatrix}
+\end{equation}
 
-AsHorizontal(Matrix) = ERROR
------------------------------
-If executed with a matrix it will throw an exception.
+### AsHorizontal(Matrix) = ERROR
 
-.. math::
-  AsHorizontal(A) = ERROR
+\begin{equation}
+AsHorizontal(A) = ERROR
+\end{equation}
+
+> [!CAUTION]
+> If executed with a matrix it will throw an exception.
