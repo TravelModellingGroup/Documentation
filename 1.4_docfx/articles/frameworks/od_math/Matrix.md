@@ -1,44 +1,45 @@
-==============
-Matrix
-==============
+# Matrix
+
 Creates a square matrix from a vector.
 
-.. math::
-    A = \begin{bmatrix}
-       -1 & 2          \\
-       3 & -4
-    \end{bmatrix}, \
-     C = \begin{bmatrix}
-       -1 \\
-       3
-    \end{bmatrix}, \
-    D = \begin{bmatrix}
-       -1 & 3
-    \end{bmatrix}
+\begin{equation}
+A = \begin{bmatrix}
+    -1 & 2          \\\\
+    3 & -4
+\end{bmatrix}, 
+    C = \begin{bmatrix}
+    -1 \\\\
+    3
+\end{bmatrix}, 
+D = \begin{bmatrix}
+    -1 & 3
+\end{bmatrix}
+\end{equation}
 
-Matrix(Matrix) = ERROR
---------------------------------------
+### Matrix(Matrix) = ERROR
 
-.. math::
-    Matrix(A) = ERROR
+\begin{equation}
+Matrix(A) = ERROR
+\end{equation}
 
-Matrix(Vector) = Matrix
---------------------------------------
+### Matrix(Vector) = Matrix
 
-.. math::
-    Matrix(C) = \begin{bmatrix}
-        -1 & 3 \\
-        -1 & 3
-    \end{bmatrix}
+\begin{equation}
+Matrix(C) = \begin{bmatrix}
+    -1 & 3 \\\\
+    -1 & 3
+\end{bmatrix}
+\end{equation}
 
-.. math::
-    Matrix(D) = \begin{bmatrix}
-        -1 & -1 \\
-        3 & 3
-    \end{bmatrix}
+\begin{equation}
+Matrix(D) = \begin{bmatrix}
+    -1 & -1 \\\\
+    3 & 3
+\end{bmatrix}
+\end{equation}
 
-Matrix(Scalar) = ERROR
---------------------------------------
+### Matrix(Scalar) = ERROR
 
-.. math::
-    Matrix(0) = ERROR
+\begin{equation}
+Matrix(0) = ERROR
+\end{equation}
