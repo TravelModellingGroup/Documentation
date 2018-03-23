@@ -1,45 +1,47 @@
-==============
-Sum
-==============
+# Sum
+
 Returns the summation of all elements in the structure.
 
-.. math::
-    A = \begin{bmatrix}
-       -1 & 2          \\
-       3 & -4
-    \end{bmatrix}, \
-    B = \begin{bmatrix}
-       2 & 4          \\
-       6 & 8
-    \end{bmatrix}, \
-    C = \begin{bmatrix}
-       -1 \\
-       3
-    \end{bmatrix}, \
-    D = \begin{bmatrix}
-       -1 & 3
-    \end{bmatrix}
+\begin{equation}
+A = \begin{bmatrix}
+    -1 & 2          \\\\
+     3 & -4
+\end{bmatrix}, \
+B = \begin{bmatrix}
+    2 & 4          \\\\
+    6 & 8
+\end{bmatrix}, 
+C = \begin{bmatrix}
+    -1 \\\\
+     3
+\end{bmatrix}, 
+D = \begin{bmatrix}
+    -1 & 3
+\end{bmatrix}
+\end{equation}
 
-Sum(Matrix) = Scalar
----------------------------
+### Sum(Matrix) = Scalar
 
-.. math::
-    Sum(A) = 0
+\begin{equation}
+Sum(A) = 0
+\end{equation}
 
-.. math::
-    Sum(B) = 20
+\begin{equation}
+Sum(B) = 20
+\end{equation}
 
-Sum(Vector) = Scalar
----------------------------
+### Sum(Vector) = Scalar
 
-.. math::
-    Sum(C) = 2
+\begin{equation}
+Sum(C) = 2
+\end{equation}
 
-.. math::
-    Sum(D) = 2
+\begin{equation}
+Sum(D) = 2
+\end{equation}
 
-Sum(Scalar) = ERROR
----------------------------
+### Sum(Scalar) = ERROR
 
-.. math::
-    Sum(0) = ERROR
+\begin{equation}
+Sum(0) = ERROR
+\end{equation}

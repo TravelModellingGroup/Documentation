@@ -1,4 +1,3 @@
-==============
-Pi
-==============
-No parameters, returns 3.14159274
+# Pi
+
+No parameters, returns `3.14159274`.
