@@ -35,12 +35,8 @@ Once XTMF is opened click "New Project". Enter Frabitztown as the project name a
 XTMF will automatically be redirected to the project page. The next step is to create a new :term:`model system` that will be contained
 within the "Frabitztown" project.
 
+![alt text](/images/frabitztown_new_project.png " Entering a name for a new project.")
 
-
-.. thumbnail:: images/frabitztown_new_project.png
-   :align: center
-
-   Entering a name for a new project.
 
 
 At the bottom of the project page, click the button that is labelled "Create New Blank Model System". Enter "Frabitztown" here again,
@@ -49,23 +45,14 @@ hand side of the project page. There will be a small disclaimer warning that the
 that the model system is new and requires further setup to be in a runnable / complete state.
 
 
-.. thumbnail:: images/frabitztown_create_model_system_1.png
-  :width: 25%
-  :group: modelsystem
 
-  From the floating action menu, select the "Create new model system" option.
+![alt text](/images/frabitztown_create_model_system_1.png "  From the floating action menu, select the "Create new model system" option.")
 
-.. thumbnail:: images/frabitztown_create_model_system_2.png
-  :width: 25%
-  :group: modelsystem
+![alt text](/images/frabitztown_create_model_system_2.png "Enter "Frabitztown Model System" into the dialog input to name the model system.")
 
-  Enter "Frabitztown Model System" into the dialog input to name the model system.
 
-.. thumbnail:: images/frabitztown_create_model_system_3.png
-  :width: 25%
-  :group: modelsystem
 
-  The model system has been created, shown on the left hand side.
+![alt text](/images/frabitztown_create_model_system_3.png "The model system has been created, shown on the left hand side.")
 
 
 
@@ -74,10 +61,8 @@ that the model system is new and requires further setup to be in a runnable / co
 With the Frabitztown project open in XTMF, double click the new Frabitztown model system that was made in the previous step. XTMF will now open
 the model system in a new tab / page.
 
-.. thumbnail:: images/frabitztown_blank_model_system.png
-   :align: center
+![alt text](/images/frabitztown_blank_model_system.png "The open Frabitztown Model System - in the initial blank state.")
 
-   The open Frabitztown Model System - in the initial blank state.
 
 
 ## Choosing the Root Module
