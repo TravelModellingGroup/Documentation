@@ -140,7 +140,7 @@ Basic Travel Demand Model Modules
 	 A list of modules that will be executed with the model sytem is run.
 
 ``Zone System``
-	 A module that loads in zonal data for the model syrstem. This information is sometimes required and referenced
+	 A module that loads in zonal data for the model system. This information is sometimes required and referenced
 	 from other modules.
 
 
