@@ -116,8 +116,8 @@ of modules.
    graph [rankdir=LR];
    "Basic Travel Demand Model"[shape=box];
    "Network Data"[shape=box];
-   "To Execute"[shape=box];
    "Resources"[shape=box];
+   "To Execute"[shape=box];
    "Basic Travel Demand Model" -- "Network Data";
    "Basic Travel Demand Model" -- "Resources";
    "Basic Travel Demand Model" -- "To Execute";
