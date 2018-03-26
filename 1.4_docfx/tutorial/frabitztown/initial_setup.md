@@ -72,28 +72,21 @@ The Frabitztown demo model system will make use of a module bundled as part of t
 that can be the root of a model system. The filter text box can be used to quickly find the module being looked for. In this case, enter the first few characters of "BasicTravelDemandModel" to find it quickly. Double click the module to finally set it to the root of the model system.
 
 
-.. thumbnail:: images/xtmf_000008.png
-   :width: 25%
-   :group: RootModule
+![alt text](/images/xtmf_000008.png " Root module context menu.")
 
-   Root module context menu.
+![alt text](/images/xtmf_000009.png "Choosing BasicTravelDemandModel from the 'Select Module' window.")
 
-.. thumbnail:: images/xtmf_000009.png
-   :width: 25%
-   :group: RootModule
 
-   Choosing ``BasicTravelDemandModel`` from the 'Select Module' window.
+
 
 
 Once the module type is chosen, the model system display will contain new items in the grid view. The ``BasicTravelDemandModel`` defines as its children 4 sections
 of modules.
 
-.. thumbnail:: images/xtmf_000010.png
-   :width: 50%
-   :align: center
 
-   The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root
-   module).
+![alt text](/images/xtmf_000010.png "The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root module).")
+
+
 
 .. graph:: foo
 
