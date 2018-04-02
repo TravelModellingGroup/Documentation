@@ -54,6 +54,119 @@ Similar to change parameter there is a command to change a linked parameter.
 
 The Path attribute gives the path to the module.  Recursive when set to true will also unload all child modules of this modules that are either a resource or data source.
 
+### Write
+This command will write the inner xml to a provided file in the Path attribute.
+
+    <write Path="Test.txt">
+	All of this text will be written to file.
+	</write>
+
+## Advanced Commands
+
+### Define
+Define is used to store a floating point number in order to do conditional execution later in the script.
+
+    <define Name="myVariableName" Value="1.0" />
+
+### Execute Template
+This command will run a previously defined *Template*.  Each individual template will have a set of parameters defined for it.
+In addition *execute template* will require you to give it a parameter with the name of the template called **Name**.  An example follows.
+
+    <executeTemplate Name="[myTemplateName]"
+	                 FirstParameter="1"
+					 SecondParameter="2"
+					 ThirdParameter="3" />
+### If
+If allows us to do conditional execution during the script.  It has three attributes: LHS (left hand side), RHS (right hand side), and OP (operation).
+LHS and RHS contain previously defined variable names using the *define* command.  The OP attribute can take in most arithmetic comparators.
+Due to XML though greather than and less than are much harder to write so FORTRAIN notation is prefered.  You can still use < and > by entering in \&lt; or \&gt; to your text editor.
+  * lt, < (less than)
+  * lte, <= (less than or equal)
+  * eq, =, == (equal)
+  * neq, !, != (not equal)
+  * gt, > (greater than)
+  * gte, >= (greater than or equal)
+
+    <if LHS="myPreviouslyDefinedVariable" OP="lte" RHS="10.0">
+	   <changeLinkedParameter Name="myLP" Value="SpecialValue" />
+	</if>
+
+### Import
+Import allows you to be able to execute a seperate multi-run batch file from the given relative path.  This is best used to avoid
+keeping complex *template* scripts in your main multi-run file.
+
+    <import Path="[file name relative to the location of this multi-run file]" />
+
+### Template
+The *template* command gives you the ability to create a subscript that can be invoked with different parameters.  In our experience this is especially useful when
+constructing simplified wrappers around runs that require substantial setup.  Template has two attributes, **Name** and **Parameters**.  **Name** will contains the
+name that will be used to reference this *template* in *executeTemplate* and **Parameters** will contain a comma seperated list of the parameters that will need to be
+passed into the template in order to execute.  **Template parameter names may not contain a space.**  The inner text of the *template* contains the script that will be executed
+with the parameters substituted in.  To substitute the text with the parameter write %ParameterName% with the percent symbols surrounding it.  In more advanced scenarios 
+you may wish to have templates being generated inside of another template.  You can achieve this by surrounding these templates with additional %'s so for a second depath parameter %%InnerParameter%% would work.
+In order to write a %, you can escape it with %% in order to produce a single %.
+
+The example below is the template used for GTAModelV4.0.2 in order to generate the main run template where there is another *template* previously defined called *SetAirport*.
+
+    <template Name="InitializeV4"
+              Parameters="AirportZone;EMMEBankDirectory;EmploymentScenarioBase;PopulationScenarioBase;StationScenarioBase;TransitFareScenarioBase;NetworkScenarioBase">
+        <changeLinkedParameter Name="Airport Zone" Value="%AirportZone%" />
+        <changeLinkedParameter Name="EmmeBaseDirectory" Value="%EMMEBankDirectory%"/>
+        <!-- GTAModel V4.0.2 Execution Template -->
+        <template Name="RunV4"
+                  Parameters="RunName;Year;EmploymentScenario;PopulationScenario;NetworkScenario;StationScenario;TransitFareScenario">
+            <executeTemplate Name="SetAirport" Year="%%Year%%" />
+            <changeLinkedParameter Name="EmploymentScenario" 
+			Value="%EmploymentScenarioBase%/%%Year%%/%%EmploymentScenario%%" />
+            <changeLinkedParameter Name="PopulationScenario" 
+			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%" />
+            <changeLinkedParameter Name="StationScenario" 
+			Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%" />
+            <changeLinkedParameter Name="TransitFareScenario" 
+			Value="%TransitFareScenarioBase%/%%TransitFareScenario%%" />
+            <changeLinkedParameter Name="NetworkScenario" 
+			Value="%NetworkScenarioBase%/%%Year%%/%%NetworkScenario%%" />
+            <!-- Fix the parameters that don't have other lookups -->
+            <changeParameter ParameterPath="Zone System.Zone File Name" 
+			Value= "%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.csv" />
+            <changeParameter ParameterPath="Zone System.Zone Cache File" 
+			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.zfc" />
+            <changeParameter ParameterPath="Household Loader.FileName" 
+			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Households.csv" />
+            <changeParameter ParameterPath="Household Loader.Person Loader.FileName" 
+			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Persons.csv" />
+            <changeParameter ParameterPath="Post Iteration.Compute Station Capacity Factor.Station Capacity.File Name"
+ 			Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%/StationCapacity.csv" />
+            <run Name="%%RunName%%:" RunAs="%%RunName%%" />
+            <!-- Now that the run has completed unload all of the resources -->
+            <unload Path="Resources" Recursive="true" />
+        </template>
+    </template>
+
+To use this you would first invoke the outer template *InitializeV4*.
+    
+	<executeTemplate Name="InitializeV4"
+                   AirportZone="3709"
+                   EmploymentScenarioBase="Scenario-Employment"
+                   PopulationScenarioBase="Scenario-Population"
+                   StationScenarioBase="Scenario-Stations"
+                   TransitFareScenarioBase="Scenario-Transit Fares"
+                   NetworkScenarioBase="Scenario-Network"
+                   EMMEBankDirectory="../../../EMMENetworks" />
+
+Executing the outer template then creates the inner template *RunV4*.
+
+     <executeTemplate Name="RunV4"
+                   RunName="2011 TTS Base"
+                   Year="2011"
+                   EmploymentScenario="Synthetic"
+                   PopulationScenario="Synthetic"
+                   StationScenario="Base"
+                   TransitFareScenario="Base"
+                   NetworkScenario="TTS"/>
+
+If you were to try to run *RunV4* before you had executed *InitializeV4* you would run into an error where it could not find a template with the name.
+This is useful for cases where you want templates depend on other ones.
 
 ## Extending Multi-Run
 
