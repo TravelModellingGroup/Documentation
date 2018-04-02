@@ -23,39 +23,28 @@ There is an optional parameter ‘Move’ that defaults to false.  If move is se
 
 The change parameter command gives you the ability to at the point of the command to edit the value at runtime of the parameter specified.  The attribute ParameterPath is used to specify which parameter you wish to change.  In the following example we are going to change the parameter of the root’s child “ModuleA”’s child “ModuleB”’s parameter “MyParameter” to the value “TheValueIWant”.
 
-.. code-block:: xml
- :linenos:
-
-  <changeParameter ParameterPath="ModuleA.ModuleB.MyParameter"
-	 Value="TheValueIWant"/>
+    <changeParameter ParameterPath="ModuleA.ModuleB.MyParameter" Value="TheValueIWant"/>
 
 You can also assign the same value to multiple parameters at the same time using the following format.
 
-.. code-block:: xml
- :linenos:
-
- <changeParameter Value="TheValueIWant">
-	 <parameter ParameterPath="ModuleA.ModuleB.MyParameter" />
-	 <parameter ParameterPath="ModuleA.ModuleC.MyParameter" />
-	 <parameter ParameterPath="ModuleA.ModuleD.MyParameter" />
- </changeParameter>
+    <changeParameter Value="TheValueIWant">
+    	 <parameter ParameterPath="ModuleA.ModuleB.MyParameter" />
+    	 <parameter ParameterPath="ModuleA.ModuleC.MyParameter" />
+    	 <parameter ParameterPath="ModuleA.ModuleD.MyParameter" />
+    </changeParameter>
 
 
 ### Change Linked Parameter
 Similar to change parameter there is a command to change a linked parameter.
 
-.. code-block:: xml
- :linenos:
-
- <changeLinkedParameter Name="[Linked Parameter’s Name]"
-    Value="[The value to set it to]"/>
+    <changeLinkedParameter Name="[Linked Parameter’s Name]" Value="[The value to set it to]"/>
 
 
 ### Delete
 
- <delete Path="TheFileToDelete.txt" />
+    <delete Path="TheFileToDelete.txt" />
 
- <delete Path="TheDirectoryToDelete" />
+    <delete Path="TheDirectoryToDelete" />
 
  ### Unload
 
