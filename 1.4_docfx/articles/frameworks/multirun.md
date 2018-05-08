@@ -10,6 +10,15 @@ TMG’s Multi-run framework is designed to aid in the automation of running mode
 
 ## Basic Commands
 
+### Run
+
+The most important command in the multi-run framework is Run. Run takes in two parameters, Name, and RunAs.  Name provides will augment the status message in XTMF, and RunAs will set the directory
+that the run will ocure in.  Commands can be executed within the run command. They will executed once the working directory has been set but before the run itself has started.
+
+    <run Name="RunName:" RunAs="SubdirectoryName">
+        <!-- Instructions here are executed after the working directory has been switched -->
+    </run>
+
 ### Copy
 
 The copy command copies a file or directory from the given origin to the destination.  All paths are relative to the run directory.  If executed within a run command the path is relative to the inner run directory.
@@ -28,9 +37,9 @@ The change parameter command gives you the ability to at the point of the comman
 You can also assign the same value to multiple parameters at the same time using the following format.
 
     <changeParameter Value="TheValueIWant">
-    	 <parameter ParameterPath="ModuleA.ModuleB.MyParameter" />
-    	 <parameter ParameterPath="ModuleA.ModuleC.MyParameter" />
-    	 <parameter ParameterPath="ModuleA.ModuleD.MyParameter" />
+         <parameter ParameterPath="ModuleA.ModuleB.MyParameter" />
+         <parameter ParameterPath="ModuleA.ModuleC.MyParameter" />
+         <parameter ParameterPath="ModuleA.ModuleD.MyParameter" />
     </changeParameter>
 
 
@@ -58,8 +67,8 @@ The Path attribute gives the path to the module.  Recursive when set to true wil
 This command will write the inner xml to a provided file in the Path attribute.
 
     <write Path="Test.txt">
-	All of this text will be written to file.
-	</write>
+    All of this text will be written to file.
+    </write>
 
 ## Advanced Commands
 
@@ -73,9 +82,9 @@ This command will run a previously defined *Template*.  Each individual template
 In addition *execute template* will require you to give it a parameter with the name of the template called **Name**.  An example follows.
 
     <executeTemplate Name="[myTemplateName]"
-	                 FirstParameter="1"
-					 SecondParameter="2"
-					 ThirdParameter="3" />
+                     FirstParameter="1"
+                     SecondParameter="2"
+                     ThirdParameter="3" />
 ### If
 If allows us to do conditional execution during the script.  It has three attributes: LHS (left hand side), RHS (right hand side), and OP (operation).
 LHS and RHS contain previously defined variable names using the *define* command.  The OP attribute can take in most arithmetic comparators.
@@ -88,8 +97,8 @@ Due to XML though greather than and less than are much harder to write so FORTRA
   * gte, >= (greater than or equal)
 
     <if LHS="myPreviouslyDefinedVariable" OP="lte" RHS="10.0">
-	   <changeLinkedParameter Name="myLP" Value="SpecialValue" />
-	</if>
+       <changeLinkedParameter Name="myLP" Value="SpecialValue" />
+    </if>
 
 ### Import
 Import allows you to be able to execute a seperate multi-run batch file from the given relative path.  This is best used to avoid
@@ -117,26 +126,26 @@ The example below is the template used for GTAModelV4.0.2 in order to generate t
                   Parameters="RunName;Year;EmploymentScenario;PopulationScenario;NetworkScenario;StationScenario;TransitFareScenario">
             <executeTemplate Name="SetAirport" Year="%%Year%%" />
             <changeLinkedParameter Name="EmploymentScenario" 
-			Value="%EmploymentScenarioBase%/%%Year%%/%%EmploymentScenario%%" />
+            Value="%EmploymentScenarioBase%/%%Year%%/%%EmploymentScenario%%" />
             <changeLinkedParameter Name="PopulationScenario" 
-			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%" />
+            Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%" />
             <changeLinkedParameter Name="StationScenario" 
-			Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%" />
+            Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%" />
             <changeLinkedParameter Name="TransitFareScenario" 
-			Value="%TransitFareScenarioBase%/%%TransitFareScenario%%" />
+            Value="%TransitFareScenarioBase%/%%TransitFareScenario%%" />
             <changeLinkedParameter Name="NetworkScenario" 
-			Value="%NetworkScenarioBase%/%%Year%%/%%NetworkScenario%%" />
+            Value="%NetworkScenarioBase%/%%Year%%/%%NetworkScenario%%" />
             <!-- Fix the parameters that don't have other lookups -->
             <changeParameter ParameterPath="Zone System.Zone File Name" 
-			Value= "%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.csv" />
+            Value= "%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.csv" />
             <changeParameter ParameterPath="Zone System.Zone Cache File" 
-			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.zfc" />
+            Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.zfc" />
             <changeParameter ParameterPath="Household Loader.FileName" 
-			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Households.csv" />
+            Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Households.csv" />
             <changeParameter ParameterPath="Household Loader.Person Loader.FileName" 
-			Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Persons.csv" />
+            Value="%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Persons.csv" />
             <changeParameter ParameterPath="Post Iteration.Compute Station Capacity Factor.Station Capacity.File Name"
- 			Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%/StationCapacity.csv" />
+            Value="%StationScenarioBase%/%%Year%%/%%StationScenario%%/StationCapacity.csv" />
             <run Name="%%RunName%%:" RunAs="%%RunName%%" />
             <!-- Now that the run has completed unload all of the resources -->
             <unload Path="Resources" Recursive="true" />
@@ -145,7 +154,7 @@ The example below is the template used for GTAModelV4.0.2 in order to generate t
 
 To use this you would first invoke the outer template *InitializeV4*.
     
-	<executeTemplate Name="InitializeV4"
+    <executeTemplate Name="InitializeV4"
                    AirportZone="3709"
                    EmploymentScenarioBase="Scenario-Employment"
                    PopulationScenarioBase="Scenario-Population"
