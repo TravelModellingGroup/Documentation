@@ -69,14 +69,22 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="multi-run-framework">Multi-Run Framework</h1>
 
-<p>TMG’s Multi-run framework is designed to aid in the automation of running model systems where each iteration would require setup.  The framework itself is extendable as modules are able to add their own additional commands to the language used in the configuration file.</p>
-<h2 id="multi-run-configuration-file-layout">Multi-Run Configuration File Layout</h2>
-<h3 id="initial-state">Initial State</h3>
+<p>TMG’s Multi-run framework is designed to aid in the automation of running model systems where each iteration would require setup.
+The framework itself is extendable as modules are able to add their own additional commands to the language used in the configuration file.</p>
+<p>Multi-Run files are XML based scripts that are executed from top to bottom.  The goal is to provide a way of chaining together runs, similar to how XTMF 1.4+ is now able.  Additionally it provides
+useful ways of changing the parameters of a model system before running it, or to unload resources between runs.  Starting with XTMF 1.4 it is recommended to consider alternatives to using this
+framework such as using quick parameters and linked parameters which can be set before a run.  In advanced cases though, the multi-run file might be the best option.</p>
 <h2 id="basic-commands">Basic Commands</h2>
-<h3 id="copy">Copy</h3>
+<h3 id="run">Run</h3>
+<p>The most important command in the multi-run framework is Run. Run takes in two parameters, Name, and RunAs.  Name provides will augment the status message in XTMF, and RunAs will set the directory
+that the run will ocure in.  Commands can be executed within the run command. They will executed once the working directory has been set but before the run itself has started.</p>
+<pre><code>&lt;run Name=&quot;RunName:&quot; RunAs=&quot;SubdirectoryName&quot;&gt;
+    &lt;!-- Instructions here are executed after the working directory has been switched --&gt;
+&lt;/run&gt;
+</code></pre><h3 id="copy">Copy</h3>
 <p>The copy command copies a file or directory from the given origin to the destination.  All paths are relative to the run directory.  If executed within a run command the path is relative to the inner run directory.</p>
-<p><code>&lt;copy Origin=&quot;../../../NetworkScenarios/MyScenario&quot; Destination=&quot;Network Scenario&quot; /&gt;</code></p>
-<p>There is an optional parameter ‘Move’ that defaults to false.  If move is set then after the copy the original files will be deleted.</p>
+<pre><code>&lt;copy Origin=&quot;../../../NetworkScenarios/MyScenario&quot; Destination=&quot;Network Scenario&quot; /&gt;
+</code></pre><p>There is an optional parameter ‘Move’ that defaults to false.  If move is set then after the copy the original files will be deleted.</p>
 <h3 id="change-parameter">Change Parameter</h3>
 <p>The change parameter command gives you the ability to at the point of the command to edit the value at runtime of the parameter specified.  The attribute ParameterPath is used to specify which parameter you wish to change.  In the following example we are going to change the parameter of the root’s child “ModuleA”’s child “ModuleB”’s parameter “MyParameter” to the value “TheValueIWant”.</p>
 <pre><code>&lt;changeParameter ParameterPath=&quot;ModuleA.ModuleB.MyParameter&quot; Value=&quot;TheValueIWant&quot;/&gt;
