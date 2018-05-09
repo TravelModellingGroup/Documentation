@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Multi-Run Framework | Travel Modelling Group Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Multi-Run Framework | Travel Modelling Group Documentation ">
+    <meta name="generator" content="docfx 2.33.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="multi-run-framework">Multi-Run Framework</h1>
+
+<p>TMG’s Multi-run framework is designed to aid in the automation of running model systems where each iteration would require setup.  The framework itself is extendable as modules are able to add their own additional commands to the language used in the configuration file.</p>
+<h2 id="multi-run-configuration-file-layout">Multi-Run Configuration File Layout</h2>
+<h3 id="initial-state">Initial State</h3>
+<h2 id="basic-commands">Basic Commands</h2>
+<h3 id="copy">Copy</h3>
+<p>The copy command copies a file or directory from the given origin to the destination.  All paths are relative to the run directory.  If executed within a run command the path is relative to the inner run directory.</p>
+<p><code>&lt;copy Origin=&quot;../../../NetworkScenarios/MyScenario&quot; Destination=&quot;Network Scenario&quot; /&gt;</code></p>
+<p>There is an optional parameter ‘Move’ that defaults to false.  If move is set then after the copy the original files will be deleted.</p>
+<h3 id="change-parameter">Change Parameter</h3>
+<p>The change parameter command gives you the ability to at the point of the command to edit the value at runtime of the parameter specified.  The attribute ParameterPath is used to specify which parameter you wish to change.  In the following example we are going to change the parameter of the root’s child “ModuleA”’s child “ModuleB”’s parameter “MyParameter” to the value “TheValueIWant”.</p>
+<pre><code>&lt;changeParameter ParameterPath=&quot;ModuleA.ModuleB.MyParameter&quot; Value=&quot;TheValueIWant&quot;/&gt;
+</code></pre><p>You can also assign the same value to multiple parameters at the same time using the following format.</p>
+<pre><code>&lt;changeParameter Value=&quot;TheValueIWant&quot;&gt;
+     &lt;parameter ParameterPath=&quot;ModuleA.ModuleB.MyParameter&quot; /&gt;
+     &lt;parameter ParameterPath=&quot;ModuleA.ModuleC.MyParameter&quot; /&gt;
+     &lt;parameter ParameterPath=&quot;ModuleA.ModuleD.MyParameter&quot; /&gt;
+&lt;/changeParameter&gt;
+</code></pre><h3 id="change-linked-parameter">Change Linked Parameter</h3>
+<p>Similar to change parameter there is a command to change a linked parameter.</p>
+<pre><code>&lt;changeLinkedParameter Name=&quot;[Linked Parameter’s Name]&quot; Value=&quot;[The value to set it to]&quot;/&gt;
+</code></pre><h3 id="delete">Delete</h3>
+<pre><code>&lt;delete Path=&quot;TheFileToDelete.txt&quot; /&gt;
+
+&lt;delete Path=&quot;TheDirectoryToDelete&quot; /&gt;
+</code></pre><h3 id="unload">Unload</h3>
+<p> This command is used in order to force resources or data sources to be unloaded, typically after a model run.</p>
+<p><code>&lt;unload Path=&quot;Resources&quot; Recursive=&quot;true&quot; /&gt;</code></p>
+<p>The Path attribute gives the path to the module.  Recursive when set to true will also unload all child modules of this modules that are either a resource or data source.</p>
+<h3 id="write">Write</h3>
+<p>This command will write the inner xml to a provided file in the Path attribute.</p>
+<pre><code>&lt;write Path=&quot;Test.txt&quot;&gt;
+All of this text will be written to file.
+&lt;/write&gt;
+</code></pre><h2 id="advanced-commands">Advanced Commands</h2>
+<h3 id="define">Define</h3>
+<p>Define is used to store a floating point number in order to do conditional execution later in the script.</p>
+<pre><code>&lt;define Name=&quot;myVariableName&quot; Value=&quot;1.0&quot; /&gt;
+</code></pre><h3 id="execute-template">Execute Template</h3>
+<p>This command will run a previously defined <em>Template</em>.  Each individual template will have a set of parameters defined for it.
+In addition <em>execute template</em> will require you to give it a parameter with the name of the template called <strong>Name</strong>.  An example follows.</p>
+<pre><code>&lt;executeTemplate Name=&quot;[myTemplateName]&quot;
+                 FirstParameter=&quot;1&quot;
+                 SecondParameter=&quot;2&quot;
+                 ThirdParameter=&quot;3&quot; /&gt;
+</code></pre><h3 id="if">If</h3>
+<p>If allows us to do conditional execution during the script.  It has three attributes: LHS (left hand side), RHS (right hand side), and OP (operation).
+LHS and RHS contain previously defined variable names using the <em>define</em> command.  The OP attribute can take in most arithmetic comparators.
+Due to XML though greather than and less than are much harder to write so FORTRAIN notation is prefered.  You can still use &lt; and &gt; by entering in &amp;lt; or &amp;gt; to your text editor.</p>
+<ul>
+<li>lt, &lt; (less than)</li>
+<li>lte, &lt;= (less than or equal)</li>
+<li>eq, =, == (equal)</li>
+<li>neq, !, != (not equal)</li>
+<li>gt, &gt; (greater than)</li>
+<li><p>gte, &gt;= (greater than or equal)</p>
+<if lhs="myPreviouslyDefinedVariable" op="lte" rhs="10.0">
+   <changelinkedparameter name="myLP" value="SpecialValue"></changelinkedparameter>
+</if>
+
+</li>
+</ul>
+<h3 id="import">Import</h3>
+<p>Import allows you to be able to execute a seperate multi-run batch file from the given relative path.  This is best used to avoid
+keeping complex <em>template</em> scripts in your main multi-run file.</p>
+<pre><code>&lt;import Path=&quot;[file name relative to the location of this multi-run file]&quot; /&gt;
+</code></pre><h3 id="template">Template</h3>
+<p>The <em>template</em> command gives you the ability to create a subscript that can be invoked with different parameters.  In our experience this is especially useful when
+constructing simplified wrappers around runs that require substantial setup.  Template has two attributes, <strong>Name</strong> and <strong>Parameters</strong>.  <strong>Name</strong> will contains the
+name that will be used to reference this <em>template</em> in <em>executeTemplate</em> and <strong>Parameters</strong> will contain a comma seperated list of the parameters that will need to be
+passed into the template in order to execute.  <strong>Template parameter names may not contain a space.</strong>  The inner text of the <em>template</em> contains the script that will be executed
+with the parameters substituted in.  To substitute the text with the parameter write %ParameterName% with the percent symbols surrounding it.  In more advanced scenarios 
+you may wish to have templates being generated inside of another template.  You can achieve this by surrounding these templates with additional %&#39;s so for a second depath parameter %%InnerParameter%% would work.
+In order to write a %, you can escape it with %% in order to produce a single %.</p>
+<p>The example below is the template used for GTAModelV4.0.2 in order to generate the main run template where there is another <em>template</em> previously defined called <em>SetAirport</em>.</p>
+<pre><code>&lt;template Name=&quot;InitializeV4&quot;
+          Parameters=&quot;AirportZone;EMMEBankDirectory;EmploymentScenarioBase;PopulationScenarioBase;StationScenarioBase;TransitFareScenarioBase;NetworkScenarioBase&quot;&gt;
+    &lt;changeLinkedParameter Name=&quot;Airport Zone&quot; Value=&quot;%AirportZone%&quot; /&gt;
+    &lt;changeLinkedParameter Name=&quot;EmmeBaseDirectory&quot; Value=&quot;%EMMEBankDirectory%&quot;/&gt;
+    &lt;!-- GTAModel V4.0.2 Execution Template --&gt;
+    &lt;template Name=&quot;RunV4&quot;
+              Parameters=&quot;RunName;Year;EmploymentScenario;PopulationScenario;NetworkScenario;StationScenario;TransitFareScenario&quot;&gt;
+        &lt;executeTemplate Name=&quot;SetAirport&quot; Year=&quot;%%Year%%&quot; /&gt;
+        &lt;changeLinkedParameter Name=&quot;EmploymentScenario&quot; 
+        Value=&quot;%EmploymentScenarioBase%/%%Year%%/%%EmploymentScenario%%&quot; /&gt;
+        &lt;changeLinkedParameter Name=&quot;PopulationScenario&quot; 
+        Value=&quot;%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%&quot; /&gt;
+        &lt;changeLinkedParameter Name=&quot;StationScenario&quot; 
+        Value=&quot;%StationScenarioBase%/%%Year%%/%%StationScenario%%&quot; /&gt;
+        &lt;changeLinkedParameter Name=&quot;TransitFareScenario&quot; 
+        Value=&quot;%TransitFareScenarioBase%/%%TransitFareScenario%%&quot; /&gt;
+        &lt;changeLinkedParameter Name=&quot;NetworkScenario&quot; 
+        Value=&quot;%NetworkScenarioBase%/%%Year%%/%%NetworkScenario%%&quot; /&gt;
+        &lt;!-- Fix the parameters that don&#39;t have other lookups --&gt;
+        &lt;changeParameter ParameterPath=&quot;Zone System.Zone File Name&quot; 
+        Value= &quot;%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.csv&quot; /&gt;
+        &lt;changeParameter ParameterPath=&quot;Zone System.Zone Cache File&quot; 
+        Value=&quot;%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/ZoneData/Zones.zfc&quot; /&gt;
+        &lt;changeParameter ParameterPath=&quot;Household Loader.FileName&quot; 
+        Value=&quot;%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Households.csv&quot; /&gt;
+        &lt;changeParameter ParameterPath=&quot;Household Loader.Person Loader.FileName&quot; 
+        Value=&quot;%PopulationScenarioBase%/%%Year%%/%%PopulationScenario%%/HouseholdData/Persons.csv&quot; /&gt;
+        &lt;changeParameter ParameterPath=&quot;Post Iteration.Compute Station Capacity Factor.Station Capacity.File Name&quot;
+        Value=&quot;%StationScenarioBase%/%%Year%%/%%StationScenario%%/StationCapacity.csv&quot; /&gt;
+        &lt;run Name=&quot;%%RunName%%:&quot; RunAs=&quot;%%RunName%%&quot; /&gt;
+        &lt;!-- Now that the run has completed unload all of the resources --&gt;
+        &lt;unload Path=&quot;Resources&quot; Recursive=&quot;true&quot; /&gt;
+    &lt;/template&gt;
+&lt;/template&gt;
+</code></pre><p>To use this you would first invoke the outer template <em>InitializeV4</em>.</p>
+<pre><code>&lt;executeTemplate Name=&quot;InitializeV4&quot;
+               AirportZone=&quot;3709&quot;
+               EmploymentScenarioBase=&quot;Scenario-Employment&quot;
+               PopulationScenarioBase=&quot;Scenario-Population&quot;
+               StationScenarioBase=&quot;Scenario-Stations&quot;
+               TransitFareScenarioBase=&quot;Scenario-Transit Fares&quot;
+               NetworkScenarioBase=&quot;Scenario-Network&quot;
+               EMMEBankDirectory=&quot;../../../EMMENetworks&quot; /&gt;
+</code></pre><p>Executing the outer template then creates the inner template <em>RunV4</em>.</p>
+<pre><code> &lt;executeTemplate Name=&quot;RunV4&quot;
+               RunName=&quot;2011 TTS Base&quot;
+               Year=&quot;2011&quot;
+               EmploymentScenario=&quot;Synthetic&quot;
+               PopulationScenario=&quot;Synthetic&quot;
+               StationScenario=&quot;Base&quot;
+               TransitFareScenario=&quot;Base&quot;
+               NetworkScenario=&quot;TTS&quot;/&gt;
+</code></pre><p>If you were to try to run <em>RunV4</em> before you had executed <em>InitializeV4</em> you would run into an error where it could not find a template with the name.
+This is useful for cases where you want templates depend on other ones.</p>
+<h2 id="extending-multi-run">Extending Multi-Run</h2>
+<p>Below is an excerpt from TMG.Frameworks.Extensibility.LaunchProgram where it adds a command to Multi-Run.</p>
+<pre><code class="lang-csharp" name="AddMultiRunCommand">
+private void AddMultiRunCommand()
+{
+    var listToUs = ModelSystemReflection.BuildModelStructureChain(Config, this);
+    for (var i = listToUs.Count - 1; i &gt;= 0; i--)
+    {
+        if (listToUs[i].Module is MultiRunModelSystem multiRunFramework)
+        {
+            multiRunFramework.TryAddBatchCommand(&quot;LaunchProgram.ShutdownExternalProgram&quot;, node =&gt;
+            {
+                var path = multiRunFramework.GetAttributeOrError(node, &quot;Path&quot;,
+                    &quot;In &#39;LaunchProgram.ShutdownExternalProgram&#39; we were unable to find an xml attribute called &#39;Path&#39;!\r\nPlease add this to your batch script.&quot;);
+                IModelSystemStructure selectedModule = null;
+                IModelSystemStructure multiRunFrameworkChild = null;
+                if (!ModelSystemReflection.FindModuleStructure(Config, multiRunFramework.Child,
+                    ref multiRunFrameworkChild))
+                {
+                    throw new XTMFRuntimeException(this,
+                        &quot;We were unable to find the multi-run frameworks child module&#39;s model system structure!&quot;);
+                }
+
+                if (!ModelSystemReflection.GetModelSystemStructureFromPath(multiRunFrameworkChild, path,
+                    ref selectedModule))
+                {
+                    throw new XTMFRuntimeException(this,
+                        &quot;We were unable to find a module with the path &#39;&quot; + path + &quot;&#39;!&quot;);
+                }
+
+                var toShutdown = selectedModule.Module as LaunchProgram;
+                if (toShutdown == null)
+                {
+                    throw new XTMFRuntimeException(this,
+                        &quot;The module with the path &#39;&quot; + path +
+                        &quot;&#39; was not of type &#39;TMG.Frameworks.Extensibility.LaunchProgram&#39;!&quot;);
+                }
+
+                toShutdown.ShutdownProgram();
+            }, true);
+            break;
+        }
+    }
+}
+
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TravelModellingGroup/blob/dev/1.4_docfx/articles/frameworks/multirun.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            ©2018, Travel Modelling Group
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

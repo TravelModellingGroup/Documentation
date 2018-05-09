@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Initial Setup | Travel Modelling Group Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Initial Setup | Travel Modelling Group Documentation ">
+    <meta name="generator" content="docfx 2.33.1.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="initial-setup">Initial Setup</h1>
+
+<p>This part of the XTMF documentation assumes that the provided Frabitztown input files have already
+been downloaded and extracted.</p>
+<p>EmploymentRate.csv
+  A two-column CSV input file with the amount of attractions per zone.</p>
+<p>Population.csv
+  A two-column CSV input file listing the amount of trip productions per zone.</p>
+<p>Zones.csv
+  A multi-column CSV input file total zone data for the Frabitztown network.</p>
+<p>ZeroDemandMatrix.311
+  A simple .311 Emme matrix filled with all zero values.</p>
+<p>EMME_TransitLine_Aggregation.csv
+  Transit line aggregation file for Emme.</p>
+<p>(Network Scenario Folder)
+  Additional input required for Frabitztown.</p>
+<p>(Frabitztown Network)
+  Emme project and data bank for Frabitztown.</p>
+<p>.. note::</p>
+<pre><code>Frabitztown input files can be accessed at: http://tmg.utoronto.ca/documentation/1.4/frabitztown.zip
+</code></pre><h2 id="creating-the-project">Creating the Project</h2>
+<p>Once XTMF is opened click &quot;New Project&quot;. Enter Frabitztown as the project name and press enter. When the project is created,
+XTMF will automatically be redirected to the project page. The next step is to create a new :term:<code>model system</code> that will be contained
+within the &quot;Frabitztown&quot; project.</p>
+<p><img src="/images/frabitztown_new_project.png" alt="alt text" title=" Entering a name for a new project."></p>
+<p>At the bottom of the project page, click the button that is labelled &quot;Create New Blank Model System&quot;. Enter &quot;Frabitztown&quot; here again,
+or another name of your choosing. Once you have chosen a name, click &quot;OK&quot; or press enter. A new model system will appear on the left
+hand side of the project page. There will be a small disclaimer warning that the model system requires additional setup -- this indicates
+that the model system is new and requires further setup to be in a runnable / complete state.</p>
+<p><img src="/images/frabitztown_create_model_system_1.png" alt="alt text" title="  From the floating action menu, select the &quot;Create new model system&quot; option."></p>
+<p><img src="/images/frabitztown_create_model_system_2.png" alt="alt text" title="Enter &quot;Frabitztown Model System&quot; into the dialog input to name the model system."></p>
+<p><img src="/images/frabitztown_create_model_system_3.png" alt="alt text" title="The model system has been created, shown on the left hand side."></p>
+<h2 id="starting-the-frabitztown-model-system-construction">Starting the Frabitztown Model System Construction</h2>
+<p>With the Frabitztown project open in XTMF, double click the new Frabitztown model system that was made in the previous step. XTMF will now open
+the model system in a new tab / page.</p>
+<p><img src="/images/frabitztown_blank_model_system.png" alt="alt text" title="The open Frabitztown Model System - in the initial blank state."></p>
+<h2 id="choosing-the-root-module">Choosing the Root Module</h2>
+<p>The Frabitztown demo model system will make use of a module bundled as part of the main XTMF distribution. The module that will be used is called <code>BasicTravelDemandModel</code>. To make this the model system&#39; root module, select and right click the cell with the description &quot;The root of the model system&quot; and choose
+&quot;Set Module&quot; from the context menu. A small dialog window will appear initially with a large list of modules that can serve as a &quot;root&quot; of a model system. Modules cannot be placed arbitrarily into model systems - only valid modules can be put into their proper slots. The list of modules shown are all those loaded by XTMF
+that can be the root of a model system. The filter text box can be used to quickly find the module being looked for. In this case, enter the first few characters of &quot;BasicTravelDemandModel&quot; to find it quickly. Double click the module to finally set it to the root of the model system.</p>
+<p><img src="/images/xtmf_000008.png" alt="alt text" title=" Root module context menu."></p>
+<p><img src="/images/xtmf_000009.png" alt="alt text" title="Choosing BasicTravelDemandModel from the &#39;Select Module&#39; window."></p>
+<p>Once the module type is chosen, the model system display will contain new items in the grid view. The <code>BasicTravelDemandModel</code> defines as its children 4 sections
+of modules.</p>
+<p><img src="/images/xtmf_000010.png" alt="alt text" title="The root of the Frabitztown model system - (with ``BasicTravelDemandModel`` set as the root module)."></p>
+<p>.. graph:: foo</p>
+<p>   graph [rankdir=LR];
+   &quot;Basic Travel Demand Model&quot;[shape=box];
+   &quot;Network Data&quot;[shape=box];
+   &quot;To Execute&quot;[shape=box];
+   &quot;Resources&quot;[shape=box];
+   &quot;Basic Travel Demand Model&quot; -- &quot;Network Data&quot;;
+   &quot;Basic Travel Demand Model&quot; -- &quot;Resources&quot;;
+   &quot;Basic Travel Demand Model&quot; -- &quot;To Execute&quot;;
+   &quot;Basic Travel Demand Model&quot; -- &quot;Zone System&quot;;</p>
+<h2 id="basic-travel-demand-model-modules">Basic Travel Demand Model Modules</h2>
+<p><code>Network Data</code>
+     An optional module, this can be left unassigned for the purpose of this guide.</p>
+<p><code>Resources</code>
+     A list of resources that can be shared for modules throughout the model system.</p>
+<p><code>To Execute</code>
+     A list of modules that will be executed with the model sytem is run.</p>
+<p><code>Zone System</code>
+     A module that loads in zonal data for the model system. This information is sometimes required and referenced
+     from other modules.</p>
+<h2 id="setting-the-input-directory">Setting the Input Directory</h2>
+<p>Typically a relative input directory needs to be set for model systems. Specifying an input directory makes it easier to refer
+to files that need to be read-in. To set the base input directory, click on the module with description &quot;The root of the model system&quot;. The right hand
+panel of the model system page will have option to specify the input directory to use as a base for this <code>BasicTravelDemandModel</code>.</p>
+<p>.. thumbnail:: images/xtmf_000021.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Choosing a base input directory from the root module parameter display.</p>
+<p>.. thumbnail:: images/xtmf_000022.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Input base directory parameter highlighted.</p>
+<p>.. thumbnail:: images/xtmf_000023.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Input base directory parameter highlighted.</p>
+<p>.. thumbnail:: images/xtmf_000024.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Input base directory parameter highlighted.</p>
+<p>.. thumbnail:: images/xtmf_000025.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Selecting the module <code>ModellerControllerDataSource</code>.</p>
+<p>.. thumbnail:: images/xtmf_000026.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Project Folder module highlighted.</p>
+<p>.. thumbnail:: images/xtmf_000027.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Assigning a module type to Project Folder.</p>
+<p>.. thumbnail:: images/xtmf_000028.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Selecting the <code>FilePathFromInputDirectory module</code>.</p>
+<p>.. thumbnail:: images/xtmf_000029.png
+   :width: 10%
+   :group: inputgroup</p>
+<p>   Setting the input file parameter.</p>
+<p>This location should be pointed to the directory that contains the input contents for the model system.</p>
+<h1 id="specifying-the-zone-system">Specifying the Zone System</h1>
+<p>The next step is to specify the zone system file for use in the <code>BasicTravelDemandModel</code>. The last child of the root module labelled <code>Zone System</code> is used to read-in
+the zone system that will be used. Included with the Frabitztown documentation files is a file &#39;Zones.csv&#39; - this file will be loaded by this module for use in the
+model system. Clicking on the module will display the parameters view on the right hand side of the XTMF interface. This module&#39;s default parameter configuration
+is generally in a prepared form by default.</p>
+<h2 id="input-files">Input Files</h2>
+<p>Zones.csv
+  A CSV file containing OD/ Zone information about the model system. Population, inner distance and other data items
+  are contained within this file. This file also describes the total number of zones that exist in the model system.</p>
+<p>The region file (child module of) of <code>Zone System</code> can be left blank for the purpose of the demo.</p>
+<p>.. note::</p>
+<p>   Zones.csv is required for modules that will be created later on in the model system. For instance, any modules
+   that read OD (origin / destination) matrix data need to be aware of the zone system specifications.</p>
+<h1 id="establishing-a-connection-with-emme">Establishing a connection with Emme</h1>
+<p>Specify a resource name for the Resource module added in the previous step. This resource name will be required later when configuring the required modules to execute EMME.</p>
+<p>.. thumbnail:: images/xtmf_000030.png
+   :align: center
+   :width: 25%
+   :group: resourcename</p>
+<p>The next part of the model system creation process is to establish a resource that manages XTMF&#39;s connection to Emme. To start, begin by adding a new child
+module under the module labelled <code>Resources</code>. To do this, right click (or press ctrl + m with the module highlighted) and select the option <strong>Add Module</strong> from
+the context menu. The parent module <code>Resources</code> is considered a <code>collection</code>. (ie: a module that can have multiple child modules). Select the child module just added to open
+its list of parameters. Listed on the right is field called <code>Resource Name</code>; enter a descriptive name as an identifier for this module.</p>
+<p>Next, a data source needs to be chosen for this resource. Since we are working with Emme, we want to set the module to type <code>ModellerControllerDataSource</code>. This module allows
+XTMF to reference an Emme instance for use during the run process. Once the data source is chosen, the next step is to point the Emme resource to the correct
+project (input folder). Insert a <code>DirectorySeparatedPathFromInputDirectory</code> module into the Project Folder slot. Point the first parameter <code>DirectoryRelativeToInputDirectory</code> to the relative path of your input directory. The file name should point to the Emme project that will be loaded. Here Frabitztown
+is used for this guide.</p>
+<p>Under the <code>To Execute</code> module, add a new child module with the type <code>Execute Tools From Modeller Resource</code>. This allows us to begin calling tools that are defined
+within Emme or any loaded toolbox. From resource indicates that we will use the Emme resource defined earlier under the &quot;Resources&quot; module. When the module is expanded, assign <code>Resource Lookup</code> to the Emme Modeller child module. Once added, assign the unique name entered previously as the Resource Name.</p>
+<p>.. seealso::</p>
+<p>   For more information regarding resources and their usage please see Working with Resources.</p>
+<p>.. thumbnail:: images/xtmf_000031.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Adding a module under <code>To Execute</code></p>
+<p>.. thumbnail:: images/xtmf_000032.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Adding a module under <code>To Execute</code> - context menu.</p>
+<p>.. thumbnail:: images/xtmf_000033.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Choosing module type <code>`ExecuteToolsFromModellerResource</code>.</p>
+<p>.. thumbnail:: images/xtmf_000034.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Selecting the module <code>Emme Modeller</code>.</p>
+<p>.. thumbnail:: images/xtmf_000035.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Choosing the <code>Resource Lookup</code> module type.</p>
+<p>.. thumbnail:: images/xtmf_000036.png
+   :width: 10%
+   :group: modellerresource</p>
+<p>   Selecting the <code>Resource Lookup</code> module and specifying the EMME resource in the parameter section (right hand side).</p>
+<h2 id="importing-the-frabitztown-network-package">Importing the Frabitztown Network Package</h2>
+<p>Under the module <code>Execute Tools from Modeller Resource</code>, add a new module of type <code>Import Network Package</code>. Under its child <code>Network Package</code> module, choose 
+a module of type <code>FilePathFromInputDirectory</code> and direct the input path to the location of the Frabitztown network package which was downloaded.</p>
+<p>.. thumbnail:: images/xtmf_000037.png
+   :width: 25%
+   :group: modellerresource
+   :align: center</p>
+<p>   Importing the Frabiztown Network Package into the active EMME project.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TravelModellingGroup/blob/dev/1.4_docfx/tutorial/frabitztown/initial_setup.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            ©2018, Travel Modelling Group
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
