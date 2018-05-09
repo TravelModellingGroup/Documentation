@@ -17,7 +17,7 @@ standard File menu for application actions. This has been removed and replaced w
 more similarly to native Windows applications. The menu has been placed in a sidebar which can be called from any section or tab of
 the XTMF.Gui application.
 
-Themeing has also been substantially improved. Palette and light/dark settings are provided by the Material theme and XTMF no longer uses
+Theming has also been substantially improved. Palette and light/dark settings are provided by the Material theme and XTMF no longer uses
 the previous colour palettes (forest green, etc).
 
 ### Unified Runs Under the Scheduler Window
@@ -25,18 +25,18 @@ the previous colour palettes (forest green, etc).
 Model system runs will now appear under the same window: the Scheduler window. The scheduler window introduces two run lists "active" and "finished",
 which provides a useful overview of all past, present (and future) runs that have been initiated by the XTMF client. 
 
-### Run Queueing
+### Run Queuing
 
 Model system runs can now be queued. XTMF 1.4 introduces the ability to both schedule and queue model system runs. A user can choose to have runs
 execute simultaneously. This feature allows the user to postpone the starting of a model system run to a later date in time when there will be more
-computing resources available, without having to actively be present at their workstation.
+computing resources available, without having to actively be present at their workstation. 
 
 ### System and In-App Notifications
 
 Several quality-of-life notifications systems has been added to XTMF. No matter which tab or window you are interacting with in XTMF, finished model system runs
 will now display an in-app toast to notify if you have any errors (or success) messages that have occurred during an executing model system. In addition
 to in-app toast messages, notification messages are also sent to the System tray, and will be collated by Windows for review for a later time if the user is 
-not currently at the workstation.
+not currently at the workstation. 
 
 
 Requesting New Features
