@@ -207,50 +207,8 @@ In order to write a %, you can escape it with %% in order to produce a single %.
 This is useful for cases where you want templates depend on other ones.</p>
 <h2 id="extending-multi-run">Extending Multi-Run</h2>
 <p>Below is an excerpt from TMG.Frameworks.Extensibility.LaunchProgram where it adds a command to Multi-Run.</p>
-<pre><code class="lang-csharp" name="AddMultiRunCommand">
-private void AddMultiRunCommand()
-{
-    var listToUs = ModelSystemReflection.BuildModelStructureChain(Config, this);
-    for (var i = listToUs.Count - 1; i &gt;= 0; i--)
-    {
-        if (listToUs[i].Module is MultiRunModelSystem multiRunFramework)
-        {
-            multiRunFramework.TryAddBatchCommand(&quot;LaunchProgram.ShutdownExternalProgram&quot;, node =&gt;
-            {
-                var path = multiRunFramework.GetAttributeOrError(node, &quot;Path&quot;,
-                    &quot;In &#39;LaunchProgram.ShutdownExternalProgram&#39; we were unable to find an xml attribute called &#39;Path&#39;!\r\nPlease add this to your batch script.&quot;);
-                IModelSystemStructure selectedModule = null;
-                IModelSystemStructure multiRunFrameworkChild = null;
-                if (!ModelSystemReflection.FindModuleStructure(Config, multiRunFramework.Child,
-                    ref multiRunFrameworkChild))
-                {
-                    throw new XTMFRuntimeException(this,
-                        &quot;We were unable to find the multi-run frameworks child module&#39;s model system structure!&quot;);
-                }
-
-                if (!ModelSystemReflection.GetModelSystemStructureFromPath(multiRunFrameworkChild, path,
-                    ref selectedModule))
-                {
-                    throw new XTMFRuntimeException(this,
-                        &quot;We were unable to find a module with the path &#39;&quot; + path + &quot;&#39;!&quot;);
-                }
-
-                var toShutdown = selectedModule.Module as LaunchProgram;
-                if (toShutdown == null)
-                {
-                    throw new XTMFRuntimeException(this,
-                        &quot;The module with the path &#39;&quot; + path +
-                        &quot;&#39; was not of type &#39;TMG.Frameworks.Extensibility.LaunchProgram&#39;!&quot;);
-                }
-
-                toShutdown.ShutdownProgram();
-            }, true);
-            break;
-        }
-    }
-}
-
-</code></pre></article>
+<!-- Can not find reference ../../../../XTMF/Code/TMG.Frameworks/Extensibility/LaunchProgram.cs -->
+</article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
