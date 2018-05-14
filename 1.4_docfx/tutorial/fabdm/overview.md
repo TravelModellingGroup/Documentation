@@ -9,6 +9,8 @@ Located in the far north, Frabitztown is a test model system put together for th
 
 The actual population was manually sythensized to introduce congestion and other problems within the network. There are 6 transit lines.
 
+![alt text](images/fabdm_network.png "FABDM - Network Model")
+
 ## Zone System
 
 Zone system information

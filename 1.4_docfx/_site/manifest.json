@@ -1445,6 +1445,17 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "_site/tutorial/fabdm/images/fabdm_network.png",
+      "output": {
+        "resource": {
+          "relative_path": "_site/tutorial/fabdm/images/fabdm_network.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/TMG.AgentBased.Agents.IHouseholdAgent.yml",
       "output": {
@@ -16797,6 +16808,17 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "tutorial/fabdm/images/fabdm_network.png",
+      "output": {
+        "resource": {
+          "relative_path": "tutorial/fabdm/images/fabdm_network.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "tutorial/fabdm/intro.md",
       "output": {
@@ -16805,7 +16827,7 @@
           "hash": "0L1ZEKatvVLqR73mBaKASQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -16826,7 +16848,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorial/fabdm/network-los.html",
-          "hash": "xel57MVMCuwq203mfjQahA=="
+          "hash": "4/JejLyXFoT/35GnziYC1w=="
         }
       },
       "is_incremental": true,
@@ -16838,7 +16860,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorial/fabdm/overview.html",
-          "hash": "3b0gxTZ43/d7XUhp7F93zQ=="
+          "hash": "cOV4rsDOBy0o9CL/ZnI+/A=="
         }
       },
       "is_incremental": false,
@@ -16898,7 +16920,7 @@
       "output": {
         ".html": {
           "relative_path": "tutorial/fabdm/pre-run.html",
-          "hash": "ukKADi/cqbv0wkPGfAlvhQ=="
+          "hash": "dnxIB/+i8Y09edgLoeF2Uw=="
         }
       },
       "is_incremental": true,
@@ -16922,10 +16944,10 @@
       "output": {
         ".html": {
           "relative_path": "tutorial/fabdm/setup.html",
-          "hash": "J936AHw8hA0GOiAQ/7fyCQ=="
+          "hash": "6zx5FniMNIXV9YEz7+kZpQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -17044,11 +17066,6 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -17060,6 +17077,11 @@
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
