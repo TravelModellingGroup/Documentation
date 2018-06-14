@@ -1,2 +1,1 @@
-XTMF User Guide
-====================
+# XTMF User Guide
