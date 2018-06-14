@@ -1,4 +1,3 @@
-
 ---
 uid: writing-modules.md
 title: Writing XTMF Modules
