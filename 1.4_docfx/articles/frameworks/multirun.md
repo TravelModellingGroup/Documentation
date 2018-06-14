@@ -203,8 +203,4 @@ Executing the outer template then creates the inner template *RunV4*.
 If you were to try to run *RunV4* before you had executed *InitializeV4* you would run into an error where it could not find a template with the name.
 This is useful for cases where you want templates depend on other ones.
 
-## Extending Multi-Run
 
-Below is an excerpt from TMG.Frameworks.Extensibility.LaunchProgram where it adds a command to Multi-Run.
-
-[!code-csharp[AddMultiRunCommand](../../../../XTMF/Code/TMG.Frameworks/Extensibility/LaunchProgram.cs#AddMultiRunCommand)]
