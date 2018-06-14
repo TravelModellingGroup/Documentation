@@ -65,8 +65,6 @@ The ``Population Size`` parameter sets how many different evaluations will be do
 One of the advantages, and disadvantages is that the GA has many parameters to tune it.  Some experimentation is required to readily get good results.  Make sure to set the Maximize parameter true if you wish to maximize the fitness function and to false to minimize.
 
 
-
-
 ### Particle Swarm Optimization (PSO)
 
 Particle Swarm Optimization (PSO) algorithms are a modern variation of the traditional genetic algorithm.  At TMG this is currently the most estimation runs.  Unlike GAs PSOs do not bread new parameter sets to produce subsequent generations.  Instead each of the parameter sets, called particles in literature, are updated between generations in order to produce the next set of tests.  Initially as with traditional GAs, particles are randomly distributed in parameter space.  In addition however, the particles are given random velocities in each dimension.  TMG’s PSO will use relative parameter space exclusively for its calculations.
@@ -88,10 +86,7 @@ One of the most important parts of estimation is setting what which parameters y
 
 Below is an example parameter file:
 
-
-
-.. code-block:: xml
-
+```xml
     <Root>
     <Parameter Minimum="-0.25" Maximum="-0.001">
        <Parameter ParameterPath="Auto Drive.ProfessionalTravelCostFactor" />
@@ -100,7 +95,7 @@ Below is an example parameter file:
     </Parameter>
     <Parameter ParameterPath="Other Modes.Bicycle.TravelTimeFactor" Minimum="-0.4" Maximum="0" />
     </Root>
-
+```
 
 To begin with everything is contained within a Root tag.  There are two types of Parameter tags, the first allows us to bind together different variables, and the second is for just a single variable.  The ParameterPath attribute is used for linking the parameter to the model.  For example "Other Modes.Bicycle.TravelTimeFactor" would, starting from the client model system’s root module, first look at the “Other Modes” list inside of V4 and find the Bicycle module.  Inside of Bicycle it would then search for the “TravelTimeFactor” parameter and bind to it.  In this way we are able to bind to any parameter inside of the model system regardless of what type of model system we are trying to estimate.  Below is an example model system showing "Other Modes.Carpool.ProfessionalTravelCostFactor".
 
