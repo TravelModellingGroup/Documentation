@@ -11,5 +11,5 @@ The remainder of this document split into four parts. The first part describes t
 
 ## Version History
 
-    * Original published June 6, 2014
-    * Updated on June 10, 2015 to include new Station Group / Centroid / Psuedozone feature (Schema version 1.1).
+* Original published June 6, 2014
+* Updated on June 10, 2015 to include new Station Group / Centroid / Psuedozone feature (Schema version 1.1).
