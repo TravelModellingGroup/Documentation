@@ -1,6 +1,5 @@
-
 ---
-uid: user-guide.md
+uid: user-guide
 title: XTMF User Guide
 ---
 # XTMF User Guide
