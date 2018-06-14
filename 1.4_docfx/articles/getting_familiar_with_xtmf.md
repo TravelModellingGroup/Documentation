@@ -8,7 +8,7 @@ XTMF 1.4 in its most basic form functions as a single window user experience. Th
 to work with projects and model systems, the underlying format of the XTMF work-flow. Multiple model systems
 and projects can be active at the same time.
 
-![alt text](/images/xtmf_1.png "The Initial XTMF Interface")
+![alt text](../../images/xtmf_1.png "The Initial XTMF Interface")
 
 
 ### Window Menu
