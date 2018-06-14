@@ -87,14 +87,14 @@ One of the most important parts of estimation is setting what which parameters y
 Below is an example parameter file:
 
 ```xml
-    <Root>
+<Root>
     <Parameter Minimum="-0.25" Maximum="-0.001">
        <Parameter ParameterPath="Auto Drive.ProfessionalTravelCostFactor" />
        <Parameter ParameterPath="Shared Modes.Passenger.ProfessionalTravelCostFactor" />
        <Parameter ParameterPath="Other Modes.Carpool.ProfessionalTravelCostFactor" />
     </Parameter>
     <Parameter ParameterPath="Other Modes.Bicycle.TravelTimeFactor" Minimum="-0.4" Maximum="0" />
-    </Root>
+</Root>
 ```
 
 To begin with everything is contained within a Root tag.  There are two types of Parameter tags, the first allows us to bind together different variables, and the second is for just a single variable.  The ParameterPath attribute is used for linking the parameter to the model.  For example "Other Modes.Bicycle.TravelTimeFactor" would, starting from the client model system’s root module, first look at the “Other Modes” list inside of V4 and find the Bicycle module.  Inside of Bicycle it would then search for the “TravelTimeFactor” parameter and bind to it.  In this way we are able to bind to any parameter inside of the model system regardless of what type of model system we are trying to estimate.  Below is an example model system showing "Other Modes.Carpool.ProfessionalTravelCostFactor".
