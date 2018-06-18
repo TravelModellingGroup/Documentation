@@ -22,17 +22,17 @@ Modules must implement the *Tasha.Common.IPreIteration* interface in order to in
 
 Post scheduler contains all modules that need to integrate into the model after a schedule has been defined but before modes have been assigned via the mode choice.  GTAModel V4.0 currently does not contain any modules of this kind.  This primary need for this interface would be for mutating the trip chains before they get into the mode choice algorithm which has been used in the validation of the model’s code previously.
 
-Modules must implement the *Tasha.Common.IPostScheduler* interface in order to integrate into this section.
+Modules must implement the `Tasha.Common.IPostScheduler` interface in order to integrate into this section.
 
 ## Post Household
 Post Household contains all of the modules that need to access the household’s data after it has been finished by both the scheduler and mode choice algorithms.  Currently GTAModel V4.0.1 uses this to generate the EMME demand matrices and aggregate validation data.  This is by far the most common point to integrate into GTAModel V4.0.
 
-Modules must implement the Tasha.Common.IPostHousehold interface in order to integrate into this section.
+Modules must implement the `Tasha.Common.IPostHousehold` interface in order to integrate into this section.
 
 ## Post Iteration
 
 Post Iteration modules execute after an iteration has finished execution.  In GTAModel V4.0 this is where we compute station capacity factors, run the main EMME network assignments and aggregate the mode split data by regions and planning districts.
-Modules must implement the Tasha.Common.IPostIteration interface in order to integrate into this section.
+Modules must implement the `Tasha.Common.IPostIteration` interface in order to integrate into this section.
 
 ## Post Household Iteration
 
@@ -40,7 +40,7 @@ Post Household Iteration modules are the lowest level of integration into the mo
 
 The difference between this interface and post household is that in application Tasha can do more than one household iteration when solving a household’s schedule in order to provide a smoother assignment to the network layer.  Since memory requirements to keep all of these choices active between iterations is infeasible today it is recycled for each household iteration.  Integrating an analysis in-between household iterations allows us to recover this otherwise lost data.
 
-Modules must implement the Tasha.Common.IPostHouseholdIteration interface in order to integrate into this section.  The modules are located as sub-modules of the mode choice model.
+Modules must implement the `Tasha.Common.IPostHouseholdIteration` interface in order to integrate into this section.  The modules are located as sub-modules of the mode choice model.
 
 ## Order of Execution
 
