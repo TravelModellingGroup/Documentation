@@ -20,8 +20,13 @@ Required Package(s):
 
 ### Creating Your Module Project
 
-After everything is installed the next step is to create your new project.  You will need to make it from a “Class
-Library”.  Once that is done you will need to make reference to either the XTMFInterfaces project (if you are recompiling XTMF) or to the XTMFInterfaces.dll.  The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page.  To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
+After everything is installed the next step is to create your new project.  You will need to make it from a “Class Library”. (File -> New Project ... -> Class Library).
+
+Once that is done you will need to make reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll`. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
+
+`XTMFInterfaces.dll` is included as part of the regular XTMF download package.
+
+The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page.  To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
 
 
 
