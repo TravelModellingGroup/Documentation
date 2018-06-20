@@ -17,7 +17,6 @@ Required Package(s):
 
 1. .NET Desktop Development
 
-If you will be be re-compiling all of XTMF and the TMG code, please make sure to install the DirectX 11+ SDK (June 2010 or later) so you will have access to DirectX’s DirectCompute through the ‘TMG.DirectCompute.dll’.
 
 ### Creating Your Module Project
 
