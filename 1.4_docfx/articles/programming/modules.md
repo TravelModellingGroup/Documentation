@@ -22,7 +22,7 @@ Required Package(s):
 
 After everything is installed the next step is to create your new project.  You will need to make it from a “Class Library”. (File -> New Project ... -> Class Library).
 
-Once that is done you will need to make reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll`. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
+Once that is done you will need to add a reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll` file. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
 
 `XTMFInterfaces.dll` is included as part of the regular XTMF download package.
 
