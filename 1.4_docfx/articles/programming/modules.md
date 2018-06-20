@@ -7,10 +7,23 @@ title: Writing XTMF Modules
 
 ## Development Environment - Visual Studio 2017+
 
-If you are going to be re-compiling all of XTMF and the TMG code, please make sure to install the DirectX 11+ SDK (June 2010 or later) so you will have access to DirectX’s DirectCompute through the ‘TMG.DirectCompute.dll’.
+### Installing Visual Studio
+
+Begin by downloading the Visual Studio 2017 installer. A link to the 2017 community edition is available [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15). 
+
+In order to develop XTMF modules with Visual Studio, the appropriate packages must also be installed. If you have already installed Visual Studio - you can simply re-run the Visual Studio Installer and choose `modify` to add or remove packages from your current installation.
+
+Required Package(s):
+
+1. .NET Desktop Development
+
+If you will be be re-compiling all of XTMF and the TMG code, please make sure to install the DirectX 11+ SDK (June 2010 or later) so you will have access to DirectX’s DirectCompute through the ‘TMG.DirectCompute.dll’.
+
+### Creating Your Module Project
 
 After everything is installed the next step is to create your new project.  You will need to make it from a “Class
 Library”.  Once that is done you will need to make reference to either the XTMFInterfaces project (if you are recompiling XTMF) or to the XTMFInterfaces.dll.  The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page.  To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
+
 
 
 ## Writing Your First Module
