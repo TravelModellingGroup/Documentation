@@ -13,3 +13,7 @@ The eXtensible Travel Modelling Framework (XTMF) is an open-source (GPLv3) softw
 The TMG Toolbox is a suite of Python tools written for Emme transportation planning software. Emme itself is a product of INRO Consultants, Inc.; however the TMG Toolbox is open-source under GPL3.0 (see license file for full text)
 
 The TMG Toolbox is developed by the Travel Modelling Group at the University of Toronto. The authors hope that this toolbox will improve the practise of operational transportation planning by facilitating advanced analyses of travel demand forecasting models implemented in Emme.
+
+## **GTAModelV4.0**
+
+Documentation for TMG's GTAModelV4.0 documentation.
