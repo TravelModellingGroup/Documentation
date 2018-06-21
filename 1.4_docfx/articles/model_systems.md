@@ -54,7 +54,6 @@ If you right click on Tools you will be prompted with a list of the possible mod
 To create a Meta module right click on the module and select Meta-Module then click on [Convert To].
 
 Now that the meta-module has been created an extra parameter is added to the list, allowing you to select what file to load.  Since this process can have very similar parameter names another feature was added allowing you to change them.
-An icon like the one shown on the left signifies that the module is a meta-module.
 
 
 ### Changing Module names and Descriptions
