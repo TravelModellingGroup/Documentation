@@ -1,15 +1,14 @@
-Model Systems
-====================================================================
+# Model Systems
 
-Overview
--------------------------------------------------------------
+## Overview
 
 ### Importing a Model System
+
 For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, click the hamburger menu in the top left and
 choose the option "import a model system" from the floating menu list in the bottom right. 
 
-
 ### Creating a Model System
+
 If there is no existing model system that can be imported - a new blank one can be created from an open Project page. To create one, click "Create Model System" button
 at the bottom of the Project page. A prompt will appear requesting a name to given to the model system. You can access a specific project page by opening one (or creating one) using the global
 XTMF menu.
@@ -22,9 +21,8 @@ The copied model system will have standard clipboard behaviour. Once copied, you
 Model system cloning is available across projects. You can copy / paste (clone) a model system into any other active project in XTMF.
 
 
+## Basic Model System Editing
 
-Basic Model System Editing
--------------------------------------------------------------
 Learning to edit a model system is one of the most fundamental skills when using XTMF.  It will allow you to tune your model system to behave however you would like it to instead of being forced into a static system.  Model systems can be edited both as a free model system or one contained within a project.
 
 The model system editing screen is divided into two parts.  On the left hand side is a graphic representation of the model system.  Each button represents a module in the model system where its name and description are contained in the text.  On the right hand side are the parameters for the currently selected module.  In our image a list has been selected (lists will be described below) so there are no parameters for this structure.
@@ -39,11 +37,11 @@ You can now also filter modules and parameters.  When you filter modules you wil
 
 XTMF 1.3 adds a new tab to the model system display. Any disabled modules part of your model system will be itemized under the Model System Information tab. This tab provides a useful way to quickly check what modules are disabled before your next run. Beside the module name, a link is provided to quickly re-enable the module without having to navigate the model system tree.
 
-Modules
--------------------------------------------------------------
+## Modules
+
 Modules can have sub modules that customize the behaviour of the parent.  These submodules can either be a single module or optionally a list of modules.
 
-In XTMF GUI 1.3 lists of modules are represented by the   icon.  Lists can contain any number of modules including zero.  If a module’s border is green, it is optional but not currently filled out.  If a module has a red background with an (!), then it is a required module where none is currently selected for.  XTMF will not allow a model system to run if a required module has not been filled out.
+In XTMF GUI 1.4 lists of modules are represented by the   icon.  Lists can contain any number of modules including zero.  If a module’s border is green, it is optional but not currently filled out.  If a module has a red background with an (!), then it is a required module where none is currently selected for.  XTMF will not allow a model system to run if a required module has not been filled out.
 
 In the example image we have a small model system that was previously made that has a zone system and loads up INRO’s EMME software using their Modeller interface using TMG’s Modeller Bridge.  From this point we can start adding in modules to automate EMME during the run.
 
