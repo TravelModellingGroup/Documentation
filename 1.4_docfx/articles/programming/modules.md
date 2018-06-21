@@ -66,7 +66,7 @@ The following code provides an example of how to ask for this:
 ```
 
 ```cs
-    public class DemoModule
+    public class DemoModule : IModule
     {
        [RootModule]
        public ITravelDemandModel Root;

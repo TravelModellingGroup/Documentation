@@ -20,7 +20,6 @@ The copied model system will have standard clipboard behaviour. Once copied, you
  you will be asked to assign a name to the new clone of the model system.
 Model system cloning is available across projects. You can copy / paste (clone) a model system into any other active project in XTMF.
 
-
 ## Basic Model System Editing
 
 Learning to edit a model system is one of the most fundamental skills when using XTMF.  It will allow you to tune your model system to behave however you would like it to instead of being forced into a static system.  Model systems can be edited both as a free model system or one contained within a project.
