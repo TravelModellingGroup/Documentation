@@ -105,3 +105,16 @@ Each run repeats with the same logic for each run.  You can switch the airport m
 Once all of the runs have been specified the above end tag is required to be XML compliant.
 
 ## Multi-Run Forecast Data File System
+
+In our example run configuration we copied in data using the following lines:
+
+```xml
+    <copy Origin="../../../Scenarios/Forecasts-Stations/Base" Destination="../../../V4Input" />
+    <copy Origin="../../../Scenarios/Forecasts-Employment/Base" Destination="../../../V4Input" />
+    <copy Origin="../../../Scenarios/Forecasts-Population/Base" Destination="../../../V4Input" />
+
+```
+
+
+
+Each of these copies will take the data inside of that forecast and replace the data currently in V4Input.  In order for this to work properly a mirrored directory structure is required within each of these folders reflecting the subdirectories in V4Input.  The following table lists all of the files that we change between runs.
