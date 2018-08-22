@@ -4,8 +4,7 @@
 
 ### Importing a Model System
 
-For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, click the hamburger menu in the top left and
-choose the option "import a model system" from the floating menu list in the bottom right. 
+For users of XTMF one of the first things that you are going to do after loading XTMF for the first time is loading your first model system created by your model system designer.  To import a model system, click the hamburger menu in the top left and choose the option "import a model system" from the floating menu list in the bottom right.
 
 ### Creating a Model System
 
@@ -52,22 +51,18 @@ To create a Meta module right click on the module and select Meta-Module then cl
 
 Now that the meta-module has been created an extra parameter is added to the list, allowing you to select what file to load.  Since this process can have very similar parameter names another feature was added allowing you to change them.
 
-
 ### Changing Module names and Descriptions
 
 Pressing F2 while a module is highlighted allows the user to rename the module. In some cases modules are required to be renamed for use in ODMath. Module descriptions can be added by pressing shift + f2 (or through the context menu) on a selected module.
 
+## Parameters
 
-
-Parameters
--------------------------------------------------------------------------
 Most modules that are present in XTMF expose parameters to the end user that can be changed from the interface. Parameters allow the user to customize and control
 how modules execute during a model system run.
 
 Typically, when a model system designer has given you a new model system instead of editing the model system you will instead be changing some of the parameters.
 
 In this case we have selected the ‘Zone System’ module and have right clicked on the ‘Zone Cache File’ parameter. This will bring up a context menu that provides a number of different operations. From here we can copy the parameter’s name, select a file as the value of this parameter, or even open up the parameter if it is a file from the input directory. In addition, this will let you set the parameter as part of a linked parameter. You can of course change the text in the textbox to change the value of the parameter. Remember to save your changes or they will be discarded when the model system editing session has been closed. A dialog will warn you if you are going to close the model system session without saving.
-
 
 ### Changing Parameter Names
 
@@ -78,7 +73,6 @@ To change a parameters name right click on the parameter can select Rename.  Onc
 Quick parameters provide an easy way to access the parameters that will be changed the most often.  Each parameter has a check box in the top left corner, in this image highlighted by the gold square.  If it is checked then this parameter will be added to the list of Quick Parameters.
 
 You can access the list of quick parameters by clicking on the Quick Parameter tab, or by pressing ‘Ctrl+Q’.  In the image the quick parameter tab is highlighted by the gold rectangle on the right hand side.
-
 
 ### Using Linked Parameters
 
