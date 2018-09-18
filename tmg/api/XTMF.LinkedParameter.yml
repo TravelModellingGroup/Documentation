@@ -1,0 +1,1077 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.LinkedParameter
+  commentId: T:XTMF.LinkedParameter
+  id: LinkedParameter
+  parent: XTMF
+  children:
+  - XTMF.LinkedParameter.#ctor(System.String)
+  - XTMF.LinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  - XTMF.LinkedParameter.MapLinkedParameters(System.Collections.Generic.List{XTMF.ILinkedParameter},XTMF.IModelSystemStructure,XTMF.IModelSystemStructure)
+  - XTMF.LinkedParameter.Name
+  - XTMF.LinkedParameter.Parameters
+  - XTMF.LinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  - XTMF.LinkedParameter.SetValue(System.String,System.String@)
+  - XTMF.LinkedParameter.Value
+  langs:
+  - csharp
+  - vb
+  name: LinkedParameter
+  nameWithType: LinkedParameter
+  fullName: XTMF.LinkedParameter
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinkedParameter
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 23
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: 'public class LinkedParameter : ILinkedParameter'
+    content.vb: >-
+      Public Class LinkedParameter
+          Implements ILinkedParameter
+  inheritance:
+  - System.Object
+  implements:
+  - XTMF.ILinkedParameter
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XTMF.LinkedParameter.#ctor(System.String)
+  commentId: M:XTMF.LinkedParameter.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: LinkedParameter(String)
+  nameWithType: LinkedParameter.LinkedParameter(String)
+  fullName: XTMF.LinkedParameter.LinkedParameter(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 29
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nCreate a new LinkedParameter with the given name\n"
+  example: []
+  syntax:
+    content: public LinkedParameter(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name for this linked parameter
+    content.vb: Public Sub New(name As String)
+  overload: XTMF.LinkedParameter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameter.Name
+  commentId: P:XTMF.LinkedParameter.Name
+  id: Name
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: LinkedParameter.Name
+  fullName: XTMF.LinkedParameter.Name
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 39
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe name of this linked parameter\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: XTMF.LinkedParameter.Name*
+  implements:
+  - XTMF.ILinkedParameter.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameter.Parameters
+  commentId: P:XTMF.LinkedParameter.Parameters
+  id: Parameters
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: Parameters
+  nameWithType: LinkedParameter.Parameters
+  fullName: XTMF.LinkedParameter.Parameters
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parameters
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 44
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nA list of the parameters that are contained in this Linked Parameter\n"
+  example: []
+  syntax:
+    content: public List<IModuleParameter> Parameters { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.IModuleParameter}
+    content.vb: Public Property Parameters As List(Of IModuleParameter)
+  overload: XTMF.LinkedParameter.Parameters*
+  implements:
+  - XTMF.ILinkedParameter.Parameters
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameter.Value
+  commentId: P:XTMF.LinkedParameter.Value
+  id: Value
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: LinkedParameter.Value
+  fullName: XTMF.LinkedParameter.Value
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Value
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 49
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe string representation of the value for this linked parameter\n"
+  example: []
+  syntax:
+    content: public string Value { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Value As String
+  overload: XTMF.LinkedParameter.Value*
+  implements:
+  - XTMF.ILinkedParameter.Value
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.LinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  commentId: M:XTMF.LinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  id: Add(XTMF.IModuleParameter,System.String@)
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: Add(IModuleParameter, ref String)
+  nameWithType: LinkedParameter.Add(IModuleParameter, ref String)
+  fullName: XTMF.LinkedParameter.Add(XTMF.IModuleParameter, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 56
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a new parameter to this linkedParameter set\n"
+  example: []
+  syntax:
+    content: public bool Add(IModuleParameter parameter, ref string error)
+    parameters:
+    - id: parameter
+      type: XTMF.IModuleParameter
+      description: The parameter to add
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+      description: If we were able to add the parameter
+    content.vb: Public Function Add(parameter As IModuleParameter, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameter.Add*
+  implements:
+  - XTMF.ILinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  nameWithType.vb: LinkedParameter.Add(IModuleParameter, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameter.Add(XTMF.IModuleParameter, ByRef System.String)
+  name.vb: Add(IModuleParameter, ByRef String)
+- uid: XTMF.LinkedParameter.MapLinkedParameters(System.Collections.Generic.List{XTMF.ILinkedParameter},XTMF.IModelSystemStructure,XTMF.IModelSystemStructure)
+  commentId: M:XTMF.LinkedParameter.MapLinkedParameters(System.Collections.Generic.List{XTMF.ILinkedParameter},XTMF.IModelSystemStructure,XTMF.IModelSystemStructure)
+  id: MapLinkedParameters(System.Collections.Generic.List{XTMF.ILinkedParameter},XTMF.IModelSystemStructure,XTMF.IModelSystemStructure)
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: MapLinkedParameters(List<ILinkedParameter>, IModelSystemStructure, IModelSystemStructure)
+  nameWithType: LinkedParameter.MapLinkedParameters(List<ILinkedParameter>, IModelSystemStructure, IModelSystemStructure)
+  fullName: XTMF.LinkedParameter.MapLinkedParameters(System.Collections.Generic.List<XTMF.ILinkedParameter>, XTMF.IModelSystemStructure, XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MapLinkedParameters
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 85
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nMap the linked parameters to finish making a clone\n"
+  example: []
+  syntax:
+    content: public static List<ILinkedParameter> MapLinkedParameters(List<ILinkedParameter> originalLinkedParameters, IModelSystemStructure newModelSystemStructure, IModelSystemStructure oldModelSystemStructure)
+    parameters:
+    - id: originalLinkedParameters
+      type: System.Collections.Generic.List{XTMF.ILinkedParameter}
+      description: ''
+    - id: newModelSystemStructure
+      type: XTMF.IModelSystemStructure
+      description: ''
+    - id: oldModelSystemStructure
+      type: XTMF.IModelSystemStructure
+      description: ''
+    return:
+      type: System.Collections.Generic.List{XTMF.ILinkedParameter}
+    content.vb: Public Shared Function MapLinkedParameters(originalLinkedParameters As List(Of ILinkedParameter), newModelSystemStructure As IModelSystemStructure, oldModelSystemStructure As IModelSystemStructure) As List(Of ILinkedParameter)
+  overload: XTMF.LinkedParameter.MapLinkedParameters*
+  nameWithType.vb: LinkedParameter.MapLinkedParameters(List(Of ILinkedParameter), IModelSystemStructure, IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: XTMF.LinkedParameter.MapLinkedParameters(System.Collections.Generic.List(Of XTMF.ILinkedParameter), XTMF.IModelSystemStructure, XTMF.IModelSystemStructure)
+  name.vb: MapLinkedParameters(List(Of ILinkedParameter), IModelSystemStructure, IModelSystemStructure)
+- uid: XTMF.LinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  commentId: M:XTMF.LinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  id: Remove(XTMF.IModuleParameter,System.String@)
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: Remove(IModuleParameter, ref String)
+  nameWithType: LinkedParameter.Remove(IModuleParameter, ref String)
+  fullName: XTMF.LinkedParameter.Remove(XTMF.IModuleParameter, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Remove
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 169
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nRemove a parameter from this linked parameter\n"
+  example: []
+  syntax:
+    content: public bool Remove(IModuleParameter parameter, ref string error)
+    parameters:
+    - id: parameter
+      type: XTMF.IModuleParameter
+      description: The parameter to remove
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+      description: >-
+        If we removed it from this linked parameter.
+
+        If it is not contained, it will return false!
+    content.vb: Public Function Remove(parameter As IModuleParameter, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameter.Remove*
+  implements:
+  - XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  nameWithType.vb: LinkedParameter.Remove(IModuleParameter, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameter.Remove(XTMF.IModuleParameter, ByRef System.String)
+  name.vb: Remove(IModuleParameter, ByRef String)
+- uid: XTMF.LinkedParameter.SetValue(System.String,System.String@)
+  commentId: M:XTMF.LinkedParameter.SetValue(System.String,System.String@)
+  id: SetValue(System.String,System.String@)
+  parent: XTMF.LinkedParameter
+  langs:
+  - csharp
+  - vb
+  name: SetValue(String, ref String)
+  nameWithType: LinkedParameter.SetValue(String, ref String)
+  fullName: XTMF.LinkedParameter.SetValue(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/LinkedParameter.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SetValue
+    path: ../../XTMF/Code/XTMF/LinkedParameter.cs
+    startLine: 184
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nSet the value of this linked parameter\n"
+  example: []
+  syntax:
+    content: public bool SetValue(string value, ref string error)
+    parameters:
+    - id: value
+      type: System.String
+      description: The new value to set it to
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+      description: If we were able to assign this value to all of the parmeters
+    content.vb: Public Function SetValue(value As String, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameter.SetValue*
+  implements:
+  - XTMF.ILinkedParameter.SetValue(System.String,System.String@)
+  nameWithType.vb: LinkedParameter.SetValue(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameter.SetValue(System.String, ByRef System.String)
+  name.vb: SetValue(String, ByRef String)
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: XTMF.ILinkedParameter
+  commentId: T:XTMF.ILinkedParameter
+  parent: XTMF
+  name: ILinkedParameter
+  nameWithType: ILinkedParameter
+  fullName: XTMF.ILinkedParameter
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.LinkedParameter.#ctor*
+  commentId: Overload:XTMF.LinkedParameter.#ctor
+  name: LinkedParameter
+  nameWithType: LinkedParameter.LinkedParameter
+  fullName: XTMF.LinkedParameter.LinkedParameter
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.LinkedParameter.Name*
+  commentId: Overload:XTMF.LinkedParameter.Name
+  name: Name
+  nameWithType: LinkedParameter.Name
+  fullName: XTMF.LinkedParameter.Name
+- uid: XTMF.ILinkedParameter.Name
+  commentId: P:XTMF.ILinkedParameter.Name
+  parent: XTMF.ILinkedParameter
+  name: Name
+  nameWithType: ILinkedParameter.Name
+  fullName: XTMF.ILinkedParameter.Name
+- uid: XTMF.LinkedParameter.Parameters*
+  commentId: Overload:XTMF.LinkedParameter.Parameters
+  name: Parameters
+  nameWithType: LinkedParameter.Parameters
+  fullName: XTMF.LinkedParameter.Parameters
+- uid: XTMF.ILinkedParameter.Parameters
+  commentId: P:XTMF.ILinkedParameter.Parameters
+  parent: XTMF.ILinkedParameter
+  name: Parameters
+  nameWithType: ILinkedParameter.Parameters
+  fullName: XTMF.ILinkedParameter.Parameters
+- uid: System.Collections.Generic.List{XTMF.IModuleParameter}
+  commentId: T:System.Collections.Generic.List{XTMF.IModuleParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModuleParameter>
+  nameWithType: List<IModuleParameter>
+  fullName: System.Collections.Generic.List<XTMF.IModuleParameter>
+  nameWithType.vb: List(Of IModuleParameter)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.IModuleParameter)
+  name.vb: List(Of IModuleParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.LinkedParameter.Value*
+  commentId: Overload:XTMF.LinkedParameter.Value
+  name: Value
+  nameWithType: LinkedParameter.Value
+  fullName: XTMF.LinkedParameter.Value
+- uid: XTMF.ILinkedParameter.Value
+  commentId: P:XTMF.ILinkedParameter.Value
+  parent: XTMF.ILinkedParameter
+  name: Value
+  nameWithType: ILinkedParameter.Value
+  fullName: XTMF.ILinkedParameter.Value
+- uid: XTMF.LinkedParameter.Add*
+  commentId: Overload:XTMF.LinkedParameter.Add
+  name: Add
+  nameWithType: LinkedParameter.Add
+  fullName: XTMF.LinkedParameter.Add
+- uid: XTMF.ILinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  commentId: M:XTMF.ILinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+  parent: XTMF.ILinkedParameter
+  isExternal: true
+  name: Add(IModuleParameter, String)
+  nameWithType: ILinkedParameter.Add(IModuleParameter, String)
+  fullName: XTMF.ILinkedParameter.Add(XTMF.IModuleParameter, System.String)
+  spec.csharp:
+  - uid: XTMF.ILinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+    name: Add
+    nameWithType: ILinkedParameter.Add
+    fullName: XTMF.ILinkedParameter.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ILinkedParameter.Add(XTMF.IModuleParameter,System.String@)
+    name: Add
+    nameWithType: ILinkedParameter.Add
+    fullName: XTMF.ILinkedParameter.Add
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModuleParameter
+  commentId: T:XTMF.IModuleParameter
+  parent: XTMF
+  name: IModuleParameter
+  nameWithType: IModuleParameter
+  fullName: XTMF.IModuleParameter
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.LinkedParameter.MapLinkedParameters*
+  commentId: Overload:XTMF.LinkedParameter.MapLinkedParameters
+  name: MapLinkedParameters
+  nameWithType: LinkedParameter.MapLinkedParameters
+  fullName: XTMF.LinkedParameter.MapLinkedParameters
+- uid: System.Collections.Generic.List{XTMF.ILinkedParameter}
+  commentId: T:System.Collections.Generic.List{XTMF.ILinkedParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ILinkedParameter>
+  nameWithType: List<ILinkedParameter>
+  fullName: System.Collections.Generic.List<XTMF.ILinkedParameter>
+  nameWithType.vb: List(Of ILinkedParameter)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ILinkedParameter)
+  name.vb: List(Of ILinkedParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ILinkedParameter
+    name: ILinkedParameter
+    nameWithType: ILinkedParameter
+    fullName: XTMF.ILinkedParameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ILinkedParameter
+    name: ILinkedParameter
+    nameWithType: ILinkedParameter
+    fullName: XTMF.ILinkedParameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: XTMF.LinkedParameter.Remove*
+  commentId: Overload:XTMF.LinkedParameter.Remove
+  name: Remove
+  nameWithType: LinkedParameter.Remove
+  fullName: XTMF.LinkedParameter.Remove
+- uid: XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  commentId: M:XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+  parent: XTMF.ILinkedParameter
+  isExternal: true
+  name: Remove(IModuleParameter, String)
+  nameWithType: ILinkedParameter.Remove(IModuleParameter, String)
+  fullName: XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter, System.String)
+  spec.csharp:
+  - uid: XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+    name: Remove
+    nameWithType: ILinkedParameter.Remove
+    fullName: XTMF.ILinkedParameter.Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ILinkedParameter.Remove(XTMF.IModuleParameter,System.String@)
+    name: Remove
+    nameWithType: ILinkedParameter.Remove
+    fullName: XTMF.ILinkedParameter.Remove
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.LinkedParameter.SetValue*
+  commentId: Overload:XTMF.LinkedParameter.SetValue
+  name: SetValue
+  nameWithType: LinkedParameter.SetValue
+  fullName: XTMF.LinkedParameter.SetValue
+- uid: XTMF.ILinkedParameter.SetValue(System.String,System.String@)
+  commentId: M:XTMF.ILinkedParameter.SetValue(System.String,System.String@)
+  parent: XTMF.ILinkedParameter
+  isExternal: true
+  name: SetValue(String, String)
+  nameWithType: ILinkedParameter.SetValue(String, String)
+  fullName: XTMF.ILinkedParameter.SetValue(System.String, System.String)
+  spec.csharp:
+  - uid: XTMF.ILinkedParameter.SetValue(System.String,System.String@)
+    name: SetValue
+    nameWithType: ILinkedParameter.SetValue
+    fullName: XTMF.ILinkedParameter.SetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ILinkedParameter.SetValue(System.String,System.String@)
+    name: SetValue
+    nameWithType: ILinkedParameter.SetValue
+    fullName: XTMF.ILinkedParameter.SetValue
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

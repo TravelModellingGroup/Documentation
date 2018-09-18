@@ -1,0 +1,257 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.AgentBased.Agents.IHouseholdAgent
+  commentId: T:TMG.AgentBased.Agents.IHouseholdAgent
+  id: IHouseholdAgent
+  parent: TMG.AgentBased.Agents
+  children:
+  - TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+  - TMG.AgentBased.Agents.IHouseholdAgent.Item(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: IHouseholdAgent
+  nameWithType: IHouseholdAgent
+  fullName: TMG.AgentBased.Agents.IHouseholdAgent
+  type: Interface
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IHouseholdAgent
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+    startLine: 23
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Agents
+  syntax:
+    content: 'public interface IHouseholdAgent : IHousehold'
+    content.vb: >-
+      Public Interface IHouseholdAgent
+          Inherits IHousehold
+  inheritedMembers:
+  - TMG.IHousehold.Cars
+  - TMG.IHousehold.Zone
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+  commentId: P:TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+  id: HouseholdActivities
+  parent: TMG.AgentBased.Agents.IHouseholdAgent
+  langs:
+  - csharp
+  - vb
+  name: HouseholdActivities
+  nameWithType: IHouseholdAgent.HouseholdActivities
+  fullName: TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HouseholdActivities
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+    startLine: 25
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Agents
+  syntax:
+    content: List<IHouseholdActivityEpisode> HouseholdActivities { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.AgentBased.Tours.IHouseholdActivityEpisode}
+    content.vb: ReadOnly Property HouseholdActivities As List(Of IHouseholdActivityEpisode)
+  overload: TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Agents.IHouseholdAgent.Item(System.Int32)
+  commentId: P:TMG.AgentBased.Agents.IHouseholdAgent.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: TMG.AgentBased.Agents.IHouseholdAgent
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: IHouseholdAgent.Item[Int32]
+  fullName: TMG.AgentBased.Agents.IHouseholdAgent.Item[System.Int32]
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: this[]
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/IHouseholdAgent.cs
+    startLine: 27
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Agents
+  syntax:
+    content: IPersonAgent this[int index] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: TMG.AgentBased.Agents.IPersonAgent
+    content.vb: ReadOnly Property Item(index As Integer) As IPersonAgent
+  overload: TMG.AgentBased.Agents.IHouseholdAgent.Item*
+  nameWithType.vb: IHouseholdAgent.Item(Int32)
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: TMG.AgentBased.Agents.IHouseholdAgent.Item(System.Int32)
+  name.vb: Item(Int32)
+references:
+- uid: TMG.AgentBased.Agents
+  commentId: N:TMG.AgentBased.Agents
+  name: TMG.AgentBased.Agents
+  nameWithType: TMG.AgentBased.Agents
+  fullName: TMG.AgentBased.Agents
+- uid: TMG.IHousehold.Cars
+  commentId: P:TMG.IHousehold.Cars
+  parent: TMG.IHousehold
+  name: Cars
+  nameWithType: IHousehold.Cars
+  fullName: TMG.IHousehold.Cars
+- uid: TMG.IHousehold.Zone
+  commentId: P:TMG.IHousehold.Zone
+  parent: TMG.IHousehold
+  name: Zone
+  nameWithType: IHousehold.Zone
+  fullName: TMG.IHousehold.Zone
+- uid: TMG.IHousehold
+  commentId: T:TMG.IHousehold
+  parent: TMG
+  name: IHousehold
+  nameWithType: IHousehold
+  fullName: TMG.IHousehold
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities*
+  commentId: Overload:TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+  name: HouseholdActivities
+  nameWithType: IHouseholdAgent.HouseholdActivities
+  fullName: TMG.AgentBased.Agents.IHouseholdAgent.HouseholdActivities
+- uid: System.Collections.Generic.List{TMG.AgentBased.Tours.IHouseholdActivityEpisode}
+  commentId: T:System.Collections.Generic.List{TMG.AgentBased.Tours.IHouseholdActivityEpisode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IHouseholdActivityEpisode>
+  nameWithType: List<IHouseholdActivityEpisode>
+  fullName: System.Collections.Generic.List<TMG.AgentBased.Tours.IHouseholdActivityEpisode>
+  nameWithType.vb: List(Of IHouseholdActivityEpisode)
+  fullName.vb: System.Collections.Generic.List(Of TMG.AgentBased.Tours.IHouseholdActivityEpisode)
+  name.vb: List(Of IHouseholdActivityEpisode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.AgentBased.Tours.IHouseholdActivityEpisode
+    name: IHouseholdActivityEpisode
+    nameWithType: IHouseholdActivityEpisode
+    fullName: TMG.AgentBased.Tours.IHouseholdActivityEpisode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.AgentBased.Tours.IHouseholdActivityEpisode
+    name: IHouseholdActivityEpisode
+    nameWithType: IHouseholdActivityEpisode
+    fullName: TMG.AgentBased.Tours.IHouseholdActivityEpisode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.AgentBased.Agents.IHouseholdAgent.Item*
+  commentId: Overload:TMG.AgentBased.Agents.IHouseholdAgent.Item
+  name: Item
+  nameWithType: IHouseholdAgent.Item
+  fullName: TMG.AgentBased.Agents.IHouseholdAgent.Item
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.AgentBased.Agents.IPersonAgent
+  commentId: T:TMG.AgentBased.Agents.IPersonAgent
+  parent: TMG.AgentBased.Agents
+  name: IPersonAgent
+  nameWithType: IPersonAgent
+  fullName: TMG.AgentBased.Agents.IPersonAgent
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

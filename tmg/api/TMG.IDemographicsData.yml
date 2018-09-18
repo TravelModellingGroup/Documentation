@@ -1,0 +1,1760 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.IDemographicsData
+  commentId: T:TMG.IDemographicsData
+  id: IDemographicsData
+  parent: TMG
+  children:
+  - TMG.IDemographicsData.AgeCategories
+  - TMG.IDemographicsData.AgeRates
+  - TMG.IDemographicsData.DriversLicenseRates
+  - TMG.IDemographicsData.EmploymentStatus
+  - TMG.IDemographicsData.EmploymentStatusRates
+  - TMG.IDemographicsData.JobOccupationRates
+  - TMG.IDemographicsData.JobTypeRates
+  - TMG.IDemographicsData.NonWorkerVehicleRates
+  - TMG.IDemographicsData.OccupationCategories
+  - TMG.IDemographicsData.OccupationRates
+  - TMG.IDemographicsData.SchoolRates
+  - TMG.IDemographicsData.WorkerVehicleRates
+  langs:
+  - csharp
+  - vb
+  name: IDemographicsData
+  nameWithType: IDemographicsData
+  fullName: TMG.IDemographicsData
+  type: Interface
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IDemographicsData
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 26
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nThis interface provides a basic set of Demographic needs to supplement the responsibilities of the IZoneLoader\n"
+  example: []
+  syntax:
+    content: 'public interface IDemographicsData : IDataSource<IDemographicsData>, IDataSource, IModule'
+    content.vb: >-
+      Public Interface IDemographicsData
+          Inherits IDataSource(Of IDemographicsData)
+  inheritedMembers:
+  - XTMF.IDataSource{TMG.IDemographicsData}.GiveData
+  - XTMF.IDataSource.Loaded
+  - XTMF.IDataSource.LoadData
+  - XTMF.IDataSource.UnloadData
+  - XTMF.IModule.Name
+  - XTMF.IModule.Progress
+  - XTMF.IModule.ProgressColour
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: TMG.IDemographicsData.AgeCategories
+  commentId: P:TMG.IDemographicsData.AgeCategories
+  id: AgeCategories
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: AgeCategories
+  nameWithType: IDemographicsData.AgeCategories
+  fullName: TMG.IDemographicsData.AgeCategories
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AgeCategories
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 31
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nThe definition of the age categories used\n"
+  example: []
+  syntax:
+    content: SparseArray<Range> AgeCategories { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.Range}
+    content.vb: ReadOnly Property AgeCategories As SparseArray(Of Range)
+  overload: TMG.IDemographicsData.AgeCategories*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.AgeRates
+  commentId: P:TMG.IDemographicsData.AgeRates
+  id: AgeRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: AgeRates
+  nameWithType: IDemographicsData.AgeRates
+  fullName: TMG.IDemographicsData.AgeRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AgeRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 36
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nAgeRate [Zone,AgeCategory]\n"
+  example: []
+  syntax:
+    content: SparseTwinIndex<float> AgeRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseTwinIndex{System.Single}
+    content.vb: ReadOnly Property AgeRates As SparseTwinIndex(Of Single)
+  overload: TMG.IDemographicsData.AgeRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.DriversLicenseRates
+  commentId: P:TMG.IDemographicsData.DriversLicenseRates
+  id: DriversLicenseRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: DriversLicenseRates
+  nameWithType: IDemographicsData.DriversLicenseRates
+  fullName: TMG.IDemographicsData.DriversLicenseRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DriversLicenseRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 41
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nEmploymentRate [Zone][AgeCategory, EmploymentCategory]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTwinIndex<float>> DriversLicenseRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: ReadOnly Property DriversLicenseRates As SparseArray(Of SparseTwinIndex(Of Single))
+  overload: TMG.IDemographicsData.DriversLicenseRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.EmploymentStatus
+  commentId: P:TMG.IDemographicsData.EmploymentStatus
+  id: EmploymentStatus
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: EmploymentStatus
+  nameWithType: IDemographicsData.EmploymentStatus
+  fullName: TMG.IDemographicsData.EmploymentStatus
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EmploymentStatus
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 46
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nThe definition of the employment status used\n"
+  example: []
+  syntax:
+    content: SparseArray<string> EmploymentStatus { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{System.String}
+    content.vb: ReadOnly Property EmploymentStatus As SparseArray(Of String)
+  overload: TMG.IDemographicsData.EmploymentStatus*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.EmploymentStatusRates
+  commentId: P:TMG.IDemographicsData.EmploymentStatusRates
+  id: EmploymentStatusRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: EmploymentStatusRates
+  nameWithType: IDemographicsData.EmploymentStatusRates
+  fullName: TMG.IDemographicsData.EmploymentStatusRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EmploymentStatusRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 51
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nEmploymentRate [Zone][AgeCategory, EmploymentCategory]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTwinIndex<float>> EmploymentStatusRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: ReadOnly Property EmploymentStatusRates As SparseArray(Of SparseTwinIndex(Of Single))
+  overload: TMG.IDemographicsData.EmploymentStatusRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.JobOccupationRates
+  commentId: P:TMG.IDemographicsData.JobOccupationRates
+  id: JobOccupationRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: JobOccupationRates
+  nameWithType: IDemographicsData.JobOccupationRates
+  fullName: TMG.IDemographicsData.JobOccupationRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: JobOccupationRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 56
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\n[Zone,EmploymentStatus,OccupationType]\n"
+  example: []
+  syntax:
+    content: SparseTriIndex<float> JobOccupationRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseTriIndex{System.Single}
+    content.vb: ReadOnly Property JobOccupationRates As SparseTriIndex(Of Single)
+  overload: TMG.IDemographicsData.JobOccupationRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.JobTypeRates
+  commentId: P:TMG.IDemographicsData.JobTypeRates
+  id: JobTypeRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: JobTypeRates
+  nameWithType: IDemographicsData.JobTypeRates
+  fullName: TMG.IDemographicsData.JobTypeRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: JobTypeRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 61
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\n[Zone, Job Type (unemployed, full-time, part-time)]\n"
+  example: []
+  syntax:
+    content: SparseTwinIndex<float> JobTypeRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseTwinIndex{System.Single}
+    content.vb: ReadOnly Property JobTypeRates As SparseTwinIndex(Of Single)
+  overload: TMG.IDemographicsData.JobTypeRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.NonWorkerVehicleRates
+  commentId: P:TMG.IDemographicsData.NonWorkerVehicleRates
+  id: NonWorkerVehicleRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: NonWorkerVehicleRates
+  nameWithType: IDemographicsData.NonWorkerVehicleRates
+  fullName: TMG.IDemographicsData.NonWorkerVehicleRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NonWorkerVehicleRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 66
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\n[Zone][Driver&apos;s License, AgeCategory, Number of Vehicles]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTriIndex<float>> NonWorkerVehicleRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTriIndex{System.Single}}
+    content.vb: ReadOnly Property NonWorkerVehicleRates As SparseArray(Of SparseTriIndex(Of Single))
+  overload: TMG.IDemographicsData.NonWorkerVehicleRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.OccupationCategories
+  commentId: P:TMG.IDemographicsData.OccupationCategories
+  id: OccupationCategories
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: OccupationCategories
+  nameWithType: IDemographicsData.OccupationCategories
+  fullName: TMG.IDemographicsData.OccupationCategories
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OccupationCategories
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 71
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nThe definition of the occupations used\n"
+  example: []
+  syntax:
+    content: SparseArray<string> OccupationCategories { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{System.String}
+    content.vb: ReadOnly Property OccupationCategories As SparseArray(Of String)
+  overload: TMG.IDemographicsData.OccupationCategories*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.OccupationRates
+  commentId: P:TMG.IDemographicsData.OccupationRates
+  id: OccupationRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: OccupationRates
+  nameWithType: IDemographicsData.OccupationRates
+  fullName: TMG.IDemographicsData.OccupationRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OccupationRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 76
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nOccupationRate [AgeCategory, EmploymentStatus, OccupationType]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTriIndex<float>> OccupationRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTriIndex{System.Single}}
+    content.vb: ReadOnly Property OccupationRates As SparseArray(Of SparseTriIndex(Of Single))
+  overload: TMG.IDemographicsData.OccupationRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.SchoolRates
+  commentId: P:TMG.IDemographicsData.SchoolRates
+  id: SchoolRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: SchoolRates
+  nameWithType: IDemographicsData.SchoolRates
+  fullName: TMG.IDemographicsData.SchoolRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SchoolRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 81
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nSchoolRate [Zone][AgeCategory, EmploymentCategory]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTwinIndex<float>> SchoolRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTwinIndex{System.Single}}
+    content.vb: ReadOnly Property SchoolRates As SparseArray(Of SparseTwinIndex(Of Single))
+  overload: TMG.IDemographicsData.SchoolRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.IDemographicsData.WorkerVehicleRates
+  commentId: P:TMG.IDemographicsData.WorkerVehicleRates
+  id: WorkerVehicleRates
+  parent: TMG.IDemographicsData
+  langs:
+  - csharp
+  - vb
+  name: WorkerVehicleRates
+  nameWithType: IDemographicsData.WorkerVehicleRates
+  fullName: TMG.IDemographicsData.WorkerVehicleRates
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/IDemographicsData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkerVehicleRates
+    path: ../../XTMF/Code/TMGInterfaces/IDemographicsData.cs
+    startLine: 86
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\n[Zone][Driver&apos;s License, Occupation, Number Of Vehicles]\n"
+  example: []
+  syntax:
+    content: SparseArray<SparseTriIndex<float>> WorkerVehicleRates { get; }
+    parameters: []
+    return:
+      type: Datastructure.SparseArray{Datastructure.SparseTriIndex{System.Single}}
+    content.vb: ReadOnly Property WorkerVehicleRates As SparseArray(Of SparseTriIndex(Of Single))
+  overload: TMG.IDemographicsData.WorkerVehicleRates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF.IDataSource{TMG.IDemographicsData}.GiveData
+  commentId: M:XTMF.IDataSource{TMG.IDemographicsData}.GiveData
+  parent: XTMF.IDataSource{TMG.IDemographicsData}
+  definition: XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<IDemographicsData>.GiveData()
+  fullName: XTMF.IDataSource<TMG.IDemographicsData>.GiveData()
+  nameWithType.vb: IDataSource(Of IDemographicsData).GiveData()
+  fullName.vb: XTMF.IDataSource(Of TMG.IDemographicsData).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<IDemographicsData>.GiveData
+    fullName: XTMF.IDataSource<TMG.IDemographicsData>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of IDemographicsData).GiveData
+    fullName: XTMF.IDataSource(Of TMG.IDemographicsData).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource.Loaded
+  commentId: P:XTMF.IDataSource.Loaded
+  parent: XTMF.IDataSource
+  name: Loaded
+  nameWithType: IDataSource.Loaded
+  fullName: XTMF.IDataSource.Loaded
+- uid: XTMF.IDataSource.LoadData
+  commentId: M:XTMF.IDataSource.LoadData
+  parent: XTMF.IDataSource
+  name: LoadData()
+  nameWithType: IDataSource.LoadData()
+  fullName: XTMF.IDataSource.LoadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource.UnloadData
+  commentId: M:XTMF.IDataSource.UnloadData
+  parent: XTMF.IDataSource
+  name: UnloadData()
+  nameWithType: IDataSource.UnloadData()
+  fullName: XTMF.IDataSource.UnloadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1.GiveData
+  commentId: M:XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<T>.GiveData()
+  fullName: XTMF.IDataSource<T>.GiveData()
+  nameWithType.vb: IDataSource(Of T).GiveData()
+  fullName.vb: XTMF.IDataSource(Of T).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<T>.GiveData
+    fullName: XTMF.IDataSource<T>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of T).GiveData
+    fullName: XTMF.IDataSource(Of T).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource{TMG.IDemographicsData}
+  commentId: T:XTMF.IDataSource{TMG.IDemographicsData}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<IDemographicsData>
+  nameWithType: IDataSource<IDemographicsData>
+  fullName: XTMF.IDataSource<TMG.IDemographicsData>
+  nameWithType.vb: IDataSource(Of IDemographicsData)
+  fullName.vb: XTMF.IDataSource(Of TMG.IDemographicsData)
+  name.vb: IDataSource(Of IDemographicsData)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IDemographicsData
+    name: IDemographicsData
+    nameWithType: IDemographicsData
+    fullName: TMG.IDemographicsData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IDemographicsData
+    name: IDemographicsData
+    nameWithType: IDemographicsData
+    fullName: TMG.IDemographicsData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource
+  commentId: T:XTMF.IDataSource
+  parent: XTMF
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: XTMF.IDataSource
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.IDemographicsData.AgeCategories*
+  commentId: Overload:TMG.IDemographicsData.AgeCategories
+  name: AgeCategories
+  nameWithType: IDemographicsData.AgeCategories
+  fullName: TMG.IDemographicsData.AgeCategories
+- uid: Datastructure.SparseArray{Datastructure.Range}
+  commentId: T:Datastructure.SparseArray{Datastructure.Range}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<Range>
+  nameWithType: SparseArray<Range>
+  fullName: Datastructure.SparseArray<Datastructure.Range>
+  nameWithType.vb: SparseArray(Of Range)
+  fullName.vb: Datastructure.SparseArray(Of Datastructure.Range)
+  name.vb: SparseArray(Of Range)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.Range
+    name: Range
+    nameWithType: Range
+    fullName: Datastructure.Range
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.Range
+    name: Range
+    nameWithType: Range
+    fullName: Datastructure.Range
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseArray`1
+  commentId: T:Datastructure.SparseArray`1
+  name: SparseArray<T>
+  nameWithType: SparseArray<T>
+  fullName: Datastructure.SparseArray<T>
+  nameWithType.vb: SparseArray(Of T)
+  fullName.vb: Datastructure.SparseArray(Of T)
+  name.vb: SparseArray(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure
+  commentId: N:Datastructure
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: TMG.IDemographicsData.AgeRates*
+  commentId: Overload:TMG.IDemographicsData.AgeRates
+  name: AgeRates
+  nameWithType: IDemographicsData.AgeRates
+  fullName: TMG.IDemographicsData.AgeRates
+- uid: Datastructure.SparseTwinIndex{System.Single}
+  commentId: T:Datastructure.SparseTwinIndex{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseTwinIndex`1
+  name: SparseTwinIndex<Single>
+  nameWithType: SparseTwinIndex<Single>
+  fullName: Datastructure.SparseTwinIndex<System.Single>
+  nameWithType.vb: SparseTwinIndex(Of Single)
+  fullName.vb: Datastructure.SparseTwinIndex(Of System.Single)
+  name.vb: SparseTwinIndex(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTwinIndex`1
+  commentId: T:Datastructure.SparseTwinIndex`1
+  name: SparseTwinIndex<T>
+  nameWithType: SparseTwinIndex<T>
+  fullName: Datastructure.SparseTwinIndex<T>
+  nameWithType.vb: SparseTwinIndex(Of T)
+  fullName.vb: Datastructure.SparseTwinIndex(Of T)
+  name.vb: SparseTwinIndex(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IDemographicsData.DriversLicenseRates*
+  commentId: Overload:TMG.IDemographicsData.DriversLicenseRates
+  name: DriversLicenseRates
+  nameWithType: IDemographicsData.DriversLicenseRates
+  fullName: TMG.IDemographicsData.DriversLicenseRates
+- uid: Datastructure.SparseArray{Datastructure.SparseTwinIndex{System.Single}}
+  commentId: T:Datastructure.SparseArray{Datastructure.SparseTwinIndex{System.Single}}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<SparseTwinIndex<Single>>
+  nameWithType: SparseArray<SparseTwinIndex<Single>>
+  fullName: Datastructure.SparseArray<Datastructure.SparseTwinIndex<System.Single>>
+  nameWithType.vb: SparseArray(Of SparseTwinIndex(Of Single))
+  fullName.vb: Datastructure.SparseArray(Of Datastructure.SparseTwinIndex(Of System.Single))
+  name.vb: SparseArray(Of SparseTwinIndex(Of Single))
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTwinIndex`1
+    name: SparseTwinIndex
+    nameWithType: SparseTwinIndex
+    fullName: Datastructure.SparseTwinIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IDemographicsData.EmploymentStatus*
+  commentId: Overload:TMG.IDemographicsData.EmploymentStatus
+  name: EmploymentStatus
+  nameWithType: IDemographicsData.EmploymentStatus
+  fullName: TMG.IDemographicsData.EmploymentStatus
+- uid: Datastructure.SparseArray{System.String}
+  commentId: T:Datastructure.SparseArray{System.String}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<String>
+  nameWithType: SparseArray<String>
+  fullName: Datastructure.SparseArray<System.String>
+  nameWithType.vb: SparseArray(Of String)
+  fullName.vb: Datastructure.SparseArray(Of System.String)
+  name.vb: SparseArray(Of String)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IDemographicsData.EmploymentStatusRates*
+  commentId: Overload:TMG.IDemographicsData.EmploymentStatusRates
+  name: EmploymentStatusRates
+  nameWithType: IDemographicsData.EmploymentStatusRates
+  fullName: TMG.IDemographicsData.EmploymentStatusRates
+- uid: TMG.IDemographicsData.JobOccupationRates*
+  commentId: Overload:TMG.IDemographicsData.JobOccupationRates
+  name: JobOccupationRates
+  nameWithType: IDemographicsData.JobOccupationRates
+  fullName: TMG.IDemographicsData.JobOccupationRates
+- uid: Datastructure.SparseTriIndex{System.Single}
+  commentId: T:Datastructure.SparseTriIndex{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseTriIndex`1
+  name: SparseTriIndex<Single>
+  nameWithType: SparseTriIndex<Single>
+  fullName: Datastructure.SparseTriIndex<System.Single>
+  nameWithType.vb: SparseTriIndex(Of Single)
+  fullName.vb: Datastructure.SparseTriIndex(Of System.Single)
+  name.vb: SparseTriIndex(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseTriIndex`1
+  commentId: T:Datastructure.SparseTriIndex`1
+  name: SparseTriIndex<T>
+  nameWithType: SparseTriIndex<T>
+  fullName: Datastructure.SparseTriIndex<T>
+  nameWithType.vb: SparseTriIndex(Of T)
+  fullName.vb: Datastructure.SparseTriIndex(Of T)
+  name.vb: SparseTriIndex(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IDemographicsData.JobTypeRates*
+  commentId: Overload:TMG.IDemographicsData.JobTypeRates
+  name: JobTypeRates
+  nameWithType: IDemographicsData.JobTypeRates
+  fullName: TMG.IDemographicsData.JobTypeRates
+- uid: TMG.IDemographicsData.NonWorkerVehicleRates*
+  commentId: Overload:TMG.IDemographicsData.NonWorkerVehicleRates
+  name: NonWorkerVehicleRates
+  nameWithType: IDemographicsData.NonWorkerVehicleRates
+  fullName: TMG.IDemographicsData.NonWorkerVehicleRates
+- uid: Datastructure.SparseArray{Datastructure.SparseTriIndex{System.Single}}
+  commentId: T:Datastructure.SparseArray{Datastructure.SparseTriIndex{System.Single}}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<SparseTriIndex<Single>>
+  nameWithType: SparseArray<SparseTriIndex<Single>>
+  fullName: Datastructure.SparseArray<Datastructure.SparseTriIndex<System.Single>>
+  nameWithType.vb: SparseArray(Of SparseTriIndex(Of Single))
+  fullName.vb: Datastructure.SparseArray(Of Datastructure.SparseTriIndex(Of System.Single))
+  name.vb: SparseArray(Of SparseTriIndex(Of Single))
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.SparseTriIndex`1
+    name: SparseTriIndex
+    nameWithType: SparseTriIndex
+    fullName: Datastructure.SparseTriIndex
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IDemographicsData.OccupationCategories*
+  commentId: Overload:TMG.IDemographicsData.OccupationCategories
+  name: OccupationCategories
+  nameWithType: IDemographicsData.OccupationCategories
+  fullName: TMG.IDemographicsData.OccupationCategories
+- uid: TMG.IDemographicsData.OccupationRates*
+  commentId: Overload:TMG.IDemographicsData.OccupationRates
+  name: OccupationRates
+  nameWithType: IDemographicsData.OccupationRates
+  fullName: TMG.IDemographicsData.OccupationRates
+- uid: TMG.IDemographicsData.SchoolRates*
+  commentId: Overload:TMG.IDemographicsData.SchoolRates
+  name: SchoolRates
+  nameWithType: IDemographicsData.SchoolRates
+  fullName: TMG.IDemographicsData.SchoolRates
+- uid: TMG.IDemographicsData.WorkerVehicleRates*
+  commentId: Overload:TMG.IDemographicsData.WorkerVehicleRates
+  name: WorkerVehicleRates
+  nameWithType: IDemographicsData.WorkerVehicleRates
+  fullName: TMG.IDemographicsData.WorkerVehicleRates

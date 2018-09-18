@@ -1,0 +1,2948 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.GTAModelSystemTemplate
+  commentId: T:TMG.GTAModel.GTAModelSystemTemplate
+  id: GTAModelSystemTemplate
+  parent: TMG.GTAModel
+  children:
+  - TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+  - TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+  - TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+  - TMG.GTAModel.GTAModelSystemTemplate.Demographics
+  - TMG.GTAModel.GTAModelSystemTemplate.ExitRequest
+  - TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+  - TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+  - TMG.GTAModel.GTAModelSystemTemplate.Modes
+  - TMG.GTAModel.GTAModelSystemTemplate.Name
+  - TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+  - TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+  - TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+  - TMG.GTAModel.GTAModelSystemTemplate.ParallelPostProcessing
+  - TMG.GTAModel.GTAModelSystemTemplate.Population
+  - TMG.GTAModel.GTAModelSystemTemplate.PostRun
+  - TMG.GTAModel.GTAModelSystemTemplate.PreIteration
+  - TMG.GTAModel.GTAModelSystemTemplate.Progress
+  - TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+  - TMG.GTAModel.GTAModelSystemTemplate.Purpose
+  - TMG.GTAModel.GTAModelSystemTemplate.Resources
+  - TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation(System.String@)
+  - TMG.GTAModel.GTAModelSystemTemplate.Start
+  - TMG.GTAModel.GTAModelSystemTemplate.ToString
+  - TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+  - TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+  langs:
+  - csharp
+  - vb
+  name: GTAModelSystemTemplate
+  nameWithType: GTAModelSystemTemplate
+  fullName: TMG.GTAModel.GTAModelSystemTemplate
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GTAModelSystemTemplate
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 28
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: 'public class GTAModelSystemTemplate : IDemographic4StepModelSystemTemplate, I4StepModel, IIterativeModel, IDemographicsModelSystemTemplate, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IResourceSource'
+    content.vb: >-
+      Public Class GTAModelSystemTemplate
+          Implements IDemographic4StepModelSystemTemplate, I4StepModel, IIterativeModel, IDemographicsModelSystemTemplate, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IResourceSource
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.IDemographic4StepModelSystemTemplate
+  - TMG.I4StepModel
+  - TMG.IIterativeModel
+  - TMG.IDemographicsModelSystemTemplate
+  - TMG.ITravelDemandModel
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  - TMG.IResourceSource
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ParallelPostProcessing
+  commentId: F:TMG.GTAModel.GTAModelSystemTemplate.ParallelPostProcessing
+  id: ParallelPostProcessing
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ParallelPostProcessing
+  nameWithType: GTAModelSystemTemplate.ParallelPostProcessing
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ParallelPostProcessing
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParallelPostProcessing
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Parallel Post Processing", true, "Process the post run modules in parallel.")]
+
+      public bool ParallelPostProcessing
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Parallel Post Processing", True, "Process the post run modules in parallel.")>
+
+      Public ParallelPostProcessing As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Parallel Post Processing
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Process the post run modules in parallel.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.PreIteration
+  commentId: F:TMG.GTAModel.GTAModelSystemTemplate.PreIteration
+  id: PreIteration
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: PreIteration
+  nameWithType: GTAModelSystemTemplate.PreIteration
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.PreIteration
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PreIteration
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "Model systems that should be executed before each iteration")]
+
+      public List<ISelfContainedModule> PreIteration
+    return:
+      type: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="Model systems that should be executed before each iteration")>
+
+      Public PreIteration As List(Of ISelfContainedModule)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: Model systems that should be executed before each iteration
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+  id: AssignSchoolZones
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: AssignSchoolZones
+  nameWithType: GTAModelSystemTemplate.AssignSchoolZones
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignSchoolZones
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 50
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The Algorithm to assign place of school for the population.", Required = false)]
+
+      public ISelfContainedModule AssignSchoolZones { get; set; }
+    parameters: []
+    return:
+      type: XTMF.ISelfContainedModule
+    content.vb: >-
+      <SubModelInformation(Description:="The Algorithm to assign place of school for the population.", Required:=False)>
+
+      Public Property AssignSchoolZones As ISelfContainedModule
+  overload: TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones*
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The Algorithm to assign place of school for the population.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+  id: AssignWorkZones
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: AssignWorkZones
+  nameWithType: GTAModelSystemTemplate.AssignWorkZones
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignWorkZones
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 53
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The Algorithm to assign place of work for the population.", Required = false)]
+
+      public ISelfContainedModule AssignWorkZones { get; set; }
+    parameters: []
+    return:
+      type: XTMF.ISelfContainedModule
+    content.vb: >-
+      <SubModelInformation(Description:="The Algorithm to assign place of work for the population.", Required:=False)>
+
+      Public Property AssignWorkZones As ISelfContainedModule
+  overload: TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones*
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The Algorithm to assign place of work for the population.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+  id: CurrentIteration
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: CurrentIteration
+  nameWithType: GTAModelSystemTemplate.CurrentIteration
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CurrentIteration
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 56
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public int CurrentIteration { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentIteration As Integer
+  overload: TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration*
+  implements:
+  - TMG.IIterativeModel.CurrentIteration
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Demographics
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Demographics
+  id: Demographics
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Demographics
+  nameWithType: GTAModelSystemTemplate.Demographics
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Demographics
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Demographics
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 58
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The module that contains all of the information that supplements the ZoneSystem", Required = true)]
+
+      public IDemographicsData Demographics { get; set; }
+    parameters: []
+    return:
+      type: TMG.IDemographicsData
+    content.vb: >-
+      <SubModelInformation(Description:="The module that contains all of the information that supplements the ZoneSystem", Required:=True)>
+
+      Public Property Demographics As IDemographicsData
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Demographics*
+  implements:
+  - TMG.IDemographicsModelSystemTemplate.Demographics
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The module that contains all of the information that supplements the ZoneSystem
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: GTAModelSystemTemplate.InputBaseDirectory
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 61
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Input Directory", "../../Input", "The directory that our input is located in.")]
+
+      public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Input Directory", "../../Input", "The directory that our input is located in.")>
+
+      Public Property InputBaseDirectory As String
+  overload: TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Input Directory
+    - type: System.String
+      value: ../../Input
+    - type: System.String
+      value: The directory that our input is located in.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+  id: ModeParameterDatabase
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ModeParameterDatabase
+  nameWithType: GTAModelSystemTemplate.ModeParameterDatabase
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeParameterDatabase
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 68
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Controls the setting up and organization of different mode parameters", Required = false)]
+
+      public IModeParameterDatabase ModeParameterDatabase { get; set; }
+    parameters: []
+    return:
+      type: TMG.IModeParameterDatabase
+    content.vb: >-
+      <SubModelInformation(Description:="Controls the setting up and organization of different mode parameters", Required:=False)>
+
+      Public Property ModeParameterDatabase As IModeParameterDatabase
+  overload: TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase*
+  implements:
+  - TMG.IDemographic4StepModelSystemTemplate.ModeParameterDatabase
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Controls the setting up and organization of different mode parameters
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Modes
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Modes
+  id: Modes
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Modes
+  nameWithType: GTAModelSystemTemplate.Modes
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Modes
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Modes
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 71
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The modes contained in this mode split.", Required = false)]
+
+      public List<IModeChoiceNode> Modes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.IModeChoiceNode}
+    content.vb: >-
+      <SubModelInformation(Description:="The modes contained in this mode split.", Required:=False)>
+
+      Public Property Modes As List(Of IModeChoiceNode)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Modes*
+  implements:
+  - TMG.I4StepModel.Modes
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The modes contained in this mode split.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Name
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Name
+  id: Name
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: GTAModelSystemTemplate.Name
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 74
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+  id: NetworkAssignment
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: NetworkAssignment
+  nameWithType: GTAModelSystemTemplate.NetworkAssignment
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkAssignment
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 80
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The module used to do assignments to the network", Required = true)]
+
+      public INetworkAssignment NetworkAssignment { get; set; }
+    parameters: []
+    return:
+      type: TMG.INetworkAssignment
+    content.vb: >-
+      <SubModelInformation(Description:="The module used to do assignments to the network", Required:=True)>
+
+      Public Property NetworkAssignment As INetworkAssignment
+  overload: TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment*
+  implements:
+  - TMG.I4StepModel.NetworkAssignment
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The module used to do assignments to the network
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+  id: NetworkData
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: NetworkData
+  nameWithType: GTAModelSystemTemplate.NetworkData
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkData
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 83
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The network data used for this model system.", Required = false)]
+
+      public IList<INetworkData> NetworkData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{TMG.INetworkData}
+    content.vb: >-
+      <SubModelInformation(Description:="The network data used for this model system.", Required:=False)>
+
+      Public Property NetworkData As IList(Of INetworkData)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.NetworkData*
+  implements:
+  - TMG.ITravelDemandModel.NetworkData
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The network data used for this model system.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: GTAModelSystemTemplate.OutputBaseDirectory
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 86
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Population
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Population
+  id: Population
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Population
+  nameWithType: GTAModelSystemTemplate.Population
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Population
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Population
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 92
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The population loading algorithm", Required = true)]
+
+      public IPopulation Population { get; set; }
+    parameters: []
+    return:
+      type: TMG.IPopulation
+    content.vb: >-
+      <SubModelInformation(Description:="The population loading algorithm", Required:=True)>
+
+      Public Property Population As IPopulation
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Population*
+  implements:
+  - TMG.IDemographicsModelSystemTemplate.Population
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The population loading algorithm
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.PostRun
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.PostRun
+  id: PostRun
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: PostRun
+  nameWithType: GTAModelSystemTemplate.PostRun
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.PostRun
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PostRun
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 99
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The modules to execute once GTAModel has finished.", Required = false)]
+
+      public List<ISelfContainedModule> PostRun { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+    content.vb: >-
+      <SubModelInformation(Description:="The modules to execute once GTAModel has finished.", Required:=False)>
+
+      Public Property PostRun As List(Of ISelfContainedModule)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.PostRun*
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The modules to execute once GTAModel has finished.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Progress
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Progress
+  id: Progress
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: GTAModelSystemTemplate.Progress
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 102
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: GTAModelSystemTemplate.ProgressColour
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 115
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Purpose
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Purpose
+  id: Purpose
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Purpose
+  nameWithType: GTAModelSystemTemplate.Purpose
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Purpose
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Purpose
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 124
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The different purposes for running (example \"Work\")", Required = false)]
+
+      public List<IPurpose> Purpose { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.IPurpose}
+    content.vb: >-
+      <SubModelInformation(Description:="The different purposes for running (example ""Work"")", Required:=False)>
+
+      Public Property Purpose As List(Of IPurpose)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Purpose*
+  implements:
+  - TMG.I4StepModel.Purpose
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The different purposes for running (example "Work")
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+  id: TotalIterations
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: TotalIterations
+  nameWithType: GTAModelSystemTemplate.TotalIterations
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TotalIterations
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 127
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Total Iterations", 1, "The amount of iterations to run.")]
+
+      public int TotalIterations { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Total Iterations", 1, "The amount of iterations to run.")>
+
+      Public Property TotalIterations As Integer
+  overload: TMG.GTAModel.GTAModelSystemTemplate.TotalIterations*
+  implements:
+  - TMG.IIterativeModel.TotalIterations
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Total Iterations
+    - type: System.Int32
+      value: 1
+    - type: System.String
+      value: The amount of iterations to run.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+  id: ZoneSystem
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ZoneSystem
+  nameWithType: GTAModelSystemTemplate.ZoneSystem
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneSystem
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 134
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The module that loads the zone system", Required = true)]
+
+      public IZoneSystem ZoneSystem { get; set; }
+    parameters: []
+    return:
+      type: TMG.IZoneSystem
+    content.vb: >-
+      <SubModelInformation(Description:="The module that loads the zone system", Required:=True)>
+
+      Public Property ZoneSystem As IZoneSystem
+  overload: TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem*
+  implements:
+  - TMG.ITravelDemandModel.ZoneSystem
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The module that loads the zone system
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ExitRequest
+  commentId: M:TMG.GTAModel.GTAModelSystemTemplate.ExitRequest
+  id: ExitRequest
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: GTAModelSystemTemplate.ExitRequest()
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 139
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: TMG.GTAModel.GTAModelSystemTemplate.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: GTAModelSystemTemplate.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 146
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: GTAModelSystemTemplate.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Start
+  commentId: M:TMG.GTAModel.GTAModelSystemTemplate.Start
+  id: Start
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: GTAModelSystemTemplate.Start()
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 161
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ToString
+  commentId: M:TMG.GTAModel.GTAModelSystemTemplate.ToString
+  id: ToString
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: GTAModelSystemTemplate.ToString()
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ToString()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ToString
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 236
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: TMG.GTAModel.GTAModelSystemTemplate.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Resources
+  commentId: P:TMG.GTAModel.GTAModelSystemTemplate.Resources
+  id: Resources
+  parent: TMG.GTAModel.GTAModelSystemTemplate
+  langs:
+  - csharp
+  - vb
+  name: Resources
+  nameWithType: GTAModelSystemTemplate.Resources
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Resources
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/GTAModelSystemTemplate.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Resources
+    path: ../../XTMF/Code/GTAModel/GTAModelSystemTemplate.cs
+    startLine: 372
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "Used for sharing data across modules.")]
+
+      public List<IResource> Resources { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.IResource}
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="Used for sharing data across modules.")>
+
+      Public Property Resources As List(Of IResource)
+  overload: TMG.GTAModel.GTAModelSystemTemplate.Resources*
+  implements:
+  - TMG.IResourceSource.Resources
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: Used for sharing data across modules.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: TMG.GTAModel
+  commentId: N:TMG.GTAModel
+  name: TMG.GTAModel
+  nameWithType: TMG.GTAModel
+  fullName: TMG.GTAModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.IDemographic4StepModelSystemTemplate
+  commentId: T:TMG.IDemographic4StepModelSystemTemplate
+  parent: TMG
+  name: IDemographic4StepModelSystemTemplate
+  nameWithType: IDemographic4StepModelSystemTemplate
+  fullName: TMG.IDemographic4StepModelSystemTemplate
+- uid: TMG.I4StepModel
+  commentId: T:TMG.I4StepModel
+  parent: TMG
+  name: I4StepModel
+  nameWithType: I4StepModel
+  fullName: TMG.I4StepModel
+- uid: TMG.IIterativeModel
+  commentId: T:TMG.IIterativeModel
+  parent: TMG
+  name: IIterativeModel
+  nameWithType: IIterativeModel
+  fullName: TMG.IIterativeModel
+- uid: TMG.IDemographicsModelSystemTemplate
+  commentId: T:TMG.IDemographicsModelSystemTemplate
+  parent: TMG
+  name: IDemographicsModelSystemTemplate
+  nameWithType: IDemographicsModelSystemTemplate
+  fullName: TMG.IDemographicsModelSystemTemplate
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.IResourceSource
+  commentId: T:TMG.IResourceSource
+  parent: TMG
+  name: IResourceSource
+  nameWithType: IResourceSource
+  fullName: TMG.IResourceSource
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+  commentId: T:System.Collections.Generic.List{XTMF.ISelfContainedModule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ISelfContainedModule>
+  nameWithType: List<ISelfContainedModule>
+  fullName: System.Collections.Generic.List<XTMF.ISelfContainedModule>
+  nameWithType.vb: List(Of ISelfContainedModule)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ISelfContainedModule)
+  name.vb: List(Of ISelfContainedModule)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ISelfContainedModule
+    name: ISelfContainedModule
+    nameWithType: ISelfContainedModule
+    fullName: XTMF.ISelfContainedModule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ISelfContainedModule
+    name: ISelfContainedModule
+    nameWithType: ISelfContainedModule
+    fullName: XTMF.ISelfContainedModule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+  name: AssignSchoolZones
+  nameWithType: GTAModelSystemTemplate.AssignSchoolZones
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.AssignSchoolZones
+- uid: TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+  name: AssignWorkZones
+  nameWithType: GTAModelSystemTemplate.AssignWorkZones
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.AssignWorkZones
+- uid: TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+  name: CurrentIteration
+  nameWithType: GTAModelSystemTemplate.CurrentIteration
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.CurrentIteration
+- uid: TMG.IIterativeModel.CurrentIteration
+  commentId: P:TMG.IIterativeModel.CurrentIteration
+  parent: TMG.IIterativeModel
+  name: CurrentIteration
+  nameWithType: IIterativeModel.CurrentIteration
+  fullName: TMG.IIterativeModel.CurrentIteration
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Demographics*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Demographics
+  name: Demographics
+  nameWithType: GTAModelSystemTemplate.Demographics
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Demographics
+- uid: TMG.IDemographicsModelSystemTemplate.Demographics
+  commentId: P:TMG.IDemographicsModelSystemTemplate.Demographics
+  parent: TMG.IDemographicsModelSystemTemplate
+  name: Demographics
+  nameWithType: IDemographicsModelSystemTemplate.Demographics
+  fullName: TMG.IDemographicsModelSystemTemplate.Demographics
+- uid: TMG.IDemographicsData
+  commentId: T:TMG.IDemographicsData
+  parent: TMG
+  name: IDemographicsData
+  nameWithType: IDemographicsData
+  fullName: TMG.IDemographicsData
+- uid: TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+  name: InputBaseDirectory
+  nameWithType: GTAModelSystemTemplate.InputBaseDirectory
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+  name: ModeParameterDatabase
+  nameWithType: GTAModelSystemTemplate.ModeParameterDatabase
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ModeParameterDatabase
+- uid: TMG.IDemographic4StepModelSystemTemplate.ModeParameterDatabase
+  commentId: P:TMG.IDemographic4StepModelSystemTemplate.ModeParameterDatabase
+  parent: TMG.IDemographic4StepModelSystemTemplate
+  name: ModeParameterDatabase
+  nameWithType: IDemographic4StepModelSystemTemplate.ModeParameterDatabase
+  fullName: TMG.IDemographic4StepModelSystemTemplate.ModeParameterDatabase
+- uid: TMG.IModeParameterDatabase
+  commentId: T:TMG.IModeParameterDatabase
+  parent: TMG
+  name: IModeParameterDatabase
+  nameWithType: IModeParameterDatabase
+  fullName: TMG.IModeParameterDatabase
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Modes*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Modes
+  name: Modes
+  nameWithType: GTAModelSystemTemplate.Modes
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Modes
+- uid: TMG.I4StepModel.Modes
+  commentId: P:TMG.I4StepModel.Modes
+  parent: TMG.I4StepModel
+  name: Modes
+  nameWithType: I4StepModel.Modes
+  fullName: TMG.I4StepModel.Modes
+- uid: System.Collections.Generic.List{TMG.IModeChoiceNode}
+  commentId: T:System.Collections.Generic.List{TMG.IModeChoiceNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModeChoiceNode>
+  nameWithType: List<IModeChoiceNode>
+  fullName: System.Collections.Generic.List<TMG.IModeChoiceNode>
+  nameWithType.vb: List(Of IModeChoiceNode)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IModeChoiceNode)
+  name.vb: List(Of IModeChoiceNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IModeChoiceNode
+    name: IModeChoiceNode
+    nameWithType: IModeChoiceNode
+    fullName: TMG.IModeChoiceNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IModeChoiceNode
+    name: IModeChoiceNode
+    nameWithType: IModeChoiceNode
+    fullName: TMG.IModeChoiceNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Name*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Name
+  name: Name
+  nameWithType: GTAModelSystemTemplate.Name
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+  name: NetworkAssignment
+  nameWithType: GTAModelSystemTemplate.NetworkAssignment
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.NetworkAssignment
+- uid: TMG.I4StepModel.NetworkAssignment
+  commentId: P:TMG.I4StepModel.NetworkAssignment
+  parent: TMG.I4StepModel
+  name: NetworkAssignment
+  nameWithType: I4StepModel.NetworkAssignment
+  fullName: TMG.I4StepModel.NetworkAssignment
+- uid: TMG.INetworkAssignment
+  commentId: T:TMG.INetworkAssignment
+  parent: TMG
+  name: INetworkAssignment
+  nameWithType: INetworkAssignment
+  fullName: TMG.INetworkAssignment
+- uid: TMG.GTAModel.GTAModelSystemTemplate.NetworkData*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+  name: NetworkData
+  nameWithType: GTAModelSystemTemplate.NetworkData
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.NetworkData
+- uid: TMG.ITravelDemandModel.NetworkData
+  commentId: P:TMG.ITravelDemandModel.NetworkData
+  parent: TMG.ITravelDemandModel
+  name: NetworkData
+  nameWithType: ITravelDemandModel.NetworkData
+  fullName: TMG.ITravelDemandModel.NetworkData
+- uid: System.Collections.Generic.IList{TMG.INetworkData}
+  commentId: T:System.Collections.Generic.IList{TMG.INetworkData}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<INetworkData>
+  nameWithType: IList<INetworkData>
+  fullName: System.Collections.Generic.IList<TMG.INetworkData>
+  nameWithType.vb: IList(Of INetworkData)
+  fullName.vb: System.Collections.Generic.IList(Of TMG.INetworkData)
+  name.vb: IList(Of INetworkData)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+  name: OutputBaseDirectory
+  nameWithType: GTAModelSystemTemplate.OutputBaseDirectory
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Population*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Population
+  name: Population
+  nameWithType: GTAModelSystemTemplate.Population
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Population
+- uid: TMG.IDemographicsModelSystemTemplate.Population
+  commentId: P:TMG.IDemographicsModelSystemTemplate.Population
+  parent: TMG.IDemographicsModelSystemTemplate
+  name: Population
+  nameWithType: IDemographicsModelSystemTemplate.Population
+  fullName: TMG.IDemographicsModelSystemTemplate.Population
+- uid: TMG.IPopulation
+  commentId: T:TMG.IPopulation
+  parent: TMG
+  name: IPopulation
+  nameWithType: IPopulation
+  fullName: TMG.IPopulation
+- uid: TMG.GTAModel.GTAModelSystemTemplate.PostRun*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.PostRun
+  name: PostRun
+  nameWithType: GTAModelSystemTemplate.PostRun
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.PostRun
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Progress*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Progress
+  name: Progress
+  nameWithType: GTAModelSystemTemplate.Progress
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ProgressColour*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+  name: ProgressColour
+  nameWithType: GTAModelSystemTemplate.ProgressColour
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Purpose*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Purpose
+  name: Purpose
+  nameWithType: GTAModelSystemTemplate.Purpose
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Purpose
+- uid: TMG.I4StepModel.Purpose
+  commentId: P:TMG.I4StepModel.Purpose
+  parent: TMG.I4StepModel
+  name: Purpose
+  nameWithType: I4StepModel.Purpose
+  fullName: TMG.I4StepModel.Purpose
+- uid: System.Collections.Generic.List{TMG.IPurpose}
+  commentId: T:System.Collections.Generic.List{TMG.IPurpose}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPurpose>
+  nameWithType: List<IPurpose>
+  fullName: System.Collections.Generic.List<TMG.IPurpose>
+  nameWithType.vb: List(Of IPurpose)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IPurpose)
+  name.vb: List(Of IPurpose)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IPurpose
+    name: IPurpose
+    nameWithType: IPurpose
+    fullName: TMG.IPurpose
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IPurpose
+    name: IPurpose
+    nameWithType: IPurpose
+    fullName: TMG.IPurpose
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.TotalIterations*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+  name: TotalIterations
+  nameWithType: GTAModelSystemTemplate.TotalIterations
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.TotalIterations
+- uid: TMG.IIterativeModel.TotalIterations
+  commentId: P:TMG.IIterativeModel.TotalIterations
+  parent: TMG.IIterativeModel
+  name: TotalIterations
+  nameWithType: IIterativeModel.TotalIterations
+  fullName: TMG.IIterativeModel.TotalIterations
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+  name: ZoneSystem
+  nameWithType: GTAModelSystemTemplate.ZoneSystem
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ZoneSystem
+- uid: TMG.ITravelDemandModel.ZoneSystem
+  commentId: P:TMG.ITravelDemandModel.ZoneSystem
+  parent: TMG.ITravelDemandModel
+  name: ZoneSystem
+  nameWithType: ITravelDemandModel.ZoneSystem
+  fullName: TMG.ITravelDemandModel.ZoneSystem
+- uid: TMG.IZoneSystem
+  commentId: T:TMG.IZoneSystem
+  parent: TMG
+  name: IZoneSystem
+  nameWithType: IZoneSystem
+  fullName: TMG.IZoneSystem
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ExitRequest*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.ExitRequest
+  name: ExitRequest
+  nameWithType: GTAModelSystemTemplate.ExitRequest
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: GTAModelSystemTemplate.RuntimeValidation
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Start*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Start
+  name: Start
+  nameWithType: GTAModelSystemTemplate.Start
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.GTAModelSystemTemplate.ToString*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.ToString
+  name: ToString
+  nameWithType: GTAModelSystemTemplate.ToString
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.ToString
+- uid: TMG.GTAModel.GTAModelSystemTemplate.Resources*
+  commentId: Overload:TMG.GTAModel.GTAModelSystemTemplate.Resources
+  name: Resources
+  nameWithType: GTAModelSystemTemplate.Resources
+  fullName: TMG.GTAModel.GTAModelSystemTemplate.Resources
+- uid: TMG.IResourceSource.Resources
+  commentId: P:TMG.IResourceSource.Resources
+  parent: TMG.IResourceSource
+  name: Resources
+  nameWithType: IResourceSource.Resources
+  fullName: TMG.IResourceSource.Resources
+- uid: System.Collections.Generic.List{XTMF.IResource}
+  commentId: T:System.Collections.Generic.List{XTMF.IResource}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IResource>
+  nameWithType: List<IResource>
+  fullName: System.Collections.Generic.List<XTMF.IResource>
+  nameWithType.vb: List(Of IResource)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.IResource)
+  name.vb: List(Of IResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: )
+    nameWithType: )
+    fullName: )

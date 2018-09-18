@@ -1,0 +1,733 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  commentId: T:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  id: ProjectDisplay.ProjectModel
+  parent: XTMF.Gui.UserControls
+  children:
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor(XTMF.IProject,XTMF.ProjectEditingSession)
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystems
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRuns
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PropertyChanged
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns(XTMF.ProjectEditingSession)
+  - XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload
+  langs:
+  - csharp
+  - vb
+  name: ProjectDisplay.ProjectModel
+  nameWithType: ProjectDisplay.ProjectModel
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectModel
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 58
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: 'public class ProjectModel : INotifyPropertyChanged'
+    content.vb: >-
+      Public Class ProjectModel
+          Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystems
+  commentId: F:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystems
+  id: ContainedModelSystems
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: ContainedModelSystems
+  nameWithType: ProjectDisplay.ProjectModel.ContainedModelSystems
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystems
+  type: Field
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ContainedModelSystems
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 194
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public List<ProjectDisplay.ProjectModel.ContainedModelSystemModel> ContainedModelSystems
+    return:
+      type: System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel}
+    content.vb: Public ContainedModelSystems As List(Of ProjectDisplay.ProjectModel.ContainedModelSystemModel)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRuns
+  commentId: F:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRuns
+  id: PreviousRuns
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: PreviousRuns
+  nameWithType: ProjectDisplay.ProjectModel.PreviousRuns
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRuns
+  type: Field
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PreviousRuns
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 196
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public List<ProjectDisplay.ProjectModel.PreviousRun> PreviousRuns
+    return:
+      type: System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun}
+    content.vb: Public PreviousRuns As List(Of ProjectDisplay.ProjectModel.PreviousRun)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PropertyChanged
+  commentId: E:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PropertyChanged
+  id: PropertyChanged
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: PropertyChanged
+  nameWithType: ProjectDisplay.ProjectModel.PropertyChanged
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PropertyChanged
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 200
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public event PropertyChangedEventHandler PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor(XTMF.IProject,XTMF.ProjectEditingSession)
+  commentId: M:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor(XTMF.IProject,XTMF.ProjectEditingSession)
+  id: '#ctor(XTMF.IProject,XTMF.ProjectEditingSession)'
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: ProjectModel(IProject, ProjectEditingSession)
+  nameWithType: ProjectDisplay.ProjectModel.ProjectModel(IProject, ProjectEditingSession)
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ProjectModel(XTMF.IProject, XTMF.ProjectEditingSession)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 204
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public ProjectModel(IProject project, ProjectEditingSession session)
+    parameters:
+    - id: project
+      type: XTMF.IProject
+    - id: session
+      type: XTMF.ProjectEditingSession
+    content.vb: Public Sub New(project As IProject, session As ProjectEditingSession)
+  overload: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns(XTMF.ProjectEditingSession)
+  commentId: M:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns(XTMF.ProjectEditingSession)
+  id: RefreshPastRuns(XTMF.ProjectEditingSession)
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: RefreshPastRuns(ProjectEditingSession)
+  nameWithType: ProjectDisplay.ProjectModel.RefreshPastRuns(ProjectEditingSession)
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns(XTMF.ProjectEditingSession)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RefreshPastRuns
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 220
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public void RefreshPastRuns(ProjectEditingSession session)
+    parameters:
+    - id: session
+      type: XTMF.ProjectEditingSession
+    content.vb: Public Sub RefreshPastRuns(session As ProjectEditingSession)
+  overload: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload
+  commentId: M:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload
+  id: Unload
+  parent: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel
+  langs:
+  - csharp
+  - vb
+  name: Unload()
+  nameWithType: ProjectDisplay.ProjectModel.Unload()
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Unload
+    path: ../../XTMF/Code/XTMF.Gui/UserControls/ProjectDisplay.xaml.cs
+    startLine: 277
+  assemblies:
+  - XTMF.Gui
+  namespace: XTMF.Gui.UserControls
+  syntax:
+    content: public void Unload()
+    content.vb: Public Sub Unload
+  overload: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: XTMF.Gui.UserControls
+  commentId: N:XTMF.Gui.UserControls
+  name: XTMF.Gui.UserControls
+  nameWithType: XTMF.Gui.UserControls
+  fullName: XTMF.Gui.UserControls
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel}
+  commentId: T:System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ProjectDisplay.ProjectModel.ContainedModelSystemModel>
+  nameWithType: List<ProjectDisplay.ProjectModel.ContainedModelSystemModel>
+  fullName: System.Collections.Generic.List<XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel>
+  nameWithType.vb: List(Of ProjectDisplay.ProjectModel.ContainedModelSystemModel)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel)
+  name.vb: List(Of ProjectDisplay.ProjectModel.ContainedModelSystemModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    name: ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    nameWithType: ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    name: ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    nameWithType: ProjectDisplay.ProjectModel.ContainedModelSystemModel
+    fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ContainedModelSystemModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun}
+  commentId: T:System.Collections.Generic.List{XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ProjectDisplay.ProjectModel.PreviousRun>
+  nameWithType: List<ProjectDisplay.ProjectModel.PreviousRun>
+  fullName: System.Collections.Generic.List<XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun>
+  nameWithType.vb: List(Of ProjectDisplay.ProjectModel.PreviousRun)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun)
+  name.vb: List(Of ProjectDisplay.ProjectModel.PreviousRun)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun
+    name: ProjectDisplay.ProjectModel.PreviousRun
+    nameWithType: ProjectDisplay.ProjectModel.PreviousRun
+    fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun
+    name: ProjectDisplay.ProjectModel.PreviousRun
+    nameWithType: ProjectDisplay.ProjectModel.PreviousRun
+    fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.PreviousRun
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor*
+  commentId: Overload:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.#ctor
+  name: ProjectModel
+  nameWithType: ProjectDisplay.ProjectModel.ProjectModel
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.ProjectModel
+- uid: XTMF.IProject
+  commentId: T:XTMF.IProject
+  parent: XTMF
+  name: IProject
+  nameWithType: IProject
+  fullName: XTMF.IProject
+- uid: XTMF.ProjectEditingSession
+  commentId: T:XTMF.ProjectEditingSession
+  parent: XTMF
+  name: ProjectEditingSession
+  nameWithType: ProjectEditingSession
+  fullName: XTMF.ProjectEditingSession
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns*
+  commentId: Overload:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns
+  name: RefreshPastRuns
+  nameWithType: ProjectDisplay.ProjectModel.RefreshPastRuns
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.RefreshPastRuns
+- uid: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload*
+  commentId: Overload:XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload
+  name: Unload
+  nameWithType: ProjectDisplay.ProjectModel.Unload
+  fullName: XTMF.Gui.UserControls.ProjectDisplay.ProjectModel.Unload

@@ -1,0 +1,2760 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Estimation.LocalEstimationHost
+  commentId: T:TMG.Estimation.LocalEstimationHost
+  id: LocalEstimationHost
+  parent: TMG.Estimation
+  children:
+  - TMG.Estimation.LocalEstimationHost.AI
+  - TMG.Estimation.LocalEstimationHost.ClientModelSystem
+  - TMG.Estimation.LocalEstimationHost.CurrentIteration
+  - TMG.Estimation.LocalEstimationHost.CurrentJobs
+  - TMG.Estimation.LocalEstimationHost.Exit
+  - TMG.Estimation.LocalEstimationHost.ExitRequest
+  - TMG.Estimation.LocalEstimationHost.FitnessFunctionEvaluated
+  - TMG.Estimation.LocalEstimationHost.GiveJob
+  - TMG.Estimation.LocalEstimationHost.HoldOnToResultFile
+  - TMG.Estimation.LocalEstimationHost.HostModelSystem
+  - TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+  - TMG.Estimation.LocalEstimationHost.Name
+  - TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+  - TMG.Estimation.LocalEstimationHost.ParameterLoader
+  - TMG.Estimation.LocalEstimationHost.Parameters
+  - TMG.Estimation.LocalEstimationHost.Progress
+  - TMG.Estimation.LocalEstimationHost.ProgressColour
+  - TMG.Estimation.LocalEstimationHost.ResultFile
+  - TMG.Estimation.LocalEstimationHost.RuntimeValidation(System.String@)
+  - TMG.Estimation.LocalEstimationHost.SaveResult(System.Single)
+  - TMG.Estimation.LocalEstimationHost.SkipReportingResults
+  - TMG.Estimation.LocalEstimationHost.Start
+  - TMG.Estimation.LocalEstimationHost.ToString
+  - TMG.Estimation.LocalEstimationHost.TotalIterations
+  langs:
+  - csharp
+  - vb
+  name: LocalEstimationHost
+  nameWithType: LocalEstimationHost
+  fullName: TMG.Estimation.LocalEstimationHost
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LocalEstimationHost
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 27
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [RedirectModule("TMG.Estimation.LocalEstimatinHost, TMG.Estimation, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null")]
+
+      public class LocalEstimationHost : IEstimationHost, IIterativeModel, IModelSystemTemplate, ISelfContainedModule, IModule
+    content.vb: >-
+      <RedirectModule("TMG.Estimation.LocalEstimatinHost, TMG.Estimation, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null")>
+
+      Public Class LocalEstimationHost
+
+          Implements IEstimationHost, IIterativeModel, IModelSystemTemplate, ISelfContainedModule, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Estimation.IEstimationHost
+  - TMG.IIterativeModel
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  attributes:
+  - type: XTMF.RedirectModule
+    ctor: XTMF.RedirectModule.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: TMG.Estimation.LocalEstimatinHost, TMG.Estimation, Version = 1.0.0.0, Culture = neutral, PublicKeyToken = null
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.Estimation.LocalEstimationHost.AI
+  commentId: F:TMG.Estimation.LocalEstimationHost.AI
+  id: AI
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: AI
+  nameWithType: LocalEstimationHost.AI
+  fullName: TMG.Estimation.LocalEstimationHost.AI
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AI
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 33
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The AI to explore the parameter space.")]
+
+      public IEstimationAI AI
+    return:
+      type: TMG.Estimation.IEstimationAI
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The AI to explore the parameter space.")>
+
+      Public AI As IEstimationAI
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The AI to explore the parameter space.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.ClientModelSystem
+  commentId: F:TMG.Estimation.LocalEstimationHost.ClientModelSystem
+  id: ClientModelSystem
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ClientModelSystem
+  nameWithType: LocalEstimationHost.ClientModelSystem
+  fullName: TMG.Estimation.LocalEstimationHost.ClientModelSystem
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ClientModelSystem
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 36
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The client model system to execute.")]
+
+      public IEstimationClientModelSystem ClientModelSystem
+    return:
+      type: TMG.Estimation.IEstimationClientModelSystem
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The client model system to execute.")>
+
+      Public ClientModelSystem As IEstimationClientModelSystem
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The client model system to execute.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.Exit
+  commentId: F:TMG.Estimation.LocalEstimationHost.Exit
+  id: Exit
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: Exit
+  nameWithType: LocalEstimationHost.Exit
+  fullName: TMG.Estimation.LocalEstimationHost.Exit
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Exit
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 38
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public bool Exit
+    return:
+      type: System.Boolean
+    content.vb: Public Exit As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.HoldOnToResultFile
+  commentId: F:TMG.Estimation.LocalEstimationHost.HoldOnToResultFile
+  id: HoldOnToResultFile
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: HoldOnToResultFile
+  nameWithType: LocalEstimationHost.HoldOnToResultFile
+  fullName: TMG.Estimation.LocalEstimationHost.HoldOnToResultFile
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HoldOnToResultFile
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 41
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [RunParameter("Hold Onto Result File", true, "Should we maintain the lock on the estimation file?")]
+
+      public bool HoldOnToResultFile
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Hold Onto Result File", True, "Should we maintain the lock on the estimation file?")>
+
+      Public HoldOnToResultFile As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Hold Onto Result File
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Should we maintain the lock on the estimation file?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.HostModelSystem
+  commentId: F:TMG.Estimation.LocalEstimationHost.HostModelSystem
+  id: HostModelSystem
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: HostModelSystem
+  nameWithType: LocalEstimationHost.HostModelSystem
+  fullName: TMG.Estimation.LocalEstimationHost.HostModelSystem
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HostModelSystem
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 44
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The host model system to execute.")]
+
+      public IModelSystemTemplate HostModelSystem
+    return:
+      type: XTMF.IModelSystemTemplate
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The host model system to execute.")>
+
+      Public HostModelSystem As IModelSystemTemplate
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The host model system to execute.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.ParameterLoader
+  commentId: F:TMG.Estimation.LocalEstimationHost.ParameterLoader
+  id: ParameterLoader
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ParameterLoader
+  nameWithType: LocalEstimationHost.ParameterLoader
+  fullName: TMG.Estimation.LocalEstimationHost.ParameterLoader
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParameterLoader
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 47
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The logic to load in parameters.")]
+
+      public IDataSource<List<ParameterSetting>> ParameterLoader
+    return:
+      type: XTMF.IDataSource{System.Collections.Generic.List{TMG.Estimation.ParameterSetting}}
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The logic to load in parameters.")>
+
+      Public ParameterLoader As IDataSource(Of List(Of ParameterSetting))
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The logic to load in parameters.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.ResultFile
+  commentId: F:TMG.Estimation.LocalEstimationHost.ResultFile
+  id: ResultFile
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ResultFile
+  nameWithType: LocalEstimationHost.ResultFile
+  fullName: TMG.Estimation.LocalEstimationHost.ResultFile
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ResultFile
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 50
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = true, Description = "The location to save the estimation results.")]
+
+      public FileLocation ResultFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=True, Description:="The location to save the estimation results.")>
+
+      Public ResultFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: true
+    - name: Description
+      type: System.String
+      value: The location to save the estimation results.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.SkipReportingResults
+  commentId: F:TMG.Estimation.LocalEstimationHost.SkipReportingResults
+  id: SkipReportingResults
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: SkipReportingResults
+  nameWithType: LocalEstimationHost.SkipReportingResults
+  fullName: TMG.Estimation.LocalEstimationHost.SkipReportingResults
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SkipReportingResults
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 53
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [RunParameter("SkipReportingResults", false, "Skip Reporting Results.  Only turn this on for increased performance during the estimation of AI's.")]
+
+      public bool SkipReportingResults
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("SkipReportingResults", False, "Skip Reporting Results.  Only turn this on for increased performance during the estimation of AI's.")>
+
+      Public SkipReportingResults As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: SkipReportingResults
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: Skip Reporting Results.  Only turn this on for increased performance during the estimation of AI's.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.CurrentIteration
+  commentId: P:TMG.Estimation.LocalEstimationHost.CurrentIteration
+  id: CurrentIteration
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: CurrentIteration
+  nameWithType: LocalEstimationHost.CurrentIteration
+  fullName: TMG.Estimation.LocalEstimationHost.CurrentIteration
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CurrentIteration
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 55
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public int CurrentIteration { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentIteration As Integer
+  overload: TMG.Estimation.LocalEstimationHost.CurrentIteration*
+  implements:
+  - TMG.IIterativeModel.CurrentIteration
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.TotalIterations
+  commentId: P:TMG.Estimation.LocalEstimationHost.TotalIterations
+  id: TotalIterations
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: TotalIterations
+  nameWithType: LocalEstimationHost.TotalIterations
+  fullName: TMG.Estimation.LocalEstimationHost.TotalIterations
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TotalIterations
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 57
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [RunParameter("Generations", "100", typeof (int), "The total number of iterations we should push the AI through.")]
+
+      public int TotalIterations { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Generations", "100", GetType(Integer), "The total number of iterations we should push the AI through.")>
+
+      Public Property TotalIterations As Integer
+  overload: TMG.Estimation.LocalEstimationHost.TotalIterations*
+  implements:
+  - TMG.IIterativeModel.TotalIterations
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Generations
+    - type: System.String
+      value: "100"
+    - type: System.Type
+      value: System.Int32
+    - type: System.String
+      value: The total number of iterations we should push the AI through.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.CurrentJobs
+  commentId: P:TMG.Estimation.LocalEstimationHost.CurrentJobs
+  id: CurrentJobs
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: CurrentJobs
+  nameWithType: LocalEstimationHost.CurrentJobs
+  fullName: TMG.Estimation.LocalEstimationHost.CurrentJobs
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CurrentJobs
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 60
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public List<Job> CurrentJobs { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.Estimation.Job}
+    content.vb: Public Property CurrentJobs As List(Of Job)
+  overload: TMG.Estimation.LocalEstimationHost.CurrentJobs*
+  implements:
+  - TMG.Estimation.IEstimationHost.CurrentJobs
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+  commentId: P:TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: LocalEstimationHost.InputBaseDirectory
+  fullName: TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 62
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: >-
+      [RunParameter("Input Directory", "../../Input", "The directory containing the model's input.")]
+
+      public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Input Directory", "../../Input", "The directory containing the model's input.")>
+
+      Public Property InputBaseDirectory As String
+  overload: TMG.Estimation.LocalEstimationHost.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Input Directory
+    - type: System.String
+      value: ../../Input
+    - type: System.String
+      value: The directory containing the model's input.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.Name
+  commentId: P:TMG.Estimation.LocalEstimationHost.Name
+  id: Name
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: LocalEstimationHost.Name
+  fullName: TMG.Estimation.LocalEstimationHost.Name
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 65
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.Estimation.LocalEstimationHost.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+  commentId: P:TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: LocalEstimationHost.OutputBaseDirectory
+  fullName: TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 67
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: TMG.Estimation.LocalEstimationHost.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.Parameters
+  commentId: P:TMG.Estimation.LocalEstimationHost.Parameters
+  id: Parameters
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: Parameters
+  nameWithType: LocalEstimationHost.Parameters
+  fullName: TMG.Estimation.LocalEstimationHost.Parameters
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parameters
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 69
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public List<ParameterSetting> Parameters { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.Estimation.ParameterSetting}
+    content.vb: Public Property Parameters As List(Of ParameterSetting)
+  overload: TMG.Estimation.LocalEstimationHost.Parameters*
+  implements:
+  - TMG.Estimation.IEstimationHost.Parameters
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.Progress
+  commentId: P:TMG.Estimation.LocalEstimationHost.Progress
+  id: Progress
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: LocalEstimationHost.Progress
+  fullName: TMG.Estimation.LocalEstimationHost.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 71
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.Estimation.LocalEstimationHost.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.ProgressColour
+  commentId: P:TMG.Estimation.LocalEstimationHost.ProgressColour
+  id: ProgressColour
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: LocalEstimationHost.ProgressColour
+  fullName: TMG.Estimation.LocalEstimationHost.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 73
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.Estimation.LocalEstimationHost.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.Estimation.LocalEstimationHost.ExitRequest
+  commentId: M:TMG.Estimation.LocalEstimationHost.ExitRequest
+  id: ExitRequest
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: LocalEstimationHost.ExitRequest()
+  fullName: TMG.Estimation.LocalEstimationHost.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 81
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: TMG.Estimation.LocalEstimationHost.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.RuntimeValidation(System.String@)
+  commentId: M:TMG.Estimation.LocalEstimationHost.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: LocalEstimationHost.RuntimeValidation(ref String)
+  fullName: TMG.Estimation.LocalEstimationHost.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 86
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.Estimation.LocalEstimationHost.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: LocalEstimationHost.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Estimation.LocalEstimationHost.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.Estimation.LocalEstimationHost.Start
+  commentId: M:TMG.Estimation.LocalEstimationHost.Start
+  id: Start
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: LocalEstimationHost.Start()
+  fullName: TMG.Estimation.LocalEstimationHost.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 91
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: TMG.Estimation.LocalEstimationHost.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.FitnessFunctionEvaluated
+  commentId: E:TMG.Estimation.LocalEstimationHost.FitnessFunctionEvaluated
+  id: FitnessFunctionEvaluated
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: FitnessFunctionEvaluated
+  nameWithType: LocalEstimationHost.FitnessFunctionEvaluated
+  fullName: TMG.Estimation.LocalEstimationHost.FitnessFunctionEvaluated
+  type: Event
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FitnessFunctionEvaluated
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 102
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public event Action<Job, int, float> FitnessFunctionEvaluated
+    return:
+      type: System.Action{TMG.Estimation.Job,System.Int32,System.Single}
+    content.vb: Public Event FitnessFunctionEvaluated As Action(Of Job, Integer, Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.GiveJob
+  commentId: M:TMG.Estimation.LocalEstimationHost.GiveJob
+  id: GiveJob
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: GiveJob()
+  nameWithType: LocalEstimationHost.GiveJob()
+  fullName: TMG.Estimation.LocalEstimationHost.GiveJob()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GiveJob
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 178
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public Job GiveJob()
+    return:
+      type: TMG.Estimation.Job
+    content.vb: Public Function GiveJob As Job
+  overload: TMG.Estimation.LocalEstimationHost.GiveJob*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.SaveResult(System.Single)
+  commentId: M:TMG.Estimation.LocalEstimationHost.SaveResult(System.Single)
+  id: SaveResult(System.Single)
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: SaveResult(Single)
+  nameWithType: LocalEstimationHost.SaveResult(Single)
+  fullName: TMG.Estimation.LocalEstimationHost.SaveResult(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SaveResult
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 187
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public void SaveResult(float result)
+    parameters:
+    - id: result
+      type: System.Single
+    content.vb: Public Sub SaveResult(result As Single)
+  overload: TMG.Estimation.LocalEstimationHost.SaveResult*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Estimation.LocalEstimationHost.ToString
+  commentId: M:TMG.Estimation.LocalEstimationHost.ToString
+  id: ToString
+  parent: TMG.Estimation.LocalEstimationHost
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: LocalEstimationHost.ToString()
+  fullName: TMG.Estimation.LocalEstimationHost.ToString()
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Estimation/LocalEstimationHost.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ToString
+    path: ../../XTMF/Code/TMG.Estimation/LocalEstimationHost.cs
+    startLine: 217
+  assemblies:
+  - TMG.Estimation
+  namespace: TMG.Estimation
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: TMG.Estimation.LocalEstimationHost.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: TMG.Estimation
+  commentId: N:TMG.Estimation
+  isExternal: false
+  name: TMG.Estimation
+  nameWithType: TMG.Estimation
+  fullName: TMG.Estimation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Estimation.IEstimationHost
+  commentId: T:TMG.Estimation.IEstimationHost
+  parent: TMG.Estimation
+  isExternal: false
+  name: IEstimationHost
+  nameWithType: IEstimationHost
+  fullName: TMG.Estimation.IEstimationHost
+- uid: TMG.IIterativeModel
+  commentId: T:TMG.IIterativeModel
+  parent: TMG
+  isExternal: false
+  name: IIterativeModel
+  nameWithType: IIterativeModel
+  fullName: TMG.IIterativeModel
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  isExternal: false
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.Estimation.IEstimationAI
+  commentId: T:TMG.Estimation.IEstimationAI
+  parent: TMG.Estimation
+  isExternal: false
+  name: IEstimationAI
+  nameWithType: IEstimationAI
+  fullName: TMG.Estimation.IEstimationAI
+- uid: TMG.Estimation.IEstimationClientModelSystem
+  commentId: T:TMG.Estimation.IEstimationClientModelSystem
+  parent: TMG.Estimation
+  isExternal: false
+  name: IEstimationClientModelSystem
+  nameWithType: IEstimationClientModelSystem
+  fullName: TMG.Estimation.IEstimationClientModelSystem
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.IDataSource{System.Collections.Generic.List{TMG.Estimation.ParameterSetting}}
+  commentId: T:XTMF.IDataSource{System.Collections.Generic.List{TMG.Estimation.ParameterSetting}}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<List<ParameterSetting>>
+  nameWithType: IDataSource<List<ParameterSetting>>
+  fullName: XTMF.IDataSource<System.Collections.Generic.List<TMG.Estimation.ParameterSetting>>
+  nameWithType.vb: IDataSource(Of List(Of ParameterSetting))
+  fullName.vb: XTMF.IDataSource(Of System.Collections.Generic.List(Of TMG.Estimation.ParameterSetting))
+  name.vb: IDataSource(Of List(Of ParameterSetting))
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Estimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.Estimation.ParameterSetting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Estimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.Estimation.ParameterSetting
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  isExternal: false
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input.FileLocation
+  commentId: T:TMG.Input.FileLocation
+  parent: TMG.Input
+  isExternal: false
+  name: FileLocation
+  nameWithType: FileLocation
+  fullName: TMG.Input.FileLocation
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  isExternal: false
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: TMG.Estimation.LocalEstimationHost.CurrentIteration*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.CurrentIteration
+  isExternal: false
+  name: CurrentIteration
+  nameWithType: LocalEstimationHost.CurrentIteration
+  fullName: TMG.Estimation.LocalEstimationHost.CurrentIteration
+- uid: TMG.IIterativeModel.CurrentIteration
+  commentId: P:TMG.IIterativeModel.CurrentIteration
+  parent: TMG.IIterativeModel
+  isExternal: false
+  name: CurrentIteration
+  nameWithType: IIterativeModel.CurrentIteration
+  fullName: TMG.IIterativeModel.CurrentIteration
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.Estimation.LocalEstimationHost.TotalIterations*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.TotalIterations
+  isExternal: false
+  name: TotalIterations
+  nameWithType: LocalEstimationHost.TotalIterations
+  fullName: TMG.Estimation.LocalEstimationHost.TotalIterations
+- uid: TMG.IIterativeModel.TotalIterations
+  commentId: P:TMG.IIterativeModel.TotalIterations
+  parent: TMG.IIterativeModel
+  isExternal: false
+  name: TotalIterations
+  nameWithType: IIterativeModel.TotalIterations
+  fullName: TMG.IIterativeModel.TotalIterations
+- uid: TMG.Estimation.LocalEstimationHost.CurrentJobs*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.CurrentJobs
+  isExternal: false
+  name: CurrentJobs
+  nameWithType: LocalEstimationHost.CurrentJobs
+  fullName: TMG.Estimation.LocalEstimationHost.CurrentJobs
+- uid: TMG.Estimation.IEstimationHost.CurrentJobs
+  commentId: P:TMG.Estimation.IEstimationHost.CurrentJobs
+  parent: TMG.Estimation.IEstimationHost
+  isExternal: false
+  name: CurrentJobs
+  nameWithType: IEstimationHost.CurrentJobs
+  fullName: TMG.Estimation.IEstimationHost.CurrentJobs
+- uid: System.Collections.Generic.List{TMG.Estimation.Job}
+  commentId: T:System.Collections.Generic.List{TMG.Estimation.Job}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Job>
+  nameWithType: List<Job>
+  fullName: System.Collections.Generic.List<TMG.Estimation.Job>
+  nameWithType.vb: List(Of Job)
+  fullName.vb: System.Collections.Generic.List(Of TMG.Estimation.Job)
+  name.vb: List(Of Job)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Estimation.Job
+    name: Job
+    nameWithType: Job
+    fullName: TMG.Estimation.Job
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Estimation.Job
+    name: Job
+    nameWithType: Job
+    fullName: TMG.Estimation.Job
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.Estimation.LocalEstimationHost.InputBaseDirectory*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: LocalEstimationHost.InputBaseDirectory
+  fullName: TMG.Estimation.LocalEstimationHost.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.Estimation.LocalEstimationHost.Name*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.Name
+  isExternal: false
+  name: Name
+  nameWithType: LocalEstimationHost.Name
+  fullName: TMG.Estimation.LocalEstimationHost.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.Estimation.LocalEstimationHost.OutputBaseDirectory*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: LocalEstimationHost.OutputBaseDirectory
+  fullName: TMG.Estimation.LocalEstimationHost.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: TMG.Estimation.LocalEstimationHost.Parameters*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.Parameters
+  isExternal: false
+  name: Parameters
+  nameWithType: LocalEstimationHost.Parameters
+  fullName: TMG.Estimation.LocalEstimationHost.Parameters
+- uid: TMG.Estimation.IEstimationHost.Parameters
+  commentId: P:TMG.Estimation.IEstimationHost.Parameters
+  parent: TMG.Estimation.IEstimationHost
+  isExternal: false
+  name: Parameters
+  nameWithType: IEstimationHost.Parameters
+  fullName: TMG.Estimation.IEstimationHost.Parameters
+- uid: System.Collections.Generic.List{TMG.Estimation.ParameterSetting}
+  commentId: T:System.Collections.Generic.List{TMG.Estimation.ParameterSetting}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ParameterSetting>
+  nameWithType: List<ParameterSetting>
+  fullName: System.Collections.Generic.List<TMG.Estimation.ParameterSetting>
+  nameWithType.vb: List(Of ParameterSetting)
+  fullName.vb: System.Collections.Generic.List(Of TMG.Estimation.ParameterSetting)
+  name.vb: List(Of ParameterSetting)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Estimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.Estimation.ParameterSetting
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Estimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.Estimation.ParameterSetting
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.Progress*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: LocalEstimationHost.Progress
+  fullName: TMG.Estimation.LocalEstimationHost.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.Estimation.LocalEstimationHost.ProgressColour*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: LocalEstimationHost.ProgressColour
+  fullName: TMG.Estimation.LocalEstimationHost.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.ExitRequest*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.ExitRequest
+  isExternal: false
+  name: ExitRequest
+  nameWithType: LocalEstimationHost.ExitRequest
+  fullName: TMG.Estimation.LocalEstimationHost.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.RuntimeValidation*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: LocalEstimationHost.RuntimeValidation
+  fullName: TMG.Estimation.LocalEstimationHost.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.Start*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.Start
+  isExternal: false
+  name: Start
+  nameWithType: LocalEstimationHost.Start
+  fullName: TMG.Estimation.LocalEstimationHost.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  isExternal: false
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{TMG.Estimation.Job,System.Int32,System.Single}
+  commentId: T:System.Action{TMG.Estimation.Job,System.Int32,System.Single}
+  parent: System
+  definition: System.Action`3
+  name: Action<Job, Int32, Single>
+  nameWithType: Action<Job, Int32, Single>
+  fullName: System.Action<TMG.Estimation.Job, System.Int32, System.Single>
+  nameWithType.vb: Action(Of Job, Int32, Single)
+  fullName.vb: System.Action(Of TMG.Estimation.Job, System.Int32, System.Single)
+  name.vb: Action(Of Job, Int32, Single)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Estimation.Job
+    name: Job
+    nameWithType: Job
+    fullName: TMG.Estimation.Job
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Estimation.Job
+    name: Job
+    nameWithType: Job
+    fullName: TMG.Estimation.Job
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.GiveJob*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.GiveJob
+  isExternal: false
+  name: GiveJob
+  nameWithType: LocalEstimationHost.GiveJob
+  fullName: TMG.Estimation.LocalEstimationHost.GiveJob
+- uid: TMG.Estimation.Job
+  commentId: T:TMG.Estimation.Job
+  parent: TMG.Estimation
+  isExternal: false
+  name: Job
+  nameWithType: Job
+  fullName: TMG.Estimation.Job
+- uid: TMG.Estimation.LocalEstimationHost.SaveResult*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.SaveResult
+  isExternal: false
+  name: SaveResult
+  nameWithType: LocalEstimationHost.SaveResult
+  fullName: TMG.Estimation.LocalEstimationHost.SaveResult
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Estimation.LocalEstimationHost.ToString*
+  commentId: Overload:TMG.Estimation.LocalEstimationHost.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: LocalEstimationHost.ToString
+  fullName: TMG.Estimation.LocalEstimationHost.ToString

@@ -1,0 +1,1784 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.NetworkEstimation.LinearSearchAi
+  commentId: T:TMG.NetworkEstimation.LinearSearchAi
+  id: LinearSearchAi
+  parent: TMG.NetworkEstimation
+  children:
+  - TMG.NetworkEstimation.LinearSearchAi.CancelExploration
+  - TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  - TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  - TMG.NetworkEstimation.LinearSearchAi.ErrorTally
+  - TMG.NetworkEstimation.LinearSearchAi.ErrorWeight
+  - TMG.NetworkEstimation.LinearSearchAi.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  - TMG.NetworkEstimation.LinearSearchAi.Interval
+  - TMG.NetworkEstimation.LinearSearchAi.MabsWeight
+  - TMG.NetworkEstimation.LinearSearchAi.Name
+  - TMG.NetworkEstimation.LinearSearchAi.Progress
+  - TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+  - TMG.NetworkEstimation.LinearSearchAi.RmseWeight
+  - TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation(System.String@)
+  - TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+  langs:
+  - csharp
+  - vb
+  name: LinearSearchAi
+  nameWithType: LinearSearchAi
+  fullName: TMG.NetworkEstimation.LinearSearchAi
+  type: Class
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinearSearchAi
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 25
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: 'public class LinearSearchAi : INetworkEstimationAI, IModule'
+    content.vb: >-
+      Public Class LinearSearchAi
+
+          Implements INetworkEstimationAI, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.NetworkEstimation.LinearSearchAi.ErrorTally
+  commentId: F:TMG.NetworkEstimation.LinearSearchAi.ErrorTally
+  id: ErrorTally
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: ErrorTally
+  nameWithType: LinearSearchAi.ErrorTally
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ErrorTally
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ErrorTally
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 28
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The module to tally the errors", Required = true)]
+
+      public IErrorTally ErrorTally
+    return:
+      type: TMG.NetworkEstimation.IErrorTally
+    content.vb: >-
+      <SubModelInformation(Description:="The module to tally the errors", Required:=True)>
+
+      Public ErrorTally As IErrorTally
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The module to tally the errors
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.Interval
+  commentId: F:TMG.NetworkEstimation.LinearSearchAi.Interval
+  id: Interval
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: Interval
+  nameWithType: LinearSearchAi.Interval
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Interval
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Interval
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 31
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Interval", 0.1F, "The (0 to 1) interval to increase by per exploration, where 0.1 would be 10% of the parameter space.")]
+
+      public float Interval
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Interval", 0.1F, "The (0 to 1) interval to increase by per exploration, where 0.1 would be 10% of the parameter space.")>
+
+      Public Interval As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Interval
+    - type: System.Single
+      value: 0.10000000100000001
+    - type: System.String
+      value: The (0 to 1) interval to increase by per exploration, where 0.1 would be 10% of the parameter space.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.MabsWeight
+  commentId: F:TMG.NetworkEstimation.LinearSearchAi.MabsWeight
+  id: MabsWeight
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: MabsWeight
+  nameWithType: LinearSearchAi.MabsWeight
+  fullName: TMG.NetworkEstimation.LinearSearchAi.MabsWeight
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MabsWeight
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 34
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("MABS Weight", 1F, "The weight applied to the mean absolute error in the evaluation function")]
+
+      public float MabsWeight
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("MABS Weight", 1F, "The weight applied to the mean absolute error in the evaluation function")>
+
+      Public MabsWeight As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: MABS Weight
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: The weight applied to the mean absolute error in the evaluation function
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.RmseWeight
+  commentId: F:TMG.NetworkEstimation.LinearSearchAi.RmseWeight
+  id: RmseWeight
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: RmseWeight
+  nameWithType: LinearSearchAi.RmseWeight
+  fullName: TMG.NetworkEstimation.LinearSearchAi.RmseWeight
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RmseWeight
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 37
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("RMSE Weight", 1F, "The weight applied to the root mean square error in the evaluation function")]
+
+      public float RmseWeight
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("RMSE Weight", 1F, "The weight applied to the root mean square error in the evaluation function")>
+
+      Public RmseWeight As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: RMSE Weight
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: The weight applied to the root mean square error in the evaluation function
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.ErrorWeight
+  commentId: F:TMG.NetworkEstimation.LinearSearchAi.ErrorWeight
+  id: ErrorWeight
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: ErrorWeight
+  nameWithType: LinearSearchAi.ErrorWeight
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ErrorWeight
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ErrorWeight
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 40
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("TotalError Weight", 1F, "The weight applied to the total error in the evaluation function")]
+
+      public float ErrorWeight
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("TotalError Weight", 1F, "The weight applied to the total error in the evaluation function")>
+
+      Public ErrorWeight As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: TotalError Weight
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: The weight applied to the total error in the evaluation function
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.Name
+  commentId: P:TMG.NetworkEstimation.LinearSearchAi.Name
+  id: Name
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: LinearSearchAi.Name
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Name
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 46
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.NetworkEstimation.LinearSearchAi.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.Progress
+  commentId: P:TMG.NetworkEstimation.LinearSearchAi.Progress
+  id: Progress
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: LinearSearchAi.Progress
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 52
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.NetworkEstimation.LinearSearchAi.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+  commentId: P:TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+  id: ProgressColour
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: LinearSearchAi.ProgressColour
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 58
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.NetworkEstimation.LinearSearchAi.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+  commentId: P:TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+  id: UseComplexErrorFunction
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: UseComplexErrorFunction
+  nameWithType: LinearSearchAi.UseComplexErrorFunction
+  fullName: TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UseComplexErrorFunction
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 63
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool UseComplexErrorFunction { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property UseComplexErrorFunction As Boolean
+  overload: TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction*
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI.UseComplexErrorFunction
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.NetworkEstimation.LinearSearchAi.CancelExploration
+  commentId: M:TMG.NetworkEstimation.LinearSearchAi.CancelExploration
+  id: CancelExploration
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: CancelExploration()
+  nameWithType: LinearSearchAi.CancelExploration()
+  fullName: TMG.NetworkEstimation.LinearSearchAi.CancelExploration()
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CancelExploration
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 68
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public void CancelExploration()
+    content.vb: Public Sub CancelExploration
+  overload: TMG.NetworkEstimation.LinearSearchAi.CancelExploration*
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  commentId: M:TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  id: ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: ComplexErrorFunction(ParameterSetting[], TransitLine[], TransitLine[], Single[])
+  nameWithType: LinearSearchAi.ComplexErrorFunction(ParameterSetting[], TransitLine[], TransitLine[], Single[])
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[], TMG.Emme.TransitLine[], TMG.Emme.TransitLine[], System.Single[])
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComplexErrorFunction
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 73
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public float ComplexErrorFunction(ParameterSetting[] parameters, TransitLine[] transitLine, TransitLine[] predicted, float[] aggToTruth)
+    parameters:
+    - id: parameters
+      type: TMG.NetworkEstimation.ParameterSetting[]
+    - id: transitLine
+      type: TMG.Emme.TransitLine[]
+    - id: predicted
+      type: TMG.Emme.TransitLine[]
+    - id: aggToTruth
+      type: System.Single[]
+    return:
+      type: System.Single
+    content.vb: Public Function ComplexErrorFunction(parameters As ParameterSetting(), transitLine As TransitLine(), predicted As TransitLine(), aggToTruth As Single()) As Single
+  overload: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction*
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  nameWithType.vb: LinearSearchAi.ComplexErrorFunction(ParameterSetting(), TransitLine(), TransitLine(), Single())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting(), TMG.Emme.TransitLine(), TMG.Emme.TransitLine(), System.Single())
+  name.vb: ComplexErrorFunction(ParameterSetting(), TransitLine(), TransitLine(), Single())
+- uid: TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  commentId: M:TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  id: ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: ErrorCombinationFunction(Double, Double, Double)
+  nameWithType: LinearSearchAi.ErrorCombinationFunction(Double, Double, Double)
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction(System.Double, System.Double, System.Double)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ErrorCombinationFunction
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 78
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public float ErrorCombinationFunction(double rmse, double mabs, double terror)
+    parameters:
+    - id: rmse
+      type: System.Double
+    - id: mabs
+      type: System.Double
+    - id: terror
+      type: System.Double
+    return:
+      type: System.Single
+    content.vb: Public Function ErrorCombinationFunction(rmse As Double, mabs As Double, terror As Double) As Single
+  overload: TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction*
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.LinearSearchAi.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  commentId: M:TMG.NetworkEstimation.LinearSearchAi.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  id: Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: Explore(ParameterSetting[], Action, Func<ParameterSetting[], Single>)
+  nameWithType: LinearSearchAi.Explore(ParameterSetting[], Action, Func<ParameterSetting[], Single>)
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Explore(TMG.NetworkEstimation.ParameterSetting[], System.Action, System.Func<TMG.NetworkEstimation.ParameterSetting[], System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Explore
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 85
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public void Explore(ParameterSetting[] parameters, Action updateProgress, Func<ParameterSetting[], float> evaluationfunction)
+    parameters:
+    - id: parameters
+      type: TMG.NetworkEstimation.ParameterSetting[]
+    - id: updateProgress
+      type: System.Action
+    - id: evaluationfunction
+      type: System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single}
+    content.vb: Public Sub Explore(parameters As ParameterSetting(), updateProgress As Action, evaluationfunction As Func(Of ParameterSetting(), Single))
+  overload: TMG.NetworkEstimation.LinearSearchAi.Explore*
+  implements:
+  - TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  nameWithType.vb: LinearSearchAi.Explore(ParameterSetting(), Action, Func(Of ParameterSetting(), Single))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.NetworkEstimation.LinearSearchAi.Explore(TMG.NetworkEstimation.ParameterSetting(), System.Action, System.Func(Of TMG.NetworkEstimation.ParameterSetting(), System.Single))
+  name.vb: Explore(ParameterSetting(), Action, Func(Of ParameterSetting(), Single))
+- uid: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation(System.String@)
+  commentId: M:TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.NetworkEstimation.LinearSearchAi
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: LinearSearchAi.RuntimeValidation(ref String)
+  fullName: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/LinearSearchAI.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/NetworkEstimation/LinearSearchAI.cs
+    startLine: 94
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: LinearSearchAi.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.NetworkEstimation
+  commentId: N:TMG.NetworkEstimation
+  isExternal: false
+  name: TMG.NetworkEstimation
+  nameWithType: TMG.NetworkEstimation
+  fullName: TMG.NetworkEstimation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.NetworkEstimation.INetworkEstimationAI
+  commentId: T:TMG.NetworkEstimation.INetworkEstimationAI
+  parent: TMG.NetworkEstimation
+  isExternal: false
+  name: INetworkEstimationAI
+  nameWithType: INetworkEstimationAI
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.NetworkEstimation.IErrorTally
+  commentId: T:TMG.NetworkEstimation.IErrorTally
+  parent: TMG.NetworkEstimation
+  isExternal: false
+  name: IErrorTally
+  nameWithType: IErrorTally
+  fullName: TMG.NetworkEstimation.IErrorTally
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.NetworkEstimation.LinearSearchAi.Name*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.Name
+  isExternal: false
+  name: Name
+  nameWithType: LinearSearchAi.Name
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.NetworkEstimation.LinearSearchAi.Progress*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: LinearSearchAi.Progress
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.NetworkEstimation.LinearSearchAi.ProgressColour*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: LinearSearchAi.ProgressColour
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+  isExternal: false
+  name: UseComplexErrorFunction
+  nameWithType: LinearSearchAi.UseComplexErrorFunction
+  fullName: TMG.NetworkEstimation.LinearSearchAi.UseComplexErrorFunction
+- uid: TMG.NetworkEstimation.INetworkEstimationAI.UseComplexErrorFunction
+  commentId: P:TMG.NetworkEstimation.INetworkEstimationAI.UseComplexErrorFunction
+  parent: TMG.NetworkEstimation.INetworkEstimationAI
+  isExternal: false
+  name: UseComplexErrorFunction
+  nameWithType: INetworkEstimationAI.UseComplexErrorFunction
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI.UseComplexErrorFunction
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.NetworkEstimation.LinearSearchAi.CancelExploration*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.CancelExploration
+  isExternal: false
+  name: CancelExploration
+  nameWithType: LinearSearchAi.CancelExploration
+  fullName: TMG.NetworkEstimation.LinearSearchAi.CancelExploration
+- uid: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+  commentId: M:TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+  parent: TMG.NetworkEstimation.INetworkEstimationAI
+  isExternal: false
+  name: CancelExploration()
+  nameWithType: INetworkEstimationAI.CancelExploration()
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration()
+  spec.csharp:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+    name: CancelExploration
+    nameWithType: INetworkEstimationAI.CancelExploration
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+    name: CancelExploration
+    nameWithType: INetworkEstimationAI.CancelExploration
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.CancelExploration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction
+  isExternal: false
+  name: ComplexErrorFunction
+  nameWithType: LinearSearchAi.ComplexErrorFunction
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ComplexErrorFunction
+- uid: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  commentId: M:TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+  parent: TMG.NetworkEstimation.INetworkEstimationAI
+  isExternal: true
+  name: ComplexErrorFunction(ParameterSetting[], TransitLine[], TransitLine[], Single[])
+  nameWithType: INetworkEstimationAI.ComplexErrorFunction(ParameterSetting[], TransitLine[], TransitLine[], Single[])
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[], TMG.Emme.TransitLine[], TMG.Emme.TransitLine[], System.Single[])
+  nameWithType.vb: INetworkEstimationAI.ComplexErrorFunction(ParameterSetting(), TransitLine(), TransitLine(), Single())
+  fullName.vb: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting(), TMG.Emme.TransitLine(), TMG.Emme.TransitLine(), System.Single())
+  name.vb: ComplexErrorFunction(ParameterSetting(), TransitLine(), TransitLine(), Single())
+  spec.csharp:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+    name: ComplexErrorFunction
+    nameWithType: INetworkEstimationAI.ComplexErrorFunction
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction(TMG.NetworkEstimation.ParameterSetting[],TMG.Emme.TransitLine[],TMG.Emme.TransitLine[],System.Single[])
+    name: ComplexErrorFunction
+    nameWithType: INetworkEstimationAI.ComplexErrorFunction
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.ComplexErrorFunction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.ParameterSetting[]
+  name: ParameterSetting[]
+  nameWithType: ParameterSetting[]
+  fullName: TMG.NetworkEstimation.ParameterSetting[]
+  nameWithType.vb: ParameterSetting()
+  fullName.vb: TMG.NetworkEstimation.ParameterSetting()
+  name.vb: ParameterSetting()
+  spec.csharp:
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: TMG.Emme.TransitLine[]
+  name: TransitLine[]
+  nameWithType: TransitLine[]
+  fullName: TMG.Emme.TransitLine[]
+  nameWithType.vb: TransitLine()
+  fullName.vb: TMG.Emme.TransitLine()
+  name.vb: TransitLine()
+  spec.csharp:
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: TMG.Emme.TransitLine
+    name: TransitLine
+    nameWithType: TransitLine
+    fullName: TMG.Emme.TransitLine
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Single[]
+  name: Single[]
+  nameWithType: Single[]
+  fullName: System.Single[]
+  nameWithType.vb: Single()
+  fullName.vb: System.Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction
+  isExternal: false
+  name: ErrorCombinationFunction
+  nameWithType: LinearSearchAi.ErrorCombinationFunction
+  fullName: TMG.NetworkEstimation.LinearSearchAi.ErrorCombinationFunction
+- uid: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  commentId: M:TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+  parent: TMG.NetworkEstimation.INetworkEstimationAI
+  isExternal: true
+  name: ErrorCombinationFunction(Double, Double, Double)
+  nameWithType: INetworkEstimationAI.ErrorCombinationFunction(Double, Double, Double)
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double, System.Double, System.Double)
+  spec.csharp:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+    name: ErrorCombinationFunction
+    nameWithType: INetworkEstimationAI.ErrorCombinationFunction
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction(System.Double,System.Double,System.Double)
+    name: ErrorCombinationFunction
+    nameWithType: INetworkEstimationAI.ErrorCombinationFunction
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.ErrorCombinationFunction
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: TMG.NetworkEstimation.LinearSearchAi.Explore*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.Explore
+  isExternal: false
+  name: Explore
+  nameWithType: LinearSearchAi.Explore
+  fullName: TMG.NetworkEstimation.LinearSearchAi.Explore
+- uid: TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  commentId: M:TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+  parent: TMG.NetworkEstimation.INetworkEstimationAI
+  isExternal: true
+  name: Explore(ParameterSetting[], Action, Func<ParameterSetting[], Single>)
+  nameWithType: INetworkEstimationAI.Explore(ParameterSetting[], Action, Func<ParameterSetting[], Single>)
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[], System.Action, System.Func<TMG.NetworkEstimation.ParameterSetting[], System.Single>)
+  nameWithType.vb: INetworkEstimationAI.Explore(ParameterSetting(), Action, Func(Of ParameterSetting(), Single))
+  fullName.vb: TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting(), System.Action, System.Func(Of TMG.NetworkEstimation.ParameterSetting(), System.Single))
+  name.vb: Explore(ParameterSetting(), Action, Func(Of ParameterSetting(), Single))
+  spec.csharp:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+    name: Explore
+    nameWithType: INetworkEstimationAI.Explore
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.Explore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Action
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.NetworkEstimation.INetworkEstimationAI.Explore(TMG.NetworkEstimation.ParameterSetting[],System.Action,System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single})
+    name: Explore
+    nameWithType: INetworkEstimationAI.Explore
+    fullName: TMG.NetworkEstimation.INetworkEstimationAI.Explore
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Action
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single}
+  commentId: T:System.Func{TMG.NetworkEstimation.ParameterSetting[],System.Single}
+  parent: System
+  definition: System.Func`2
+  name: Func<ParameterSetting[], Single>
+  nameWithType: Func<ParameterSetting[], Single>
+  fullName: System.Func<TMG.NetworkEstimation.ParameterSetting[], System.Single>
+  nameWithType.vb: Func(Of ParameterSetting(), Single)
+  fullName.vb: System.Func(Of TMG.NetworkEstimation.ParameterSetting(), System.Single)
+  name.vb: Func(Of ParameterSetting(), Single)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.NetworkEstimation.ParameterSetting
+    name: ParameterSetting
+    nameWithType: ParameterSetting
+    fullName: TMG.NetworkEstimation.ParameterSetting
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation*
+  commentId: Overload:TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: LinearSearchAi.RuntimeValidation
+  fullName: TMG.NetworkEstimation.LinearSearchAi.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

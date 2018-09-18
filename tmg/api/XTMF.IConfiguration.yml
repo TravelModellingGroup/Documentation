@@ -1,0 +1,1134 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  id: IConfiguration
+  parent: XTMF
+  children:
+  - XTMF.IConfiguration.ConfigurationDirectory
+  - XTMF.IConfiguration.CreateProgressReport(System.String,System.Func{System.Single},System.Tuple{System.Byte,System.Byte,System.Byte})
+  - XTMF.IConfiguration.DeleteAllProgressReport
+  - XTMF.IConfiguration.DeleteProgressReport(System.String)
+  - XTMF.IConfiguration.InstallModule(System.String)
+  - XTMF.IConfiguration.ModelRepository
+  - XTMF.IConfiguration.ModelSystemDirectory
+  - XTMF.IConfiguration.ModelSystemRepository
+  - XTMF.IConfiguration.ModelSystemTemplateRepository
+  - XTMF.IConfiguration.OnModelSystemExit
+  - XTMF.IConfiguration.ProgressReports
+  - XTMF.IConfiguration.ProjectDirectory
+  - XTMF.IConfiguration.ProjectRepository
+  - XTMF.IConfiguration.RetriveCurrentNetworkingClient
+  - XTMF.IConfiguration.Save
+  - XTMF.IConfiguration.StartupNetworkingClient(XTMF.Networking.IClient@,System.String@)
+  - XTMF.IConfiguration.StartupNetworkingHost(XTMF.Networking.IHost@,System.String@)
+  - XTMF.IConfiguration.UpdateProgressReportColour(System.String,System.Tuple{System.Byte,System.Byte,System.Byte})
+  langs:
+  - csharp
+  - vb
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+  type: Interface
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IConfiguration
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 27
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nProvides access to the configuration and systems\nin XTMF\n"
+  example: []
+  syntax:
+    content: public interface IConfiguration
+    content.vb: Public Interface IConfiguration
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: XTMF.IConfiguration.OnModelSystemExit
+  commentId: E:XTMF.IConfiguration.OnModelSystemExit
+  id: OnModelSystemExit
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: OnModelSystemExit
+  nameWithType: IConfiguration.OnModelSystemExit
+  fullName: XTMF.IConfiguration.OnModelSystemExit
+  type: Event
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OnModelSystemExit
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 32
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThis event is used after a model system exits.\n"
+  example: []
+  syntax:
+    content: event Action OnModelSystemExit
+    return:
+      type: System.Action
+    content.vb: Event OnModelSystemExit As Action
+- uid: XTMF.IConfiguration.ConfigurationDirectory
+  commentId: P:XTMF.IConfiguration.ConfigurationDirectory
+  id: ConfigurationDirectory
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationDirectory
+  nameWithType: IConfiguration.ConfigurationDirectory
+  fullName: XTMF.IConfiguration.ConfigurationDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ConfigurationDirectory
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 34
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: string ConfigurationDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ConfigurationDirectory As String
+  overload: XTMF.IConfiguration.ConfigurationDirectory*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ModelRepository
+  commentId: P:XTMF.IConfiguration.ModelRepository
+  id: ModelRepository
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ModelRepository
+  nameWithType: IConfiguration.ModelRepository
+  fullName: XTMF.IConfiguration.ModelRepository
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelRepository
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 40
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nProvides access to all of the models in this\nXTMF installation\n"
+  example: []
+  syntax:
+    content: IModuleRepository ModelRepository { get; }
+    parameters: []
+    return:
+      type: XTMF.IModuleRepository
+    content.vb: ReadOnly Property ModelRepository As IModuleRepository
+  overload: XTMF.IConfiguration.ModelRepository*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ModelSystemDirectory
+  commentId: P:XTMF.IConfiguration.ModelSystemDirectory
+  id: ModelSystemDirectory
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemDirectory
+  nameWithType: IConfiguration.ModelSystemDirectory
+  fullName: XTMF.IConfiguration.ModelSystemDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemDirectory
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 45
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe directory that the model systems are stored in\n"
+  example: []
+  syntax:
+    content: string ModelSystemDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ModelSystemDirectory As String
+  overload: XTMF.IConfiguration.ModelSystemDirectory*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ModelSystemRepository
+  commentId: P:XTMF.IConfiguration.ModelSystemRepository
+  id: ModelSystemRepository
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemRepository
+  nameWithType: IConfiguration.ModelSystemRepository
+  fullName: XTMF.IConfiguration.ModelSystemRepository
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemRepository
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 50
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: IModelSystemRepository ModelSystemRepository { get; }
+    parameters: []
+    return:
+      type: XTMF.IModelSystemRepository
+    content.vb: ReadOnly Property ModelSystemRepository As IModelSystemRepository
+  overload: XTMF.IConfiguration.ModelSystemRepository*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ModelSystemTemplateRepository
+  commentId: P:XTMF.IConfiguration.ModelSystemTemplateRepository
+  id: ModelSystemTemplateRepository
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemTemplateRepository
+  nameWithType: IConfiguration.ModelSystemTemplateRepository
+  fullName: XTMF.IConfiguration.ModelSystemTemplateRepository
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemTemplateRepository
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 55
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: IModelSystemTemplateRepository ModelSystemTemplateRepository { get; }
+    parameters: []
+    return:
+      type: XTMF.IModelSystemTemplateRepository
+    content.vb: ReadOnly Property ModelSystemTemplateRepository As IModelSystemTemplateRepository
+  overload: XTMF.IConfiguration.ModelSystemTemplateRepository*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ProgressReports
+  commentId: P:XTMF.IConfiguration.ProgressReports
+  id: ProgressReports
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProgressReports
+  nameWithType: IConfiguration.ProgressReports
+  fullName: XTMF.IConfiguration.ProgressReports
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressReports
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 60
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: BindingListWithRemoving<IProgressReport> ProgressReports { get; }
+    parameters: []
+    return:
+      type: XTMF.BindingListWithRemoving{XTMF.IProgressReport}
+    content.vb: ReadOnly Property ProgressReports As BindingListWithRemoving(Of IProgressReport)
+  overload: XTMF.IConfiguration.ProgressReports*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ProjectDirectory
+  commentId: P:XTMF.IConfiguration.ProjectDirectory
+  id: ProjectDirectory
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProjectDirectory
+  nameWithType: IConfiguration.ProjectDirectory
+  fullName: XTMF.IConfiguration.ProjectDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectDirectory
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 65
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe directory that the projects are stored in\n"
+  example: []
+  syntax:
+    content: string ProjectDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ProjectDirectory As String
+  overload: XTMF.IConfiguration.ProjectDirectory*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.ProjectRepository
+  commentId: P:XTMF.IConfiguration.ProjectRepository
+  id: ProjectRepository
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProjectRepository
+  nameWithType: IConfiguration.ProjectRepository
+  fullName: XTMF.IConfiguration.ProjectRepository
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectRepository
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 71
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nProvides accesss to all of the Project&apos;s in this\ninstallation of XTMF\n"
+  example: []
+  syntax:
+    content: IProjectRepository ProjectRepository { get; }
+    parameters: []
+    return:
+      type: XTMF.IProjectRepository
+    content.vb: ReadOnly Property ProjectRepository As IProjectRepository
+  overload: XTMF.IConfiguration.ProjectRepository*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IConfiguration.CreateProgressReport(System.String,System.Func{System.Single},System.Tuple{System.Byte,System.Byte,System.Byte})
+  commentId: M:XTMF.IConfiguration.CreateProgressReport(System.String,System.Func{System.Single},System.Tuple{System.Byte,System.Byte,System.Byte})
+  id: CreateProgressReport(System.String,System.Func{System.Single},System.Tuple{System.Byte,System.Byte,System.Byte})
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: CreateProgressReport(String, Func<Single>, Tuple<Byte, Byte, Byte>)
+  nameWithType: IConfiguration.CreateProgressReport(String, Func<Single>, Tuple<Byte, Byte, Byte>)
+  fullName: XTMF.IConfiguration.CreateProgressReport(System.String, System.Func<System.Single>, System.Tuple<System.Byte, System.Byte, System.Byte>)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateProgressReport
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 79
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: void CreateProgressReport(string name, Func<float> reportProgress, Tuple<byte, byte, byte> color = null)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: reportProgress
+      type: System.Func{System.Single}
+      description: ''
+    - id: color
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+      description: ''
+    content.vb: Sub CreateProgressReport(name As String, reportProgress As Func(Of Single), color As Tuple(Of Byte, Byte, Byte) = Nothing)
+  overload: XTMF.IConfiguration.CreateProgressReport*
+  nameWithType.vb: IConfiguration.CreateProgressReport(String, Func(Of Single), Tuple(Of Byte, Byte, Byte))
+  fullName.vb: XTMF.IConfiguration.CreateProgressReport(System.String, System.Func(Of System.Single), System.Tuple(Of System.Byte, System.Byte, System.Byte))
+  name.vb: CreateProgressReport(String, Func(Of Single), Tuple(Of Byte, Byte, Byte))
+- uid: XTMF.IConfiguration.DeleteAllProgressReport
+  commentId: M:XTMF.IConfiguration.DeleteAllProgressReport
+  id: DeleteAllProgressReport
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DeleteAllProgressReport()
+  nameWithType: IConfiguration.DeleteAllProgressReport()
+  fullName: XTMF.IConfiguration.DeleteAllProgressReport()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DeleteAllProgressReport
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 84
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: void DeleteAllProgressReport()
+    content.vb: Sub DeleteAllProgressReport
+  overload: XTMF.IConfiguration.DeleteAllProgressReport*
+- uid: XTMF.IConfiguration.DeleteProgressReport(System.String)
+  commentId: M:XTMF.IConfiguration.DeleteProgressReport(System.String)
+  id: DeleteProgressReport(System.String)
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DeleteProgressReport(String)
+  nameWithType: IConfiguration.DeleteProgressReport(String)
+  fullName: XTMF.IConfiguration.DeleteProgressReport(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DeleteProgressReport
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 90
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: void DeleteProgressReport(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    content.vb: Sub DeleteProgressReport(name As String)
+  overload: XTMF.IConfiguration.DeleteProgressReport*
+- uid: XTMF.IConfiguration.InstallModule(System.String)
+  commentId: M:XTMF.IConfiguration.InstallModule(System.String)
+  id: InstallModule(System.String)
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: InstallModule(String)
+  nameWithType: IConfiguration.InstallModule(String)
+  fullName: XTMF.IConfiguration.InstallModule(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InstallModule
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 98
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nInstalls a new module into XTMF\n"
+  remarks: Avoid using this if you can, if you do this a client without administrative permissions could fail to run
+  example: []
+  syntax:
+    content: bool InstallModule(string moduleFileName)
+    parameters:
+    - id: moduleFileName
+      type: System.String
+      description: The module to install
+    return:
+      type: System.Boolean
+      description: True if we could successfully install the module, false otherwise
+    content.vb: Function InstallModule(moduleFileName As String) As Boolean
+  overload: XTMF.IConfiguration.InstallModule*
+- uid: XTMF.IConfiguration.RetriveCurrentNetworkingClient
+  commentId: M:XTMF.IConfiguration.RetriveCurrentNetworkingClient
+  id: RetriveCurrentNetworkingClient
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: RetriveCurrentNetworkingClient()
+  nameWithType: IConfiguration.RetriveCurrentNetworkingClient()
+  fullName: XTMF.IConfiguration.RetriveCurrentNetworkingClient()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RetriveCurrentNetworkingClient
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 104
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nRetrive the Networking Client however, do not initialize a new one if it doesn&apos;t exist already.\n"
+  example: []
+  syntax:
+    content: IClient RetriveCurrentNetworkingClient()
+    return:
+      type: XTMF.Networking.IClient
+      description: The networking client module
+    content.vb: Function RetriveCurrentNetworkingClient As IClient
+  overload: XTMF.IConfiguration.RetriveCurrentNetworkingClient*
+- uid: XTMF.IConfiguration.Save
+  commentId: M:XTMF.IConfiguration.Save
+  id: Save
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Save()
+  nameWithType: IConfiguration.Save()
+  fullName: XTMF.IConfiguration.Save()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Save
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 109
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nSave the Configuration\n"
+  example: []
+  syntax:
+    content: void Save()
+    content.vb: Sub Save
+  overload: XTMF.IConfiguration.Save*
+- uid: XTMF.IConfiguration.StartupNetworkingClient(XTMF.Networking.IClient@,System.String@)
+  commentId: M:XTMF.IConfiguration.StartupNetworkingClient(XTMF.Networking.IClient@,System.String@)
+  id: StartupNetworkingClient(XTMF.Networking.IClient@,System.String@)
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StartupNetworkingClient(out IClient, ref String)
+  nameWithType: IConfiguration.StartupNetworkingClient(out IClient, ref String)
+  fullName: XTMF.IConfiguration.StartupNetworkingClient(out XTMF.Networking.IClient, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StartupNetworkingClient
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 117
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: bool StartupNetworkingClient(out IClient networkingClient, ref string error)
+    parameters:
+    - id: networkingClient
+      type: XTMF.Networking.IClient
+      description: ''
+    - id: error
+      type: System.String
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function StartupNetworkingClient(ByRef networkingClient As IClient, ByRef error As String) As Boolean
+  overload: XTMF.IConfiguration.StartupNetworkingClient*
+  nameWithType.vb: IConfiguration.StartupNetworkingClient(ByRef IClient, ByRef String)
+  fullName.vb: XTMF.IConfiguration.StartupNetworkingClient(ByRef XTMF.Networking.IClient, ByRef System.String)
+  name.vb: StartupNetworkingClient(ByRef IClient, ByRef String)
+- uid: XTMF.IConfiguration.StartupNetworkingHost(XTMF.Networking.IHost@,System.String@)
+  commentId: M:XTMF.IConfiguration.StartupNetworkingHost(XTMF.Networking.IHost@,System.String@)
+  id: StartupNetworkingHost(XTMF.Networking.IHost@,System.String@)
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: StartupNetworkingHost(out IHost, ref String)
+  nameWithType: IConfiguration.StartupNetworkingHost(out IHost, ref String)
+  fullName: XTMF.IConfiguration.StartupNetworkingHost(out XTMF.Networking.IHost, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StartupNetworkingHost
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 125
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: bool StartupNetworkingHost(out IHost networkingHost, ref string error)
+    parameters:
+    - id: networkingHost
+      type: XTMF.Networking.IHost
+      description: ''
+    - id: error
+      type: System.String
+      description: ''
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function StartupNetworkingHost(ByRef networkingHost As IHost, ByRef error As String) As Boolean
+  overload: XTMF.IConfiguration.StartupNetworkingHost*
+  nameWithType.vb: IConfiguration.StartupNetworkingHost(ByRef IHost, ByRef String)
+  fullName.vb: XTMF.IConfiguration.StartupNetworkingHost(ByRef XTMF.Networking.IHost, ByRef System.String)
+  name.vb: StartupNetworkingHost(ByRef IHost, ByRef String)
+- uid: XTMF.IConfiguration.UpdateProgressReportColour(System.String,System.Tuple{System.Byte,System.Byte,System.Byte})
+  commentId: M:XTMF.IConfiguration.UpdateProgressReportColour(System.String,System.Tuple{System.Byte,System.Byte,System.Byte})
+  id: UpdateProgressReportColour(System.String,System.Tuple{System.Byte,System.Byte,System.Byte})
+  parent: XTMF.IConfiguration
+  langs:
+  - csharp
+  - vb
+  name: UpdateProgressReportColour(String, Tuple<Byte, Byte, Byte>)
+  nameWithType: IConfiguration.UpdateProgressReportColour(String, Tuple<Byte, Byte, Byte>)
+  fullName: XTMF.IConfiguration.UpdateProgressReportColour(System.String, System.Tuple<System.Byte, System.Byte, System.Byte>)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UpdateProgressReportColour
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IConfiguration.cs
+    startLine: 132
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: void UpdateProgressReportColour(string name, Tuple<byte, byte, byte> color)
+    parameters:
+    - id: name
+      type: System.String
+      description: ''
+    - id: color
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+      description: ''
+    content.vb: Sub UpdateProgressReportColour(name As String, color As Tuple(Of Byte, Byte, Byte))
+  overload: XTMF.IConfiguration.UpdateProgressReportColour*
+  nameWithType.vb: IConfiguration.UpdateProgressReportColour(String, Tuple(Of Byte, Byte, Byte))
+  fullName.vb: XTMF.IConfiguration.UpdateProgressReportColour(System.String, System.Tuple(Of System.Byte, System.Byte, System.Byte))
+  name.vb: UpdateProgressReportColour(String, Tuple(Of Byte, Byte, Byte))
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.IConfiguration.ConfigurationDirectory*
+  commentId: Overload:XTMF.IConfiguration.ConfigurationDirectory
+  name: ConfigurationDirectory
+  nameWithType: IConfiguration.ConfigurationDirectory
+  fullName: XTMF.IConfiguration.ConfigurationDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.IConfiguration.ModelRepository*
+  commentId: Overload:XTMF.IConfiguration.ModelRepository
+  name: ModelRepository
+  nameWithType: IConfiguration.ModelRepository
+  fullName: XTMF.IConfiguration.ModelRepository
+- uid: XTMF.IModuleRepository
+  commentId: T:XTMF.IModuleRepository
+  parent: XTMF
+  name: IModuleRepository
+  nameWithType: IModuleRepository
+  fullName: XTMF.IModuleRepository
+- uid: XTMF.IConfiguration.ModelSystemDirectory*
+  commentId: Overload:XTMF.IConfiguration.ModelSystemDirectory
+  name: ModelSystemDirectory
+  nameWithType: IConfiguration.ModelSystemDirectory
+  fullName: XTMF.IConfiguration.ModelSystemDirectory
+- uid: XTMF.IConfiguration.ModelSystemRepository*
+  commentId: Overload:XTMF.IConfiguration.ModelSystemRepository
+  name: ModelSystemRepository
+  nameWithType: IConfiguration.ModelSystemRepository
+  fullName: XTMF.IConfiguration.ModelSystemRepository
+- uid: XTMF.IModelSystemRepository
+  commentId: T:XTMF.IModelSystemRepository
+  parent: XTMF
+  name: IModelSystemRepository
+  nameWithType: IModelSystemRepository
+  fullName: XTMF.IModelSystemRepository
+- uid: XTMF.IConfiguration.ModelSystemTemplateRepository*
+  commentId: Overload:XTMF.IConfiguration.ModelSystemTemplateRepository
+  name: ModelSystemTemplateRepository
+  nameWithType: IConfiguration.ModelSystemTemplateRepository
+  fullName: XTMF.IConfiguration.ModelSystemTemplateRepository
+- uid: XTMF.IModelSystemTemplateRepository
+  commentId: T:XTMF.IModelSystemTemplateRepository
+  parent: XTMF
+  name: IModelSystemTemplateRepository
+  nameWithType: IModelSystemTemplateRepository
+  fullName: XTMF.IModelSystemTemplateRepository
+- uid: XTMF.IConfiguration.ProgressReports*
+  commentId: Overload:XTMF.IConfiguration.ProgressReports
+  name: ProgressReports
+  nameWithType: IConfiguration.ProgressReports
+  fullName: XTMF.IConfiguration.ProgressReports
+- uid: XTMF.BindingListWithRemoving{XTMF.IProgressReport}
+  commentId: T:XTMF.BindingListWithRemoving{XTMF.IProgressReport}
+  parent: XTMF
+  definition: XTMF.BindingListWithRemoving`1
+  name: BindingListWithRemoving<IProgressReport>
+  nameWithType: BindingListWithRemoving<IProgressReport>
+  fullName: XTMF.BindingListWithRemoving<XTMF.IProgressReport>
+  nameWithType.vb: BindingListWithRemoving(Of IProgressReport)
+  fullName.vb: XTMF.BindingListWithRemoving(Of XTMF.IProgressReport)
+  name.vb: BindingListWithRemoving(Of IProgressReport)
+  spec.csharp:
+  - uid: XTMF.BindingListWithRemoving`1
+    name: BindingListWithRemoving
+    nameWithType: BindingListWithRemoving
+    fullName: XTMF.BindingListWithRemoving
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IProgressReport
+    name: IProgressReport
+    nameWithType: IProgressReport
+    fullName: XTMF.IProgressReport
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.BindingListWithRemoving`1
+    name: BindingListWithRemoving
+    nameWithType: BindingListWithRemoving
+    fullName: XTMF.BindingListWithRemoving
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IProgressReport
+    name: IProgressReport
+    nameWithType: IProgressReport
+    fullName: XTMF.IProgressReport
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.BindingListWithRemoving`1
+  commentId: T:XTMF.BindingListWithRemoving`1
+  name: BindingListWithRemoving<T>
+  nameWithType: BindingListWithRemoving<T>
+  fullName: XTMF.BindingListWithRemoving<T>
+  nameWithType.vb: BindingListWithRemoving(Of T)
+  fullName.vb: XTMF.BindingListWithRemoving(Of T)
+  name.vb: BindingListWithRemoving(Of T)
+  spec.csharp:
+  - uid: XTMF.BindingListWithRemoving`1
+    name: BindingListWithRemoving
+    nameWithType: BindingListWithRemoving
+    fullName: XTMF.BindingListWithRemoving
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.BindingListWithRemoving`1
+    name: BindingListWithRemoving
+    nameWithType: BindingListWithRemoving
+    fullName: XTMF.BindingListWithRemoving
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IConfiguration.ProjectDirectory*
+  commentId: Overload:XTMF.IConfiguration.ProjectDirectory
+  name: ProjectDirectory
+  nameWithType: IConfiguration.ProjectDirectory
+  fullName: XTMF.IConfiguration.ProjectDirectory
+- uid: XTMF.IConfiguration.ProjectRepository*
+  commentId: Overload:XTMF.IConfiguration.ProjectRepository
+  name: ProjectRepository
+  nameWithType: IConfiguration.ProjectRepository
+  fullName: XTMF.IConfiguration.ProjectRepository
+- uid: XTMF.IProjectRepository
+  commentId: T:XTMF.IProjectRepository
+  parent: XTMF
+  name: IProjectRepository
+  nameWithType: IProjectRepository
+  fullName: XTMF.IProjectRepository
+- uid: XTMF.IConfiguration.CreateProgressReport*
+  commentId: Overload:XTMF.IConfiguration.CreateProgressReport
+  name: CreateProgressReport
+  nameWithType: IConfiguration.CreateProgressReport
+  fullName: XTMF.IConfiguration.CreateProgressReport
+- uid: System.Func{System.Single}
+  commentId: T:System.Func{System.Single}
+  parent: System
+  definition: System.Func`1
+  name: Func<Single>
+  nameWithType: Func<Single>
+  fullName: System.Func<System.Single>
+  nameWithType.vb: Func(Of Single)
+  fullName.vb: System.Func(Of System.Single)
+  name.vb: Func(Of Single)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IConfiguration.DeleteAllProgressReport*
+  commentId: Overload:XTMF.IConfiguration.DeleteAllProgressReport
+  name: DeleteAllProgressReport
+  nameWithType: IConfiguration.DeleteAllProgressReport
+  fullName: XTMF.IConfiguration.DeleteAllProgressReport
+- uid: XTMF.IConfiguration.DeleteProgressReport*
+  commentId: Overload:XTMF.IConfiguration.DeleteProgressReport
+  name: DeleteProgressReport
+  nameWithType: IConfiguration.DeleteProgressReport
+  fullName: XTMF.IConfiguration.DeleteProgressReport
+- uid: XTMF.IConfiguration.InstallModule*
+  commentId: Overload:XTMF.IConfiguration.InstallModule
+  name: InstallModule
+  nameWithType: IConfiguration.InstallModule
+  fullName: XTMF.IConfiguration.InstallModule
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.IConfiguration.RetriveCurrentNetworkingClient*
+  commentId: Overload:XTMF.IConfiguration.RetriveCurrentNetworkingClient
+  name: RetriveCurrentNetworkingClient
+  nameWithType: IConfiguration.RetriveCurrentNetworkingClient
+  fullName: XTMF.IConfiguration.RetriveCurrentNetworkingClient
+- uid: XTMF.Networking.IClient
+  commentId: T:XTMF.Networking.IClient
+  parent: XTMF.Networking
+  name: IClient
+  nameWithType: IClient
+  fullName: XTMF.Networking.IClient
+- uid: XTMF.Networking
+  commentId: N:XTMF.Networking
+  name: XTMF.Networking
+  nameWithType: XTMF.Networking
+  fullName: XTMF.Networking
+- uid: XTMF.IConfiguration.Save*
+  commentId: Overload:XTMF.IConfiguration.Save
+  name: Save
+  nameWithType: IConfiguration.Save
+  fullName: XTMF.IConfiguration.Save
+- uid: XTMF.IConfiguration.StartupNetworkingClient*
+  commentId: Overload:XTMF.IConfiguration.StartupNetworkingClient
+  name: StartupNetworkingClient
+  nameWithType: IConfiguration.StartupNetworkingClient
+  fullName: XTMF.IConfiguration.StartupNetworkingClient
+- uid: XTMF.IConfiguration.StartupNetworkingHost*
+  commentId: Overload:XTMF.IConfiguration.StartupNetworkingHost
+  name: StartupNetworkingHost
+  nameWithType: IConfiguration.StartupNetworkingHost
+  fullName: XTMF.IConfiguration.StartupNetworkingHost
+- uid: XTMF.Networking.IHost
+  commentId: T:XTMF.Networking.IHost
+  parent: XTMF.Networking
+  name: IHost
+  nameWithType: IHost
+  fullName: XTMF.Networking.IHost
+- uid: XTMF.IConfiguration.UpdateProgressReportColour*
+  commentId: Overload:XTMF.IConfiguration.UpdateProgressReportColour
+  name: UpdateProgressReportColour
+  nameWithType: IConfiguration.UpdateProgressReportColour
+  fullName: XTMF.IConfiguration.UpdateProgressReportColour

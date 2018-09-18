@@ -9,7 +9,7 @@
           "files": [
             "**.csproj"
           ],
-          "exclude": [ "**/4Step/**", "**/obj/**" ],
+          "exclude": [ "**/4Step/**", "**/obj/**", "**/MigrationBackup/**"],
 		      "src": "../../XTMF/Code/" 
         }
       ],
@@ -36,6 +36,10 @@
       {
         "files": ["*.md", "*.yml"]
 
+      },
+      {
+        "files": ["api/**.yml"],
+        "dest":"api"
       },
       {
         "files": [
@@ -91,6 +95,7 @@
         ]
       }
     ],
+    "filter": "filterConfig.yml",
     "dest": "_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],

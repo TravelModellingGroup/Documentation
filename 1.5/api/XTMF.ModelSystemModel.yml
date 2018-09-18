@@ -1,0 +1,1142 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.ModelSystemModel
+  commentId: T:XTMF.ModelSystemModel
+  id: ModelSystemModel
+  parent: XTMF
+  children:
+  - XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.ModelSystem)
+  - XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.Project,System.Int32)
+  - XTMF.ModelSystemModel.#ctor(XTMF.XTMFRuntime,XTMF.ModelSystemEditingSession,XTMF.Project,System.String)
+  - XTMF.ModelSystemModel.ChangeModelSystemName(System.String,System.String@)
+  - XTMF.ModelSystemModel.CloneAsModelSystem(XTMF.IConfiguration)
+  - XTMF.ModelSystemModel.Description
+  - XTMF.ModelSystemModel.GetModelFor(XTMF.ModelSystemStructure)
+  - XTMF.ModelSystemModel.GetQuickParameters
+  - XTMF.ModelSystemModel.IsDirty
+  - XTMF.ModelSystemModel.LinkedParameters
+  - XTMF.ModelSystemModel.Name
+  - XTMF.ModelSystemModel.PropertyChanged
+  - XTMF.ModelSystemModel.Remove(XTMF.ModelSystemStructureModel,System.String@)
+  - XTMF.ModelSystemModel.Root
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemModel
+  nameWithType: ModelSystemModel
+  fullName: XTMF.ModelSystemModel
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemModel
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 28
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: 'public class ModelSystemModel : INotifyPropertyChanged'
+    content.vb: >-
+      Public Class ModelSystemModel
+
+          Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XTMF.ModelSystemModel.Root
+  commentId: P:XTMF.ModelSystemModel.Root
+  id: Root
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: ModelSystemModel.Root
+  fullName: XTMF.ModelSystemModel.Root
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 33
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe starting node of the model system\n"
+  example: []
+  syntax:
+    content: public ModelSystemStructureModel Root { get; }
+    parameters: []
+    return:
+      type: XTMF.ModelSystemStructureModel
+    content.vb: Public ReadOnly Property Root As ModelSystemStructureModel
+  overload: XTMF.ModelSystemModel.Root*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.ModelSystemModel.LinkedParameters
+  commentId: P:XTMF.ModelSystemModel.LinkedParameters
+  id: LinkedParameters
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: LinkedParameters
+  nameWithType: ModelSystemModel.LinkedParameters
+  fullName: XTMF.ModelSystemModel.LinkedParameters
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinkedParameters
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 37
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe model that contains the linked parameters\n"
+  example: []
+  syntax:
+    content: public LinkedParametersModel LinkedParameters { get; }
+    parameters: []
+    return:
+      type: XTMF.LinkedParametersModel
+    content.vb: Public ReadOnly Property LinkedParameters As LinkedParametersModel
+  overload: XTMF.ModelSystemModel.LinkedParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.ModelSystemModel.PropertyChanged
+  commentId: E:XTMF.ModelSystemModel.PropertyChanged
+  id: PropertyChanged
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: PropertyChanged
+  nameWithType: ModelSystemModel.PropertyChanged
+  fullName: XTMF.ModelSystemModel.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PropertyChanged
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 39
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event PropertyChangedEventHandler PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.ModelSystem)
+  commentId: M:XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.ModelSystem)
+  id: '#ctor(XTMF.ModelSystemEditingSession,XTMF.ModelSystem)'
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemModel(ModelSystemEditingSession, ModelSystem)
+  nameWithType: ModelSystemModel.ModelSystemModel(ModelSystemEditingSession, ModelSystem)
+  fullName: XTMF.ModelSystemModel.ModelSystemModel(XTMF.ModelSystemEditingSession, XTMF.ModelSystem)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 49
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ModelSystemModel(ModelSystemEditingSession session, ModelSystem modelSystem)
+    parameters:
+    - id: session
+      type: XTMF.ModelSystemEditingSession
+    - id: modelSystem
+      type: XTMF.ModelSystem
+    content.vb: Public Sub New(session As ModelSystemEditingSession, modelSystem As ModelSystem)
+  overload: XTMF.ModelSystemModel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.GetModelFor(XTMF.ModelSystemStructure)
+  commentId: M:XTMF.ModelSystemModel.GetModelFor(XTMF.ModelSystemStructure)
+  id: GetModelFor(XTMF.ModelSystemStructure)
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: GetModelFor(ModelSystemStructure)
+  nameWithType: ModelSystemModel.GetModelFor(ModelSystemStructure)
+  fullName: XTMF.ModelSystemModel.GetModelFor(XTMF.ModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetModelFor
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 84
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ModelSystemStructureModel GetModelFor(ModelSystemStructure realStructure)
+    parameters:
+    - id: realStructure
+      type: XTMF.ModelSystemStructure
+    return:
+      type: XTMF.ModelSystemStructureModel
+    content.vb: Public Function GetModelFor(realStructure As ModelSystemStructure) As ModelSystemStructureModel
+  overload: XTMF.ModelSystemModel.GetModelFor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.Project,System.Int32)
+  commentId: M:XTMF.ModelSystemModel.#ctor(XTMF.ModelSystemEditingSession,XTMF.Project,System.Int32)
+  id: '#ctor(XTMF.ModelSystemEditingSession,XTMF.Project,System.Int32)'
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemModel(ModelSystemEditingSession, Project, Int32)
+  nameWithType: ModelSystemModel.ModelSystemModel(ModelSystemEditingSession, Project, Int32)
+  fullName: XTMF.ModelSystemModel.ModelSystemModel(XTMF.ModelSystemEditingSession, XTMF.Project, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 107
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ModelSystemModel(ModelSystemEditingSession session, Project project, int modelSystemIndex)
+    parameters:
+    - id: session
+      type: XTMF.ModelSystemEditingSession
+    - id: project
+      type: XTMF.Project
+    - id: modelSystemIndex
+      type: System.Int32
+    content.vb: Public Sub New(session As ModelSystemEditingSession, project As Project, modelSystemIndex As Integer)
+  overload: XTMF.ModelSystemModel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.#ctor(XTMF.XTMFRuntime,XTMF.ModelSystemEditingSession,XTMF.Project,System.String)
+  commentId: M:XTMF.ModelSystemModel.#ctor(XTMF.XTMFRuntime,XTMF.ModelSystemEditingSession,XTMF.Project,System.String)
+  id: '#ctor(XTMF.XTMFRuntime,XTMF.ModelSystemEditingSession,XTMF.Project,System.String)'
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemModel(XTMFRuntime, ModelSystemEditingSession, Project, String)
+  nameWithType: ModelSystemModel.ModelSystemModel(XTMFRuntime, ModelSystemEditingSession, Project, String)
+  fullName: XTMF.ModelSystemModel.ModelSystemModel(XTMF.XTMFRuntime, XTMF.ModelSystemEditingSession, XTMF.Project, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 124
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nCreate a model system model for a previous run.\n"
+  example: []
+  syntax:
+    content: public ModelSystemModel(XTMFRuntime runtime, ModelSystemEditingSession modelSystemEditingSession, Project project, string runFile)
+    parameters:
+    - id: runtime
+      type: XTMF.XTMFRuntime
+    - id: modelSystemEditingSession
+      type: XTMF.ModelSystemEditingSession
+      description: The session to use
+    - id: project
+      type: XTMF.Project
+      description: The project the previous run is in.
+    - id: runFile
+      type: System.String
+      description: The path to the run file.
+    content.vb: Public Sub New(runtime As XTMFRuntime, modelSystemEditingSession As ModelSystemEditingSession, project As Project, runFile As String)
+  overload: XTMF.ModelSystemModel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.IsDirty
+  commentId: P:XTMF.ModelSystemModel.IsDirty
+  id: IsDirty
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: IsDirty
+  nameWithType: ModelSystemModel.IsDirty
+  fullName: XTMF.ModelSystemModel.IsDirty
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsDirty
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 139
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nDoes the model system have changes that are not saved.\n"
+  example: []
+  syntax:
+    content: public bool IsDirty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsDirty As Boolean
+  overload: XTMF.ModelSystemModel.IsDirty*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.ModelSystemModel.Description
+  commentId: P:XTMF.ModelSystemModel.Description
+  id: Description
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: ModelSystemModel.Description
+  fullName: XTMF.ModelSystemModel.Description
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Description
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 146
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nDescribes the Model System\n"
+  example: []
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: XTMF.ModelSystemModel.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.Name
+  commentId: P:XTMF.ModelSystemModel.Name
+  id: Name
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ModelSystemModel.Name
+  fullName: XTMF.ModelSystemModel.Name
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 171
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe name of the model system\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: XTMF.ModelSystemModel.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.GetQuickParameters
+  commentId: M:XTMF.ModelSystemModel.GetQuickParameters
+  id: GetQuickParameters
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: GetQuickParameters()
+  nameWithType: ModelSystemModel.GetQuickParameters()
+  fullName: XTMF.ModelSystemModel.GetQuickParameters()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetQuickParameters
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 218
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public ObservableCollection<ParameterModel> GetQuickParameters()
+    return:
+      type: System.Collections.ObjectModel.ObservableCollection{XTMF.ParameterModel}
+    content.vb: Public Function GetQuickParameters As ObservableCollection(Of ParameterModel)
+  overload: XTMF.ModelSystemModel.GetQuickParameters*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.ModelSystemModel.ChangeModelSystemName(System.String,System.String@)
+  commentId: M:XTMF.ModelSystemModel.ChangeModelSystemName(System.String,System.String@)
+  id: ChangeModelSystemName(System.String,System.String@)
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: ChangeModelSystemName(String, ref String)
+  nameWithType: ModelSystemModel.ChangeModelSystemName(String, ref String)
+  fullName: XTMF.ModelSystemModel.ChangeModelSystemName(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ChangeModelSystemName
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 257
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nChange the name of the model system\n"
+  example: []
+  syntax:
+    content: public bool ChangeModelSystemName(string newName, ref string error)
+    parameters:
+    - id: newName
+      type: System.String
+    - id: error
+      type: System.String
+      description: The reason why changing the name failed.
+    return:
+      type: System.Boolean
+    content.vb: Public Function ChangeModelSystemName(newName As String, ByRef error As String) As Boolean
+  overload: XTMF.ModelSystemModel.ChangeModelSystemName*
+  nameWithType.vb: ModelSystemModel.ChangeModelSystemName(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ModelSystemModel.ChangeModelSystemName(System.String, ByRef System.String)
+  name.vb: ChangeModelSystemName(String, ByRef String)
+- uid: XTMF.ModelSystemModel.Remove(XTMF.ModelSystemStructureModel,System.String@)
+  commentId: M:XTMF.ModelSystemModel.Remove(XTMF.ModelSystemStructureModel,System.String@)
+  id: Remove(XTMF.ModelSystemStructureModel,System.String@)
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: Remove(ModelSystemStructureModel, ref String)
+  nameWithType: ModelSystemModel.Remove(ModelSystemStructureModel, ref String)
+  fullName: XTMF.ModelSystemModel.Remove(XTMF.ModelSystemStructureModel, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Remove
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 259
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public bool Remove(ModelSystemStructureModel selected, ref string error)
+    parameters:
+    - id: selected
+      type: XTMF.ModelSystemStructureModel
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(selected As ModelSystemStructureModel, ByRef error As String) As Boolean
+  overload: XTMF.ModelSystemModel.Remove*
+  nameWithType.vb: ModelSystemModel.Remove(ModelSystemStructureModel, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.ModelSystemModel.Remove(XTMF.ModelSystemStructureModel, ByRef System.String)
+  name.vb: Remove(ModelSystemStructureModel, ByRef String)
+- uid: XTMF.ModelSystemModel.CloneAsModelSystem(XTMF.IConfiguration)
+  commentId: M:XTMF.ModelSystemModel.CloneAsModelSystem(XTMF.IConfiguration)
+  id: CloneAsModelSystem(XTMF.IConfiguration)
+  parent: XTMF.ModelSystemModel
+  langs:
+  - csharp
+  - vb
+  name: CloneAsModelSystem(IConfiguration)
+  nameWithType: ModelSystemModel.CloneAsModelSystem(IConfiguration)
+  fullName: XTMF.ModelSystemModel.CloneAsModelSystem(XTMF.IConfiguration)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/ModelSystemModel.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CloneAsModelSystem
+    path: ../../XTMF/Code/XTMF1.1/Editing/ModelSystemModel.cs
+    startLine: 310
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nCreate a clone of this model system model as a model system.\n"
+  example: []
+  syntax:
+    content: public ModelSystem CloneAsModelSystem(IConfiguration config)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+      description: ''
+    return:
+      type: XTMF.ModelSystem
+      description: ''
+    content.vb: Public Function CloneAsModelSystem(config As IConfiguration) As ModelSystem
+  overload: XTMF.ModelSystemModel.CloneAsModelSystem*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: false
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: XTMF.ModelSystemModel.Root*
+  commentId: Overload:XTMF.ModelSystemModel.Root
+  isExternal: false
+  name: Root
+  nameWithType: ModelSystemModel.Root
+  fullName: XTMF.ModelSystemModel.Root
+- uid: XTMF.ModelSystemStructureModel
+  commentId: T:XTMF.ModelSystemStructureModel
+  parent: XTMF
+  isExternal: false
+  name: ModelSystemStructureModel
+  nameWithType: ModelSystemStructureModel
+  fullName: XTMF.ModelSystemStructureModel
+- uid: XTMF.ModelSystemModel.LinkedParameters*
+  commentId: Overload:XTMF.ModelSystemModel.LinkedParameters
+  isExternal: false
+  name: LinkedParameters
+  nameWithType: ModelSystemModel.LinkedParameters
+  fullName: XTMF.ModelSystemModel.LinkedParameters
+- uid: XTMF.LinkedParametersModel
+  commentId: T:XTMF.LinkedParametersModel
+  parent: XTMF
+  isExternal: false
+  name: LinkedParametersModel
+  nameWithType: LinkedParametersModel
+  fullName: XTMF.LinkedParametersModel
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: XTMF.ModelSystemModel.#ctor*
+  commentId: Overload:XTMF.ModelSystemModel.#ctor
+  isExternal: false
+  name: ModelSystemModel
+  nameWithType: ModelSystemModel.ModelSystemModel
+  fullName: XTMF.ModelSystemModel.ModelSystemModel
+- uid: XTMF.ModelSystemEditingSession
+  commentId: T:XTMF.ModelSystemEditingSession
+  parent: XTMF
+  isExternal: false
+  name: ModelSystemEditingSession
+  nameWithType: ModelSystemEditingSession
+  fullName: XTMF.ModelSystemEditingSession
+- uid: XTMF.ModelSystem
+  commentId: T:XTMF.ModelSystem
+  parent: XTMF
+  isExternal: false
+  name: ModelSystem
+  nameWithType: ModelSystem
+  fullName: XTMF.ModelSystem
+- uid: XTMF.ModelSystemModel.GetModelFor*
+  commentId: Overload:XTMF.ModelSystemModel.GetModelFor
+  isExternal: false
+  name: GetModelFor
+  nameWithType: ModelSystemModel.GetModelFor
+  fullName: XTMF.ModelSystemModel.GetModelFor
+- uid: XTMF.ModelSystemStructure
+  commentId: T:XTMF.ModelSystemStructure
+  parent: XTMF
+  isExternal: false
+  name: ModelSystemStructure
+  nameWithType: ModelSystemStructure
+  fullName: XTMF.ModelSystemStructure
+- uid: XTMF.Project
+  commentId: T:XTMF.Project
+  parent: XTMF
+  isExternal: false
+  name: Project
+  nameWithType: Project
+  fullName: XTMF.Project
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XTMF.XTMFRuntime
+  commentId: T:XTMF.XTMFRuntime
+  parent: XTMF
+  isExternal: false
+  name: XTMFRuntime
+  nameWithType: XTMFRuntime
+  fullName: XTMF.XTMFRuntime
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.ModelSystemModel.IsDirty*
+  commentId: Overload:XTMF.ModelSystemModel.IsDirty
+  isExternal: false
+  name: IsDirty
+  nameWithType: ModelSystemModel.IsDirty
+  fullName: XTMF.ModelSystemModel.IsDirty
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.ModelSystemModel.Description*
+  commentId: Overload:XTMF.ModelSystemModel.Description
+  isExternal: false
+  name: Description
+  nameWithType: ModelSystemModel.Description
+  fullName: XTMF.ModelSystemModel.Description
+- uid: XTMF.ModelSystemModel.Name*
+  commentId: Overload:XTMF.ModelSystemModel.Name
+  isExternal: false
+  name: Name
+  nameWithType: ModelSystemModel.Name
+  fullName: XTMF.ModelSystemModel.Name
+- uid: XTMF.ModelSystemModel.GetQuickParameters*
+  commentId: Overload:XTMF.ModelSystemModel.GetQuickParameters
+  isExternal: false
+  name: GetQuickParameters
+  nameWithType: ModelSystemModel.GetQuickParameters
+  fullName: XTMF.ModelSystemModel.GetQuickParameters
+- uid: System.Collections.ObjectModel.ObservableCollection{XTMF.ParameterModel}
+  commentId: T:System.Collections.ObjectModel.ObservableCollection{XTMF.ParameterModel}
+  parent: System.Collections.ObjectModel
+  definition: System.Collections.ObjectModel.ObservableCollection`1
+  name: ObservableCollection<ParameterModel>
+  nameWithType: ObservableCollection<ParameterModel>
+  fullName: System.Collections.ObjectModel.ObservableCollection<XTMF.ParameterModel>
+  nameWithType.vb: ObservableCollection(Of ParameterModel)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of XTMF.ParameterModel)
+  name.vb: ObservableCollection(Of ParameterModel)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    nameWithType: ObservableCollection
+    fullName: System.Collections.ObjectModel.ObservableCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ParameterModel
+    name: ParameterModel
+    nameWithType: ParameterModel
+    fullName: XTMF.ParameterModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    nameWithType: ObservableCollection
+    fullName: System.Collections.ObjectModel.ObservableCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ParameterModel
+    name: ParameterModel
+    nameWithType: ParameterModel
+    fullName: XTMF.ParameterModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ObservableCollection`1
+  commentId: T:System.Collections.ObjectModel.ObservableCollection`1
+  isExternal: true
+  name: ObservableCollection<T>
+  nameWithType: ObservableCollection<T>
+  fullName: System.Collections.ObjectModel.ObservableCollection<T>
+  nameWithType.vb: ObservableCollection(Of T)
+  fullName.vb: System.Collections.ObjectModel.ObservableCollection(Of T)
+  name.vb: ObservableCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    nameWithType: ObservableCollection
+    fullName: System.Collections.ObjectModel.ObservableCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ObservableCollection`1
+    name: ObservableCollection
+    nameWithType: ObservableCollection
+    fullName: System.Collections.ObjectModel.ObservableCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel
+  commentId: N:System.Collections.ObjectModel
+  isExternal: false
+  name: System.Collections.ObjectModel
+  nameWithType: System.Collections.ObjectModel
+  fullName: System.Collections.ObjectModel
+- uid: XTMF.ModelSystemModel.ChangeModelSystemName*
+  commentId: Overload:XTMF.ModelSystemModel.ChangeModelSystemName
+  isExternal: false
+  name: ChangeModelSystemName
+  nameWithType: ModelSystemModel.ChangeModelSystemName
+  fullName: XTMF.ModelSystemModel.ChangeModelSystemName
+- uid: XTMF.ModelSystemModel.Remove*
+  commentId: Overload:XTMF.ModelSystemModel.Remove
+  isExternal: false
+  name: Remove
+  nameWithType: ModelSystemModel.Remove
+  fullName: XTMF.ModelSystemModel.Remove
+- uid: XTMF.ModelSystemModel.CloneAsModelSystem*
+  commentId: Overload:XTMF.ModelSystemModel.CloneAsModelSystem
+  isExternal: false
+  name: CloneAsModelSystem
+  nameWithType: ModelSystemModel.CloneAsModelSystem
+  fullName: XTMF.ModelSystemModel.CloneAsModelSystem
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration

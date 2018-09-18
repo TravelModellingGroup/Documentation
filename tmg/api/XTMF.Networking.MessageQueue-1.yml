@@ -1,0 +1,683 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.Networking.MessageQueue`1
+  commentId: T:XTMF.Networking.MessageQueue`1
+  id: MessageQueue`1
+  parent: XTMF.Networking
+  children:
+  - XTMF.Networking.MessageQueue`1.Add(`0)
+  - XTMF.Networking.MessageQueue`1.Count
+  - XTMF.Networking.MessageQueue`1.Dispose
+  - XTMF.Networking.MessageQueue`1.Dispose(System.Boolean)
+  - XTMF.Networking.MessageQueue`1.GetMessage
+  - XTMF.Networking.MessageQueue`1.GetMessageOrTimeout(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: MessageQueue<T>
+  nameWithType: MessageQueue<T>
+  fullName: XTMF.Networking.MessageQueue<T>
+  type: Class
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MessageQueue
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 31
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  summary: "\nProvides a clean way of waiting for\ndata to arrive before processing it.\nIf not ready, then the  thread will sleep.\nWhen it is ready, it will wake up.\n"
+  example: []
+  syntax:
+    content: 'public class MessageQueue<T> : IDisposable'
+    typeParameters:
+    - id: T
+      description: ''
+    content.vb: >-
+      Public Class MessageQueue(Of T)
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: MessageQueue(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: XTMF.Networking.MessageQueue(Of T)
+  name.vb: MessageQueue(Of T)
+- uid: XTMF.Networking.MessageQueue`1.Add(`0)
+  commentId: M:XTMF.Networking.MessageQueue`1.Add(`0)
+  id: Add(`0)
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Add(T)
+  nameWithType: MessageQueue<T>.Add(T)
+  fullName: XTMF.Networking.MessageQueue<T>.Add(T)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 40
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  summary: "\nAdd a new message to the queue\n"
+  example: []
+  syntax:
+    content: public void Add(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to be added
+    content.vb: Public Sub Add(message As T)
+  overload: XTMF.Networking.MessageQueue`1.Add*
+  nameWithType.vb: MessageQueue(Of T).Add(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Add(T)
+- uid: XTMF.Networking.MessageQueue`1.Dispose
+  commentId: M:XTMF.Networking.MessageQueue`1.Dispose
+  id: Dispose
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: MessageQueue<T>.Dispose()
+  fullName: XTMF.Networking.MessageQueue<T>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 47
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: XTMF.Networking.MessageQueue`1.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  nameWithType.vb: MessageQueue(Of T).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Dispose()
+- uid: XTMF.Networking.MessageQueue`1.GetMessage
+  commentId: M:XTMF.Networking.MessageQueue`1.GetMessage
+  id: GetMessage
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: GetMessage()
+  nameWithType: MessageQueue<T>.GetMessage()
+  fullName: XTMF.Networking.MessageQueue<T>.GetMessage()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetMessage
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 57
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  summary: "\nRetrieve a message from the MessageQueue\nThis will wait indefinitely for the next message\n"
+  example: []
+  syntax:
+    content: public T GetMessage()
+    return:
+      type: '{T}'
+      description: The next message
+    content.vb: Public Function GetMessage As T
+  overload: XTMF.Networking.MessageQueue`1.GetMessage*
+  nameWithType.vb: MessageQueue(Of T).GetMessage()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).GetMessage()
+- uid: XTMF.Networking.MessageQueue`1.GetMessageOrTimeout(System.Int32)
+  commentId: M:XTMF.Networking.MessageQueue`1.GetMessageOrTimeout(System.Int32)
+  id: GetMessageOrTimeout(System.Int32)
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: GetMessageOrTimeout(Int32)
+  nameWithType: MessageQueue<T>.GetMessageOrTimeout(Int32)
+  fullName: XTMF.Networking.MessageQueue<T>.GetMessageOrTimeout(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetMessageOrTimeout
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 73
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  summary: "\nRetrieve a message from the Messagequeue.  This will wait for a given amount of time.\n"
+  example: []
+  syntax:
+    content: public T GetMessageOrTimeout(int timeout)
+    parameters:
+    - id: timeout
+      type: System.Int32
+      description: The length of time to wait at most in milliseconds before returning
+    return:
+      type: '{T}'
+      description: The next message, if the timeout occurs the default value
+    content.vb: Public Function GetMessageOrTimeout(timeout As Integer) As T
+  overload: XTMF.Networking.MessageQueue`1.GetMessageOrTimeout*
+  nameWithType.vb: MessageQueue(Of T).GetMessageOrTimeout(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).GetMessageOrTimeout(System.Int32)
+- uid: XTMF.Networking.MessageQueue`1.Count
+  commentId: P:XTMF.Networking.MessageQueue`1.Count
+  id: Count
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: MessageQueue<T>.Count
+  fullName: XTMF.Networking.MessageQueue<T>.Count
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Count
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 89
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  summary: "\nGets a peak at the current number of messages pending.\n"
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: XTMF.Networking.MessageQueue`1.Count*
+  nameWithType.vb: MessageQueue(Of T).Count
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Count
+- uid: XTMF.Networking.MessageQueue`1.Dispose(System.Boolean)
+  commentId: M:XTMF.Networking.MessageQueue`1.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: XTMF.Networking.MessageQueue`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: MessageQueue<T>.Dispose(Boolean)
+  fullName: XTMF.Networking.MessageQueue<T>.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Networking/MessageQueue.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../XTMF/Code/XTMFInterfaces/Networking/MessageQueue.cs
+    startLine: 97
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF.Networking
+  syntax:
+    content: protected virtual void Dispose(bool includeManaged)
+    parameters:
+    - id: includeManaged
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(includeManaged As Boolean)
+  overload: XTMF.Networking.MessageQueue`1.Dispose*
+  nameWithType.vb: MessageQueue(Of T).Dispose(Boolean)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Dispose(System.Boolean)
+references:
+- uid: XTMF.Networking
+  commentId: N:XTMF.Networking
+  name: XTMF.Networking
+  nameWithType: XTMF.Networking
+  fullName: XTMF.Networking
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.Networking.MessageQueue`1.Add*
+  commentId: Overload:XTMF.Networking.MessageQueue`1.Add
+  name: Add
+  nameWithType: MessageQueue<T>.Add
+  fullName: XTMF.Networking.MessageQueue<T>.Add
+  nameWithType.vb: MessageQueue(Of T).Add
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Add
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: XTMF.Networking.MessageQueue`1.Dispose*
+  commentId: Overload:XTMF.Networking.MessageQueue`1.Dispose
+  name: Dispose
+  nameWithType: MessageQueue<T>.Dispose
+  fullName: XTMF.Networking.MessageQueue<T>.Dispose
+  nameWithType.vb: MessageQueue(Of T).Dispose
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Networking.MessageQueue`1.GetMessage*
+  commentId: Overload:XTMF.Networking.MessageQueue`1.GetMessage
+  name: GetMessage
+  nameWithType: MessageQueue<T>.GetMessage
+  fullName: XTMF.Networking.MessageQueue<T>.GetMessage
+  nameWithType.vb: MessageQueue(Of T).GetMessage
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).GetMessage
+- uid: XTMF.Networking.MessageQueue`1.GetMessageOrTimeout*
+  commentId: Overload:XTMF.Networking.MessageQueue`1.GetMessageOrTimeout
+  name: GetMessageOrTimeout
+  nameWithType: MessageQueue<T>.GetMessageOrTimeout
+  fullName: XTMF.Networking.MessageQueue<T>.GetMessageOrTimeout
+  nameWithType.vb: MessageQueue(Of T).GetMessageOrTimeout
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).GetMessageOrTimeout
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XTMF.Networking.MessageQueue`1.Count*
+  commentId: Overload:XTMF.Networking.MessageQueue`1.Count
+  name: Count
+  nameWithType: MessageQueue<T>.Count
+  fullName: XTMF.Networking.MessageQueue<T>.Count
+  nameWithType.vb: MessageQueue(Of T).Count
+  fullName.vb: XTMF.Networking.MessageQueue(Of T).Count
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

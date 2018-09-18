@@ -1,0 +1,904 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.AgentBased.Tours.ITripChain
+  commentId: T:TMG.AgentBased.Tours.ITripChain
+  id: ITripChain
+  parent: TMG.AgentBased.Tours
+  children:
+  - TMG.AgentBased.Tours.ITripChain.Item(System.Int32)
+  - TMG.AgentBased.Tours.ITripChain.Person
+  - TMG.AgentBased.Tours.ITripChain.TripChainIndex
+  langs:
+  - csharp
+  - vb
+  name: ITripChain
+  nameWithType: ITripChain
+  fullName: TMG.AgentBased.Tours.ITripChain
+  type: Interface
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ITripChain
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+    startLine: 22
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  syntax:
+    content: 'public interface ITripChain : ICollection<ITrip>, IEnumerable<ITrip>, IEnumerable'
+    content.vb: >-
+      Public Interface ITripChain
+          Inherits ICollection(Of ITrip)
+  inheritedMembers:
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Add(TMG.AgentBased.Tours.ITrip)
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Clear
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Contains(TMG.AgentBased.Tours.ITrip)
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.CopyTo(TMG.AgentBased.Tours.ITrip[],System.Int32)
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Remove(TMG.AgentBased.Tours.ITrip)
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Count
+  - System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.IsReadOnly
+  - System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}.GetEnumerator
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: TMG.AgentBased.Tours.ITripChain.Person
+  commentId: P:TMG.AgentBased.Tours.ITripChain.Person
+  id: Person
+  parent: TMG.AgentBased.Tours.ITripChain
+  langs:
+  - csharp
+  - vb
+  name: Person
+  nameWithType: ITripChain.Person
+  fullName: TMG.AgentBased.Tours.ITripChain.Person
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Person
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+    startLine: 27
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe person that this trip chain belongs to\n"
+  example: []
+  syntax:
+    content: IPerson Person { get; }
+    parameters: []
+    return:
+      type: TMG.IPerson
+    content.vb: ReadOnly Property Person As IPerson
+  overload: TMG.AgentBased.Tours.ITripChain.Person*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: TMG.AgentBased.Tours.ITripChain.TripChainIndex
+  commentId: P:TMG.AgentBased.Tours.ITripChain.TripChainIndex
+  id: TripChainIndex
+  parent: TMG.AgentBased.Tours.ITripChain
+  langs:
+  - csharp
+  - vb
+  name: TripChainIndex
+  nameWithType: ITripChain.TripChainIndex
+  fullName: TMG.AgentBased.Tours.ITripChain.TripChainIndex
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TripChainIndex
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+    startLine: 33
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nThe index number of this trip chain for\nthe person.\n"
+  example: []
+  syntax:
+    content: int TripChainIndex { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Property TripChainIndex As Integer
+  overload: TMG.AgentBased.Tours.ITripChain.TripChainIndex*
+  modifiers.csharp:
+  - get
+  - set
+- uid: TMG.AgentBased.Tours.ITripChain.Item(System.Int32)
+  commentId: P:TMG.AgentBased.Tours.ITripChain.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: TMG.AgentBased.Tours.ITripChain
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: ITripChain.Item[Int32]
+  fullName: TMG.AgentBased.Tours.ITripChain.Item[System.Int32]
+  type: Property
+  source:
+    remote:
+      path: Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: this[]
+    path: ../../XTMF/Code/TMGInterfaces/AgentBased/Tours/ITripChain.cs
+    startLine: 40
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG.AgentBased.Tours
+  summary: "\nGet the trip in the trip chain\n"
+  example: []
+  syntax:
+    content: ITrip this[int index] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The index to get at
+    return:
+      type: TMG.AgentBased.Tours.ITrip
+      description: ''
+    content.vb: ReadOnly Property Item(index As Integer) As ITrip
+  overload: TMG.AgentBased.Tours.ITripChain.Item*
+  nameWithType.vb: ITripChain.Item(Int32)
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: TMG.AgentBased.Tours.ITripChain.Item(System.Int32)
+  name.vb: Item(Int32)
+references:
+- uid: TMG.AgentBased.Tours
+  commentId: N:TMG.AgentBased.Tours
+  name: TMG.AgentBased.Tours
+  nameWithType: TMG.AgentBased.Tours
+  fullName: TMG.AgentBased.Tours
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Add(TMG.AgentBased.Tours.ITrip)
+  commentId: M:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Add(TMG.AgentBased.Tours.ITrip)
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.Add(`0)
+  name: Add(ITrip)
+  nameWithType: ICollection<ITrip>.Add(ITrip)
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Add(TMG.AgentBased.Tours.ITrip)
+  nameWithType.vb: ICollection(Of ITrip).Add(ITrip)
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Add(TMG.AgentBased.Tours.ITrip)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<ITrip>.Add
+    fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of ITrip).Add
+    fullName: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Clear
+  commentId: M:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Clear
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  name: Clear()
+  nameWithType: ICollection<ITrip>.Clear()
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Clear()
+  nameWithType.vb: ICollection(Of ITrip).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<ITrip>.Clear
+    fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of ITrip).Clear
+    fullName: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Contains(TMG.AgentBased.Tours.ITrip)
+  commentId: M:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Contains(TMG.AgentBased.Tours.ITrip)
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  name: Contains(ITrip)
+  nameWithType: ICollection<ITrip>.Contains(ITrip)
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Contains(TMG.AgentBased.Tours.ITrip)
+  nameWithType.vb: ICollection(Of ITrip).Contains(ITrip)
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Contains(TMG.AgentBased.Tours.ITrip)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<ITrip>.Contains
+    fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of ITrip).Contains
+    fullName: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.CopyTo(TMG.AgentBased.Tours.ITrip[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.CopyTo(TMG.AgentBased.Tours.ITrip[],System.Int32)
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(ITrip[], Int32)
+  nameWithType: ICollection<ITrip>.CopyTo(ITrip[], Int32)
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.CopyTo(TMG.AgentBased.Tours.ITrip[], System.Int32)
+  nameWithType.vb: ICollection(Of ITrip).CopyTo(ITrip(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).CopyTo(TMG.AgentBased.Tours.ITrip(), System.Int32)
+  name.vb: CopyTo(ITrip(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<ITrip>.CopyTo
+    fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of ITrip).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Remove(TMG.AgentBased.Tours.ITrip)
+  commentId: M:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Remove(TMG.AgentBased.Tours.ITrip)
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  name: Remove(ITrip)
+  nameWithType: ICollection<ITrip>.Remove(ITrip)
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Remove(TMG.AgentBased.Tours.ITrip)
+  nameWithType.vb: ICollection(Of ITrip).Remove(ITrip)
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Remove(TMG.AgentBased.Tours.ITrip)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<ITrip>.Remove
+    fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of ITrip).Remove
+    fullName: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Count
+  commentId: P:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.Count
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.Count
+  name: Count
+  nameWithType: ICollection<ITrip>.Count
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.Count
+  nameWithType.vb: ICollection(Of ITrip).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).Count
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: ICollection<ITrip>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>.IsReadOnly
+  nameWithType.vb: ICollection(Of ITrip).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip).IsReadOnly
+- uid: System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<ITrip>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<TMG.AgentBased.Tours.ITrip>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of ITrip).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TMG.AgentBased.Tours.ITrip).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<ITrip>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<TMG.AgentBased.Tours.ITrip>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of ITrip).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of TMG.AgentBased.Tours.ITrip).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Add(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<T>.Add
+    fullName: System.Collections.Generic.ICollection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of T).Add
+    fullName: System.Collections.Generic.ICollection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  commentId: T:System.Collections.Generic.ICollection{TMG.AgentBased.Tours.ITrip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<ITrip>
+  nameWithType: ICollection<ITrip>
+  fullName: System.Collections.Generic.ICollection<TMG.AgentBased.Tours.ITrip>
+  nameWithType.vb: ICollection(Of ITrip)
+  fullName.vb: System.Collections.Generic.ICollection(Of TMG.AgentBased.Tours.ITrip)
+  name.vb: ICollection(Of ITrip)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<T>.Clear
+    fullName: System.Collections.Generic.ICollection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of T).Clear
+    fullName: System.Collections.Generic.ICollection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<T>.Contains
+    fullName: System.Collections.Generic.ICollection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of T).Contains
+    fullName: System.Collections.Generic.ICollection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: ICollection<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<T>.CopyTo
+    fullName: System.Collections.Generic.ICollection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of T).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<T>.Remove
+    fullName: System.Collections.Generic.ICollection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of T).Remove
+    fullName: System.Collections.Generic.ICollection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}
+  commentId: T:System.Collections.Generic.IEnumerable{TMG.AgentBased.Tours.ITrip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ITrip>
+  nameWithType: IEnumerable<ITrip>
+  fullName: System.Collections.Generic.IEnumerable<TMG.AgentBased.Tours.ITrip>
+  nameWithType.vb: IEnumerable(Of ITrip)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TMG.AgentBased.Tours.ITrip)
+  name.vb: IEnumerable(Of ITrip)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.AgentBased.Tours.ITrip
+    name: ITrip
+    nameWithType: ITrip
+    fullName: TMG.AgentBased.Tours.ITrip
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.AgentBased.Tours.ITripChain.Person*
+  commentId: Overload:TMG.AgentBased.Tours.ITripChain.Person
+  name: Person
+  nameWithType: ITripChain.Person
+  fullName: TMG.AgentBased.Tours.ITripChain.Person
+- uid: TMG.IPerson
+  commentId: T:TMG.IPerson
+  parent: TMG
+  name: IPerson
+  nameWithType: IPerson
+  fullName: TMG.IPerson
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.AgentBased.Tours.ITripChain.TripChainIndex*
+  commentId: Overload:TMG.AgentBased.Tours.ITripChain.TripChainIndex
+  name: TripChainIndex
+  nameWithType: ITripChain.TripChainIndex
+  fullName: TMG.AgentBased.Tours.ITripChain.TripChainIndex
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.AgentBased.Tours.ITripChain.Item*
+  commentId: Overload:TMG.AgentBased.Tours.ITripChain.Item
+  name: Item
+  nameWithType: ITripChain.Item
+  fullName: TMG.AgentBased.Tours.ITripChain.Item
+- uid: TMG.AgentBased.Tours.ITrip
+  commentId: T:TMG.AgentBased.Tours.ITrip
+  parent: TMG.AgentBased.Tours
+  name: ITrip
+  nameWithType: ITrip
+  fullName: TMG.AgentBased.Tours.ITrip

@@ -1,0 +1,953 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.LinkedParameterModel
+  commentId: T:XTMF.LinkedParameterModel
+  id: LinkedParameterModel
+  parent: XTMF
+  children:
+  - XTMF.LinkedParameterModel.#ctor(XTMF.ILinkedParameter,XTMF.ModelSystemEditingSession,XTMF.ModelSystemModel)
+  - XTMF.LinkedParameterModel.AddParameter(XTMF.ParameterModel,System.String@)
+  - XTMF.LinkedParameterModel.GetParameters
+  - XTMF.LinkedParameterModel.GetValue
+  - XTMF.LinkedParameterModel.Name
+  - XTMF.LinkedParameterModel.OnPropertyChanged(System.String)
+  - XTMF.LinkedParameterModel.PropertyChanged
+  - XTMF.LinkedParameterModel.RemoveParameter(XTMF.ParameterModel,System.String@)
+  - XTMF.LinkedParameterModel.SetName(System.String,System.String@)
+  - XTMF.LinkedParameterModel.SetValue(System.String,System.String@)
+  langs:
+  - csharp
+  - vb
+  name: LinkedParameterModel
+  nameWithType: LinkedParameterModel
+  fullName: XTMF.LinkedParameterModel
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinkedParameterModel
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 32
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe linked parameter model provides an interface into the logic of a linked parameter without directly changing them\n"
+  example: []
+  syntax:
+    content: 'public class LinkedParameterModel : INotifyPropertyChanged'
+    content.vb: >-
+      Public Class LinkedParameterModel
+          Implements INotifyPropertyChanged
+  inheritance:
+  - System.Object
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: XTMF.LinkedParameterModel.#ctor(XTMF.ILinkedParameter,XTMF.ModelSystemEditingSession,XTMF.ModelSystemModel)
+  commentId: M:XTMF.LinkedParameterModel.#ctor(XTMF.ILinkedParameter,XTMF.ModelSystemEditingSession,XTMF.ModelSystemModel)
+  id: '#ctor(XTMF.ILinkedParameter,XTMF.ModelSystemEditingSession,XTMF.ModelSystemModel)'
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: LinkedParameterModel(ILinkedParameter, ModelSystemEditingSession, ModelSystemModel)
+  nameWithType: LinkedParameterModel.LinkedParameterModel(ILinkedParameter, ModelSystemEditingSession, ModelSystemModel)
+  fullName: XTMF.LinkedParameterModel.LinkedParameterModel(XTMF.ILinkedParameter, XTMF.ModelSystemEditingSession, XTMF.ModelSystemModel)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 49
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public LinkedParameterModel(ILinkedParameter linkedParameter, ModelSystemEditingSession session, ModelSystemModel modelSystem)
+    parameters:
+    - id: linkedParameter
+      type: XTMF.ILinkedParameter
+      description: ''
+    - id: session
+      type: XTMF.ModelSystemEditingSession
+      description: ''
+    - id: modelSystem
+      type: XTMF.ModelSystemModel
+      description: ''
+    content.vb: Public Sub New(linkedParameter As ILinkedParameter, session As ModelSystemEditingSession, modelSystem As ModelSystemModel)
+  overload: XTMF.LinkedParameterModel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameterModel.PropertyChanged
+  commentId: E:XTMF.LinkedParameterModel.PropertyChanged
+  id: PropertyChanged
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: PropertyChanged
+  nameWithType: LinkedParameterModel.PropertyChanged
+  fullName: XTMF.LinkedParameterModel.PropertyChanged
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PropertyChanged
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 83
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event PropertyChangedEventHandler PropertyChanged
+    return:
+      type: System.ComponentModel.PropertyChangedEventHandler
+    content.vb: Public Event PropertyChanged As PropertyChangedEventHandler
+  implements:
+  - System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameterModel.Name
+  commentId: P:XTMF.LinkedParameterModel.Name
+  id: Name
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: LinkedParameterModel.Name
+  fullName: XTMF.LinkedParameterModel.Name
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 94
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGets the name of the linked parameter\n"
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the linked parameter
+    content.vb: Public ReadOnly Property Name As String
+  overload: XTMF.LinkedParameterModel.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.LinkedParameterModel.SetName(System.String,System.String@)
+  commentId: M:XTMF.LinkedParameterModel.SetName(System.String,System.String@)
+  id: SetName(System.String,System.String@)
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: SetName(String, ref String)
+  nameWithType: LinkedParameterModel.SetName(String, ref String)
+  fullName: XTMF.LinkedParameterModel.SetName(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SetName
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 102
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nSets the name of the linked parameter\n"
+  example: []
+  syntax:
+    content: public bool SetName(string newName, ref string error)
+    parameters:
+    - id: newName
+      type: System.String
+      description: The desired new name
+    - id: error
+      type: System.String
+      description: A message describing why the operation failed.
+    return:
+      type: System.Boolean
+      description: True if the name was changed, false otherwise.
+    content.vb: Public Function SetName(newName As String, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameterModel.SetName*
+  nameWithType.vb: LinkedParameterModel.SetName(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameterModel.SetName(System.String, ByRef System.String)
+  name.vb: SetName(String, ByRef String)
+- uid: XTMF.LinkedParameterModel.GetParameters
+  commentId: M:XTMF.LinkedParameterModel.GetParameters
+  id: GetParameters
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: GetParameters()
+  nameWithType: LinkedParameterModel.GetParameters()
+  fullName: XTMF.LinkedParameterModel.GetParameters()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetParameters
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 129
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public List<ParameterModel> GetParameters()
+    return:
+      type: System.Collections.Generic.List{XTMF.ParameterModel}
+      description: ''
+    content.vb: Public Function GetParameters As List(Of ParameterModel)
+  overload: XTMF.LinkedParameterModel.GetParameters*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameterModel.AddParameter(XTMF.ParameterModel,System.String@)
+  commentId: M:XTMF.LinkedParameterModel.AddParameter(XTMF.ParameterModel,System.String@)
+  id: AddParameter(XTMF.ParameterModel,System.String@)
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: AddParameter(ParameterModel, ref String)
+  nameWithType: LinkedParameterModel.AddParameter(ParameterModel, ref String)
+  fullName: XTMF.LinkedParameterModel.AddParameter(XTMF.ParameterModel, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AddParameter
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 163
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAdd a new parameter to this linked parameter\n"
+  example: []
+  syntax:
+    content: public bool AddParameter(ParameterModel toAdd, ref string error)
+    parameters:
+    - id: toAdd
+      type: XTMF.ParameterModel
+      description: The parameter to add
+    - id: error
+      type: System.String
+      description: This contains an error message if this returns false
+    return:
+      type: System.Boolean
+      description: True if we added the parameter to the linked parameter, false if it failed.
+    content.vb: Public Function AddParameter(toAdd As ParameterModel, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameterModel.AddParameter*
+  nameWithType.vb: LinkedParameterModel.AddParameter(ParameterModel, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameterModel.AddParameter(XTMF.ParameterModel, ByRef System.String)
+  name.vb: AddParameter(ParameterModel, ByRef String)
+- uid: XTMF.LinkedParameterModel.RemoveParameter(XTMF.ParameterModel,System.String@)
+  commentId: M:XTMF.LinkedParameterModel.RemoveParameter(XTMF.ParameterModel,System.String@)
+  id: RemoveParameter(XTMF.ParameterModel,System.String@)
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: RemoveParameter(ParameterModel, ref String)
+  nameWithType: LinkedParameterModel.RemoveParameter(ParameterModel, ref String)
+  fullName: XTMF.LinkedParameterModel.RemoveParameter(XTMF.ParameterModel, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RemoveParameter
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 248
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nRemoves a parameter from this linked parameter\n"
+  example: []
+  syntax:
+    content: public bool RemoveParameter(ParameterModel toRemove, ref string error)
+    parameters:
+    - id: toRemove
+      type: XTMF.ParameterModel
+      description: The parameter to remove
+    - id: error
+      type: System.String
+      description: An error message if this is not possible
+    return:
+      type: System.Boolean
+      description: True if the parameter was removed, false if it was not.
+    content.vb: Public Function RemoveParameter(toRemove As ParameterModel, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameterModel.RemoveParameter*
+  nameWithType.vb: LinkedParameterModel.RemoveParameter(ParameterModel, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameterModel.RemoveParameter(XTMF.ParameterModel, ByRef System.String)
+  name.vb: RemoveParameter(ParameterModel, ByRef String)
+- uid: XTMF.LinkedParameterModel.SetValue(System.String,System.String@)
+  commentId: M:XTMF.LinkedParameterModel.SetValue(System.String,System.String@)
+  id: SetValue(System.String,System.String@)
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: SetValue(String, ref String)
+  nameWithType: LinkedParameterModel.SetValue(String, ref String)
+  fullName: XTMF.LinkedParameterModel.SetValue(System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SetValue
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 299
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThis will set the value of the linked parameter and all contained parameter to the given value\n"
+  example: []
+  syntax:
+    content: public bool SetValue(string newValue, ref string error)
+    parameters:
+    - id: newValue
+      type: System.String
+      description: The value to set it to.
+    - id: error
+      type: System.String
+      description: Contains a message in case of an error.
+    return:
+      type: System.Boolean
+      description: True if successful, false in case of failure.
+    content.vb: Public Function SetValue(newValue As String, ByRef error As String) As Boolean
+  overload: XTMF.LinkedParameterModel.SetValue*
+  nameWithType.vb: LinkedParameterModel.SetValue(String, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.LinkedParameterModel.SetValue(System.String, ByRef System.String)
+  name.vb: SetValue(String, ByRef String)
+- uid: XTMF.LinkedParameterModel.GetValue
+  commentId: M:XTMF.LinkedParameterModel.GetValue
+  id: GetValue
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: GetValue()
+  nameWithType: LinkedParameterModel.GetValue()
+  fullName: XTMF.LinkedParameterModel.GetValue()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetValue
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 356
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGets the value of the parameter\n"
+  example: []
+  syntax:
+    content: public string GetValue()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Function GetValue As String
+  overload: XTMF.LinkedParameterModel.GetValue*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.LinkedParameterModel.OnPropertyChanged(System.String)
+  commentId: M:XTMF.LinkedParameterModel.OnPropertyChanged(System.String)
+  id: OnPropertyChanged(System.String)
+  parent: XTMF.LinkedParameterModel
+  langs:
+  - csharp
+  - vb
+  name: OnPropertyChanged(String)
+  nameWithType: LinkedParameterModel.OnPropertyChanged(String)
+  fullName: XTMF.LinkedParameterModel.OnPropertyChanged(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/LinkedParameterModel.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OnPropertyChanged
+    path: ../../XTMF/Code/XTMF/Editing/LinkedParameterModel.cs
+    startLine: 358
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected virtual void OnPropertyChanged(string propertyName = null)
+    parameters:
+    - id: propertyName
+      type: System.String
+    content.vb: Protected Overridable Sub OnPropertyChanged(propertyName As String = Nothing)
+  overload: XTMF.LinkedParameterModel.OnPropertyChanged*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.ComponentModel.INotifyPropertyChanged
+  commentId: T:System.ComponentModel.INotifyPropertyChanged
+  parent: System.ComponentModel
+  isExternal: true
+  name: INotifyPropertyChanged
+  nameWithType: INotifyPropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel
+  commentId: N:System.ComponentModel
+  isExternal: true
+  name: System.ComponentModel
+  nameWithType: System.ComponentModel
+  fullName: System.ComponentModel
+- uid: XTMF.LinkedParameterModel.#ctor*
+  commentId: Overload:XTMF.LinkedParameterModel.#ctor
+  name: LinkedParameterModel
+  nameWithType: LinkedParameterModel.LinkedParameterModel
+  fullName: XTMF.LinkedParameterModel.LinkedParameterModel
+- uid: XTMF.ILinkedParameter
+  commentId: T:XTMF.ILinkedParameter
+  parent: XTMF
+  name: ILinkedParameter
+  nameWithType: ILinkedParameter
+  fullName: XTMF.ILinkedParameter
+- uid: XTMF.ModelSystemEditingSession
+  commentId: T:XTMF.ModelSystemEditingSession
+  parent: XTMF
+  name: ModelSystemEditingSession
+  nameWithType: ModelSystemEditingSession
+  fullName: XTMF.ModelSystemEditingSession
+- uid: XTMF.ModelSystemModel
+  commentId: T:XTMF.ModelSystemModel
+  parent: XTMF
+  name: ModelSystemModel
+  nameWithType: ModelSystemModel
+  fullName: XTMF.ModelSystemModel
+- uid: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  commentId: E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+  parent: System.ComponentModel.INotifyPropertyChanged
+  isExternal: true
+  name: PropertyChanged
+  nameWithType: INotifyPropertyChanged.PropertyChanged
+  fullName: System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+- uid: System.ComponentModel.PropertyChangedEventHandler
+  commentId: T:System.ComponentModel.PropertyChangedEventHandler
+  parent: System.ComponentModel
+  isExternal: true
+  name: PropertyChangedEventHandler
+  nameWithType: PropertyChangedEventHandler
+  fullName: System.ComponentModel.PropertyChangedEventHandler
+- uid: XTMF.LinkedParameterModel.Name*
+  commentId: Overload:XTMF.LinkedParameterModel.Name
+  name: Name
+  nameWithType: LinkedParameterModel.Name
+  fullName: XTMF.LinkedParameterModel.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.LinkedParameterModel.SetName*
+  commentId: Overload:XTMF.LinkedParameterModel.SetName
+  name: SetName
+  nameWithType: LinkedParameterModel.SetName
+  fullName: XTMF.LinkedParameterModel.SetName
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.LinkedParameterModel.GetParameters*
+  commentId: Overload:XTMF.LinkedParameterModel.GetParameters
+  name: GetParameters
+  nameWithType: LinkedParameterModel.GetParameters
+  fullName: XTMF.LinkedParameterModel.GetParameters
+- uid: System.Collections.Generic.List{XTMF.ParameterModel}
+  commentId: T:System.Collections.Generic.List{XTMF.ParameterModel}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ParameterModel>
+  nameWithType: List<ParameterModel>
+  fullName: System.Collections.Generic.List<XTMF.ParameterModel>
+  nameWithType.vb: List(Of ParameterModel)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ParameterModel)
+  name.vb: List(Of ParameterModel)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ParameterModel
+    name: ParameterModel
+    nameWithType: ParameterModel
+    fullName: XTMF.ParameterModel
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ParameterModel
+    name: ParameterModel
+    nameWithType: ParameterModel
+    fullName: XTMF.ParameterModel
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.LinkedParameterModel.AddParameter*
+  commentId: Overload:XTMF.LinkedParameterModel.AddParameter
+  name: AddParameter
+  nameWithType: LinkedParameterModel.AddParameter
+  fullName: XTMF.LinkedParameterModel.AddParameter
+- uid: XTMF.ParameterModel
+  commentId: T:XTMF.ParameterModel
+  parent: XTMF
+  name: ParameterModel
+  nameWithType: ParameterModel
+  fullName: XTMF.ParameterModel
+- uid: XTMF.LinkedParameterModel.RemoveParameter*
+  commentId: Overload:XTMF.LinkedParameterModel.RemoveParameter
+  name: RemoveParameter
+  nameWithType: LinkedParameterModel.RemoveParameter
+  fullName: XTMF.LinkedParameterModel.RemoveParameter
+- uid: XTMF.LinkedParameterModel.SetValue*
+  commentId: Overload:XTMF.LinkedParameterModel.SetValue
+  name: SetValue
+  nameWithType: LinkedParameterModel.SetValue
+  fullName: XTMF.LinkedParameterModel.SetValue
+- uid: XTMF.LinkedParameterModel.GetValue*
+  commentId: Overload:XTMF.LinkedParameterModel.GetValue
+  name: GetValue
+  nameWithType: LinkedParameterModel.GetValue
+  fullName: XTMF.LinkedParameterModel.GetValue
+- uid: XTMF.LinkedParameterModel.OnPropertyChanged*
+  commentId: Overload:XTMF.LinkedParameterModel.OnPropertyChanged
+  name: OnPropertyChanged
+  nameWithType: LinkedParameterModel.OnPropertyChanged
+  fullName: XTMF.LinkedParameterModel.OnPropertyChanged

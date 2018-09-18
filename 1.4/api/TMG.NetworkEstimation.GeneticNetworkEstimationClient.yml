@@ -1,0 +1,2582 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  commentId: T:TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  id: GeneticNetworkEstimationClient
+  parent: TMG.NetworkEstimation
+  children:
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Ai
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Client
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmeColumnSize
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmetoTtsFile
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroInputFile
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroOutputFile
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.ParameterInstructions
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation(System.String@)
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.TruthFile
+  - TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+  langs:
+  - csharp
+  - vb
+  name: GeneticNetworkEstimationClient
+  nameWithType: GeneticNetworkEstimationClient
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  type: Class
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GeneticNetworkEstimationClient
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 33
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: 'public class GeneticNetworkEstimationClient : I4StepModel, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IIterativeModel'
+    content.vb: >-
+      Public Class GeneticNetworkEstimationClient
+
+          Implements I4StepModel, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IIterativeModel
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.I4StepModel
+  - TMG.ITravelDemandModel
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  - TMG.IIterativeModel
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Ai
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Ai
+  id: Ai
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Ai
+  nameWithType: GeneticNetworkEstimationClient.Ai
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Ai
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Ai
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 36
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The AI that will be used to evaluate the given configuration", Required = true)]
+
+      public INetworkEstimationAI Ai
+    return:
+      type: TMG.NetworkEstimation.INetworkEstimationAI
+    content.vb: >-
+      <SubModelInformation(Description:="The AI that will be used to evaluate the given configuration", Required:=True)>
+
+      Public Ai As INetworkEstimationAI
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The AI that will be used to evaluate the given configuration
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Client
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Client
+  id: Client
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Client
+  nameWithType: GeneticNetworkEstimationClient.Client
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Client
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Client
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 38
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public IClient Client
+    return:
+      type: XTMF.Networking.IClient
+    content.vb: Public Client As IClient
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmeColumnSize
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmeColumnSize
+  id: EmmeColumnSize
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: EmmeColumnSize
+  nameWithType: GeneticNetworkEstimationClient.EmmeColumnSize
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmeColumnSize
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EmmeColumnSize
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 41
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Emme Column Size", 6, "The amount of data that we can fit into a column for emme.")]
+
+      public int EmmeColumnSize
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Emme Column Size", 6, "The amount of data that we can fit into a column for emme.")>
+
+      Public EmmeColumnSize As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Emme Column Size
+    - type: System.Int32
+      value: 6
+    - type: System.String
+      value: The amount of data that we can fit into a column for emme.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmetoTtsFile
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmetoTtsFile
+  id: EmmetoTtsFile
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: EmmetoTtsFile
+  nameWithType: GeneticNetworkEstimationClient.EmmetoTtsFile
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.EmmetoTtsFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EmmetoTtsFile
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 44
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("EMME To TTS", "../../Input/EMMEToTTS.csv", "CSV file to link EMME Lines to the TTS data.")]
+
+      public string EmmetoTtsFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("EMME To TTS", "../../Input/EMMEToTTS.csv", "CSV file to link EMME Lines to the TTS data.")>
+
+      Public EmmetoTtsFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: EMME To TTS
+    - type: System.String
+      value: ../../Input/EMMEToTTS.csv
+    - type: System.String
+      value: CSV file to link EMME Lines to the TTS data.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroInputFile
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroInputFile
+  id: MacroInputFile
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: MacroInputFile
+  nameWithType: GeneticNetworkEstimationClient.MacroInputFile
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroInputFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MacroInputFile
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 47
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Emme Input Output", "D:\\EMMENetworks\\Test_Transit-1\\Database\\cache\\scalars.311", "The name of the file the macro loads")]
+
+      public string MacroInputFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Emme Input Output", "D:\EMMENetworks\Test_Transit-1\Database\cache\scalars.311", "The name of the file the macro loads")>
+
+      Public MacroInputFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Emme Input Output
+    - type: System.String
+      value: D:\EMMENetworks\Test_Transit-1\Database\cache\scalars.311
+    - type: System.String
+      value: The name of the file the macro loads
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroOutputFile
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroOutputFile
+  id: MacroOutputFile
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: MacroOutputFile
+  nameWithType: GeneticNetworkEstimationClient.MacroOutputFile
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.MacroOutputFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MacroOutputFile
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 50
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Emme Macro Output", "D:\\EMMENetworks\\Test_Transit-1\\Database\\cache\\boardings_predicted.621", "The name of the file the macro creates")]
+
+      public string MacroOutputFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Emme Macro Output", "D:\EMMENetworks\Test_Transit-1\Database\cache\boardings_predicted.621", "The name of the file the macro creates")>
+
+      Public MacroOutputFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Emme Macro Output
+    - type: System.String
+      value: D:\EMMENetworks\Test_Transit-1\Database\cache\boardings_predicted.621
+    - type: System.String
+      value: The name of the file the macro creates
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ParameterInstructions
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ParameterInstructions
+  id: ParameterInstructions
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: ParameterInstructions
+  nameWithType: GeneticNetworkEstimationClient.ParameterInstructions
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ParameterInstructions
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParameterInstructions
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 53
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Parameter Instructions", "../../Input/ParameterInstructions.xml", "Describes which and how the parameters will be estimated.")]
+
+      public string ParameterInstructions
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Parameter Instructions", "../../Input/ParameterInstructions.xml", "Describes which and how the parameters will be estimated.")>
+
+      Public ParameterInstructions As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Parameter Instructions
+    - type: System.String
+      value: ../../Input/ParameterInstructions.xml
+    - type: System.String
+      value: Describes which and how the parameters will be estimated.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TruthFile
+  commentId: F:TMG.NetworkEstimation.GeneticNetworkEstimationClient.TruthFile
+  id: TruthFile
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: TruthFile
+  nameWithType: GeneticNetworkEstimationClient.TruthFile
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TruthFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TruthFile
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 56
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("TruthFile", "../../Input/TransitLineTruth.csv", "The name of the file the macro creates")]
+
+      public string TruthFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("TruthFile", "../../Input/TransitLineTruth.csv", "The name of the file the macro creates")>
+
+      Public TruthFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: TruthFile
+    - type: System.String
+      value: ../../Input/TransitLineTruth.csv
+    - type: System.String
+      value: The name of the file the macro creates
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+  id: CurrentIteration
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: CurrentIteration
+  nameWithType: GeneticNetworkEstimationClient.CurrentIteration
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CurrentIteration
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 74
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public int CurrentIteration { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentIteration As Integer
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration*
+  implements:
+  - TMG.IIterativeModel.CurrentIteration
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: GeneticNetworkEstimationClient.InputBaseDirectory
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 80
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property InputBaseDirectory As String
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+  id: Modes
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Modes
+  nameWithType: GeneticNetworkEstimationClient.Modes
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Modes
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 86
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public List<IModeChoiceNode> Modes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.IModeChoiceNode}
+    content.vb: Public Property Modes As List(Of IModeChoiceNode)
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes*
+  implements:
+  - TMG.I4StepModel.Modes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+  id: Name
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: GeneticNetworkEstimationClient.Name
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 93
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+  id: NetworkAssignment
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: NetworkAssignment
+  nameWithType: GeneticNetworkEstimationClient.NetworkAssignment
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkAssignment
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 99
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The network model that we want to estimate", Required = true)]
+
+      public INetworkAssignment NetworkAssignment { get; set; }
+    parameters: []
+    return:
+      type: TMG.INetworkAssignment
+    content.vb: >-
+      <SubModelInformation(Description:="The network model that we want to estimate", Required:=True)>
+
+      Public Property NetworkAssignment As INetworkAssignment
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment*
+  implements:
+  - TMG.I4StepModel.NetworkAssignment
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The network model that we want to estimate
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+  id: NetworkData
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: NetworkData
+  nameWithType: GeneticNetworkEstimationClient.NetworkData
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkData
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 102
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public IList<INetworkData> NetworkData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{TMG.INetworkData}
+    content.vb: Public Property NetworkData As IList(Of INetworkData)
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData*
+  implements:
+  - TMG.ITravelDemandModel.NetworkData
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: GeneticNetworkEstimationClient.OutputBaseDirectory
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 109
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+  id: Progress
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: GeneticNetworkEstimationClient.Progress
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 115
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+  id: ProgressColour
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: GeneticNetworkEstimationClient.ProgressColour
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 121
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+  id: Purpose
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Purpose
+  nameWithType: GeneticNetworkEstimationClient.Purpose
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Purpose
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 126
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public List<IPurpose> Purpose { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.IPurpose}
+    content.vb: Public Property Purpose As List(Of IPurpose)
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose*
+  implements:
+  - TMG.I4StepModel.Purpose
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+  id: TotalIterations
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: TotalIterations
+  nameWithType: GeneticNetworkEstimationClient.TotalIterations
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TotalIterations
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 133
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public int TotalIterations { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalIterations As Integer
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations*
+  implements:
+  - TMG.IIterativeModel.TotalIterations
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+  commentId: P:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+  id: ZoneSystem
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: ZoneSystem
+  nameWithType: GeneticNetworkEstimationClient.ZoneSystem
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneSystem
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 139
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public IZoneSystem ZoneSystem { get; set; }
+    parameters: []
+    return:
+      type: TMG.IZoneSystem
+    content.vb: Public Property ZoneSystem As IZoneSystem
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem*
+  implements:
+  - TMG.ITravelDemandModel.ZoneSystem
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest
+  commentId: M:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest
+  id: ExitRequest
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: GeneticNetworkEstimationClient.ExitRequest()
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 146
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation(System.String@)
+  commentId: M:TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: GeneticNetworkEstimationClient.RuntimeValidation(ref String)
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 152
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: GeneticNetworkEstimationClient.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start
+  commentId: M:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start
+  id: Start
+  parent: TMG.NetworkEstimation.GeneticNetworkEstimationClient
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: GeneticNetworkEstimationClient.Start()
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../XTMF/Code/NetworkEstimation/GeneticNetworkEstimationClient.cs
+    startLine: 162
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: TMG.NetworkEstimation
+  commentId: N:TMG.NetworkEstimation
+  isExternal: false
+  name: TMG.NetworkEstimation
+  nameWithType: TMG.NetworkEstimation
+  fullName: TMG.NetworkEstimation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.I4StepModel
+  commentId: T:TMG.I4StepModel
+  parent: TMG
+  isExternal: false
+  name: I4StepModel
+  nameWithType: I4StepModel
+  fullName: TMG.I4StepModel
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  isExternal: false
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  isExternal: false
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.IIterativeModel
+  commentId: T:TMG.IIterativeModel
+  parent: TMG
+  isExternal: false
+  name: IIterativeModel
+  nameWithType: IIterativeModel
+  fullName: TMG.IIterativeModel
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.NetworkEstimation.INetworkEstimationAI
+  commentId: T:TMG.NetworkEstimation.INetworkEstimationAI
+  parent: TMG.NetworkEstimation
+  isExternal: false
+  name: INetworkEstimationAI
+  nameWithType: INetworkEstimationAI
+  fullName: TMG.NetworkEstimation.INetworkEstimationAI
+- uid: XTMF.Networking.IClient
+  commentId: T:XTMF.Networking.IClient
+  parent: XTMF.Networking
+  isExternal: false
+  name: IClient
+  nameWithType: IClient
+  fullName: XTMF.Networking.IClient
+- uid: XTMF.Networking
+  commentId: N:XTMF.Networking
+  isExternal: false
+  name: XTMF.Networking
+  nameWithType: XTMF.Networking
+  fullName: XTMF.Networking
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+  isExternal: false
+  name: CurrentIteration
+  nameWithType: GeneticNetworkEstimationClient.CurrentIteration
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.CurrentIteration
+- uid: TMG.IIterativeModel.CurrentIteration
+  commentId: P:TMG.IIterativeModel.CurrentIteration
+  parent: TMG.IIterativeModel
+  isExternal: false
+  name: CurrentIteration
+  nameWithType: IIterativeModel.CurrentIteration
+  fullName: TMG.IIterativeModel.CurrentIteration
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: GeneticNetworkEstimationClient.InputBaseDirectory
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+  isExternal: false
+  name: Modes
+  nameWithType: GeneticNetworkEstimationClient.Modes
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Modes
+- uid: TMG.I4StepModel.Modes
+  commentId: P:TMG.I4StepModel.Modes
+  parent: TMG.I4StepModel
+  isExternal: false
+  name: Modes
+  nameWithType: I4StepModel.Modes
+  fullName: TMG.I4StepModel.Modes
+- uid: System.Collections.Generic.List{TMG.IModeChoiceNode}
+  commentId: T:System.Collections.Generic.List{TMG.IModeChoiceNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModeChoiceNode>
+  nameWithType: List<IModeChoiceNode>
+  fullName: System.Collections.Generic.List<TMG.IModeChoiceNode>
+  nameWithType.vb: List(Of IModeChoiceNode)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IModeChoiceNode)
+  name.vb: List(Of IModeChoiceNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IModeChoiceNode
+    name: IModeChoiceNode
+    nameWithType: IModeChoiceNode
+    fullName: TMG.IModeChoiceNode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IModeChoiceNode
+    name: IModeChoiceNode
+    nameWithType: IModeChoiceNode
+    fullName: TMG.IModeChoiceNode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+  isExternal: false
+  name: Name
+  nameWithType: GeneticNetworkEstimationClient.Name
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+  isExternal: false
+  name: NetworkAssignment
+  nameWithType: GeneticNetworkEstimationClient.NetworkAssignment
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkAssignment
+- uid: TMG.I4StepModel.NetworkAssignment
+  commentId: P:TMG.I4StepModel.NetworkAssignment
+  parent: TMG.I4StepModel
+  isExternal: false
+  name: NetworkAssignment
+  nameWithType: I4StepModel.NetworkAssignment
+  fullName: TMG.I4StepModel.NetworkAssignment
+- uid: TMG.INetworkAssignment
+  commentId: T:TMG.INetworkAssignment
+  parent: TMG
+  isExternal: false
+  name: INetworkAssignment
+  nameWithType: INetworkAssignment
+  fullName: TMG.INetworkAssignment
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+  isExternal: false
+  name: NetworkData
+  nameWithType: GeneticNetworkEstimationClient.NetworkData
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.NetworkData
+- uid: TMG.ITravelDemandModel.NetworkData
+  commentId: P:TMG.ITravelDemandModel.NetworkData
+  parent: TMG.ITravelDemandModel
+  isExternal: false
+  name: NetworkData
+  nameWithType: ITravelDemandModel.NetworkData
+  fullName: TMG.ITravelDemandModel.NetworkData
+- uid: System.Collections.Generic.IList{TMG.INetworkData}
+  commentId: T:System.Collections.Generic.IList{TMG.INetworkData}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<INetworkData>
+  nameWithType: IList<INetworkData>
+  fullName: System.Collections.Generic.IList<TMG.INetworkData>
+  nameWithType.vb: IList(Of INetworkData)
+  fullName.vb: System.Collections.Generic.IList(Of TMG.INetworkData)
+  name.vb: IList(Of INetworkData)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: GeneticNetworkEstimationClient.OutputBaseDirectory
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: GeneticNetworkEstimationClient.Progress
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: GeneticNetworkEstimationClient.ProgressColour
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+  isExternal: false
+  name: Purpose
+  nameWithType: GeneticNetworkEstimationClient.Purpose
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Purpose
+- uid: TMG.I4StepModel.Purpose
+  commentId: P:TMG.I4StepModel.Purpose
+  parent: TMG.I4StepModel
+  isExternal: false
+  name: Purpose
+  nameWithType: I4StepModel.Purpose
+  fullName: TMG.I4StepModel.Purpose
+- uid: System.Collections.Generic.List{TMG.IPurpose}
+  commentId: T:System.Collections.Generic.List{TMG.IPurpose}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPurpose>
+  nameWithType: List<IPurpose>
+  fullName: System.Collections.Generic.List<TMG.IPurpose>
+  nameWithType.vb: List(Of IPurpose)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IPurpose)
+  name.vb: List(Of IPurpose)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IPurpose
+    name: IPurpose
+    nameWithType: IPurpose
+    fullName: TMG.IPurpose
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IPurpose
+    name: IPurpose
+    nameWithType: IPurpose
+    fullName: TMG.IPurpose
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+  isExternal: false
+  name: TotalIterations
+  nameWithType: GeneticNetworkEstimationClient.TotalIterations
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.TotalIterations
+- uid: TMG.IIterativeModel.TotalIterations
+  commentId: P:TMG.IIterativeModel.TotalIterations
+  parent: TMG.IIterativeModel
+  isExternal: false
+  name: TotalIterations
+  nameWithType: IIterativeModel.TotalIterations
+  fullName: TMG.IIterativeModel.TotalIterations
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+  isExternal: false
+  name: ZoneSystem
+  nameWithType: GeneticNetworkEstimationClient.ZoneSystem
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ZoneSystem
+- uid: TMG.ITravelDemandModel.ZoneSystem
+  commentId: P:TMG.ITravelDemandModel.ZoneSystem
+  parent: TMG.ITravelDemandModel
+  isExternal: false
+  name: ZoneSystem
+  nameWithType: ITravelDemandModel.ZoneSystem
+  fullName: TMG.ITravelDemandModel.ZoneSystem
+- uid: TMG.IZoneSystem
+  commentId: T:TMG.IZoneSystem
+  parent: TMG
+  isExternal: false
+  name: IZoneSystem
+  nameWithType: IZoneSystem
+  fullName: TMG.IZoneSystem
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest
+  isExternal: false
+  name: ExitRequest
+  nameWithType: GeneticNetworkEstimationClient.ExitRequest
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: GeneticNetworkEstimationClient.RuntimeValidation
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start*
+  commentId: Overload:TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start
+  isExternal: false
+  name: Start
+  nameWithType: GeneticNetworkEstimationClient.Start
+  fullName: TMG.NetworkEstimation.GeneticNetworkEstimationClient.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  isExternal: false
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,1772 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.Editing.EditingStack
+  commentId: T:XTMF.Editing.EditingStack
+  id: EditingStack
+  parent: XTMF.Editing
+  children:
+  - XTMF.Editing.EditingStack.#ctor(System.Int32)
+  - XTMF.Editing.EditingStack.Add(XTMF.Editing.XTMFCommand)
+  - XTMF.Editing.EditingStack.Capacity
+  - XTMF.Editing.EditingStack.Clear
+  - XTMF.Editing.EditingStack.Contains(XTMF.Editing.XTMFCommand)
+  - XTMF.Editing.EditingStack.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  - XTMF.Editing.EditingStack.Count
+  - XTMF.Editing.EditingStack.GetEnumerator
+  - XTMF.Editing.EditingStack.IsReadOnly
+  - XTMF.Editing.EditingStack.Pop
+  - XTMF.Editing.EditingStack.Remove(XTMF.Editing.XTMFCommand)
+  - XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator
+  - XTMF.Editing.EditingStack.TryPop(XTMF.Editing.XTMFCommand@)
+  langs:
+  - csharp
+  - vb
+  name: EditingStack
+  nameWithType: EditingStack
+  fullName: XTMF.Editing.EditingStack
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EditingStack
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 29
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nProvides support for a rolling stack\n"
+  example: []
+  syntax:
+    content: 'public sealed class EditingStack : ICollection<XTMFCommand>, IEnumerable<XTMFCommand>, IEnumerable'
+    content.vb: >-
+      Public NotInheritable Class EditingStack
+          Implements ICollection(Of XTMFCommand), IEnumerable(Of XTMFCommand), IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  - System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: XTMF.Editing.EditingStack.#ctor(System.Int32)
+  commentId: M:XTMF.Editing.EditingStack.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: EditingStack(Int32)
+  nameWithType: EditingStack.EditingStack(Int32)
+  fullName: XTMF.Editing.EditingStack.EditingStack(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 31
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public EditingStack(int capacity)
+    parameters:
+    - id: capacity
+      type: System.Int32
+    content.vb: Public Sub New(capacity As Integer)
+  overload: XTMF.Editing.EditingStack.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.Capacity
+  commentId: P:XTMF.Editing.EditingStack.Capacity
+  id: Capacity
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Capacity
+  nameWithType: EditingStack.Capacity
+  fullName: XTMF.Editing.EditingStack.Capacity
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Capacity
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 42
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public int Capacity { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Capacity As Integer
+  overload: XTMF.Editing.EditingStack.Capacity*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.Editing.EditingStack.Count
+  commentId: P:XTMF.Editing.EditingStack.Count
+  id: Count
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: EditingStack.Count
+  fullName: XTMF.Editing.EditingStack.Count
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Count
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 44
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: XTMF.Editing.EditingStack.Count*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Count
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.Editing.EditingStack.IsReadOnly
+  commentId: P:XTMF.Editing.EditingStack.IsReadOnly
+  id: IsReadOnly
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: EditingStack.IsReadOnly
+  fullName: XTMF.Editing.EditingStack.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsReadOnly
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 46
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: XTMF.Editing.EditingStack.IsReadOnly*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.IsReadOnly
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.Editing.EditingStack.Add(XTMF.Editing.XTMFCommand)
+  commentId: M:XTMF.Editing.EditingStack.Add(XTMF.Editing.XTMFCommand)
+  id: Add(XTMF.Editing.XTMFCommand)
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Add(XTMFCommand)
+  nameWithType: EditingStack.Add(XTMFCommand)
+  fullName: XTMF.Editing.EditingStack.Add(XTMF.Editing.XTMFCommand)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 56
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nAdd a new command onto the stack\n"
+  example: []
+  syntax:
+    content: public void Add(XTMFCommand item)
+    parameters:
+    - id: item
+      type: XTMF.Editing.XTMFCommand
+      description: ''
+    content.vb: Public Sub Add(item As XTMFCommand)
+  overload: XTMF.Editing.EditingStack.Add*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Add(XTMF.Editing.XTMFCommand)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.Pop
+  commentId: M:XTMF.Editing.EditingStack.Pop
+  id: Pop
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Pop()
+  nameWithType: EditingStack.Pop()
+  fullName: XTMF.Editing.EditingStack.Pop()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Pop
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 75
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nGet the top element off of the stack\n"
+  example: []
+  syntax:
+    content: public XTMFCommand Pop()
+    return:
+      type: XTMF.Editing.XTMFCommand
+      description: The top element
+    content.vb: Public Function Pop As XTMFCommand
+  overload: XTMF.Editing.EditingStack.Pop*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.TryPop(XTMF.Editing.XTMFCommand@)
+  commentId: M:XTMF.Editing.EditingStack.TryPop(XTMF.Editing.XTMFCommand@)
+  id: TryPop(XTMF.Editing.XTMFCommand@)
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: TryPop(out XTMFCommand)
+  nameWithType: EditingStack.TryPop(out XTMFCommand)
+  fullName: XTMF.Editing.EditingStack.TryPop(out XTMF.Editing.XTMFCommand)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TryPop
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 89
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nAttempt to pop the top element off of the stack\n"
+  example: []
+  syntax:
+    content: public bool TryPop(out XTMFCommand command)
+    parameters:
+    - id: command
+      type: XTMF.Editing.XTMFCommand
+      description: The command that was popped off the stack, null if it failed.
+    return:
+      type: System.Boolean
+      description: If the pop was successful
+    content.vb: Public Function TryPop(ByRef command As XTMFCommand) As Boolean
+  overload: XTMF.Editing.EditingStack.TryPop*
+  nameWithType.vb: EditingStack.TryPop(ByRef XTMFCommand)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Editing.EditingStack.TryPop(ByRef XTMF.Editing.XTMFCommand)
+  name.vb: TryPop(ByRef XTMFCommand)
+- uid: XTMF.Editing.EditingStack.Clear
+  commentId: M:XTMF.Editing.EditingStack.Clear
+  id: Clear
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: EditingStack.Clear()
+  fullName: XTMF.Editing.EditingStack.Clear()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Clear
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 105
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear
+  overload: XTMF.Editing.EditingStack.Clear*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Clear
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.Contains(XTMF.Editing.XTMFCommand)
+  commentId: M:XTMF.Editing.EditingStack.Contains(XTMF.Editing.XTMFCommand)
+  id: Contains(XTMF.Editing.XTMFCommand)
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Contains(XTMFCommand)
+  nameWithType: EditingStack.Contains(XTMFCommand)
+  fullName: XTMF.Editing.EditingStack.Contains(XTMF.Editing.XTMFCommand)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Contains
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 114
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public bool Contains(XTMFCommand item)
+    parameters:
+    - id: item
+      type: XTMF.Editing.XTMFCommand
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(item As XTMFCommand) As Boolean
+  overload: XTMF.Editing.EditingStack.Contains*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Contains(XTMF.Editing.XTMFCommand)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  commentId: M:XTMF.Editing.EditingStack.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  id: CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(XTMFCommand[], Int32)
+  nameWithType: EditingStack.CopyTo(XTMFCommand[], Int32)
+  fullName: XTMF.Editing.EditingStack.CopyTo(XTMF.Editing.XTMFCommand[], System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CopyTo
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 131
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public void CopyTo(XTMFCommand[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: XTMF.Editing.XTMFCommand[]
+    - id: arrayIndex
+      type: System.Int32
+    content.vb: Public Sub CopyTo(array As XTMFCommand(), arrayIndex As Integer)
+  overload: XTMF.Editing.EditingStack.CopyTo*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  nameWithType.vb: EditingStack.CopyTo(XTMFCommand(), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: XTMF.Editing.EditingStack.CopyTo(XTMF.Editing.XTMFCommand(), System.Int32)
+  name.vb: CopyTo(XTMFCommand(), Int32)
+- uid: XTMF.Editing.EditingStack.GetEnumerator
+  commentId: M:XTMF.Editing.EditingStack.GetEnumerator
+  id: GetEnumerator
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: EditingStack.GetEnumerator()
+  fullName: XTMF.Editing.EditingStack.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetEnumerator
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 152
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public IEnumerator<XTMFCommand> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{XTMF.Editing.XTMFCommand}
+    content.vb: Public Function GetEnumerator As IEnumerator(Of XTMFCommand)
+  overload: XTMF.Editing.EditingStack.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}.GetEnumerator
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.Remove(XTMF.Editing.XTMFCommand)
+  commentId: M:XTMF.Editing.EditingStack.Remove(XTMF.Editing.XTMFCommand)
+  id: Remove(XTMF.Editing.XTMFCommand)
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: Remove(XTMFCommand)
+  nameWithType: EditingStack.Remove(XTMFCommand)
+  fullName: XTMF.Editing.EditingStack.Remove(XTMF.Editing.XTMFCommand)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Remove
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 165
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public bool Remove(XTMFCommand item)
+    parameters:
+    - id: item
+      type: XTMF.Editing.XTMFCommand
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(item As XTMFCommand) As Boolean
+  overload: XTMF.Editing.EditingStack.Remove*
+  implements:
+  - System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Remove(XTMF.Editing.XTMFCommand)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: XTMF.Editing.EditingStack
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: EditingStack.IEnumerable.GetEnumerator()
+  fullName: XTMF.Editing.EditingStack.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/Editing/EditingStack.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: ../../XTMF/Code/XTMF/Editing/EditingStack.cs
+    startLine: 170
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: EditingStack.System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+references:
+- uid: XTMF.Editing
+  commentId: N:XTMF.Editing
+  name: XTMF.Editing
+  nameWithType: XTMF.Editing
+  fullName: XTMF.Editing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  commentId: T:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<XTMFCommand>
+  nameWithType: ICollection<XTMFCommand>
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>
+  nameWithType.vb: ICollection(Of XTMFCommand)
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand)
+  name.vb: ICollection(Of XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}
+  commentId: T:System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<XTMFCommand>
+  nameWithType: IEnumerable<XTMFCommand>
+  fullName: System.Collections.Generic.IEnumerable<XTMF.Editing.XTMFCommand>
+  nameWithType.vb: IEnumerable(Of XTMFCommand)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of XTMF.Editing.XTMFCommand)
+  name.vb: IEnumerable(Of XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: true
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: XTMF.Editing.EditingStack.#ctor*
+  commentId: Overload:XTMF.Editing.EditingStack.#ctor
+  name: EditingStack
+  nameWithType: EditingStack.EditingStack
+  fullName: XTMF.Editing.EditingStack.EditingStack
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XTMF.Editing.EditingStack.Capacity*
+  commentId: Overload:XTMF.Editing.EditingStack.Capacity
+  name: Capacity
+  nameWithType: EditingStack.Capacity
+  fullName: XTMF.Editing.EditingStack.Capacity
+- uid: XTMF.Editing.EditingStack.Count*
+  commentId: Overload:XTMF.Editing.EditingStack.Count
+  name: Count
+  nameWithType: EditingStack.Count
+  fullName: XTMF.Editing.EditingStack.Count
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Count
+  commentId: P:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Count
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.Count
+  name: Count
+  nameWithType: ICollection<XTMFCommand>.Count
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Count
+  nameWithType.vb: ICollection(Of XTMFCommand).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Count
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: XTMF.Editing.EditingStack.IsReadOnly*
+  commentId: Overload:XTMF.Editing.EditingStack.IsReadOnly
+  name: IsReadOnly
+  nameWithType: EditingStack.IsReadOnly
+  fullName: XTMF.Editing.EditingStack.IsReadOnly
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: ICollection<XTMFCommand>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.IsReadOnly
+  nameWithType.vb: ICollection(Of XTMFCommand).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).IsReadOnly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: XTMF.Editing.EditingStack.Add*
+  commentId: Overload:XTMF.Editing.EditingStack.Add
+  name: Add
+  nameWithType: EditingStack.Add
+  fullName: XTMF.Editing.EditingStack.Add
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Add(XTMF.Editing.XTMFCommand)
+  commentId: M:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Add(XTMF.Editing.XTMFCommand)
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.Add(`0)
+  name: Add(XTMFCommand)
+  nameWithType: ICollection<XTMFCommand>.Add(XTMFCommand)
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Add(XTMF.Editing.XTMFCommand)
+  nameWithType.vb: ICollection(Of XTMFCommand).Add(XTMFCommand)
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Add(XTMF.Editing.XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<XTMFCommand>.Add
+    fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of XTMFCommand).Add
+    fullName: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.XTMFCommand
+  commentId: T:XTMF.Editing.XTMFCommand
+  parent: XTMF.Editing
+  name: XTMFCommand
+  nameWithType: XTMFCommand
+  fullName: XTMF.Editing.XTMFCommand
+- uid: System.Collections.Generic.ICollection`1.Add(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<T>.Add
+    fullName: System.Collections.Generic.ICollection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of T).Add
+    fullName: System.Collections.Generic.ICollection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.Pop*
+  commentId: Overload:XTMF.Editing.EditingStack.Pop
+  name: Pop
+  nameWithType: EditingStack.Pop
+  fullName: XTMF.Editing.EditingStack.Pop
+- uid: XTMF.Editing.EditingStack.TryPop*
+  commentId: Overload:XTMF.Editing.EditingStack.TryPop
+  name: TryPop
+  nameWithType: EditingStack.TryPop
+  fullName: XTMF.Editing.EditingStack.TryPop
+- uid: XTMF.Editing.EditingStack.Clear*
+  commentId: Overload:XTMF.Editing.EditingStack.Clear
+  name: Clear
+  nameWithType: EditingStack.Clear
+  fullName: XTMF.Editing.EditingStack.Clear
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Clear
+  commentId: M:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Clear
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  name: Clear()
+  nameWithType: ICollection<XTMFCommand>.Clear()
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Clear()
+  nameWithType.vb: ICollection(Of XTMFCommand).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<XTMFCommand>.Clear
+    fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of XTMFCommand).Clear
+    fullName: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<T>.Clear
+    fullName: System.Collections.Generic.ICollection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of T).Clear
+    fullName: System.Collections.Generic.ICollection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.Contains*
+  commentId: Overload:XTMF.Editing.EditingStack.Contains
+  name: Contains
+  nameWithType: EditingStack.Contains
+  fullName: XTMF.Editing.EditingStack.Contains
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Contains(XTMF.Editing.XTMFCommand)
+  commentId: M:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Contains(XTMF.Editing.XTMFCommand)
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  name: Contains(XTMFCommand)
+  nameWithType: ICollection<XTMFCommand>.Contains(XTMFCommand)
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Contains(XTMF.Editing.XTMFCommand)
+  nameWithType.vb: ICollection(Of XTMFCommand).Contains(XTMFCommand)
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Contains(XTMF.Editing.XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<XTMFCommand>.Contains
+    fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of XTMFCommand).Contains
+    fullName: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<T>.Contains
+    fullName: System.Collections.Generic.ICollection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of T).Contains
+    fullName: System.Collections.Generic.ICollection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.CopyTo*
+  commentId: Overload:XTMF.Editing.EditingStack.CopyTo
+  name: CopyTo
+  nameWithType: EditingStack.CopyTo
+  fullName: XTMF.Editing.EditingStack.CopyTo
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.CopyTo(XTMF.Editing.XTMFCommand[],System.Int32)
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(XTMFCommand[], Int32)
+  nameWithType: ICollection<XTMFCommand>.CopyTo(XTMFCommand[], Int32)
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.CopyTo(XTMF.Editing.XTMFCommand[], System.Int32)
+  nameWithType.vb: ICollection(Of XTMFCommand).CopyTo(XTMFCommand(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).CopyTo(XTMF.Editing.XTMFCommand(), System.Int32)
+  name.vb: CopyTo(XTMFCommand(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<XTMFCommand>.CopyTo
+    fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of XTMFCommand).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.XTMFCommand[]
+  isExternal: true
+  name: XTMFCommand[]
+  nameWithType: XTMFCommand[]
+  fullName: XTMF.Editing.XTMFCommand[]
+  nameWithType.vb: XTMFCommand()
+  fullName.vb: XTMF.Editing.XTMFCommand()
+  name.vb: XTMFCommand()
+  spec.csharp:
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: ICollection<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<T>.CopyTo
+    fullName: System.Collections.Generic.ICollection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of T).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.GetEnumerator*
+  commentId: Overload:XTMF.Editing.EditingStack.GetEnumerator
+  name: GetEnumerator
+  nameWithType: EditingStack.GetEnumerator
+  fullName: XTMF.Editing.EditingStack.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<XTMFCommand>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<XTMF.Editing.XTMFCommand>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of XTMFCommand).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of XTMF.Editing.XTMFCommand).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<XTMFCommand>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<XTMF.Editing.XTMFCommand>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of XTMFCommand).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of XTMF.Editing.XTMFCommand).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{XTMF.Editing.XTMFCommand}
+  commentId: T:System.Collections.Generic.IEnumerator{XTMF.Editing.XTMFCommand}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<XTMFCommand>
+  nameWithType: IEnumerator<XTMFCommand>
+  fullName: System.Collections.Generic.IEnumerator<XTMF.Editing.XTMFCommand>
+  nameWithType.vb: IEnumerator(Of XTMFCommand)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of XTMF.Editing.XTMFCommand)
+  name.vb: IEnumerator(Of XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.Remove*
+  commentId: Overload:XTMF.Editing.EditingStack.Remove
+  name: Remove
+  nameWithType: EditingStack.Remove
+  fullName: XTMF.Editing.EditingStack.Remove
+- uid: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Remove(XTMF.Editing.XTMFCommand)
+  commentId: M:System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}.Remove(XTMF.Editing.XTMFCommand)
+  parent: System.Collections.Generic.ICollection{XTMF.Editing.XTMFCommand}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  name: Remove(XTMFCommand)
+  nameWithType: ICollection<XTMFCommand>.Remove(XTMFCommand)
+  fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Remove(XTMF.Editing.XTMFCommand)
+  nameWithType.vb: ICollection(Of XTMFCommand).Remove(XTMFCommand)
+  fullName.vb: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Remove(XTMF.Editing.XTMFCommand)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<XTMFCommand>.Remove
+    fullName: System.Collections.Generic.ICollection<XTMF.Editing.XTMFCommand>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of XTMFCommand).Remove
+    fullName: System.Collections.Generic.ICollection(Of XTMF.Editing.XTMFCommand).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.Editing.XTMFCommand
+    name: XTMFCommand
+    nameWithType: XTMFCommand
+    fullName: XTMF.Editing.XTMFCommand
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<T>.Remove
+    fullName: System.Collections.Generic.ICollection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of T).Remove
+    fullName: System.Collections.Generic.ICollection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:XTMF.Editing.EditingStack.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator
+  nameWithType: EditingStack.IEnumerable.GetEnumerator
+  fullName: XTMF.Editing.EditingStack.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: EditingStack.System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator

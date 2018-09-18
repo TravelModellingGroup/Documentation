@@ -1,0 +1,713 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  id: ModuleHelper
+  parent: TMG.Functions
+  children:
+  - TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  - TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  - TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  - TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource``1(XTMF.IDataSource{``0},XTMF.IResource,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Functions/ModuleHelper.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModuleHelper
+    path: ../../XTMF/Code/TMG.Functions/ModuleHelper.cs
+    startLine: 27
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nThis class is designed to contain functions to aid in module development\n"
+  example: []
+  syntax:
+    content: public static class ModuleHelper
+    content.vb: Public Module ModuleHelper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  id: EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExtensionMethod: true
+  parent: TMG.Functions.ModuleHelper
+  langs:
+  - csharp
+  - vb
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, ref String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, ref String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModuleHelper.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EnsureExactlyOneAndOfSameType
+    path: ../../XTMF/Code/TMG.Functions/ModuleHelper.cs
+    startLine: 37
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nInvoke this method during runtime to ensure that only one of the two given are setup to run and that only one is available.\n"
+  example: []
+  syntax:
+    content: public static bool EnsureExactlyOneAndOfSameType<T>(this IModule caller, IDataSource<T> dataSource, IResource resource, ref string error)
+    parameters:
+    - id: caller
+      type: XTMF.IModule
+      description: The method in runtime validation
+    - id: dataSource
+      type: XTMF.IDataSource{{T}}
+      description: ''
+    - id: resource
+      type: XTMF.IResource
+      description: ''
+    - id: error
+      type: System.String
+      description: A description of the error if one occurs
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+      description: True if there is no issue, false if both are either filler out or none are.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function EnsureExactlyOneAndOfSameType(Of T)(caller As IModule, dataSource As IDataSource(Of T), resource As IResource, ByRef error As String) As Boolean
+  overload: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType*
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, ByRef System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, ByRef String)
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  id: EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExtensionMethod: true
+  parent: TMG.Functions.ModuleHelper
+  langs:
+  - csharp
+  - vb
+  name: EnsureExactlyOne(IModule, IModule, IModule, ref String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, ref String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModuleHelper.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EnsureExactlyOne
+    path: ../../XTMF/Code/TMG.Functions/ModuleHelper.cs
+    startLine: 50
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nInvoke this method during runtime to ensure that only one of the two given are setup to run.\n"
+  example: []
+  syntax:
+    content: public static bool EnsureExactlyOne(this IModule caller, IModule first, IModule second, ref string error)
+    parameters:
+    - id: caller
+      type: XTMF.IModule
+      description: The method in runtime validation
+    - id: first
+      type: XTMF.IModule
+      description: The first module to test
+    - id: second
+      type: XTMF.IModule
+      description: The second module to test
+    - id: error
+      type: System.String
+      description: A description of the error if one occurs
+    return:
+      type: System.Boolean
+      description: True if there is no issue, false if both are either filler out or none are.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function EnsureExactlyOne(caller As IModule, first As IModule, second As IModule, ByRef error As String) As Boolean
+  overload: TMG.Functions.ModuleHelper.EnsureExactlyOne*
+  nameWithType.vb: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, ByRef System.String)
+  name.vb: EnsureExactlyOne(IModule, IModule, IModule, ByRef String)
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  id: EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExtensionMethod: true
+  parent: TMG.Functions.ModuleHelper
+  langs:
+  - csharp
+  - vb
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, ref String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, ref String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModuleHelper.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EnsureTypesMatch
+    path: ../../XTMF/Code/TMG.Functions/ModuleHelper.cs
+    startLine: 76
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nInvoke this method during runtime validation to ensure the type of a resource is the same as a datasource.\n"
+  example: []
+  syntax:
+    content: public static bool EnsureTypesMatch<T>(this IModule caller, IDataSource<T> dataSource, IResource resource, ref string error)
+    parameters:
+    - id: caller
+      type: XTMF.IModule
+      description: The calling module
+    - id: dataSource
+      type: XTMF.IDataSource{{T}}
+      description: The datasource module to check against
+    - id: resource
+      type: XTMF.IResource
+      description: The resource to check
+    - id: error
+      type: System.String
+      description: An error message if one occurs
+    typeParameters:
+    - id: T
+      description: The type of data
+    return:
+      type: System.Boolean
+      description: True if there is nothing wrong, false otherwise with message.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function EnsureTypesMatch(Of T)(caller As IModule, dataSource As IDataSource(Of T), resource As IResource, ByRef error As String) As Boolean
+  overload: TMG.Functions.ModuleHelper.EnsureTypesMatch*
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, ByRef System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, ByRef String)
+- uid: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource``1(XTMF.IDataSource{``0},XTMF.IResource,System.Boolean)
+  commentId: M:TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource``1(XTMF.IDataSource{``0},XTMF.IResource,System.Boolean)
+  id: GetDataFromDatasourceOrResource``1(XTMF.IDataSource{``0},XTMF.IResource,System.Boolean)
+  parent: TMG.Functions.ModuleHelper
+  langs:
+  - csharp
+  - vb
+  name: GetDataFromDatasourceOrResource<T>(IDataSource<T>, IResource, Boolean)
+  nameWithType: ModuleHelper.GetDataFromDatasourceOrResource<T>(IDataSource<T>, IResource, Boolean)
+  fullName: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource<T>(XTMF.IDataSource<T>, XTMF.IResource, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModuleHelper.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetDataFromDatasourceOrResource
+    path: ../../XTMF/Code/TMG.Functions/ModuleHelper.cs
+    startLine: 94
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGet the data from either module.  Optionally unload the data afterwards.\n"
+  example: []
+  syntax:
+    content: public static T GetDataFromDatasourceOrResource<T>(IDataSource<T> dataSource, IResource resource, bool unloadData = false)
+    parameters:
+    - id: dataSource
+      type: XTMF.IDataSource{{T}}
+      description: The datasource to check
+    - id: resource
+      type: XTMF.IResource
+      description: The resource to check
+    - id: unloadData
+      type: System.Boolean
+      description: Should the source be unloaded afterwards
+    typeParameters:
+    - id: T
+      description: ''
+    return:
+      type: '{T}'
+      description: The data from one of the modules
+    content.vb: Public Shared Function GetDataFromDatasourceOrResource(Of T)(dataSource As IDataSource(Of T), resource As IResource, unloadData As Boolean = False) As T
+  overload: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource*
+  nameWithType.vb: ModuleHelper.GetDataFromDatasourceOrResource(Of T)(IDataSource(Of T), IResource, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.Boolean)
+  name.vb: GetDataFromDatasourceOrResource(Of T)(IDataSource(Of T), IResource, Boolean)
+references:
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType*
+  commentId: Overload:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType
+  name: EnsureExactlyOneAndOfSameType
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: XTMF.IDataSource{{T}}
+  commentId: T:XTMF.IDataSource{`0}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IResource
+  commentId: T:XTMF.IResource
+  parent: XTMF
+  name: IResource
+  nameWithType: IResource
+  fullName: XTMF.IResource
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne*
+  commentId: Overload:TMG.Functions.ModuleHelper.EnsureExactlyOne
+  name: EnsureExactlyOne
+  nameWithType: ModuleHelper.EnsureExactlyOne
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch*
+  commentId: Overload:TMG.Functions.ModuleHelper.EnsureTypesMatch
+  name: EnsureTypesMatch
+  nameWithType: ModuleHelper.EnsureTypesMatch
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch
+- uid: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource*
+  commentId: Overload:TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource
+  name: GetDataFromDatasourceOrResource
+  nameWithType: ModuleHelper.GetDataFromDatasourceOrResource
+  fullName: TMG.Functions.ModuleHelper.GetDataFromDatasourceOrResource
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

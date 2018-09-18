@@ -1,0 +1,1217 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Functions.ModelSystemReflection
+  commentId: T:TMG.Functions.ModelSystemReflection
+  id: ModelSystemReflection
+  parent: TMG.Functions
+  children:
+  - TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModelSystemStructure,System.String,System.String,System.String@)
+  - TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModuleParameter,System.String)
+  - TMG.Functions.ModelSystemReflection.AssignValue``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  - TMG.Functions.ModelSystemReflection.AssignValueRunOnly``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  - TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IConfiguration,XTMF.IModule)
+  - TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  - TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModule,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  - TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IProject,XTMF.IModule)
+  - TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IConfiguration,XTMF.IModule,XTMF.IModelSystemStructure@)
+  - TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IModelSystemStructure,XTMF.IModule,XTMF.IModelSystemStructure@)
+  - TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IProject,XTMF.IModule,XTMF.IModelSystemStructure@)
+  - TMG.Functions.ModelSystemReflection.FindParameter(XTMF.IConfiguration,XTMF.IModule,System.String)
+  - TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath(XTMF.IModelSystemStructure,System.String,XTMF.IModelSystemStructure@)
+  - TMG.Functions.ModelSystemReflection.GetRootOfType(XTMF.IConfiguration,System.Type,XTMF.IModule,XTMF.IModelSystemStructure@)
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemReflection
+  nameWithType: ModelSystemReflection
+  fullName: TMG.Functions.ModelSystemReflection
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemReflection
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 25
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static class ModelSystemReflection
+    content.vb: Public Module ModelSystemReflection
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: TMG.Functions.ModelSystemReflection.FindParameter(XTMF.IConfiguration,XTMF.IModule,System.String)
+  commentId: M:TMG.Functions.ModelSystemReflection.FindParameter(XTMF.IConfiguration,XTMF.IModule,System.String)
+  id: FindParameter(XTMF.IConfiguration,XTMF.IModule,System.String)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: FindParameter(IConfiguration, IModule, String)
+  nameWithType: ModelSystemReflection.FindParameter(IConfiguration, IModule, String)
+  fullName: TMG.Functions.ModelSystemReflection.FindParameter(XTMF.IConfiguration, XTMF.IModule, System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FindParameter
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 27
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static IModuleParameter FindParameter(IConfiguration config, IModule callingModule, string parameterPath)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: callingModule
+      type: XTMF.IModule
+    - id: parameterPath
+      type: System.String
+    return:
+      type: XTMF.IModuleParameter
+    content.vb: Public Shared Function FindParameter(config As IConfiguration, callingModule As IModule, parameterPath As String) As IModuleParameter
+  overload: TMG.Functions.ModelSystemReflection.FindParameter*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: TMG.Functions.ModelSystemReflection.GetRootOfType(XTMF.IConfiguration,System.Type,XTMF.IModule,XTMF.IModelSystemStructure@)
+  commentId: M:TMG.Functions.ModelSystemReflection.GetRootOfType(XTMF.IConfiguration,System.Type,XTMF.IModule,XTMF.IModelSystemStructure@)
+  id: GetRootOfType(XTMF.IConfiguration,System.Type,XTMF.IModule,XTMF.IModelSystemStructure@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: GetRootOfType(IConfiguration, Type, IModule, out IModelSystemStructure)
+  nameWithType: ModelSystemReflection.GetRootOfType(IConfiguration, Type, IModule, out IModelSystemStructure)
+  fullName: TMG.Functions.ModelSystemReflection.GetRootOfType(XTMF.IConfiguration, System.Type, XTMF.IModule, out XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetRootOfType
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 49
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nFind the closest ancestor of the given module that implements\nthe given type.\n"
+  example: []
+  syntax:
+    content: public static bool GetRootOfType(IConfiguration config, Type type, IModule currentModule, out IModelSystemStructure result)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+      description: The XTMF configuration
+    - id: type
+      type: System.Type
+      description: The type to search for
+    - id: currentModule
+      type: XTMF.IModule
+      description: The module to find the ancestor of.
+    - id: result
+      type: XTMF.IModelSystemStructure
+      description: The model system structure that implements this.
+    return:
+      type: System.Boolean
+      description: True if a module satisfied the query, False otherwise with a null for result.
+    content.vb: Public Shared Function GetRootOfType(config As IConfiguration, type As Type, currentModule As IModule, ByRef result As IModelSystemStructure) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.GetRootOfType*
+  nameWithType.vb: ModelSystemReflection.GetRootOfType(IConfiguration, Type, IModule, ByRef IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.GetRootOfType(XTMF.IConfiguration, System.Type, XTMF.IModule, ByRef XTMF.IModelSystemStructure)
+  name.vb: GetRootOfType(IConfiguration, Type, IModule, ByRef IModelSystemStructure)
+- uid: TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModelSystemStructure,System.String,System.String,System.String@)
+  commentId: M:TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModelSystemStructure,System.String,System.String,System.String@)
+  id: AssignValue(XTMF.IConfiguration,XTMF.IModelSystemStructure,System.String,System.String,System.String@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: AssignValue(IConfiguration, IModelSystemStructure, String, String, ref String)
+  nameWithType: ModelSystemReflection.AssignValue(IConfiguration, IModelSystemStructure, String, String, ref String)
+  fullName: TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration, XTMF.IModelSystemStructure, System.String, System.String, ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignValue
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 133
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static bool AssignValue(IConfiguration config, IModelSystemStructure root, string parameterName, string value, ref string error)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: root
+      type: XTMF.IModelSystemStructure
+    - id: parameterName
+      type: System.String
+    - id: value
+      type: System.String
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function AssignValue(config As IConfiguration, root As IModelSystemStructure, parameterName As String, value As String, ByRef error As String) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.AssignValue*
+  nameWithType.vb: ModelSystemReflection.AssignValue(IConfiguration, IModelSystemStructure, String, String, ByRef String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration, XTMF.IModelSystemStructure, System.String, System.String, ByRef System.String)
+  name.vb: AssignValue(IConfiguration, IModelSystemStructure, String, String, ByRef String)
+- uid: TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModuleParameter,System.String)
+  commentId: M:TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration,XTMF.IModuleParameter,System.String)
+  id: AssignValue(XTMF.IConfiguration,XTMF.IModuleParameter,System.String)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: AssignValue(IConfiguration, IModuleParameter, String)
+  nameWithType: ModelSystemReflection.AssignValue(IConfiguration, IModuleParameter, String)
+  fullName: TMG.Functions.ModelSystemReflection.AssignValue(XTMF.IConfiguration, XTMF.IModuleParameter, System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignValue
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 146
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static void AssignValue(IConfiguration config, IModuleParameter parameter, string value)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: parameter
+      type: XTMF.IModuleParameter
+    - id: value
+      type: System.String
+    content.vb: Public Shared Sub AssignValue(config As IConfiguration, parameter As IModuleParameter, value As String)
+  overload: TMG.Functions.ModelSystemReflection.AssignValue*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: TMG.Functions.ModelSystemReflection.AssignValue``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  commentId: M:TMG.Functions.ModelSystemReflection.AssignValue``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  id: AssignValue``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: AssignValue<T>(IConfiguration, IModuleParameter, T)
+  nameWithType: ModelSystemReflection.AssignValue<T>(IConfiguration, IModuleParameter, T)
+  fullName: TMG.Functions.ModelSystemReflection.AssignValue<T>(XTMF.IConfiguration, XTMF.IModuleParameter, T)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignValue
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 164
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static void AssignValue<T>(IConfiguration config, IModuleParameter parameter, T t)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: parameter
+      type: XTMF.IModuleParameter
+    - id: t
+      type: '{T}'
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub AssignValue(Of T)(config As IConfiguration, parameter As IModuleParameter, t As T)
+  overload: TMG.Functions.ModelSystemReflection.AssignValue*
+  nameWithType.vb: ModelSystemReflection.AssignValue(Of T)(IConfiguration, IModuleParameter, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.AssignValue(Of T)(XTMF.IConfiguration, XTMF.IModuleParameter, T)
+  name.vb: AssignValue(Of T)(IConfiguration, IModuleParameter, T)
+- uid: TMG.Functions.ModelSystemReflection.AssignValueRunOnly``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  commentId: M:TMG.Functions.ModelSystemReflection.AssignValueRunOnly``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  id: AssignValueRunOnly``1(XTMF.IConfiguration,XTMF.IModuleParameter,``0)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: AssignValueRunOnly<T>(IConfiguration, IModuleParameter, T)
+  nameWithType: ModelSystemReflection.AssignValueRunOnly<T>(IConfiguration, IModuleParameter, T)
+  fullName: TMG.Functions.ModelSystemReflection.AssignValueRunOnly<T>(XTMF.IConfiguration, XTMF.IModuleParameter, T)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignValueRunOnly
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 205
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  syntax:
+    content: public static void AssignValueRunOnly<T>(IConfiguration config, IModuleParameter parameter, T t)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: parameter
+      type: XTMF.IModuleParameter
+    - id: t
+      type: '{T}'
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub AssignValueRunOnly(Of T)(config As IConfiguration, parameter As IModuleParameter, t As T)
+  overload: TMG.Functions.ModelSystemReflection.AssignValueRunOnly*
+  nameWithType.vb: ModelSystemReflection.AssignValueRunOnly(Of T)(IConfiguration, IModuleParameter, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.AssignValueRunOnly(Of T)(XTMF.IConfiguration, XTMF.IModuleParameter, T)
+  name.vb: AssignValueRunOnly(Of T)(IConfiguration, IModuleParameter, T)
+- uid: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IConfiguration,XTMF.IModule,XTMF.IModelSystemStructure@)
+  commentId: M:TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IConfiguration,XTMF.IModule,XTMF.IModelSystemStructure@)
+  id: FindModuleStructure(XTMF.IConfiguration,XTMF.IModule,XTMF.IModelSystemStructure@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: FindModuleStructure(IConfiguration, IModule, ref IModelSystemStructure)
+  nameWithType: ModelSystemReflection.FindModuleStructure(IConfiguration, IModule, ref IModelSystemStructure)
+  fullName: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IConfiguration, XTMF.IModule, ref XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FindModuleStructure
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 289
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nRetrieve the model system structure from the active project\n"
+  example: []
+  syntax:
+    content: public static bool FindModuleStructure(IConfiguration config, IModule toFind, ref IModelSystemStructure modelSystemStructure)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+      description: The XTMF runtime configuration
+    - id: toFind
+      type: XTMF.IModule
+      description: The module to find the model system structure of
+    - id: modelSystemStructure
+      type: XTMF.IModelSystemStructure
+      description: The model system structure of the given module
+    return:
+      type: System.Boolean
+      description: True if the module was found, false otherwise
+    content.vb: Public Shared Function FindModuleStructure(config As IConfiguration, toFind As IModule, ByRef modelSystemStructure As IModelSystemStructure) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.FindModuleStructure*
+  nameWithType.vb: ModelSystemReflection.FindModuleStructure(IConfiguration, IModule, ByRef IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IConfiguration, XTMF.IModule, ByRef XTMF.IModelSystemStructure)
+  name.vb: FindModuleStructure(IConfiguration, IModule, ByRef IModelSystemStructure)
+- uid: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IProject,XTMF.IModule,XTMF.IModelSystemStructure@)
+  commentId: M:TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IProject,XTMF.IModule,XTMF.IModelSystemStructure@)
+  id: FindModuleStructure(XTMF.IProject,XTMF.IModule,XTMF.IModelSystemStructure@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: FindModuleStructure(IProject, IModule, ref IModelSystemStructure)
+  nameWithType: ModelSystemReflection.FindModuleStructure(IProject, IModule, ref IModelSystemStructure)
+  fullName: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IProject, XTMF.IModule, ref XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FindModuleStructure
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 301
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nRetrieve the model system structure from the given project\n"
+  example: []
+  syntax:
+    content: public static bool FindModuleStructure(IProject project, IModule toFind, ref IModelSystemStructure modelSystemStructure)
+    parameters:
+    - id: project
+      type: XTMF.IProject
+      description: The project to analyze
+    - id: toFind
+      type: XTMF.IModule
+      description: The module to find the structure of
+    - id: modelSystemStructure
+      type: XTMF.IModelSystemStructure
+      description: The model system structure of the module to find.
+    return:
+      type: System.Boolean
+      description: True if the module was found, false otherwise
+    content.vb: Public Shared Function FindModuleStructure(project As IProject, toFind As IModule, ByRef modelSystemStructure As IModelSystemStructure) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.FindModuleStructure*
+  nameWithType.vb: ModelSystemReflection.FindModuleStructure(IProject, IModule, ByRef IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IProject, XTMF.IModule, ByRef XTMF.IModelSystemStructure)
+  name.vb: FindModuleStructure(IProject, IModule, ByRef IModelSystemStructure)
+- uid: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IModelSystemStructure,XTMF.IModule,XTMF.IModelSystemStructure@)
+  commentId: M:TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IModelSystemStructure,XTMF.IModule,XTMF.IModelSystemStructure@)
+  id: FindModuleStructure(XTMF.IModelSystemStructure,XTMF.IModule,XTMF.IModelSystemStructure@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: FindModuleStructure(IModelSystemStructure, IModule, ref IModelSystemStructure)
+  nameWithType: ModelSystemReflection.FindModuleStructure(IModelSystemStructure, IModule, ref IModelSystemStructure)
+  fullName: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IModelSystemStructure, XTMF.IModule, ref XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FindModuleStructure
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 320
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nRetrieve the model system structure for the module the given root.\n"
+  example: []
+  syntax:
+    content: public static bool FindModuleStructure(IModelSystemStructure root, IModule toFind, ref IModelSystemStructure modelSystemStructure)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: The base module to look at
+    - id: toFind
+      type: XTMF.IModule
+      description: An instance of the module we are trying to find
+    - id: modelSystemStructure
+      type: XTMF.IModelSystemStructure
+      description: The resulting model system structure
+    return:
+      type: System.Boolean
+      description: True if the module was found, false otherwise.
+    content.vb: Public Shared Function FindModuleStructure(root As IModelSystemStructure, toFind As IModule, ByRef modelSystemStructure As IModelSystemStructure) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.FindModuleStructure*
+  nameWithType.vb: ModelSystemReflection.FindModuleStructure(IModelSystemStructure, IModule, ByRef IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.FindModuleStructure(XTMF.IModelSystemStructure, XTMF.IModule, ByRef XTMF.IModelSystemStructure)
+  name.vb: FindModuleStructure(IModelSystemStructure, IModule, ByRef IModelSystemStructure)
+- uid: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IConfiguration,XTMF.IModule)
+  commentId: M:TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IConfiguration,XTMF.IModule)
+  id: BuildModelStructureChain(XTMF.IConfiguration,XTMF.IModule)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: BuildModelStructureChain(IConfiguration, IModule)
+  nameWithType: ModelSystemReflection.BuildModelStructureChain(IConfiguration, IModule)
+  fullName: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IConfiguration, XTMF.IModule)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BuildModelStructureChain
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 347
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGets the ancestry of a module from the active project\n"
+  example: []
+  syntax:
+    content: public static List<IModelSystemStructure> BuildModelStructureChain(IConfiguration config, IModule toFind)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+      description: The XTMF runtime configuration
+    - id: toFind
+      type: XTMF.IModule
+      description: The module to find
+    return:
+      type: System.Collections.Generic.List{XTMF.IModelSystemStructure}
+      description: A list in order from root to the module to find of their model system structures.
+    content.vb: Public Shared Function BuildModelStructureChain(config As IConfiguration, toFind As IModule) As List(Of IModelSystemStructure)
+  overload: TMG.Functions.ModelSystemReflection.BuildModelStructureChain*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IProject,XTMF.IModule)
+  commentId: M:TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IProject,XTMF.IModule)
+  id: BuildModelStructureChain(XTMF.IProject,XTMF.IModule)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: BuildModelStructureChain(IProject, IModule)
+  nameWithType: ModelSystemReflection.BuildModelStructureChain(IProject, IModule)
+  fullName: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IProject, XTMF.IModule)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BuildModelStructureChain
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 358
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGets the ancestry of a module given a project\n"
+  example: []
+  syntax:
+    content: public static List<IModelSystemStructure> BuildModelStructureChain(IProject project, IModule toFind)
+    parameters:
+    - id: project
+      type: XTMF.IProject
+      description: The project to analyze
+    - id: toFind
+      type: XTMF.IModule
+      description: The module to find
+    return:
+      type: System.Collections.Generic.List{XTMF.IModelSystemStructure}
+      description: A list in order from root to the module to find of their model system structures.
+    content.vb: Public Shared Function BuildModelStructureChain(project As IProject, toFind As IModule) As List(Of IModelSystemStructure)
+  overload: TMG.Functions.ModelSystemReflection.BuildModelStructureChain*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModule,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  commentId: M:TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModule,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  id: BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModule,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: BuildModelStructureChain(IModelSystemStructure, IModule, List<IModelSystemStructure>)
+  nameWithType: ModelSystemReflection.BuildModelStructureChain(IModelSystemStructure, IModule, List<IModelSystemStructure>)
+  fullName: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure, XTMF.IModule, System.Collections.Generic.List<XTMF.IModelSystemStructure>)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BuildModelStructureChain
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 407
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGets the ancestry of a module from the given root.\n"
+  example: []
+  syntax:
+    content: public static bool BuildModelStructureChain(IModelSystemStructure root, IModule toFind, List<IModelSystemStructure> chain)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: The first node to look at.
+    - id: toFind
+      type: XTMF.IModule
+      description: The module to find
+    - id: chain
+      type: System.Collections.Generic.List{XTMF.IModelSystemStructure}
+      description: The chain to store the results into.
+    return:
+      type: System.Boolean
+      description: True if we found the module, false otherwise
+    content.vb: Public Shared Function BuildModelStructureChain(root As IModelSystemStructure, toFind As IModule, chain As List(Of IModelSystemStructure)) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.BuildModelStructureChain*
+  nameWithType.vb: ModelSystemReflection.BuildModelStructureChain(IModelSystemStructure, IModule, List(Of IModelSystemStructure))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure, XTMF.IModule, System.Collections.Generic.List(Of XTMF.IModelSystemStructure))
+  name.vb: BuildModelStructureChain(IModelSystemStructure, IModule, List(Of IModelSystemStructure))
+- uid: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  commentId: M:TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  id: BuildModelStructureChain(XTMF.IModelSystemStructure,XTMF.IModelSystemStructure,System.Collections.Generic.List{XTMF.IModelSystemStructure})
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: BuildModelStructureChain(IModelSystemStructure, IModelSystemStructure, List<IModelSystemStructure>)
+  nameWithType: ModelSystemReflection.BuildModelStructureChain(IModelSystemStructure, IModelSystemStructure, List<IModelSystemStructure>)
+  fullName: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure, XTMF.IModelSystemStructure, System.Collections.Generic.List<XTMF.IModelSystemStructure>)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BuildModelStructureChain
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 436
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGets the ancestry of a module from the given root.\n"
+  example: []
+  syntax:
+    content: public static bool BuildModelStructureChain(IModelSystemStructure root, IModelSystemStructure toFind, List<IModelSystemStructure> chain)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: The first node to look at.
+    - id: toFind
+      type: XTMF.IModelSystemStructure
+      description: The module to find
+    - id: chain
+      type: System.Collections.Generic.List{XTMF.IModelSystemStructure}
+      description: The chain to store the results into.
+    return:
+      type: System.Boolean
+      description: True if we found the module, false otherwise
+    content.vb: Public Shared Function BuildModelStructureChain(root As IModelSystemStructure, toFind As IModelSystemStructure, chain As List(Of IModelSystemStructure)) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.BuildModelStructureChain*
+  nameWithType.vb: ModelSystemReflection.BuildModelStructureChain(IModelSystemStructure, IModelSystemStructure, List(Of IModelSystemStructure))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.BuildModelStructureChain(XTMF.IModelSystemStructure, XTMF.IModelSystemStructure, System.Collections.Generic.List(Of XTMF.IModelSystemStructure))
+  name.vb: BuildModelStructureChain(IModelSystemStructure, IModelSystemStructure, List(Of IModelSystemStructure))
+- uid: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath(XTMF.IModelSystemStructure,System.String,XTMF.IModelSystemStructure@)
+  commentId: M:TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath(XTMF.IModelSystemStructure,System.String,XTMF.IModelSystemStructure@)
+  id: GetModelSystemStructureFromPath(XTMF.IModelSystemStructure,System.String,XTMF.IModelSystemStructure@)
+  parent: TMG.Functions.ModelSystemReflection
+  langs:
+  - csharp
+  - vb
+  name: GetModelSystemStructureFromPath(IModelSystemStructure, String, ref IModelSystemStructure)
+  nameWithType: ModelSystemReflection.GetModelSystemStructureFromPath(IModelSystemStructure, String, ref IModelSystemStructure)
+  fullName: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath(XTMF.IModelSystemStructure, System.String, ref XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Functions/ModelSystemReflection.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetModelSystemStructureFromPath
+    path: ../../XTMF/Code/TMG.Functions/ModelSystemReflection.cs
+    startLine: 465
+  assemblies:
+  - TMG.Functions
+  namespace: TMG.Functions
+  summary: "\nGet a model system structure from a path string relative to the root\n"
+  example: []
+  syntax:
+    content: public static bool GetModelSystemStructureFromPath(IModelSystemStructure root, string path, ref IModelSystemStructure structure)
+    parameters:
+    - id: root
+      type: XTMF.IModelSystemStructure
+      description: The point to start the path relative to.
+    - id: path
+      type: System.String
+      description: The path to explore
+    - id: structure
+      type: XTMF.IModelSystemStructure
+      description: The structure at the end of the path
+    return:
+      type: System.Boolean
+      description: True if a model system structure with that path was found, false otherwise
+    content.vb: Public Shared Function GetModelSystemStructureFromPath(root As IModelSystemStructure, path As String, ByRef structure As IModelSystemStructure) As Boolean
+  overload: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath*
+  nameWithType.vb: ModelSystemReflection.GetModelSystemStructureFromPath(IModelSystemStructure, String, ByRef IModelSystemStructure)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath(XTMF.IModelSystemStructure, System.String, ByRef XTMF.IModelSystemStructure)
+  name.vb: GetModelSystemStructureFromPath(IModelSystemStructure, String, ByRef IModelSystemStructure)
+references:
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Functions.ModelSystemReflection.FindParameter*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.FindParameter
+  isExternal: false
+  name: FindParameter
+  nameWithType: ModelSystemReflection.FindParameter
+  fullName: TMG.Functions.ModelSystemReflection.FindParameter
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.IModuleParameter
+  commentId: T:XTMF.IModuleParameter
+  parent: XTMF
+  isExternal: false
+  name: IModuleParameter
+  nameWithType: IModuleParameter
+  fullName: XTMF.IModuleParameter
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModelSystemReflection.GetRootOfType*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.GetRootOfType
+  isExternal: false
+  name: GetRootOfType
+  nameWithType: ModelSystemReflection.GetRootOfType
+  fullName: TMG.Functions.ModelSystemReflection.GetRootOfType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.Functions.ModelSystemReflection.AssignValue*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.AssignValue
+  isExternal: false
+  name: AssignValue
+  nameWithType: ModelSystemReflection.AssignValue
+  fullName: TMG.Functions.ModelSystemReflection.AssignValue
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: TMG.Functions.ModelSystemReflection.AssignValueRunOnly*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.AssignValueRunOnly
+  isExternal: false
+  name: AssignValueRunOnly
+  nameWithType: ModelSystemReflection.AssignValueRunOnly
+  fullName: TMG.Functions.ModelSystemReflection.AssignValueRunOnly
+- uid: TMG.Functions.ModelSystemReflection.FindModuleStructure*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.FindModuleStructure
+  isExternal: false
+  name: FindModuleStructure
+  nameWithType: ModelSystemReflection.FindModuleStructure
+  fullName: TMG.Functions.ModelSystemReflection.FindModuleStructure
+- uid: XTMF.IProject
+  commentId: T:XTMF.IProject
+  parent: XTMF
+  isExternal: false
+  name: IProject
+  nameWithType: IProject
+  fullName: XTMF.IProject
+- uid: TMG.Functions.ModelSystemReflection.BuildModelStructureChain*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.BuildModelStructureChain
+  isExternal: false
+  name: BuildModelStructureChain
+  nameWithType: ModelSystemReflection.BuildModelStructureChain
+  fullName: TMG.Functions.ModelSystemReflection.BuildModelStructureChain
+- uid: System.Collections.Generic.List{XTMF.IModelSystemStructure}
+  commentId: T:System.Collections.Generic.List{XTMF.IModelSystemStructure}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModelSystemStructure>
+  nameWithType: List<IModelSystemStructure>
+  fullName: System.Collections.Generic.List<XTMF.IModelSystemStructure>
+  nameWithType.vb: List(Of IModelSystemStructure)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.IModelSystemStructure)
+  name.vb: List(Of IModelSystemStructure)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IModelSystemStructure
+    name: IModelSystemStructure
+    nameWithType: IModelSystemStructure
+    fullName: XTMF.IModelSystemStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IModelSystemStructure
+    name: IModelSystemStructure
+    nameWithType: IModelSystemStructure
+    fullName: XTMF.IModelSystemStructure
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath*
+  commentId: Overload:TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath
+  isExternal: false
+  name: GetModelSystemStructureFromPath
+  nameWithType: ModelSystemReflection.GetModelSystemStructureFromPath
+  fullName: TMG.Functions.ModelSystemReflection.GetModelSystemStructureFromPath

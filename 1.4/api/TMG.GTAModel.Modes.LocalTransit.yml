@@ -1,0 +1,1809 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.Modes.LocalTransit
+  commentId: T:TMG.GTAModel.Modes.LocalTransit
+  id: LocalTransit
+  parent: TMG.GTAModel.Modes
+  children:
+  - TMG.GTAModel.Modes.LocalTransit.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+  langs:
+  - csharp
+  - vb
+  name: LocalTransit
+  nameWithType: LocalTransit
+  fullName: TMG.GTAModel.Modes.LocalTransit
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Modes/LocalTransit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LocalTransit
+    path: ../../XTMF/Code/GTAModel/Modes/LocalTransit.cs
+    startLine: 25
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes
+  syntax:
+    content: 'public sealed class LocalTransit : BasicMode, IMode, IUtilityComponentMode, IModeChoiceNode, IModule'
+    content.vb: >-
+      Public NotInheritable Class LocalTransit
+
+          Inherits BasicMode
+
+          Implements IMode, IUtilityComponentMode, IModeChoiceNode, IModule
+  inheritance:
+  - System.Object
+  - TMG.GTAModel.Modes.BasicMode
+  implements:
+  - TMG.IMode
+  - TMG.Modes.IUtilityComponentMode
+  - TMG.IModeChoiceNode
+  - XTMF.IModule
+  inheritedMembers:
+  - TMG.GTAModel.Modes.BasicMode.AdjacentZone
+  - TMG.GTAModel.Modes.BasicMode.AgeConstant1
+  - TMG.GTAModel.Modes.BasicMode.AgeConstant2
+  - TMG.GTAModel.Modes.BasicMode.AgeConstant3
+  - TMG.GTAModel.Modes.BasicMode.AgeConstant4
+  - TMG.GTAModel.Modes.BasicMode.Boarding
+  - TMG.GTAModel.Modes.BasicMode.CheckPositiveIVTT
+  - TMG.GTAModel.Modes.BasicMode.CheckPositiveWalk
+  - TMG.GTAModel.Modes.BasicMode.Constant
+  - TMG.GTAModel.Modes.BasicMode.DestinationEmploymentDensity
+  - TMG.GTAModel.Modes.BasicMode.DestinationPopulationDensity
+  - TMG.GTAModel.Modes.BasicMode.Distance
+  - TMG.GTAModel.Modes.BasicMode.IVTT
+  - TMG.GTAModel.Modes.BasicMode.MultipleVehicleHousehold
+  - TMG.GTAModel.Modes.BasicMode.NoDriversLicense
+  - TMG.GTAModel.Modes.BasicMode.OriginEmploymentDensity
+  - TMG.GTAModel.Modes.BasicMode.OriginPopulationDensity
+  - TMG.GTAModel.Modes.BasicMode.Parking
+  - TMG.GTAModel.Modes.BasicMode.PartTime
+  - TMG.GTAModel.Modes.BasicMode.Root
+  - TMG.GTAModel.Modes.BasicMode.ShortDistance
+  - TMG.GTAModel.Modes.BasicMode.ShortDistanceConstant
+  - TMG.GTAModel.Modes.BasicMode.SingleVehicleHousehold
+  - TMG.GTAModel.Modes.BasicMode.TravelCost
+  - TMG.GTAModel.Modes.BasicMode.Wait
+  - TMG.GTAModel.Modes.BasicMode.Walk
+  - TMG.GTAModel.Modes.BasicMode.AdvancedNetworkData
+  - TMG.GTAModel.Modes.BasicMode.NetworkData
+  - TMG.GTAModel.Modes.BasicMode.CurrentlyFeasible
+  - TMG.GTAModel.Modes.BasicMode.ModeName
+  - TMG.GTAModel.Modes.BasicMode.Name
+  - TMG.GTAModel.Modes.BasicMode.NetworkType
+  - TMG.GTAModel.Modes.BasicMode.NonPersonalVehicle
+  - TMG.GTAModel.Modes.BasicMode.Progress
+  - TMG.GTAModel.Modes.BasicMode.ProgressColour
+  - TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String@)
+  - TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+  commentId: P:TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+  id: UtilityComponents
+  parent: TMG.GTAModel.Modes.LocalTransit
+  langs:
+  - csharp
+  - vb
+  name: UtilityComponents
+  nameWithType: LocalTransit.UtilityComponents
+  fullName: TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Modes/LocalTransit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UtilityComponents
+    path: ../../XTMF/Code/GTAModel/Modes/LocalTransit.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes
+  syntax:
+    content: public List<IUtilityComponent> UtilityComponents { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+    content.vb: Public Property UtilityComponents As List(Of IUtilityComponent)
+  overload: TMG.GTAModel.Modes.LocalTransit.UtilityComponents*
+  implements:
+  - TMG.Modes.IUtilityComponentMode.UtilityComponents
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Modes.LocalTransit.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.LocalTransit.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.LocalTransit
+  langs:
+  - csharp
+  - vb
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: LocalTransit.CalculateV(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.LocalTransit.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Modes/LocalTransit.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CalculateV
+    path: ../../XTMF/Code/GTAModel/Modes/LocalTransit.cs
+    startLine: 36
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Modes
+  syntax:
+    content: public override float CalculateV(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Overrides Function CalculateV(origin As IZone, destination As IZone, time As Time) As Single
+  overridden: TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  overload: TMG.GTAModel.Modes.LocalTransit.CalculateV*
+  implements:
+  - TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: TMG.GTAModel.Modes
+  commentId: N:TMG.GTAModel.Modes
+  isExternal: false
+  name: TMG.GTAModel.Modes
+  nameWithType: TMG.GTAModel.Modes
+  fullName: TMG.GTAModel.Modes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.GTAModel.Modes.BasicMode
+  commentId: T:TMG.GTAModel.Modes.BasicMode
+  parent: TMG.GTAModel.Modes
+  isExternal: false
+  name: BasicMode
+  nameWithType: BasicMode
+  fullName: TMG.GTAModel.Modes.BasicMode
+- uid: TMG.IMode
+  commentId: T:TMG.IMode
+  parent: TMG
+  isExternal: false
+  name: IMode
+  nameWithType: IMode
+  fullName: TMG.IMode
+- uid: TMG.Modes.IUtilityComponentMode
+  commentId: T:TMG.Modes.IUtilityComponentMode
+  parent: TMG.Modes
+  isExternal: false
+  name: IUtilityComponentMode
+  nameWithType: IUtilityComponentMode
+  fullName: TMG.Modes.IUtilityComponentMode
+- uid: TMG.IModeChoiceNode
+  commentId: T:TMG.IModeChoiceNode
+  parent: TMG
+  isExternal: false
+  name: IModeChoiceNode
+  nameWithType: IModeChoiceNode
+  fullName: TMG.IModeChoiceNode
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.GTAModel.Modes.BasicMode.AdjacentZone
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AdjacentZone
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AdjacentZone
+  nameWithType: BasicMode.AdjacentZone
+  fullName: TMG.GTAModel.Modes.BasicMode.AdjacentZone
+- uid: TMG.GTAModel.Modes.BasicMode.AgeConstant1
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AgeConstant1
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AgeConstant1
+  nameWithType: BasicMode.AgeConstant1
+  fullName: TMG.GTAModel.Modes.BasicMode.AgeConstant1
+- uid: TMG.GTAModel.Modes.BasicMode.AgeConstant2
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AgeConstant2
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AgeConstant2
+  nameWithType: BasicMode.AgeConstant2
+  fullName: TMG.GTAModel.Modes.BasicMode.AgeConstant2
+- uid: TMG.GTAModel.Modes.BasicMode.AgeConstant3
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AgeConstant3
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AgeConstant3
+  nameWithType: BasicMode.AgeConstant3
+  fullName: TMG.GTAModel.Modes.BasicMode.AgeConstant3
+- uid: TMG.GTAModel.Modes.BasicMode.AgeConstant4
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AgeConstant4
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AgeConstant4
+  nameWithType: BasicMode.AgeConstant4
+  fullName: TMG.GTAModel.Modes.BasicMode.AgeConstant4
+- uid: TMG.GTAModel.Modes.BasicMode.Boarding
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Boarding
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Boarding
+  nameWithType: BasicMode.Boarding
+  fullName: TMG.GTAModel.Modes.BasicMode.Boarding
+- uid: TMG.GTAModel.Modes.BasicMode.CheckPositiveIVTT
+  commentId: F:TMG.GTAModel.Modes.BasicMode.CheckPositiveIVTT
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: CheckPositiveIVTT
+  nameWithType: BasicMode.CheckPositiveIVTT
+  fullName: TMG.GTAModel.Modes.BasicMode.CheckPositiveIVTT
+- uid: TMG.GTAModel.Modes.BasicMode.CheckPositiveWalk
+  commentId: F:TMG.GTAModel.Modes.BasicMode.CheckPositiveWalk
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: CheckPositiveWalk
+  nameWithType: BasicMode.CheckPositiveWalk
+  fullName: TMG.GTAModel.Modes.BasicMode.CheckPositiveWalk
+- uid: TMG.GTAModel.Modes.BasicMode.Constant
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Constant
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Constant
+  nameWithType: BasicMode.Constant
+  fullName: TMG.GTAModel.Modes.BasicMode.Constant
+- uid: TMG.GTAModel.Modes.BasicMode.DestinationEmploymentDensity
+  commentId: F:TMG.GTAModel.Modes.BasicMode.DestinationEmploymentDensity
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: DestinationEmploymentDensity
+  nameWithType: BasicMode.DestinationEmploymentDensity
+  fullName: TMG.GTAModel.Modes.BasicMode.DestinationEmploymentDensity
+- uid: TMG.GTAModel.Modes.BasicMode.DestinationPopulationDensity
+  commentId: F:TMG.GTAModel.Modes.BasicMode.DestinationPopulationDensity
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: DestinationPopulationDensity
+  nameWithType: BasicMode.DestinationPopulationDensity
+  fullName: TMG.GTAModel.Modes.BasicMode.DestinationPopulationDensity
+- uid: TMG.GTAModel.Modes.BasicMode.Distance
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Distance
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Distance
+  nameWithType: BasicMode.Distance
+  fullName: TMG.GTAModel.Modes.BasicMode.Distance
+- uid: TMG.GTAModel.Modes.BasicMode.IVTT
+  commentId: F:TMG.GTAModel.Modes.BasicMode.IVTT
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: IVTT
+  nameWithType: BasicMode.IVTT
+  fullName: TMG.GTAModel.Modes.BasicMode.IVTT
+- uid: TMG.GTAModel.Modes.BasicMode.MultipleVehicleHousehold
+  commentId: F:TMG.GTAModel.Modes.BasicMode.MultipleVehicleHousehold
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: MultipleVehicleHousehold
+  nameWithType: BasicMode.MultipleVehicleHousehold
+  fullName: TMG.GTAModel.Modes.BasicMode.MultipleVehicleHousehold
+- uid: TMG.GTAModel.Modes.BasicMode.NoDriversLicense
+  commentId: F:TMG.GTAModel.Modes.BasicMode.NoDriversLicense
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: NoDriversLicense
+  nameWithType: BasicMode.NoDriversLicense
+  fullName: TMG.GTAModel.Modes.BasicMode.NoDriversLicense
+- uid: TMG.GTAModel.Modes.BasicMode.OriginEmploymentDensity
+  commentId: F:TMG.GTAModel.Modes.BasicMode.OriginEmploymentDensity
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: OriginEmploymentDensity
+  nameWithType: BasicMode.OriginEmploymentDensity
+  fullName: TMG.GTAModel.Modes.BasicMode.OriginEmploymentDensity
+- uid: TMG.GTAModel.Modes.BasicMode.OriginPopulationDensity
+  commentId: F:TMG.GTAModel.Modes.BasicMode.OriginPopulationDensity
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: OriginPopulationDensity
+  nameWithType: BasicMode.OriginPopulationDensity
+  fullName: TMG.GTAModel.Modes.BasicMode.OriginPopulationDensity
+- uid: TMG.GTAModel.Modes.BasicMode.Parking
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Parking
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Parking
+  nameWithType: BasicMode.Parking
+  fullName: TMG.GTAModel.Modes.BasicMode.Parking
+- uid: TMG.GTAModel.Modes.BasicMode.PartTime
+  commentId: F:TMG.GTAModel.Modes.BasicMode.PartTime
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: PartTime
+  nameWithType: BasicMode.PartTime
+  fullName: TMG.GTAModel.Modes.BasicMode.PartTime
+- uid: TMG.GTAModel.Modes.BasicMode.Root
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Root
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Root
+  nameWithType: BasicMode.Root
+  fullName: TMG.GTAModel.Modes.BasicMode.Root
+- uid: TMG.GTAModel.Modes.BasicMode.ShortDistance
+  commentId: F:TMG.GTAModel.Modes.BasicMode.ShortDistance
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: ShortDistance
+  nameWithType: BasicMode.ShortDistance
+  fullName: TMG.GTAModel.Modes.BasicMode.ShortDistance
+- uid: TMG.GTAModel.Modes.BasicMode.ShortDistanceConstant
+  commentId: F:TMG.GTAModel.Modes.BasicMode.ShortDistanceConstant
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: ShortDistanceConstant
+  nameWithType: BasicMode.ShortDistanceConstant
+  fullName: TMG.GTAModel.Modes.BasicMode.ShortDistanceConstant
+- uid: TMG.GTAModel.Modes.BasicMode.SingleVehicleHousehold
+  commentId: F:TMG.GTAModel.Modes.BasicMode.SingleVehicleHousehold
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: SingleVehicleHousehold
+  nameWithType: BasicMode.SingleVehicleHousehold
+  fullName: TMG.GTAModel.Modes.BasicMode.SingleVehicleHousehold
+- uid: TMG.GTAModel.Modes.BasicMode.TravelCost
+  commentId: F:TMG.GTAModel.Modes.BasicMode.TravelCost
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: TravelCost
+  nameWithType: BasicMode.TravelCost
+  fullName: TMG.GTAModel.Modes.BasicMode.TravelCost
+- uid: TMG.GTAModel.Modes.BasicMode.Wait
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Wait
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Wait
+  nameWithType: BasicMode.Wait
+  fullName: TMG.GTAModel.Modes.BasicMode.Wait
+- uid: TMG.GTAModel.Modes.BasicMode.Walk
+  commentId: F:TMG.GTAModel.Modes.BasicMode.Walk
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Walk
+  nameWithType: BasicMode.Walk
+  fullName: TMG.GTAModel.Modes.BasicMode.Walk
+- uid: TMG.GTAModel.Modes.BasicMode.AdvancedNetworkData
+  commentId: F:TMG.GTAModel.Modes.BasicMode.AdvancedNetworkData
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: AdvancedNetworkData
+  nameWithType: BasicMode.AdvancedNetworkData
+  fullName: TMG.GTAModel.Modes.BasicMode.AdvancedNetworkData
+- uid: TMG.GTAModel.Modes.BasicMode.NetworkData
+  commentId: F:TMG.GTAModel.Modes.BasicMode.NetworkData
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: NetworkData
+  nameWithType: BasicMode.NetworkData
+  fullName: TMG.GTAModel.Modes.BasicMode.NetworkData
+- uid: TMG.GTAModel.Modes.BasicMode.CurrentlyFeasible
+  commentId: P:TMG.GTAModel.Modes.BasicMode.CurrentlyFeasible
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: CurrentlyFeasible
+  nameWithType: BasicMode.CurrentlyFeasible
+  fullName: TMG.GTAModel.Modes.BasicMode.CurrentlyFeasible
+- uid: TMG.GTAModel.Modes.BasicMode.ModeName
+  commentId: P:TMG.GTAModel.Modes.BasicMode.ModeName
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: ModeName
+  nameWithType: BasicMode.ModeName
+  fullName: TMG.GTAModel.Modes.BasicMode.ModeName
+- uid: TMG.GTAModel.Modes.BasicMode.Name
+  commentId: P:TMG.GTAModel.Modes.BasicMode.Name
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Name
+  nameWithType: BasicMode.Name
+  fullName: TMG.GTAModel.Modes.BasicMode.Name
+- uid: TMG.GTAModel.Modes.BasicMode.NetworkType
+  commentId: P:TMG.GTAModel.Modes.BasicMode.NetworkType
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: NetworkType
+  nameWithType: BasicMode.NetworkType
+  fullName: TMG.GTAModel.Modes.BasicMode.NetworkType
+- uid: TMG.GTAModel.Modes.BasicMode.NonPersonalVehicle
+  commentId: P:TMG.GTAModel.Modes.BasicMode.NonPersonalVehicle
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: NonPersonalVehicle
+  nameWithType: BasicMode.NonPersonalVehicle
+  fullName: TMG.GTAModel.Modes.BasicMode.NonPersonalVehicle
+- uid: TMG.GTAModel.Modes.BasicMode.Progress
+  commentId: P:TMG.GTAModel.Modes.BasicMode.Progress
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Progress
+  nameWithType: BasicMode.Progress
+  fullName: TMG.GTAModel.Modes.BasicMode.Progress
+- uid: TMG.GTAModel.Modes.BasicMode.ProgressColour
+  commentId: P:TMG.GTAModel.Modes.BasicMode.ProgressColour
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: ProgressColour
+  nameWithType: BasicMode.ProgressColour
+  fullName: TMG.GTAModel.Modes.BasicMode.ProgressColour
+- uid: TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Cost(IZone, IZone, Time)
+  nameWithType: BasicMode.Cost(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Cost
+    nameWithType: BasicMode.Cost
+    fullName: TMG.GTAModel.Modes.BasicMode.Cost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Modes.BasicMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Cost
+    nameWithType: BasicMode.Cost
+    fullName: TMG.GTAModel.Modes.BasicMode.Cost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: Feasible(IZone, IZone, Time)
+  nameWithType: BasicMode.Feasible(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Feasible
+    nameWithType: BasicMode.Feasible
+    fullName: TMG.GTAModel.Modes.BasicMode.Feasible
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Modes.BasicMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Feasible
+    nameWithType: BasicMode.Feasible
+    fullName: TMG.GTAModel.Modes.BasicMode.Feasible
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: BasicMode.RuntimeValidation(String)
+  fullName: TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: BasicMode.RuntimeValidation
+    fullName: TMG.GTAModel.Modes.BasicMode.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Modes.BasicMode.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: BasicMode.RuntimeValidation
+    fullName: TMG.GTAModel.Modes.BasicMode.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: BasicMode.TravelTime(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: BasicMode.TravelTime
+    fullName: TMG.GTAModel.Modes.BasicMode.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Modes.BasicMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: BasicMode.TravelTime
+    fullName: TMG.GTAModel.Modes.BasicMode.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.Modes
+  commentId: N:TMG.Modes
+  isExternal: false
+  name: TMG.Modes
+  nameWithType: TMG.Modes
+  fullName: TMG.Modes
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.GTAModel.Modes.LocalTransit.UtilityComponents*
+  commentId: Overload:TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+  isExternal: false
+  name: UtilityComponents
+  nameWithType: LocalTransit.UtilityComponents
+  fullName: TMG.GTAModel.Modes.LocalTransit.UtilityComponents
+- uid: TMG.Modes.IUtilityComponentMode.UtilityComponents
+  commentId: P:TMG.Modes.IUtilityComponentMode.UtilityComponents
+  parent: TMG.Modes.IUtilityComponentMode
+  isExternal: false
+  name: UtilityComponents
+  nameWithType: IUtilityComponentMode.UtilityComponents
+  fullName: TMG.Modes.IUtilityComponentMode.UtilityComponents
+- uid: System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+  commentId: T:System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IUtilityComponent>
+  nameWithType: List<IUtilityComponent>
+  fullName: System.Collections.Generic.List<TMG.Modes.IUtilityComponent>
+  nameWithType.vb: List(Of IUtilityComponent)
+  fullName.vb: System.Collections.Generic.List(Of TMG.Modes.IUtilityComponent)
+  name.vb: List(Of IUtilityComponent)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Modes.IUtilityComponent
+    name: IUtilityComponent
+    nameWithType: IUtilityComponent
+    fullName: TMG.Modes.IUtilityComponent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Modes.IUtilityComponent
+    name: IUtilityComponent
+    nameWithType: IUtilityComponent
+    fullName: TMG.Modes.IUtilityComponent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.Modes.BasicMode
+  isExternal: false
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: BasicMode.CalculateV(IZone, IZone, Time)
+  fullName: TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: BasicMode.CalculateV
+    fullName: TMG.GTAModel.Modes.BasicMode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Modes.BasicMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: BasicMode.CalculateV
+    fullName: TMG.GTAModel.Modes.BasicMode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Modes.LocalTransit.CalculateV*
+  commentId: Overload:TMG.GTAModel.Modes.LocalTransit.CalculateV
+  isExternal: false
+  name: CalculateV
+  nameWithType: LocalTransit.CalculateV
+  fullName: TMG.GTAModel.Modes.LocalTransit.CalculateV
+- uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.IModeChoiceNode
+  isExternal: false
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: IModeChoiceNode.CalculateV(IZone, IZone, Time)
+  fullName: TMG.IModeChoiceNode.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IModeChoiceNode.CalculateV
+    fullName: TMG.IModeChoiceNode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IModeChoiceNode.CalculateV
+    fullName: TMG.IModeChoiceNode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  isExternal: false
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  isExternal: false
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single

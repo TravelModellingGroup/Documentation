@@ -1,0 +1,2098 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  commentId: T:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  id: MulticlassFareBasedCongestedTransitAssignment.Class
+  parent: TMG.Emme.NetworkAssignment
+  children:
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPenaltyMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPerception
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.CongestionMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.DemandMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FareMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FarePerception
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.InVehicleMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.LinkFareAttribute
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ModeList
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.PerceivedTravelTimeMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(System.String@)
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.SegmentFareAttribute
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitTimePerception
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkMatrixNumber
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionAttribute
+  - TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptions
+  langs:
+  - csharp
+  - vb
+  name: MulticlassFareBasedCongestedTransitAssignment.Class
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Class
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 188
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: 'public class Class : IModule'
+    content.vb: >-
+      Public Class Class
+
+          Implements IModule
+  inheritance:
+  - System.Object
+  implements:
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.DemandMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.DemandMatrixNumber
+  id: DemandMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: DemandMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.DemandMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.DemandMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemandMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 191
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Demand Matrix Number", 1, "The number of the full matrix containing transit demand ODs")]
+
+      public int DemandMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Demand Matrix Number", 1, "The number of the full matrix containing transit demand ODs")>
+
+      Public DemandMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demand Matrix Number
+    - type: System.Int32
+      value: 1
+    - type: System.String
+      value: The number of the full matrix containing transit demand ODs
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionAttribute
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionAttribute
+  id: WalkPerceptionAttribute
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: WalkPerceptionAttribute
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionAttribute
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionAttribute
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkPerceptionAttribute
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 194
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Walk Perception Attribute", "@walkp", "The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.")]
+
+      public string WalkPerceptionAttribute
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Walk Perception Attribute", "@walkp", "The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.")>
+
+      Public WalkPerceptionAttribute As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Walk Perception Attribute
+    - type: System.String
+      value: '@walkp'
+    - type: System.String
+      value: The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.LinkFareAttribute
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.LinkFareAttribute
+  id: LinkFareAttribute
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: LinkFareAttribute
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.LinkFareAttribute
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.LinkFareAttribute
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinkFareAttribute
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 197
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Link Fare Attribute", "@lfare", "The ID of the LINK extra attribute containing actual fare costs.")]
+
+      public string LinkFareAttribute
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Link Fare Attribute", "@lfare", "The ID of the LINK extra attribute containing actual fare costs.")>
+
+      Public LinkFareAttribute As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Link Fare Attribute
+    - type: System.String
+      value: '@lfare'
+    - type: System.String
+      value: The ID of the LINK extra attribute containing actual fare costs.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.SegmentFareAttribute
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.SegmentFareAttribute
+  id: SegmentFareAttribute
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: SegmentFareAttribute
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.SegmentFareAttribute
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.SegmentFareAttribute
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SegmentFareAttribute
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 200
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Segment Fare Attribute", "@sfare", "The ID of the SEGMENT extra attribute containing actual fare costs.")]
+
+      public string SegmentFareAttribute
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Segment Fare Attribute", "@sfare", "The ID of the SEGMENT extra attribute containing actual fare costs.")>
+
+      Public SegmentFareAttribute As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Segment Fare Attribute
+    - type: System.String
+      value: '@sfare'
+    - type: System.String
+      value: The ID of the SEGMENT extra attribute containing actual fare costs.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.InVehicleMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.InVehicleMatrixNumber
+  id: InVehicleMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: InVehicleMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.InVehicleMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.InVehicleMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InVehicleMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 203
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("In-vehicle Times Matrix", 0, "The number of the FULL matrix in which to save in-vehicle travel time. Enter 0 to skip saving this matrix")]
+
+      public int InVehicleMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("In-vehicle Times Matrix", 0, "The number of the FULL matrix in which to save in-vehicle travel time. Enter 0 to skip saving this matrix")>
+
+      Public InVehicleMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: In-vehicle Times Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save in-vehicle travel time. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkMatrixNumber
+  id: WalkMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: WalkMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 206
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("WalkTimes Matrix", 0, "The number of the FULL matrix in which to save total walk time. Enter 0 to skip saving this matrix")]
+
+      public int WalkMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("WalkTimes Matrix", 0, "The number of the FULL matrix in which to save total walk time. Enter 0 to skip saving this matrix")>
+
+      Public WalkMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: WalkTimes Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save total walk time. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitMatrixNumber
+  id: WaitMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: WaitMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WaitMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 209
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Wait Times Matrix", 0, "The number of the FULL matrix in which to save total waiting time. Enter 0 to skip saving this matrix")]
+
+      public int WaitMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Wait Times Matrix", 0, "The number of the FULL matrix in which to save total waiting time. Enter 0 to skip saving this matrix")>
+
+      Public WaitMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Times Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save total waiting time. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FareMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FareMatrixNumber
+  id: FareMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: FareMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.FareMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FareMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FareMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 212
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Fare Matrix", 0, "The number of the FULL matrix in which to save transit fares. Enter 0 to skip saving this matrix")]
+
+      public int FareMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Fare Matrix", 0, "The number of the FULL matrix in which to save transit fares. Enter 0 to skip saving this matrix")>
+
+      Public FareMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Fare Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save transit fares. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.PerceivedTravelTimeMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.PerceivedTravelTimeMatrixNumber
+  id: PerceivedTravelTimeMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: PerceivedTravelTimeMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.PerceivedTravelTimeMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.PerceivedTravelTimeMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PerceivedTravelTimeMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 215
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Perceived Travel Time Matrix", 0, "The number of the FULL matrix in which to save the incurred penalties. Enter 0 to skip saving this matrix")]
+
+      public int PerceivedTravelTimeMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Perceived Travel Time Matrix", 0, "The number of the FULL matrix in which to save the incurred penalties. Enter 0 to skip saving this matrix")>
+
+      Public PerceivedTravelTimeMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Perceived Travel Time Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save the incurred penalties. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPenaltyMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPenaltyMatrixNumber
+  id: BoardingPenaltyMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: BoardingPenaltyMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPenaltyMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPenaltyMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BoardingPenaltyMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 218
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Boarding Penalty Matrix", 0, "The number of the FULL matrix in which to save the applied boarding penalties.  Enter 0 to skip this matrix.")]
+
+      public int BoardingPenaltyMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Boarding Penalty Matrix", 0, "The number of the FULL matrix in which to save the applied boarding penalties.  Enter 0 to skip this matrix.")>
+
+      Public BoardingPenaltyMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Boarding Penalty Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save the applied boarding penalties.  Enter 0 to skip this matrix.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.CongestionMatrixNumber
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.CongestionMatrixNumber
+  id: CongestionMatrixNumber
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: CongestionMatrixNumber
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.CongestionMatrixNumber
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.CongestionMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CongestionMatrixNumber
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 221
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Congestion Matrix", 0, "The number of the FULL matrix in which to save transit congestion. Enter 0 to skip saving this matrix")]
+
+      public int CongestionMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Congestion Matrix", 0, "The number of the FULL matrix in which to save transit congestion. Enter 0 to skip saving this matrix")>
+
+      Public CongestionMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Congestion Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the FULL matrix in which to save transit congestion. Enter 0 to skip saving this matrix
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPerception
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPerception
+  id: BoardingPerception
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: BoardingPerception
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPerception
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.BoardingPerception
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BoardingPerception
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 224
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Boarding Penalty Perception", 1F, "Perception factor applied to boarding penalty component.")]
+
+      public float BoardingPerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Boarding Penalty Perception", 1F, "Perception factor applied to boarding penalty component.")>
+
+      Public BoardingPerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Boarding Penalty Perception
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Perception factor applied to boarding penalty component.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FarePerception
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FarePerception
+  id: FarePerception
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: FarePerception
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.FarePerception
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.FarePerception
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FarePerception
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 227
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Fare Perception", 0F, "Perception factor applied to path transit fares, in $/hr.")]
+
+      public float FarePerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Fare Perception", 0F, "Perception factor applied to path transit fares, in $/hr.")>
+
+      Public FarePerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Fare Perception
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: Perception factor applied to path transit fares, in $/hr.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitTimePerception
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitTimePerception
+  id: WaitTimePerception
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: WaitTimePerception
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WaitTimePerception
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WaitTimePerception
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitTimePerception
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 230
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Wait Time Perception", 1F, "Perception factor applied to wait time component.")]
+
+      public float WaitTimePerception
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Wait Time Perception", 1F, "Perception factor applied to wait time component.")>
+
+      Public WaitTimePerception As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Time Perception
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Perception factor applied to wait time component.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ModeList
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ModeList
+  id: ModeList
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: ModeList
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.ModeList
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ModeList
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeList
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 233
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Modes", "*", "A character array of all the modes applied to this class. '*' selects all.")]
+
+      public string ModeList
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Modes", "*", "A character array of all the modes applied to this class. '*' selects all.")>
+
+      Public ModeList As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Modes
+    - type: System.String
+      value: '*'
+    - type: System.String
+      value: A character array of all the modes applied to this class. '*' selects all.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(System.String@)
+  commentId: M:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(ref String)
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 235
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptions
+  commentId: F:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptions
+  id: WalkPerceptions
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: WalkPerceptions
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptions
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptions
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkPerceptions
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 247
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The classes for this multi-class assignment.")]
+
+      public MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[] WalkPerceptions
+    return:
+      type: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[]
+    content.vb: >-
+      <SubModelInformation(Description:="The classes for this multi-class assignment.")>
+
+      Public WalkPerceptions As MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment()
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The classes for this multi-class assignment.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  commentId: P:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  id: Name
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 275
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  commentId: P:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  id: Progress
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 277
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  commentId: P:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  id: ProgressColour
+  parent: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/TMG.Emme/NetworkAssignment/MulticlassFarebasedCongestedTransitAssignment.cs
+    startLine: 279
+  assemblies:
+  - TMG.Emme
+  namespace: TMG.Emme.NetworkAssignment
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: TMG.Emme.NetworkAssignment
+  commentId: N:TMG.Emme.NetworkAssignment
+  isExternal: false
+  name: TMG.Emme.NetworkAssignment
+  nameWithType: TMG.Emme.NetworkAssignment
+  fullName: TMG.Emme.NetworkAssignment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation*
+  commentId: Overload:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[]
+  name: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[]
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[]
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment[]
+  nameWithType.vb: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment()
+  fullName.vb: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment()
+  name.vb: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment()
+  spec.csharp:
+  - uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    name: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    name: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+    fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.WalkPerceptionSegment
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name*
+  commentId: Overload:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  isExternal: false
+  name: Name
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.Name
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress*
+  commentId: Overload:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour*
+  commentId: Overload:TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+  fullName: TMG.Emme.NetworkAssignment.MulticlassFareBasedCongestedTransitAssignment.Class.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )

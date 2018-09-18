@@ -1,0 +1,1885 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.Input.ReadFilteredODTextData
+  commentId: T:TMG.GTAModel.Input.ReadFilteredODTextData
+  id: ReadFilteredODTextData
+  parent: TMG.GTAModel.Input
+  children:
+  - TMG.GTAModel.Input.ReadFilteredODTextData.AllowedIndexes
+  - TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  langs:
+  - csharp
+  - vb
+  name: ReadFilteredODTextData
+  nameWithType: ReadFilteredODTextData
+  fullName: TMG.GTAModel.Input.ReadFilteredODTextData
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Input/ReadFilteredODTextData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ReadFilteredODTextData
+    path: ../../XTMF/Code/GTAModel/Input/ReadFilteredODTextData.cs
+    startLine: 26
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Input
+  syntax:
+    content: 'public sealed class ReadFilteredODTextData : ReadODTextData, IReadODData<float>, IDataLineSource<ODData<float>>, IModule'
+    content.vb: >-
+      Public NotInheritable Class ReadFilteredODTextData
+
+          Inherits ReadODTextData
+
+          Implements IReadODData(Of Single), IDataLineSource(Of ODData(Of Single)), IModule
+  inheritance:
+  - System.Object
+  - TMG.GTAModel.Input.ReadODTextData
+  implements:
+  - TMG.Input.IReadODData{System.Single}
+  - TMG.Input.IDataLineSource{TMG.Input.ODData{System.Single}}
+  - XTMF.IModule
+  inheritedMembers:
+  - TMG.GTAModel.Input.ReadODTextData.ContainsDimensionInformation
+  - TMG.GTAModel.Input.ReadODTextData.FileName
+  - TMG.GTAModel.Input.ReadODTextData.Header
+  - TMG.GTAModel.Input.ReadODTextData.FromInputDirectory
+  - TMG.GTAModel.Input.ReadODTextData.Root
+  - TMG.GTAModel.Input.ReadODTextData.Name
+  - TMG.GTAModel.Input.ReadODTextData.Progress
+  - TMG.GTAModel.Input.ReadODTextData.ProgressColour
+  - TMG.GTAModel.Input.ReadODTextData.Read
+  - TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String@)
+  - TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+  - TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+  - TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader,System.Char@)
+  - TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+  - TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+  - TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader,System.Char@,System.Single@)
+  - TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader,System.Char@,System.Int32@)
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: TMG.GTAModel.Input.ReadFilteredODTextData.AllowedIndexes
+  commentId: F:TMG.GTAModel.Input.ReadFilteredODTextData.AllowedIndexes
+  id: AllowedIndexes
+  parent: TMG.GTAModel.Input.ReadFilteredODTextData
+  langs:
+  - csharp
+  - vb
+  name: AllowedIndexes
+  nameWithType: ReadFilteredODTextData.AllowedIndexes
+  fullName: TMG.GTAModel.Input.ReadFilteredODTextData.AllowedIndexes
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Input/ReadFilteredODTextData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AllowedIndexes
+    path: ../../XTMF/Code/GTAModel/Input/ReadFilteredODTextData.cs
+    startLine: 37
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Input
+  syntax:
+    content: >-
+      [RunParameter("Allowed Indexes", "1", typeof (NumberList), "A list of category indexes that will be selected.")]
+
+      public NumberList AllowedIndexes
+    return:
+      type: TMG.GTAModel.DataUtility.NumberList
+    content.vb: >-
+      <RunParameter("Allowed Indexes", "1", GetType(NumberList), "A list of category indexes that will be selected.")>
+
+      Public AllowedIndexes As NumberList
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Allowed Indexes
+    - type: System.String
+      value: "1"
+    - type: System.Type
+      value: TMG.GTAModel.DataUtility.NumberList
+    - type: System.String
+      value: A list of category indexes that will be selected.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  commentId: M:TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  id: ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  parent: TMG.GTAModel.Input.ReadFilteredODTextData
+  langs:
+  - csharp
+  - vb
+  name: ReadDataLine(BinaryReader, out ODData<Single>)
+  nameWithType: ReadFilteredODTextData.ReadDataLine(BinaryReader, out ODData<Single>)
+  fullName: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine(System.IO.BinaryReader, out TMG.Input.ODData<System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Input/ReadFilteredODTextData.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ReadDataLine
+    path: ../../XTMF/Code/GTAModel/Input/ReadFilteredODTextData.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Input
+  syntax:
+    content: protected override bool ReadDataLine(BinaryReader reader, out ODData<float> data)
+    parameters:
+    - id: reader
+      type: System.IO.BinaryReader
+    - id: data
+      type: TMG.Input.ODData{System.Single}
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function ReadDataLine(reader As BinaryReader, ByRef data As ODData(Of Single)) As Boolean
+  overridden: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  overload: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine*
+  nameWithType.vb: ReadFilteredODTextData.ReadDataLine(BinaryReader, ByRef ODData(Of Single))
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine(System.IO.BinaryReader, ByRef TMG.Input.ODData(Of System.Single))
+  name.vb: ReadDataLine(BinaryReader, ByRef ODData(Of Single))
+references:
+- uid: TMG.GTAModel.Input
+  commentId: N:TMG.GTAModel.Input
+  isExternal: false
+  name: TMG.GTAModel.Input
+  nameWithType: TMG.GTAModel.Input
+  fullName: TMG.GTAModel.Input
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.GTAModel.Input.ReadODTextData
+  commentId: T:TMG.GTAModel.Input.ReadODTextData
+  parent: TMG.GTAModel.Input
+  isExternal: false
+  name: ReadODTextData
+  nameWithType: ReadODTextData
+  fullName: TMG.GTAModel.Input.ReadODTextData
+- uid: TMG.Input.IReadODData{System.Single}
+  commentId: T:TMG.Input.IReadODData{System.Single}
+  parent: TMG.Input
+  definition: TMG.Input.IReadODData`1
+  name: IReadODData<Single>
+  nameWithType: IReadODData<Single>
+  fullName: TMG.Input.IReadODData<System.Single>
+  nameWithType.vb: IReadODData(Of Single)
+  fullName.vb: TMG.Input.IReadODData(Of System.Single)
+  name.vb: IReadODData(Of Single)
+  spec.csharp:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input.IDataLineSource{TMG.Input.ODData{System.Single}}
+  commentId: T:TMG.Input.IDataLineSource{TMG.Input.ODData{System.Single}}
+  parent: TMG.Input
+  definition: TMG.Input.IDataLineSource`1
+  name: IDataLineSource<ODData<Single>>
+  nameWithType: IDataLineSource<ODData<Single>>
+  fullName: TMG.Input.IDataLineSource<TMG.Input.ODData<System.Single>>
+  nameWithType.vb: IDataLineSource(Of ODData(Of Single))
+  fullName.vb: TMG.Input.IDataLineSource(Of TMG.Input.ODData(Of System.Single))
+  name.vb: IDataLineSource(Of ODData(Of Single))
+  spec.csharp:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.GTAModel.Input.ReadODTextData.ContainsDimensionInformation
+  commentId: F:TMG.GTAModel.Input.ReadODTextData.ContainsDimensionInformation
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: ContainsDimensionInformation
+  nameWithType: ReadODTextData.ContainsDimensionInformation
+  fullName: TMG.GTAModel.Input.ReadODTextData.ContainsDimensionInformation
+- uid: TMG.GTAModel.Input.ReadODTextData.FileName
+  commentId: F:TMG.GTAModel.Input.ReadODTextData.FileName
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: FileName
+  nameWithType: ReadODTextData.FileName
+  fullName: TMG.GTAModel.Input.ReadODTextData.FileName
+- uid: TMG.GTAModel.Input.ReadODTextData.Header
+  commentId: F:TMG.GTAModel.Input.ReadODTextData.Header
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: Header
+  nameWithType: ReadODTextData.Header
+  fullName: TMG.GTAModel.Input.ReadODTextData.Header
+- uid: TMG.GTAModel.Input.ReadODTextData.FromInputDirectory
+  commentId: F:TMG.GTAModel.Input.ReadODTextData.FromInputDirectory
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: FromInputDirectory
+  nameWithType: ReadODTextData.FromInputDirectory
+  fullName: TMG.GTAModel.Input.ReadODTextData.FromInputDirectory
+- uid: TMG.GTAModel.Input.ReadODTextData.Root
+  commentId: F:TMG.GTAModel.Input.ReadODTextData.Root
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: Root
+  nameWithType: ReadODTextData.Root
+  fullName: TMG.GTAModel.Input.ReadODTextData.Root
+- uid: TMG.GTAModel.Input.ReadODTextData.Name
+  commentId: P:TMG.GTAModel.Input.ReadODTextData.Name
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: Name
+  nameWithType: ReadODTextData.Name
+  fullName: TMG.GTAModel.Input.ReadODTextData.Name
+- uid: TMG.GTAModel.Input.ReadODTextData.Progress
+  commentId: P:TMG.GTAModel.Input.ReadODTextData.Progress
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: Progress
+  nameWithType: ReadODTextData.Progress
+  fullName: TMG.GTAModel.Input.ReadODTextData.Progress
+- uid: TMG.GTAModel.Input.ReadODTextData.ProgressColour
+  commentId: P:TMG.GTAModel.Input.ReadODTextData.ProgressColour
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: ProgressColour
+  nameWithType: ReadODTextData.ProgressColour
+  fullName: TMG.GTAModel.Input.ReadODTextData.ProgressColour
+- uid: TMG.GTAModel.Input.ReadODTextData.Read
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.Read
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: false
+  name: Read()
+  nameWithType: ReadODTextData.Read()
+  fullName: TMG.GTAModel.Input.ReadODTextData.Read()
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.Read
+    name: Read
+    nameWithType: ReadODTextData.Read
+    fullName: TMG.GTAModel.Input.ReadODTextData.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.Read
+    name: Read
+    nameWithType: ReadODTextData.Read
+    fullName: TMG.GTAModel.Input.ReadODTextData.Read
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: ReadODTextData.RuntimeValidation(String)
+  fullName: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: ReadODTextData.RuntimeValidation
+    fullName: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: ReadODTextData.RuntimeValidation
+    fullName: TMG.GTAModel.Input.ReadODTextData.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: WhiteSpace(Char)
+  nameWithType: ReadODTextData.WhiteSpace(Char)
+  fullName: TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+    name: WhiteSpace
+    nameWithType: ReadODTextData.WhiteSpace
+    fullName: TMG.GTAModel.Input.ReadODTextData.WhiteSpace
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.WhiteSpace(System.Char)
+    name: WhiteSpace
+    nameWithType: ReadODTextData.WhiteSpace
+    fullName: TMG.GTAModel.Input.ReadODTextData.WhiteSpace
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: BurnLine(BinaryReader)
+  nameWithType: ReadODTextData.BurnLine(BinaryReader)
+  fullName: TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+    name: BurnLine
+    nameWithType: ReadODTextData.BurnLine
+    fullName: TMG.GTAModel.Input.ReadODTextData.BurnLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.BurnLine(System.IO.BinaryReader)
+    name: BurnLine
+    nameWithType: ReadODTextData.BurnLine
+    fullName: TMG.GTAModel.Input.ReadODTextData.BurnLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader,System.Char@)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader,System.Char@)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: BurnWhiteSpace(BinaryReader, Char)
+  nameWithType: ReadODTextData.BurnWhiteSpace(BinaryReader, Char)
+  fullName: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader, System.Char)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader,System.Char@)
+    name: BurnWhiteSpace
+    nameWithType: ReadODTextData.BurnWhiteSpace
+    fullName: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace(System.IO.BinaryReader,System.Char@)
+    name: BurnWhiteSpace
+    nameWithType: ReadODTextData.BurnWhiteSpace
+    fullName: TMG.GTAModel.Input.ReadODTextData.BurnWhiteSpace
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: EndOfFile(BinaryReader)
+  nameWithType: ReadODTextData.EndOfFile(BinaryReader)
+  fullName: TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+    name: EndOfFile
+    nameWithType: ReadODTextData.EndOfFile
+    fullName: TMG.GTAModel.Input.ReadODTextData.EndOfFile
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.EndOfFile(System.IO.BinaryReader)
+    name: EndOfFile
+    nameWithType: ReadODTextData.EndOfFile
+    fullName: TMG.GTAModel.Input.ReadODTextData.EndOfFile
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: GetInputFileName(String)
+  nameWithType: ReadODTextData.GetInputFileName(String)
+  fullName: TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+    name: GetInputFileName
+    nameWithType: ReadODTextData.GetInputFileName
+    fullName: TMG.GTAModel.Input.ReadODTextData.GetInputFileName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.GetInputFileName(System.String)
+    name: GetInputFileName
+    nameWithType: ReadODTextData.GetInputFileName
+    fullName: TMG.GTAModel.Input.ReadODTextData.GetInputFileName
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader,System.Char@,System.Single@)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader,System.Char@,System.Single@)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: ReadFloat(BinaryReader, Char, Single)
+  nameWithType: ReadODTextData.ReadFloat(BinaryReader, Char, Single)
+  fullName: TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader, System.Char, System.Single)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader,System.Char@,System.Single@)
+    name: ReadFloat
+    nameWithType: ReadODTextData.ReadFloat
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadFloat
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadFloat(System.IO.BinaryReader,System.Char@,System.Single@)
+    name: ReadFloat
+    nameWithType: ReadODTextData.ReadFloat
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadFloat
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader,System.Char@,System.Int32@)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader,System.Char@,System.Int32@)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: ReadInteger(BinaryReader, Char, Int32)
+  nameWithType: ReadODTextData.ReadInteger(BinaryReader, Char, Int32)
+  fullName: TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader, System.Char, System.Int32)
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader,System.Char@,System.Int32@)
+    name: ReadInteger
+    nameWithType: ReadODTextData.ReadInteger
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadInteger
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadInteger(System.IO.BinaryReader,System.Char@,System.Int32@)
+    name: ReadInteger
+    nameWithType: ReadODTextData.ReadInteger
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadInteger
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Char
+    name: Char
+    nameWithType: Char
+    fullName: System.Char
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Input.IReadODData`1
+  commentId: T:TMG.Input.IReadODData`1
+  isExternal: false
+  name: IReadODData<T>
+  nameWithType: IReadODData<T>
+  fullName: TMG.Input.IReadODData<T>
+  nameWithType.vb: IReadODData(Of T)
+  fullName.vb: TMG.Input.IReadODData(Of T)
+  name.vb: IReadODData(Of T)
+  spec.csharp:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  isExternal: false
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: TMG.Input.IDataLineSource`1
+  commentId: T:TMG.Input.IDataLineSource`1
+  isExternal: false
+  name: IDataLineSource<T>
+  nameWithType: IDataLineSource<T>
+  fullName: TMG.Input.IDataLineSource<T>
+  nameWithType.vb: IDataLineSource(Of T)
+  fullName.vb: TMG.Input.IDataLineSource(Of T)
+  name.vb: IDataLineSource(Of T)
+  spec.csharp:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.GTAModel.DataUtility.NumberList
+  commentId: T:TMG.GTAModel.DataUtility.NumberList
+  parent: TMG.GTAModel.DataUtility
+  isExternal: false
+  name: NumberList
+  nameWithType: NumberList
+  fullName: TMG.GTAModel.DataUtility.NumberList
+- uid: TMG.GTAModel.DataUtility
+  commentId: N:TMG.GTAModel.DataUtility
+  isExternal: false
+  name: TMG.GTAModel.DataUtility
+  nameWithType: TMG.GTAModel.DataUtility
+  fullName: TMG.GTAModel.DataUtility
+- uid: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  commentId: M:TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+  parent: TMG.GTAModel.Input.ReadODTextData
+  isExternal: true
+  name: ReadDataLine(BinaryReader, ODData<Single>)
+  nameWithType: ReadODTextData.ReadDataLine(BinaryReader, ODData<Single>)
+  fullName: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader, TMG.Input.ODData<System.Single>)
+  nameWithType.vb: ReadODTextData.ReadDataLine(BinaryReader, ODData(Of Single))
+  fullName.vb: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader, TMG.Input.ODData(Of System.Single))
+  name.vb: ReadDataLine(BinaryReader, ODData(Of Single))
+  spec.csharp:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+    name: ReadDataLine
+    nameWithType: ReadODTextData.ReadDataLine
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadDataLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.GTAModel.Input.ReadODTextData.ReadDataLine(System.IO.BinaryReader,TMG.Input.ODData{System.Single}@)
+    name: ReadDataLine
+    nameWithType: ReadODTextData.ReadDataLine
+    fullName: TMG.GTAModel.Input.ReadODTextData.ReadDataLine
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.BinaryReader
+    name: BinaryReader
+    nameWithType: BinaryReader
+    fullName: System.IO.BinaryReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine*
+  commentId: Overload:TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine
+  isExternal: false
+  name: ReadDataLine
+  nameWithType: ReadFilteredODTextData.ReadDataLine
+  fullName: TMG.GTAModel.Input.ReadFilteredODTextData.ReadDataLine
+- uid: System.IO.BinaryReader
+  commentId: T:System.IO.BinaryReader
+  parent: System.IO
+  isExternal: true
+  name: BinaryReader
+  nameWithType: BinaryReader
+  fullName: System.IO.BinaryReader
+- uid: TMG.Input.ODData{System.Single}
+  commentId: T:TMG.Input.ODData{System.Single}
+  parent: TMG.Input
+  definition: TMG.Input.ODData`1
+  name: ODData<Single>
+  nameWithType: ODData<Single>
+  fullName: TMG.Input.ODData<System.Single>
+  nameWithType.vb: ODData(Of Single)
+  fullName.vb: TMG.Input.ODData(Of System.Single)
+  name.vb: ODData(Of Single)
+  spec.csharp:
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: TMG.Input.ODData`1
+  commentId: T:TMG.Input.ODData`1
+  isExternal: false
+  name: ODData<T>
+  nameWithType: ODData<T>
+  fullName: TMG.Input.ODData<T>
+  nameWithType.vb: ODData(Of T)
+  fullName.vb: TMG.Input.ODData(Of T)
+  name.vb: ODData(Of T)
+  spec.csharp:
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.ODData`1
+    name: ODData
+    nameWithType: ODData
+    fullName: TMG.Input.ODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

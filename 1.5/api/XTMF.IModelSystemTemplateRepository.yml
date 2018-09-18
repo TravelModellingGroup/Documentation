@@ -1,0 +1,416 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.IModelSystemTemplateRepository
+  commentId: T:XTMF.IModelSystemTemplateRepository
+  id: IModelSystemTemplateRepository
+  parent: XTMF
+  children:
+  - XTMF.IModelSystemTemplateRepository.Add(System.Type)
+  - XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+  - XTMF.IModelSystemTemplateRepository.Unload(System.Type)
+  langs:
+  - csharp
+  - vb
+  name: IModelSystemTemplateRepository
+  nameWithType: IModelSystemTemplateRepository
+  fullName: XTMF.IModelSystemTemplateRepository
+  type: Interface
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IModelSystemTemplateRepository
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+    startLine: 23
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  syntax:
+    content: 'public interface IModelSystemTemplateRepository : IEnumerable<Type>, IEnumerable'
+    content.vb: >-
+      Public Interface IModelSystemTemplateRepository
+
+          Inherits IEnumerable(Of Type)
+  inheritedMembers:
+  - System.Collections.Generic.IEnumerable{System.Type}.GetEnumerator
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+  commentId: P:XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+  id: ModelSystemTemplates
+  parent: XTMF.IModelSystemTemplateRepository
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemTemplates
+  nameWithType: IModelSystemTemplateRepository.ModelSystemTemplates
+  fullName: XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemTemplates
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+    startLine: 29
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe model systems currently loaded in this\ninstallation of XTMF\n"
+  example: []
+  syntax:
+    content: List<Type> ModelSystemTemplates { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Type}
+    content.vb: ReadOnly Property ModelSystemTemplates As List(Of Type)
+  overload: XTMF.IModelSystemTemplateRepository.ModelSystemTemplates*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IModelSystemTemplateRepository.Add(System.Type)
+  commentId: M:XTMF.IModelSystemTemplateRepository.Add(System.Type)
+  id: Add(System.Type)
+  parent: XTMF.IModelSystemTemplateRepository
+  langs:
+  - csharp
+  - vb
+  name: Add(Type)
+  nameWithType: IModelSystemTemplateRepository.Add(Type)
+  fullName: XTMF.IModelSystemTemplateRepository.Add(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Add
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+    startLine: 35
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nadd a new type of model system to the model system repository\n"
+  example: []
+  syntax:
+    content: void Add(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: The type that implements IModelSystem
+    content.vb: Sub Add(type As Type)
+  overload: XTMF.IModelSystemTemplateRepository.Add*
+- uid: XTMF.IModelSystemTemplateRepository.Unload(System.Type)
+  commentId: M:XTMF.IModelSystemTemplateRepository.Unload(System.Type)
+  id: Unload(System.Type)
+  parent: XTMF.IModelSystemTemplateRepository
+  langs:
+  - csharp
+  - vb
+  name: Unload(Type)
+  nameWithType: IModelSystemTemplateRepository.Unload(Type)
+  fullName: XTMF.IModelSystemTemplateRepository.Unload(System.Type)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Unload
+    path: ../../XTMF/Code/XTMFInterfaces/Interfaces/IModelSystemTemplateRepository.cs
+    startLine: 41
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nUnload a type from the IModelSystem Repository\n"
+  example: []
+  syntax:
+    content: void Unload(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+      description: The type to remove
+    content.vb: Sub Unload(type As Type)
+  overload: XTMF.IModelSystemTemplateRepository.Unload*
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Collections.Generic.IEnumerable{System.Type}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{System.Type}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{System.Type}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<Type>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<System.Type>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of Type).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<Type>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<System.Type>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of Type).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of System.Type).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.IModelSystemTemplateRepository.ModelSystemTemplates*
+  commentId: Overload:XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+  isExternal: false
+  name: ModelSystemTemplates
+  nameWithType: IModelSystemTemplateRepository.ModelSystemTemplates
+  fullName: XTMF.IModelSystemTemplateRepository.ModelSystemTemplates
+- uid: System.Collections.Generic.List{System.Type}
+  commentId: T:System.Collections.Generic.List{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Type>
+  nameWithType: List<Type>
+  fullName: System.Collections.Generic.List<System.Type>
+  nameWithType.vb: List(Of Type)
+  fullName.vb: System.Collections.Generic.List(Of System.Type)
+  name.vb: List(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModelSystemTemplateRepository.Add*
+  commentId: Overload:XTMF.IModelSystemTemplateRepository.Add
+  isExternal: false
+  name: Add
+  nameWithType: IModelSystemTemplateRepository.Add
+  fullName: XTMF.IModelSystemTemplateRepository.Add
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.IModelSystemTemplateRepository.Unload*
+  commentId: Overload:XTMF.IModelSystemTemplateRepository.Unload
+  isExternal: false
+  name: Unload
+  nameWithType: IModelSystemTemplateRepository.Unload
+  fullName: XTMF.IModelSystemTemplateRepository.Unload

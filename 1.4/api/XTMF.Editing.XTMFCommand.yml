@@ -1,0 +1,698 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.Editing.XTMFCommand
+  commentId: T:XTMF.Editing.XTMFCommand
+  id: XTMFCommand
+  parent: XTMF.Editing
+  children:
+  - XTMF.Editing.XTMFCommand.#ctor(System.String)
+  - XTMF.Editing.XTMFCommand.CanUndo
+  - XTMF.Editing.XTMFCommand.CreateCommand(System.String,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod)
+  - XTMF.Editing.XTMFCommand.Do(System.String@)
+  - XTMF.Editing.XTMFCommand.Name
+  - XTMF.Editing.XTMFCommand.Redo(System.String@)
+  - XTMF.Editing.XTMFCommand.Undo(System.String@)
+  langs:
+  - csharp
+  - vb
+  name: XTMFCommand
+  nameWithType: XTMFCommand
+  fullName: XTMF.Editing.XTMFCommand
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: XTMFCommand
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 28
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nThe base class for internal XTMF commands\n"
+  example: []
+  syntax:
+    content: public abstract class XTMFCommand
+    content.vb: Public MustInherit Class XTMFCommand
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: XTMF.Editing.XTMFCommand.Name
+  commentId: F:XTMF.Editing.XTMFCommand.Name
+  id: Name
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: XTMFCommand.Name
+  fullName: XTMF.Editing.XTMFCommand.Name
+  type: Field
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 33
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nThe name of the executing command\n"
+  example: []
+  syntax:
+    content: public readonly string Name
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Name As String
+  modifiers.csharp:
+  - public
+  - readonly
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.Editing.XTMFCommand.#ctor(System.String)
+  commentId: M:XTMF.Editing.XTMFCommand.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: XTMFCommand(String)
+  nameWithType: XTMFCommand.XTMFCommand(String)
+  fullName: XTMF.Editing.XTMFCommand.XTMFCommand(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 35
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  syntax:
+    content: public XTMFCommand(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub New(name As String)
+  overload: XTMF.Editing.XTMFCommand.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.Editing.XTMFCommand.CanUndo
+  commentId: M:XTMF.Editing.XTMFCommand.CanUndo
+  id: CanUndo
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: CanUndo()
+  nameWithType: XTMFCommand.CanUndo()
+  fullName: XTMF.Editing.XTMFCommand.CanUndo()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CanUndo
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 44
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nCheck to see if a command can be undone\n"
+  example: []
+  syntax:
+    content: public abstract bool CanUndo()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public MustOverride Function CanUndo As Boolean
+  overload: XTMF.Editing.XTMFCommand.CanUndo*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.Editing.XTMFCommand.Do(System.String@)
+  commentId: M:XTMF.Editing.XTMFCommand.Do(System.String@)
+  id: Do(System.String@)
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: Do(ref String)
+  nameWithType: XTMFCommand.Do(ref String)
+  fullName: XTMF.Editing.XTMFCommand.Do(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Do
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 49
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nRun the command for the first time\n"
+  example: []
+  syntax:
+    content: public abstract bool Do(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function Do(ByRef error As String) As Boolean
+  overload: XTMF.Editing.XTMFCommand.Do*
+  nameWithType.vb: XTMFCommand.Do(ByRef String)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: XTMF.Editing.XTMFCommand.Do(ByRef System.String)
+  name.vb: Do(ByRef String)
+- uid: XTMF.Editing.XTMFCommand.Undo(System.String@)
+  commentId: M:XTMF.Editing.XTMFCommand.Undo(System.String@)
+  id: Undo(System.String@)
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: Undo(ref String)
+  nameWithType: XTMFCommand.Undo(ref String)
+  fullName: XTMF.Editing.XTMFCommand.Undo(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Undo
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 54
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nUndo the command\n"
+  example: []
+  syntax:
+    content: public abstract bool Undo(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function Undo(ByRef error As String) As Boolean
+  overload: XTMF.Editing.XTMFCommand.Undo*
+  nameWithType.vb: XTMFCommand.Undo(ByRef String)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: XTMF.Editing.XTMFCommand.Undo(ByRef System.String)
+  name.vb: Undo(ByRef String)
+- uid: XTMF.Editing.XTMFCommand.Redo(System.String@)
+  commentId: M:XTMF.Editing.XTMFCommand.Redo(System.String@)
+  id: Redo(System.String@)
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: Redo(ref String)
+  nameWithType: XTMFCommand.Redo(ref String)
+  fullName: XTMF.Editing.XTMFCommand.Redo(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Redo
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 59
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nReapply the command\n"
+  example: []
+  syntax:
+    content: public abstract bool Redo(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function Redo(ByRef error As String) As Boolean
+  overload: XTMF.Editing.XTMFCommand.Redo*
+  nameWithType.vb: XTMFCommand.Redo(ByRef String)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: XTMF.Editing.XTMFCommand.Redo(ByRef System.String)
+  name.vb: Redo(ByRef String)
+- uid: XTMF.Editing.XTMFCommand.CreateCommand(System.String,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod)
+  commentId: M:XTMF.Editing.XTMFCommand.CreateCommand(System.String,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod)
+  id: CreateCommand(System.String,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod,XTMF.Editing.XTMFCommand.XTMFCommandMethod)
+  parent: XTMF.Editing.XTMFCommand
+  langs:
+  - csharp
+  - vb
+  name: CreateCommand(String, XTMFCommand.XTMFCommandMethod, XTMFCommand.XTMFCommandMethod, XTMFCommand.XTMFCommandMethod)
+  nameWithType: XTMFCommand.CreateCommand(String, XTMFCommand.XTMFCommandMethod, XTMFCommand.XTMFCommandMethod, XTMFCommand.XTMFCommandMethod)
+  fullName: XTMF.Editing.XTMFCommand.CreateCommand(System.String, XTMF.Editing.XTMFCommand.XTMFCommandMethod, XTMF.Editing.XTMFCommand.XTMFCommandMethod, XTMF.Editing.XTMFCommand.XTMFCommandMethod)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF1.1/Editing/XTMFCommand.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateCommand
+    path: ../../XTMF/Code/XTMF1.1/Editing/XTMFCommand.cs
+    startLine: 95
+  assemblies:
+  - XTMF
+  namespace: XTMF.Editing
+  summary: "\nGenerate a new command given delegates.  If you use OnUndo you must also provide a OnRedo.\n"
+  example: []
+  syntax:
+    content: public static XTMFCommand CreateCommand(string name, XTMFCommand.XTMFCommandMethod OnDo, XTMFCommand.XTMFCommandMethod OnUndo = null, XTMFCommand.XTMFCommandMethod OnRedo = null)
+    parameters:
+    - id: name
+      type: System.String
+    - id: OnDo
+      type: XTMF.Editing.XTMFCommand.XTMFCommandMethod
+      description: The action to perform
+    - id: OnUndo
+      type: XTMF.Editing.XTMFCommand.XTMFCommandMethod
+      description: The inverse of the action to perform
+    - id: OnRedo
+      type: XTMF.Editing.XTMFCommand.XTMFCommandMethod
+      description: The inverse of the inverse of the action to perform
+    return:
+      type: XTMF.Editing.XTMFCommand
+      description: A command with this behaviour.
+    content.vb: Public Shared Function CreateCommand(name As String, OnDo As XTMFCommand.XTMFCommandMethod, OnUndo As XTMFCommand.XTMFCommandMethod = Nothing, OnRedo As XTMFCommand.XTMFCommandMethod = Nothing) As XTMFCommand
+  overload: XTMF.Editing.XTMFCommand.CreateCommand*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: XTMF.Editing
+  commentId: N:XTMF.Editing
+  isExternal: false
+  name: XTMF.Editing
+  nameWithType: XTMF.Editing
+  fullName: XTMF.Editing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.Editing.XTMFCommand.#ctor*
+  commentId: Overload:XTMF.Editing.XTMFCommand.#ctor
+  isExternal: false
+  name: XTMFCommand
+  nameWithType: XTMFCommand.XTMFCommand
+  fullName: XTMF.Editing.XTMFCommand.XTMFCommand
+- uid: XTMF.Editing.XTMFCommand.CanUndo*
+  commentId: Overload:XTMF.Editing.XTMFCommand.CanUndo
+  isExternal: false
+  name: CanUndo
+  nameWithType: XTMFCommand.CanUndo
+  fullName: XTMF.Editing.XTMFCommand.CanUndo
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.Editing.XTMFCommand.Do*
+  commentId: Overload:XTMF.Editing.XTMFCommand.Do
+  isExternal: false
+  name: Do
+  nameWithType: XTMFCommand.Do
+  fullName: XTMF.Editing.XTMFCommand.Do
+- uid: XTMF.Editing.XTMFCommand.Undo*
+  commentId: Overload:XTMF.Editing.XTMFCommand.Undo
+  isExternal: false
+  name: Undo
+  nameWithType: XTMFCommand.Undo
+  fullName: XTMF.Editing.XTMFCommand.Undo
+- uid: XTMF.Editing.XTMFCommand.Redo*
+  commentId: Overload:XTMF.Editing.XTMFCommand.Redo
+  isExternal: false
+  name: Redo
+  nameWithType: XTMFCommand.Redo
+  fullName: XTMF.Editing.XTMFCommand.Redo
+- uid: XTMF.Editing.XTMFCommand.CreateCommand*
+  commentId: Overload:XTMF.Editing.XTMFCommand.CreateCommand
+  isExternal: false
+  name: CreateCommand
+  nameWithType: XTMFCommand.CreateCommand
+  fullName: XTMF.Editing.XTMFCommand.CreateCommand
+- uid: XTMF.Editing.XTMFCommand.XTMFCommandMethod
+  commentId: T:XTMF.Editing.XTMFCommand.XTMFCommandMethod
+  parent: XTMF.Editing
+  isExternal: false
+  name: XTMFCommand.XTMFCommandMethod
+  nameWithType: XTMFCommand.XTMFCommandMethod
+  fullName: XTMF.Editing.XTMFCommand.XTMFCommandMethod
+- uid: XTMF.Editing.XTMFCommand
+  commentId: T:XTMF.Editing.XTMFCommand
+  parent: XTMF.Editing
+  isExternal: false
+  name: XTMFCommand
+  nameWithType: XTMFCommand
+  fullName: XTMF.Editing.XTMFCommand

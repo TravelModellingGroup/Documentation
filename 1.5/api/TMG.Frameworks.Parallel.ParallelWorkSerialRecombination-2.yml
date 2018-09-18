@@ -1,0 +1,1050 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  commentId: T:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  id: ParallelWorkSerialRecombination`2
+  parent: TMG.Frameworks.Parallel
+  children:
+  - TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1})
+  - TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1},System.Int32)
+  - TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32})
+  - TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32},System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: ParallelWorkSerialRecombination<TData, TIntermediate>
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParallelWorkSerialRecombination
+    path: ../../XTMF/Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+    startLine: 32
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Parallel
+  summary: "\nThis is used for helping work through different parallel programming problems\nwhere there is a section of code that can be run in parallel but the results\nneed to be aggregated in order to ensure reproducibility.\n"
+  example: []
+  syntax:
+    content: public static class ParallelWorkSerialRecombination<TData, TIntermediate>
+    typeParameters:
+    - id: TData
+      description: ''
+    - id: TIntermediate
+      description: ''
+    content.vb: Public Module ParallelWorkSerialRecombination(Of TData, TIntermediate)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate)
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate)
+  name.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate)
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1},System.Int32)
+  commentId: M:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1},System.Int32)
+  id: ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1},System.Int32)
+  parent: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  langs:
+  - csharp
+  - vb
+  name: ComputeInParallel(IList<TData>, Func<TData, TIntermediate>, Action<TIntermediate>, Int32)
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(IList<TData>, Func<TData, TIntermediate>, Action<TIntermediate>, Int32)
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(System.Collections.Generic.IList<TData>, System.Func<TData, TIntermediate>, System.Action<TIntermediate>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComputeInParallel
+    path: ../../XTMF/Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+    startLine: 73
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Parallel
+  syntax:
+    content: public static void ComputeInParallel(IList<TData> baseData, Func<TData, TIntermediate> parallelWork, Action<TIntermediate> recombination, int numberOfPartitions)
+    parameters:
+    - id: baseData
+      type: System.Collections.Generic.IList{{TData}}
+    - id: parallelWork
+      type: System.Func{{TData},{TIntermediate}}
+    - id: recombination
+      type: System.Action{{TIntermediate}}
+    - id: numberOfPartitions
+      type: System.Int32
+    content.vb: Public Shared Sub ComputeInParallel(baseData As IList(Of TData), parallelWork As Func(Of TData, TIntermediate), recombination As Action(Of TIntermediate), numberOfPartitions As Integer)
+  overload: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel*
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(IList(Of TData), Func(Of TData, TIntermediate), Action(Of TIntermediate), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(System.Collections.Generic.IList(Of TData), System.Func(Of TData, TIntermediate), System.Action(Of TIntermediate), System.Int32)
+  name.vb: ComputeInParallel(IList(Of TData), Func(Of TData, TIntermediate), Action(Of TIntermediate), Int32)
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32},System.Int32)
+  commentId: M:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32},System.Int32)
+  id: ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32},System.Int32)
+  parent: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  langs:
+  - csharp
+  - vb
+  name: ComputeInParallel(IList<TData>, Func<TData, Int32, TIntermediate>, Action<TIntermediate, Int32>, Int32)
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(IList<TData>, Func<TData, Int32, TIntermediate>, Action<TIntermediate, Int32>, Int32)
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(System.Collections.Generic.IList<TData>, System.Func<TData, System.Int32, TIntermediate>, System.Action<TIntermediate, System.Int32>, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComputeInParallel
+    path: ../../XTMF/Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+    startLine: 126
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Parallel
+  syntax:
+    content: public static void ComputeInParallel(IList<TData> baseData, Func<TData, int, TIntermediate> parallelWork, Action<TIntermediate, int> recombination, int numberOfPartitions)
+    parameters:
+    - id: baseData
+      type: System.Collections.Generic.IList{{TData}}
+    - id: parallelWork
+      type: System.Func{{TData},System.Int32,{TIntermediate}}
+    - id: recombination
+      type: System.Action{{TIntermediate},System.Int32}
+    - id: numberOfPartitions
+      type: System.Int32
+    content.vb: Public Shared Sub ComputeInParallel(baseData As IList(Of TData), parallelWork As Func(Of TData, Integer, TIntermediate), recombination As Action(Of TIntermediate, Integer), numberOfPartitions As Integer)
+  overload: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel*
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(IList(Of TData), Func(Of TData, Int32, TIntermediate), Action(Of TIntermediate, Int32), Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(System.Collections.Generic.IList(Of TData), System.Func(Of TData, System.Int32, TIntermediate), System.Action(Of TIntermediate, System.Int32), System.Int32)
+  name.vb: ComputeInParallel(IList(Of TData), Func(Of TData, Int32, TIntermediate), Action(Of TIntermediate, Int32), Int32)
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1})
+  commentId: M:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1})
+  id: ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,`1},System.Action{`1})
+  parent: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  langs:
+  - csharp
+  - vb
+  name: ComputeInParallel(IList<TData>, Func<TData, TIntermediate>, Action<TIntermediate>)
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(IList<TData>, Func<TData, TIntermediate>, Action<TIntermediate>)
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(System.Collections.Generic.IList<TData>, System.Func<TData, TIntermediate>, System.Action<TIntermediate>)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComputeInParallel
+    path: ../../XTMF/Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+    startLine: 179
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Parallel
+  syntax:
+    content: public static void ComputeInParallel(IList<TData> baseData, Func<TData, TIntermediate> parallelWork, Action<TIntermediate> recombination)
+    parameters:
+    - id: baseData
+      type: System.Collections.Generic.IList{{TData}}
+    - id: parallelWork
+      type: System.Func{{TData},{TIntermediate}}
+    - id: recombination
+      type: System.Action{{TIntermediate}}
+    content.vb: Public Shared Sub ComputeInParallel(baseData As IList(Of TData), parallelWork As Func(Of TData, TIntermediate), recombination As Action(Of TIntermediate))
+  overload: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel*
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(IList(Of TData), Func(Of TData, TIntermediate), Action(Of TIntermediate))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(System.Collections.Generic.IList(Of TData), System.Func(Of TData, TIntermediate), System.Action(Of TIntermediate))
+  name.vb: ComputeInParallel(IList(Of TData), Func(Of TData, TIntermediate), Action(Of TIntermediate))
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32})
+  commentId: M:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32})
+  id: ComputeInParallel(System.Collections.Generic.IList{`0},System.Func{`0,System.Int32,`1},System.Action{`1,System.Int32})
+  parent: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2
+  langs:
+  - csharp
+  - vb
+  name: ComputeInParallel(IList<TData>, Func<TData, Int32, TIntermediate>, Action<TIntermediate, Int32>)
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(IList<TData>, Func<TData, Int32, TIntermediate>, Action<TIntermediate, Int32>)
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel(System.Collections.Generic.IList<TData>, System.Func<TData, System.Int32, TIntermediate>, System.Action<TIntermediate, System.Int32>)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ComputeInParallel
+    path: ../../XTMF/Code/TMG.Frameworks/Parallel/ParallelWorkSerialRecombination.cs
+    startLine: 228
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Parallel
+  syntax:
+    content: public static void ComputeInParallel(IList<TData> baseData, Func<TData, int, TIntermediate> parallelWork, Action<TIntermediate, int> recombination)
+    parameters:
+    - id: baseData
+      type: System.Collections.Generic.IList{{TData}}
+    - id: parallelWork
+      type: System.Func{{TData},System.Int32,{TIntermediate}}
+    - id: recombination
+      type: System.Action{{TIntermediate},System.Int32}
+    content.vb: Public Shared Sub ComputeInParallel(baseData As IList(Of TData), parallelWork As Func(Of TData, Integer, TIntermediate), recombination As Action(Of TIntermediate, Integer))
+  overload: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel*
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(IList(Of TData), Func(Of TData, Int32, TIntermediate), Action(Of TIntermediate, Int32))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel(System.Collections.Generic.IList(Of TData), System.Func(Of TData, System.Int32, TIntermediate), System.Action(Of TIntermediate, System.Int32))
+  name.vb: ComputeInParallel(IList(Of TData), Func(Of TData, Int32, TIntermediate), Action(Of TIntermediate, Int32))
+references:
+- uid: TMG.Frameworks.Parallel
+  commentId: N:TMG.Frameworks.Parallel
+  isExternal: false
+  name: TMG.Frameworks.Parallel
+  nameWithType: TMG.Frameworks.Parallel
+  fullName: TMG.Frameworks.Parallel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel*
+  commentId: Overload:TMG.Frameworks.Parallel.ParallelWorkSerialRecombination`2.ComputeInParallel
+  isExternal: false
+  name: ComputeInParallel
+  nameWithType: ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel
+  fullName: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination<TData, TIntermediate>.ComputeInParallel
+  nameWithType.vb: ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel
+  fullName.vb: TMG.Frameworks.Parallel.ParallelWorkSerialRecombination(Of TData, TIntermediate).ComputeInParallel
+- uid: System.Collections.Generic.IList{{TData}}
+  commentId: T:System.Collections.Generic.IList{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<TData>
+  nameWithType: IList<TData>
+  fullName: System.Collections.Generic.IList<TData>
+  nameWithType.vb: IList(Of TData)
+  fullName.vb: System.Collections.Generic.IList(Of TData)
+  name.vb: IList(Of TData)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TData},{TIntermediate}}
+  commentId: T:System.Func{`0,`1}
+  parent: System
+  definition: System.Func`2
+  name: Func<TData, TIntermediate>
+  nameWithType: Func<TData, TIntermediate>
+  fullName: System.Func<TData, TIntermediate>
+  nameWithType.vb: Func(Of TData, TIntermediate)
+  fullName.vb: System.Func(Of TData, TIntermediate)
+  name.vb: Func(Of TData, TIntermediate)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{{TIntermediate}}
+  commentId: T:System.Action{`1}
+  parent: System
+  definition: System.Action`1
+  name: Action<TIntermediate>
+  nameWithType: Action<TIntermediate>
+  fullName: System.Action<TIntermediate>
+  nameWithType.vb: Action(Of TIntermediate)
+  fullName.vb: System.Action(Of TIntermediate)
+  name.vb: Action(Of TIntermediate)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TData},System.Int32,{TIntermediate}}
+  commentId: T:System.Func{`0,System.Int32,`1}
+  parent: System
+  definition: System.Func`3
+  name: Func<TData, Int32, TIntermediate>
+  nameWithType: Func<TData, Int32, TIntermediate>
+  fullName: System.Func<TData, System.Int32, TIntermediate>
+  nameWithType.vb: Func(Of TData, Int32, TIntermediate)
+  fullName.vb: System.Func(Of TData, System.Int32, TIntermediate)
+  name.vb: Func(Of TData, Int32, TIntermediate)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TData
+    nameWithType: TData
+    fullName: TData
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{{TIntermediate},System.Int32}
+  commentId: T:System.Action{`1,System.Int32}
+  parent: System
+  definition: System.Action`2
+  name: Action<TIntermediate, Int32>
+  nameWithType: Action<TIntermediate, Int32>
+  fullName: System.Action<TIntermediate, System.Int32>
+  nameWithType.vb: Action(Of TIntermediate, Int32)
+  fullName.vb: System.Action(Of TIntermediate, System.Int32)
+  name.vb: Action(Of TIntermediate, Int32)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIntermediate
+    nameWithType: TIntermediate
+    fullName: TIntermediate
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: )
+    nameWithType: )
+    fullName: )
