@@ -1,0 +1,32 @@
+{
+	"build": {
+		"template": "default",
+		"dest": "_site",
+		"globalMetadata": {
+			"_appTitle": "Travel Modelling Group Documentation",
+			"_gitContribute": {
+				"repo": "https://github.com/TravelModellingGroup",
+				"branch": "dev",
+				"apiSpecFolder": "docs-ref-overwrite"
+			},
+			"_appFooter": "©2018, Travel Modelling Group"
+		},
+		"content": [
+			{
+				"files": ["index.md", "toc.yml", "xtmf/**.md", "xtmf/toc.yml", "api/**.yml", "api/**.md"]
+			}
+		]
+	},
+	"metadata": [
+		{
+			"src": [
+				{
+					"src": "../../XTMF/Code/",
+					"files": ["**.csproj"],
+					"exclude": ["**/bin/**", "**/obj/**", "_site/**"]
+				}
+			],
+			"dest": "api"
+		}
+	]
+}
