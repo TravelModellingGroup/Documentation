@@ -1,3 +1,12 @@
+What's new in XTMF Version 1.5?
+=======================================================
+
+### Error Detection
+Steps were taken in XTMF 1.5 to help diagnose common sources of errors.  Modules that read in Origin/Destination data will now throw runtime exceptions if they encounter
+a zone that does not exist in the zone system.  Additionally more modules that read in files will check to see if a file exists and will throw an error that allows
+you to see exactly which module failed.
+
+
 What's new in XTMF Version 1.4?
 =======================================================
 
