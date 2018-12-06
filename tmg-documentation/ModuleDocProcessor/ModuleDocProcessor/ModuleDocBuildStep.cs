@@ -22,9 +22,8 @@ namespace ModuleDocProcessor
 
         public void Build(FileModel model, IHostService host)
         {
-            Console.WriteLine("in build step 1");
             // model.Content = "transform test";
-            ((Dictionary<string, object>)model.Content)["conceptual"] = "hello!";
+            // ((Dictionary<string, object>)model.Content)["conceptual"] = model.C;
         }
 
         public void Postbuild(ImmutableList<FileModel> models, IHostService host)

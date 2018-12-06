@@ -24,7 +24,7 @@ namespace ModuleDocProcessor
         {
 
             if (file.Type == DocumentType.Article &&
-                ".dll".Equals(Path.GetExtension(file.File), StringComparison.OrdinalIgnoreCase))
+                ".json".Equals(Path.GetExtension(file.File), StringComparison.OrdinalIgnoreCase))
             {
                 
                 return ProcessingPriority.Normal;
@@ -40,20 +40,20 @@ namespace ModuleDocProcessor
         /// <returns></returns>
         public FileModel Load(FileAndType file, ImmutableDictionary<string, object> metadata)
         {
-            Assembly assembly = Assembly.LoadFrom(Path.Combine(file.BaseDir, file.File));
+            // Assembly assembly = Assembly.LoadFrom(Path.Combine(file.BaseDir, file.File));
 
             var content = new Dictionary<string, object>
             {
                 ["conceptual"] = File.ReadAllText(Path.Combine(file.BaseDir, file.File)),
                 ["type"] = "Conceptual",
-                ["path"] = file.File,
-                ["assembly"] = assembly
+                ["path"] = file.File
             };
 
             var localPathFromRoot = PathUtility.MakeRelativePath(EnvironmentContext.BaseDirectory, EnvironmentContext.FileAbstractLayer.GetPhysicalPath(file.File));
             return new FileModel(file, content)
             {
-                LocalPathFromRoot = localPathFromRoot
+                LocalPathFromRoot = localPathFromRoot,
+                BaseDir = Path.Combine(EnvironmentContext.BaseDirectory,"_modules")
             };
         }
 
