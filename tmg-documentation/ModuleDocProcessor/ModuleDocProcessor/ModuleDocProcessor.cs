@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.DocAsCode.Common;
 using Microsoft.DocAsCode.Plugins;
 
 namespace ModuleDocProcessor
@@ -21,9 +22,11 @@ namespace ModuleDocProcessor
         /// <returns></returns>
         public ProcessingPriority GetProcessingPriority(FileAndType file)
         {
+
             if (file.Type == DocumentType.Article &&
                 ".dll".Equals(Path.GetExtension(file.File), StringComparison.OrdinalIgnoreCase))
             {
+                
                 return ProcessingPriority.Normal;
             }
             return ProcessingPriority.NotSupported;
@@ -38,8 +41,20 @@ namespace ModuleDocProcessor
         public FileModel Load(FileAndType file, ImmutableDictionary<string, object> metadata)
         {
             Assembly assembly = Assembly.LoadFrom(Path.Combine(file.BaseDir, file.File));
-            
-            return new FileModel(file,assembly);
+
+            var content = new Dictionary<string, object>
+            {
+                ["conceptual"] = File.ReadAllText(Path.Combine(file.BaseDir, file.File)),
+                ["type"] = "Conceptual",
+                ["path"] = file.File,
+                ["assembly"] = assembly
+            };
+
+            var localPathFromRoot = PathUtility.MakeRelativePath(EnvironmentContext.BaseDirectory, EnvironmentContext.FileAbstractLayer.GetPhysicalPath(file.File));
+            return new FileModel(file, content)
+            {
+                LocalPathFromRoot = localPathFromRoot
+            };
         }
 
         /// <summary>
