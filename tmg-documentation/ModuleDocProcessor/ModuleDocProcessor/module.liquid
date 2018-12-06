@@ -1,0 +1,98 @@
+﻿<div>
+  <h1>
+    {% if Module.ModuleInfo.IconURI != null and Module.ModuleInfo.IconURI != "" %}
+    <i class="mdi mdi-{{Module.ModuleInfo.IconURI | hyphenate}}" aria-hidden="true"></i> {{Module.Name}}
+    {% else %}
+    <i class="mdi mdi-settings-outline" aria-hidden="true"></i> {{Module.Name}}
+    {% endif %}
+  </h1>
+
+  <div>
+    <p class="module-description">{{Module.ModuleInfo.Description}}</p>
+
+  </div>
+
+  <div>
+    <h6>
+      <strong>In Module</strong>: {{Module.AssemblyInfo.AssemblyName}}
+    </h6>
+  </div>
+
+  <div>
+    <h3>Parameters</h3>
+
+
+    {% for property in Module.ParameterPropertyMetaInfo %}
+    <div>
+      <h4>{{ property.Attributes[0].Name }}</h4>
+      <div class="level1 summary">
+        <p>{{ property.Attributes[0].Description }}</p>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Default Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="text-break">
+                  {{property.PropertyInfo.Signature}}
+                </span>
+
+              </td>
+              <td>
+                <span class="default-value">{{ property.Attributes[0].DefaultValue }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    {% endfor %}
+  </div>
+
+
+  <div>
+    <h3>Sub Modules</h3>
+    {% for property in Module.SubModulePropertyMetaInfo %}
+    <div>
+      <h4>{{ property.PropertyInfo.Name }}</h4>
+      <div class="level1 summary">
+        <p>{{ property.Attributes[0].Description }}</p>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped table-condensed">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="text-break">
+                  {{property.PropertyInfo.Signature}}
+                </span>
+
+              </td>
+              <td>
+                <span class="default-value">{{ property.Attributes[0].Required }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    {% endfor %}
+  </div>
+
+</div>

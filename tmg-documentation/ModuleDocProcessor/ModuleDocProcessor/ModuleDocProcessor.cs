@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.DocAsCode.Common;
 using Microsoft.DocAsCode.Plugins;
+using Newtonsoft.Json;
 
 namespace ModuleDocProcessor
 {
@@ -26,7 +27,7 @@ namespace ModuleDocProcessor
             if (file.Type == DocumentType.Article &&
                 ".json".Equals(Path.GetExtension(file.File), StringComparison.OrdinalIgnoreCase))
             {
-                
+
                 return ProcessingPriority.Normal;
             }
             return ProcessingPriority.NotSupported;
@@ -41,19 +42,20 @@ namespace ModuleDocProcessor
         public FileModel Load(FileAndType file, ImmutableDictionary<string, object> metadata)
         {
             // Assembly assembly = Assembly.LoadFrom(Path.Combine(file.BaseDir, file.File));
-
+            var text = File.ReadAllText(Path.Combine(file.BaseDir, file.File));
             var content = new Dictionary<string, object>
             {
-                ["conceptual"] = File.ReadAllText(Path.Combine(file.BaseDir, file.File)),
+
+                ["conceptual"] = text,
                 ["type"] = "Conceptual",
-                ["path"] = file.File
+                ["path"] = file.File,
+                ["json"] = JsonConvert.DeserializeObject(text)
             };
 
             var localPathFromRoot = PathUtility.MakeRelativePath(EnvironmentContext.BaseDirectory, EnvironmentContext.FileAbstractLayer.GetPhysicalPath(file.File));
             return new FileModel(file, content)
             {
                 LocalPathFromRoot = localPathFromRoot,
-                BaseDir = Path.Combine(EnvironmentContext.BaseDirectory,"_modules")
             };
         }
 
@@ -81,7 +83,7 @@ namespace ModuleDocProcessor
             // throw new NotImplementedException();
         }
 
-        public string Name  => nameof(ModuleDocProcessor);
+        public string Name => nameof(ModuleDocProcessor);
 
         [ImportMany(nameof(ModuleDocProcessor))]
         public IEnumerable<IDocumentBuildStep> BuildSteps { get; set; }

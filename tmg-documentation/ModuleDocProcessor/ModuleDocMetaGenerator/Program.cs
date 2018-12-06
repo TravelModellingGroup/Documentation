@@ -78,7 +78,10 @@ namespace ModuleDocMetaGenerator
         {
             var info = new ModuleMetaInfo()
             {
-                Name = moduleType.Name
+                Name = moduleType.Name,
+                TypeInfo = moduleType,
+                AssemblyInfo = moduleType.Assembly
+
             };
 
             foreach (var attribute in moduleType.GetCustomAttributes())
@@ -95,9 +98,18 @@ namespace ModuleDocMetaGenerator
                 {
                     PropertyInfo = property
                 };
-                info.PropertyMetaInfo.Add(propertyInfo);
+
                 foreach (var pAttribute in property.GetCustomAttributes())
                 {
+                    if (pAttribute.GetType().Name.Contains("Parameter"))
+                    {
+                        info.ParameterPropertyMetaInfo.Add(propertyInfo);
+                    }
+                    if (pAttribute.GetType().Name.Contains("SubModelInfo"))
+                    {
+                        info.SubModulePropertyMetaInfo.Add(propertyInfo);
+                    }
+
                     propertyInfo.Attributes.Add(pAttribute);
                 }
             }
@@ -110,14 +122,18 @@ namespace ModuleDocMetaGenerator
     public class ModuleMetaInfo
     {
 
-        public List<PropertyMetaInfo> PropertyMetaInfo { get; set; }
+        public Type TypeInfo { get; set; }
+        public Assembly AssemblyInfo { get; set; }
+        public List<PropertyMetaInfo> ParameterPropertyMetaInfo { get; set; }
+        public List<PropertyMetaInfo> SubModulePropertyMetaInfo { get; set; }
         public Attribute ModuleInfo { get; set; }
         public string Name;
 
 
         public ModuleMetaInfo()
         {
-            PropertyMetaInfo = new List<PropertyMetaInfo>();
+            ParameterPropertyMetaInfo = new List<PropertyMetaInfo>();
+            SubModulePropertyMetaInfo = new List<PropertyMetaInfo>();
         }
     }
 
