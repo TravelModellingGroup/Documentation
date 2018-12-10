@@ -67,11 +67,12 @@ namespace ModuleDocProcessor
         /// <returns></returns>
         public SaveResult Save(FileModel model)
         {
+         
             return new SaveResult
             {
                 DocumentType = "Conceptual",
                 FileWithoutExtension = Path.ChangeExtension(model.File, null),
-                LinkToFiles = new HashSet<string>() { "cat" }.ToImmutableArray()
+                
             };
         }
 
