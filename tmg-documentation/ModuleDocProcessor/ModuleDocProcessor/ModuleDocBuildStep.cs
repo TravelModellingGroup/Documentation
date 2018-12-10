@@ -26,11 +26,13 @@ namespace ModuleDocProcessor
 
         private static string _template;
 
+        private static string _moduleListTemplate;
+
         static ModuleDocBuildStep()
         {
 
             var assembly = Assembly.GetAssembly(typeof(ModuleDocBuildStep));
-            var resourceName = "ModuleDocProcessor.module.liquid";
+            var resourceName = "ModuleDocProcessor.Module.liquid";
             Console.WriteLine(assembly);
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
@@ -38,7 +40,16 @@ namespace ModuleDocProcessor
                 using (StreamReader reader = new StreamReader(stream))
                 {
                      _template = reader.ReadToEnd();
-                    Console.WriteLine(_template);
+                    
+                }
+            }
+            resourceName = "ModuleDocProcessor.ModuleList.liquid";
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            {
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    _moduleListTemplate = reader.ReadToEnd();
+                    Console.WriteLine(_moduleListTemplate);
                 }
             }
         }
@@ -64,16 +75,44 @@ namespace ModuleDocProcessor
         {
             // model.Content = "transform test";
             // ((Dictionary<string, object>)model.Content)["conceptual"] = model.C;
-
-            if (FluidTemplate.TryParse(_template, out var template))
+            Console.WriteLine(model.File);
+            if (!model.File.Contains("assembly"))
             {
-                var context = new TemplateContext();
-                context.Filters.AddFilter("hyphenate", Hyphenate);
-                context.SetValue("Module", ((Dictionary<string, object>)model.Content)["json"]);
-                context.SetValue("Json", ((Dictionary<string, object>)model.Content)["conceptual"]);
+                if (FluidTemplate.TryParse(_template, out var template))
+                {
+                    var context = new TemplateContext();
+                    context.Filters.AddFilter("hyphenate", Hyphenate);
+                    context.SetValue("Module", ((Dictionary<string, object>) model.Content)["json"]);
+                    context.SetValue("Json", ((Dictionary<string, object>) model.Content)["conceptual"]);
 
-                var rendered = template.Render(context);
-                ((Dictionary<string, object>)model.Content)["conceptual"] = rendered;
+                    var rendered = template.Render(context);
+                    ((Dictionary<string, object>) model.Content)["conceptual"] = rendered;
+                }
+            }
+           
+            else if(model.File.Contains("assembly"))
+            {
+                Console.WriteLine("Using assembly template");
+                if (FluidTemplate.TryParse(_moduleListTemplate, out var assemblyTemplate,out var errors))
+                {
+                    
+                    var context = new TemplateContext();
+                    context.Filters.AddFilter("hyphenate", Hyphenate);
+                    context.SetValue("Assembly", ((Dictionary<string, object>)model.Content)["json"]);
+                    context.SetValue("AssemblyName", model.File);
+                    context.SetValue("Json", ((Dictionary<string, object>)model.Content)["conceptual"]);
+
+                    var rendered = assemblyTemplate.Render(context);
+                    ((Dictionary<string, object>)model.Content)["conceptual"] = rendered;
+                }
+                else
+                {
+                    Console.WriteLine("Error parsing");
+                    foreach (var e in errors)
+                    {
+                        Console.WriteLine(e);
+                    }
+                }
             }
 
 

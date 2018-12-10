@@ -1,1 +1,13 @@
-﻿{% Assembly.Name %}
+﻿<div>
+
+
+  <h1>{{ AssemblyName }}</h1>
+  <h3 id="modules">Modules</h3>
+  {% for a in Assembly %}
+  <h4>
+    {{ a.Name }}
+  </h4>
+
+  {% endfor %}
+
+</div>

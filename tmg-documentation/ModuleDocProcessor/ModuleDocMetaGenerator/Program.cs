@@ -63,6 +63,12 @@ namespace ModuleDocMetaGenerator
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="assemblyPath"></param>
+        /// <param name="outputDir"></param>
+        /// <returns></returns>
         public static int ProcessAssembly(string assemblyPath, string outputDir)
         {
             
@@ -85,15 +91,16 @@ namespace ModuleDocMetaGenerator
 
             foreach (var k in _assemblyModulesMap.Keys.ToList())
             {
-                if (_assemblyModulesMap[k].Count == 0)
+                if (_assemblyModulesMap[k].Count > 0)
                 {
-                    _assemblyModulesMap.Remove(k);
+                    string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap[k]);
+                    System.IO.File.WriteAllText(Path.Combine(outputDir, $"{k}-assembly.json"), jsonData);
+                    Console.WriteLine();
+                    
                 }
             }
-            
-            string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap);
-            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{assembly.FullName}-assembly.json"), jsonData);
             return moduleCount;
+
         }
 
         /// <summary>

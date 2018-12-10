@@ -70,6 +70,7 @@ namespace ModuleDocProcessor
             {
                 DocumentType = "Conceptual",
                 FileWithoutExtension = Path.ChangeExtension(model.File, null),
+                LinkToFiles = new HashSet<string>() { "cat" }.ToImmutableArray()
             };
         }
 
