@@ -56,6 +56,7 @@ namespace ModuleDocProcessor
             return new FileModel(file, content)
             {
                 LocalPathFromRoot = localPathFromRoot,
+
             };
         }
 

@@ -1,12 +1,19 @@
 ﻿<div>
 
 
-  <h1>{{ AssemblyName }}</h1>
+  <h1>{{ Assembly.AssemblyName }}</h1>
+
+  <p>{{ Assembly.AssemblyDescription }}</p>
   <h3 id="modules">Modules</h3>
-  {% for a in Assembly %}
+  {% for module in Assembly.ModulesInfo %}
   <h4>
-    {{ a.Name }}
+    <a href="{{ module.TypeName }}.json" class="xref text-break">{{ module.Name }}</a>
   </h4>
+  <section>
+
+    <p class="module-description">{{module.ModuleInfo.Description | raw}}</p>
+  </section>
+
 
   {% endfor %}
 

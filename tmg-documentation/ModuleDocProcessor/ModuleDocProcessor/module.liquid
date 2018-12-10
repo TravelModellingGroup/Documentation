@@ -21,6 +21,11 @@
   <div>
     <h3>Parameters</h3>
 
+    {% if Module.ParameterPropertyMetaInfo == empty %}
+      <p>
+        <i>None.</i>
+      </p>
+    {% endif %}
 
     {% for property in Module.ParameterPropertyMetaInfo %}
     <div>
@@ -60,6 +65,12 @@
 
   <div>
     <h3>Sub Modules</h3>
+
+    {% if Module.SubModulePropertyMetaInfo == empty %}
+    <p>
+      <i>None.</i>
+    </p>
+    {% endif %}
     {% for property in Module.SubModulePropertyMetaInfo %}
     <div>
       <h4>{{ property.PropertyInfo.Name }}</h4>

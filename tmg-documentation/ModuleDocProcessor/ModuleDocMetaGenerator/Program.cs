@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.CommandLineUtils;
 using Newtonsoft.Json;
 using Formatting = System.Xml.Formatting;
+using YamlDotNet.Serialization;
 
 namespace ModuleDocMetaGenerator
 {
@@ -16,7 +17,9 @@ namespace ModuleDocMetaGenerator
 
         private static Dictionary<string, string> _moduleAssemblyMap;
 
-        private static Dictionary<string, List<ModuleMetaInfo>> _assemblyModulesMap;
+        private static Dictionary<string, AssemblyInfo> _assemblyModulesMap;
+
+        private static List<TocElement> _tocElements;
 
         /// <summary>
         /// 
@@ -24,8 +27,9 @@ namespace ModuleDocMetaGenerator
         /// <param name="args"></param>
         public static void Main(string[] args)
         {
-            _assemblyModulesMap = new Dictionary<string, List<ModuleMetaInfo>>();
+            _assemblyModulesMap = new Dictionary<string, AssemblyInfo>();
             _moduleAssemblyMap = new Dictionary<string, string>();
+            _tocElements = new List<TocElement>();
 
             CommandLineApplication commandLineApplication =
                 new CommandLineApplication(throwOnUnexpectedArg: false);
@@ -55,6 +59,45 @@ namespace ModuleDocMetaGenerator
                 {
                     totalModuleCount += ProcessAssembly(file, outputDir);
                 }
+
+                foreach (var k in _assemblyModulesMap.Keys.ToList())
+                {
+                    if (_assemblyModulesMap[k].ModulesInfo.Count > 0)
+                    {
+                        var info = _assemblyModulesMap[k];
+                        var tocElement = new TocElement()
+                        {
+                            href = info.Assembly.GetName().Name + "-assembly.json",
+                            items = new List<TocElement>(),
+                            name = info.Assembly.GetName().Name
+                        };
+                        _tocElements.Add(tocElement);
+
+                        foreach (var module in info.ModulesInfo)
+                        {
+                            tocElement.items.Add(new TocElement()
+                            {
+                                href = module.TypeName+".json",
+                                items = new List<TocElement>(),
+                                name = module.Name
+                            });
+                        }
+
+                        string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap[k]);
+                        System.IO.File.WriteAllText(Path.Combine(outputDir, $"{_assemblyModulesMap[k].Assembly.GetName().Name}-assembly.json"), jsonData);
+                        Console.WriteLine();
+
+                    }
+                }
+
+                var serializer = new SerializerBuilder().Build();
+                var yaml = serializer.Serialize(_tocElements);
+
+
+
+                Console.WriteLine(_tocElements.Count);
+                File.WriteAllText(Path.Combine(outputDir, "toc.yml"), yaml);
+
                 Console.WriteLine("Total modules: " + totalModuleCount);
                 return 0;
             });
@@ -73,7 +116,19 @@ namespace ModuleDocMetaGenerator
         {
             
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
-            _assemblyModulesMap[assembly.FullName] = new List<ModuleMetaInfo>();
+            _assemblyModulesMap[assembly.FullName] = new AssemblyInfo()
+            {
+                Assembly = assembly,
+                AssemblyName = assembly.GetName().Name
+            };
+
+
+            var descriptionAttribute = assembly
+                .GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false)
+                .OfType<AssemblyDescriptionAttribute>()
+                .FirstOrDefault();
+
+            _assemblyModulesMap[assembly.FullName].AssemblyDescription = descriptionAttribute?.Description;
             int moduleCount = 0;
             foreach (var type in assembly.GetExportedTypes())
             {
@@ -89,16 +144,13 @@ namespace ModuleDocMetaGenerator
                 }
             }
 
-            foreach (var k in _assemblyModulesMap.Keys.ToList())
-            {
-                if (_assemblyModulesMap[k].Count > 0)
-                {
-                    string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap[k]);
-                    System.IO.File.WriteAllText(Path.Combine(outputDir, $"{k}-assembly.json"), jsonData);
-                    Console.WriteLine();
-                    
-                }
-            }
+            // write out module json and build TOC 
+
+
+
+
+
+
             return moduleCount;
 
         }
@@ -115,12 +167,13 @@ namespace ModuleDocMetaGenerator
             {
                 Name = moduleType.Name,
                 TypeInfo = moduleType,
-                AssemblyInfo = moduleType.Assembly
+                AssemblyInfo = moduleType.Assembly,
+                TypeName = moduleType.FullName
 
             };
 
             _moduleAssemblyMap[moduleType.Name] = assembly.FullName;
-            _assemblyModulesMap[assembly.FullName].Add(info);
+            _assemblyModulesMap[assembly.FullName].ModulesInfo.Add(info);
 
             foreach (var attribute in moduleType.GetCustomAttributes())
             {
@@ -157,10 +210,24 @@ namespace ModuleDocMetaGenerator
         }
     }
 
+    public class AssemblyInfo
+    {
+        public List<ModuleMetaInfo> ModulesInfo { get; set; }
+        public string AssemblyDescription { get; set; }
+        public Assembly Assembly { get; set; }
+        public string AssemblyName { get; set; }
+
+        public AssemblyInfo()
+        {
+            ModulesInfo = new List<ModuleMetaInfo>();
+        }
+    }
+
     public class ModuleMetaInfo
     {
 
         public Type TypeInfo { get; set; }
+        public string TypeName { get; set; }
         public Assembly AssemblyInfo { get; set; }
         public List<PropertyMetaInfo> ParameterPropertyMetaInfo { get; set; }
         public List<PropertyMetaInfo> SubModulePropertyMetaInfo { get; set; }
@@ -186,6 +253,27 @@ namespace ModuleDocMetaGenerator
             Attributes = new List<Attribute>();
 
         }
+    }
+    /*### YamlMime:TableOfContent
+- uid: Tasha.Common
+  name: Tasha.Common
+  items:
+  - uid: Tasha.Common.ForwardLookup
+    name: ForwardLookup
+- uid: Tasha.Validation
+  name: Tasha.Validation
+  items:
+  - uid: Tasha.Validation.AutoSanityCheck
+    name: AutoSanityCheck
+  - uid: Tasha.Validation.ComparisonOfFiles
+    name: ComparisonOfFiles */
+    public class TocElement
+    {
+        public string href { get; set; }
+
+        public string name { get; set; }
+
+        public List<TocElement> items { get; set; }
     }
 
 }

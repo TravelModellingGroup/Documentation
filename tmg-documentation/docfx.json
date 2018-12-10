@@ -1,13 +1,9 @@
 {
-	"template": [
-		"default",
-		"templates/tmg"
-	  ],
+	
+	"template": ["default", "templates/tmg"],
 	"build": {
-		"template": [
-			"default",
-			"templates/tmg"
-		  ],
+		
+		"template": ["default", "templates/tmg"],
 		"dest": "_site",
 		"globalMetadata": {
 			"_appTitle": "Travel Modelling Group Documentation",
@@ -16,11 +12,27 @@
 				"branch": "dev",
 				"apiSpecFolder": "docs-ref-overwrite"
 			},
+			"_appLogoPath":"images/tmg.png",
 			"_appFooter": "©2018, Travel Modelling Group"
 		},
 		"content": [
 			{
-				"files": ["index.md", "toc.yml", "xtmf/**.md", "xtmf/toc.yml", "api/**.yml", "api/**.md","modules/**.json"]
+				"files": [
+					"index.md",
+					"toc.yml",
+					"xtmf/**.md",
+					"xtmf/toc.yml",
+					"api/**.yml",
+					"api/**.md",
+					"modules/**.json",
+					"modules/**.yml",
+					"modules/**.md"
+				]
+			}
+		],
+		"resource": [
+			{
+				"files": ["images/**", "**/images/**"]
 			}
 		]
 	},
@@ -33,7 +45,8 @@
 					"exclude": ["**/bin/**", "**/obj/**", "_site/**"]
 				}
 			],
-			"dest": "api"
+			"dest": "api",
+			"_appLogoPath": "images/tmg.png"
 		}
 	]
 }
