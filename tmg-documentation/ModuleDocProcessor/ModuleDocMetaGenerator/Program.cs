@@ -14,9 +14,19 @@ namespace ModuleDocMetaGenerator
     public class ModuleDocMetaGeneratorUtil
     {
 
+        private static Dictionary<string, string> _moduleAssemblyMap;
 
+        private static Dictionary<string, List<ModuleMetaInfo>> _assemblyModulesMap;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
+            _assemblyModulesMap = new Dictionary<string, List<ModuleMetaInfo>>();
+            _moduleAssemblyMap = new Dictionary<string, string>();
+
             CommandLineApplication commandLineApplication =
                 new CommandLineApplication(throwOnUnexpectedArg: false);
             CommandOption outputOption = commandLineApplication.Option(
@@ -55,7 +65,9 @@ namespace ModuleDocMetaGenerator
 
         public static int ProcessAssembly(string assemblyPath, string outputDir)
         {
+            
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
+            _assemblyModulesMap[assembly.FullName] = new List<ModuleMetaInfo>();
             int moduleCount = 0;
             foreach (var type in assembly.GetExportedTypes())
             {
@@ -64,17 +76,33 @@ namespace ModuleDocMetaGenerator
                     if (interfaceType.Name == ("IModule") || interfaceType.Name == ("ISelfContainedModule"))
                     {
                         Console.WriteLine(type + " - " + assembly);
-                        ProcessModule(type, outputDir);
+                        ProcessModule(type, outputDir,assembly);
                         moduleCount++;
                         break;
                     }
                 }
             }
 
+            foreach (var k in _assemblyModulesMap.Keys.ToList())
+            {
+                if (_assemblyModulesMap[k].Count == 0)
+                {
+                    _assemblyModulesMap.Remove(k);
+                }
+            }
+            
+            string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap);
+            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{assembly.FullName}-assembly.json"), jsonData);
             return moduleCount;
         }
 
-        public static void ProcessModule(Type moduleType, string outputDir)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="moduleType"></param>
+        /// <param name="outputDir"></param>
+        /// <param name="assembly"></param>
+        public static void ProcessModule(Type moduleType, string outputDir, Assembly assembly)
         {
             var info = new ModuleMetaInfo()
             {
@@ -83,6 +111,9 @@ namespace ModuleDocMetaGenerator
                 AssemblyInfo = moduleType.Assembly
 
             };
+
+            _moduleAssemblyMap[moduleType.Name] = assembly.FullName;
+            _assemblyModulesMap[assembly.FullName].Add(info);
 
             foreach (var attribute in moduleType.GetCustomAttributes())
             {
