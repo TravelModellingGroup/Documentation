@@ -1058,7 +1058,7 @@ $(function() {
       if (anchor === null) {
         return null;
       }
-      var tabIds = anchor.getAttribute('data-tab').split(' ');
+      var tabIds = $(anchor).attr('data-tab').split(' ');
       var group = anchor.parentElement.parentElement.parentElement.tabGroup;
       if (group === undefined) {
         return null;
