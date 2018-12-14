@@ -57,6 +57,7 @@ $(function() {
         $('header, .sidenav').hide();
         console.log('here');
       }
+
       
   }
 
@@ -1054,11 +1055,11 @@ $(function() {
       if (!(event.target instanceof HTMLElement)) {
         return null;
       }
-      var anchor = $(event.target).closest('a[data-tab]');
+      var anchor = event.target.closest('a[data-tab]');
       if (anchor === null) {
         return null;
       }
-      var tabIds = $(anchor).attr('data-tab').split(' ');
+      var tabIds = anchor.getAttribute('data-tab').split(' ');
       var group = anchor.parentElement.parentElement.parentElement.tabGroup;
       if (group === undefined) {
         return null;
