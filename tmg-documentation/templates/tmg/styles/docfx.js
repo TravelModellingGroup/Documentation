@@ -1,6 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.
 $(function() {
-
   var active = 'active';
   var expanded = 'in';
   var collapsed = 'collapsed';
@@ -10,7 +9,7 @@ $(function() {
   var util = new utility();
 
   var default_version = '1.5';
-
+  renderIsDoc();
   workAroundFixedHeaderForAnchors();
   highlight();
   enableSearch();
@@ -28,6 +27,7 @@ $(function() {
   renderTabs();
   updateVersionUrls();
 
+
   lightbox();
 
   window.refresh = function(article) {
@@ -43,6 +43,23 @@ $(function() {
     renderTabs();
   };
 
+  function renderIsDoc() {
+    var queryDict = {};
+    location.search
+      .substr(1)
+      .split('&')
+      .forEach(function(item) {
+        queryDict[item.split('=')[0]] = item.split('=')[1];
+      });
+
+      if(queryDict['fromXtmf'] === "true")
+      {
+        $('header, .sidenav').hide();
+        console.log('here');
+      }
+      
+  }
+
   function lightbox() {
     $('article img').each(function() {
       var $img = $(this);
@@ -53,10 +70,7 @@ $(function() {
 
       $img.attr('alt', filename);
       $img.featherlight(filename);
-
-
     });
-
   }
 
   // Add this event listener when needed
@@ -475,7 +489,7 @@ $(function() {
       $.get(path, function(data) {
         $(data)
           .find('#toc>ul')
-          .appendTo('#navbar');
+          .insertBefore('#top-dropdown');
         if ($('#search-results').length !== 0) {
           $('#search').show();
           $('body').trigger('searchEvent');
@@ -503,7 +517,6 @@ $(function() {
               );
               part = part + '/' + href;
               $(e).attr('href', part);
-
 
               var isActive = false;
               var originalHref = e.name;
