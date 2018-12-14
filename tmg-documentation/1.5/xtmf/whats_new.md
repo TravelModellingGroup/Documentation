@@ -1,13 +1,11 @@
-What's new in XTMF Version 1.4?
-=======================================================
+# What's new in XTMF Version 1.5?
 
-Details
-------------------------------------------------------------------------------------
+## Details
 
 ### Bug Fixes
+
 As always, new iterations of XTMF address bugs previously identified in any of the issues created on the Github project tracker, and others
 we may find internally.
-
 
 ### Updated GUI
 
@@ -39,7 +37,7 @@ to in-app toast messages, notification messages are also sent to the System tray
 not currently at the workstation. 
 
 
-Requesting New Features
-------------------------------------------------------------------------------------
+## Requesting New Features
+
 New feature requests are always welcome for the XTMF project. If you would like to contribute, make any suggestions for a new feature, or report any
 bugs encountered during your usage of XTMF please see: https://github.com/TravelModellingGroup/XTMF/issues.
