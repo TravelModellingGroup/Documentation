@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.
 $(function() {
-  console.log('in here ');
+
   var active = 'active';
   var expanded = 'in';
   var collapsed = 'collapsed';
@@ -54,7 +54,7 @@ $(function() {
       $img.attr('alt', filename);
       $img.featherlight(filename);
 
-      console.log($img);
+
     });
 
   }
@@ -472,7 +472,6 @@ $(function() {
         path = navbarPath;
       }
 
-      console.log('path: ' + path);
       $.get(path, function(data) {
         $(data)
           .find('#toc>ul')
@@ -505,7 +504,6 @@ $(function() {
               part = part + '/' + href;
               $(e).attr('href', part);
 
-              console.log(part);
 
               var isActive = false;
               var originalHref = e.name;
