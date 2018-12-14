@@ -83,6 +83,7 @@ namespace ModuleDocMetaGenerator
                             });
                         }
 
+                        _assemblyModulesMap[k].ModulesInfo = _assemblyModulesMap[k].ModulesInfo.OrderBy(x => x.Name).ToList();
                         string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap[k]);
                         System.IO.File.WriteAllText(Path.Combine(outputDir, $"{_assemblyModulesMap[k].Assembly.GetName().Name}-assembly.json"), jsonData);
                         Console.WriteLine();
