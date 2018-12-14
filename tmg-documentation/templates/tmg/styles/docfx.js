@@ -1054,7 +1054,7 @@ $(function() {
       if (!(event.target instanceof HTMLElement)) {
         return null;
       }
-      var anchor = event.target.closest('a[data-tab]');
+      var anchor = $(event.target).closest('a[data-tab]');
       if (anchor === null) {
         return null;
       }
