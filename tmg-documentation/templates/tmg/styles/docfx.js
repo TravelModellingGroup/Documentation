@@ -9,7 +9,7 @@ $(function() {
   var hide = 'hide';
   var util = new utility();
 
-  var default_version='1.5'
+  var default_version = '1.5';
 
   workAroundFixedHeaderForAnchors();
   highlight();
@@ -26,6 +26,7 @@ $(function() {
   renderVersionDropdown();
   breakText();
   renderTabs();
+  updateVersionUrls();
 
   window.refresh = function(article) {
     // Update markup result
@@ -51,22 +52,39 @@ $(function() {
     });
   }
 
+  function updateVersionUrls() {
+    var href = window.location.pathname;
+
+    href = href.substring(0, href.indexOf('/', href.indexOf('/') + 1));
+
+    var versionLinks = $('.version-link');
+
+    for (var i = 0; i < versionLinks.length; i++) {
+      console.log(versionLinks[i]);
+      versionLinks[i].href = href + '/' + $(versionLinks[i]).data('version');
+      console.log(versionLinks[i].href);
+    }
+  }
+
   function getActiveVersion() {
     var href = window.location.href;
     var versionRegex = /(\d{1,2}\.)(\d{1,2})/;
     var results = versionRegex.exec(href);
-
-    console.log(href);
-    console.log(results);
     if (results !== null && results.length > 0) {
       return results[0];
     } else {
-      return default_version;
+      return null;
     }
   }
 
   function renderVersionDropdown() {
-    $('#versionDropdownButton').text('Version ' + getActiveVersion());
+    var version = getActiveVersion();
+    if (version === null) {
+      $('#versionDropdownButton').text('Select Documentation Version');
+      return;
+    } else {
+      $('#versionDropdownButton').text('Version ' + version);
+    }
   }
 
   // Styling for tables in conceptual documents using Bootstrap.
@@ -415,13 +433,16 @@ $(function() {
     function loadNavbar() {
       var navbarPath = $("meta[property='docfx\\:navrel']").attr('content');
       if (!navbarPath) {
-        return;
+        //  return;
       }
       navbarPath = navbarPath.replace(/\\/g, '/');
       var tocPath = $("meta[property='docfx\\:tocrel']").attr('content') || '';
       if (tocPath) tocPath = tocPath.replace(/\\/g, '/');
       var version = getActiveVersion();
 
+      if (version === null) {
+        return;
+      }
       var href = window.location.href;
 
       var index = href.indexOf(version);
@@ -432,9 +453,7 @@ $(function() {
         path = navbarPath;
       }
 
-      console.log(path);
-      // navbarPath = navbarPath.replace('../', '');
-      console.log(navbarPath);
+      console.log('path: ' + path);
       $.get(path, function(data) {
         $(data)
           .find('#toc>ul')
