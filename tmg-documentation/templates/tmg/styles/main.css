@@ -25,11 +25,16 @@ span.default-value {
   display: inline-flex !important;
   justify-content: space-between;
 }
-
-.navbar #navbar.collapse:not(.in) ul {
-	display: none!important;
+@media only screen and (max-width: 768px) {
+	.navbar #navbar:not(.in) ul {
+		display: none!important;
+	}
+	}
+	
+.navbar-toggle
+{
+	order: 3;
 }
-
 .subnav .container {
   justify-content: initial;
 }
