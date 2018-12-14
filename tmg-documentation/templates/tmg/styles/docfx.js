@@ -73,7 +73,8 @@ $(function() {
 
     if (queryDict['fromXtmf'] === 'true') {
       $('header, .sidenav').hide();
-      console.log('here');
+      $('#wrapper').addClass('xtmfDoc');
+      
     }
   }
 
