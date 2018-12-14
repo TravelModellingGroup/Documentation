@@ -476,7 +476,15 @@ $(function() {
             var href = $(e).attr('href');
             if (util.isRelativePath(href)) {
               href = navrel + href;
-              $(e).attr('href', href);
+              
+
+              var href2 = window.location.pathname;
+              var version = getActiveVersion();
+              var part = href2.substring(0,href2.indexOf(version)+version.length);
+              part  = part + '/'+ href;
+              $(e).attr('href', part);
+
+              console.log(part);
 
               var isActive = false;
               var originalHref = e.name;
