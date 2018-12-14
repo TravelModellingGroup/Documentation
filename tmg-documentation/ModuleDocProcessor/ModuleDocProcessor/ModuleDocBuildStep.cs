@@ -15,6 +15,7 @@ using Fluid.Accessors;
 using Fluid.Values;
 using Microsoft.DocAsCode.Common;
 using Microsoft.DocAsCode.Plugins;
+using ModuleDocMetaGenerator;
 using Newtonsoft.Json.Linq;
 
 namespace ModuleDocProcessor
@@ -95,10 +96,26 @@ namespace ModuleDocProcessor
                 Console.WriteLine("Using assembly template");
                 if (FluidTemplate.TryParse(_moduleListTemplate, out var assemblyTemplate,out var errors))
                 {
-                    
+                    var assembly = ((Dictionary<string, object>) model.Content)["json"] as JObject;
+
+                    var moduleMetaInfos = (assembly?.GetValue("ModulesInfo") as JArray).ToList()
+                        .OrderBy(x => x.Value<string>("Name"));
+
+                    if (assembly != null)
+                    {
+                        //     assembly.ModulesInfo = moduleMetaInfos.ToList();
+                        assembly?.Remove("ModulesInfo");
+
+                       assembly?.Add("ModulesInfo",  JArray.FromObject(moduleMetaInfos));
+                    }
+                    else
+                    {
+                        
+                    }
+
                     var context = new TemplateContext();
                     context.Filters.AddFilter("hyphenate", Hyphenate);
-                    context.SetValue("Assembly", ((Dictionary<string, object>)model.Content)["json"]);
+                    context.SetValue("Assembly", assembly);
                     context.SetValue("AssemblyName", model.File);
                     context.SetValue("Json", ((Dictionary<string, object>)model.Content)["conceptual"]);
 

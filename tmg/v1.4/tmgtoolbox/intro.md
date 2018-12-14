@@ -1,2 +1,0 @@
-TMGToolbox User Guide
-====================

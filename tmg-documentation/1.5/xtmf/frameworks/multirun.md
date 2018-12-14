@@ -5,8 +5,8 @@ TMG’s Multi-run framework is designed to aid in the automation of running mode
 The framework itself is extendable as modules are able to add their own additional commands to the language used in the configuration file.
 
 
-Multi-Run files are XML based scripts that are executed from top to bottom.  The goal is to provide a way of chaining together runs, similar to how XTMF 1.4+ is now able.  Additionally it provides
-useful ways of changing the parameters of a model system before running it, or to unload resources between runs.  Starting with XTMF 1.4 it is recommended to consider alternatives to using this
+Multi-Run files are XML based scripts that are executed from top to bottom.  The goal is to provide a way of chaining together runs, similar to how XTMF 1.5+ is now able.  Additionally it provides
+useful ways of changing the parameters of a model system before running it, or to unload resources between runs.  Starting with XTMF 1.5 it is recommended to consider alternatives to using this
 framework such as using quick parameters and linked parameters which can be set before a run.  In advanced cases though, the multi-run file might be the best option.
 
 ## Basic Commands
