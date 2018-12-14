@@ -1,3 +1,3 @@
-# GTAModel
+# GTAModel V4.0 Introduction
 
-GTAModel index page.
+Introduction 

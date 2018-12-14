@@ -1,5 +1,5 @@
 // Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.
-console.log('hello');
+
 /**
  * This method will be called at the start of exports.transform in toc.html.js
  */
