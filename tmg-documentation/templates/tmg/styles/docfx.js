@@ -28,6 +28,8 @@ $(function() {
   renderTabs();
   updateVersionUrls();
 
+  lightbox();
+
   window.refresh = function(article) {
     // Update markup result
     if (typeof article == 'undefined' || typeof article.content == 'undefined')
@@ -40,6 +42,22 @@ $(function() {
     renderAffix();
     renderTabs();
   };
+
+  function lightbox() {
+    $('article img').each(function() {
+      var $img = $(this);
+      var filename = $img.attr('src');
+      $img.css('cursor', 'zoom-in');
+      $img.css('cursor', '-moz-zoom-in');
+      $img.css('cursor', '-webkit-zoom-in');
+
+      $img.attr('alt', filename);
+      $img.featherlight(filename);
+
+      console.log($img);
+    });
+
+  }
 
   // Add this event listener when needed
   // window.addEventListener('content-update', contentUpdate);
@@ -61,7 +79,8 @@ $(function() {
 
     for (var i = 0; i < versionLinks.length; i++) {
       console.log(versionLinks[i]);
-      versionLinks[i].href = href + '/' + $(versionLinks[i]).data('version') +'/';
+      versionLinks[i].href =
+        href + '/' + $(versionLinks[i]).data('version') + '/';
       console.log(versionLinks[i].href);
     }
   }
@@ -476,12 +495,14 @@ $(function() {
             var href = $(e).attr('href');
             if (util.isRelativePath(href)) {
               href = navrel + href;
-              
 
               var href2 = window.location.pathname;
               var version = getActiveVersion();
-              var part = href2.substring(0,href2.indexOf(version)+version.length);
-              part  = part + '/'+ href;
+              var part = href2.substring(
+                0,
+                href2.indexOf(version) + version.length
+              );
+              part = part + '/' + href;
               $(e).attr('href', part);
 
               console.log(part);
