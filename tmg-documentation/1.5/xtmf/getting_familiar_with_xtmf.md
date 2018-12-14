@@ -6,7 +6,7 @@ title: Getting Familiar with XTMF
 
 ## The XTMF Interface
 
-XTMF 1.4 in its most basic form functions as a single window user experience. The interface allows the user
+XTMF 1.5 in its most basic form functions as a single window user experience. The interface allows the user
 to work with projects and model systems, the underlying format of the XTMF work-flow. Multiple model systems
 and projects can be active at the same time.
 
@@ -15,7 +15,7 @@ and projects can be active at the same time.
 
 ### Window Menu
 
-XTMF 1.4 now uses a single global menu for all user-end operations. Pressing the hamburger menu icon in the top
+XTMF 1.5 now uses a single global menu for all user-end operations. Pressing the hamburger menu icon in the top
 left of the XTMF window will open the side-bar menu. The side-bar menu has everything from creating new projects to launching
 the scheduler window for an overview of all active and completed model system runs.
 
@@ -50,7 +50,7 @@ XTMF 1.3 added the ability to create a local configuration from the settings pag
 
 ### Changing the Look and Feel of XTMF
 
-Version 1.4 of XTMF offers the ability for users to change the appearance of their XTMF interface with palettes and swatches provided by the underlying "Material" look and feel. Under the Settings page,
+Version 1.5 of XTMF offers the ability for users to change the appearance of their XTMF interface with palettes and swatches provided by the underlying "Material" look and feel. Under the Settings page,
 users are free to choose from a multitude of primary and accent colours. In addition to primary and accent colours, a light and dark theme setting is also available. A dark theme will replace all window backgrounds
 with a close-to-black colour, whereas the light theme will maintain the standard light - white colours for the backgrounds.
 

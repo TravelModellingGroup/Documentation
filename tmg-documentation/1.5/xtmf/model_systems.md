@@ -39,7 +39,7 @@ XTMF 1.3 adds a new tab to the model system display. Any disabled modules part o
 
 Modules can have sub modules that customize the behaviour of the parent.  These submodules can either be a single module or optionally a list of modules.
 
-In XTMF GUI 1.4 lists of modules are represented by the   icon.  Lists can contain any number of modules including zero.  If a module’s border is green, it is optional but not currently filled out.  If a module has a red background with an (!), then it is a required module where none is currently selected for.  XTMF will not allow a model system to run if a required module has not been filled out.
+In XTMF GUI 1.5 lists of modules are represented by the   icon.  Lists can contain any number of modules including zero.  If a module’s border is green, it is optional but not currently filled out.  If a module has a red background with an (!), then it is a required module where none is currently selected for.  XTMF will not allow a model system to run if a required module has not been filled out.
 
 In the example image we have a small model system that was previously made that has a zone system and loads up INRO’s EMME software using their Modeller interface using TMG’s Modeller Bridge.  From this point we can start adding in modules to automate EMME during the run.
 
