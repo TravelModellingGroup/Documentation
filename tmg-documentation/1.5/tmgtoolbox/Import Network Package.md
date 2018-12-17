@@ -6,7 +6,35 @@ This module can be found in Emme Modeller. Navigate to "TMG Toolbox" -> "Input O
 ## Using the Tool
 Under "Network Package File", click "Browse" to open the file explorer and navigate to the Network Package (NWP) file that you wish to import into the scenario. 
 
-> An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. It does not contain the strategies used in the transit assignment however.  NWP files can be "unzipped" using a software package like "7zip" or even windows (by changing the extension from ".nwp" to ".zip". After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be "zipped" again and the extension changed back to ".nwp" for use in the tool.
+> An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. It does not contain the strategies used in the transit assignment however.  NWP files can be "unzipped" using a software package like "7zip" or even windows (by changing the extension from ".nwp" to ".zip". After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be "zipped" again and the extension changed back to ".nwp" for use in the tool. Manually editing the files in this manner is only recommended for advanced users.
+> An NWP file at minimum contains the following:
+> version.txt
+> info.txt
+> base.211
+> functions.411
+> modes.201
+> shapes.251
+> transit.221
+> turns.231
+> vehicles.202
+> 
+> The following are extra attribute related files which are optional
+> exatts.241
+> exatt_transit_lines.241
+> exatt_segments.241
+> exatt_nodes.241
+> exatt_links.241
+> 
+> The following are assignment results related files which are optional
+> aux_transit_results.csv
+> link_results.csv
+> segment_results.csv
+> turn_results.csv
+
+
+ - List item
+
+.
 
 Under "New Scenario Number", the scenario number that you want to import the network into can be entered. This scenario number can be one that is already defined in the project or a new scenario altogether
 >If the scenario is already defined in the project, select the number and then click away to expose the "Overwrite Scenario" option. Since the scenario is already defined, the option will need to be selected in order to overwrite the defined scenario with the imported Network Package
