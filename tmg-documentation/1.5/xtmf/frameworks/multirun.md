@@ -110,7 +110,7 @@ In addition *execute template* will require you to give it a parameter with the 
 When used in conjuntion with the if statement it allows you to terminate the model system.
 
 ```xml
-<fail />
+<fail Message="The reason why it the run should fail."/>
 ```
 
 ### If
