@@ -26,6 +26,3 @@ In $/km applied to toll zone 1.
 #### Regular zone toll
 In $/km, applied to toll zone 2.
 
-
-
-> Written with [StackEdit](https://stackedit.io/).
