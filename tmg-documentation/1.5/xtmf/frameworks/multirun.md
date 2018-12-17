@@ -105,6 +105,14 @@ In addition *execute template* will require you to give it a parameter with the 
                 ThirdParameter="3" />
 ```
 
+### Fail
+
+When used in conjuntion with the if statement it allows you to terminate the model system.
+
+```xml
+<fail />
+```
+
 ### If
 
 If allows us to do conditional execution during the script.  It has three attributes: LHS (left hand side), RHS (right hand side), and OP (operation).
@@ -142,7 +150,7 @@ you may wish to have templates being generated inside of another template.  You 
 In order to write a %, you can escape it with %% in order to produce a single %.
 
 The example below is the template used for GTAModelV4.0.2 in order to generate the main run template where there is another *template* previously defined called *SetAirport*.
-
+```xml
     <template Name="InitializeV4"
               Parameters="AirportZone;EMMEBankDirectory;EmploymentScenarioBase;PopulationScenarioBase;StationScenarioBase;TransitFareScenarioBase;NetworkScenarioBase">
         <changeLinkedParameter Name="Airport Zone" Value="%AirportZone%" />
@@ -177,9 +185,10 @@ The example below is the template used for GTAModelV4.0.2 in order to generate t
             <unload Path="Resources" Recursive="true" />
         </template>
     </template>
+```
 
 To use this you would first invoke the outer template *InitializeV4*.
-    
+  ```xml  
     <executeTemplate Name="InitializeV4"
                    AirportZone="3709"
                    EmploymentScenarioBase="Scenario-Employment"
@@ -188,9 +197,10 @@ To use this you would first invoke the outer template *InitializeV4*.
                    TransitFareScenarioBase="Scenario-Transit Fares"
                    NetworkScenarioBase="Scenario-Network"
                    EMMEBankDirectory="../../../EMMENetworks" />
+```
 
 Executing the outer template then creates the inner template *RunV4*.
-
+```xml
      <executeTemplate Name="RunV4"
                    RunName="2011 TTS Base"
                    Year="2011"
@@ -199,6 +209,7 @@ Executing the outer template then creates the inner template *RunV4*.
                    StationScenario="Base"
                    TransitFareScenario="Base"
                    NetworkScenario="TTS"/>
+```
 
 If you were to try to run *RunV4* before you had executed *InitializeV4* you would run into an error where it could not find a template with the name.
 This is useful for cases where you want templates depend on other ones.
