@@ -17,7 +17,7 @@ Under "Network Package File", click "Browse" to open the file explorer and navig
 > transit.221
 > turns.231
 > vehicles.202
-> 
+>
 > The following are extra attribute related files which are optional
 > exatts.241
 > exatt_transit_lines.241
@@ -31,10 +31,6 @@ Under "Network Package File", click "Browse" to open the file explorer and navig
 > segment_results.csv
 > turn_results.csv
 
-
- - List item
-
-.
 
 Under "New Scenario Number", the scenario number that you want to import the network into can be entered. This scenario number can be one that is already defined in the project or a new scenario altogether
 >If the scenario is already defined in the project, select the number and then click away to expose the "Overwrite Scenario" option. Since the scenario is already defined, the option will need to be selected in order to overwrite the defined scenario with the imported Network Package
