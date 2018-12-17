@@ -55,10 +55,10 @@ Additional headway and speed pairs can be added for more scenarios.
 
 ### Scenarios
 
-- **Overwrite Full Scenarios**: This box allows the tool to overwrite scenario sthat already exist
+- **Overwrite Full Scenarios**: This box allows the tool to overwrite scenarios that already exist
 -  **Publish Network**: This publishes the networks
 - **Use Custom Scenario List**: This uses the "Custom Scenario List" box rather than the scenario list 
-- **Custom Scenario List **: Definitions for a custom set of scenarios. Use the following syntax. The .nup file is optional. 
+- **Custom Scenario List**: Definitions for a custom set of scenarios. Use the following syntax. The .nup file is optional. 
 Syntax: [Uncleaned scenario number] : [Cleaned scenario number] : [Uncleaned scenario description] : [Cleaned scenario description] : [Scenario start] : [Scenario End] : [.nup file]
 Use integer hours for start and end times. For Example 2:30 PM = 1430 
 
