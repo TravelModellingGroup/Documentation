@@ -29,13 +29,18 @@ This file contains information for transit lines that do not have any entries in
 
 If more than one time period is being created by this tool at the same time, the last two columns can be repeated for all time periods being created.
 
+> [!NOTE]
 > Transit Lines that do not have an entry in either the Service Table file or the Data for Non-Service Table Lines file will be deleted from the time period specific networks. If a line is present in both files, the Data for Non-Service Table Lines file will take precedent.
-
 > The standard GTAModelV4 time periods are as follows:
+> 
 > 6:00 AM - 8:59 AM -- AM
+> 
 > 9:00 AM - 2:59 PM -- MD
+> 
 > 3:00 PM - 6:59 PM -- PM
+> 
 > 7:00 PM - 11:59 PM -- EV
+> 
 > 12:00 AM - 5:59 AM -- ON
 
 #### Aggregation Type Selection
