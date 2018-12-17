@@ -2,6 +2,8 @@
 # Import Binary Matrix
 This is used to import a matrix with a binary format into Emme for use within Desktop and Modeller.
 > If a matrix that needs to be imported uses the CSV format, please use the following tool "Emme Standard Toolbox" -> "Data Management" -> "Matrix" -> "Import matrix data from CSV". 
+
+
 ## Opening the Tool
 The tool can be found in "TMG Toolbox" -> "Input Output" -> "Import Binary Matrix"
 ## Using the Tool
