@@ -110,10 +110,10 @@ $(function() {
     var versionLinks = $('.version-link');
 
     for (var i = 0; i < versionLinks.length; i++) {
-      console.log(versionLinks[i]);
+
       versionLinks[i].href =
         href + '/' + $(versionLinks[i]).data('version') + '/';
-      console.log(versionLinks[i].href);
+
     }
   }
 

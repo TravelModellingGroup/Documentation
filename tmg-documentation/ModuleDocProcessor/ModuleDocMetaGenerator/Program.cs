@@ -169,7 +169,8 @@ namespace ModuleDocMetaGenerator
                 Name = moduleType.Name,
                 TypeInfo = moduleType,
                 AssemblyInfo = moduleType.Assembly,
-                TypeName = moduleType.FullName
+                TypeName = moduleType.FullName,
+                DisplayName = moduleType.FullName.Substring(moduleType.FullName.LastIndexOf('.')+1)
 
             };
 
@@ -233,6 +234,9 @@ namespace ModuleDocMetaGenerator
         public List<PropertyMetaInfo> ParameterPropertyMetaInfo { get; set; }
         public List<PropertyMetaInfo> SubModulePropertyMetaInfo { get; set; }
         public Attribute ModuleInfo { get; set; }
+
+        public string DisplayName { get; set; }
+
         public string Name;
 
 
