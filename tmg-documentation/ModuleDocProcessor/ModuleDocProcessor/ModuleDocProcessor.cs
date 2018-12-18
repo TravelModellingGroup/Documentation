@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.DocAsCode.Common;
 using Microsoft.DocAsCode.Plugins;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ModuleDocProcessor
 {
@@ -43,21 +44,39 @@ namespace ModuleDocProcessor
         {
             // Assembly assembly = Assembly.LoadFrom(Path.Combine(file.BaseDir, file.File));
             var text = File.ReadAllText(Path.Combine(file.BaseDir, file.File));
+            var json = JsonConvert.DeserializeObject(text) as JObject;
+
+
+            Console.WriteLine(metadata.ToJsonString());
             var content = new Dictionary<string, object>
             {
 
                 ["conceptual"] = text,
+
                 ["type"] = "Conceptual",
                 ["path"] = file.File,
-                ["json"] = JsonConvert.DeserializeObject(text)
+                ["json"] = json
             };
 
+            if (file.File.Contains("-assembly"))
+            {
+                content["title"] = json.GetValue("AssemblyName").Value<string>() + " | " + metadata["_appTitle"];
+            }
+            else
+            {
+                content["title"] = json.GetValue("TypeName").Value<string>() + " | " + metadata["_appTitle"];
+            }
+
             var localPathFromRoot = PathUtility.MakeRelativePath(EnvironmentContext.BaseDirectory, EnvironmentContext.FileAbstractLayer.GetPhysicalPath(file.File));
-            return new FileModel(file, content)
+            var fm = new FileModel(file, content)
             {
                 LocalPathFromRoot = localPathFromRoot,
 
+
             };
+
+            // fm.ManifestProperties["test"] = true;
+            return fm;
         }
 
         /// <summary>
@@ -67,12 +86,12 @@ namespace ModuleDocProcessor
         /// <returns></returns>
         public SaveResult Save(FileModel model)
         {
-         
+
             return new SaveResult
             {
                 DocumentType = "Conceptual",
                 FileWithoutExtension = Path.ChangeExtension(model.File, null),
-                
+
             };
         }
 
@@ -90,5 +109,21 @@ namespace ModuleDocProcessor
 
         [ImportMany(nameof(ModuleDocProcessor))]
         public IEnumerable<IDocumentBuildStep> BuildSteps { get; set; }
+    }
+
+    [Export(nameof(ModuleDocPostProcessor), typeof(IPostProcessor))]
+    public class ModuleDocPostProcessor : IPostProcessor
+    {
+        // TODO: implements IPostProcessor
+        public ImmutableDictionary<string, object> PrepareMetadata(ImmutableDictionary<string, object> metadata)
+        {
+            Console.WriteLine(metadata.ToJsonString());
+            return metadata;
+        }
+
+        public Manifest Process(Manifest manifest, string outputFolder)
+        {
+            return manifest;
+        }
     }
 }

@@ -97,7 +97,6 @@ namespace ModuleDocProcessor
            
             else if(model.File.Contains("assembly"))
             {
-                Console.WriteLine("Using assembly template");
                 if (FluidTemplate.TryParse(_moduleListTemplate, out var assemblyTemplate,out var errors))
                 {
                     var assembly = ((Dictionary<string, object>) model.Content)["json"] as JObject;

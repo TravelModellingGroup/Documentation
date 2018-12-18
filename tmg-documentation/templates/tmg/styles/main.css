@@ -175,6 +175,14 @@ nav ul.bs-docs-sidenav {
   width: 100%;
 }
 
+.table-bordered th {
+  border: 1px solid #ddd;
+}
+
+.table > thead:first-child > tr:first-child > th {
+  border-top: 1px solid #ddd !important;
+}
+
 .xtmfDoc .body-content {
   width: 100%;
 }
@@ -183,10 +191,18 @@ nav ul.bs-docs-sidenav {
   margin-left: 0px;
   margin-top: 0px;
 }
+
 @media (min-width: 500px) {
   .xtmfDoc .container {
     width: 100% !important;
     max-width: 100% !important;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
   }
 }
 
