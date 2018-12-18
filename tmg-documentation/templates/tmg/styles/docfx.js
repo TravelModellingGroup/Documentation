@@ -539,13 +539,13 @@ $(function() {
               var isActive = false;
               var originalHref = e.name;
 
-              console.log(originalHref);
-              console.log(e);
+
+              
               if (originalHref) {
                 originalHref = navrel + originalHref;
                 if (
-                  util.getDirectory(util.getAbsolutePath(originalHref)) ===
-                  util.getDirectory(util.getAbsolutePath(tocPath))
+                  util.getDirectory(util.getAbsolutePath($(e).attr('href'))) ===
+                  util.getDirectory(util.getAbsolutePath(href2))
                 ) {
                   isActive = true;
                 }
