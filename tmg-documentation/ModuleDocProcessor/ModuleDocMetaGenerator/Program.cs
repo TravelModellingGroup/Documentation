@@ -73,13 +73,14 @@ namespace ModuleDocMetaGenerator
                         };
                         _tocElements.Add(tocElement);
 
+                        info.ModulesInfo = info.ModulesInfo.OrderBy(x => x.Name).ToList();
                         foreach (var module in info.ModulesInfo)
                         {
                             tocElement.items.Add(new TocElement()
                             {
-                                href = module.TypeName+".json",
+                                href = module.TypeName.Replace("+", "-") + ".json",
                                 items = new List<TocElement>(),
-                                name = module.Name
+                                name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1)
                             });
                         }
 
@@ -90,7 +91,7 @@ namespace ModuleDocMetaGenerator
 
                     }
                 }
-
+                _tocElements = _tocElements.OrderBy(x => x.name).ToList();
                 var serializer = new SerializerBuilder().Build();
                 var yaml = serializer.Serialize(_tocElements);
 
@@ -104,7 +105,6 @@ namespace ModuleDocMetaGenerator
             });
             commandLineApplication.Execute(args);
 
-            Console.ReadKey();
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace ModuleDocMetaGenerator
             }
 
             string jsonData = JsonConvert.SerializeObject(info);
-            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{moduleType.FullName}.json"), jsonData);
+            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{moduleType.FullName.Replace("+","-")}.json"), jsonData);
         }
     }
 

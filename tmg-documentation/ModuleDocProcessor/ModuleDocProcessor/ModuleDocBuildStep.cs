@@ -50,7 +50,6 @@ namespace ModuleDocProcessor
                 using (StreamReader reader = new StreamReader(stream))
                 {
                     _moduleListTemplate = reader.ReadToEnd();
-                    Console.WriteLine(_moduleListTemplate);
                 }
             }
         }
@@ -82,9 +81,14 @@ namespace ModuleDocProcessor
                 if (FluidTemplate.TryParse(_template, out var template))
                 {
                     var context = new TemplateContext();
+                    var module = ((((Dictionary<string, object>)model.Content)["json"]) as JObject);
+                    var moduleName = module.GetValue("TypeName").Value<string>();
+
+                    moduleName = moduleName.Substring(moduleName.LastIndexOf('.') + 1);
                     context.Filters.AddFilter("hyphenate", Hyphenate);
                     context.SetValue("Module", ((Dictionary<string, object>) model.Content)["json"]);
                     context.SetValue("Json", ((Dictionary<string, object>) model.Content)["conceptual"]);
+                    context.SetValue("ModuleName", moduleName);
 
                     var rendered = template.Render(context);
                     ((Dictionary<string, object>) model.Content)["conceptual"] = rendered;
