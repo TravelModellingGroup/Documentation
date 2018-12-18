@@ -46,8 +46,6 @@ namespace ModuleDocProcessor
             var text = File.ReadAllText(Path.Combine(file.BaseDir, file.File));
             var json = JsonConvert.DeserializeObject(text) as JObject;
 
-
-            Console.WriteLine(metadata.ToJsonString());
             var content = new Dictionary<string, object>
             {
 
