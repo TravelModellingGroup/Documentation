@@ -27,6 +27,17 @@ $(function() {
   renderTabs();
   updateVersionUrls();
   renderTooltips();
+  updateSideAffix();
+
+  function updateSideAffix() {
+    var rightEle = $('#right-affix nav li');
+    if (rightEle.length === 0) {
+      $('#right-affix').hide();
+      $('#article-content').removeClass('col-md-9');
+      $('#article-content').removeClass('col-md-12');
+      $('#article-content').addClass('view-full-width');
+    }
+  }
 
   function renderTooltips() {
     $('[data-toggle="tooltip"]').tooltip();
