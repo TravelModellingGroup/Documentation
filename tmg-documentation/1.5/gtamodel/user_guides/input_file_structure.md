@@ -1,0 +1,43 @@
+# Input File Structure
+
+This section describes how files are organized within the XTMF project input directory.
+
+## Activity Distributions
+
+This directory contains the information on how to generate activity episodes.  Between runs these files should not change unless it has been recalibrated.
+
+## Employment
+
+There are a couple different subdirectories inside of this directory.  The first, ‘EmpOccRates’, contains the probability of being part of an occupation and employment status for each zone.  The second, ‘WorkerCategories’ contains the probability of being in a worker mobility category.  This the first two directories are generated from population synthesis.  The third directory is ‘ZonalResidence’.  This directory contains the number of residents in each zone that belong to the employment status and occupation.
+
+## Estimation
+
+This directory contains all of the parameter files used in estimation.  Unless you are recalibrating GTAModel there are no files here to edit.
+
+## Estimation Result
+
+This directory contains the results of the estimation process for GTAModel V4.0.  The mode choice algorithm’s parameters are read in from this directory.  For recalibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.
+
+## Househould Data
+
+This directory contains the household and person files for the synthetic population. Titled Household.csv and Persons.csv respectively. In addition, you may have a Summary.csv file which contains the sum of the two aforementioned files.
+
+## School
+
+This directory contains the base year school linkages and the vectors of students by zone in order to do future year updating.
+
+## Stations
+
+This directory contains information for every station that provides drive-access capabilities.  If you are going to add a new station to the model a corresponding entry must be made into the ‘StationCapacity.csv’ database.  Follow the guidelines in the section for “Adding a new Station” for more information.
+
+## Transit Fares
+
+This directory contains the information used to generate the transit hyper-networks.
+
+## Validation
+
+This directory will contain different worksheets and other files used for highly detailed analysis of the model’s performance.  It will also contain EMME worksheets for visualization of results.
+
+## Zone Data
+
+This directory contains the information to generate the zone system for the model.  Every centroid in EMME must be represented in the zones file.  The regions file contains a linkage of zones to region, if left out a zone will belong to the null/external region (region 0).

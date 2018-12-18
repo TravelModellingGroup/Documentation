@@ -1,0 +1,1551 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.INetworkCompleteData
+  commentId: T:TMG.INetworkCompleteData
+  id: INetworkCompleteData
+  parent: TMG
+  children:
+  - TMG.INetworkCompleteData.GetTimePeriodData(XTMF.Time)
+  langs:
+  - csharp
+  - vb
+  name: INetworkCompleteData
+  nameWithType: INetworkCompleteData
+  fullName: TMG.INetworkCompleteData
+  type: Interface
+  source:
+    remote:
+      path: Code/TMGInterfaces/INetworkData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: INetworkCompleteData
+    path: ../../../XTMF/XTMF/Code/TMGInterfaces/INetworkData.cs
+    startLine: 43
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  syntax:
+    content: 'public interface INetworkCompleteData : INetworkData, IDataSource<INetworkData>, IDataSource, IModule'
+    content.vb: >-
+      Public Interface INetworkCompleteData
+          Inherits INetworkData
+  inheritedMembers:
+  - TMG.INetworkData.NetworkType
+  - TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  - TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  - TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  - TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  - TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  - XTMF.IDataSource{TMG.INetworkData}.GiveData
+  - XTMF.IDataSource.Loaded
+  - XTMF.IDataSource.LoadData
+  - XTMF.IDataSource.UnloadData
+  - XTMF.IModule.Name
+  - XTMF.IModule.Progress
+  - XTMF.IModule.ProgressColour
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: TMG.INetworkCompleteData.GetTimePeriodData(XTMF.Time)
+  commentId: M:TMG.INetworkCompleteData.GetTimePeriodData(XTMF.Time)
+  id: GetTimePeriodData(XTMF.Time)
+  parent: TMG.INetworkCompleteData
+  langs:
+  - csharp
+  - vb
+  name: GetTimePeriodData(Time)
+  nameWithType: INetworkCompleteData.GetTimePeriodData(Time)
+  fullName: TMG.INetworkCompleteData.GetTimePeriodData(XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/TMGInterfaces/INetworkData.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetTimePeriodData
+    path: ../../../XTMF/XTMF/Code/TMGInterfaces/INetworkData.cs
+    startLine: 51
+  assemblies:
+  - TMGInterfaces
+  namespace: TMG
+  summary: "\nReturns all of the data for the time period in an array with the following format.\nThis method is not recommended unless performance is key.\nFor each origin, for each destination, [time,cost]\n"
+  example: []
+  syntax:
+    content: float[] GetTimePeriodData(Time time)
+    parameters:
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single[]
+      description: ''
+    content.vb: Function GetTimePeriodData(time As Time) As Single()
+  overload: TMG.INetworkCompleteData.GetTimePeriodData*
+references:
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.INetworkData.NetworkType
+  commentId: P:TMG.INetworkData.NetworkType
+  parent: TMG.INetworkData
+  name: NetworkType
+  nameWithType: INetworkData.NetworkType
+  fullName: TMG.INetworkData.NetworkType
+- uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  name: TravelCost(IZone, IZone, Time)
+  nameWithType: INetworkData.TravelCost(IZone, IZone, Time)
+  fullName: TMG.INetworkData.TravelCost(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelCost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: TravelCost(Int32, Int32, Time)
+  nameWithType: INetworkData.TravelCost(Int32, Int32, Time)
+  fullName: TMG.INetworkData.TravelCost(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelCost(System.Int32,System.Int32,XTMF.Time)
+    name: TravelCost
+    nameWithType: INetworkData.TravelCost
+    fullName: TMG.INetworkData.TravelCost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: INetworkData.TravelTime(IZone, IZone, Time)
+  fullName: TMG.INetworkData.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: TravelTime(Int32, Int32, Time)
+  nameWithType: INetworkData.TravelTime(Int32, Int32, Time)
+  fullName: TMG.INetworkData.TravelTime(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.TravelTime(System.Int32,System.Int32,XTMF.Time)
+    name: TravelTime
+    nameWithType: INetworkData.TravelTime
+    fullName: TMG.INetworkData.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  commentId: M:TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: GetAllData(IZone, IZone, Time, Time, Single)
+  nameWithType: INetworkData.GetAllData(IZone, IZone, Time, Time, Single)
+  fullName: TMG.INetworkData.GetAllData(TMG.IZone, TMG.IZone, XTMF.Time, XTMF.Time, System.Single)
+  spec.csharp:
+  - uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.GetAllData(TMG.IZone,TMG.IZone,XTMF.Time,XTMF.Time@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  commentId: M:TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: GetAllData(Int32, Int32, Time, Single, Single)
+  nameWithType: INetworkData.GetAllData(Int32, Int32, Time, Single, Single)
+  fullName: TMG.INetworkData.GetAllData(System.Int32, System.Int32, XTMF.Time, System.Single, System.Single)
+  spec.csharp:
+  - uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.GetAllData(System.Int32,System.Int32,XTMF.Time,System.Single@,System.Single@)
+    name: GetAllData
+    nameWithType: INetworkData.GetAllData
+    fullName: TMG.INetworkData.GetAllData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.INetworkData
+  name: ValidOd(IZone, IZone, Time)
+  nameWithType: INetworkData.ValidOd(IZone, IZone, Time)
+  fullName: TMG.INetworkData.ValidOd(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.ValidOd(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  commentId: M:TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+  parent: TMG.INetworkData
+  isExternal: true
+  name: ValidOd(Int32, Int32, Time)
+  nameWithType: INetworkData.ValidOd(Int32, Int32, Time)
+  fullName: TMG.INetworkData.ValidOd(System.Int32, System.Int32, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.INetworkData.ValidOd(System.Int32,System.Int32,XTMF.Time)
+    name: ValidOd
+    nameWithType: INetworkData.ValidOd
+    fullName: TMG.INetworkData.ValidOd
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource{TMG.INetworkData}.GiveData
+  commentId: M:XTMF.IDataSource{TMG.INetworkData}.GiveData
+  parent: XTMF.IDataSource{TMG.INetworkData}
+  definition: XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<INetworkData>.GiveData()
+  fullName: XTMF.IDataSource<TMG.INetworkData>.GiveData()
+  nameWithType.vb: IDataSource(Of INetworkData).GiveData()
+  fullName.vb: XTMF.IDataSource(Of TMG.INetworkData).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<INetworkData>.GiveData
+    fullName: XTMF.IDataSource<TMG.INetworkData>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of INetworkData).GiveData
+    fullName: XTMF.IDataSource(Of TMG.INetworkData).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource.Loaded
+  commentId: P:XTMF.IDataSource.Loaded
+  parent: XTMF.IDataSource
+  name: Loaded
+  nameWithType: IDataSource.Loaded
+  fullName: XTMF.IDataSource.Loaded
+- uid: XTMF.IDataSource.LoadData
+  commentId: M:XTMF.IDataSource.LoadData
+  parent: XTMF.IDataSource
+  name: LoadData()
+  nameWithType: IDataSource.LoadData()
+  fullName: XTMF.IDataSource.LoadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.LoadData
+    name: LoadData
+    nameWithType: IDataSource.LoadData
+    fullName: XTMF.IDataSource.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource.UnloadData
+  commentId: M:XTMF.IDataSource.UnloadData
+  parent: XTMF.IDataSource
+  name: UnloadData()
+  nameWithType: IDataSource.UnloadData()
+  fullName: XTMF.IDataSource.UnloadData()
+  spec.csharp:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource.UnloadData
+    name: UnloadData
+    nameWithType: IDataSource.UnloadData
+    fullName: XTMF.IDataSource.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData
+  commentId: T:TMG.INetworkData
+  parent: TMG
+  name: INetworkData
+  nameWithType: INetworkData
+  fullName: TMG.INetworkData
+- uid: XTMF.IDataSource`1.GiveData
+  commentId: M:XTMF.IDataSource`1.GiveData
+  name: GiveData()
+  nameWithType: IDataSource<T>.GiveData()
+  fullName: XTMF.IDataSource<T>.GiveData()
+  nameWithType.vb: IDataSource(Of T).GiveData()
+  fullName.vb: XTMF.IDataSource(Of T).GiveData()
+  spec.csharp:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource<T>.GiveData
+    fullName: XTMF.IDataSource<T>.GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IDataSource`1.GiveData
+    name: GiveData
+    nameWithType: IDataSource(Of T).GiveData
+    fullName: XTMF.IDataSource(Of T).GiveData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource{TMG.INetworkData}
+  commentId: T:XTMF.IDataSource{TMG.INetworkData}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<INetworkData>
+  nameWithType: IDataSource<INetworkData>
+  fullName: XTMF.IDataSource<TMG.INetworkData>
+  nameWithType.vb: IDataSource(Of INetworkData)
+  fullName.vb: XTMF.IDataSource(Of TMG.INetworkData)
+  name.vb: IDataSource(Of INetworkData)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource
+  commentId: T:XTMF.IDataSource
+  parent: XTMF
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: XTMF.IDataSource
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.INetworkCompleteData.GetTimePeriodData*
+  commentId: Overload:TMG.INetworkCompleteData.GetTimePeriodData
+  name: GetTimePeriodData
+  nameWithType: INetworkCompleteData.GetTimePeriodData
+  fullName: TMG.INetworkCompleteData.GetTimePeriodData
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: System.Single[]
+  isExternal: true
+  name: Single[]
+  nameWithType: Single[]
+  fullName: System.Single[]
+  nameWithType.vb: Single()
+  fullName.vb: System.Single()
+  name.vb: Single()
+  spec.csharp:
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()

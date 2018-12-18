@@ -1,0 +1,2122 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.DemographicCategoryGeneration
+  commentId: T:TMG.GTAModel.DemographicCategoryGeneration
+  id: DemographicCategoryGeneration
+  parent: TMG.GTAModel
+  children:
+  - TMG.GTAModel.DemographicCategoryGeneration.AgeCategoryRange
+  - TMG.GTAModel.DemographicCategoryGeneration.DemographicParameterSetIndex
+  - TMG.GTAModel.DemographicCategoryGeneration.EmploymentStatusCategory
+  - TMG.GTAModel.DemographicCategoryGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  - TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory
+  - TMG.GTAModel.DemographicCategoryGeneration.IsContained(TMG.IPerson)
+  - TMG.GTAModel.DemographicCategoryGeneration.Mobility
+  - TMG.GTAModel.DemographicCategoryGeneration.ModeChoiceParameterSetIndex
+  - TMG.GTAModel.DemographicCategoryGeneration.Name
+  - TMG.GTAModel.DemographicCategoryGeneration.OccupationCategory
+  - TMG.GTAModel.DemographicCategoryGeneration.Progress
+  - TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+  - TMG.GTAModel.DemographicCategoryGeneration.Root
+  - TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation(System.String@)
+  - TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat(System.Int32,System.Int32@)
+  langs:
+  - csharp
+  - vb
+  name: DemographicCategoryGeneration
+  nameWithType: DemographicCategoryGeneration
+  fullName: TMG.GTAModel.DemographicCategoryGeneration
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemographicCategoryGeneration
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 25
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: 'public abstract class DemographicCategoryGeneration : IDemographicCategoryGeneration, IGeneration, IDemographicCategory, IModule'
+    content.vb: >-
+      Public MustInherit Class DemographicCategoryGeneration
+          Implements IDemographicCategoryGeneration, IGeneration, IDemographicCategory, IModule
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - TMG.GTAModel.DemographicMarketGeneration
+  - TMG.GTAModel.Generation.BuildHBOGeneration
+  - TMG.GTAModel.Generation.BuildPoRPoWGeneration
+  - TMG.GTAModel.Generation.BuildPoSGeneration
+  - TMG.GTAModel.Generation.BuildPoWGeneration
+  - TMG.GTAModel.Generation.PoRPoWGeneration
+  - TMG.GTAModel.GTAModelGeneration
+  - TMG.GTAModel.HBOGeneration
+  - TMG.GTAModel.PoRPoSGeneration
+  - TMG.GTAModel.PowGeneration
+  - TMG.GTAModel.V2.Generation.BuildPoRPoWGeneration
+  - TMG.GTAModel.V2.Generation.BuildPoWGeneration
+  - TMG.GTAModel.V2.Generation.PoRPoWGeneration
+  - TMG.GTAModel.V2.Generation.PowGeneration
+  implements:
+  - TMG.IDemographicCategoryGeneration
+  - TMG.IGeneration
+  - TMG.IDemographicCategory
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: TMG.GTAModel.DemographicCategoryGeneration.AgeCategoryRange
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.AgeCategoryRange
+  id: AgeCategoryRange
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: AgeCategoryRange
+  nameWithType: DemographicCategoryGeneration.AgeCategoryRange
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.AgeCategoryRange
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AgeCategoryRange
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 28
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Age Category Range", "0-8", typeof(RangeSet), "The range of different age categories to use.  Age categories are defined in the Demographics module.")]
+
+      public RangeSet AgeCategoryRange
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Age Category Range", "0-8", GetType(RangeSet), "The range of different age categories to use.  Age categories are defined in the Demographics module.")>
+
+      Public AgeCategoryRange As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Age Category Range
+    - type: System.String
+      value: 0-8
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: The range of different age categories to use.  Age categories are defined in the Demographics module.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.DemographicParameterSetIndex
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.DemographicParameterSetIndex
+  id: DemographicParameterSetIndex
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: DemographicParameterSetIndex
+  nameWithType: DemographicCategoryGeneration.DemographicParameterSetIndex
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.DemographicParameterSetIndex
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemographicParameterSetIndex
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 31
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Demographic Parameter Set Index", 0, "The 0 indexed index of parameters to use when calculating utility")]
+
+      public int DemographicParameterSetIndex
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Demographic Parameter Set Index", 0, "The 0 indexed index of parameters to use when calculating utility")>
+
+      Public DemographicParameterSetIndex As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demographic Parameter Set Index
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The 0 indexed index of parameters to use when calculating utility
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.EmploymentStatusCategory
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.EmploymentStatusCategory
+  id: EmploymentStatusCategory
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: EmploymentStatusCategory
+  nameWithType: DemographicCategoryGeneration.EmploymentStatusCategory
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.EmploymentStatusCategory
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EmploymentStatusCategory
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 34
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Employment Status", "2", typeof(RangeSet), "Defaults: FullTime = 1, PartTime = 2")]
+
+      public RangeSet EmploymentStatusCategory
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Employment Status", "2", GetType(RangeSet), "Defaults: FullTime = 1, PartTime = 2")>
+
+      Public EmploymentStatusCategory As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Employment Status
+    - type: System.String
+      value: "2"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: 'Defaults: FullTime = 1, PartTime = 2'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.ModeChoiceParameterSetIndex
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.ModeChoiceParameterSetIndex
+  id: ModeChoiceParameterSetIndex
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: ModeChoiceParameterSetIndex
+  nameWithType: DemographicCategoryGeneration.ModeChoiceParameterSetIndex
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.ModeChoiceParameterSetIndex
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeChoiceParameterSetIndex
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 37
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("ModeChoice Parameter Set Index", 0, "The 0 indexed index of parameters to use when calculating utility")]
+
+      public int ModeChoiceParameterSetIndex
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("ModeChoice Parameter Set Index", 0, "The 0 indexed index of parameters to use when calculating utility")>
+
+      Public ModeChoiceParameterSetIndex As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: ModeChoice Parameter Set Index
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The 0 indexed index of parameters to use when calculating utility
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.OccupationCategory
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.OccupationCategory
+  id: OccupationCategory
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: OccupationCategory
+  nameWithType: DemographicCategoryGeneration.OccupationCategory
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.OccupationCategory
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OccupationCategory
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 40
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Work Type", "1", typeof(RangeSet), "Defaults: 0 = Unemployed, 1 = professional, 2 = general, 3 = sales, 4 = manufacturing")]
+
+      public RangeSet OccupationCategory
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Work Type", "1", GetType(RangeSet), "Defaults: 0 = Unemployed, 1 = professional, 2 = general, 3 = sales, 4 = manufacturing")>
+
+      Public OccupationCategory As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Work Type
+    - type: System.String
+      value: "1"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: 'Defaults: 0 = Unemployed, 1 = professional, 2 = general, 3 = sales, 4 = manufacturing'
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Root
+  commentId: F:TMG.GTAModel.DemographicCategoryGeneration.Root
+  id: Root
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: DemographicCategoryGeneration.Root
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 43
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public IDemographic4StepModelSystemTemplate Root
+    return:
+      type: TMG.IDemographic4StepModelSystemTemplate
+    content.vb: Public Root As IDemographic4StepModelSystemTemplate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Mobility
+  commentId: P:TMG.GTAModel.DemographicCategoryGeneration.Mobility
+  id: Mobility
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: Mobility
+  nameWithType: DemographicCategoryGeneration.Mobility
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Mobility
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Mobility
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 49
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: >-
+      [RunParameter("Mobility Category", "0", typeof(RangeSet), "0= No Car and License, 1= car no license, 2= 2+ cars no license, 3= No Car with license, 4= license 1 car, 5= license 2+ cars")]
+
+      public RangeSet Mobility { get; set; }
+    parameters: []
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Mobility Category", "0", GetType(RangeSet), "0= No Car and License, 1= car no license, 2= 2+ cars no license, 3= No Car with license, 4= license 1 car, 5= license 2+ cars")>
+
+      Public Property Mobility As RangeSet
+  overload: TMG.GTAModel.DemographicCategoryGeneration.Mobility*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Mobility Category
+    - type: System.String
+      value: "0"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: 0= No Car and License, 1= car no license, 2= 2+ cars no license, 3= No Car with license, 4= license 1 car, 5= license 2+ cars
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Name
+  commentId: P:TMG.GTAModel.DemographicCategoryGeneration.Name
+  id: Name
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: DemographicCategoryGeneration.Name
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 52
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.DemographicCategoryGeneration.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Progress
+  commentId: P:TMG.GTAModel.DemographicCategoryGeneration.Progress
+  id: Progress
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: DemographicCategoryGeneration.Progress
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 58
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.DemographicCategoryGeneration.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+  commentId: P:TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: DemographicCategoryGeneration.ProgressColour
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 64
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.DemographicCategoryGeneration.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  commentId: M:TMG.GTAModel.DemographicCategoryGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  id: Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: Generate(SparseArray<Single>, SparseArray<Single>)
+  nameWithType: DemographicCategoryGeneration.Generate(SparseArray<Single>, SparseArray<Single>)
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Generate(Datastructure.SparseArray<System.Single>, Datastructure.SparseArray<System.Single>)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Generate
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 74
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  summary: "\nCreate the production and attractions for this demographic\n"
+  example: []
+  syntax:
+    content: public abstract void Generate(SparseArray<float> production, SparseArray<float> attractions)
+    parameters:
+    - id: production
+      type: Datastructure.SparseArray{System.Single}
+      description: The production
+    - id: attractions
+      type: Datastructure.SparseArray{System.Single}
+      description: The attraction
+    content.vb: Public MustOverride Sub Generate(production As SparseArray(Of Single), attractions As SparseArray(Of Single))
+  overload: TMG.GTAModel.DemographicCategoryGeneration.Generate*
+  implements:
+  - TMG.IGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  nameWithType.vb: DemographicCategoryGeneration.Generate(SparseArray(Of Single), SparseArray(Of Single))
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: TMG.GTAModel.DemographicCategoryGeneration.Generate(Datastructure.SparseArray(Of System.Single), Datastructure.SparseArray(Of System.Single))
+  name.vb: Generate(SparseArray(Of Single), SparseArray(Of Single))
+- uid: TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory
+  commentId: M:TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory
+  id: InitializeDemographicCategory
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: InitializeDemographicCategory()
+  nameWithType: DemographicCategoryGeneration.InitializeDemographicCategory()
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InitializeDemographicCategory
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 76
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public virtual void InitializeDemographicCategory()
+    content.vb: Public Overridable Sub InitializeDemographicCategory
+  overload: TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory*
+  implements:
+  - TMG.IDemographicCategory.InitializeDemographicCategory
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: TMG.GTAModel.DemographicCategoryGeneration.IsContained(TMG.IPerson)
+  commentId: M:TMG.GTAModel.DemographicCategoryGeneration.IsContained(TMG.IPerson)
+  id: IsContained(TMG.IPerson)
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: IsContained(IPerson)
+  nameWithType: DemographicCategoryGeneration.IsContained(IPerson)
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.IsContained(TMG.IPerson)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IsContained
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 85
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public bool IsContained(IPerson person)
+    parameters:
+    - id: person
+      type: TMG.IPerson
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsContained(person As IPerson) As Boolean
+  overload: TMG.GTAModel.DemographicCategoryGeneration.IsContained*
+  implements:
+  - TMG.IDemographicCategory.IsContained(TMG.IPerson)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: DemographicCategoryGeneration.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 100
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: public virtual bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: DemographicCategoryGeneration.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat(System.Int32,System.Int32@)
+  commentId: M:TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat(System.Int32,System.Int32@)
+  id: TryGetAgeCat(System.Int32,System.Int32@)
+  parent: TMG.GTAModel.DemographicCategoryGeneration
+  langs:
+  - csharp
+  - vb
+  name: TryGetAgeCat(Int32, out Int32)
+  nameWithType: DemographicCategoryGeneration.TryGetAgeCat(Int32, out Int32)
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat(System.Int32, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TryGetAgeCat
+    path: ../../../XTMF/XTMF/Code/GTAModel/Generation/DemographicCategoryGeneration.cs
+    startLine: 105
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel
+  syntax:
+    content: protected bool TryGetAgeCat(int age, out int ageCat)
+    parameters:
+    - id: age
+      type: System.Int32
+    - id: ageCat
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Protected Function TryGetAgeCat(age As Integer, ByRef ageCat As Integer) As Boolean
+  overload: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat*
+  nameWithType.vb: DemographicCategoryGeneration.TryGetAgeCat(Int32, ByRef Int32)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat(System.Int32, ByRef System.Int32)
+  name.vb: TryGetAgeCat(Int32, ByRef Int32)
+references:
+- uid: TMG.GTAModel
+  commentId: N:TMG.GTAModel
+  name: TMG.GTAModel
+  nameWithType: TMG.GTAModel
+  fullName: TMG.GTAModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.IDemographicCategoryGeneration
+  commentId: T:TMG.IDemographicCategoryGeneration
+  parent: TMG
+  name: IDemographicCategoryGeneration
+  nameWithType: IDemographicCategoryGeneration
+  fullName: TMG.IDemographicCategoryGeneration
+- uid: TMG.IGeneration
+  commentId: T:TMG.IGeneration
+  parent: TMG
+  name: IGeneration
+  nameWithType: IGeneration
+  fullName: TMG.IGeneration
+- uid: TMG.IDemographicCategory
+  commentId: T:TMG.IDemographicCategory
+  parent: TMG
+  name: IDemographicCategory
+  nameWithType: IDemographicCategory
+  fullName: TMG.IDemographicCategory
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: Datastructure.RangeSet
+  commentId: T:Datastructure.RangeSet
+  parent: Datastructure
+  name: RangeSet
+  nameWithType: RangeSet
+  fullName: Datastructure.RangeSet
+- uid: Datastructure
+  commentId: N:Datastructure
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.IDemographic4StepModelSystemTemplate
+  commentId: T:TMG.IDemographic4StepModelSystemTemplate
+  parent: TMG
+  name: IDemographic4StepModelSystemTemplate
+  nameWithType: IDemographic4StepModelSystemTemplate
+  fullName: TMG.IDemographic4StepModelSystemTemplate
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Mobility*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.Mobility
+  name: Mobility
+  nameWithType: DemographicCategoryGeneration.Mobility
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Mobility
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Name*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.Name
+  name: Name
+  nameWithType: DemographicCategoryGeneration.Name
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Progress*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.Progress
+  name: Progress
+  nameWithType: DemographicCategoryGeneration.Progress
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.DemographicCategoryGeneration.ProgressColour*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+  name: ProgressColour
+  nameWithType: DemographicCategoryGeneration.ProgressColour
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.DemographicCategoryGeneration.Generate*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.Generate
+  name: Generate
+  nameWithType: DemographicCategoryGeneration.Generate
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.Generate
+- uid: TMG.IGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  commentId: M:TMG.IGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+  parent: TMG.IGeneration
+  isExternal: true
+  name: Generate(SparseArray<Single>, SparseArray<Single>)
+  nameWithType: IGeneration.Generate(SparseArray<Single>, SparseArray<Single>)
+  fullName: TMG.IGeneration.Generate(Datastructure.SparseArray<System.Single>, Datastructure.SparseArray<System.Single>)
+  nameWithType.vb: IGeneration.Generate(SparseArray(Of Single), SparseArray(Of Single))
+  fullName.vb: TMG.IGeneration.Generate(Datastructure.SparseArray(Of System.Single), Datastructure.SparseArray(Of System.Single))
+  name.vb: Generate(SparseArray(Of Single), SparseArray(Of Single))
+  spec.csharp:
+  - uid: TMG.IGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+    name: Generate
+    nameWithType: IGeneration.Generate
+    fullName: TMG.IGeneration.Generate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IGeneration.Generate(Datastructure.SparseArray{System.Single},Datastructure.SparseArray{System.Single})
+    name: Generate
+    nameWithType: IGeneration.Generate
+    fullName: TMG.IGeneration.Generate
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseArray{System.Single}
+  commentId: T:Datastructure.SparseArray{System.Single}
+  parent: Datastructure
+  definition: Datastructure.SparseArray`1
+  name: SparseArray<Single>
+  nameWithType: SparseArray<Single>
+  fullName: Datastructure.SparseArray<System.Single>
+  nameWithType.vb: SparseArray(Of Single)
+  fullName.vb: Datastructure.SparseArray(Of System.Single)
+  name.vb: SparseArray(Of Single)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Datastructure.SparseArray`1
+  commentId: T:Datastructure.SparseArray`1
+  name: SparseArray<T>
+  nameWithType: SparseArray<T>
+  fullName: Datastructure.SparseArray<T>
+  nameWithType.vb: SparseArray(Of T)
+  fullName.vb: Datastructure.SparseArray(Of T)
+  name.vb: SparseArray(Of T)
+  spec.csharp:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Datastructure.SparseArray`1
+    name: SparseArray
+    nameWithType: SparseArray
+    fullName: Datastructure.SparseArray
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory
+  name: InitializeDemographicCategory
+  nameWithType: DemographicCategoryGeneration.InitializeDemographicCategory
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.InitializeDemographicCategory
+- uid: TMG.IDemographicCategory.InitializeDemographicCategory
+  commentId: M:TMG.IDemographicCategory.InitializeDemographicCategory
+  parent: TMG.IDemographicCategory
+  name: InitializeDemographicCategory()
+  nameWithType: IDemographicCategory.InitializeDemographicCategory()
+  fullName: TMG.IDemographicCategory.InitializeDemographicCategory()
+  spec.csharp:
+  - uid: TMG.IDemographicCategory.InitializeDemographicCategory
+    name: InitializeDemographicCategory
+    nameWithType: IDemographicCategory.InitializeDemographicCategory
+    fullName: TMG.IDemographicCategory.InitializeDemographicCategory
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IDemographicCategory.InitializeDemographicCategory
+    name: InitializeDemographicCategory
+    nameWithType: IDemographicCategory.InitializeDemographicCategory
+    fullName: TMG.IDemographicCategory.InitializeDemographicCategory
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.DemographicCategoryGeneration.IsContained*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.IsContained
+  name: IsContained
+  nameWithType: DemographicCategoryGeneration.IsContained
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.IsContained
+- uid: TMG.IDemographicCategory.IsContained(TMG.IPerson)
+  commentId: M:TMG.IDemographicCategory.IsContained(TMG.IPerson)
+  parent: TMG.IDemographicCategory
+  name: IsContained(IPerson)
+  nameWithType: IDemographicCategory.IsContained(IPerson)
+  fullName: TMG.IDemographicCategory.IsContained(TMG.IPerson)
+  spec.csharp:
+  - uid: TMG.IDemographicCategory.IsContained(TMG.IPerson)
+    name: IsContained
+    nameWithType: IDemographicCategory.IsContained
+    fullName: TMG.IDemographicCategory.IsContained
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IPerson
+    name: IPerson
+    nameWithType: IPerson
+    fullName: TMG.IPerson
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IDemographicCategory.IsContained(TMG.IPerson)
+    name: IsContained
+    nameWithType: IDemographicCategory.IsContained
+    fullName: TMG.IDemographicCategory.IsContained
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IPerson
+    name: IPerson
+    nameWithType: IPerson
+    fullName: TMG.IPerson
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.IPerson
+  commentId: T:TMG.IPerson
+  parent: TMG
+  name: IPerson
+  nameWithType: IPerson
+  fullName: TMG.IPerson
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: DemographicCategoryGeneration.RuntimeValidation
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat*
+  commentId: Overload:TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat
+  name: TryGetAgeCat
+  nameWithType: DemographicCategoryGeneration.TryGetAgeCat
+  fullName: TMG.GTAModel.DemographicCategoryGeneration.TryGetAgeCat

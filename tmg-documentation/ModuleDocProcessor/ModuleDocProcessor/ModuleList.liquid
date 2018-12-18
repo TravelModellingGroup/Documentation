@@ -1,0 +1,20 @@
+﻿<div>
+
+
+  <h1>{{ Assembly.AssemblyName }}</h1>
+
+  <p>{{ Assembly.AssemblyDescription }}</p>
+  <h3 id="modules">Modules</h3>
+  {% for module in Assembly.ModulesInfo %}
+  <h4>
+    <a href="{{ module.TypeName }}.html" class="xref text-break">{{ module.Name }}</a>
+  </h4>
+  <section>
+
+    <p class="module-description">{{module.ModuleInfo.Description | raw}}</p>
+  </section>
+
+
+  {% endfor %}
+
+</div>

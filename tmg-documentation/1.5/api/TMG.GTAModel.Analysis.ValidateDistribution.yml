@@ -1,0 +1,1988 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.Analysis.ValidateDistribution
+  commentId: T:TMG.GTAModel.Analysis.ValidateDistribution
+  id: ValidateDistribution
+  parent: TMG.GTAModel.Analysis
+  children:
+  - TMG.GTAModel.Analysis.ValidateDistribution.AverageSums
+  - TMG.GTAModel.Analysis.ValidateDistribution.Execute
+  - TMG.GTAModel.Analysis.ValidateDistribution.Name
+  - TMG.GTAModel.Analysis.ValidateDistribution.PDRelativeValidationFile
+  - TMG.GTAModel.Analysis.ValidateDistribution.PDValidationFile
+  - TMG.GTAModel.Analysis.ValidateDistribution.Progress
+  - TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+  - TMG.GTAModel.Analysis.ValidateDistribution.RegionRelativeValidationFile
+  - TMG.GTAModel.Analysis.ValidateDistribution.RegionValidationFile
+  - TMG.GTAModel.Analysis.ValidateDistribution.Root
+  - TMG.GTAModel.Analysis.ValidateDistribution.RunData
+  - TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation(System.String@)
+  - TMG.GTAModel.Analysis.ValidateDistribution.Start
+  - TMG.GTAModel.Analysis.ValidateDistribution.TruthData
+  - TMG.GTAModel.Analysis.ValidateDistribution.ZoneRelativeValidationFile
+  - TMG.GTAModel.Analysis.ValidateDistribution.ZoneValidationFile
+  langs:
+  - csharp
+  - vb
+  name: ValidateDistribution
+  nameWithType: ValidateDistribution
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidateDistribution
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: 'public class ValidateDistribution : ISelfContainedModule, IModule'
+    content.vb: >-
+      Public Class ValidateDistribution
+          Implements ISelfContainedModule, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.AverageSums
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.AverageSums
+  id: AverageSums
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: AverageSums
+  nameWithType: ValidateDistribution.AverageSums
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.AverageSums
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AverageSums
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 33
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Average by zones", false, "Should we average the spatial sums based on number of zones?")]
+
+      public bool AverageSums
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Average by zones", False, "Should we average the spatial sums based on number of zones?")>
+
+      Public AverageSums As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Average by zones
+    - type: System.Boolean
+      value: false
+    - type: System.String
+      value: Should we average the spatial sums based on number of zones?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Execute
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.Execute
+  id: Execute
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: Execute
+  nameWithType: ValidateDistribution.Execute
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Execute
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 36
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Run Validation", true, "Should we run this validation?")]
+
+      public bool Execute
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Run Validation", True, "Should we run this validation?")>
+
+      Public Execute As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Run Validation
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Should we run this validation?
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.PDRelativeValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.PDRelativeValidationFile
+  id: PDRelativeValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: PDRelativeValidationFile
+  nameWithType: ValidateDistribution.PDRelativeValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.PDRelativeValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PDRelativeValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Planing Relative District Validation File", "PDRelativeDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the relative PD level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory PDRelativeValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Planing Relative District Validation File", "PDRelativeDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the relative PD level validation, leave blank to skip.")>
+
+      Public PDRelativeValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Planing Relative District Validation File
+    - type: System.String
+      value: PDRelativeDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the relative PD level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.PDValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.PDValidationFile
+  id: PDValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: PDValidationFile
+  nameWithType: ValidateDistribution.PDValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.PDValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PDValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Planing District Validation File", "PDDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the PD level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory PDValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Planing District Validation File", "PDDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the PD level validation, leave blank to skip.")>
+
+      Public PDValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Planing District Validation File
+    - type: System.String
+      value: PDDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the PD level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.RegionRelativeValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.RegionRelativeValidationFile
+  id: RegionRelativeValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: RegionRelativeValidationFile
+  nameWithType: ValidateDistribution.RegionRelativeValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.RegionRelativeValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RegionRelativeValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 45
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Region Relative Validation File", "RegionRelativeDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the relative region level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory RegionRelativeValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Region Relative Validation File", "RegionRelativeDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the relative region level validation, leave blank to skip.")>
+
+      Public RegionRelativeValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Region Relative Validation File
+    - type: System.String
+      value: RegionRelativeDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the relative region level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.RegionValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.RegionValidationFile
+  id: RegionValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: RegionValidationFile
+  nameWithType: ValidateDistribution.RegionValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.RegionValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RegionValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 48
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Region Validation File", "RegionDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the region level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory RegionValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Region Validation File", "RegionDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the region level validation, leave blank to skip.")>
+
+      Public RegionValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Region Validation File
+    - type: System.String
+      value: RegionDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the region level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Root
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.Root
+  id: Root
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: ValidateDistribution.Root
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 51
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.RunData
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.RunData
+  id: RunData
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: RunData
+  nameWithType: ValidateDistribution.RunData
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.RunData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunData
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 54
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The data that we generated this run.", Required = true)]
+
+      public IReadODData<float> RunData
+    return:
+      type: TMG.Input.IReadODData{System.Single}
+    content.vb: >-
+      <SubModelInformation(Description:="The data that we generated this run.", Required:=True)>
+
+      Public RunData As IReadODData(Of Single)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The data that we generated this run.
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.TruthData
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.TruthData
+  id: TruthData
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: TruthData
+  nameWithType: ValidateDistribution.TruthData
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.TruthData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TruthData
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 57
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The data that we are trying to fit to.", Required = false)]
+
+      public IReadODData<float> TruthData
+    return:
+      type: TMG.Input.IReadODData{System.Single}
+    content.vb: >-
+      <SubModelInformation(Description:="The data that we are trying to fit to.", Required:=False)>
+
+      Public TruthData As IReadODData(Of Single)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The data that we are trying to fit to.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.ZoneRelativeValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.ZoneRelativeValidationFile
+  id: ZoneRelativeValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: ZoneRelativeValidationFile
+  nameWithType: ValidateDistribution.ZoneRelativeValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.ZoneRelativeValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneRelativeValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 60
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Zone Relative Validation File", "ZoneRelativeDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the relative zone level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory ZoneRelativeValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Zone Relative Validation File", "ZoneRelativeDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the relative zone level validation, leave blank to skip.")>
+
+      Public ZoneRelativeValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Zone Relative Validation File
+    - type: System.String
+      value: ZoneRelativeDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the relative zone level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.ZoneValidationFile
+  commentId: F:TMG.GTAModel.Analysis.ValidateDistribution.ZoneValidationFile
+  id: ZoneValidationFile
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: ZoneValidationFile
+  nameWithType: ValidateDistribution.ZoneValidationFile
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.ZoneValidationFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneValidationFile
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 63
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: >-
+      [RunParameter("Zone Validation File", "ZoneDistributionValidation.csv", typeof(FileFromOutputDirectory), "The location of the file to save the zone level validation, leave blank to skip.")]
+
+      public FileFromOutputDirectory ZoneValidationFile
+    return:
+      type: TMG.Input.FileFromOutputDirectory
+    content.vb: >-
+      <RunParameter("Zone Validation File", "ZoneDistributionValidation.csv", GetType(FileFromOutputDirectory), "The location of the file to save the zone level validation, leave blank to skip.")>
+
+      Public ZoneValidationFile As FileFromOutputDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Zone Validation File
+    - type: System.String
+      value: ZoneDistributionValidation.csv
+    - type: System.Type
+      value: TMG.Input.FileFromOutputDirectory
+    - type: System.String
+      value: The location of the file to save the zone level validation, leave blank to skip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Name
+  commentId: P:TMG.GTAModel.Analysis.ValidateDistribution.Name
+  id: Name
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ValidateDistribution.Name
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 65
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.Analysis.ValidateDistribution.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Progress
+  commentId: P:TMG.GTAModel.Analysis.ValidateDistribution.Progress
+  id: Progress
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ValidateDistribution.Progress
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 71
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.Analysis.ValidateDistribution.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+  commentId: P:TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ValidateDistribution.ProgressColour
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 73
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ValidateDistribution.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 75
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ValidateDistribution.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Start
+  commentId: M:TMG.GTAModel.Analysis.ValidateDistribution.Start
+  id: Start
+  parent: TMG.GTAModel.Analysis.ValidateDistribution
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: ValidateDistribution.Start()
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/Analysis/ValidateDistribution.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../../XTMF/XTMF/Code/GTAModel/Analysis/ValidateDistribution.cs
+    startLine: 80
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.Analysis
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: TMG.GTAModel.Analysis.ValidateDistribution.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: TMG.GTAModel.Analysis
+  commentId: N:TMG.GTAModel.Analysis
+  name: TMG.GTAModel.Analysis
+  nameWithType: TMG.GTAModel.Analysis
+  fullName: TMG.GTAModel.Analysis
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.Input.FileFromOutputDirectory
+  commentId: T:TMG.Input.FileFromOutputDirectory
+  parent: TMG.Input
+  name: FileFromOutputDirectory
+  nameWithType: FileFromOutputDirectory
+  fullName: TMG.Input.FileFromOutputDirectory
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: TMG.Input.IReadODData{System.Single}
+  commentId: T:TMG.Input.IReadODData{System.Single}
+  parent: TMG.Input
+  definition: TMG.Input.IReadODData`1
+  name: IReadODData<Single>
+  nameWithType: IReadODData<Single>
+  fullName: TMG.Input.IReadODData<System.Single>
+  nameWithType.vb: IReadODData(Of Single)
+  fullName.vb: TMG.Input.IReadODData(Of System.Single)
+  name.vb: IReadODData(Of Single)
+  spec.csharp:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input.IReadODData`1
+  commentId: T:TMG.Input.IReadODData`1
+  name: IReadODData<T>
+  nameWithType: IReadODData<T>
+  fullName: TMG.Input.IReadODData<T>
+  nameWithType.vb: IReadODData(Of T)
+  fullName.vb: TMG.Input.IReadODData(Of T)
+  name.vb: IReadODData(Of T)
+  spec.csharp:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IReadODData`1
+    name: IReadODData
+    nameWithType: IReadODData
+    fullName: TMG.Input.IReadODData
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Name*
+  commentId: Overload:TMG.GTAModel.Analysis.ValidateDistribution.Name
+  name: Name
+  nameWithType: ValidateDistribution.Name
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Progress*
+  commentId: Overload:TMG.GTAModel.Analysis.ValidateDistribution.Progress
+  name: Progress
+  nameWithType: ValidateDistribution.Progress
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour*
+  commentId: Overload:TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+  name: ProgressColour
+  nameWithType: ValidateDistribution.ProgressColour
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: ValidateDistribution.RuntimeValidation
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.Analysis.ValidateDistribution.Start*
+  commentId: Overload:TMG.GTAModel.Analysis.ValidateDistribution.Start
+  name: Start
+  nameWithType: ValidateDistribution.Start
+  fullName: TMG.GTAModel.Analysis.ValidateDistribution.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

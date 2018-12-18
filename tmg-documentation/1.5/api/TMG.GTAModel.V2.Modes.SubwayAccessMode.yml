@@ -1,0 +1,4307 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  commentId: T:TMG.GTAModel.V2.Modes.SubwayAccessMode
+  id: SubwayAccessMode
+  parent: TMG.GTAModel.V2.Modes
+  children:
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessCost
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessInVehicleTravelTime
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessModeName
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Closest
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ClosestDistance
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Constant
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.CostFactor
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.EgressNetworkName
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.FareTTC
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.FeasibilityTest
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.First
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.FirstAlternative
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.GeneralTime
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding(System.Int32,System.Int32)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting(System.Int32,System.Int32)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessStations
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessToDestinationTime
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.MinAccessStationLogsumValue
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCost
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCostAverageFactor
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingFactor
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.PrimaryModeName
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.RequireParking
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Root
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation(System.String@)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.Second
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.StationZoneData
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTime
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTimeAverageFactor
+  - TMG.GTAModel.V2.Modes.SubwayAccessMode.WalkTime
+  langs:
+  - csharp
+  - vb
+  name: SubwayAccessMode
+  nameWithType: SubwayAccessMode
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SubwayAccessMode
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: 'public class SubwayAccessMode : IStationCollectionMode, IMode, IUtilityComponentMode, IModeChoiceNode, IModule, IIterationSensitive'
+    content.vb: >-
+      Public Class SubwayAccessMode
+          Implements IStationCollectionMode, IMode, IUtilityComponentMode, IModeChoiceNode, IModule, IIterationSensitive
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Modes.IStationCollectionMode
+  - TMG.IMode
+  - TMG.Modes.IUtilityComponentMode
+  - TMG.IModeChoiceNode
+  - XTMF.IModule
+  - TMG.IIterationSensitive
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessCost
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessCost
+  id: AccessCost
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: AccessCost
+  nameWithType: SubwayAccessMode.AccessCost
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessCost
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AccessCost
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 33
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Access Cost", 0F, "The cost of travelling from the origin to the access station.")]
+
+      public float AccessCost
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Access Cost", 0F, "The cost of travelling from the origin to the access station.")>
+
+      Public AccessCost As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Access Cost
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The cost of travelling from the origin to the access station.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessInVehicleTravelTime
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessInVehicleTravelTime
+  id: AccessInVehicleTravelTime
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: AccessInVehicleTravelTime
+  nameWithType: SubwayAccessMode.AccessInVehicleTravelTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessInVehicleTravelTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AccessInVehicleTravelTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 36
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Access IVTT", 0F, "The factor to apply to the general time of travel.")]
+
+      public float AccessInVehicleTravelTime
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Access IVTT", 0F, "The factor to apply to the general time of travel.")>
+
+      Public AccessInVehicleTravelTime As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Access IVTT
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor to apply to the general time of travel.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessModeName
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessModeName
+  id: AccessModeName
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: AccessModeName
+  nameWithType: SubwayAccessMode.AccessModeName
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.AccessModeName
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AccessModeName
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Access Network Name", "Auto", "The name of the network to use to get to the interchange.")]
+
+      public string AccessModeName
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Access Network Name", "Auto", "The name of the network to use to get to the interchange.")>
+
+      Public AccessModeName As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Access Network Name
+    - type: System.String
+      value: Auto
+    - type: System.String
+      value: The name of the network to use to get to the interchange.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Closest
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.Closest
+  id: Closest
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Closest
+  nameWithType: SubwayAccessMode.Closest
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Closest
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Closest
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Closest", 1.4437F, "The constant to be added if we are the closest station to the origin.")]
+
+      public float Closest
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Closest", 1.4437F, "The constant to be added if we are the closest station to the origin.")>
+
+      Public Closest As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Closest
+    - type: System.Single
+      value: 1.44369996
+    - type: System.String
+      value: The constant to be added if we are the closest station to the origin.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ClosestDistance
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.ClosestDistance
+  id: ClosestDistance
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ClosestDistance
+  nameWithType: SubwayAccessMode.ClosestDistance
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ClosestDistance
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ClosestDistance
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 45
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Closest Distance", 0F, "The factor to apply to the distance if this is the closest station between the origin and this station.")]
+
+      public float ClosestDistance
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Closest Distance", 0F, "The factor to apply to the distance if this is the closest station between the origin and this station.")>
+
+      Public ClosestDistance As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Closest Distance
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor to apply to the distance if this is the closest station between the origin and this station.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Constant
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.Constant
+  id: Constant
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Constant
+  nameWithType: SubwayAccessMode.Constant
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Constant
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Constant
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 48
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Constant", 0F, "A base constant for the utility.")]
+
+      public float Constant
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Constant", 0F, "A base constant for the utility.")>
+
+      Public Constant As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Constant
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: A base constant for the utility.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CostFactor
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.CostFactor
+  id: CostFactor
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: CostFactor
+  nameWithType: SubwayAccessMode.CostFactor
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CostFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CostFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 51
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Cost", 0F, "The factor applied to the cost after access.")]
+
+      public float CostFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Cost", 0F, "The factor applied to the cost after access.")>
+
+      Public CostFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Cost
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor applied to the cost after access.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.EgressNetworkName
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.EgressNetworkName
+  id: EgressNetworkName
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: EgressNetworkName
+  nameWithType: SubwayAccessMode.EgressNetworkName
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.EgressNetworkName
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EgressNetworkName
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 54
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Egress Network Name", "Transit", "The name of the network to use after going to the egress zone.")]
+
+      public string EgressNetworkName
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Egress Network Name", "Transit", "The name of the network to use after going to the egress zone.")>
+
+      Public EgressNetworkName As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Egress Network Name
+    - type: System.String
+      value: Transit
+    - type: System.String
+      value: The name of the network to use after going to the egress zone.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.FeasibilityTest
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.FeasibilityTest
+  id: FeasibilityTest
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: FeasibilityTest
+  nameWithType: SubwayAccessMode.FeasibilityTest
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.FeasibilityTest
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FeasibilityTest
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 57
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "An optional test for mode feasibility.", Required = false)]
+
+      public ICalculation<Pair<IZone, IZone>, bool> FeasibilityTest
+    return:
+      type: TMG.ICalculation{Datastructure.Pair{TMG.IZone,TMG.IZone},System.Boolean}
+    content.vb: >-
+      <SubModelInformation(Description:="An optional test for mode feasibility.", Required:=False)>
+
+      Public FeasibilityTest As ICalculation(Of Pair(Of IZone, IZone), Boolean)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: An optional test for mode feasibility.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.First
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.First
+  id: First
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: SubwayAccessMode.First
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.First
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: First
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 60
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public INetworkData First
+    return:
+      type: TMG.INetworkData
+    content.vb: Public First As INetworkData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.FirstAlternative
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.FirstAlternative
+  id: FirstAlternative
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: FirstAlternative
+  nameWithType: SubwayAccessMode.FirstAlternative
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.FirstAlternative
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FirstAlternative
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 63
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public INetworkData FirstAlternative
+    return:
+      type: TMG.INetworkData
+    content.vb: Public FirstAlternative As INetworkData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.FareTTC
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.FareTTC
+  id: FareTTC
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: FareTTC
+  nameWithType: SubwayAccessMode.FareTTC
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.FareTTC
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: FareTTC
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 66
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("fttc", 1.71F, "The fair to add for driving to the TTC, in V2 this was 1.71.")]
+
+      public float FareTTC
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("fttc", 1.71F, "The fair to add for driving to the TTC, in V2 this was 1.71.")>
+
+      Public FareTTC As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: fttc
+    - type: System.Single
+      value: 1.71000004
+    - type: System.String
+      value: The fair to add for driving to the TTC, in V2 this was 1.71.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.GeneralTime
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.GeneralTime
+  id: GeneralTime
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: GeneralTime
+  nameWithType: SubwayAccessMode.GeneralTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.GeneralTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GeneralTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 69
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("General Time", -0.10342F, "The factor to apply to the general time of travel.")]
+
+      public float GeneralTime
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("General Time", -0.10342F, "The factor to apply to the general time of travel.")>
+
+      Public GeneralTime As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: General Time
+    - type: System.Single
+      value: -0.103419997
+    - type: System.String
+      value: The factor to apply to the general time of travel.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessStations
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessStations
+  id: MaxAccessStations
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: MaxAccessStations
+  nameWithType: SubwayAccessMode.MaxAccessStations
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessStations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxAccessStations
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 72
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Max Access Stations", 5, "The maximum access stations to consider when computing utility.")]
+
+      public int MaxAccessStations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Max Access Stations", 5, "The maximum access stations to consider when computing utility.")>
+
+      Public MaxAccessStations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Max Access Stations
+    - type: System.Int32
+      value: 5
+    - type: System.String
+      value: The maximum access stations to consider when computing utility.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessToDestinationTime
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessToDestinationTime
+  id: MaxAccessToDestinationTime
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: MaxAccessToDestinationTime
+  nameWithType: SubwayAccessMode.MaxAccessToDestinationTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.MaxAccessToDestinationTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxAccessToDestinationTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 75
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Max Access To Destination Time", 150F, "The maximum time in minutes that going from an access station to the destination.")]
+
+      public float MaxAccessToDestinationTime
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Max Access To Destination Time", 150F, "The maximum time in minutes that going from an access station to the destination.")>
+
+      Public MaxAccessToDestinationTime As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Max Access To Destination Time
+    - type: System.Single
+      value: 150
+    - type: System.String
+      value: The maximum time in minutes that going from an access station to the destination.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.MinAccessStationLogsumValue
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.MinAccessStationLogsumValue
+  id: MinAccessStationLogsumValue
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: MinAccessStationLogsumValue
+  nameWithType: SubwayAccessMode.MinAccessStationLogsumValue
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.MinAccessStationLogsumValue
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MinAccessStationLogsumValue
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 78
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Min Access Station LogsumValue", -10F, "The miniumum utility that the logsum of access stations can produce and still have a feasible trip.")]
+
+      public float MinAccessStationLogsumValue
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Min Access Station LogsumValue", -10F, "The miniumum utility that the logsum of access stations can produce and still have a feasible trip.")>
+
+      Public MinAccessStationLogsumValue As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Min Access Station LogsumValue
+    - type: System.Single
+      value: -10
+    - type: System.String
+      value: The miniumum utility that the logsum of access stations can produce and still have a feasible trip.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCost
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCost
+  id: ParkingCost
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ParkingCost
+  nameWithType: SubwayAccessMode.ParkingCost
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCost
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParkingCost
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 81
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Parking Cost", 0F, "The factor applied to the cost of parking at the access station.")]
+
+      public float ParkingCost
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Parking Cost", 0F, "The factor applied to the cost of parking at the access station.")>
+
+      Public ParkingCost As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Parking Cost
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor applied to the cost of parking at the access station.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCostAverageFactor
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCostAverageFactor
+  id: ParkingCostAverageFactor
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ParkingCostAverageFactor
+  nameWithType: SubwayAccessMode.ParkingCostAverageFactor
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingCostAverageFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParkingCostAverageFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 84
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("ParkingCostAverageFactor", 0F, "The factor to apply to the average parking cost across different access stations.")]
+
+      public float ParkingCostAverageFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("ParkingCostAverageFactor", 0F, "The factor to apply to the average parking cost across different access stations.")>
+
+      Public ParkingCostAverageFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: ParkingCostAverageFactor
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor to apply to the average parking cost across different access stations.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingFactor
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingFactor
+  id: ParkingFactor
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ParkingFactor
+  nameWithType: SubwayAccessMode.ParkingFactor
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ParkingFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ParkingFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 87
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Parking Factor", 0.38838F, "The factor applied to the log of the number of parking spots.")]
+
+      public float ParkingFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Parking Factor", 0.38838F, "The factor applied to the log of the number of parking spots.")>
+
+      Public ParkingFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Parking Factor
+    - type: System.Single
+      value: 0.388379991
+    - type: System.String
+      value: The factor applied to the log of the number of parking spots.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.PrimaryModeName
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.PrimaryModeName
+  id: PrimaryModeName
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: PrimaryModeName
+  nameWithType: SubwayAccessMode.PrimaryModeName
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.PrimaryModeName
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PrimaryModeName
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 90
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Primary Network Name", "Transit", "The name of the network to use after the interchange.")]
+
+      public string PrimaryModeName
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Primary Network Name", "Transit", "The name of the network to use after the interchange.")>
+
+      Public PrimaryModeName As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Primary Network Name
+    - type: System.String
+      value: Transit
+    - type: System.String
+      value: The name of the network to use after the interchange.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.RequireParking
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.RequireParking
+  id: RequireParking
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: RequireParking
+  nameWithType: SubwayAccessMode.RequireParking
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.RequireParking
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RequireParking
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 93
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Require Parking", true, "Skip stations that do not have a parking spot.")]
+
+      public bool RequireParking
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Require Parking", True, "Skip stations that do not have a parking spot.")>
+
+      Public RequireParking As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Require Parking
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Skip stations that do not have a parking spot.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Root
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.Root
+  id: Root
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: SubwayAccessMode.Root
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 96
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public I4StepModel Root
+    return:
+      type: TMG.I4StepModel
+    content.vb: Public Root As I4StepModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Second
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.Second
+  id: Second
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Second
+  nameWithType: SubwayAccessMode.Second
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Second
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Second
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 99
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public ITripComponentData Second
+    return:
+      type: TMG.ITripComponentData
+    content.vb: Public Second As ITripComponentData
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.StationZoneData
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.StationZoneData
+  id: StationZoneData
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: StationZoneData
+  nameWithType: SubwayAccessMode.StationZoneData
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.StationZoneData
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StationZoneData
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 102
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "0th entry is zone number, 1st entry is number of parking spots.", Required = true)]
+
+      public IDataLineSource<float[]> StationZoneData
+    return:
+      type: TMG.Input.IDataLineSource{System.Single[]}
+    content.vb: >-
+      <SubModelInformation(Description:="0th entry is zone number, 1st entry is number of parking spots.", Required:=True)>
+
+      Public StationZoneData As IDataLineSource(Of Single())
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: 0th entry is zone number, 1st entry is number of parking spots.
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTime
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTime
+  id: WaitTime
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: WaitTime
+  nameWithType: SubwayAccessMode.WaitTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 105
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Wait Time", -0.086483F, "The factor to apply to the wait time.")]
+
+      public float WaitTime
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Wait Time", -0.086483F, "The factor to apply to the wait time.")>
+
+      Public WaitTime As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Wait Time
+    - type: System.Single
+      value: -0.0864830017
+    - type: System.String
+      value: The factor to apply to the wait time.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTimeAverageFactor
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTimeAverageFactor
+  id: WaitTimeAverageFactor
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: WaitTimeAverageFactor
+  nameWithType: SubwayAccessMode.WaitTimeAverageFactor
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.WaitTimeAverageFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WaitTimeAverageFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 108
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("WaitTimeAverageFactor", 0F, "The factor to apply to the average wait time across different access stations.")]
+
+      public float WaitTimeAverageFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("WaitTimeAverageFactor", 0F, "The factor to apply to the average wait time across different access stations.")>
+
+      Public WaitTimeAverageFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: WaitTimeAverageFactor
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The factor to apply to the average wait time across different access stations.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.WalkTime
+  commentId: F:TMG.GTAModel.V2.Modes.SubwayAccessMode.WalkTime
+  id: WalkTime
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: WalkTime
+  nameWithType: SubwayAccessMode.WalkTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.WalkTime
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WalkTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 111
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Walk Time", -0.29533F, "The factor to apply to the general time of travel.")]
+
+      public float WalkTime
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Walk Time", -0.29533F, "The factor to apply to the general time of travel.")>
+
+      Public WalkTime As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Walk Time
+    - type: System.Single
+      value: -0.295329988
+    - type: System.String
+      value: The factor to apply to the general time of travel.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+  id: Access
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Access
+  nameWithType: SubwayAccessMode.Access
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Access
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 123
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Access", true, "Is this mode in access mode or egress mode?")]
+
+      public bool Access { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("Access", True, "Is this mode in access mode or egress mode?")>
+
+      Public Property Access As Boolean
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Access*
+  implements:
+  - TMG.Modes.IStationCollectionMode.Access
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Access
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Is this mode in access mode or egress mode?
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+  id: Children
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Children
+  nameWithType: SubwayAccessMode.Children
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Children
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 130
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public List<SubwayAccessStation> Children { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.GTAModel.V2.Modes.SubwayAccessStation}
+    content.vb: Public Property Children As List(Of SubwayAccessStation)
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Children*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+  id: Correlation
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Correlation
+  nameWithType: SubwayAccessMode.Correlation
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Correlation
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 133
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Correlation", 1F, "The correlation between the alternatives.  1 means no correlation, 0 means perfect correlation.")]
+
+      public float Correlation { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Correlation", 1F, "The correlation between the alternatives.  1 means no correlation, 0 means perfect correlation.")>
+
+      Public Property Correlation As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Correlation
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: The correlation between the alternatives.  1 means no correlation, 0 means perfect correlation.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+  id: CurrentlyFeasible
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: CurrentlyFeasible
+  nameWithType: SubwayAccessMode.CurrentlyFeasible
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CurrentlyFeasible
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 136
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [Parameter("Demographic Category Feasible", 1F, "(Automated by IModeParameterDatabase)\r\nIs the currently processing demographic category feasible?")]
+
+      public float CurrentlyFeasible { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: >-
+      <Parameter("Demographic Category Feasible", 1F, "(Automated by IModeParameterDatabase)" & vbCrLf & "Is the currently processing demographic category feasible?")>
+
+      Public Property CurrentlyFeasible As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible*
+  implements:
+  - TMG.IModeChoiceNode.CurrentlyFeasible
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demographic Category Feasible
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: >-
+        (Automated by IModeParameterDatabase)
+
+        Is the currently processing demographic category feasible?
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+  id: ModeName
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ModeName
+  nameWithType: SubwayAccessMode.ModeName
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeName
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 157
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [RunParameter("Mode Name", "DAS", "The name of this mixed mode option")]
+
+      public string ModeName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Mode Name", "DAS", "The name of this mixed mode option")>
+
+      Public Property ModeName As String
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName*
+  implements:
+  - TMG.IModeChoiceNode.ModeName
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Mode Name
+    - type: System.String
+      value: DAS
+    - type: System.String
+      value: The name of this mixed mode option
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+  id: Name
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: SubwayAccessMode.Name
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 164
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+  id: NetworkType
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: NetworkType
+  nameWithType: SubwayAccessMode.NetworkType
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkType
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 170
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public string NetworkType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property NetworkType As String
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType*
+  implements:
+  - TMG.IMode.NetworkType
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+  id: NonPersonalVehicle
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: NonPersonalVehicle
+  nameWithType: SubwayAccessMode.NonPersonalVehicle
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NonPersonalVehicle
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 175
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public bool NonPersonalVehicle { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property NonPersonalVehicle As Boolean
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle*
+  implements:
+  - TMG.IMode.NonPersonalVehicle
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+  id: Progress
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: SubwayAccessMode.Progress
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 180
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: SubwayAccessMode.ProgressColour
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 185
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+  commentId: P:TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+  id: UtilityComponents
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: UtilityComponents
+  nameWithType: SubwayAccessMode.UtilityComponents
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: UtilityComponents
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 190
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Additional Utility Components, part of the combined value.", Required = false)]
+
+      public List<IUtilityComponent> UtilityComponents { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+    content.vb: >-
+      <SubModelInformation(Description:="Additional Utility Components, part of the combined value.", Required:=False)>
+
+      Public Property UtilityComponents As List(Of IUtilityComponent)
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents*
+  implements:
+  - TMG.Modes.IUtilityComponentMode.UtilityComponents
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Additional Utility Components, part of the combined value.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: CalculateCombinedV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: CalculateCombinedV(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.CalculateCombinedV(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CalculateCombinedV
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 193
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public float CalculateCombinedV(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Function CalculateCombinedV(origin As IZone, destination As IZone, time As Time) As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.CalculateV(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CalculateV
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 203
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public float CalculateV(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Function CalculateV(origin As IZone, destination As IZone, time As Time) As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV*
+  implements:
+  - TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Cost(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.Cost(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Cost
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 308
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public float Cost(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Single
+    content.vb: Public Function Cost(origin As IZone, destination As IZone, time As Time) As Single
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost*
+  implements:
+  - TMG.IMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: Feasible(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.Feasible(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Feasible
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 313
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public bool Feasible(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Boolean
+    content.vb: Public Function Feasible(origin As IZone, destination As IZone, time As Time) As Boolean
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible*
+  implements:
+  - TMG.IModeChoiceNode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: GetSubchoiceSplit(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.GetSubchoiceSplit(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetSubchoiceSplit
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 326
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public Tuple<IZone[], IZone[], float[]> GetSubchoiceSplit(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: System.Tuple{TMG.IZone[],TMG.IZone[],System.Single[]}
+    content.vb: Public Function GetSubchoiceSplit(origin As IZone, destination As IZone, time As Time) As Tuple(Of IZone(), IZone(), Single())
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit*
+  implements:
+  - TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding(System.Int32,System.Int32)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding(System.Int32,System.Int32)
+  id: IterationEnding(System.Int32,System.Int32)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: IterationEnding(Int32, Int32)
+  nameWithType: SubwayAccessMode.IterationEnding(Int32, Int32)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IterationEnding
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 336
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public void IterationEnding(int iterationNumber, int maxIterations)
+    parameters:
+    - id: iterationNumber
+      type: System.Int32
+    - id: maxIterations
+      type: System.Int32
+    content.vb: Public Sub IterationEnding(iterationNumber As Integer, maxIterations As Integer)
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding*
+  implements:
+  - TMG.IIterationSensitive.IterationEnding(System.Int32,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting(System.Int32,System.Int32)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting(System.Int32,System.Int32)
+  id: IterationStarting(System.Int32,System.Int32)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: IterationStarting(Int32, Int32)
+  nameWithType: SubwayAccessMode.IterationStarting(Int32, Int32)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IterationStarting
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 340
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public void IterationStarting(int iterationNumber, int maxIterations)
+    parameters:
+    - id: iterationNumber
+      type: System.Int32
+    - id: maxIterations
+      type: System.Int32
+    content.vb: Public Sub IterationStarting(iterationNumber As Integer, maxIterations As Integer)
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting*
+  implements:
+  - TMG.IIterationSensitive.IterationStarting(System.Int32,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: SubwayAccessMode.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 348
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: SubwayAccessMode.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  id: TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.GTAModel.V2.Modes.SubwayAccessMode
+  langs:
+  - csharp
+  - vb
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: SubwayAccessMode.TravelTime(IZone, IZone, Time)
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelTime
+    path: ../../../XTMF/XTMF/Code/GTAModel/V2/Modes/SubwayAccessMode.cs
+    startLine: 396
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.V2.Modes
+  syntax:
+    content: public Time TravelTime(IZone origin, IZone destination, Time time)
+    parameters:
+    - id: origin
+      type: TMG.IZone
+    - id: destination
+      type: TMG.IZone
+    - id: time
+      type: XTMF.Time
+    return:
+      type: XTMF.Time
+    content.vb: Public Function TravelTime(origin As IZone, destination As IZone, time As Time) As Time
+  overload: TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime*
+  implements:
+  - TMG.IMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: TMG.GTAModel.V2.Modes
+  commentId: N:TMG.GTAModel.V2.Modes
+  name: TMG.GTAModel.V2.Modes
+  nameWithType: TMG.GTAModel.V2.Modes
+  fullName: TMG.GTAModel.V2.Modes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Modes.IStationCollectionMode
+  commentId: T:TMG.Modes.IStationCollectionMode
+  parent: TMG.Modes
+  name: IStationCollectionMode
+  nameWithType: IStationCollectionMode
+  fullName: TMG.Modes.IStationCollectionMode
+- uid: TMG.IMode
+  commentId: T:TMG.IMode
+  parent: TMG
+  name: IMode
+  nameWithType: IMode
+  fullName: TMG.IMode
+- uid: TMG.Modes.IUtilityComponentMode
+  commentId: T:TMG.Modes.IUtilityComponentMode
+  parent: TMG.Modes
+  name: IUtilityComponentMode
+  nameWithType: IUtilityComponentMode
+  fullName: TMG.Modes.IUtilityComponentMode
+- uid: TMG.IModeChoiceNode
+  commentId: T:TMG.IModeChoiceNode
+  parent: TMG
+  name: IModeChoiceNode
+  nameWithType: IModeChoiceNode
+  fullName: TMG.IModeChoiceNode
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.IIterationSensitive
+  commentId: T:TMG.IIterationSensitive
+  parent: TMG
+  name: IIterationSensitive
+  nameWithType: IIterationSensitive
+  fullName: TMG.IIterationSensitive
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Modes
+  commentId: N:TMG.Modes
+  name: TMG.Modes
+  nameWithType: TMG.Modes
+  fullName: TMG.Modes
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.ICalculation{Datastructure.Pair{TMG.IZone,TMG.IZone},System.Boolean}
+  commentId: T:TMG.ICalculation{Datastructure.Pair{TMG.IZone,TMG.IZone},System.Boolean}
+  parent: TMG
+  definition: TMG.ICalculation`2
+  name: ICalculation<Pair<IZone, IZone>, Boolean>
+  nameWithType: ICalculation<Pair<IZone, IZone>, Boolean>
+  fullName: TMG.ICalculation<Datastructure.Pair<TMG.IZone, TMG.IZone>, System.Boolean>
+  nameWithType.vb: ICalculation(Of Pair(Of IZone, IZone), Boolean)
+  fullName.vb: TMG.ICalculation(Of Datastructure.Pair(Of TMG.IZone, TMG.IZone), System.Boolean)
+  name.vb: ICalculation(Of Pair(Of IZone, IZone), Boolean)
+  spec.csharp:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Datastructure.Pair`2
+    name: Pair
+    nameWithType: Pair
+    fullName: Datastructure.Pair
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Datastructure.Pair`2
+    name: Pair
+    nameWithType: Pair
+    fullName: Datastructure.Pair
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.ICalculation`2
+  commentId: T:TMG.ICalculation`2
+  name: ICalculation<D, O>
+  nameWithType: ICalculation<D, O>
+  fullName: TMG.ICalculation<D, O>
+  nameWithType.vb: ICalculation(Of D, O)
+  fullName.vb: TMG.ICalculation(Of D, O)
+  name.vb: ICalculation(Of D, O)
+  spec.csharp:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: O
+    nameWithType: O
+    fullName: O
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.ICalculation`2
+    name: ICalculation
+    nameWithType: ICalculation
+    fullName: TMG.ICalculation
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: D
+    nameWithType: D
+    fullName: D
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: O
+    nameWithType: O
+    fullName: O
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.INetworkData
+  commentId: T:TMG.INetworkData
+  parent: TMG
+  name: INetworkData
+  nameWithType: INetworkData
+  fullName: TMG.INetworkData
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.I4StepModel
+  commentId: T:TMG.I4StepModel
+  parent: TMG
+  name: I4StepModel
+  nameWithType: I4StepModel
+  fullName: TMG.I4StepModel
+- uid: TMG.ITripComponentData
+  commentId: T:TMG.ITripComponentData
+  parent: TMG
+  name: ITripComponentData
+  nameWithType: ITripComponentData
+  fullName: TMG.ITripComponentData
+- uid: TMG.Input.IDataLineSource{System.Single[]}
+  commentId: T:TMG.Input.IDataLineSource{System.Single[]}
+  parent: TMG.Input
+  definition: TMG.Input.IDataLineSource`1
+  name: IDataLineSource<Single[]>
+  nameWithType: IDataLineSource<Single[]>
+  fullName: TMG.Input.IDataLineSource<System.Single[]>
+  nameWithType.vb: IDataLineSource(Of Single())
+  fullName.vb: TMG.Input.IDataLineSource(Of System.Single())
+  name.vb: IDataLineSource(Of Single())
+  spec.csharp:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input.IDataLineSource`1
+  commentId: T:TMG.Input.IDataLineSource`1
+  name: IDataLineSource<T>
+  nameWithType: IDataLineSource<T>
+  fullName: TMG.Input.IDataLineSource<T>
+  nameWithType.vb: IDataLineSource(Of T)
+  fullName.vb: TMG.Input.IDataLineSource(Of T)
+  name.vb: IDataLineSource(Of T)
+  spec.csharp:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: TMG.Input.IDataLineSource`1
+    name: IDataLineSource
+    nameWithType: IDataLineSource
+    fullName: TMG.Input.IDataLineSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Access*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+  name: Access
+  nameWithType: SubwayAccessMode.Access
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Access
+- uid: TMG.Modes.IStationCollectionMode.Access
+  commentId: P:TMG.Modes.IStationCollectionMode.Access
+  parent: TMG.Modes.IStationCollectionMode
+  name: Access
+  nameWithType: IStationCollectionMode.Access
+  fullName: TMG.Modes.IStationCollectionMode.Access
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Children*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+  name: Children
+  nameWithType: SubwayAccessMode.Children
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Children
+- uid: System.Collections.Generic.List{TMG.GTAModel.V2.Modes.SubwayAccessStation}
+  commentId: T:System.Collections.Generic.List{TMG.GTAModel.V2.Modes.SubwayAccessStation}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<SubwayAccessStation>
+  nameWithType: List<SubwayAccessStation>
+  fullName: System.Collections.Generic.List<TMG.GTAModel.V2.Modes.SubwayAccessStation>
+  nameWithType.vb: List(Of SubwayAccessStation)
+  fullName.vb: System.Collections.Generic.List(Of TMG.GTAModel.V2.Modes.SubwayAccessStation)
+  name.vb: List(Of SubwayAccessStation)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.GTAModel.V2.Modes.SubwayAccessStation
+    name: SubwayAccessStation
+    nameWithType: SubwayAccessStation
+    fullName: TMG.GTAModel.V2.Modes.SubwayAccessStation
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.GTAModel.V2.Modes.SubwayAccessStation
+    name: SubwayAccessStation
+    nameWithType: SubwayAccessStation
+    fullName: TMG.GTAModel.V2.Modes.SubwayAccessStation
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+  name: Correlation
+  nameWithType: SubwayAccessMode.Correlation
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Correlation
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+  name: CurrentlyFeasible
+  nameWithType: SubwayAccessMode.CurrentlyFeasible
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CurrentlyFeasible
+- uid: TMG.IModeChoiceNode.CurrentlyFeasible
+  commentId: P:TMG.IModeChoiceNode.CurrentlyFeasible
+  parent: TMG.IModeChoiceNode
+  name: CurrentlyFeasible
+  nameWithType: IModeChoiceNode.CurrentlyFeasible
+  fullName: TMG.IModeChoiceNode.CurrentlyFeasible
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+  name: ModeName
+  nameWithType: SubwayAccessMode.ModeName
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ModeName
+- uid: TMG.IModeChoiceNode.ModeName
+  commentId: P:TMG.IModeChoiceNode.ModeName
+  parent: TMG.IModeChoiceNode
+  name: ModeName
+  nameWithType: IModeChoiceNode.ModeName
+  fullName: TMG.IModeChoiceNode.ModeName
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Name*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+  name: Name
+  nameWithType: SubwayAccessMode.Name
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+  name: NetworkType
+  nameWithType: SubwayAccessMode.NetworkType
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.NetworkType
+- uid: TMG.IMode.NetworkType
+  commentId: P:TMG.IMode.NetworkType
+  parent: TMG.IMode
+  name: NetworkType
+  nameWithType: IMode.NetworkType
+  fullName: TMG.IMode.NetworkType
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+  name: NonPersonalVehicle
+  nameWithType: SubwayAccessMode.NonPersonalVehicle
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.NonPersonalVehicle
+- uid: TMG.IMode.NonPersonalVehicle
+  commentId: P:TMG.IMode.NonPersonalVehicle
+  parent: TMG.IMode
+  name: NonPersonalVehicle
+  nameWithType: IMode.NonPersonalVehicle
+  fullName: TMG.IMode.NonPersonalVehicle
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+  name: Progress
+  nameWithType: SubwayAccessMode.Progress
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+  name: ProgressColour
+  nameWithType: SubwayAccessMode.ProgressColour
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+  name: UtilityComponents
+  nameWithType: SubwayAccessMode.UtilityComponents
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.UtilityComponents
+- uid: TMG.Modes.IUtilityComponentMode.UtilityComponents
+  commentId: P:TMG.Modes.IUtilityComponentMode.UtilityComponents
+  parent: TMG.Modes.IUtilityComponentMode
+  name: UtilityComponents
+  nameWithType: IUtilityComponentMode.UtilityComponents
+  fullName: TMG.Modes.IUtilityComponentMode.UtilityComponents
+- uid: System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+  commentId: T:System.Collections.Generic.List{TMG.Modes.IUtilityComponent}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IUtilityComponent>
+  nameWithType: List<IUtilityComponent>
+  fullName: System.Collections.Generic.List<TMG.Modes.IUtilityComponent>
+  nameWithType.vb: List(Of IUtilityComponent)
+  fullName.vb: System.Collections.Generic.List(Of TMG.Modes.IUtilityComponent)
+  name.vb: List(Of IUtilityComponent)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.Modes.IUtilityComponent
+    name: IUtilityComponent
+    nameWithType: IUtilityComponent
+    fullName: TMG.Modes.IUtilityComponent
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.Modes.IUtilityComponent
+    name: IUtilityComponent
+    nameWithType: IUtilityComponent
+    fullName: TMG.Modes.IUtilityComponent
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV
+  name: CalculateCombinedV
+  nameWithType: SubwayAccessMode.CalculateCombinedV
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateCombinedV
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV
+  name: CalculateV
+  nameWithType: SubwayAccessMode.CalculateV
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.CalculateV
+- uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.IModeChoiceNode
+  name: CalculateV(IZone, IZone, Time)
+  nameWithType: IModeChoiceNode.CalculateV(IZone, IZone, Time)
+  fullName: TMG.IModeChoiceNode.CalculateV(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IModeChoiceNode.CalculateV
+    fullName: TMG.IModeChoiceNode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeChoiceNode.CalculateV(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: CalculateV
+    nameWithType: IModeChoiceNode.CalculateV
+    fullName: TMG.IModeChoiceNode.CalculateV
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost
+  name: Cost
+  nameWithType: SubwayAccessMode.Cost
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Cost
+- uid: TMG.IMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.IMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.IMode
+  name: Cost(IZone, IZone, Time)
+  nameWithType: IMode.Cost(IZone, IZone, Time)
+  fullName: TMG.IMode.Cost(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.IMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Cost
+    nameWithType: IMode.Cost
+    fullName: TMG.IMode.Cost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IMode.Cost(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Cost
+    nameWithType: IMode.Cost
+    fullName: TMG.IMode.Cost
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible
+  name: Feasible
+  nameWithType: SubwayAccessMode.Feasible
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.Feasible
+- uid: TMG.IModeChoiceNode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.IModeChoiceNode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.IModeChoiceNode
+  name: Feasible(IZone, IZone, Time)
+  nameWithType: IModeChoiceNode.Feasible(IZone, IZone, Time)
+  fullName: TMG.IModeChoiceNode.Feasible(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.IModeChoiceNode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Feasible
+    nameWithType: IModeChoiceNode.Feasible
+    fullName: TMG.IModeChoiceNode.Feasible
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeChoiceNode.Feasible(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: Feasible
+    nameWithType: IModeChoiceNode.Feasible
+    fullName: TMG.IModeChoiceNode.Feasible
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit
+  name: GetSubchoiceSplit
+  nameWithType: SubwayAccessMode.GetSubchoiceSplit
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.GetSubchoiceSplit
+- uid: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.Modes.IStationCollectionMode
+  name: GetSubchoiceSplit(IZone, IZone, Time)
+  nameWithType: IStationCollectionMode.GetSubchoiceSplit(IZone, IZone, Time)
+  fullName: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: GetSubchoiceSplit
+    nameWithType: IStationCollectionMode.GetSubchoiceSplit
+    fullName: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: GetSubchoiceSplit
+    nameWithType: IStationCollectionMode.GetSubchoiceSplit
+    fullName: TMG.Modes.IStationCollectionMode.GetSubchoiceSplit
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple{TMG.IZone[],TMG.IZone[],System.Single[]}
+  commentId: T:System.Tuple{TMG.IZone[],TMG.IZone[],System.Single[]}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<IZone[], IZone[], Single[]>
+  nameWithType: Tuple<IZone[], IZone[], Single[]>
+  fullName: System.Tuple<TMG.IZone[], TMG.IZone[], System.Single[]>
+  nameWithType.vb: Tuple(Of IZone(), IZone(), Single())
+  fullName.vb: System.Tuple(Of TMG.IZone(), TMG.IZone(), System.Single())
+  name.vb: Tuple(Of IZone(), IZone(), Single())
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding
+  name: IterationEnding
+  nameWithType: SubwayAccessMode.IterationEnding
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationEnding
+- uid: TMG.IIterationSensitive.IterationEnding(System.Int32,System.Int32)
+  commentId: M:TMG.IIterationSensitive.IterationEnding(System.Int32,System.Int32)
+  parent: TMG.IIterationSensitive
+  isExternal: true
+  name: IterationEnding(Int32, Int32)
+  nameWithType: IIterationSensitive.IterationEnding(Int32, Int32)
+  fullName: TMG.IIterationSensitive.IterationEnding(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: TMG.IIterationSensitive.IterationEnding(System.Int32,System.Int32)
+    name: IterationEnding
+    nameWithType: IIterationSensitive.IterationEnding
+    fullName: TMG.IIterationSensitive.IterationEnding
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IIterationSensitive.IterationEnding(System.Int32,System.Int32)
+    name: IterationEnding
+    nameWithType: IIterationSensitive.IterationEnding
+    fullName: TMG.IIterationSensitive.IterationEnding
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting
+  name: IterationStarting
+  nameWithType: SubwayAccessMode.IterationStarting
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.IterationStarting
+- uid: TMG.IIterationSensitive.IterationStarting(System.Int32,System.Int32)
+  commentId: M:TMG.IIterationSensitive.IterationStarting(System.Int32,System.Int32)
+  parent: TMG.IIterationSensitive
+  isExternal: true
+  name: IterationStarting(Int32, Int32)
+  nameWithType: IIterationSensitive.IterationStarting(Int32, Int32)
+  fullName: TMG.IIterationSensitive.IterationStarting(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: TMG.IIterationSensitive.IterationStarting(System.Int32,System.Int32)
+    name: IterationStarting
+    nameWithType: IIterationSensitive.IterationStarting
+    fullName: TMG.IIterationSensitive.IterationStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IIterationSensitive.IterationStarting(System.Int32,System.Int32)
+    name: IterationStarting
+    nameWithType: IIterationSensitive.IterationStarting
+    fullName: TMG.IIterationSensitive.IterationStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: SubwayAccessMode.RuntimeValidation
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime*
+  commentId: Overload:TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime
+  name: TravelTime
+  nameWithType: SubwayAccessMode.TravelTime
+  fullName: TMG.GTAModel.V2.Modes.SubwayAccessMode.TravelTime
+- uid: TMG.IMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  commentId: M:TMG.IMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+  parent: TMG.IMode
+  name: TravelTime(IZone, IZone, Time)
+  nameWithType: IMode.TravelTime(IZone, IZone, Time)
+  fullName: TMG.IMode.TravelTime(TMG.IZone, TMG.IZone, XTMF.Time)
+  spec.csharp:
+  - uid: TMG.IMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: IMode.TravelTime
+    fullName: TMG.IMode.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IMode.TravelTime(TMG.IZone,TMG.IZone,XTMF.Time)
+    name: TravelTime
+    nameWithType: IMode.TravelTime
+    fullName: TMG.IMode.TravelTime
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )

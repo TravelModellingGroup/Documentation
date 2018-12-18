@@ -1,0 +1,1896 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  commentId: T:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  id: TollBasedEmmeRoadAssignment
+  parent: TMG.GTAModel.NetworkAssignment
+  children:
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.BestRelativeGap
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.CostMatrixNumber
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandFileName
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandMatrixNumber
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute(TMG.Emme.Controller)
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.HighPerformanceMode
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.LinkCost
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.MaxIterations
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.NormalizedGap
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourFactor
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourMatrix
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RelativeGap
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Root
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ScenarioNumber
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.SolaFlag
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Tallies
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollLinkSelector
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollMatrixNumber
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollPerceptionFactor
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollUnitCost
+  - TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TravelTimeMatrixNumber
+  langs:
+  - csharp
+  - vb
+  name: TollBasedEmmeRoadAssignment
+  nameWithType: TollBasedEmmeRoadAssignment
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TollBasedEmmeRoadAssignment
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: 'public class TollBasedEmmeRoadAssignment : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class TollBasedEmmeRoadAssignment
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.BestRelativeGap
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.BestRelativeGap
+  id: BestRelativeGap
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: BestRelativeGap
+  nameWithType: TollBasedEmmeRoadAssignment.BestRelativeGap
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.BestRelativeGap
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BestRelativeGap
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Best Relative Gap", 0.01F, "(%) Best Relative Gap convergence criteria.")]
+
+      public float BestRelativeGap
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Best Relative Gap", 0.01F, "(%) Best Relative Gap convergence criteria.")>
+
+      Public BestRelativeGap As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Best Relative Gap
+    - type: System.Single
+      value: 0.00999999978
+    - type: System.String
+      value: (%) Best Relative Gap convergence criteria.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.CostMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.CostMatrixNumber
+  id: CostMatrixNumber
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: CostMatrixNumber
+  nameWithType: TollBasedEmmeRoadAssignment.CostMatrixNumber
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.CostMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CostMatrixNumber
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Travel Cost Matrix Number", 13, "The matrix number which will store the auto travel costs matrix. If the matrix exists already, it will be overwritten.")]
+
+      public int CostMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Travel Cost Matrix Number", 13, "The matrix number which will store the auto travel costs matrix. If the matrix exists already, it will be overwritten.")>
+
+      Public CostMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Travel Cost Matrix Number
+    - type: System.Int32
+      value: 13
+    - type: System.String
+      value: The matrix number which will store the auto travel costs matrix. If the matrix exists already, it will be overwritten.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandFileName
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandFileName
+  id: DemandFileName
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: DemandFileName
+  nameWithType: TollBasedEmmeRoadAssignment.DemandFileName
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandFileName
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemandFileName
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 45
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Demand File Name", "", "For debugging. Optional file name to export the tallied demand matrix. Otherwise, a temporary file will be used.")]
+
+      public string DemandFileName
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Demand File Name", "", "For debugging. Optional file name to export the tallied demand matrix. Otherwise, a temporary file will be used.")>
+
+      Public DemandFileName As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demand File Name
+    - type: System.String
+      value: ''
+    - type: System.String
+      value: For debugging. Optional file name to export the tallied demand matrix. Otherwise, a temporary file will be used.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandMatrixNumber
+  id: DemandMatrixNumber
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: DemandMatrixNumber
+  nameWithType: TollBasedEmmeRoadAssignment.DemandMatrixNumber
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.DemandMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemandMatrixNumber
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 48
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Demand Matrix Number", 10, "The matrix number which will store th auto OD matrix. If the matrix exists already, it will be overwritten.")]
+
+      public int DemandMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Demand Matrix Number", 10, "The matrix number which will store th auto OD matrix. If the matrix exists already, it will be overwritten.")>
+
+      Public DemandMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demand Matrix Number
+    - type: System.Int32
+      value: 10
+    - type: System.String
+      value: The matrix number which will store th auto OD matrix. If the matrix exists already, it will be overwritten.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourFactor
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourFactor
+  id: PeakHourFactor
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: PeakHourFactor
+  nameWithType: TollBasedEmmeRoadAssignment.PeakHourFactor
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PeakHourFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 51
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Peak Hour Factor", 0.42F, "Factor to convert the modeled time period into a one-hour assignment period.  This value is only used if the Peak Hour Matrix is set to 0.")]
+
+      public float PeakHourFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Peak Hour Factor", 0.42F, "Factor to convert the modeled time period into a one-hour assignment period.  This value is only used if the Peak Hour Matrix is set to 0.")>
+
+      Public PeakHourFactor As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Peak Hour Factor
+    - type: System.Single
+      value: 0.419999987
+    - type: System.String
+      value: Factor to convert the modeled time period into a one-hour assignment period.  This value is only used if the Peak Hour Matrix is set to 0.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourMatrix
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourMatrix
+  id: PeakHourMatrix
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: PeakHourMatrix
+  nameWithType: TollBasedEmmeRoadAssignment.PeakHourMatrix
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.PeakHourMatrix
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PeakHourMatrix
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 54
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Peak Hour Matrix", 0, "In lieu of using a peak hour factor if this parameter is set to a non-zero value it will instead use that matrix to scale demand.")]
+
+      public int PeakHourMatrix
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Peak Hour Matrix", 0, "In lieu of using a peak hour factor if this parameter is set to a non-zero value it will instead use that matrix to scale demand.")>
+
+      Public PeakHourMatrix As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Peak Hour Matrix
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: In lieu of using a peak hour factor if this parameter is set to a non-zero value it will instead use that matrix to scale demand.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.LinkCost
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.LinkCost
+  id: LinkCost
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: LinkCost
+  nameWithType: TollBasedEmmeRoadAssignment.LinkCost
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.LinkCost
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LinkCost
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 57
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Link Unit Cost", 0.138F, "The link unit cost in $/km, applied to all links")]
+
+      public float LinkCost
+    return:
+      type: System.Single
+    content.vb: >-
+      <Parameter("Link Unit Cost", 0.138F, "The link unit cost in $/km, applied to all links")>
+
+      Public LinkCost As Single
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Link Unit Cost
+    - type: System.Single
+      value: 0.137999997
+    - type: System.String
+      value: The link unit cost in $/km, applied to all links
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.HighPerformanceMode
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.HighPerformanceMode
+  id: HighPerformanceMode
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: HighPerformanceMode
+  nameWithType: TollBasedEmmeRoadAssignment.HighPerformanceMode
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.HighPerformanceMode
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HighPerformanceMode
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 61
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("High Performance Flag", true, "When enabled, tells Emme to use all available cores for faster computation, but this will result in slower performance in other Windows processes. Disabling this option will leave at least one core available for other work while Emme is running.")]
+
+      public bool HighPerformanceMode
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <RunParameter("High Performance Flag", True, "When enabled, tells Emme to use all available cores for faster computation, but this will result in slower performance in other Windows processes. Disabling this option will leave at least one core available for other work while Emme is running.")>
+
+      Public HighPerformanceMode As Boolean
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: High Performance Flag
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: When enabled, tells Emme to use all available cores for faster computation, but this will result in slower performance in other Windows processes. Disabling this option will leave at least one core available for other work while Emme is running.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.MaxIterations
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.MaxIterations
+  id: MaxIterations
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: MaxIterations
+  nameWithType: TollBasedEmmeRoadAssignment.MaxIterations
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.MaxIterations
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MaxIterations
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 64
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Max Iterations", 100, "Maximum road assignment iterations")]
+
+      public int MaxIterations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Max Iterations", 100, "Maximum road assignment iterations")>
+
+      Public MaxIterations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Max Iterations
+    - type: System.Int32
+      value: 100
+    - type: System.String
+      value: Maximum road assignment iterations
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.NormalizedGap
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.NormalizedGap
+  id: NormalizedGap
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: NormalizedGap
+  nameWithType: TollBasedEmmeRoadAssignment.NormalizedGap
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.NormalizedGap
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NormalizedGap
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 67
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Normalized Gap", 0.01F, "Normalized Gap convergence criteria.")]
+
+      public float NormalizedGap
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Normalized Gap", 0.01F, "Normalized Gap convergence criteria.")>
+
+      Public NormalizedGap As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Normalized Gap
+    - type: System.Single
+      value: 0.00999999978
+    - type: System.String
+      value: Normalized Gap convergence criteria.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RelativeGap
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RelativeGap
+  id: RelativeGap
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: RelativeGap
+  nameWithType: TollBasedEmmeRoadAssignment.RelativeGap
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RelativeGap
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RelativeGap
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 70
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Relative Gap", 0F, "Relative gap convergence criteria.")]
+
+      public float RelativeGap
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Relative Gap", 0F, "Relative gap convergence criteria.")>
+
+      Public RelativeGap As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Relative Gap
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: Relative gap convergence criteria.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Root
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Root
+  id: Root
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: TollBasedEmmeRoadAssignment.Root
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 73
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public ITravelDemandModel Root
+    return:
+      type: TMG.ITravelDemandModel
+    content.vb: Public Root As ITravelDemandModel
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ScenarioNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: TollBasedEmmeRoadAssignment.ScenarioNumber
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 76
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Scenario Number", 1, "The desired Emme network scenario. Must exist inside the databank.")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario Number", 1, "The desired Emme network scenario. Must exist inside the databank.")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario Number
+    - type: System.Int32
+      value: 1
+    - type: System.String
+      value: The desired Emme network scenario. Must exist inside the databank.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Tallies
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Tallies
+  id: Tallies
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: Tallies
+  nameWithType: TollBasedEmmeRoadAssignment.Tallies
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Tallies
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Tallies
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 79
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Tallies used for counting the number of trips between Origin and Destination", Required = false)]
+
+      public List<IModeAggregationTally> Tallies
+    return:
+      type: System.Collections.Generic.List{TMG.IModeAggregationTally}
+    content.vb: >-
+      <SubModelInformation(Description:="Tallies used for counting the number of trips between Origin and Destination", Required:=False)>
+
+      Public Tallies As List(Of IModeAggregationTally)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Tallies used for counting the number of trips between Origin and Destination
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollLinkSelector
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollLinkSelector
+  id: TollLinkSelector
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: TollLinkSelector
+  nameWithType: TollBasedEmmeRoadAssignment.TollLinkSelector
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollLinkSelector
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TollLinkSelector
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 82
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Toll Link Selector", "vdf=14", "A link selector expression to select links with applied tolls.")]
+
+      public string TollLinkSelector
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter("Toll Link Selector", "vdf=14", "A link selector expression to select links with applied tolls.")>
+
+      Public TollLinkSelector As String
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Toll Link Selector
+    - type: System.String
+      value: vdf=14
+    - type: System.String
+      value: A link selector expression to select links with applied tolls.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollMatrixNumber
+  id: TollMatrixNumber
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: TollMatrixNumber
+  nameWithType: TollBasedEmmeRoadAssignment.TollMatrixNumber
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TollMatrixNumber
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 85
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Tolls Matrix Number", 14, "The matrix number which will store the auto tolls matrix. If the matrix exists already, it will be overwritten.")]
+
+      public int TollMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Tolls Matrix Number", 14, "The matrix number which will store the auto tolls matrix. If the matrix exists already, it will be overwritten.")>
+
+      Public TollMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Tolls Matrix Number
+    - type: System.Int32
+      value: 14
+    - type: System.String
+      value: The matrix number which will store the auto tolls matrix. If the matrix exists already, it will be overwritten.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollPerceptionFactor
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollPerceptionFactor
+  id: TollPerceptionFactor
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: TollPerceptionFactor
+  nameWithType: TollBasedEmmeRoadAssignment.TollPerceptionFactor
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollPerceptionFactor
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TollPerceptionFactor
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 88
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Toll Perception Factor", 1F, "Auto value of time, in $/hr")]
+
+      public float TollPerceptionFactor
+    return:
+      type: System.Single
+    content.vb: >-
+      <Parameter("Toll Perception Factor", 1F, "Auto value of time, in $/hr")>
+
+      Public TollPerceptionFactor As Single
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Toll Perception Factor
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Auto value of time, in $/hr
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollUnitCost
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollUnitCost
+  id: TollUnitCost
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: TollUnitCost
+  nameWithType: TollBasedEmmeRoadAssignment.TollUnitCost
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TollUnitCost
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TollUnitCost
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 91
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("Toll Unit Cost", 0F, "The toll unit cost, in $/km, applied to selected toll links")]
+
+      public float TollUnitCost
+    return:
+      type: System.Single
+    content.vb: >-
+      <Parameter("Toll Unit Cost", 0F, "The toll unit cost, in $/km, applied to selected toll links")>
+
+      Public TollUnitCost As Single
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Toll Unit Cost
+    - type: System.Single
+      value: 0
+    - type: System.String
+      value: The toll unit cost, in $/km, applied to selected toll links
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TravelTimeMatrixNumber
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TravelTimeMatrixNumber
+  id: TravelTimeMatrixNumber
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: TravelTimeMatrixNumber
+  nameWithType: TollBasedEmmeRoadAssignment.TravelTimeMatrixNumber
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.TravelTimeMatrixNumber
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TravelTimeMatrixNumber
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 94
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Travel Time Matrix Number", 12, "The matrix number which will store the auto travel times matrix. If the matrix exists already, it will be overwritten.")]
+
+      public int TravelTimeMatrixNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Travel Time Matrix Number", 12, "The matrix number which will store the auto travel times matrix. If the matrix exists already, it will be overwritten.")>
+
+      Public TravelTimeMatrixNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Travel Time Matrix Number
+    - type: System.Int32
+      value: 12
+    - type: System.String
+      value: The matrix number which will store the auto travel times matrix. If the matrix exists already, it will be overwritten.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.SolaFlag
+  commentId: F:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.SolaFlag
+  id: SolaFlag
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: SolaFlag
+  nameWithType: TollBasedEmmeRoadAssignment.SolaFlag
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.SolaFlag
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SolaFlag
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 97
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [Parameter("SOLA Flag", true, "Emme 4.1 and newer ONLY! Flag to use SOLA traffic assignment algorithm instead of standard.")]
+
+      public bool SolaFlag
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Parameter("SOLA Flag", True, "Emme 4.1 and newer ONLY! Flag to use SOLA traffic assignment algorithm instead of standard.")>
+
+      Public SolaFlag As Boolean
+  attributes:
+  - type: XTMF.ParameterAttribute
+    ctor: XTMF.ParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: SOLA Flag
+    - type: System.Boolean
+      value: true
+    - type: System.String
+      value: Emme 4.1 and newer ONLY! Flag to use SOLA traffic assignment algorithm instead of standard.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+  commentId: P:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: TollBasedEmmeRoadAssignment.Name
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 104
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+  commentId: P:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: TollBasedEmmeRoadAssignment.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 110
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: TollBasedEmmeRoadAssignment.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 116
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: TollBasedEmmeRoadAssignment.Execute(Controller)
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 121
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: TollBasedEmmeRoadAssignment.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/TollBasedEmmeRoadAssignment.cs
+    startLine: 153
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: TollBasedEmmeRoadAssignment.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.NetworkAssignment
+  commentId: N:TMG.GTAModel.NetworkAssignment
+  name: TMG.GTAModel.NetworkAssignment
+  nameWithType: TMG.GTAModel.NetworkAssignment
+  fullName: TMG.GTAModel.NetworkAssignment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: System.Collections.Generic.List{TMG.IModeAggregationTally}
+  commentId: T:System.Collections.Generic.List{TMG.IModeAggregationTally}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModeAggregationTally>
+  nameWithType: List<IModeAggregationTally>
+  fullName: System.Collections.Generic.List<TMG.IModeAggregationTally>
+  nameWithType.vb: List(Of IModeAggregationTally)
+  fullName.vb: System.Collections.Generic.List(Of TMG.IModeAggregationTally)
+  name.vb: List(Of IModeAggregationTally)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IModeAggregationTally
+    name: IModeAggregationTally
+    nameWithType: IModeAggregationTally
+    fullName: TMG.IModeAggregationTally
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IModeAggregationTally
+    name: IModeAggregationTally
+    nameWithType: IModeAggregationTally
+    fullName: TMG.IModeAggregationTally
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+  name: Name
+  nameWithType: TollBasedEmmeRoadAssignment.Name
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+  name: Progress
+  nameWithType: TollBasedEmmeRoadAssignment.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+  name: ProgressColour
+  nameWithType: TollBasedEmmeRoadAssignment.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute
+  name: Execute
+  nameWithType: TollBasedEmmeRoadAssignment.Execute
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: TollBasedEmmeRoadAssignment.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkAssignment.TollBasedEmmeRoadAssignment.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

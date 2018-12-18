@@ -1,0 +1,3524 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tasha.Validation.ODMatrixBuilder
+  commentId: T:Tasha.Validation.ODMatrixBuilder
+  id: ODMatrixBuilder
+  parent: Tasha.Validation
+  children:
+  - Tasha.Validation.ODMatrixBuilder.AllModes
+  - Tasha.Validation.ODMatrixBuilder.AMRushEnd
+  - Tasha.Validation.ODMatrixBuilder.AMRushStart
+  - Tasha.Validation.ODMatrixBuilder.AutoMode
+  - Tasha.Validation.ODMatrixBuilder.AutoType
+  - Tasha.Validation.ODMatrixBuilder.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  - Tasha.Validation.ODMatrixBuilder.EndOfDay
+  - Tasha.Validation.ODMatrixBuilder.ExitRequest
+  - Tasha.Validation.ODMatrixBuilder.GetIndexOfMode(Tasha.Common.ITashaMode)
+  - Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+  - Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+  - Tasha.Validation.ODMatrixBuilder.MatrixNumber
+  - Tasha.Validation.ODMatrixBuilder.ModeChoice
+  - Tasha.Validation.ODMatrixBuilder.Name
+  - Tasha.Validation.ODMatrixBuilder.NetworkData
+  - Tasha.Validation.ODMatrixBuilder.NonSharedModes
+  - Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+  - Tasha.Validation.ODMatrixBuilder.OtherModes
+  - Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+  - Tasha.Validation.ODMatrixBuilder.Parallel
+  - Tasha.Validation.ODMatrixBuilder.PMRushEnd
+  - Tasha.Validation.ODMatrixBuilder.PMRushStart
+  - Tasha.Validation.ODMatrixBuilder.PostHousehold
+  - Tasha.Validation.ODMatrixBuilder.PostIteration
+  - Tasha.Validation.ODMatrixBuilder.PostRun
+  - Tasha.Validation.ODMatrixBuilder.PostScheduler
+  - Tasha.Validation.ODMatrixBuilder.PreIteration
+  - Tasha.Validation.ODMatrixBuilder.PreRun
+  - Tasha.Validation.ODMatrixBuilder.Progress
+  - Tasha.Validation.ODMatrixBuilder.ProgressColour
+  - Tasha.Validation.ODMatrixBuilder.RandomSeed
+  - Tasha.Validation.ODMatrixBuilder.Resources
+  - Tasha.Validation.ODMatrixBuilder.RuntimeValidation(System.String@)
+  - Tasha.Validation.ODMatrixBuilder.SharedModes
+  - Tasha.Validation.ODMatrixBuilder.Start
+  - Tasha.Validation.ODMatrixBuilder.StartOfDay
+  - Tasha.Validation.ODMatrixBuilder.ToString
+  - Tasha.Validation.ODMatrixBuilder.TotalIterations
+  - Tasha.Validation.ODMatrixBuilder.VehicleTypes
+  - Tasha.Validation.ODMatrixBuilder.ZoneSystem
+  langs:
+  - csharp
+  - vb
+  name: ODMatrixBuilder
+  nameWithType: ODMatrixBuilder
+  fullName: Tasha.Validation.ODMatrixBuilder
+  type: Class
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ODMatrixBuilder
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 31
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: 'public class ODMatrixBuilder : ITashaRuntime, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IResourceSource'
+    content.vb: >-
+      Public Class ODMatrixBuilder
+          Implements ITashaRuntime, ITravelDemandModel, IModelSystemTemplate, ISelfContainedModule, IModule, IResourceSource
+  inheritance:
+  - System.Object
+  implements:
+  - Tasha.Common.ITashaRuntime
+  - TMG.ITravelDemandModel
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  - TMG.IResourceSource
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Tasha.Validation.ODMatrixBuilder.AllModes
+  commentId: P:Tasha.Validation.ODMatrixBuilder.AllModes
+  id: AllModes
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: AllModes
+  nameWithType: ODMatrixBuilder.AllModes
+  fullName: Tasha.Validation.ODMatrixBuilder.AllModes
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AllModes
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 43
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "All Modes", Required = false)]
+
+      public List<ITashaMode> AllModes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.ITashaMode}
+    content.vb: >-
+      <SubModelInformation(Description:="All Modes", Required:=False)>
+
+      Public Property AllModes As List(Of ITashaMode)
+  overload: Tasha.Validation.ODMatrixBuilder.AllModes*
+  implements:
+  - Tasha.Common.ITashaRuntime.AllModes
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: All Modes
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.AMRushEnd
+  commentId: P:Tasha.Validation.ODMatrixBuilder.AMRushEnd
+  id: AMRushEnd
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: AMRushEnd
+  nameWithType: ODMatrixBuilder.AMRushEnd
+  fullName: Tasha.Validation.ODMatrixBuilder.AMRushEnd
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AMRushEnd
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 50
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("AM Rush Hour End Time", "9:00", typeof(Time), "The rush hour end time in the morning")]
+
+      public Time AMRushEnd { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("AM Rush Hour End Time", "9:00", GetType(Time), "The rush hour end time in the morning")>
+
+      Public Property AMRushEnd As Time
+  overload: Tasha.Validation.ODMatrixBuilder.AMRushEnd*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: AM Rush Hour End Time
+    - type: System.String
+      value: 9:00
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The rush hour end time in the morning
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.AMRushStart
+  commentId: P:Tasha.Validation.ODMatrixBuilder.AMRushStart
+  id: AMRushStart
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: AMRushStart
+  nameWithType: ODMatrixBuilder.AMRushStart
+  fullName: Tasha.Validation.ODMatrixBuilder.AMRushStart
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AMRushStart
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 53
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("AM Rush Hour Start Time", "6:00", typeof(Time), "The rush hour start time in the morning")]
+
+      public Time AMRushStart { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("AM Rush Hour Start Time", "6:00", GetType(Time), "The rush hour start time in the morning")>
+
+      Public Property AMRushStart As Time
+  overload: Tasha.Validation.ODMatrixBuilder.AMRushStart*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: AM Rush Hour Start Time
+    - type: System.String
+      value: 6:00
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The rush hour start time in the morning
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.AutoMode
+  commentId: P:Tasha.Validation.ODMatrixBuilder.AutoMode
+  id: AutoMode
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: AutoMode
+  nameWithType: ODMatrixBuilder.AutoMode
+  fullName: Tasha.Validation.ODMatrixBuilder.AutoMode
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AutoMode
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 56
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public ITashaMode AutoMode { get; set; }
+    parameters: []
+    return:
+      type: Tasha.Common.ITashaMode
+    content.vb: Public Property AutoMode As ITashaMode
+  overload: Tasha.Validation.ODMatrixBuilder.AutoMode*
+  implements:
+  - Tasha.Common.ITashaRuntime.AutoMode
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.AutoType
+  commentId: P:Tasha.Validation.ODMatrixBuilder.AutoType
+  id: AutoType
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: AutoType
+  nameWithType: ODMatrixBuilder.AutoType
+  fullName: Tasha.Validation.ODMatrixBuilder.AutoType
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AutoType
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 59
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The type of vehicle used for auto trips", Required = true)]
+
+      public IVehicleType AutoType { get; set; }
+    parameters: []
+    return:
+      type: Tasha.Common.IVehicleType
+    content.vb: >-
+      <SubModelInformation(Description:="The type of vehicle used for auto trips", Required:=True)>
+
+      Public Property AutoType As IVehicleType
+  overload: Tasha.Validation.ODMatrixBuilder.AutoType*
+  implements:
+  - Tasha.Common.ITashaRuntime.AutoType
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The type of vehicle used for auto trips
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.EndOfDay
+  commentId: P:Tasha.Validation.ODMatrixBuilder.EndOfDay
+  id: EndOfDay
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: EndOfDay
+  nameWithType: ODMatrixBuilder.EndOfDay
+  fullName: Tasha.Validation.ODMatrixBuilder.EndOfDay
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: EndOfDay
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 62
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public Time EndOfDay { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: Public Property EndOfDay As Time
+  overload: Tasha.Validation.ODMatrixBuilder.EndOfDay*
+  implements:
+  - Tasha.Common.ITashaRuntime.EndOfDay
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+  commentId: P:Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+  id: HouseholdLoader
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: HouseholdLoader
+  nameWithType: ODMatrixBuilder.HouseholdLoader
+  fullName: Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HouseholdLoader
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 68
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The model that will load our household", Required = true)]
+
+      public IDataLoader<ITashaHousehold> HouseholdLoader { get; set; }
+    parameters: []
+    return:
+      type: XTMF.IDataLoader{Tasha.Common.ITashaHousehold}
+    content.vb: >-
+      <SubModelInformation(Description:="The model that will load our household", Required:=True)>
+
+      Public Property HouseholdLoader As IDataLoader(Of ITashaHousehold)
+  overload: Tasha.Validation.ODMatrixBuilder.HouseholdLoader*
+  implements:
+  - Tasha.Common.ITashaRuntime.HouseholdLoader
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The model that will load our household
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+  commentId: P:Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: ODMatrixBuilder.InputBaseDirectory
+  fullName: Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 71
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Input Directory", "../../TashaInput", "The Input Directory")]
+
+      public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Input Directory", "../../TashaInput", "The Input Directory")>
+
+      Public Property InputBaseDirectory As String
+  overload: Tasha.Validation.ODMatrixBuilder.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Input Directory
+    - type: System.String
+      value: ../../TashaInput
+    - type: System.String
+      value: The Input Directory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.TotalIterations
+  commentId: P:Tasha.Validation.ODMatrixBuilder.TotalIterations
+  id: TotalIterations
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: TotalIterations
+  nameWithType: ODMatrixBuilder.TotalIterations
+  fullName: Tasha.Validation.ODMatrixBuilder.TotalIterations
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TotalIterations
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 78
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public int TotalIterations { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TotalIterations As Integer
+  overload: Tasha.Validation.ODMatrixBuilder.TotalIterations*
+  implements:
+  - Tasha.Common.ITashaRuntime.TotalIterations
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.MatrixNumber
+  commentId: P:Tasha.Validation.ODMatrixBuilder.MatrixNumber
+  id: MatrixNumber
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: MatrixNumber
+  nameWithType: ODMatrixBuilder.MatrixNumber
+  fullName: Tasha.Validation.ODMatrixBuilder.MatrixNumber
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MatrixNumber
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 84
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Matrix Number", 10, "The EMME Matrix Number")]
+
+      public int MatrixNumber { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Matrix Number", 10, "The EMME Matrix Number")>
+
+      Public Property MatrixNumber As Integer
+  overload: Tasha.Validation.ODMatrixBuilder.MatrixNumber*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Matrix Number
+    - type: System.Int32
+      value: 10
+    - type: System.String
+      value: The EMME Matrix Number
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ModeChoice
+  commentId: P:Tasha.Validation.ODMatrixBuilder.ModeChoice
+  id: ModeChoice
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ModeChoice
+  nameWithType: ODMatrixBuilder.ModeChoice
+  fullName: Tasha.Validation.ODMatrixBuilder.ModeChoice
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModeChoice
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 87
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public ITashaModeChoice ModeChoice { get; set; }
+    parameters: []
+    return:
+      type: Tasha.Common.ITashaModeChoice
+    content.vb: Public Property ModeChoice As ITashaModeChoice
+  overload: Tasha.Validation.ODMatrixBuilder.ModeChoice*
+  implements:
+  - Tasha.Common.ITashaRuntime.ModeChoice
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.Name
+  commentId: P:Tasha.Validation.ODMatrixBuilder.Name
+  id: Name
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ODMatrixBuilder.Name
+  fullName: Tasha.Validation.ODMatrixBuilder.Name
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 90
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Tasha.Validation.ODMatrixBuilder.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.NetworkData
+  commentId: P:Tasha.Validation.ODMatrixBuilder.NetworkData
+  id: NetworkData
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: NetworkData
+  nameWithType: ODMatrixBuilder.NetworkData
+  fullName: Tasha.Validation.ODMatrixBuilder.NetworkData
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NetworkData
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 96
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Network data", Required = false)]
+
+      public IList<INetworkData> NetworkData { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{TMG.INetworkData}
+    content.vb: >-
+      <SubModelInformation(Description:="Network data", Required:=False)>
+
+      Public Property NetworkData As IList(Of INetworkData)
+  overload: Tasha.Validation.ODMatrixBuilder.NetworkData*
+  implements:
+  - TMG.ITravelDemandModel.NetworkData
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Network data
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.NonSharedModes
+  commentId: P:Tasha.Validation.ODMatrixBuilder.NonSharedModes
+  id: NonSharedModes
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: NonSharedModes
+  nameWithType: ODMatrixBuilder.NonSharedModes
+  fullName: Tasha.Validation.ODMatrixBuilder.NonSharedModes
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NonSharedModes
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 103
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<ITashaMode> NonSharedModes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.ITashaMode}
+    content.vb: Public Property NonSharedModes As List(Of ITashaMode)
+  overload: Tasha.Validation.ODMatrixBuilder.NonSharedModes*
+  implements:
+  - Tasha.Common.ITashaRuntime.NonSharedModes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+  commentId: P:Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+  id: ObservedModeAttachment
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ObservedModeAttachment
+  nameWithType: ODMatrixBuilder.ObservedModeAttachment
+  fullName: Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ObservedModeAttachment
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 106
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Observed Mode Attachment Name", "ObservedMode", "The name of the attachment for the observed mode.")]
+
+      public string ObservedModeAttachment { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Observed Mode Attachment Name", "ObservedMode", "The name of the attachment for the observed mode.")>
+
+      Public Property ObservedModeAttachment As String
+  overload: Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Observed Mode Attachment Name
+    - type: System.String
+      value: ObservedMode
+    - type: System.String
+      value: The name of the attachment for the observed mode.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.OtherModes
+  commentId: P:Tasha.Validation.ODMatrixBuilder.OtherModes
+  id: OtherModes
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: OtherModes
+  nameWithType: ODMatrixBuilder.OtherModes
+  fullName: Tasha.Validation.ODMatrixBuilder.OtherModes
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OtherModes
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 109
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<ITashaMode> OtherModes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.ITashaMode}
+    content.vb: Public Property OtherModes As List(Of ITashaMode)
+  overload: Tasha.Validation.ODMatrixBuilder.OtherModes*
+  implements:
+  - Tasha.Common.ITashaRuntime.OtherModes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+  commentId: P:Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: ODMatrixBuilder.OutputBaseDirectory
+  fullName: Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 112
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.Parallel
+  commentId: P:Tasha.Validation.ODMatrixBuilder.Parallel
+  id: Parallel
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: Parallel
+  nameWithType: ODMatrixBuilder.Parallel
+  fullName: Tasha.Validation.ODMatrixBuilder.Parallel
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parallel
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 118
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool Parallel { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Parallel As Boolean
+  overload: Tasha.Validation.ODMatrixBuilder.Parallel*
+  implements:
+  - Tasha.Common.ITashaRuntime.Parallel
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PMRushEnd
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PMRushEnd
+  id: PMRushEnd
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PMRushEnd
+  nameWithType: ODMatrixBuilder.PMRushEnd
+  fullName: Tasha.Validation.ODMatrixBuilder.PMRushEnd
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PMRushEnd
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 124
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("PM Rush Hour End Time", "18:30", typeof(Time), "The rush hour end time in the afternoon")]
+
+      public Time PMRushEnd { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("PM Rush Hour End Time", "18:30", GetType(Time), "The rush hour end time in the afternoon")>
+
+      Public Property PMRushEnd As Time
+  overload: Tasha.Validation.ODMatrixBuilder.PMRushEnd*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: PM Rush Hour End Time
+    - type: System.String
+      value: 18:30
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The rush hour end time in the afternoon
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PMRushStart
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PMRushStart
+  id: PMRushStart
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PMRushStart
+  nameWithType: ODMatrixBuilder.PMRushStart
+  fullName: Tasha.Validation.ODMatrixBuilder.PMRushStart
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PMRushStart
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 127
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("PM Rush Hour Start Time", "15:30", typeof(Time), "The rush hour start time in the afternoon")]
+
+      public Time PMRushStart { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: >-
+      <RunParameter("PM Rush Hour Start Time", "15:30", GetType(Time), "The rush hour start time in the afternoon")>
+
+      Public Property PMRushStart As Time
+  overload: Tasha.Validation.ODMatrixBuilder.PMRushStart*
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: PM Rush Hour Start Time
+    - type: System.String
+      value: 15:30
+    - type: System.Type
+      value: XTMF.Time
+    - type: System.String
+      value: The rush hour start time in the afternoon
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PostHousehold
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PostHousehold
+  id: PostHousehold
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PostHousehold
+  nameWithType: ODMatrixBuilder.PostHousehold
+  fullName: Tasha.Validation.ODMatrixBuilder.PostHousehold
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PostHousehold
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 130
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<IPostHousehold> PostHousehold { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.IPostHousehold}
+    content.vb: Public Property PostHousehold As List(Of IPostHousehold)
+  overload: Tasha.Validation.ODMatrixBuilder.PostHousehold*
+  implements:
+  - Tasha.Common.ITashaRuntime.PostHousehold
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PostIteration
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PostIteration
+  id: PostIteration
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PostIteration
+  nameWithType: ODMatrixBuilder.PostIteration
+  fullName: Tasha.Validation.ODMatrixBuilder.PostIteration
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PostIteration
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 133
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<IPostIteration> PostIteration { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.IPostIteration}
+    content.vb: Public Property PostIteration As List(Of IPostIteration)
+  overload: Tasha.Validation.ODMatrixBuilder.PostIteration*
+  implements:
+  - Tasha.Common.ITashaRuntime.PostIteration
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PostRun
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PostRun
+  id: PostRun
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PostRun
+  nameWithType: ODMatrixBuilder.PostRun
+  fullName: Tasha.Validation.ODMatrixBuilder.PostRun
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PostRun
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 136
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<ISelfContainedModule> PostRun { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+    content.vb: Public Property PostRun As List(Of ISelfContainedModule)
+  overload: Tasha.Validation.ODMatrixBuilder.PostRun*
+  implements:
+  - Tasha.Common.ITashaRuntime.PostRun
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PostScheduler
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PostScheduler
+  id: PostScheduler
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PostScheduler
+  nameWithType: ODMatrixBuilder.PostScheduler
+  fullName: Tasha.Validation.ODMatrixBuilder.PostScheduler
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PostScheduler
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 139
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<IPostScheduler> PostScheduler { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.IPostScheduler}
+    content.vb: Public Property PostScheduler As List(Of IPostScheduler)
+  overload: Tasha.Validation.ODMatrixBuilder.PostScheduler*
+  implements:
+  - Tasha.Common.ITashaRuntime.PostScheduler
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PreIteration
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PreIteration
+  id: PreIteration
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PreIteration
+  nameWithType: ODMatrixBuilder.PreIteration
+  fullName: Tasha.Validation.ODMatrixBuilder.PreIteration
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PreIteration
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 142
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<IPreIteration> PreIteration { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.IPreIteration}
+    content.vb: Public Property PreIteration As List(Of IPreIteration)
+  overload: Tasha.Validation.ODMatrixBuilder.PreIteration*
+  implements:
+  - Tasha.Common.ITashaRuntime.PreIteration
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.PreRun
+  commentId: P:Tasha.Validation.ODMatrixBuilder.PreRun
+  id: PreRun
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: PreRun
+  nameWithType: ODMatrixBuilder.PreRun
+  fullName: Tasha.Validation.ODMatrixBuilder.PreRun
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PreRun
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 145
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<ISelfContainedModule> PreRun { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+    content.vb: Public Property PreRun As List(Of ISelfContainedModule)
+  overload: Tasha.Validation.ODMatrixBuilder.PreRun*
+  implements:
+  - Tasha.Common.ITashaRuntime.PreRun
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.Progress
+  commentId: P:Tasha.Validation.ODMatrixBuilder.Progress
+  id: Progress
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ODMatrixBuilder.Progress
+  fullName: Tasha.Validation.ODMatrixBuilder.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 148
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: Tasha.Validation.ODMatrixBuilder.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ProgressColour
+  commentId: P:Tasha.Validation.ODMatrixBuilder.ProgressColour
+  id: ProgressColour
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ODMatrixBuilder.ProgressColour
+  fullName: Tasha.Validation.ODMatrixBuilder.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 154
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: Tasha.Validation.ODMatrixBuilder.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.ODMatrixBuilder.RandomSeed
+  commentId: P:Tasha.Validation.ODMatrixBuilder.RandomSeed
+  id: RandomSeed
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: RandomSeed
+  nameWithType: ODMatrixBuilder.RandomSeed
+  fullName: Tasha.Validation.ODMatrixBuilder.RandomSeed
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RandomSeed
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 159
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public int RandomSeed { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RandomSeed As Integer
+  overload: Tasha.Validation.ODMatrixBuilder.RandomSeed*
+  implements:
+  - Tasha.Common.ITashaRuntime.RandomSeed
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.Resources
+  commentId: P:Tasha.Validation.ODMatrixBuilder.Resources
+  id: Resources
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: Resources
+  nameWithType: ODMatrixBuilder.Resources
+  fullName: Tasha.Validation.ODMatrixBuilder.Resources
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Resources
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 165
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The available resources for this model system.", Required = false)]
+
+      public List<IResource> Resources { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{XTMF.IResource}
+    content.vb: >-
+      <SubModelInformation(Description:="The available resources for this model system.", Required:=False)>
+
+      Public Property Resources As List(Of IResource)
+  overload: Tasha.Validation.ODMatrixBuilder.Resources*
+  implements:
+  - TMG.IResourceSource.Resources
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The available resources for this model system.
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.SharedModes
+  commentId: P:Tasha.Validation.ODMatrixBuilder.SharedModes
+  id: SharedModes
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: SharedModes
+  nameWithType: ODMatrixBuilder.SharedModes
+  fullName: Tasha.Validation.ODMatrixBuilder.SharedModes
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SharedModes
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 168
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<ISharedMode> SharedModes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.ISharedMode}
+    content.vb: Public Property SharedModes As List(Of ISharedMode)
+  overload: Tasha.Validation.ODMatrixBuilder.SharedModes*
+  implements:
+  - Tasha.Common.ITashaRuntime.SharedModes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.StartOfDay
+  commentId: P:Tasha.Validation.ODMatrixBuilder.StartOfDay
+  id: StartOfDay
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: StartOfDay
+  nameWithType: ODMatrixBuilder.StartOfDay
+  fullName: Tasha.Validation.ODMatrixBuilder.StartOfDay
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StartOfDay
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 171
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public Time StartOfDay { get; set; }
+    parameters: []
+    return:
+      type: XTMF.Time
+    content.vb: Public Property StartOfDay As Time
+  overload: Tasha.Validation.ODMatrixBuilder.StartOfDay*
+  implements:
+  - Tasha.Common.ITashaRuntime.StartOfDay
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.VehicleTypes
+  commentId: P:Tasha.Validation.ODMatrixBuilder.VehicleTypes
+  id: VehicleTypes
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: VehicleTypes
+  nameWithType: ODMatrixBuilder.VehicleTypes
+  fullName: Tasha.Validation.ODMatrixBuilder.VehicleTypes
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: VehicleTypes
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 177
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public List<IVehicleType> VehicleTypes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{Tasha.Common.IVehicleType}
+    content.vb: Public Property VehicleTypes As List(Of IVehicleType)
+  overload: Tasha.Validation.ODMatrixBuilder.VehicleTypes*
+  implements:
+  - Tasha.Common.ITashaRuntime.VehicleTypes
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ZoneSystem
+  commentId: P:Tasha.Validation.ODMatrixBuilder.ZoneSystem
+  id: ZoneSystem
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ZoneSystem
+  nameWithType: ODMatrixBuilder.ZoneSystem
+  fullName: Tasha.Validation.ODMatrixBuilder.ZoneSystem
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneSystem
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 180
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Zone System", Required = true)]
+
+      public IZoneSystem ZoneSystem { get; set; }
+    parameters: []
+    return:
+      type: TMG.IZoneSystem
+    content.vb: >-
+      <SubModelInformation(Description:="Zone System", Required:=True)>
+
+      Public Property ZoneSystem As IZoneSystem
+  overload: Tasha.Validation.ODMatrixBuilder.ZoneSystem*
+  implements:
+  - TMG.ITravelDemandModel.ZoneSystem
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Zone System
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  commentId: M:Tasha.Validation.ODMatrixBuilder.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  id: CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: CreateTrip(ITripChain, IZone, IZone, Activity, Time)
+  nameWithType: ODMatrixBuilder.CreateTrip(ITripChain, IZone, IZone, Activity, Time)
+  fullName: Tasha.Validation.ODMatrixBuilder.CreateTrip(Tasha.Common.ITripChain, TMG.IZone, TMG.IZone, Tasha.Common.Activity, XTMF.Time)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateTrip
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 183
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public ITrip CreateTrip(ITripChain chain, IZone originalZone, IZone destinationZone, Activity purpose, Time startTime)
+    parameters:
+    - id: chain
+      type: Tasha.Common.ITripChain
+    - id: originalZone
+      type: TMG.IZone
+    - id: destinationZone
+      type: TMG.IZone
+    - id: purpose
+      type: Tasha.Common.Activity
+    - id: startTime
+      type: XTMF.Time
+    return:
+      type: Tasha.Common.ITrip
+    content.vb: Public Function CreateTrip(chain As ITripChain, originalZone As IZone, destinationZone As IZone, purpose As Activity, startTime As Time) As ITrip
+  overload: Tasha.Validation.ODMatrixBuilder.CreateTrip*
+  implements:
+  - Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ExitRequest
+  commentId: M:Tasha.Validation.ODMatrixBuilder.ExitRequest
+  id: ExitRequest
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: ODMatrixBuilder.ExitRequest()
+  fullName: Tasha.Validation.ODMatrixBuilder.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 188
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: Tasha.Validation.ODMatrixBuilder.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.GetIndexOfMode(Tasha.Common.ITashaMode)
+  commentId: M:Tasha.Validation.ODMatrixBuilder.GetIndexOfMode(Tasha.Common.ITashaMode)
+  id: GetIndexOfMode(Tasha.Common.ITashaMode)
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: GetIndexOfMode(ITashaMode)
+  nameWithType: ODMatrixBuilder.GetIndexOfMode(ITashaMode)
+  fullName: Tasha.Validation.ODMatrixBuilder.GetIndexOfMode(Tasha.Common.ITashaMode)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetIndexOfMode
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 193
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public int GetIndexOfMode(ITashaMode mode)
+    parameters:
+    - id: mode
+      type: Tasha.Common.ITashaMode
+    return:
+      type: System.Int32
+    content.vb: Public Function GetIndexOfMode(mode As ITashaMode) As Integer
+  overload: Tasha.Validation.ODMatrixBuilder.GetIndexOfMode*
+  implements:
+  - Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.RuntimeValidation(System.String@)
+  commentId: M:Tasha.Validation.ODMatrixBuilder.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ODMatrixBuilder.RuntimeValidation(ref String)
+  fullName: Tasha.Validation.ODMatrixBuilder.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 198
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: Tasha.Validation.ODMatrixBuilder.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ODMatrixBuilder.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Tasha.Validation.ODMatrixBuilder.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: Tasha.Validation.ODMatrixBuilder.Start
+  commentId: M:Tasha.Validation.ODMatrixBuilder.Start
+  id: Start
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: ODMatrixBuilder.Start()
+  fullName: Tasha.Validation.ODMatrixBuilder.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 203
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: Tasha.Validation.ODMatrixBuilder.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ODMatrixBuilder.ToString
+  commentId: M:Tasha.Validation.ODMatrixBuilder.ToString
+  id: ToString
+  parent: Tasha.Validation.ODMatrixBuilder
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: ODMatrixBuilder.ToString()
+  fullName: Tasha.Validation.ODMatrixBuilder.ToString()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ODMatrixBuilder.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ToString
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ODMatrixBuilder.cs
+    startLine: 232
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Tasha.Validation.ODMatrixBuilder.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Tasha.Validation
+  commentId: N:Tasha.Validation
+  name: Tasha.Validation
+  nameWithType: Tasha.Validation
+  fullName: Tasha.Validation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Tasha.Common.ITashaRuntime
+  commentId: T:Tasha.Common.ITashaRuntime
+  parent: Tasha.Common
+  name: ITashaRuntime
+  nameWithType: ITashaRuntime
+  fullName: Tasha.Common.ITashaRuntime
+- uid: TMG.ITravelDemandModel
+  commentId: T:TMG.ITravelDemandModel
+  parent: TMG
+  name: ITravelDemandModel
+  nameWithType: ITravelDemandModel
+  fullName: TMG.ITravelDemandModel
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.IResourceSource
+  commentId: T:TMG.IResourceSource
+  parent: TMG
+  name: IResourceSource
+  nameWithType: IResourceSource
+  fullName: TMG.IResourceSource
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Tasha.Common
+  commentId: N:Tasha.Common
+  name: Tasha.Common
+  nameWithType: Tasha.Common
+  fullName: Tasha.Common
+- uid: TMG
+  commentId: N:TMG
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: Tasha.Validation.ODMatrixBuilder.AllModes*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.AllModes
+  name: AllModes
+  nameWithType: ODMatrixBuilder.AllModes
+  fullName: Tasha.Validation.ODMatrixBuilder.AllModes
+- uid: Tasha.Common.ITashaRuntime.AllModes
+  commentId: P:Tasha.Common.ITashaRuntime.AllModes
+  parent: Tasha.Common.ITashaRuntime
+  name: AllModes
+  nameWithType: ITashaRuntime.AllModes
+  fullName: Tasha.Common.ITashaRuntime.AllModes
+- uid: System.Collections.Generic.List{Tasha.Common.ITashaMode}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.ITashaMode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ITashaMode>
+  nameWithType: List<ITashaMode>
+  fullName: System.Collections.Generic.List<Tasha.Common.ITashaMode>
+  nameWithType.vb: List(Of ITashaMode)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.ITashaMode)
+  name.vb: List(Of ITashaMode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.ITashaMode
+    name: ITashaMode
+    nameWithType: ITashaMode
+    fullName: Tasha.Common.ITashaMode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.ITashaMode
+    name: ITashaMode
+    nameWithType: ITashaMode
+    fullName: Tasha.Common.ITashaMode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Tasha.Validation.ODMatrixBuilder.AMRushEnd*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.AMRushEnd
+  name: AMRushEnd
+  nameWithType: ODMatrixBuilder.AMRushEnd
+  fullName: Tasha.Validation.ODMatrixBuilder.AMRushEnd
+- uid: XTMF.Time
+  commentId: T:XTMF.Time
+  parent: XTMF
+  name: Time
+  nameWithType: Time
+  fullName: XTMF.Time
+- uid: Tasha.Validation.ODMatrixBuilder.AMRushStart*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.AMRushStart
+  name: AMRushStart
+  nameWithType: ODMatrixBuilder.AMRushStart
+  fullName: Tasha.Validation.ODMatrixBuilder.AMRushStart
+- uid: Tasha.Validation.ODMatrixBuilder.AutoMode*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.AutoMode
+  name: AutoMode
+  nameWithType: ODMatrixBuilder.AutoMode
+  fullName: Tasha.Validation.ODMatrixBuilder.AutoMode
+- uid: Tasha.Common.ITashaRuntime.AutoMode
+  commentId: P:Tasha.Common.ITashaRuntime.AutoMode
+  parent: Tasha.Common.ITashaRuntime
+  name: AutoMode
+  nameWithType: ITashaRuntime.AutoMode
+  fullName: Tasha.Common.ITashaRuntime.AutoMode
+- uid: Tasha.Common.ITashaMode
+  commentId: T:Tasha.Common.ITashaMode
+  parent: Tasha.Common
+  name: ITashaMode
+  nameWithType: ITashaMode
+  fullName: Tasha.Common.ITashaMode
+- uid: Tasha.Validation.ODMatrixBuilder.AutoType*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.AutoType
+  name: AutoType
+  nameWithType: ODMatrixBuilder.AutoType
+  fullName: Tasha.Validation.ODMatrixBuilder.AutoType
+- uid: Tasha.Common.ITashaRuntime.AutoType
+  commentId: P:Tasha.Common.ITashaRuntime.AutoType
+  parent: Tasha.Common.ITashaRuntime
+  name: AutoType
+  nameWithType: ITashaRuntime.AutoType
+  fullName: Tasha.Common.ITashaRuntime.AutoType
+- uid: Tasha.Common.IVehicleType
+  commentId: T:Tasha.Common.IVehicleType
+  parent: Tasha.Common
+  name: IVehicleType
+  nameWithType: IVehicleType
+  fullName: Tasha.Common.IVehicleType
+- uid: Tasha.Validation.ODMatrixBuilder.EndOfDay*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.EndOfDay
+  name: EndOfDay
+  nameWithType: ODMatrixBuilder.EndOfDay
+  fullName: Tasha.Validation.ODMatrixBuilder.EndOfDay
+- uid: Tasha.Common.ITashaRuntime.EndOfDay
+  commentId: P:Tasha.Common.ITashaRuntime.EndOfDay
+  parent: Tasha.Common.ITashaRuntime
+  name: EndOfDay
+  nameWithType: ITashaRuntime.EndOfDay
+  fullName: Tasha.Common.ITashaRuntime.EndOfDay
+- uid: Tasha.Validation.ODMatrixBuilder.HouseholdLoader*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+  name: HouseholdLoader
+  nameWithType: ODMatrixBuilder.HouseholdLoader
+  fullName: Tasha.Validation.ODMatrixBuilder.HouseholdLoader
+- uid: Tasha.Common.ITashaRuntime.HouseholdLoader
+  commentId: P:Tasha.Common.ITashaRuntime.HouseholdLoader
+  parent: Tasha.Common.ITashaRuntime
+  name: HouseholdLoader
+  nameWithType: ITashaRuntime.HouseholdLoader
+  fullName: Tasha.Common.ITashaRuntime.HouseholdLoader
+- uid: XTMF.IDataLoader{Tasha.Common.ITashaHousehold}
+  commentId: T:XTMF.IDataLoader{Tasha.Common.ITashaHousehold}
+  parent: XTMF
+  definition: XTMF.IDataLoader`1
+  name: IDataLoader<ITashaHousehold>
+  nameWithType: IDataLoader<ITashaHousehold>
+  fullName: XTMF.IDataLoader<Tasha.Common.ITashaHousehold>
+  nameWithType.vb: IDataLoader(Of ITashaHousehold)
+  fullName.vb: XTMF.IDataLoader(Of Tasha.Common.ITashaHousehold)
+  name.vb: IDataLoader(Of ITashaHousehold)
+  spec.csharp:
+  - uid: XTMF.IDataLoader`1
+    name: IDataLoader
+    nameWithType: IDataLoader
+    fullName: XTMF.IDataLoader
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.ITashaHousehold
+    name: ITashaHousehold
+    nameWithType: ITashaHousehold
+    fullName: Tasha.Common.ITashaHousehold
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataLoader`1
+    name: IDataLoader
+    nameWithType: IDataLoader
+    fullName: XTMF.IDataLoader
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.ITashaHousehold
+    name: ITashaHousehold
+    nameWithType: ITashaHousehold
+    fullName: Tasha.Common.ITashaHousehold
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataLoader`1
+  commentId: T:XTMF.IDataLoader`1
+  name: IDataLoader<T>
+  nameWithType: IDataLoader<T>
+  fullName: XTMF.IDataLoader<T>
+  nameWithType.vb: IDataLoader(Of T)
+  fullName.vb: XTMF.IDataLoader(Of T)
+  name.vb: IDataLoader(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataLoader`1
+    name: IDataLoader
+    nameWithType: IDataLoader
+    fullName: XTMF.IDataLoader
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataLoader`1
+    name: IDataLoader
+    nameWithType: IDataLoader
+    fullName: XTMF.IDataLoader
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.InputBaseDirectory*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+  name: InputBaseDirectory
+  nameWithType: ODMatrixBuilder.InputBaseDirectory
+  fullName: Tasha.Validation.ODMatrixBuilder.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Tasha.Validation.ODMatrixBuilder.TotalIterations*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.TotalIterations
+  name: TotalIterations
+  nameWithType: ODMatrixBuilder.TotalIterations
+  fullName: Tasha.Validation.ODMatrixBuilder.TotalIterations
+- uid: Tasha.Common.ITashaRuntime.TotalIterations
+  commentId: P:Tasha.Common.ITashaRuntime.TotalIterations
+  parent: Tasha.Common.ITashaRuntime
+  name: TotalIterations
+  nameWithType: ITashaRuntime.TotalIterations
+  fullName: Tasha.Common.ITashaRuntime.TotalIterations
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Tasha.Validation.ODMatrixBuilder.MatrixNumber*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.MatrixNumber
+  name: MatrixNumber
+  nameWithType: ODMatrixBuilder.MatrixNumber
+  fullName: Tasha.Validation.ODMatrixBuilder.MatrixNumber
+- uid: Tasha.Validation.ODMatrixBuilder.ModeChoice*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ModeChoice
+  name: ModeChoice
+  nameWithType: ODMatrixBuilder.ModeChoice
+  fullName: Tasha.Validation.ODMatrixBuilder.ModeChoice
+- uid: Tasha.Common.ITashaRuntime.ModeChoice
+  commentId: P:Tasha.Common.ITashaRuntime.ModeChoice
+  parent: Tasha.Common.ITashaRuntime
+  name: ModeChoice
+  nameWithType: ITashaRuntime.ModeChoice
+  fullName: Tasha.Common.ITashaRuntime.ModeChoice
+- uid: Tasha.Common.ITashaModeChoice
+  commentId: T:Tasha.Common.ITashaModeChoice
+  parent: Tasha.Common
+  name: ITashaModeChoice
+  nameWithType: ITashaModeChoice
+  fullName: Tasha.Common.ITashaModeChoice
+- uid: Tasha.Validation.ODMatrixBuilder.Name*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.Name
+  name: Name
+  nameWithType: ODMatrixBuilder.Name
+  fullName: Tasha.Validation.ODMatrixBuilder.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: Tasha.Validation.ODMatrixBuilder.NetworkData*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.NetworkData
+  name: NetworkData
+  nameWithType: ODMatrixBuilder.NetworkData
+  fullName: Tasha.Validation.ODMatrixBuilder.NetworkData
+- uid: TMG.ITravelDemandModel.NetworkData
+  commentId: P:TMG.ITravelDemandModel.NetworkData
+  parent: TMG.ITravelDemandModel
+  name: NetworkData
+  nameWithType: ITravelDemandModel.NetworkData
+  fullName: TMG.ITravelDemandModel.NetworkData
+- uid: System.Collections.Generic.IList{TMG.INetworkData}
+  commentId: T:System.Collections.Generic.IList{TMG.INetworkData}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<INetworkData>
+  nameWithType: IList<INetworkData>
+  fullName: System.Collections.Generic.IList<TMG.INetworkData>
+  nameWithType.vb: IList(Of INetworkData)
+  fullName.vb: System.Collections.Generic.IList(Of TMG.INetworkData)
+  name.vb: IList(Of INetworkData)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.INetworkData
+    name: INetworkData
+    nameWithType: INetworkData
+    fullName: TMG.INetworkData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.NonSharedModes*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.NonSharedModes
+  name: NonSharedModes
+  nameWithType: ODMatrixBuilder.NonSharedModes
+  fullName: Tasha.Validation.ODMatrixBuilder.NonSharedModes
+- uid: Tasha.Common.ITashaRuntime.NonSharedModes
+  commentId: P:Tasha.Common.ITashaRuntime.NonSharedModes
+  parent: Tasha.Common.ITashaRuntime
+  name: NonSharedModes
+  nameWithType: ITashaRuntime.NonSharedModes
+  fullName: Tasha.Common.ITashaRuntime.NonSharedModes
+- uid: Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+  name: ObservedModeAttachment
+  nameWithType: ODMatrixBuilder.ObservedModeAttachment
+  fullName: Tasha.Validation.ODMatrixBuilder.ObservedModeAttachment
+- uid: Tasha.Validation.ODMatrixBuilder.OtherModes*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.OtherModes
+  name: OtherModes
+  nameWithType: ODMatrixBuilder.OtherModes
+  fullName: Tasha.Validation.ODMatrixBuilder.OtherModes
+- uid: Tasha.Common.ITashaRuntime.OtherModes
+  commentId: P:Tasha.Common.ITashaRuntime.OtherModes
+  parent: Tasha.Common.ITashaRuntime
+  name: OtherModes
+  nameWithType: ITashaRuntime.OtherModes
+  fullName: Tasha.Common.ITashaRuntime.OtherModes
+- uid: Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+  name: OutputBaseDirectory
+  nameWithType: ODMatrixBuilder.OutputBaseDirectory
+  fullName: Tasha.Validation.ODMatrixBuilder.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: Tasha.Validation.ODMatrixBuilder.Parallel*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.Parallel
+  name: Parallel
+  nameWithType: ODMatrixBuilder.Parallel
+  fullName: Tasha.Validation.ODMatrixBuilder.Parallel
+- uid: Tasha.Common.ITashaRuntime.Parallel
+  commentId: P:Tasha.Common.ITashaRuntime.Parallel
+  parent: Tasha.Common.ITashaRuntime
+  name: Parallel
+  nameWithType: ITashaRuntime.Parallel
+  fullName: Tasha.Common.ITashaRuntime.Parallel
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Tasha.Validation.ODMatrixBuilder.PMRushEnd*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PMRushEnd
+  name: PMRushEnd
+  nameWithType: ODMatrixBuilder.PMRushEnd
+  fullName: Tasha.Validation.ODMatrixBuilder.PMRushEnd
+- uid: Tasha.Validation.ODMatrixBuilder.PMRushStart*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PMRushStart
+  name: PMRushStart
+  nameWithType: ODMatrixBuilder.PMRushStart
+  fullName: Tasha.Validation.ODMatrixBuilder.PMRushStart
+- uid: Tasha.Validation.ODMatrixBuilder.PostHousehold*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PostHousehold
+  name: PostHousehold
+  nameWithType: ODMatrixBuilder.PostHousehold
+  fullName: Tasha.Validation.ODMatrixBuilder.PostHousehold
+- uid: Tasha.Common.ITashaRuntime.PostHousehold
+  commentId: P:Tasha.Common.ITashaRuntime.PostHousehold
+  parent: Tasha.Common.ITashaRuntime
+  name: PostHousehold
+  nameWithType: ITashaRuntime.PostHousehold
+  fullName: Tasha.Common.ITashaRuntime.PostHousehold
+- uid: System.Collections.Generic.List{Tasha.Common.IPostHousehold}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.IPostHousehold}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPostHousehold>
+  nameWithType: List<IPostHousehold>
+  fullName: System.Collections.Generic.List<Tasha.Common.IPostHousehold>
+  nameWithType.vb: List(Of IPostHousehold)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.IPostHousehold)
+  name.vb: List(Of IPostHousehold)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.IPostHousehold
+    name: IPostHousehold
+    nameWithType: IPostHousehold
+    fullName: Tasha.Common.IPostHousehold
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.IPostHousehold
+    name: IPostHousehold
+    nameWithType: IPostHousehold
+    fullName: Tasha.Common.IPostHousehold
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.PostIteration*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PostIteration
+  name: PostIteration
+  nameWithType: ODMatrixBuilder.PostIteration
+  fullName: Tasha.Validation.ODMatrixBuilder.PostIteration
+- uid: Tasha.Common.ITashaRuntime.PostIteration
+  commentId: P:Tasha.Common.ITashaRuntime.PostIteration
+  parent: Tasha.Common.ITashaRuntime
+  name: PostIteration
+  nameWithType: ITashaRuntime.PostIteration
+  fullName: Tasha.Common.ITashaRuntime.PostIteration
+- uid: System.Collections.Generic.List{Tasha.Common.IPostIteration}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.IPostIteration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPostIteration>
+  nameWithType: List<IPostIteration>
+  fullName: System.Collections.Generic.List<Tasha.Common.IPostIteration>
+  nameWithType.vb: List(Of IPostIteration)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.IPostIteration)
+  name.vb: List(Of IPostIteration)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.IPostIteration
+    name: IPostIteration
+    nameWithType: IPostIteration
+    fullName: Tasha.Common.IPostIteration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.IPostIteration
+    name: IPostIteration
+    nameWithType: IPostIteration
+    fullName: Tasha.Common.IPostIteration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.PostRun*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PostRun
+  name: PostRun
+  nameWithType: ODMatrixBuilder.PostRun
+  fullName: Tasha.Validation.ODMatrixBuilder.PostRun
+- uid: Tasha.Common.ITashaRuntime.PostRun
+  commentId: P:Tasha.Common.ITashaRuntime.PostRun
+  parent: Tasha.Common.ITashaRuntime
+  name: PostRun
+  nameWithType: ITashaRuntime.PostRun
+  fullName: Tasha.Common.ITashaRuntime.PostRun
+- uid: System.Collections.Generic.List{XTMF.ISelfContainedModule}
+  commentId: T:System.Collections.Generic.List{XTMF.ISelfContainedModule}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ISelfContainedModule>
+  nameWithType: List<ISelfContainedModule>
+  fullName: System.Collections.Generic.List<XTMF.ISelfContainedModule>
+  nameWithType.vb: List(Of ISelfContainedModule)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ISelfContainedModule)
+  name.vb: List(Of ISelfContainedModule)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ISelfContainedModule
+    name: ISelfContainedModule
+    nameWithType: ISelfContainedModule
+    fullName: XTMF.ISelfContainedModule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ISelfContainedModule
+    name: ISelfContainedModule
+    nameWithType: ISelfContainedModule
+    fullName: XTMF.ISelfContainedModule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.PostScheduler*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PostScheduler
+  name: PostScheduler
+  nameWithType: ODMatrixBuilder.PostScheduler
+  fullName: Tasha.Validation.ODMatrixBuilder.PostScheduler
+- uid: Tasha.Common.ITashaRuntime.PostScheduler
+  commentId: P:Tasha.Common.ITashaRuntime.PostScheduler
+  parent: Tasha.Common.ITashaRuntime
+  name: PostScheduler
+  nameWithType: ITashaRuntime.PostScheduler
+  fullName: Tasha.Common.ITashaRuntime.PostScheduler
+- uid: System.Collections.Generic.List{Tasha.Common.IPostScheduler}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.IPostScheduler}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPostScheduler>
+  nameWithType: List<IPostScheduler>
+  fullName: System.Collections.Generic.List<Tasha.Common.IPostScheduler>
+  nameWithType.vb: List(Of IPostScheduler)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.IPostScheduler)
+  name.vb: List(Of IPostScheduler)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.IPostScheduler
+    name: IPostScheduler
+    nameWithType: IPostScheduler
+    fullName: Tasha.Common.IPostScheduler
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.IPostScheduler
+    name: IPostScheduler
+    nameWithType: IPostScheduler
+    fullName: Tasha.Common.IPostScheduler
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.PreIteration*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PreIteration
+  name: PreIteration
+  nameWithType: ODMatrixBuilder.PreIteration
+  fullName: Tasha.Validation.ODMatrixBuilder.PreIteration
+- uid: Tasha.Common.ITashaRuntime.PreIteration
+  commentId: P:Tasha.Common.ITashaRuntime.PreIteration
+  parent: Tasha.Common.ITashaRuntime
+  name: PreIteration
+  nameWithType: ITashaRuntime.PreIteration
+  fullName: Tasha.Common.ITashaRuntime.PreIteration
+- uid: System.Collections.Generic.List{Tasha.Common.IPreIteration}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.IPreIteration}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IPreIteration>
+  nameWithType: List<IPreIteration>
+  fullName: System.Collections.Generic.List<Tasha.Common.IPreIteration>
+  nameWithType.vb: List(Of IPreIteration)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.IPreIteration)
+  name.vb: List(Of IPreIteration)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.IPreIteration
+    name: IPreIteration
+    nameWithType: IPreIteration
+    fullName: Tasha.Common.IPreIteration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.IPreIteration
+    name: IPreIteration
+    nameWithType: IPreIteration
+    fullName: Tasha.Common.IPreIteration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.PreRun*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.PreRun
+  name: PreRun
+  nameWithType: ODMatrixBuilder.PreRun
+  fullName: Tasha.Validation.ODMatrixBuilder.PreRun
+- uid: Tasha.Common.ITashaRuntime.PreRun
+  commentId: P:Tasha.Common.ITashaRuntime.PreRun
+  parent: Tasha.Common.ITashaRuntime
+  name: PreRun
+  nameWithType: ITashaRuntime.PreRun
+  fullName: Tasha.Common.ITashaRuntime.PreRun
+- uid: Tasha.Validation.ODMatrixBuilder.Progress*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.Progress
+  name: Progress
+  nameWithType: ODMatrixBuilder.Progress
+  fullName: Tasha.Validation.ODMatrixBuilder.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Tasha.Validation.ODMatrixBuilder.ProgressColour*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ProgressColour
+  name: ProgressColour
+  nameWithType: ODMatrixBuilder.ProgressColour
+  fullName: Tasha.Validation.ODMatrixBuilder.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.RandomSeed*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.RandomSeed
+  name: RandomSeed
+  nameWithType: ODMatrixBuilder.RandomSeed
+  fullName: Tasha.Validation.ODMatrixBuilder.RandomSeed
+- uid: Tasha.Common.ITashaRuntime.RandomSeed
+  commentId: P:Tasha.Common.ITashaRuntime.RandomSeed
+  parent: Tasha.Common.ITashaRuntime
+  name: RandomSeed
+  nameWithType: ITashaRuntime.RandomSeed
+  fullName: Tasha.Common.ITashaRuntime.RandomSeed
+- uid: Tasha.Validation.ODMatrixBuilder.Resources*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.Resources
+  name: Resources
+  nameWithType: ODMatrixBuilder.Resources
+  fullName: Tasha.Validation.ODMatrixBuilder.Resources
+- uid: TMG.IResourceSource.Resources
+  commentId: P:TMG.IResourceSource.Resources
+  parent: TMG.IResourceSource
+  name: Resources
+  nameWithType: IResourceSource.Resources
+  fullName: TMG.IResourceSource.Resources
+- uid: System.Collections.Generic.List{XTMF.IResource}
+  commentId: T:System.Collections.Generic.List{XTMF.IResource}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IResource>
+  nameWithType: List<IResource>
+  fullName: System.Collections.Generic.List<XTMF.IResource>
+  nameWithType.vb: List(Of IResource)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.IResource)
+  name.vb: List(Of IResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.SharedModes*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.SharedModes
+  name: SharedModes
+  nameWithType: ODMatrixBuilder.SharedModes
+  fullName: Tasha.Validation.ODMatrixBuilder.SharedModes
+- uid: Tasha.Common.ITashaRuntime.SharedModes
+  commentId: P:Tasha.Common.ITashaRuntime.SharedModes
+  parent: Tasha.Common.ITashaRuntime
+  name: SharedModes
+  nameWithType: ITashaRuntime.SharedModes
+  fullName: Tasha.Common.ITashaRuntime.SharedModes
+- uid: System.Collections.Generic.List{Tasha.Common.ISharedMode}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.ISharedMode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ISharedMode>
+  nameWithType: List<ISharedMode>
+  fullName: System.Collections.Generic.List<Tasha.Common.ISharedMode>
+  nameWithType.vb: List(Of ISharedMode)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.ISharedMode)
+  name.vb: List(Of ISharedMode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.ISharedMode
+    name: ISharedMode
+    nameWithType: ISharedMode
+    fullName: Tasha.Common.ISharedMode
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.ISharedMode
+    name: ISharedMode
+    nameWithType: ISharedMode
+    fullName: Tasha.Common.ISharedMode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.StartOfDay*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.StartOfDay
+  name: StartOfDay
+  nameWithType: ODMatrixBuilder.StartOfDay
+  fullName: Tasha.Validation.ODMatrixBuilder.StartOfDay
+- uid: Tasha.Common.ITashaRuntime.StartOfDay
+  commentId: P:Tasha.Common.ITashaRuntime.StartOfDay
+  parent: Tasha.Common.ITashaRuntime
+  name: StartOfDay
+  nameWithType: ITashaRuntime.StartOfDay
+  fullName: Tasha.Common.ITashaRuntime.StartOfDay
+- uid: Tasha.Validation.ODMatrixBuilder.VehicleTypes*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.VehicleTypes
+  name: VehicleTypes
+  nameWithType: ODMatrixBuilder.VehicleTypes
+  fullName: Tasha.Validation.ODMatrixBuilder.VehicleTypes
+- uid: Tasha.Common.ITashaRuntime.VehicleTypes
+  commentId: P:Tasha.Common.ITashaRuntime.VehicleTypes
+  parent: Tasha.Common.ITashaRuntime
+  name: VehicleTypes
+  nameWithType: ITashaRuntime.VehicleTypes
+  fullName: Tasha.Common.ITashaRuntime.VehicleTypes
+- uid: System.Collections.Generic.List{Tasha.Common.IVehicleType}
+  commentId: T:System.Collections.Generic.List{Tasha.Common.IVehicleType}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IVehicleType>
+  nameWithType: List<IVehicleType>
+  fullName: System.Collections.Generic.List<Tasha.Common.IVehicleType>
+  nameWithType.vb: List(Of IVehicleType)
+  fullName.vb: System.Collections.Generic.List(Of Tasha.Common.IVehicleType)
+  name.vb: List(Of IVehicleType)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Tasha.Common.IVehicleType
+    name: IVehicleType
+    nameWithType: IVehicleType
+    fullName: Tasha.Common.IVehicleType
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Tasha.Common.IVehicleType
+    name: IVehicleType
+    nameWithType: IVehicleType
+    fullName: Tasha.Common.IVehicleType
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.ZoneSystem*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ZoneSystem
+  name: ZoneSystem
+  nameWithType: ODMatrixBuilder.ZoneSystem
+  fullName: Tasha.Validation.ODMatrixBuilder.ZoneSystem
+- uid: TMG.ITravelDemandModel.ZoneSystem
+  commentId: P:TMG.ITravelDemandModel.ZoneSystem
+  parent: TMG.ITravelDemandModel
+  name: ZoneSystem
+  nameWithType: ITravelDemandModel.ZoneSystem
+  fullName: TMG.ITravelDemandModel.ZoneSystem
+- uid: TMG.IZoneSystem
+  commentId: T:TMG.IZoneSystem
+  parent: TMG
+  name: IZoneSystem
+  nameWithType: IZoneSystem
+  fullName: TMG.IZoneSystem
+- uid: Tasha.Validation.ODMatrixBuilder.CreateTrip*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.CreateTrip
+  name: CreateTrip
+  nameWithType: ODMatrixBuilder.CreateTrip
+  fullName: Tasha.Validation.ODMatrixBuilder.CreateTrip
+- uid: Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  commentId: M:Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+  parent: Tasha.Common.ITashaRuntime
+  name: CreateTrip(ITripChain, IZone, IZone, Activity, Time)
+  nameWithType: ITashaRuntime.CreateTrip(ITripChain, IZone, IZone, Activity, Time)
+  fullName: Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain, TMG.IZone, TMG.IZone, Tasha.Common.Activity, XTMF.Time)
+  spec.csharp:
+  - uid: Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+    name: CreateTrip
+    nameWithType: ITashaRuntime.CreateTrip
+    fullName: Tasha.Common.ITashaRuntime.CreateTrip
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITripChain
+    name: ITripChain
+    nameWithType: ITripChain
+    fullName: Tasha.Common.ITripChain
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Tasha.Common.Activity
+    name: Activity
+    nameWithType: Activity
+    fullName: Tasha.Common.Activity
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.ITashaRuntime.CreateTrip(Tasha.Common.ITripChain,TMG.IZone,TMG.IZone,Tasha.Common.Activity,XTMF.Time)
+    name: CreateTrip
+    nameWithType: ITashaRuntime.CreateTrip
+    fullName: Tasha.Common.ITashaRuntime.CreateTrip
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITripChain
+    name: ITripChain
+    nameWithType: ITripChain
+    fullName: Tasha.Common.ITripChain
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: TMG.IZone
+    name: IZone
+    nameWithType: IZone
+    fullName: TMG.IZone
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Tasha.Common.Activity
+    name: Activity
+    nameWithType: Activity
+    fullName: Tasha.Common.Activity
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.Time
+    name: Time
+    nameWithType: Time
+    fullName: XTMF.Time
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Common.ITripChain
+  commentId: T:Tasha.Common.ITripChain
+  parent: Tasha.Common
+  name: ITripChain
+  nameWithType: ITripChain
+  fullName: Tasha.Common.ITripChain
+- uid: TMG.IZone
+  commentId: T:TMG.IZone
+  parent: TMG
+  name: IZone
+  nameWithType: IZone
+  fullName: TMG.IZone
+- uid: Tasha.Common.Activity
+  commentId: T:Tasha.Common.Activity
+  parent: Tasha.Common
+  name: Activity
+  nameWithType: Activity
+  fullName: Tasha.Common.Activity
+- uid: Tasha.Common.ITrip
+  commentId: T:Tasha.Common.ITrip
+  parent: Tasha.Common
+  name: ITrip
+  nameWithType: ITrip
+  fullName: Tasha.Common.ITrip
+- uid: Tasha.Validation.ODMatrixBuilder.ExitRequest*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ExitRequest
+  name: ExitRequest
+  nameWithType: ODMatrixBuilder.ExitRequest
+  fullName: Tasha.Validation.ODMatrixBuilder.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.GetIndexOfMode*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.GetIndexOfMode
+  name: GetIndexOfMode
+  nameWithType: ODMatrixBuilder.GetIndexOfMode
+  fullName: Tasha.Validation.ODMatrixBuilder.GetIndexOfMode
+- uid: Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+  commentId: M:Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+  parent: Tasha.Common.ITashaRuntime
+  name: GetIndexOfMode(ITashaMode)
+  nameWithType: ITashaRuntime.GetIndexOfMode(ITashaMode)
+  fullName: Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+  spec.csharp:
+  - uid: Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+    name: GetIndexOfMode
+    nameWithType: ITashaRuntime.GetIndexOfMode
+    fullName: Tasha.Common.ITashaRuntime.GetIndexOfMode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaMode
+    name: ITashaMode
+    nameWithType: ITashaMode
+    fullName: Tasha.Common.ITashaMode
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.ITashaRuntime.GetIndexOfMode(Tasha.Common.ITashaMode)
+    name: GetIndexOfMode
+    nameWithType: ITashaRuntime.GetIndexOfMode
+    fullName: Tasha.Common.ITashaRuntime.GetIndexOfMode
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaMode
+    name: ITashaMode
+    nameWithType: ITashaMode
+    fullName: Tasha.Common.ITashaMode
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.RuntimeValidation*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: ODMatrixBuilder.RuntimeValidation
+  fullName: Tasha.Validation.ODMatrixBuilder.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.Start*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.Start
+  name: Start
+  nameWithType: ODMatrixBuilder.Start
+  fullName: Tasha.Validation.ODMatrixBuilder.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ODMatrixBuilder.ToString*
+  commentId: Overload:Tasha.Validation.ODMatrixBuilder.ToString
+  name: ToString
+  nameWithType: ODMatrixBuilder.ToString
+  fullName: Tasha.Validation.ODMatrixBuilder.ToString

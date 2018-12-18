@@ -1,0 +1,1579 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  commentId: T:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  id: AssignV4BoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment
+  children:
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.BramptonBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.DurhamBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute(TMG.Emme.Controller)
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoBusBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoTrainBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HaltonBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HSRBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.MiWayBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation(System.String@)
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ScenarioNumbers
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarXROWBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.SubwayBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.TTCBusBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.VIVABoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.YRTBoardingPenalty
+  - TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ZUMBoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: AssignV4BoardingPenalty
+  nameWithType: AssignV4BoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AssignV4BoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 27
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: 'public class AssignV4BoardingPenalty : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class AssignV4BoardingPenalty
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ScenarioNumbers
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ScenarioNumbers
+  id: ScenarioNumbers
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumbers
+  nameWithType: AssignV4BoardingPenalty.ScenarioNumbers
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ScenarioNumbers
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumbers
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 31
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Scenario", "0", typeof(RangeSet), "The number of the Emme Scenario which to apply boarding penalties.")]
+
+      public RangeSet ScenarioNumbers
+    return:
+      type: Datastructure.RangeSet
+    content.vb: >-
+      <RunParameter("Scenario", "0", GetType(RangeSet), "The number of the Emme Scenario which to apply boarding penalties.")>
+
+      Public ScenarioNumbers As RangeSet
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.String,System.Type,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario
+    - type: System.String
+      value: "0"
+    - type: System.Type
+      value: Datastructure.RangeSet
+    - type: System.String
+      value: The number of the Emme Scenario which to apply boarding penalties.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.SubwayBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.SubwayBoardingPenalty
+  id: SubwayBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: SubwayBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.SubwayBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.SubwayBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SubwayBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 34
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Subway Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float SubwayBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Subway Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public SubwayBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Subway Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoTrainBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoTrainBoardingPenalty
+  id: GoTrainBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: GoTrainBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.GoTrainBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoTrainBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GoTrainBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 37
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("GO Train Boarding Penalty", 1F, "Boarding penalty applied to GO train lines")]
+
+      public float GoTrainBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("GO Train Boarding Penalty", 1F, "Boarding penalty applied to GO train lines")>
+
+      Public GoTrainBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: GO Train Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to GO train lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoBusBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoBusBoardingPenalty
+  id: GoBusBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: GoBusBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.GoBusBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.GoBusBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GoBusBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 40
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("GO Bus Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float GoBusBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("GO Bus Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public GoBusBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: GO Bus Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarXROWBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarXROWBoardingPenalty
+  id: StreetcarXROWBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: StreetcarXROWBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.StreetcarXROWBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarXROWBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StreetcarXROWBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 43
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Streetcar XROW Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float StreetcarXROWBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Streetcar XROW Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public StreetcarXROWBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Streetcar XROW Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarBoardingPenalty
+  id: StreetcarBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: StreetcarBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.StreetcarBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.StreetcarBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: StreetcarBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 46
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Streetcar Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float StreetcarBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Streetcar Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public StreetcarBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Streetcar Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.TTCBusBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.TTCBusBoardingPenalty
+  id: TTCBusBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: TTCBusBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.TTCBusBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.TTCBusBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TTCBusBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 49
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("TTC Bus Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float TTCBusBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("TTC Bus Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public TTCBusBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: TTC Bus Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.YRTBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.YRTBoardingPenalty
+  id: YRTBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: YRTBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.YRTBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.YRTBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: YRTBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 52
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("YRT Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float YRTBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("YRT Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public YRTBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: YRT Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.VIVABoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.VIVABoardingPenalty
+  id: VIVABoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: VIVABoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.VIVABoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.VIVABoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: VIVABoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 55
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("VIVA Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float VIVABoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("VIVA Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public VIVABoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: VIVA Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.BramptonBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.BramptonBoardingPenalty
+  id: BramptonBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: BramptonBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.BramptonBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.BramptonBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BramptonBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 58
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Brampton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float BramptonBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Brampton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public BramptonBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Brampton Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ZUMBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ZUMBoardingPenalty
+  id: ZUMBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: ZUMBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.ZUMBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ZUMBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZUMBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 61
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("ZUM Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float ZUMBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("ZUM Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public ZUMBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: ZUM Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.MiWayBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.MiWayBoardingPenalty
+  id: MiWayBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: MiWayBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.MiWayBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.MiWayBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MiWayBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 64
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("MiWay Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float MiWayBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("MiWay Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public MiWayBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: MiWay Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.DurhamBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.DurhamBoardingPenalty
+  id: DurhamBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: DurhamBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.DurhamBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.DurhamBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DurhamBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 67
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Durham Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float DurhamBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Durham Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public DurhamBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Durham Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HaltonBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HaltonBoardingPenalty
+  id: HaltonBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: HaltonBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.HaltonBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HaltonBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HaltonBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 70
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Halton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float HaltonBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Halton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public HaltonBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Halton Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HSRBoardingPenalty
+  commentId: F:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HSRBoardingPenalty
+  id: HSRBoardingPenalty
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: HSRBoardingPenalty
+  nameWithType: AssignV4BoardingPenalty.HSRBoardingPenalty
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.HSRBoardingPenalty
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: HSRBoardingPenalty
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 73
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: >-
+      [RunParameter("Hamilton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")]
+
+      public float HSRBoardingPenalty
+    return:
+      type: System.Single
+    content.vb: >-
+      <RunParameter("Hamilton Boarding Penalty", 1F, "Boarding penalty applied to subway lines")>
+
+      Public HSRBoardingPenalty As Single
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Hamilton Boarding Penalty
+    - type: System.Single
+      value: 1
+    - type: System.String
+      value: Boarding penalty applied to subway lines
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: AssignV4BoardingPenalty.Execute(Controller)
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 79
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+  commentId: P:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+  id: Name
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AssignV4BoardingPenalty.Name
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 135
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+  commentId: P:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+  id: Progress
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: AssignV4BoardingPenalty.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 141
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+  commentId: P:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: AssignV4BoardingPenalty.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 147
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: AssignV4BoardingPenalty.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/GTAModel/NetworkAssignment/AssignV4BoardingPenalty.cs
+    startLine: 153
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.NetworkAssignment
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: AssignV4BoardingPenalty.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.GTAModel.NetworkAssignment
+  commentId: N:TMG.GTAModel.NetworkAssignment
+  name: TMG.GTAModel.NetworkAssignment
+  nameWithType: TMG.GTAModel.NetworkAssignment
+  fullName: TMG.GTAModel.NetworkAssignment
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: Datastructure.RangeSet
+  commentId: T:Datastructure.RangeSet
+  parent: Datastructure
+  name: RangeSet
+  nameWithType: RangeSet
+  fullName: Datastructure.RangeSet
+- uid: Datastructure
+  commentId: N:Datastructure
+  name: Datastructure
+  nameWithType: Datastructure
+  fullName: Datastructure
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute
+  name: Execute
+  nameWithType: AssignV4BoardingPenalty.Execute
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+  name: Name
+  nameWithType: AssignV4BoardingPenalty.Name
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+  name: Progress
+  nameWithType: AssignV4BoardingPenalty.Progress
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+  name: ProgressColour
+  nameWithType: AssignV4BoardingPenalty.ProgressColour
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: AssignV4BoardingPenalty.RuntimeValidation
+  fullName: TMG.GTAModel.NetworkAssignment.AssignV4BoardingPenalty.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

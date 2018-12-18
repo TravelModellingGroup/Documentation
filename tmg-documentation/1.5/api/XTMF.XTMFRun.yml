@@ -1,0 +1,2953 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.XTMFRun
+  commentId: T:XTMF.XTMFRun
+  id: XTMFRun
+  parent: XTMF
+  children:
+  - XTMF.XTMFRun.#ctor(System.String,System.String,XTMF.IConfiguration)
+  - XTMF.XTMFRun.AlertValidationStarting
+  - XTMF.XTMFRun.ClearFolder(System.String)
+  - XTMF.XTMFRun.Configuration
+  - XTMF.XTMFRun.CreateFromSingleError(XTMF.ErrorWithPath)
+  - XTMF.XTMFRun.CreateLocalRun(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  - XTMF.XTMFRun.CreateLocalRun(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  - XTMF.XTMFRun.CreateRemoteClient(XTMF.Configuration,System.String,System.String,System.String)
+  - XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  - XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  - XTMF.XTMFRun.DeepExitRequest
+  - XTMF.XTMFRun.Dispose
+  - XTMF.XTMFRun.Dispose(System.Boolean)
+  - XTMF.XTMFRun.ExitRequest
+  - XTMF.XTMFRun.Finalize
+  - XTMF.XTMFRun.GetInnermostError(System.Exception@)
+  - XTMF.XTMFRun.GlobalLogger
+  - XTMF.XTMFRun.InvokeRunCompleted
+  - XTMF.XTMFRun.InvokeRuntimeError(XTMF.ErrorWithPath)
+  - XTMF.XTMFRun.InvokeRuntimeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  - XTMF.XTMFRun.InvokeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  - XTMF.XTMFRun.ModelSystemStructureModelRoot
+  - XTMF.XTMFRun.MST
+  - XTMF.XTMFRun.PollColour
+  - XTMF.XTMFRun.PollProgress
+  - XTMF.XTMFRun.PollStatusMessage
+  - XTMF.XTMFRun.ProjectSavedByRun
+  - XTMF.XTMFRun.RunCompleted
+  - XTMF.XTMFRun.RunDirectory
+  - XTMF.XTMFRun.RunMessage
+  - XTMF.XTMFRun.RunName
+  - XTMF.XTMFRun.RunsRemotely
+  - XTMF.XTMFRun.RunStarted
+  - XTMF.XTMFRun.RuntimeError
+  - XTMF.XTMFRun.RunTimeValidation(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{XTMF.ErrorWithPath},XTMF.IModelSystemStructure)
+  - XTMF.XTMFRun.RuntimeValidationError
+  - XTMF.XTMFRun.SaveErrorMessage(XTMF.ErrorWithPath)
+  - XTMF.XTMFRun.SendProjectSaved(XTMF.ModelSystemStructure)
+  - XTMF.XTMFRun.SendRunMessage(System.String)
+  - XTMF.XTMFRun.SetStatusToRunning
+  - XTMF.XTMFRun.Start
+  - XTMF.XTMFRun.TerminateRun
+  - XTMF.XTMFRun.Test
+  - XTMF.XTMFRun.ValidationError
+  - XTMF.XTMFRun.ValidationStarting
+  - XTMF.XTMFRun.Wait
+  langs:
+  - csharp
+  - vb
+  name: XTMFRun
+  nameWithType: XTMFRun
+  fullName: XTMF.XTMFRun
+  type: Class
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: XTMFRun
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 41
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThis class encapsulates the concept of a Model System run.\nSubclasses of this will allow for remote model system execution.\n"
+  example: []
+  syntax:
+    content: 'public abstract class XTMFRun : IDisposable'
+    content.vb: >-
+      Public MustInherit Class XTMFRun
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: XTMF.XTMFRun.MST
+  commentId: P:XTMF.XTMFRun.MST
+  id: MST
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: MST
+  nameWithType: XTMFRun.MST
+  fullName: XTMF.XTMFRun.MST
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MST
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 43
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public IModelSystemTemplate MST { get; protected set; }
+    parameters: []
+    return:
+      type: XTMF.IModelSystemTemplate
+    content.vb: Public Property MST As IModelSystemTemplate
+  overload: XTMF.XTMFRun.MST*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: XTMF.XTMFRun.Configuration
+  commentId: P:XTMF.XTMFRun.Configuration
+  id: Configuration
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: XTMFRun.Configuration
+  fullName: XTMF.XTMFRun.Configuration
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Configuration
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 47
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe link to XTMF&apos;s settings\n"
+  example: []
+  syntax:
+    content: public IConfiguration Configuration { get; }
+    parameters: []
+    return:
+      type: XTMF.IConfiguration
+    content.vb: Public ReadOnly Property Configuration As IConfiguration
+  overload: XTMF.XTMFRun.Configuration*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.XTMFRun.RunName
+  commentId: P:XTMF.XTMFRun.RunName
+  id: RunName
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunName
+  nameWithType: XTMFRun.RunName
+  fullName: XTMF.XTMFRun.RunName
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunName
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 52
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe name of this run\n"
+  example: []
+  syntax:
+    content: public string RunName { get; protected set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RunName As String
+  overload: XTMF.XTMFRun.RunName*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: XTMF.XTMFRun.ModelSystemStructureModelRoot
+  commentId: P:XTMF.XTMFRun.ModelSystemStructureModelRoot
+  id: ModelSystemStructureModelRoot
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ModelSystemStructureModelRoot
+  nameWithType: XTMFRun.ModelSystemStructureModelRoot
+  fullName: XTMF.XTMFRun.ModelSystemStructureModelRoot
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ModelSystemStructureModelRoot
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 57
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nThe model system root if we are using a past run\n"
+  example: []
+  syntax:
+    content: public ModelSystemStructureModel ModelSystemStructureModelRoot { get; protected set; }
+    parameters: []
+    return:
+      type: XTMF.ModelSystemStructureModel
+    content.vb: Public Property ModelSystemStructureModelRoot As ModelSystemStructureModel
+  overload: XTMF.XTMFRun.ModelSystemStructureModelRoot*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: XTMF.XTMFRun.RunDirectory
+  commentId: P:XTMF.XTMFRun.RunDirectory
+  id: RunDirectory
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunDirectory
+  nameWithType: XTMFRun.RunDirectory
+  fullName: XTMF.XTMFRun.RunDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunDirectory
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 59
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public string RunDirectory { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property RunDirectory As String
+  overload: XTMF.XTMFRun.RunDirectory*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: XTMF.XTMFRun.RunsRemotely
+  commentId: P:XTMF.XTMFRun.RunsRemotely
+  id: RunsRemotely
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunsRemotely
+  nameWithType: XTMFRun.RunsRemotely
+  fullName: XTMF.XTMFRun.RunsRemotely
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunsRemotely
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 61
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public abstract bool RunsRemotely { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride ReadOnly Property RunsRemotely As Boolean
+  overload: XTMF.XTMFRun.RunsRemotely*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: XTMF.XTMFRun.GlobalLogger
+  commentId: P:XTMF.XTMFRun.GlobalLogger
+  id: GlobalLogger
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: GlobalLogger
+  nameWithType: XTMFRun.GlobalLogger
+  fullName: XTMF.XTMFRun.GlobalLogger
+  type: Property
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GlobalLogger
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 67
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static ILogger GlobalLogger { get; }
+    parameters: []
+    return:
+      type: XTMF.Logging.ILogger
+    content.vb: Public Shared ReadOnly Property GlobalLogger As ILogger
+  overload: XTMF.XTMFRun.GlobalLogger*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: XTMF.XTMFRun.#ctor(System.String,System.String,XTMF.IConfiguration)
+  commentId: M:XTMF.XTMFRun.#ctor(System.String,System.String,XTMF.IConfiguration)
+  id: '#ctor(System.String,System.String,XTMF.IConfiguration)'
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: XTMFRun(String, String, IConfiguration)
+  nameWithType: XTMFRun.XTMFRun(String, String, IConfiguration)
+  fullName: XTMF.XTMFRun.XTMFRun(System.String, System.String, XTMF.IConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 75
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected XTMFRun(string runName, string runDirectory, IConfiguration config)
+    parameters:
+    - id: runName
+      type: System.String
+      description: ''
+    - id: runDirectory
+      type: System.String
+      description: ''
+    - id: config
+      type: XTMF.IConfiguration
+      description: ''
+    content.vb: Protected Sub New(runName As String, runDirectory As String, config As IConfiguration)
+  overload: XTMF.XTMFRun.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.CreateLocalRun(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  commentId: M:XTMF.XTMFRun.CreateLocalRun(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  id: CreateLocalRun(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateLocalRun(Project, Int32, ModelSystemModel, Configuration, String, Boolean)
+  nameWithType: XTMFRun.CreateLocalRun(Project, Int32, ModelSystemModel, Configuration, String, Boolean)
+  fullName: XTMF.XTMFRun.CreateLocalRun(XTMF.Project, System.Int32, XTMF.ModelSystemModel, XTMF.Configuration, System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateLocalRun
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 112
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static XTMFRun CreateLocalRun(Project project, int modelSystemIndex, ModelSystemModel root, Configuration config, string runName, bool overwrite = false)
+    parameters:
+    - id: project
+      type: XTMF.Project
+    - id: modelSystemIndex
+      type: System.Int32
+    - id: root
+      type: XTMF.ModelSystemModel
+    - id: config
+      type: XTMF.Configuration
+    - id: runName
+      type: System.String
+    - id: overwrite
+      type: System.Boolean
+    return:
+      type: XTMF.XTMFRun
+    content.vb: Public Shared Function CreateLocalRun(project As Project, modelSystemIndex As Integer, root As ModelSystemModel, config As Configuration, runName As String, overwrite As Boolean = False) As XTMFRun
+  overload: XTMF.XTMFRun.CreateLocalRun*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  commentId: M:XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  id: CreateRemoteHost(XTMF.Project,System.Int32,XTMF.ModelSystemModel,XTMF.Configuration,System.String,System.Boolean)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateRemoteHost(Project, Int32, ModelSystemModel, Configuration, String, Boolean)
+  nameWithType: XTMFRun.CreateRemoteHost(Project, Int32, ModelSystemModel, Configuration, String, Boolean)
+  fullName: XTMF.XTMFRun.CreateRemoteHost(XTMF.Project, System.Int32, XTMF.ModelSystemModel, XTMF.Configuration, System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateRemoteHost
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 117
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static XTMFRun CreateRemoteHost(Project project, int modelSystemIndex, ModelSystemModel root, Configuration config, string runName, bool overwrite = false)
+    parameters:
+    - id: project
+      type: XTMF.Project
+    - id: modelSystemIndex
+      type: System.Int32
+    - id: root
+      type: XTMF.ModelSystemModel
+    - id: config
+      type: XTMF.Configuration
+    - id: runName
+      type: System.String
+    - id: overwrite
+      type: System.Boolean
+    return:
+      type: XTMF.XTMFRun
+    content.vb: Public Shared Function CreateRemoteHost(project As Project, modelSystemIndex As Integer, root As ModelSystemModel, config As Configuration, runName As String, overwrite As Boolean = False) As XTMFRun
+  overload: XTMF.XTMFRun.CreateRemoteHost*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XTMF.XTMFRun.CreateLocalRun(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  commentId: M:XTMF.XTMFRun.CreateLocalRun(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  id: CreateLocalRun(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateLocalRun(Project, ModelSystemStructureModel, Configuration, String, Boolean)
+  nameWithType: XTMFRun.CreateLocalRun(Project, ModelSystemStructureModel, Configuration, String, Boolean)
+  fullName: XTMF.XTMFRun.CreateLocalRun(XTMF.Project, XTMF.ModelSystemStructureModel, XTMF.Configuration, System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateLocalRun
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 124
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static XTMFRun CreateLocalRun(Project project, ModelSystemStructureModel root, Configuration configuration, string runName, bool overwrite = false)
+    parameters:
+    - id: project
+      type: XTMF.Project
+    - id: root
+      type: XTMF.ModelSystemStructureModel
+    - id: configuration
+      type: XTMF.Configuration
+    - id: runName
+      type: System.String
+    - id: overwrite
+      type: System.Boolean
+    return:
+      type: XTMF.XTMFRun
+    content.vb: Public Shared Function CreateLocalRun(project As Project, root As ModelSystemStructureModel, configuration As Configuration, runName As String, overwrite As Boolean = False) As XTMFRun
+  overload: XTMF.XTMFRun.CreateLocalRun*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  commentId: M:XTMF.XTMFRun.CreateRemoteHost(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  id: CreateRemoteHost(XTMF.Project,XTMF.ModelSystemStructureModel,XTMF.Configuration,System.String,System.Boolean)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateRemoteHost(Project, ModelSystemStructureModel, Configuration, String, Boolean)
+  nameWithType: XTMFRun.CreateRemoteHost(Project, ModelSystemStructureModel, Configuration, String, Boolean)
+  fullName: XTMF.XTMFRun.CreateRemoteHost(XTMF.Project, XTMF.ModelSystemStructureModel, XTMF.Configuration, System.String, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateRemoteHost
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 129
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static XTMFRun CreateRemoteHost(Project project, ModelSystemStructureModel root, Configuration config, string runName, bool overwrite = false)
+    parameters:
+    - id: project
+      type: XTMF.Project
+    - id: root
+      type: XTMF.ModelSystemStructureModel
+    - id: config
+      type: XTMF.Configuration
+    - id: runName
+      type: System.String
+    - id: overwrite
+      type: System.Boolean
+    return:
+      type: XTMF.XTMFRun
+    content.vb: Public Shared Function CreateRemoteHost(project As Project, root As ModelSystemStructureModel, config As Configuration, runName As String, overwrite As Boolean = False) As XTMFRun
+  overload: XTMF.XTMFRun.CreateRemoteHost*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XTMF.XTMFRun.CreateRemoteClient(XTMF.Configuration,System.String,System.String,System.String)
+  commentId: M:XTMF.XTMFRun.CreateRemoteClient(XTMF.Configuration,System.String,System.String,System.String)
+  id: CreateRemoteClient(XTMF.Configuration,System.String,System.String,System.String)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateRemoteClient(Configuration, String, String, String)
+  nameWithType: XTMFRun.CreateRemoteClient(Configuration, String, String, String)
+  fullName: XTMF.XTMFRun.CreateRemoteClient(XTMF.Configuration, System.String, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateRemoteClient
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 135
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public static XTMFRun CreateRemoteClient(Configuration configuration, string runName, string runDirectory, string modelSystem)
+    parameters:
+    - id: configuration
+      type: XTMF.Configuration
+    - id: runName
+      type: System.String
+    - id: runDirectory
+      type: System.String
+    - id: modelSystem
+      type: System.String
+    return:
+      type: XTMF.XTMFRun
+    content.vb: Public Shared Function CreateRemoteClient(configuration As Configuration, runName As String, runDirectory As String, modelSystem As String) As XTMFRun
+  overload: XTMF.XTMFRun.CreateRemoteClient*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: XTMF.XTMFRun.ClearFolder(System.String)
+  commentId: M:XTMF.XTMFRun.ClearFolder(System.String)
+  id: ClearFolder(System.String)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ClearFolder(String)
+  nameWithType: XTMFRun.ClearFolder(String)
+  fullName: XTMF.XTMFRun.ClearFolder(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ClearFolder
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 140
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected static void ClearFolder(string path)
+    parameters:
+    - id: path
+      type: System.String
+    content.vb: Protected Shared Sub ClearFolder(path As String)
+  overload: XTMF.XTMFRun.ClearFolder*
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+- uid: XTMF.XTMFRun.RunMessage
+  commentId: E:XTMF.XTMFRun.RunMessage
+  id: RunMessage
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunMessage
+  nameWithType: XTMFRun.RunMessage
+  fullName: XTMF.XTMFRun.RunMessage
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunMessage
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 153
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that is fired when the run sends back a message\n"
+  example: []
+  syntax:
+    content: public event Action<string> RunMessage
+    return:
+      type: System.Action{System.String}
+    content.vb: Public Event RunMessage As Action(Of String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.RunCompleted
+  commentId: E:XTMF.XTMFRun.RunCompleted
+  id: RunCompleted
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunCompleted
+  nameWithType: XTMFRun.RunCompleted
+  fullName: XTMF.XTMFRun.RunCompleted
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunCompleted
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 158
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires when the run completes successfully\n"
+  example: []
+  syntax:
+    content: public event Action RunCompleted
+    return:
+      type: System.Action
+    content.vb: Public Event RunCompleted As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.RunStarted
+  commentId: E:XTMF.XTMFRun.RunStarted
+  id: RunStarted
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunStarted
+  nameWithType: XTMFRun.RunStarted
+  fullName: XTMF.XTMFRun.RunStarted
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunStarted
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 164
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires when all of the validation has completed and the model system\nhas started executing.\n"
+  example: []
+  syntax:
+    content: public event Action RunStarted
+    return:
+      type: System.Action
+    content.vb: Public Event RunStarted As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.RuntimeError
+  commentId: E:XTMF.XTMFRun.RuntimeError
+  id: RuntimeError
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RuntimeError
+  nameWithType: XTMFRun.RuntimeError
+  fullName: XTMF.XTMFRun.RuntimeError
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 169
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires if a runtime error occurs, this includes out of memory exceptions\n"
+  example: []
+  syntax:
+    content: public event Action<ErrorWithPath> RuntimeError
+    return:
+      type: System.Action{XTMF.ErrorWithPath}
+    content.vb: Public Event RuntimeError As Action(Of ErrorWithPath)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.RuntimeValidationError
+  commentId: E:XTMF.XTMFRun.RuntimeValidationError
+  id: RuntimeValidationError
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidationError
+  nameWithType: XTMFRun.RuntimeValidationError
+  fullName: XTMF.XTMFRun.RuntimeValidationError
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidationError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 174
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires when the model ends in an error during runtime validation\n"
+  example: []
+  syntax:
+    content: public event Action<List<ErrorWithPath>> RuntimeValidationError
+    return:
+      type: System.Action{System.Collections.Generic.List{XTMF.ErrorWithPath}}
+    content.vb: Public Event RuntimeValidationError As Action(Of List(Of ErrorWithPath))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.ValidationError
+  commentId: E:XTMF.XTMFRun.ValidationError
+  id: ValidationError
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ValidationError
+  nameWithType: XTMFRun.ValidationError
+  fullName: XTMF.XTMFRun.ValidationError
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidationError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 179
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires when the Model does not pass validation\n"
+  example: []
+  syntax:
+    content: public event Action<List<ErrorWithPath>> ValidationError
+    return:
+      type: System.Action{System.Collections.Generic.List{XTMF.ErrorWithPath}}
+    content.vb: Public Event ValidationError As Action(Of List(Of ErrorWithPath))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.Test
+  commentId: E:XTMF.XTMFRun.Test
+  id: Test
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Test
+  nameWithType: XTMFRun.Test
+  fullName: XTMF.XTMFRun.Test
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Test
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 181
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public event Action Test
+    return:
+      type: System.Action
+    content.vb: Public Event Test As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.ValidationStarting
+  commentId: E:XTMF.XTMFRun.ValidationStarting
+  id: ValidationStarting
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ValidationStarting
+  nameWithType: XTMFRun.ValidationStarting
+  fullName: XTMF.XTMFRun.ValidationStarting
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ValidationStarting
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 186
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event that fires when Model Validation starts\n"
+  example: []
+  syntax:
+    content: public event Action ValidationStarting
+    return:
+      type: System.Action
+    content.vb: Public Event ValidationStarting As Action
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.ProjectSavedByRun
+  commentId: E:XTMF.XTMFRun.ProjectSavedByRun
+  id: ProjectSavedByRun
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ProjectSavedByRun
+  nameWithType: XTMFRun.ProjectSavedByRun
+  fullName: XTMF.XTMFRun.ProjectSavedByRun
+  type: Event
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectSavedByRun
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 191
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAn event the fires when the running project has saved itself\n"
+  example: []
+  syntax:
+    content: public event Action<XTMFRun, ModelSystemStructure> ProjectSavedByRun
+    return:
+      type: System.Action{XTMF.XTMFRun,XTMF.ModelSystemStructure}
+    content.vb: Public Event ProjectSavedByRun As Action(Of XTMFRun, ModelSystemStructure)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.ExitRequest
+  commentId: M:XTMF.XTMFRun.ExitRequest
+  id: ExitRequest
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: XTMFRun.ExitRequest()
+  fullName: XTMF.XTMFRun.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 198
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAttempt to ask the model system to exit.\nEven if this returns true it will not happen right away.\n"
+  example: []
+  syntax:
+    content: public abstract bool ExitRequest()
+    return:
+      type: System.Boolean
+      description: If the model system accepted the exit request
+    content.vb: Public MustOverride Function ExitRequest As Boolean
+  overload: XTMF.XTMFRun.ExitRequest*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.PollColour
+  commentId: M:XTMF.XTMFRun.PollColour
+  id: PollColour
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: PollColour()
+  nameWithType: XTMFRun.PollColour()
+  fullName: XTMF.XTMFRun.PollColour()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PollColour
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 204
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGet the currently requested colour from the model system\n"
+  example: []
+  syntax:
+    content: public abstract Tuple<byte, byte, byte> PollColour()
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+      description: The colour requested by the model system
+    content.vb: Public MustOverride Function PollColour As Tuple(Of Byte, Byte, Byte)
+  overload: XTMF.XTMFRun.PollColour*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.PollProgress
+  commentId: M:XTMF.XTMFRun.PollProgress
+  id: PollProgress
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: PollProgress()
+  nameWithType: XTMFRun.PollProgress()
+  fullName: XTMF.XTMFRun.PollProgress()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PollProgress
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 210
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGet the current progress for this run\n"
+  example: []
+  syntax:
+    content: public abstract float PollProgress()
+    return:
+      type: System.Single
+      description: The current progress between 0 and 1
+    content.vb: Public MustOverride Function PollProgress As Single
+  overload: XTMF.XTMFRun.PollProgress*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.PollStatusMessage
+  commentId: M:XTMF.XTMFRun.PollStatusMessage
+  id: PollStatusMessage
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: PollStatusMessage()
+  nameWithType: XTMFRun.PollStatusMessage()
+  fullName: XTMF.XTMFRun.PollStatusMessage()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PollStatusMessage
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 217
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nGet the status message for this run\n"
+  example: []
+  syntax:
+    content: public abstract string PollStatusMessage()
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public MustOverride Function PollStatusMessage As String
+  overload: XTMF.XTMFRun.PollStatusMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.DeepExitRequest
+  commentId: M:XTMF.XTMFRun.DeepExitRequest
+  id: DeepExitRequest
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: DeepExitRequest()
+  nameWithType: XTMFRun.DeepExitRequest()
+  fullName: XTMF.XTMFRun.DeepExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DeepExitRequest
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 225
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nAttempts to notify all modules part of the current model system structure\nwith an exit request usually generated by user interaction. Any module inheriting\nIModelSystemTemplate will be sent an ExitRequest.\n"
+  example: []
+  syntax:
+    content: public abstract bool DeepExitRequest()
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public MustOverride Function DeepExitRequest As Boolean
+  overload: XTMF.XTMFRun.DeepExitRequest*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.Start
+  commentId: M:XTMF.XTMFRun.Start
+  id: Start
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: XTMFRun.Start()
+  fullName: XTMF.XTMFRun.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 230
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nStart the run on a different thread.\n"
+  example: []
+  syntax:
+    content: public abstract void Start()
+    content.vb: Public MustOverride Sub Start
+  overload: XTMF.XTMFRun.Start*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.Wait
+  commentId: M:XTMF.XTMFRun.Wait
+  id: Wait
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Wait()
+  nameWithType: XTMFRun.Wait()
+  fullName: XTMF.XTMFRun.Wait()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Wait
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 235
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nBlocks execution until the run has completed.\n"
+  example: []
+  syntax:
+    content: public abstract void Wait()
+    content.vb: Public MustOverride Sub Wait
+  overload: XTMF.XTMFRun.Wait*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.TerminateRun
+  commentId: M:XTMF.XTMFRun.TerminateRun
+  id: TerminateRun
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: TerminateRun()
+  nameWithType: XTMFRun.TerminateRun()
+  fullName: XTMF.XTMFRun.TerminateRun()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: TerminateRun
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 237
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public abstract void TerminateRun()
+    content.vb: Public MustOverride Sub TerminateRun
+  overload: XTMF.XTMFRun.TerminateRun*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: XTMF.XTMFRun.AlertValidationStarting
+  commentId: M:XTMF.XTMFRun.AlertValidationStarting
+  id: AlertValidationStarting
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: AlertValidationStarting()
+  nameWithType: XTMFRun.AlertValidationStarting()
+  fullName: XTMF.XTMFRun.AlertValidationStarting()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AlertValidationStarting
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 239
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void AlertValidationStarting()
+    content.vb: Protected Sub AlertValidationStarting
+  overload: XTMF.XTMFRun.AlertValidationStarting*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.InvokeRunCompleted
+  commentId: M:XTMF.XTMFRun.InvokeRunCompleted
+  id: InvokeRunCompleted
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: InvokeRunCompleted()
+  nameWithType: XTMFRun.InvokeRunCompleted()
+  fullName: XTMF.XTMFRun.InvokeRunCompleted()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InvokeRunCompleted
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 244
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void InvokeRunCompleted()
+    content.vb: Protected Sub InvokeRunCompleted
+  overload: XTMF.XTMFRun.InvokeRunCompleted*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.InvokeRuntimeError(XTMF.ErrorWithPath)
+  commentId: M:XTMF.XTMFRun.InvokeRuntimeError(XTMF.ErrorWithPath)
+  id: InvokeRuntimeError(XTMF.ErrorWithPath)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: InvokeRuntimeError(ErrorWithPath)
+  nameWithType: XTMFRun.InvokeRuntimeError(ErrorWithPath)
+  fullName: XTMF.XTMFRun.InvokeRuntimeError(XTMF.ErrorWithPath)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InvokeRuntimeError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 249
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void InvokeRuntimeError(ErrorWithPath error)
+    parameters:
+    - id: error
+      type: XTMF.ErrorWithPath
+    content.vb: Protected Sub InvokeRuntimeError(error As ErrorWithPath)
+  overload: XTMF.XTMFRun.InvokeRuntimeError*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.SaveErrorMessage(XTMF.ErrorWithPath)
+  commentId: M:XTMF.XTMFRun.SaveErrorMessage(XTMF.ErrorWithPath)
+  id: SaveErrorMessage(XTMF.ErrorWithPath)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: SaveErrorMessage(ErrorWithPath)
+  nameWithType: XTMFRun.SaveErrorMessage(ErrorWithPath)
+  fullName: XTMF.XTMFRun.SaveErrorMessage(XTMF.ErrorWithPath)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SaveErrorMessage
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 268
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected static void SaveErrorMessage(ErrorWithPath error)
+    parameters:
+    - id: error
+      type: XTMF.ErrorWithPath
+      description: ''
+    content.vb: Protected Shared Sub SaveErrorMessage(error As ErrorWithPath)
+  overload: XTMF.XTMFRun.SaveErrorMessage*
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+- uid: XTMF.XTMFRun.InvokeRuntimeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  commentId: M:XTMF.XTMFRun.InvokeRuntimeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  id: InvokeRuntimeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: InvokeRuntimeValidationError(List<ErrorWithPath>)
+  nameWithType: XTMFRun.InvokeRuntimeValidationError(List<ErrorWithPath>)
+  fullName: XTMF.XTMFRun.InvokeRuntimeValidationError(System.Collections.Generic.List<XTMF.ErrorWithPath>)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InvokeRuntimeValidationError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 283
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: protected void InvokeRuntimeValidationError(List<ErrorWithPath> errorMessage)
+    parameters:
+    - id: errorMessage
+      type: System.Collections.Generic.List{XTMF.ErrorWithPath}
+      description: ''
+    content.vb: Protected Sub InvokeRuntimeValidationError(errorMessage As List(Of ErrorWithPath))
+  overload: XTMF.XTMFRun.InvokeRuntimeValidationError*
+  nameWithType.vb: XTMFRun.InvokeRuntimeValidationError(List(Of ErrorWithPath))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: XTMF.XTMFRun.InvokeRuntimeValidationError(System.Collections.Generic.List(Of XTMF.ErrorWithPath))
+  name.vb: InvokeRuntimeValidationError(List(Of ErrorWithPath))
+- uid: XTMF.XTMFRun.InvokeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  commentId: M:XTMF.XTMFRun.InvokeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  id: InvokeValidationError(System.Collections.Generic.List{XTMF.ErrorWithPath})
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: InvokeValidationError(List<ErrorWithPath>)
+  nameWithType: XTMFRun.InvokeValidationError(List<ErrorWithPath>)
+  fullName: XTMF.XTMFRun.InvokeValidationError(System.Collections.Generic.List<XTMF.ErrorWithPath>)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InvokeValidationError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 290
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void InvokeValidationError(List<ErrorWithPath> errorMessage)
+    parameters:
+    - id: errorMessage
+      type: System.Collections.Generic.List{XTMF.ErrorWithPath}
+    content.vb: Protected Sub InvokeValidationError(errorMessage As List(Of ErrorWithPath))
+  overload: XTMF.XTMFRun.InvokeValidationError*
+  nameWithType.vb: XTMFRun.InvokeValidationError(List(Of ErrorWithPath))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: XTMF.XTMFRun.InvokeValidationError(System.Collections.Generic.List(Of XTMF.ErrorWithPath))
+  name.vb: InvokeValidationError(List(Of ErrorWithPath))
+- uid: XTMF.XTMFRun.SetStatusToRunning
+  commentId: M:XTMF.XTMFRun.SetStatusToRunning
+  id: SetStatusToRunning
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: SetStatusToRunning()
+  nameWithType: XTMFRun.SetStatusToRunning()
+  fullName: XTMF.XTMFRun.SetStatusToRunning()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SetStatusToRunning
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 295
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void SetStatusToRunning()
+    content.vb: Protected Sub SetStatusToRunning
+  overload: XTMF.XTMFRun.SetStatusToRunning*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.Dispose(System.Boolean)
+  commentId: M:XTMF.XTMFRun.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  nameWithType: XTMFRun.Dispose(Boolean)
+  fullName: XTMF.XTMFRun.Dispose(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 302
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: XTMF.XTMFRun.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: XTMF.XTMFRun.Finalize
+  commentId: M:XTMF.XTMFRun.Finalize
+  id: Finalize
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Finalize()
+  nameWithType: XTMFRun.Finalize()
+  fullName: XTMF.XTMFRun.Finalize()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Finalize
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 319
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void Finalize()
+    content.vb: Protected Sub Finalize
+  overload: XTMF.XTMFRun.Finalize*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.Dispose
+  commentId: M:XTMF.XTMFRun.Dispose
+  id: Dispose
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: XTMFRun.Dispose()
+  fullName: XTMF.XTMFRun.Dispose()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Dispose
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 324
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: XTMF.XTMFRun.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: XTMF.XTMFRun.CreateFromSingleError(XTMF.ErrorWithPath)
+  commentId: M:XTMF.XTMFRun.CreateFromSingleError(XTMF.ErrorWithPath)
+  id: CreateFromSingleError(XTMF.ErrorWithPath)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: CreateFromSingleError(ErrorWithPath)
+  nameWithType: XTMFRun.CreateFromSingleError(ErrorWithPath)
+  fullName: XTMF.XTMFRun.CreateFromSingleError(XTMF.ErrorWithPath)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CreateFromSingleError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 330
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected static List<ErrorWithPath> CreateFromSingleError(ErrorWithPath error)
+    parameters:
+    - id: error
+      type: XTMF.ErrorWithPath
+    return:
+      type: System.Collections.Generic.List{XTMF.ErrorWithPath}
+    content.vb: Protected Shared Function CreateFromSingleError(error As ErrorWithPath) As List(Of ErrorWithPath)
+  overload: XTMF.XTMFRun.CreateFromSingleError*
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+- uid: XTMF.XTMFRun.GetInnermostError(System.Exception@)
+  commentId: M:XTMF.XTMFRun.GetInnermostError(System.Exception@)
+  id: GetInnermostError(System.Exception@)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: GetInnermostError(ref Exception)
+  nameWithType: XTMFRun.GetInnermostError(ref Exception)
+  fullName: XTMF.XTMFRun.GetInnermostError(ref System.Exception)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetInnermostError
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 338
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected static void GetInnermostError(ref Exception caughtError)
+    parameters:
+    - id: caughtError
+      type: System.Exception
+    content.vb: Protected Shared Sub GetInnermostError(ByRef caughtError As Exception)
+  overload: XTMF.XTMFRun.GetInnermostError*
+  nameWithType.vb: XTMFRun.GetInnermostError(ByRef Exception)
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+  fullName.vb: XTMF.XTMFRun.GetInnermostError(ByRef System.Exception)
+  name.vb: GetInnermostError(ByRef Exception)
+- uid: XTMF.XTMFRun.RunTimeValidation(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{XTMF.ErrorWithPath},XTMF.IModelSystemStructure)
+  commentId: M:XTMF.XTMFRun.RunTimeValidation(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{XTMF.ErrorWithPath},XTMF.IModelSystemStructure)
+  id: RunTimeValidation(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{XTMF.ErrorWithPath},XTMF.IModelSystemStructure)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: RunTimeValidation(List<Int32>, List<ErrorWithPath>, IModelSystemStructure)
+  nameWithType: XTMFRun.RunTimeValidation(List<Int32>, List<ErrorWithPath>, IModelSystemStructure)
+  fullName: XTMF.XTMFRun.RunTimeValidation(System.Collections.Generic.List<System.Int32>, System.Collections.Generic.List<XTMF.ErrorWithPath>, XTMF.IModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RunTimeValidation
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 352
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nDo a runtime validation check for the currently running model system\n"
+  example: []
+  syntax:
+    content: protected static bool RunTimeValidation(List<int> path, List<ErrorWithPath> errors, IModelSystemStructure currentPoint)
+    parameters:
+    - id: path
+      type: System.Collections.Generic.List{System.Int32}
+    - id: errors
+      type: System.Collections.Generic.List{XTMF.ErrorWithPath}
+    - id: currentPoint
+      type: XTMF.IModelSystemStructure
+      description: The module to look at, set this to the root to begin.
+    return:
+      type: System.Boolean
+      description: This will be false if there is an error, true otherwise
+    content.vb: Protected Shared Function RunTimeValidation(path As List(Of Integer), errors As List(Of ErrorWithPath), currentPoint As IModelSystemStructure) As Boolean
+  overload: XTMF.XTMFRun.RunTimeValidation*
+  nameWithType.vb: XTMFRun.RunTimeValidation(List(Of Int32), List(Of ErrorWithPath), IModelSystemStructure)
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+  fullName.vb: XTMF.XTMFRun.RunTimeValidation(System.Collections.Generic.List(Of System.Int32), System.Collections.Generic.List(Of XTMF.ErrorWithPath), XTMF.IModelSystemStructure)
+  name.vb: RunTimeValidation(List(Of Int32), List(Of ErrorWithPath), IModelSystemStructure)
+- uid: XTMF.XTMFRun.SendRunMessage(System.String)
+  commentId: M:XTMF.XTMFRun.SendRunMessage(System.String)
+  id: SendRunMessage(System.String)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: SendRunMessage(String)
+  nameWithType: XTMFRun.SendRunMessage(String)
+  fullName: XTMF.XTMFRun.SendRunMessage(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SendRunMessage
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 388
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  summary: "\nReport back that a message has been sent through the console.\n"
+  example: []
+  syntax:
+    content: protected void SendRunMessage(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: ''
+    content.vb: Protected Sub SendRunMessage(message As String)
+  overload: XTMF.XTMFRun.SendRunMessage*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.XTMFRun.SendProjectSaved(XTMF.ModelSystemStructure)
+  commentId: M:XTMF.XTMFRun.SendProjectSaved(XTMF.ModelSystemStructure)
+  id: SendProjectSaved(XTMF.ModelSystemStructure)
+  parent: XTMF.XTMFRun
+  langs:
+  - csharp
+  - vb
+  name: SendProjectSaved(ModelSystemStructure)
+  nameWithType: XTMFRun.SendProjectSaved(ModelSystemStructure)
+  fullName: XTMF.XTMFRun.SendProjectSaved(XTMF.ModelSystemStructure)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMF/XTMFRun.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SendProjectSaved
+    path: ../../../XTMF/XTMF/Code/XTMF/XTMFRun.cs
+    startLine: 396
+  assemblies:
+  - XTMF
+  namespace: XTMF
+  syntax:
+    content: protected void SendProjectSaved(ModelSystemStructure mss)
+    parameters:
+    - id: mss
+      type: XTMF.ModelSystemStructure
+    content.vb: Protected Sub SendProjectSaved(mss As ModelSystemStructure)
+  overload: XTMF.XTMFRun.SendProjectSaved*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.XTMFRun.MST*
+  commentId: Overload:XTMF.XTMFRun.MST
+  name: MST
+  nameWithType: XTMFRun.MST
+  fullName: XTMF.XTMFRun.MST
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.XTMFRun.Configuration*
+  commentId: Overload:XTMF.XTMFRun.Configuration
+  name: Configuration
+  nameWithType: XTMFRun.Configuration
+  fullName: XTMF.XTMFRun.Configuration
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: XTMF.XTMFRun.RunName*
+  commentId: Overload:XTMF.XTMFRun.RunName
+  name: RunName
+  nameWithType: XTMFRun.RunName
+  fullName: XTMF.XTMFRun.RunName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: XTMF.XTMFRun.ModelSystemStructureModelRoot*
+  commentId: Overload:XTMF.XTMFRun.ModelSystemStructureModelRoot
+  name: ModelSystemStructureModelRoot
+  nameWithType: XTMFRun.ModelSystemStructureModelRoot
+  fullName: XTMF.XTMFRun.ModelSystemStructureModelRoot
+- uid: XTMF.ModelSystemStructureModel
+  commentId: T:XTMF.ModelSystemStructureModel
+  parent: XTMF
+  name: ModelSystemStructureModel
+  nameWithType: ModelSystemStructureModel
+  fullName: XTMF.ModelSystemStructureModel
+- uid: XTMF.XTMFRun.RunDirectory*
+  commentId: Overload:XTMF.XTMFRun.RunDirectory
+  name: RunDirectory
+  nameWithType: XTMFRun.RunDirectory
+  fullName: XTMF.XTMFRun.RunDirectory
+- uid: XTMF.XTMFRun.RunsRemotely*
+  commentId: Overload:XTMF.XTMFRun.RunsRemotely
+  name: RunsRemotely
+  nameWithType: XTMFRun.RunsRemotely
+  fullName: XTMF.XTMFRun.RunsRemotely
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.XTMFRun.GlobalLogger*
+  commentId: Overload:XTMF.XTMFRun.GlobalLogger
+  name: GlobalLogger
+  nameWithType: XTMFRun.GlobalLogger
+  fullName: XTMF.XTMFRun.GlobalLogger
+- uid: XTMF.Logging.ILogger
+  commentId: T:XTMF.Logging.ILogger
+  parent: XTMF.Logging
+  name: ILogger
+  nameWithType: ILogger
+  fullName: XTMF.Logging.ILogger
+- uid: XTMF.Logging
+  commentId: N:XTMF.Logging
+  name: XTMF.Logging
+  nameWithType: XTMF.Logging
+  fullName: XTMF.Logging
+- uid: XTMF.XTMFRun.#ctor*
+  commentId: Overload:XTMF.XTMFRun.#ctor
+  name: XTMFRun
+  nameWithType: XTMFRun.XTMFRun
+  fullName: XTMF.XTMFRun.XTMFRun
+- uid: XTMF.XTMFRun.CreateLocalRun*
+  commentId: Overload:XTMF.XTMFRun.CreateLocalRun
+  name: CreateLocalRun
+  nameWithType: XTMFRun.CreateLocalRun
+  fullName: XTMF.XTMFRun.CreateLocalRun
+- uid: XTMF.Project
+  commentId: T:XTMF.Project
+  parent: XTMF
+  name: Project
+  nameWithType: Project
+  fullName: XTMF.Project
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: XTMF.ModelSystemModel
+  commentId: T:XTMF.ModelSystemModel
+  parent: XTMF
+  name: ModelSystemModel
+  nameWithType: ModelSystemModel
+  fullName: XTMF.ModelSystemModel
+- uid: XTMF.Configuration
+  commentId: T:XTMF.Configuration
+  parent: XTMF
+  name: Configuration
+  nameWithType: Configuration
+  fullName: XTMF.Configuration
+- uid: XTMF.XTMFRun
+  commentId: T:XTMF.XTMFRun
+  parent: XTMF
+  name: XTMFRun
+  nameWithType: XTMFRun
+  fullName: XTMF.XTMFRun
+- uid: XTMF.XTMFRun.CreateRemoteHost*
+  commentId: Overload:XTMF.XTMFRun.CreateRemoteHost
+  name: CreateRemoteHost
+  nameWithType: XTMFRun.CreateRemoteHost
+  fullName: XTMF.XTMFRun.CreateRemoteHost
+- uid: XTMF.XTMFRun.CreateRemoteClient*
+  commentId: Overload:XTMF.XTMFRun.CreateRemoteClient
+  name: CreateRemoteClient
+  nameWithType: XTMFRun.CreateRemoteClient
+  fullName: XTMF.XTMFRun.CreateRemoteClient
+- uid: XTMF.XTMFRun.ClearFolder*
+  commentId: Overload:XTMF.XTMFRun.ClearFolder
+  name: ClearFolder
+  nameWithType: XTMFRun.ClearFolder
+  fullName: XTMF.XTMFRun.ClearFolder
+- uid: System.Action{System.String}
+  commentId: T:System.Action{System.String}
+  parent: System
+  definition: System.Action`1
+  name: Action<String>
+  nameWithType: Action<String>
+  fullName: System.Action<System.String>
+  nameWithType.vb: Action(Of String)
+  fullName.vb: System.Action(Of System.String)
+  name.vb: Action(Of String)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Action{XTMF.ErrorWithPath}
+  commentId: T:System.Action{XTMF.ErrorWithPath}
+  parent: System
+  definition: System.Action`1
+  name: Action<ErrorWithPath>
+  nameWithType: Action<ErrorWithPath>
+  fullName: System.Action<XTMF.ErrorWithPath>
+  nameWithType.vb: Action(Of ErrorWithPath)
+  fullName.vb: System.Action(Of XTMF.ErrorWithPath)
+  name.vb: Action(Of ErrorWithPath)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{System.Collections.Generic.List{XTMF.ErrorWithPath}}
+  commentId: T:System.Action{System.Collections.Generic.List{XTMF.ErrorWithPath}}
+  parent: System
+  definition: System.Action`1
+  name: Action<List<ErrorWithPath>>
+  nameWithType: Action<List<ErrorWithPath>>
+  fullName: System.Action<System.Collections.Generic.List<XTMF.ErrorWithPath>>
+  nameWithType.vb: Action(Of List(Of ErrorWithPath))
+  fullName.vb: System.Action(Of System.Collections.Generic.List(Of XTMF.ErrorWithPath))
+  name.vb: Action(Of List(Of ErrorWithPath))
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action{XTMF.XTMFRun,XTMF.ModelSystemStructure}
+  commentId: T:System.Action{XTMF.XTMFRun,XTMF.ModelSystemStructure}
+  parent: System
+  definition: System.Action`2
+  name: Action<XTMFRun, ModelSystemStructure>
+  nameWithType: Action<XTMFRun, ModelSystemStructure>
+  fullName: System.Action<XTMF.XTMFRun, XTMF.ModelSystemStructure>
+  nameWithType.vb: Action(Of XTMFRun, ModelSystemStructure)
+  fullName.vb: System.Action(Of XTMF.XTMFRun, XTMF.ModelSystemStructure)
+  name.vb: Action(Of XTMFRun, ModelSystemStructure)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.XTMFRun
+    name: XTMFRun
+    nameWithType: XTMFRun
+    fullName: XTMF.XTMFRun
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.ModelSystemStructure
+    name: ModelSystemStructure
+    nameWithType: ModelSystemStructure
+    fullName: XTMF.ModelSystemStructure
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.XTMFRun
+    name: XTMFRun
+    nameWithType: XTMFRun
+    fullName: XTMF.XTMFRun
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.ModelSystemStructure
+    name: ModelSystemStructure
+    nameWithType: ModelSystemStructure
+    fullName: XTMF.ModelSystemStructure
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.XTMFRun.ExitRequest*
+  commentId: Overload:XTMF.XTMFRun.ExitRequest
+  name: ExitRequest
+  nameWithType: XTMFRun.ExitRequest
+  fullName: XTMF.XTMFRun.ExitRequest
+- uid: XTMF.XTMFRun.PollColour*
+  commentId: Overload:XTMF.XTMFRun.PollColour
+  name: PollColour
+  nameWithType: XTMFRun.PollColour
+  fullName: XTMF.XTMFRun.PollColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.XTMFRun.PollProgress*
+  commentId: Overload:XTMF.XTMFRun.PollProgress
+  name: PollProgress
+  nameWithType: XTMFRun.PollProgress
+  fullName: XTMF.XTMFRun.PollProgress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: XTMF.XTMFRun.PollStatusMessage*
+  commentId: Overload:XTMF.XTMFRun.PollStatusMessage
+  name: PollStatusMessage
+  nameWithType: XTMFRun.PollStatusMessage
+  fullName: XTMF.XTMFRun.PollStatusMessage
+- uid: XTMF.XTMFRun.DeepExitRequest*
+  commentId: Overload:XTMF.XTMFRun.DeepExitRequest
+  name: DeepExitRequest
+  nameWithType: XTMFRun.DeepExitRequest
+  fullName: XTMF.XTMFRun.DeepExitRequest
+- uid: XTMF.XTMFRun.Start*
+  commentId: Overload:XTMF.XTMFRun.Start
+  name: Start
+  nameWithType: XTMFRun.Start
+  fullName: XTMF.XTMFRun.Start
+- uid: XTMF.XTMFRun.Wait*
+  commentId: Overload:XTMF.XTMFRun.Wait
+  name: Wait
+  nameWithType: XTMFRun.Wait
+  fullName: XTMF.XTMFRun.Wait
+- uid: XTMF.XTMFRun.TerminateRun*
+  commentId: Overload:XTMF.XTMFRun.TerminateRun
+  name: TerminateRun
+  nameWithType: XTMFRun.TerminateRun
+  fullName: XTMF.XTMFRun.TerminateRun
+- uid: XTMF.XTMFRun.AlertValidationStarting*
+  commentId: Overload:XTMF.XTMFRun.AlertValidationStarting
+  name: AlertValidationStarting
+  nameWithType: XTMFRun.AlertValidationStarting
+  fullName: XTMF.XTMFRun.AlertValidationStarting
+- uid: XTMF.XTMFRun.InvokeRunCompleted*
+  commentId: Overload:XTMF.XTMFRun.InvokeRunCompleted
+  name: InvokeRunCompleted
+  nameWithType: XTMFRun.InvokeRunCompleted
+  fullName: XTMF.XTMFRun.InvokeRunCompleted
+- uid: XTMF.XTMFRun.InvokeRuntimeError*
+  commentId: Overload:XTMF.XTMFRun.InvokeRuntimeError
+  name: InvokeRuntimeError
+  nameWithType: XTMFRun.InvokeRuntimeError
+  fullName: XTMF.XTMFRun.InvokeRuntimeError
+- uid: XTMF.ErrorWithPath
+  commentId: T:XTMF.ErrorWithPath
+  parent: XTMF
+  name: ErrorWithPath
+  nameWithType: ErrorWithPath
+  fullName: XTMF.ErrorWithPath
+- uid: XTMF.XTMFRun.SaveErrorMessage*
+  commentId: Overload:XTMF.XTMFRun.SaveErrorMessage
+  name: SaveErrorMessage
+  nameWithType: XTMFRun.SaveErrorMessage
+  fullName: XTMF.XTMFRun.SaveErrorMessage
+- uid: XTMF.XTMFRun.InvokeRuntimeValidationError*
+  commentId: Overload:XTMF.XTMFRun.InvokeRuntimeValidationError
+  name: InvokeRuntimeValidationError
+  nameWithType: XTMFRun.InvokeRuntimeValidationError
+  fullName: XTMF.XTMFRun.InvokeRuntimeValidationError
+- uid: System.Collections.Generic.List{XTMF.ErrorWithPath}
+  commentId: T:System.Collections.Generic.List{XTMF.ErrorWithPath}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<ErrorWithPath>
+  nameWithType: List<ErrorWithPath>
+  fullName: System.Collections.Generic.List<XTMF.ErrorWithPath>
+  nameWithType.vb: List(Of ErrorWithPath)
+  fullName.vb: System.Collections.Generic.List(Of XTMF.ErrorWithPath)
+  name.vb: List(Of ErrorWithPath)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.ErrorWithPath
+    name: ErrorWithPath
+    nameWithType: ErrorWithPath
+    fullName: XTMF.ErrorWithPath
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.XTMFRun.InvokeValidationError*
+  commentId: Overload:XTMF.XTMFRun.InvokeValidationError
+  name: InvokeValidationError
+  nameWithType: XTMFRun.InvokeValidationError
+  fullName: XTMF.XTMFRun.InvokeValidationError
+- uid: XTMF.XTMFRun.SetStatusToRunning*
+  commentId: Overload:XTMF.XTMFRun.SetStatusToRunning
+  name: SetStatusToRunning
+  nameWithType: XTMFRun.SetStatusToRunning
+  fullName: XTMF.XTMFRun.SetStatusToRunning
+- uid: XTMF.XTMFRun.Dispose*
+  commentId: Overload:XTMF.XTMFRun.Dispose
+  name: Dispose
+  nameWithType: XTMFRun.Dispose
+  fullName: XTMF.XTMFRun.Dispose
+- uid: XTMF.XTMFRun.Finalize*
+  commentId: Overload:XTMF.XTMFRun.Finalize
+  name: Finalize
+  nameWithType: XTMFRun.Finalize
+  fullName: XTMF.XTMFRun.Finalize
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.XTMFRun.CreateFromSingleError*
+  commentId: Overload:XTMF.XTMFRun.CreateFromSingleError
+  name: CreateFromSingleError
+  nameWithType: XTMFRun.CreateFromSingleError
+  fullName: XTMF.XTMFRun.CreateFromSingleError
+- uid: XTMF.XTMFRun.GetInnermostError*
+  commentId: Overload:XTMF.XTMFRun.GetInnermostError
+  name: GetInnermostError
+  nameWithType: XTMFRun.GetInnermostError
+  fullName: XTMF.XTMFRun.GetInnermostError
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: XTMF.XTMFRun.RunTimeValidation*
+  commentId: Overload:XTMF.XTMFRun.RunTimeValidation
+  name: RunTimeValidation
+  nameWithType: XTMFRun.RunTimeValidation
+  fullName: XTMF.XTMFRun.RunTimeValidation
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Int32>
+  nameWithType: List<Int32>
+  fullName: System.Collections.Generic.List<System.Int32>
+  nameWithType.vb: List(Of Int32)
+  fullName.vb: System.Collections.Generic.List(Of System.Int32)
+  name.vb: List(Of Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: XTMF.XTMFRun.SendRunMessage*
+  commentId: Overload:XTMF.XTMFRun.SendRunMessage
+  name: SendRunMessage
+  nameWithType: XTMFRun.SendRunMessage
+  fullName: XTMF.XTMFRun.SendRunMessage
+- uid: XTMF.XTMFRun.SendProjectSaved*
+  commentId: Overload:XTMF.XTMFRun.SendProjectSaved
+  name: SendProjectSaved
+  nameWithType: XTMFRun.SendProjectSaved
+  fullName: XTMF.XTMFRun.SendProjectSaved
+- uid: XTMF.ModelSystemStructure
+  commentId: T:XTMF.ModelSystemStructure
+  parent: XTMF
+  name: ModelSystemStructure
+  nameWithType: ModelSystemStructure
+  fullName: XTMF.ModelSystemStructure

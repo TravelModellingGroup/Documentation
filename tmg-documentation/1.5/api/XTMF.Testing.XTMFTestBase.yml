@@ -1,0 +1,493 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.Testing.XTMFTestBase
+  commentId: T:XTMF.Testing.XTMFTestBase
+  id: XTMFTestBase
+  parent: XTMF.Testing
+  children:
+  - XTMF.Testing.XTMFTestBase.Configuration
+  - XTMF.Testing.XTMFTestBase.InitializeXTMF(System.String)
+  - XTMF.Testing.XTMFTestBase.XTMF
+  langs:
+  - csharp
+  - vb
+  name: XTMFTestBase
+  nameWithType: XTMFTestBase
+  fullName: XTMF.Testing.XTMFTestBase
+  type: Class
+  source:
+    remote:
+      path: Code/XTMFTesting/XTMFTestBase.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: XTMFTestBase
+    path: ../../../XTMF/XTMF/Code/XTMFTesting/XTMFTestBase.cs
+    startLine: 22
+  assemblies:
+  - XTMFTesting
+  namespace: XTMF.Testing
+  syntax:
+    content: >-
+      [TestClass]
+
+      public abstract class XTMFTestBase
+    content.vb: >-
+      <TestClass>
+
+      Public MustInherit Class XTMFTestBase
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - XTMF.Testing.ModelParameterTest
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: XTMF.Testing.XTMFTestBase.Configuration
+  commentId: F:XTMF.Testing.XTMFTestBase.Configuration
+  id: Configuration
+  parent: XTMF.Testing.XTMFTestBase
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: XTMFTestBase.Configuration
+  fullName: XTMF.Testing.XTMFTestBase.Configuration
+  type: Field
+  source:
+    remote:
+      path: Code/XTMFTesting/XTMFTestBase.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Configuration
+    path: ../../../XTMF/XTMF/Code/XTMFTesting/XTMFTestBase.cs
+    startLine: 25
+  assemblies:
+  - XTMFTesting
+  namespace: XTMF.Testing
+  syntax:
+    content: protected IConfiguration Configuration
+    return:
+      type: XTMF.IConfiguration
+    content.vb: Protected Configuration As IConfiguration
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.Testing.XTMFTestBase.XTMF
+  commentId: F:XTMF.Testing.XTMFTestBase.XTMF
+  id: XTMF
+  parent: XTMF.Testing.XTMFTestBase
+  langs:
+  - csharp
+  - vb
+  name: XTMF
+  nameWithType: XTMFTestBase.XTMF
+  fullName: XTMF.Testing.XTMFTestBase.XTMF
+  type: Field
+  source:
+    remote:
+      path: Code/XTMFTesting/XTMFTestBase.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: XTMF
+    path: ../../../XTMF/XTMF/Code/XTMFTesting/XTMFTestBase.cs
+    startLine: 28
+  assemblies:
+  - XTMFTesting
+  namespace: XTMF.Testing
+  syntax:
+    content: protected XTMFRuntime XTMF
+    return:
+      type: XTMF.XTMFRuntime
+    content.vb: Protected XTMF As XTMFRuntime
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: XTMF.Testing.XTMFTestBase.InitializeXTMF(System.String)
+  commentId: M:XTMF.Testing.XTMFTestBase.InitializeXTMF(System.String)
+  id: InitializeXTMF(System.String)
+  parent: XTMF.Testing.XTMFTestBase
+  langs:
+  - csharp
+  - vb
+  name: InitializeXTMF(String)
+  nameWithType: XTMFTestBase.InitializeXTMF(String)
+  fullName: XTMF.Testing.XTMFTestBase.InitializeXTMF(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFTesting/XTMFTestBase.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InitializeXTMF
+    path: ../../../XTMF/XTMF/Code/XTMFTesting/XTMFTestBase.cs
+    startLine: 30
+  assemblies:
+  - XTMFTesting
+  namespace: XTMF.Testing
+  syntax:
+    content: >-
+      [TestInitialize]
+
+      public void InitializeXTMF(string configurationFileName = "")
+    parameters:
+    - id: configurationFileName
+      type: System.String
+    content.vb: >-
+      <TestInitialize>
+
+      Public Sub InitializeXTMF(configurationFileName As String = "")
+  overload: XTMF.Testing.XTMFTestBase.InitializeXTMF*
+  attributes:
+  - type: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute
+    ctor: Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: XTMF.Testing
+  commentId: N:XTMF.Testing
+  name: XTMF.Testing
+  nameWithType: XTMF.Testing
+  fullName: XTMF.Testing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: XTMF.XTMFRuntime
+  commentId: T:XTMF.XTMFRuntime
+  parent: XTMF
+  name: XTMFRuntime
+  nameWithType: XTMFRuntime
+  fullName: XTMF.XTMFRuntime
+- uid: XTMF.Testing.XTMFTestBase.InitializeXTMF*
+  commentId: Overload:XTMF.Testing.XTMFTestBase.InitializeXTMF
+  name: InitializeXTMF
+  nameWithType: XTMFTestBase.InitializeXTMF
+  fullName: XTMF.Testing.XTMFTestBase.InitializeXTMF
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

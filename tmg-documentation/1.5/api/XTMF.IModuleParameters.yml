@@ -1,0 +1,444 @@
+### YamlMime:ManagedReference
+items:
+- uid: XTMF.IModuleParameters
+  commentId: T:XTMF.IModuleParameters
+  id: IModuleParameters
+  parent: XTMF
+  children:
+  - XTMF.IModuleParameters.BelongsTo
+  - XTMF.IModuleParameters.Clone
+  - XTMF.IModuleParameters.Parameters
+  - XTMF.IModuleParameters.Save
+  langs:
+  - csharp
+  - vb
+  name: IModuleParameters
+  nameWithType: IModuleParameters
+  fullName: XTMF.IModuleParameters
+  type: Interface
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IModuleParameters
+    path: ../../../XTMF/XTMF/Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+    startLine: 25
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nAllows access to the parameters that a module uses\n"
+  example: []
+  syntax:
+    content: 'public interface IModuleParameters : IEnumerable<IModuleParameter>, IEnumerable'
+    content.vb: >-
+      Public Interface IModuleParameters
+          Inherits IEnumerable(Of IModuleParameter)
+  inheritedMembers:
+  - System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}.GetEnumerator
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: XTMF.IModuleParameters.BelongsTo
+  commentId: P:XTMF.IModuleParameters.BelongsTo
+  id: BelongsTo
+  parent: XTMF.IModuleParameters
+  langs:
+  - csharp
+  - vb
+  name: BelongsTo
+  nameWithType: IModuleParameters.BelongsTo
+  fullName: XTMF.IModuleParameters.BelongsTo
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: BelongsTo
+    path: ../../../XTMF/XTMF/Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+    startLine: 30
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe module that these parameters belong to\n"
+  example: []
+  syntax:
+    content: IModelSystemStructure BelongsTo { get; }
+    parameters: []
+    return:
+      type: XTMF.IModelSystemStructure
+    content.vb: ReadOnly Property BelongsTo As IModelSystemStructure
+  overload: XTMF.IModuleParameters.BelongsTo*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IModuleParameters.Parameters
+  commentId: P:XTMF.IModuleParameters.Parameters
+  id: Parameters
+  parent: XTMF.IModuleParameters
+  langs:
+  - csharp
+  - vb
+  name: Parameters
+  nameWithType: IModuleParameters.Parameters
+  fullName: XTMF.IModuleParameters.Parameters
+  type: Property
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parameters
+    path: ../../../XTMF/XTMF/Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+    startLine: 35
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nThe list of parameters that the model uses\n"
+  example: []
+  syntax:
+    content: IList<IModuleParameter> Parameters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{XTMF.IModuleParameter}
+    content.vb: ReadOnly Property Parameters As IList(Of IModuleParameter)
+  overload: XTMF.IModuleParameters.Parameters*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: XTMF.IModuleParameters.Clone
+  commentId: M:XTMF.IModuleParameters.Clone
+  id: Clone
+  parent: XTMF.IModuleParameters
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: IModuleParameters.Clone()
+  fullName: XTMF.IModuleParameters.Clone()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Clone
+    path: ../../../XTMF/XTMF/Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+    startLine: 41
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nMake a new copy of the parameters\n"
+  example: []
+  syntax:
+    content: IModuleParameters Clone()
+    return:
+      type: XTMF.IModuleParameters
+      description: The copy of the parameters
+    content.vb: Function Clone As IModuleParameters
+  overload: XTMF.IModuleParameters.Clone*
+- uid: XTMF.IModuleParameters.Save
+  commentId: M:XTMF.IModuleParameters.Save
+  id: Save
+  parent: XTMF.IModuleParameters
+  langs:
+  - csharp
+  - vb
+  name: Save()
+  nameWithType: IModuleParameters.Save()
+  fullName: XTMF.IModuleParameters.Save()
+  type: Method
+  source:
+    remote:
+      path: Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Save
+    path: ../../../XTMF/XTMF/Code/XTMFInterfaces/Interfaces/IModuleParameters.cs
+    startLine: 46
+  assemblies:
+  - XTMFInterfaces
+  namespace: XTMF
+  summary: "\nSave this list of parameters for the module\n"
+  example: []
+  syntax:
+    content: void Save()
+    content.vb: Sub Save
+  overload: XTMF.IModuleParameters.Save*
+references:
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<IModuleParameter>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<XTMF.IModuleParameter>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of IModuleParameter).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of XTMF.IModuleParameter).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<IModuleParameter>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<XTMF.IModuleParameter>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of IModuleParameter).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of XTMF.IModuleParameter).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}
+  commentId: T:System.Collections.Generic.IEnumerable{XTMF.IModuleParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<IModuleParameter>
+  nameWithType: IEnumerable<IModuleParameter>
+  fullName: System.Collections.Generic.IEnumerable<XTMF.IModuleParameter>
+  nameWithType.vb: IEnumerable(Of IModuleParameter)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of XTMF.IModuleParameter)
+  name.vb: IEnumerable(Of IModuleParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.IModuleParameters.BelongsTo*
+  commentId: Overload:XTMF.IModuleParameters.BelongsTo
+  name: BelongsTo
+  nameWithType: IModuleParameters.BelongsTo
+  fullName: XTMF.IModuleParameters.BelongsTo
+- uid: XTMF.IModelSystemStructure
+  commentId: T:XTMF.IModelSystemStructure
+  parent: XTMF
+  name: IModelSystemStructure
+  nameWithType: IModelSystemStructure
+  fullName: XTMF.IModelSystemStructure
+- uid: XTMF.IModuleParameters.Parameters*
+  commentId: Overload:XTMF.IModuleParameters.Parameters
+  name: Parameters
+  nameWithType: IModuleParameters.Parameters
+  fullName: XTMF.IModuleParameters.Parameters
+- uid: System.Collections.Generic.IList{XTMF.IModuleParameter}
+  commentId: T:System.Collections.Generic.IList{XTMF.IModuleParameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<IModuleParameter>
+  nameWithType: IList<IModuleParameter>
+  fullName: System.Collections.Generic.IList<XTMF.IModuleParameter>
+  nameWithType.vb: IList(Of IModuleParameter)
+  fullName.vb: System.Collections.Generic.IList(Of XTMF.IModuleParameter)
+  name.vb: IList(Of IModuleParameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: XTMF.IModuleParameter
+    name: IModuleParameter
+    nameWithType: IModuleParameter
+    fullName: XTMF.IModuleParameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModuleParameters.Clone*
+  commentId: Overload:XTMF.IModuleParameters.Clone
+  name: Clone
+  nameWithType: IModuleParameters.Clone
+  fullName: XTMF.IModuleParameters.Clone
+- uid: XTMF.IModuleParameters
+  commentId: T:XTMF.IModuleParameters
+  parent: XTMF
+  name: IModuleParameters
+  nameWithType: IModuleParameters
+  fullName: XTMF.IModuleParameters
+- uid: XTMF.IModuleParameters.Save*
+  commentId: Overload:XTMF.IModuleParameters.Save
+  name: Save
+  nameWithType: IModuleParameters.Save
+  fullName: XTMF.IModuleParameters.Save

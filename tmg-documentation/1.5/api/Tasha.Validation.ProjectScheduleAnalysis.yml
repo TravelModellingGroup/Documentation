@@ -1,0 +1,1589 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tasha.Validation.ProjectScheduleAnalysis
+  commentId: T:Tasha.Validation.ProjectScheduleAnalysis
+  id: ProjectScheduleAnalysis
+  parent: Tasha.Validation
+  children:
+  - Tasha.Validation.ProjectScheduleAnalysis.Execute(Tasha.Common.ITashaHousehold)
+  - Tasha.Validation.ProjectScheduleAnalysis.Height
+  - Tasha.Validation.ProjectScheduleAnalysis.IterationFinished(System.Int32)
+  - Tasha.Validation.ProjectScheduleAnalysis.IterationStarting(System.Int32)
+  - Tasha.Validation.ProjectScheduleAnalysis.Load(System.Int32)
+  - Tasha.Validation.ProjectScheduleAnalysis.MinutesPerBucket
+  - Tasha.Validation.ProjectScheduleAnalysis.Name
+  - Tasha.Validation.ProjectScheduleAnalysis.Progress
+  - Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+  - Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation(System.String@)
+  - Tasha.Validation.ProjectScheduleAnalysis.SchoolEndTimeChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.SchoolStartTimeChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.Width
+  - Tasha.Validation.ProjectScheduleAnalysis.WorkDurationChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.WorkEndTimeChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.WorkPersonsChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeChartFile
+  - Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeDataFile
+  langs:
+  - csharp
+  - vb
+  name: ProjectScheduleAnalysis
+  nameWithType: ProjectScheduleAnalysis
+  fullName: Tasha.Validation.ProjectScheduleAnalysis
+  type: Class
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProjectScheduleAnalysis
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 28
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: 'public class ProjectScheduleAnalysis : IPostScheduler, IModule'
+    content.vb: >-
+      Public Class ProjectScheduleAnalysis
+          Implements IPostScheduler, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - Tasha.Common.IPostScheduler
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Height
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.Height
+  id: Height
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: ProjectScheduleAnalysis.Height
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Height
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Height
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 31
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Height", 600, "The height of the charts")]
+
+      public int Height
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Height", 600, "The height of the charts")>
+
+      Public Height As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Height
+    - type: System.Int32
+      value: 600
+    - type: System.String
+      value: The height of the charts
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.MinutesPerBucket
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.MinutesPerBucket
+  id: MinutesPerBucket
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: MinutesPerBucket
+  nameWithType: ProjectScheduleAnalysis.MinutesPerBucket
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.MinutesPerBucket
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: MinutesPerBucket
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 34
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Bucket size", 30, "Minutes per bucket")]
+
+      public int MinutesPerBucket
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Bucket size", 30, "Minutes per bucket")>
+
+      Public MinutesPerBucket As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Bucket size
+    - type: System.Int32
+      value: 30
+    - type: System.String
+      value: Minutes per bucket
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.SchoolEndTimeChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.SchoolEndTimeChartFile
+  id: SchoolEndTimeChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: SchoolEndTimeChartFile
+  nameWithType: ProjectScheduleAnalysis.SchoolEndTimeChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.SchoolEndTimeChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SchoolEndTimeChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 37
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation SchoolEndTimeChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public SchoolEndTimeChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.SchoolStartTimeChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.SchoolStartTimeChartFile
+  id: SchoolStartTimeChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: SchoolStartTimeChartFile
+  nameWithType: ProjectScheduleAnalysis.SchoolStartTimeChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.SchoolStartTimeChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SchoolStartTimeChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 40
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation SchoolStartTimeChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public SchoolStartTimeChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Width
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.Width
+  id: Width
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: ProjectScheduleAnalysis.Width
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Width
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Width
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 43
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Width", 800, "The width of the charts")]
+
+      public int Width
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Width", 800, "The width of the charts")>
+
+      Public Width As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Width
+    - type: System.Int32
+      value: 800
+    - type: System.String
+      value: The width of the charts
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.WorkDurationChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.WorkDurationChartFile
+  id: WorkDurationChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: WorkDurationChartFile
+  nameWithType: ProjectScheduleAnalysis.WorkDurationChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.WorkDurationChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkDurationChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 46
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation WorkDurationChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public WorkDurationChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.WorkEndTimeChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.WorkEndTimeChartFile
+  id: WorkEndTimeChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: WorkEndTimeChartFile
+  nameWithType: ProjectScheduleAnalysis.WorkEndTimeChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.WorkEndTimeChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkEndTimeChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 49
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation WorkEndTimeChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public WorkEndTimeChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.WorkPersonsChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.WorkPersonsChartFile
+  id: WorkPersonsChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: WorkPersonsChartFile
+  nameWithType: ProjectScheduleAnalysis.WorkPersonsChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.WorkPersonsChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkPersonsChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 52
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation WorkPersonsChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public WorkPersonsChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeChartFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeChartFile
+  id: WorkStartTimeChartFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: WorkStartTimeChartFile
+  nameWithType: ProjectScheduleAnalysis.WorkStartTimeChartFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeChartFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkStartTimeChartFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 55
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the chart.")]
+
+      public FileLocation WorkStartTimeChartFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the chart.")>
+
+      Public WorkStartTimeChartFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the chart.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeDataFile
+  commentId: F:Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeDataFile
+  id: WorkStartTimeDataFile
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: WorkStartTimeDataFile
+  nameWithType: ProjectScheduleAnalysis.WorkStartTimeDataFile
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.WorkStartTimeDataFile
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: WorkStartTimeDataFile
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 58
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "The location to save the data.")]
+
+      public FileLocation WorkStartTimeDataFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="The location to save the data.")>
+
+      Public WorkStartTimeDataFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: The location to save the data.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Name
+  commentId: P:Tasha.Validation.ProjectScheduleAnalysis.Name
+  id: Name
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ProjectScheduleAnalysis.Name
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Name
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 67
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Tasha.Validation.ProjectScheduleAnalysis.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Progress
+  commentId: P:Tasha.Validation.ProjectScheduleAnalysis.Progress
+  id: Progress
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: ProjectScheduleAnalysis.Progress
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 73
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: Tasha.Validation.ProjectScheduleAnalysis.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+  commentId: P:Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+  id: ProgressColour
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: ProjectScheduleAnalysis.ProgressColour
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 79
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: Tasha.Validation.ProjectScheduleAnalysis.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Execute(Tasha.Common.ITashaHousehold)
+  commentId: M:Tasha.Validation.ProjectScheduleAnalysis.Execute(Tasha.Common.ITashaHousehold)
+  id: Execute(Tasha.Common.ITashaHousehold)
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Execute(ITashaHousehold)
+  nameWithType: ProjectScheduleAnalysis.Execute(ITashaHousehold)
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Execute(Tasha.Common.ITashaHousehold)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 84
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void Execute(ITashaHousehold household)
+    parameters:
+    - id: household
+      type: Tasha.Common.ITashaHousehold
+    content.vb: Public Sub Execute(household As ITashaHousehold)
+  overload: Tasha.Validation.ProjectScheduleAnalysis.Execute*
+  implements:
+  - Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.IterationFinished(System.Int32)
+  commentId: M:Tasha.Validation.ProjectScheduleAnalysis.IterationFinished(System.Int32)
+  id: IterationFinished(System.Int32)
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: IterationFinished(Int32)
+  nameWithType: ProjectScheduleAnalysis.IterationFinished(Int32)
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.IterationFinished(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IterationFinished
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 115
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void IterationFinished(int iterationNumber)
+    parameters:
+    - id: iterationNumber
+      type: System.Int32
+    content.vb: Public Sub IterationFinished(iterationNumber As Integer)
+  overload: Tasha.Validation.ProjectScheduleAnalysis.IterationFinished*
+  implements:
+  - Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Load(System.Int32)
+  commentId: M:Tasha.Validation.ProjectScheduleAnalysis.Load(System.Int32)
+  id: Load(System.Int32)
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: Load(Int32)
+  nameWithType: ProjectScheduleAnalysis.Load(Int32)
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Load(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Load
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 144
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void Load(int iteration)
+    parameters:
+    - id: iteration
+      type: System.Int32
+    content.vb: Public Sub Load(iteration As Integer)
+  overload: Tasha.Validation.ProjectScheduleAnalysis.Load*
+  implements:
+  - Tasha.Common.IPostScheduler.Load(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation(System.String@)
+  commentId: M:Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ProjectScheduleAnalysis.RuntimeValidation(ref String)
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 155
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: ProjectScheduleAnalysis.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: Tasha.Validation.ProjectScheduleAnalysis.IterationStarting(System.Int32)
+  commentId: M:Tasha.Validation.ProjectScheduleAnalysis.IterationStarting(System.Int32)
+  id: IterationStarting(System.Int32)
+  parent: Tasha.Validation.ProjectScheduleAnalysis
+  langs:
+  - csharp
+  - vb
+  name: IterationStarting(Int32)
+  nameWithType: ProjectScheduleAnalysis.IterationStarting(Int32)
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.IterationStarting(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+      branch: dev-1.5
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: IterationStarting
+    path: ../../../XTMF/XTMF/Code/Tasha.Validation/ProjectScheduleAnalysis.cs
+    startLine: 165
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void IterationStarting(int iterationNumber)
+    parameters:
+    - id: iterationNumber
+      type: System.Int32
+    content.vb: Public Sub IterationStarting(iterationNumber As Integer)
+  overload: Tasha.Validation.ProjectScheduleAnalysis.IterationStarting*
+  implements:
+  - Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Tasha.Validation
+  commentId: N:Tasha.Validation
+  name: Tasha.Validation
+  nameWithType: Tasha.Validation
+  fullName: Tasha.Validation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Tasha.Common.IPostScheduler
+  commentId: T:Tasha.Common.IPostScheduler
+  parent: Tasha.Common
+  name: IPostScheduler
+  nameWithType: IPostScheduler
+  fullName: Tasha.Common.IPostScheduler
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Tasha.Common
+  commentId: N:Tasha.Common
+  name: Tasha.Common
+  nameWithType: Tasha.Common
+  fullName: Tasha.Common
+- uid: XTMF
+  commentId: N:XTMF
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.Input.FileLocation
+  commentId: T:TMG.Input.FileLocation
+  parent: TMG.Input
+  name: FileLocation
+  nameWithType: FileLocation
+  fullName: TMG.Input.FileLocation
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Name*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.Name
+  name: Name
+  nameWithType: ProjectScheduleAnalysis.Name
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Progress*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.Progress
+  name: Progress
+  nameWithType: ProjectScheduleAnalysis.Progress
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Tasha.Validation.ProjectScheduleAnalysis.ProgressColour*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+  name: ProgressColour
+  nameWithType: ProjectScheduleAnalysis.ProgressColour
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Execute*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.Execute
+  name: Execute
+  nameWithType: ProjectScheduleAnalysis.Execute
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Execute
+- uid: Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+  commentId: M:Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+  parent: Tasha.Common.IPostScheduler
+  name: Execute(ITashaHousehold)
+  nameWithType: IPostScheduler.Execute(ITashaHousehold)
+  fullName: Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+  spec.csharp:
+  - uid: Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+    name: Execute
+    nameWithType: IPostScheduler.Execute
+    fullName: Tasha.Common.IPostScheduler.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaHousehold
+    name: ITashaHousehold
+    nameWithType: ITashaHousehold
+    fullName: Tasha.Common.ITashaHousehold
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostScheduler.Execute(Tasha.Common.ITashaHousehold)
+    name: Execute
+    nameWithType: IPostScheduler.Execute
+    fullName: Tasha.Common.IPostScheduler.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Tasha.Common.ITashaHousehold
+    name: ITashaHousehold
+    nameWithType: ITashaHousehold
+    fullName: Tasha.Common.ITashaHousehold
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Common.ITashaHousehold
+  commentId: T:Tasha.Common.ITashaHousehold
+  parent: Tasha.Common
+  name: ITashaHousehold
+  nameWithType: ITashaHousehold
+  fullName: Tasha.Common.ITashaHousehold
+- uid: Tasha.Validation.ProjectScheduleAnalysis.IterationFinished*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.IterationFinished
+  name: IterationFinished
+  nameWithType: ProjectScheduleAnalysis.IterationFinished
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.IterationFinished
+- uid: Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+  commentId: M:Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+  parent: Tasha.Common.IPostScheduler
+  isExternal: true
+  name: IterationFinished(Int32)
+  nameWithType: IPostScheduler.IterationFinished(Int32)
+  fullName: Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+  spec.csharp:
+  - uid: Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+    name: IterationFinished
+    nameWithType: IPostScheduler.IterationFinished
+    fullName: Tasha.Common.IPostScheduler.IterationFinished
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostScheduler.IterationFinished(System.Int32)
+    name: IterationFinished
+    nameWithType: IPostScheduler.IterationFinished
+    fullName: Tasha.Common.IPostScheduler.IterationFinished
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ProjectScheduleAnalysis.Load*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.Load
+  name: Load
+  nameWithType: ProjectScheduleAnalysis.Load
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.Load
+- uid: Tasha.Common.IPostScheduler.Load(System.Int32)
+  commentId: M:Tasha.Common.IPostScheduler.Load(System.Int32)
+  parent: Tasha.Common.IPostScheduler
+  isExternal: true
+  name: Load(Int32)
+  nameWithType: IPostScheduler.Load(Int32)
+  fullName: Tasha.Common.IPostScheduler.Load(System.Int32)
+  spec.csharp:
+  - uid: Tasha.Common.IPostScheduler.Load(System.Int32)
+    name: Load
+    nameWithType: IPostScheduler.Load
+    fullName: Tasha.Common.IPostScheduler.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostScheduler.Load(System.Int32)
+    name: Load
+    nameWithType: IPostScheduler.Load
+    fullName: Tasha.Common.IPostScheduler.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation
+  name: RuntimeValidation
+  nameWithType: ProjectScheduleAnalysis.RuntimeValidation
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Tasha.Validation.ProjectScheduleAnalysis.IterationStarting*
+  commentId: Overload:Tasha.Validation.ProjectScheduleAnalysis.IterationStarting
+  name: IterationStarting
+  nameWithType: ProjectScheduleAnalysis.IterationStarting
+  fullName: Tasha.Validation.ProjectScheduleAnalysis.IterationStarting
+- uid: Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+  commentId: M:Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+  parent: Tasha.Common.IPostScheduler
+  isExternal: true
+  name: IterationStarting(Int32)
+  nameWithType: IPostScheduler.IterationStarting(Int32)
+  fullName: Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+  spec.csharp:
+  - uid: Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+    name: IterationStarting
+    nameWithType: IPostScheduler.IterationStarting
+    fullName: Tasha.Common.IPostScheduler.IterationStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostScheduler.IterationStarting(System.Int32)
+    name: IterationStarting
+    nameWithType: IPostScheduler.IterationStarting
+    fullName: Tasha.Common.IPostScheduler.IterationStarting
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

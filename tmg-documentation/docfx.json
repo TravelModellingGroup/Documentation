@@ -1,0 +1,63 @@
+{
+	
+	"template": ["default", "templates/tmg"],
+	"build": {
+		
+		"template": ["default", "templates/tmg"],
+		"dest": "_site",
+		"globalMetadata": {
+			"_appTitle": "Travel Modelling Group Documentation",
+			"_gitContribute": {
+				"repo": "https://github.com/TravelModellingGroup",
+				"branch": "dev",
+				"apiSpecFolder": "docs-ref-overwrite"
+			},
+			"_appLogoPath":"images/tmg.png",
+			"_appFooter": "©2018, Travel Modelling Group"
+		},
+		"content": [
+			{
+				"files": [
+					"index.md",
+					"1.5/index.md",
+					"1.5/toc.yml",
+					"1.5/xtmf/**.md",
+					"1.5/xtmf/toc.yml",
+					"1.5/api/**.yml",
+					"1.5/api/**.md",
+					"1.5/modules/**.json",
+					"1.5/modules/**.yml",
+					"1.5/modules/**.md",
+					"1.5/gtamodel/**.yml",
+					"1.5/gtamodel/**.md",
+					"1.5/tmgtoolbox/**.yml",
+					"1.5/tmgtoolbox/**.md",
+					"1.4/**.md",
+					"1.4/**.yml",
+					"1.5/**.md",
+					"1.5/**.yml"
+
+				
+				]
+			}
+		],
+		"resource": [
+			{
+				"files": ["images/**", "**/images/**","logo.png"]
+			}
+		]
+	},
+	"metadata": [
+		{
+			"src": [
+				{
+					"src": "../../../XTMF/XTMF/Code/",
+					"files": ["**.csproj"],
+					"exclude": ["**/bin/**", "**/obj/**", "_site/**"]
+				}
+			],
+			"dest": "1.5/api",
+			"_appLogoPath": "images/tmg.png"
+		}
+	]
+}
