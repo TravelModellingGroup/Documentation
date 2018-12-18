@@ -1,41 +1,55 @@
 # What's new in XTMF Version 1.5?
 
-## Details
+## XTMF Software Changes
+
+
+### Updated Model System Display
+
+- The Model System display has been updated replacing the parameter tabs with collapsible panels. Both the quick parameter display and active module parameter display can be active at the same time.
+- A status bar has been added to the bottom of the display containing quick-glance information of the model system.
+- Modules now have customizable icons that are rendered in the display.
+- Previous run names are now enumerated into the run dialog.
+
+### Model System Regions
+
+- A new regions pane is added to the model system display.
+- Regions allow for customized grouping of specific modules outside of the model system hierarchy.
+- A model system can have an unlimited numer of custom regions to help with quick logical grouping of modules specific to certain tasks.
+
+### Improved Logging
+
+- The run window console logger now includes timestamped information.
+- Modules that make use of the ILogger interface will can also include logging info that details which module a message originated from.
+- The run window console logger now saves / mirrors the same information to a XTMF.Console.log file in the current run directory.
+
+### Run Schedule Re-Ordering
+
+- Queued runs can now be re-ordered from the scheduler window. Simply drag and drop the run into the desired spot - or use the available context menu to shift runs in the queue up or down.
+
+### Updated Documentation Browser
+
+- The embedded module documentation will now display the appropriate information from the TMG documentation site (browser)/
+
+### Miscelaneous
+
+- Model systems now record their last-modified time. This information is displayed on the project display.
+- Bug fixes and other performance improvements.
+- A module exlude list can be provided to prevent XTMF from loading specified modules at application startup.
+- Updated project and model system save format. Each model system in a project is now separated into multiple files, rather than being grouped as part of the same project file.
 
 ### Bug Fixes
 
 As always, new iterations of XTMF address bugs previously identified in any of the issues created on the Github project tracker, and others
 we may find internally.
 
-### Updated GUI
+## XTMF SDK Changes
 
-XTMF 1.5 now uses a more modern layout. Although 1.3 introduced a new look and feel, 1.5 further improves on that by using 
-material design by Google which is more familiar to a much larger percentage of users. Earlier versions of XTMF included a 
-standard File menu for application actions. This has been removed and replaced with a "global" window menu which attempts to behave
-more similarly to native Windows applications. The menu has been placed in a sidebar which can be called from any section or tab of
-the XTMF.Gui application.
+- The XTMF `ModuleInformation` attribute has an added property for customized module icons.
+- Dependency injection support for log4net ILogger is now provided for modules. Creating an ILogger field in an IModule definition will have have the logger created when the module is initialized. Use this functionality for more detailed log output.
 
-Theming has also been substantially improved. Palette and light/dark settings are provided by the Material theme and XTMF no longer uses
-the previous colour palettes (forest green, etc).
+## Development
 
-### Unified Runs Under the Scheduler Window
-
-Model system runs will now appear under the same window: the Scheduler window. The scheduler window introduces two run lists "active" and "finished",
-which provides a useful overview of all past, present (and future) runs that have been initiated by the XTMF client. 
-
-### Run Queuing
-
-Model system runs can now be queued. XTMF 1.5 introduces the ability to both schedule and queue model system runs. A user can choose to have runs
-execute simultaneously. This feature allows the user to postpone the starting of a model system run to a later date in time when there will be more
-computing resources available, without having to actively be present at their workstation. 
-
-### System and In-App Notifications
-
-Several quality-of-life notifications systems has been added to XTMF. No matter which tab or window you are interacting with in XTMF, finished model system runs
-will now display an in-app toast to notify if you have any errors (or success) messages that have occurred during an executing model system. In addition
-to in-app toast messages, notification messages are also sent to the System tray, and will be collated by Windows for review for a later time if the user is 
-not currently at the workstation. 
-
+- The XTMF code database has undergone substantial code cleanup and refactoring for this version.
 
 ## Requesting New Features
 
