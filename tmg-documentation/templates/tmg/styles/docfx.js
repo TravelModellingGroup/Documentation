@@ -34,7 +34,7 @@ $(function() {
     if (rightEle.length === 0) {
       $('#right-affix').hide();
       $('#article-content').removeClass('col-md-9');
-      $('#article-content').removeClass('col-md-12');
+      $('#article-content').add('col-md-12');
       // $('#article-content').addClass('view-full-width');
     }
   }
