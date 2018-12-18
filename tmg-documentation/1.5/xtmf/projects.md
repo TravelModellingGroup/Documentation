@@ -1,9 +1,9 @@
-Projects
-======================================================
+# Projects
 
 
-Creating a New Project
--------------------------------------------------------
+
+## Creating a New Project
+
 Projects are designed to help organize your workflow within XTMF.  Projects contain multiple model systems and provide logical grouping of model system runs.  In order to run a model system, it must to be contained within a project.
 
 After you have selected ‘Create a new project’ you will be prompted to enter a name.
@@ -12,8 +12,8 @@ Project names do have some restrictions. The name entry dialog will inform you i
 
 Otherwise you can just press Enter or click on the button ‘OK’ to create the new project.  Once project creation is completed, the interface will automatically navigate to the newly created project page.
 
-Interacting with Projects
-------------------------------------------------------
+## Interacting with Projects
+
 If you want to load a project, or work with your projects, you can either click on open project from the "Start Page" that is displayed when XTMF first loads, or through the side menu by clicking
 on the hamburger menu icon then choosing "New Project".
 

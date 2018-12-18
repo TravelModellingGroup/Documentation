@@ -26,7 +26,11 @@ $(function() {
   breakText();
   renderTabs();
   updateVersionUrls();
+  renderTooltips();
 
+  function renderTooltips() {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
 
   function polyfill() {
     if (!Element.prototype.matches)
@@ -74,7 +78,6 @@ $(function() {
     if (queryDict['fromXtmf'] === 'true') {
       $('header, .sidenav').hide();
       $('#wrapper').addClass('xtmfDoc');
-      
     }
   }
 
@@ -110,10 +113,8 @@ $(function() {
     var versionLinks = $('.version-link');
 
     for (var i = 0; i < versionLinks.length; i++) {
-
       versionLinks[i].href =
         href + '/' + $(versionLinks[i]).data('version') + '/';
-
     }
   }
 
@@ -539,8 +540,6 @@ $(function() {
               var isActive = false;
               var originalHref = e.name;
 
-
-              
               if (originalHref) {
                 originalHref = navrel + originalHref;
                 if (

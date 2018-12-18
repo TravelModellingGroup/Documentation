@@ -1,5 +1,5 @@
 ---
-uid: getting-familiar
+uid: getting-familiar-1-5
 title: Getting Familiar with XTMF
 ---
 # Getting Familiar with XTMF
