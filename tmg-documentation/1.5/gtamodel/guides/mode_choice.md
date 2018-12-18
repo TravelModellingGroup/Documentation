@@ -32,6 +32,32 @@ Walk access transit primarily represents all public transportation trips that do
 
 ### Walk
 
+The walk mode is a simple mode that by default will use the zone system's straight line distance and convert it into time using a global walking speed.
+
+This module has been upgraded in XTMF 1.5 to be able to take in a custom distance matrix (in metres) to override the distance matrix from the zone system.
+If the zone system is using a custom distance matrix, that will be used instead of a straight line distance unless overridden.
+
 ### Bike
 
-TODO
+The bike mode is a simple mode that by default will use the zone system's straight line distance and convert it into time using a global walking speed.
+Additionally this mode has the requirement that the bicycle must return back home at the end of the day.  The bicycle also can not be used if it is not current
+located at the zone during a trip chain.
+
+This module has been upgraded in XTMF 1.5 to be able to take in a custom distance matrix (in metres) to override the distance matrix from the zone system.
+If the zone system is using a custom distance matrix, that will be used instead of a straight line distance unless overridden.
+
+### Passenger
+
+This mode, and Rideshare, are applied after the main mode choice model.  Persons within their household who were not allocated an auto for their tour will and
+who have persons who could possibly facilitate their trips are checked to see if they can be facilitated to their destination.  The potential
+driver will chose to make the highest utility choice between either not facilitating the passenger, facilitating the passenger, or choosing
+to facilitate a different passenger.  That is to say that even if there is a driver available the potential passenger is not guaranteed the trip.
+The utility for the whole household is maximized.
+
+There are two passes, first for drivers who are currently on the road.  The second pass checks to see if there is someone at home and if there
+is also a vehicle available to facilitate the trip.  At each pass the household utility is maximized.
+
+### Rideshare
+
+This mode serves as a dummy mode for persons who are not in charge of their joint trip chain.  If the tour-leader chooses to take Auto Drive
+then this mode will be assigned to the passenger.
