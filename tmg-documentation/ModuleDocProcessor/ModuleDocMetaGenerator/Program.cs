@@ -78,7 +78,7 @@ namespace ModuleDocMetaGenerator
                         {
                             tocElement.items.Add(new TocElement()
                             {
-                                href = module.TypeName.Replace("+", "-") + ".json",
+                                href = module.TypeName.Replace("+", "+") + ".json",
                                 items = new List<TocElement>(),
                                 name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1)
                             });
@@ -208,7 +208,7 @@ namespace ModuleDocMetaGenerator
             }
 
             string jsonData = JsonConvert.SerializeObject(info);
-            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{moduleType.FullName.Replace("+","-")}.json"), jsonData);
+            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{moduleType.FullName.Replace("+","+")}.json"), jsonData);
         }
     }
 
