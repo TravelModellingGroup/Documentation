@@ -87,6 +87,7 @@ This command will write the inner xml to a provided file in the Path attribute.
 ## Advanced Commands
 
 ### Define
+
 Define is used to store a floating point number in order to do conditional execution later in the script.
 
 ```xml
