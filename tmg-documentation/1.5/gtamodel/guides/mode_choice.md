@@ -2,9 +2,11 @@
 
 ## Algorithm Overview
 
-The mode choice algorithm in GTAModel V4.0 is significantly different from previous GTAModels.  To begin with, Mode choice is computed for each household individually instead of in aggregate terms, such as zonal origin destinations.  The figure below shows a breakdown of how the model works.
+The mode choice algorithm in GTAModel V4.0 is significantly different from previous GTAModels.  To begin with, Mode choice is computed
+for each household individually instead of in aggregate terms, such as zonal origin destinations.  
+The figure below shows a breakdown of how the model works.
 
-TODO
+![alt text](images/ModeChoiceOverview.png "Mode Choice Overview")
 
 ## Modes
 
