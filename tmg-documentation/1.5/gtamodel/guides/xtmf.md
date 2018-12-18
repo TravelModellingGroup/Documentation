@@ -12,7 +12,7 @@ GTAModel V4.0 is designed in the eXtensible Travel Modelling Framework also deve
 
 The TMG Estimation Framework is built upon XTMF’s networking core.  This allows us to quickly develop communication protocols between our host and the connecting remote clients.  The diagram below gives a high level overview of the framework.
 
-TODO
+![alt text](images/EstimationFrameworkOverview.png "Estimation Framework Overview")
 
 ### Parameter Settings
 
@@ -56,14 +56,8 @@ TMG’ Estimation Framework contains many different learning algorithms, in the 
 
 The first thing you will need to understand is what we mean by parameter space.  Imagine a 2D parameter space as a square.  Take the first parameter and make its minimum value equal the bottom left corning and its maximum value the bottom right corner.  Then do this again for the second parameter using the top corners.  Since this is a square the parameter spaces can be replaced by 0 for the minimum value, and 1 for the maximum value for both of the parameters.  This is how the TMG’s Estimation Framework built in AI’s work (with an exception of the GA which has a flag to turn this on).  This means that the parameter space is an N-Dimensional hyper-cube with each dimension being defined between 0 and 1.  When talking about a point in parameter space, we usually refer to the result of its fitness function of which we are either trying to find the maximum or minimum of in parameter space.
 
-TODO
-
 Gradient Descent (GD) is an optimization algorithm that starts at a point in parameter space and then computes the gradient of the fitness functions in each dimension.  The kernel is the base point for the algorithm, and moves it with each iteration.  Derivatives are computed computationally by evaluating each dimension twice by decreasing and increasing the parameter by the ‘whisker size’.  We take this gradient, multiply it by the ‘Error Factor’ and then move towards the more optimal slope by that amount. Since we are testing each dimension twice to build the gradient and testing the kernel position each iteration of the algorithm uses 2 Dimesnsions+1 evaluations.  As parameter sets gets larger the run time for this algorithm increases linearly.  Gradient Descent is also known to have problems optimizing parameter spaces that are extremely volatile (where the second derivative of the fitness function on the parameter space is not smooth).  Such spaces are known to have many local maximums/minimums that can trap the algorithm.
 
-TODO
-
 Particle Swarm Optimization (PSO) is a general purpose iterative optimization algorithm.  The PSO works by initially picking points in parameter space and momentum vectors randomly.  Each of these points is referred to as a particle, which will maintain a history of the best point in parameter space that it has explored.  For each iteration the parameters moved a combination of their momentum, a draw to the globally optimal point, and a repulsion from their best observed point.  Current research shows that PSO is typically produces results at least as good as traditional genetic algorithms with far less tests making it run much faster.  One of the advantages PSO has over GD is that it is very good at avoiding being caught by a local maximum/minimum.  PSO also does not increase in runtime with an increase of parameter size.
-
-TODO
 
 
