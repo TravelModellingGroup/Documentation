@@ -1,0 +1,984 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  commentId: T:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  id: PrintMissedWorkEpisodes
+  parent: Tasha.Validation.Scheduler
+  children:
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute(System.Int32,System.Int32)
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load(XTMF.IConfiguration,System.Int32)
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+  - Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation(System.String@)
+  langs:
+  - csharp
+  - vb
+  name: PrintMissedWorkEpisodes
+  nameWithType: PrintMissedWorkEpisodes
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  type: Class
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: PrintMissedWorkEpisodes
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 24
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: 'public class PrintMissedWorkEpisodes : IPostIteration, IModule'
+    content.vb: >-
+      Public Class PrintMissedWorkEpisodes
+
+          Implements IPostIteration, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - Tasha.Common.IPostIteration
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+  commentId: P:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+  id: Name
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: PrintMissedWorkEpisodes.Name
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 27
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+  commentId: P:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+  id: Progress
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: PrintMissedWorkEpisodes.Progress
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 29
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+  commentId: P:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+  id: ProgressColour
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: PrintMissedWorkEpisodes.ProgressColour
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 31
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute(System.Int32,System.Int32)
+  commentId: M:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute(System.Int32,System.Int32)
+  id: Execute(System.Int32,System.Int32)
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: Execute(Int32, Int32)
+  nameWithType: PrintMissedWorkEpisodes.Execute(Int32, Int32)
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 33
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public void Execute(int iterationNumber, int totalIterations)
+    parameters:
+    - id: iterationNumber
+      type: System.Int32
+    - id: totalIterations
+      type: System.Int32
+    content.vb: Public Sub Execute(iterationNumber As Integer, totalIterations As Integer)
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute*
+  implements:
+  - Tasha.Common.IPostIteration.Execute(System.Int32,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load(XTMF.IConfiguration,System.Int32)
+  commentId: M:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load(XTMF.IConfiguration,System.Int32)
+  id: Load(XTMF.IConfiguration,System.Int32)
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: Load(IConfiguration, Int32)
+  nameWithType: PrintMissedWorkEpisodes.Load(IConfiguration, Int32)
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load(XTMF.IConfiguration, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Load
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 39
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public void Load(IConfiguration config, int totalIterations)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    - id: totalIterations
+      type: System.Int32
+    content.vb: Public Sub Load(config As IConfiguration, totalIterations As Integer)
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load*
+  implements:
+  - Tasha.Common.IPostIteration.Load(XTMF.IConfiguration,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation(System.String@)
+  commentId: M:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: PrintMissedWorkEpisodes.RuntimeValidation(ref String)
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/Tasha.Validation/Scheduler/PrintMissedWorkEpisodes.cs
+    startLine: 44
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation.Scheduler
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: PrintMissedWorkEpisodes.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: Tasha.Validation.Scheduler
+  commentId: N:Tasha.Validation.Scheduler
+  isExternal: false
+  name: Tasha.Validation.Scheduler
+  nameWithType: Tasha.Validation.Scheduler
+  fullName: Tasha.Validation.Scheduler
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Tasha.Common.IPostIteration
+  commentId: T:Tasha.Common.IPostIteration
+  parent: Tasha.Common
+  isExternal: false
+  name: IPostIteration
+  nameWithType: IPostIteration
+  fullName: Tasha.Common.IPostIteration
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Tasha.Common
+  commentId: N:Tasha.Common
+  isExternal: false
+  name: Tasha.Common
+  nameWithType: Tasha.Common
+  fullName: Tasha.Common
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+  isExternal: false
+  name: Name
+  nameWithType: PrintMissedWorkEpisodes.Name
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: PrintMissedWorkEpisodes.Progress
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: PrintMissedWorkEpisodes.ProgressColour
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: PrintMissedWorkEpisodes.Execute
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Execute
+- uid: Tasha.Common.IPostIteration.Execute(System.Int32,System.Int32)
+  commentId: M:Tasha.Common.IPostIteration.Execute(System.Int32,System.Int32)
+  parent: Tasha.Common.IPostIteration
+  isExternal: true
+  name: Execute(Int32, Int32)
+  nameWithType: IPostIteration.Execute(Int32, Int32)
+  fullName: Tasha.Common.IPostIteration.Execute(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: Tasha.Common.IPostIteration.Execute(System.Int32,System.Int32)
+    name: Execute
+    nameWithType: IPostIteration.Execute
+    fullName: Tasha.Common.IPostIteration.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostIteration.Execute(System.Int32,System.Int32)
+    name: Execute
+    nameWithType: IPostIteration.Execute
+    fullName: Tasha.Common.IPostIteration.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load
+  isExternal: false
+  name: Load
+  nameWithType: PrintMissedWorkEpisodes.Load
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.Load
+- uid: Tasha.Common.IPostIteration.Load(XTMF.IConfiguration,System.Int32)
+  commentId: M:Tasha.Common.IPostIteration.Load(XTMF.IConfiguration,System.Int32)
+  parent: Tasha.Common.IPostIteration
+  isExternal: true
+  name: Load(IConfiguration, Int32)
+  nameWithType: IPostIteration.Load(IConfiguration, Int32)
+  fullName: Tasha.Common.IPostIteration.Load(XTMF.IConfiguration, System.Int32)
+  spec.csharp:
+  - uid: Tasha.Common.IPostIteration.Load(XTMF.IConfiguration,System.Int32)
+    name: Load
+    nameWithType: IPostIteration.Load
+    fullName: Tasha.Common.IPostIteration.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IConfiguration
+    name: IConfiguration
+    nameWithType: IConfiguration
+    fullName: XTMF.IConfiguration
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Tasha.Common.IPostIteration.Load(XTMF.IConfiguration,System.Int32)
+    name: Load
+    nameWithType: IPostIteration.Load
+    fullName: Tasha.Common.IPostIteration.Load
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IConfiguration
+    name: IConfiguration
+    nameWithType: IConfiguration
+    fullName: XTMF.IConfiguration
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation*
+  commentId: Overload:Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: PrintMissedWorkEpisodes.RuntimeValidation
+  fullName: Tasha.Validation.Scheduler.PrintMissedWorkEpisodes.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

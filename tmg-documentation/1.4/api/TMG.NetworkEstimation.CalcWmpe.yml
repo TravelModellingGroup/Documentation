@@ -1,0 +1,1028 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.NetworkEstimation.CalcWmpe
+  commentId: T:TMG.NetworkEstimation.CalcWmpe
+  id: CalcWmpe
+  parent: TMG.NetworkEstimation
+  children:
+  - TMG.NetworkEstimation.CalcWmpe.Execute(TMG.Emme.Controller)
+  - TMG.NetworkEstimation.CalcWmpe.LineAggregationFile
+  - TMG.NetworkEstimation.CalcWmpe.Name
+  - TMG.NetworkEstimation.CalcWmpe.ObservedBoardingsFile
+  - TMG.NetworkEstimation.CalcWmpe.Progress
+  - TMG.NetworkEstimation.CalcWmpe.ProgressColour
+  - TMG.NetworkEstimation.CalcWmpe.RuntimeValidation(System.String@)
+  - TMG.NetworkEstimation.CalcWmpe.ScenarioNumber
+  langs:
+  - csharp
+  - vb
+  name: CalcWmpe
+  nameWithType: CalcWmpe
+  fullName: TMG.NetworkEstimation.CalcWmpe
+  type: Class
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CalcWmpe
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 28
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: 'public class CalcWmpe : IEmmeTool, IModule'
+    content.vb: >-
+      Public Class CalcWmpe
+
+          Implements IEmmeTool, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.Emme.IEmmeTool
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.NetworkEstimation.CalcWmpe.ScenarioNumber
+  commentId: F:TMG.NetworkEstimation.CalcWmpe.ScenarioNumber
+  id: ScenarioNumber
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: ScenarioNumber
+  nameWithType: CalcWmpe.ScenarioNumber
+  fullName: TMG.NetworkEstimation.CalcWmpe.ScenarioNumber
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ScenarioNumber
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 37
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [RunParameter("Scenario", 0, "The number of the Emme scenario")]
+
+      public int ScenarioNumber
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Scenario", 0, "The number of the Emme scenario")>
+
+      Public ScenarioNumber As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Scenario
+    - type: System.Int32
+      value: 0
+    - type: System.String
+      value: The number of the Emme scenario
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.ObservedBoardingsFile
+  commentId: F:TMG.NetworkEstimation.CalcWmpe.ObservedBoardingsFile
+  id: ObservedBoardingsFile
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: ObservedBoardingsFile
+  nameWithType: CalcWmpe.ObservedBoardingsFile
+  fullName: TMG.NetworkEstimation.CalcWmpe.ObservedBoardingsFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ObservedBoardingsFile
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 40
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Observed Boardings File", Required = true)]
+
+      public FileLocation ObservedBoardingsFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Description:="Observed Boardings File", Required:=True)>
+
+      Public ObservedBoardingsFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Observed Boardings File
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.LineAggregationFile
+  commentId: F:TMG.NetworkEstimation.CalcWmpe.LineAggregationFile
+  id: LineAggregationFile
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: LineAggregationFile
+  nameWithType: CalcWmpe.LineAggregationFile
+  fullName: TMG.NetworkEstimation.CalcWmpe.LineAggregationFile
+  type: Field
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LineAggregationFile
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 43
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Line Aggregation File", Required = true)]
+
+      public FileLocation LineAggregationFile
+    return:
+      type: TMG.Input.FileLocation
+    content.vb: >-
+      <SubModelInformation(Description:="Line Aggregation File", Required:=True)>
+
+      Public LineAggregationFile As FileLocation
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Line Aggregation File
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.NetworkEstimation.CalcWmpe.Execute(TMG.Emme.Controller)
+  id: Execute(TMG.Emme.Controller)
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: Execute(Controller)
+  nameWithType: CalcWmpe.Execute(Controller)
+  fullName: TMG.NetworkEstimation.CalcWmpe.Execute(TMG.Emme.Controller)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Execute
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 48
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool Execute(Controller controller)
+    parameters:
+    - id: controller
+      type: TMG.Emme.Controller
+    return:
+      type: System.Boolean
+    content.vb: Public Function Execute(controller As Controller) As Boolean
+  overload: TMG.NetworkEstimation.CalcWmpe.Execute*
+  implements:
+  - TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.Name
+  commentId: P:TMG.NetworkEstimation.CalcWmpe.Name
+  id: Name
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CalcWmpe.Name
+  fullName: TMG.NetworkEstimation.CalcWmpe.Name
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 126
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.NetworkEstimation.CalcWmpe.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.Progress
+  commentId: P:TMG.NetworkEstimation.CalcWmpe.Progress
+  id: Progress
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: CalcWmpe.Progress
+  fullName: TMG.NetworkEstimation.CalcWmpe.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 132
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public float Progress { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Progress As Single
+  overload: TMG.NetworkEstimation.CalcWmpe.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.NetworkEstimation.CalcWmpe.ProgressColour
+  commentId: P:TMG.NetworkEstimation.CalcWmpe.ProgressColour
+  id: ProgressColour
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: CalcWmpe.ProgressColour
+  fullName: TMG.NetworkEstimation.CalcWmpe.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 138
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.NetworkEstimation.CalcWmpe.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation(System.String@)
+  commentId: M:TMG.NetworkEstimation.CalcWmpe.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.NetworkEstimation.CalcWmpe
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: CalcWmpe.RuntimeValidation(ref String)
+  fullName: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/NetworkEstimation/CalcWMPE.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/NetworkEstimation/CalcWMPE.cs
+    startLine: 143
+  assemblies:
+  - NetworkEstimation
+  namespace: TMG.NetworkEstimation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: CalcWmpe.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+references:
+- uid: TMG.NetworkEstimation
+  commentId: N:TMG.NetworkEstimation
+  isExternal: false
+  name: TMG.NetworkEstimation
+  nameWithType: TMG.NetworkEstimation
+  fullName: TMG.NetworkEstimation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Emme.IEmmeTool
+  commentId: T:TMG.Emme.IEmmeTool
+  parent: TMG.Emme
+  isExternal: false
+  name: IEmmeTool
+  nameWithType: IEmmeTool
+  fullName: TMG.Emme.IEmmeTool
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG.Emme
+  commentId: N:TMG.Emme
+  isExternal: false
+  name: TMG.Emme
+  nameWithType: TMG.Emme
+  fullName: TMG.Emme
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.Input.FileLocation
+  commentId: T:TMG.Input.FileLocation
+  parent: TMG.Input
+  isExternal: false
+  name: FileLocation
+  nameWithType: FileLocation
+  fullName: TMG.Input.FileLocation
+- uid: TMG.Input
+  commentId: N:TMG.Input
+  isExternal: false
+  name: TMG.Input
+  nameWithType: TMG.Input
+  fullName: TMG.Input
+- uid: TMG.NetworkEstimation.CalcWmpe.Execute*
+  commentId: Overload:TMG.NetworkEstimation.CalcWmpe.Execute
+  isExternal: false
+  name: Execute
+  nameWithType: CalcWmpe.Execute
+  fullName: TMG.NetworkEstimation.CalcWmpe.Execute
+- uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  commentId: M:TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  parent: TMG.Emme.IEmmeTool
+  isExternal: false
+  name: Execute(Controller)
+  nameWithType: IEmmeTool.Execute(Controller)
+  fullName: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+  spec.csharp:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Emme.IEmmeTool.Execute(TMG.Emme.Controller)
+    name: Execute
+    nameWithType: IEmmeTool.Execute
+    fullName: TMG.Emme.IEmmeTool.Execute
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: TMG.Emme.Controller
+    name: Controller
+    nameWithType: Controller
+    fullName: TMG.Emme.Controller
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Emme.Controller
+  commentId: T:TMG.Emme.Controller
+  parent: TMG.Emme
+  isExternal: false
+  name: Controller
+  nameWithType: Controller
+  fullName: TMG.Emme.Controller
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.NetworkEstimation.CalcWmpe.Name*
+  commentId: Overload:TMG.NetworkEstimation.CalcWmpe.Name
+  isExternal: false
+  name: Name
+  nameWithType: CalcWmpe.Name
+  fullName: TMG.NetworkEstimation.CalcWmpe.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.NetworkEstimation.CalcWmpe.Progress*
+  commentId: Overload:TMG.NetworkEstimation.CalcWmpe.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: CalcWmpe.Progress
+  fullName: TMG.NetworkEstimation.CalcWmpe.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.NetworkEstimation.CalcWmpe.ProgressColour*
+  commentId: Overload:TMG.NetworkEstimation.CalcWmpe.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: CalcWmpe.ProgressColour
+  fullName: TMG.NetworkEstimation.CalcWmpe.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation*
+  commentId: Overload:TMG.NetworkEstimation.CalcWmpe.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: CalcWmpe.RuntimeValidation
+  fullName: TMG.NetworkEstimation.CalcWmpe.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

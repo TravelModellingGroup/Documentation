@@ -1,0 +1,2152 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  commentId: T:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  id: AdvancedModeParameterDatabase
+  parent: TMG.GTAModel.ParameterDatabase
+  children:
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DatabaseFile
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicDatabaseFile
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicSwitchFile
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName(System.String)
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Modes
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Root
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation(System.String@)
+  - TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: AdvancedModeParameterDatabase
+  nameWithType: AdvancedModeParameterDatabase
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  type: Class
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: AdvancedModeParameterDatabase
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 30
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: 'public class AdvancedModeParameterDatabase : IModeParameterDatabase, IModule'
+    content.vb: >-
+      Public Class AdvancedModeParameterDatabase
+
+          Implements IModeParameterDatabase, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - TMG.IModeParameterDatabase
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DatabaseFile
+  commentId: F:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DatabaseFile
+  id: DatabaseFile
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: DatabaseFile
+  nameWithType: AdvancedModeParameterDatabase.DatabaseFile
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DatabaseFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DatabaseFile
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 33
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: >-
+      [RunParameter("Mode Choice Database File", "ModeChoiceParameters.csv", "A file containing all of the parameters to be used for each parameter set.")]
+
+      public string DatabaseFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Mode Choice Database File", "ModeChoiceParameters.csv", "A file containing all of the parameters to be used for each parameter set.")>
+
+      Public DatabaseFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Mode Choice Database File
+    - type: System.String
+      value: ModeChoiceParameters.csv
+    - type: System.String
+      value: A file containing all of the parameters to be used for each parameter set.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicDatabaseFile
+  commentId: F:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicDatabaseFile
+  id: DemographicDatabaseFile
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: DemographicDatabaseFile
+  nameWithType: AdvancedModeParameterDatabase.DemographicDatabaseFile
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicDatabaseFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemographicDatabaseFile
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 36
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: >-
+      [RunParameter("Demographic Database File", "ModeChoiceDemographicAlternatives.csv", "A file containing all of the alternative values to be used if a parameter is disabled.")]
+
+      public string DemographicDatabaseFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Demographic Database File", "ModeChoiceDemographicAlternatives.csv", "A file containing all of the alternative values to be used if a parameter is disabled.")>
+
+      Public DemographicDatabaseFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demographic Database File
+    - type: System.String
+      value: ModeChoiceDemographicAlternatives.csv
+    - type: System.String
+      value: A file containing all of the alternative values to be used if a parameter is disabled.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicSwitchFile
+  commentId: F:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicSwitchFile
+  id: DemographicSwitchFile
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: DemographicSwitchFile
+  nameWithType: AdvancedModeParameterDatabase.DemographicSwitchFile
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.DemographicSwitchFile
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: DemographicSwitchFile
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 39
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: >-
+      [RunParameter("Demographic Switch File", "ModeChoiceDemographicSwitches.csv", "A file containing all of the parameters whether or not to use the original parameter or the disabled parameter.")]
+
+      public string DemographicSwitchFile
+    return:
+      type: System.String
+    content.vb: >-
+      <RunParameter("Demographic Switch File", "ModeChoiceDemographicSwitches.csv", "A file containing all of the parameters whether or not to use the original parameter or the disabled parameter.")>
+
+      Public DemographicSwitchFile As String
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Demographic Switch File
+    - type: System.String
+      value: ModeChoiceDemographicSwitches.csv
+    - type: System.String
+      value: A file containing all of the parameters whether or not to use the original parameter or the disabled parameter.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Modes
+  commentId: F:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Modes
+  id: Modes
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: Modes
+  nameWithType: AdvancedModeParameterDatabase.Modes
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Modes
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Modes
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 42
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Modes", Required = false)]
+
+      public List<IModeParameterAssignment> Modes
+    return:
+      type: System.Collections.Generic.List{TMG.ParameterDatabase.IModeParameterAssignment}
+    content.vb: >-
+      <SubModelInformation(Description:="Modes", Required:=False)>
+
+      Public Modes As List(Of IModeParameterAssignment)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Modes
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Root
+  commentId: F:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Root
+  id: Root
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: Root
+  nameWithType: AdvancedModeParameterDatabase.Root
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Root
+  type: Field
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Root
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 45
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public IModelSystemTemplate Root
+    return:
+      type: XTMF.IModelSystemTemplate
+    content.vb: Public Root As IModelSystemTemplate
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+  commentId: P:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+  id: Name
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AdvancedModeParameterDatabase.Name
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 59
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+  commentId: P:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+  id: NumberOfParameterSets
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: NumberOfParameterSets
+  nameWithType: AdvancedModeParameterDatabase.NumberOfParameterSets
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: NumberOfParameterSets
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 65
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public int NumberOfParameterSets { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property NumberOfParameterSets As Integer
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets*
+  implements:
+  - TMG.IModeParameterDatabase.NumberOfParameterSets
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+  commentId: P:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+  id: Parameters
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: Parameters
+  nameWithType: AdvancedModeParameterDatabase.Parameters
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Parameters
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 77
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "Parameters", Required = false)]
+
+      public List<Parameter> Parameters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{TMG.ParameterDatabase.Parameter}
+    content.vb: >-
+      <SubModelInformation(Description:="Parameters", Required:=False)>
+
+      Public ReadOnly Property Parameters As List(Of Parameter)
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters*
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: Parameters
+    - name: Required
+      type: System.Boolean
+      value: false
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+  commentId: P:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+  id: Progress
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: AdvancedModeParameterDatabase.Progress
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 80
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+  commentId: P:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+  id: ProgressColour
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: AdvancedModeParameterDatabase.ProgressColour
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 85
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  id: ApplyParameterSet(System.Int32,System.Int32)
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: ApplyParameterSet(Int32, Int32)
+  nameWithType: AdvancedModeParameterDatabase.ApplyParameterSet(Int32, Int32)
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet(System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ApplyParameterSet
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 90
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public void ApplyParameterSet(int parameterSetIndex, int demographicIndex)
+    parameters:
+    - id: parameterSetIndex
+      type: System.Int32
+    - id: demographicIndex
+      type: System.Int32
+    content.vb: Public Sub ApplyParameterSet(parameterSetIndex As Integer, demographicIndex As Integer)
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet*
+  implements:
+  - TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend
+  id: CompleteBlend
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: CompleteBlend()
+  nameWithType: AdvancedModeParameterDatabase.CompleteBlend()
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: CompleteBlend
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 111
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public void CompleteBlend()
+    content.vb: Public Sub CompleteBlend
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend*
+  implements:
+  - TMG.IModeParameterDatabase.CompleteBlend
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend
+  id: InitializeBlend
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: InitializeBlend()
+  nameWithType: AdvancedModeParameterDatabase.InitializeBlend()
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend()
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InitializeBlend
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 121
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public void InitializeBlend()
+    content.vb: Public Sub InitializeBlend
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend*
+  implements:
+  - TMG.IModeParameterDatabase.InitializeBlend
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation(System.String@)
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: AdvancedModeParameterDatabase.RuntimeValidation(ref String)
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 131
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: AdvancedModeParameterDatabase.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight(System.Single)
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight(System.Single)
+  id: SetBlendWeight(System.Single)
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: SetBlendWeight(Single)
+  nameWithType: AdvancedModeParameterDatabase.SetBlendWeight(Single)
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight(System.Single)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: SetBlendWeight
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 136
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: public void SetBlendWeight(float currentBlendWeight)
+    parameters:
+    - id: currentBlendWeight
+      type: System.Single
+    content.vb: Public Sub SetBlendWeight(currentBlendWeight As Single)
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight*
+  implements:
+  - TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName(System.String)
+  commentId: M:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName(System.String)
+  id: GetInputFileName(System.String)
+  parent: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase
+  langs:
+  - csharp
+  - vb
+  name: GetInputFileName(String)
+  nameWithType: AdvancedModeParameterDatabase.GetInputFileName(String)
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName(System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: GetInputFileName
+    path: ../../XTMF/Code/GTAModel/ParameterDatabase/AdvancedModeParameterDatabase.cs
+    startLine: 141
+  assemblies:
+  - GTAModel
+  namespace: TMG.GTAModel.ParameterDatabase
+  syntax:
+    content: protected string GetInputFileName(string localPath)
+    parameters:
+    - id: localPath
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Protected Function GetInputFileName(localPath As String) As String
+  overload: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: TMG.GTAModel.ParameterDatabase
+  commentId: N:TMG.GTAModel.ParameterDatabase
+  isExternal: false
+  name: TMG.GTAModel.ParameterDatabase
+  nameWithType: TMG.GTAModel.ParameterDatabase
+  fullName: TMG.GTAModel.ParameterDatabase
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.IModeParameterDatabase
+  commentId: T:TMG.IModeParameterDatabase
+  parent: TMG
+  isExternal: false
+  name: IModeParameterDatabase
+  nameWithType: IModeParameterDatabase
+  fullName: TMG.IModeParameterDatabase
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: TMG
+  commentId: N:TMG
+  isExternal: false
+  name: TMG
+  nameWithType: TMG
+  fullName: TMG
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Collections.Generic.List{TMG.ParameterDatabase.IModeParameterAssignment}
+  commentId: T:System.Collections.Generic.List{TMG.ParameterDatabase.IModeParameterAssignment}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<IModeParameterAssignment>
+  nameWithType: List<IModeParameterAssignment>
+  fullName: System.Collections.Generic.List<TMG.ParameterDatabase.IModeParameterAssignment>
+  nameWithType.vb: List(Of IModeParameterAssignment)
+  fullName.vb: System.Collections.Generic.List(Of TMG.ParameterDatabase.IModeParameterAssignment)
+  name.vb: List(Of IModeParameterAssignment)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.ParameterDatabase.IModeParameterAssignment
+    name: IModeParameterAssignment
+    nameWithType: IModeParameterAssignment
+    fullName: TMG.ParameterDatabase.IModeParameterAssignment
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.ParameterDatabase.IModeParameterAssignment
+    name: IModeParameterAssignment
+    nameWithType: IModeParameterAssignment
+    fullName: TMG.ParameterDatabase.IModeParameterAssignment
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+  isExternal: false
+  name: Name
+  nameWithType: AdvancedModeParameterDatabase.Name
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+  isExternal: false
+  name: NumberOfParameterSets
+  nameWithType: AdvancedModeParameterDatabase.NumberOfParameterSets
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.NumberOfParameterSets
+- uid: TMG.IModeParameterDatabase.NumberOfParameterSets
+  commentId: P:TMG.IModeParameterDatabase.NumberOfParameterSets
+  parent: TMG.IModeParameterDatabase
+  isExternal: false
+  name: NumberOfParameterSets
+  nameWithType: IModeParameterDatabase.NumberOfParameterSets
+  fullName: TMG.IModeParameterDatabase.NumberOfParameterSets
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+  isExternal: false
+  name: Parameters
+  nameWithType: AdvancedModeParameterDatabase.Parameters
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Parameters
+- uid: System.Collections.Generic.List{TMG.ParameterDatabase.Parameter}
+  commentId: T:System.Collections.Generic.List{TMG.ParameterDatabase.Parameter}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  name: List<Parameter>
+  nameWithType: List<Parameter>
+  fullName: System.Collections.Generic.List<TMG.ParameterDatabase.Parameter>
+  nameWithType.vb: List(Of Parameter)
+  fullName.vb: System.Collections.Generic.List(Of TMG.ParameterDatabase.Parameter)
+  name.vb: List(Of Parameter)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.ParameterDatabase.Parameter
+    name: Parameter
+    nameWithType: Parameter
+    fullName: TMG.ParameterDatabase.Parameter
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    nameWithType: List
+    fullName: System.Collections.Generic.List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.ParameterDatabase.Parameter
+    name: Parameter
+    nameWithType: Parameter
+    fullName: TMG.ParameterDatabase.Parameter
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: AdvancedModeParameterDatabase.Progress
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: AdvancedModeParameterDatabase.ProgressColour
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet
+  isExternal: false
+  name: ApplyParameterSet
+  nameWithType: AdvancedModeParameterDatabase.ApplyParameterSet
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.ApplyParameterSet
+- uid: TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  commentId: M:TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+  parent: TMG.IModeParameterDatabase
+  isExternal: true
+  name: ApplyParameterSet(Int32, Int32)
+  nameWithType: IModeParameterDatabase.ApplyParameterSet(Int32, Int32)
+  fullName: TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32, System.Int32)
+  spec.csharp:
+  - uid: TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+    name: ApplyParameterSet
+    nameWithType: IModeParameterDatabase.ApplyParameterSet
+    fullName: TMG.IModeParameterDatabase.ApplyParameterSet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeParameterDatabase.ApplyParameterSet(System.Int32,System.Int32)
+    name: ApplyParameterSet
+    nameWithType: IModeParameterDatabase.ApplyParameterSet
+    fullName: TMG.IModeParameterDatabase.ApplyParameterSet
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend
+  isExternal: false
+  name: CompleteBlend
+  nameWithType: AdvancedModeParameterDatabase.CompleteBlend
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.CompleteBlend
+- uid: TMG.IModeParameterDatabase.CompleteBlend
+  commentId: M:TMG.IModeParameterDatabase.CompleteBlend
+  parent: TMG.IModeParameterDatabase
+  isExternal: false
+  name: CompleteBlend()
+  nameWithType: IModeParameterDatabase.CompleteBlend()
+  fullName: TMG.IModeParameterDatabase.CompleteBlend()
+  spec.csharp:
+  - uid: TMG.IModeParameterDatabase.CompleteBlend
+    name: CompleteBlend
+    nameWithType: IModeParameterDatabase.CompleteBlend
+    fullName: TMG.IModeParameterDatabase.CompleteBlend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeParameterDatabase.CompleteBlend
+    name: CompleteBlend
+    nameWithType: IModeParameterDatabase.CompleteBlend
+    fullName: TMG.IModeParameterDatabase.CompleteBlend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend
+  isExternal: false
+  name: InitializeBlend
+  nameWithType: AdvancedModeParameterDatabase.InitializeBlend
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.InitializeBlend
+- uid: TMG.IModeParameterDatabase.InitializeBlend
+  commentId: M:TMG.IModeParameterDatabase.InitializeBlend
+  parent: TMG.IModeParameterDatabase
+  isExternal: false
+  name: InitializeBlend()
+  nameWithType: IModeParameterDatabase.InitializeBlend()
+  fullName: TMG.IModeParameterDatabase.InitializeBlend()
+  spec.csharp:
+  - uid: TMG.IModeParameterDatabase.InitializeBlend
+    name: InitializeBlend
+    nameWithType: IModeParameterDatabase.InitializeBlend
+    fullName: TMG.IModeParameterDatabase.InitializeBlend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeParameterDatabase.InitializeBlend
+    name: InitializeBlend
+    nameWithType: IModeParameterDatabase.InitializeBlend
+    fullName: TMG.IModeParameterDatabase.InitializeBlend
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: AdvancedModeParameterDatabase.RuntimeValidation
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight
+  isExternal: false
+  name: SetBlendWeight
+  nameWithType: AdvancedModeParameterDatabase.SetBlendWeight
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.SetBlendWeight
+- uid: TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+  commentId: M:TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+  parent: TMG.IModeParameterDatabase
+  isExternal: true
+  name: SetBlendWeight(Single)
+  nameWithType: IModeParameterDatabase.SetBlendWeight(Single)
+  fullName: TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+  spec.csharp:
+  - uid: TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+    name: SetBlendWeight
+    nameWithType: IModeParameterDatabase.SetBlendWeight
+    fullName: TMG.IModeParameterDatabase.SetBlendWeight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.IModeParameterDatabase.SetBlendWeight(System.Single)
+    name: SetBlendWeight
+    nameWithType: IModeParameterDatabase.SetBlendWeight
+    fullName: TMG.IModeParameterDatabase.SetBlendWeight
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName*
+  commentId: Overload:TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName
+  isExternal: false
+  name: GetInputFileName
+  nameWithType: AdvancedModeParameterDatabase.GetInputFileName
+  fullName: TMG.GTAModel.ParameterDatabase.AdvancedModeParameterDatabase.GetInputFileName

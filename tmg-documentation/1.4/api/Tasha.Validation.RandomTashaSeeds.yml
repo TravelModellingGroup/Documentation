@@ -1,0 +1,1764 @@
+### YamlMime:ManagedReference
+items:
+- uid: Tasha.Validation.RandomTashaSeeds
+  commentId: T:Tasha.Validation.RandomTashaSeeds
+  id: RandomTashaSeeds
+  parent: Tasha.Validation
+  children:
+  - Tasha.Validation.RandomTashaSeeds.ExitRequest
+  - Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+  - Tasha.Validation.RandomTashaSeeds.Iterations
+  - Tasha.Validation.RandomTashaSeeds.Name
+  - Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+  - Tasha.Validation.RandomTashaSeeds.Progress
+  - Tasha.Validation.RandomTashaSeeds.ProgressColour
+  - Tasha.Validation.RandomTashaSeeds.RandomSeed
+  - Tasha.Validation.RandomTashaSeeds.RuntimeValidation(System.String@)
+  - Tasha.Validation.RandomTashaSeeds.Start
+  - Tasha.Validation.RandomTashaSeeds.Tasha
+  - Tasha.Validation.RandomTashaSeeds.ToString
+  langs:
+  - csharp
+  - vb
+  name: RandomTashaSeeds
+  nameWithType: RandomTashaSeeds
+  fullName: Tasha.Validation.RandomTashaSeeds
+  type: Class
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RandomTashaSeeds
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 24
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: 'public class RandomTashaSeeds : IModelSystemTemplate, ISelfContainedModule, IModule'
+    content.vb: >-
+      Public Class RandomTashaSeeds
+
+          Implements IModelSystemTemplate, ISelfContainedModule, IModule
+  inheritance:
+  - System.Object
+  implements:
+  - XTMF.IModelSystemTemplate
+  - XTMF.ISelfContainedModule
+  - XTMF.IModule
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Tasha.Validation.RandomTashaSeeds.Iterations
+  commentId: F:Tasha.Validation.RandomTashaSeeds.Iterations
+  id: Iterations
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: Iterations
+  nameWithType: RandomTashaSeeds.Iterations
+  fullName: Tasha.Validation.RandomTashaSeeds.Iterations
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Iterations
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 27
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("Iterations", 100, "Number of iterations to run.")]
+
+      public int Iterations
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("Iterations", 100, "Number of iterations to run.")>
+
+      Public Iterations As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: Iterations
+    - type: System.Int32
+      value: 100
+    - type: System.String
+      value: Number of iterations to run.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.RandomSeed
+  commentId: F:Tasha.Validation.RandomTashaSeeds.RandomSeed
+  id: RandomSeed
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: RandomSeed
+  nameWithType: RandomTashaSeeds.RandomSeed
+  fullName: Tasha.Validation.RandomTashaSeeds.RandomSeed
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RandomSeed
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 30
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [RunParameter("RandomSeed", 12345, "The random seed to generate the random seeds")]
+
+      public int RandomSeed
+    return:
+      type: System.Int32
+    content.vb: >-
+      <RunParameter("RandomSeed", 12345, "The random seed to generate the random seeds")>
+
+      Public RandomSeed As Integer
+  attributes:
+  - type: XTMF.RunParameterAttribute
+    ctor: XTMF.RunParameterAttribute.#ctor(System.String,System.Object,System.String)
+    arguments:
+    - type: System.String
+      value: RandomSeed
+    - type: System.Int32
+      value: 12345
+    - type: System.String
+      value: The random seed to generate the random seeds
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.Tasha
+  commentId: F:Tasha.Validation.RandomTashaSeeds.Tasha
+  id: Tasha
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: Tasha
+  nameWithType: RandomTashaSeeds.Tasha
+  fullName: Tasha.Validation.RandomTashaSeeds.Tasha
+  type: Field
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Tasha
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 33
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: >-
+      [SubModelInformation(Description = "The tasha to run", Required = true)]
+
+      public ITashaRuntime Tasha
+    return:
+      type: Tasha.Common.ITashaRuntime
+    content.vb: >-
+      <SubModelInformation(Description:="The tasha to run", Required:=True)>
+
+      Public Tasha As ITashaRuntime
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Description
+      type: System.String
+      value: The tasha to run
+    - name: Required
+      type: System.Boolean
+      value: true
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+  commentId: P:Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+  id: InputBaseDirectory
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: InputBaseDirectory
+  nameWithType: RandomTashaSeeds.InputBaseDirectory
+  fullName: Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: InputBaseDirectory
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 37
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string InputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property InputBaseDirectory As String
+  overload: Tasha.Validation.RandomTashaSeeds.InputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.InputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.Name
+  commentId: P:Tasha.Validation.RandomTashaSeeds.Name
+  id: Name
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: RandomTashaSeeds.Name
+  fullName: Tasha.Validation.RandomTashaSeeds.Name
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Name
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 43
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Tasha.Validation.RandomTashaSeeds.Name*
+  implements:
+  - XTMF.IModule.Name
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+  commentId: P:Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+  id: OutputBaseDirectory
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: OutputBaseDirectory
+  nameWithType: RandomTashaSeeds.OutputBaseDirectory
+  fullName: Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: OutputBaseDirectory
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 49
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public string OutputBaseDirectory { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property OutputBaseDirectory As String
+  overload: Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory*
+  implements:
+  - XTMF.IModelSystemTemplate.OutputBaseDirectory
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.Progress
+  commentId: P:Tasha.Validation.RandomTashaSeeds.Progress
+  id: Progress
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: RandomTashaSeeds.Progress
+  fullName: Tasha.Validation.RandomTashaSeeds.Progress
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Progress
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 55
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public float Progress { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Progress As Single
+  overload: Tasha.Validation.RandomTashaSeeds.Progress*
+  implements:
+  - XTMF.IModule.Progress
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.RandomTashaSeeds.ProgressColour
+  commentId: P:Tasha.Validation.RandomTashaSeeds.ProgressColour
+  id: ProgressColour
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: ProgressColour
+  nameWithType: RandomTashaSeeds.ProgressColour
+  fullName: Tasha.Validation.RandomTashaSeeds.ProgressColour
+  type: Property
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ProgressColour
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 63
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public Tuple<byte, byte, byte> ProgressColour { get; }
+    parameters: []
+    return:
+      type: System.Tuple{System.Byte,System.Byte,System.Byte}
+    content.vb: Public ReadOnly Property ProgressColour As Tuple(Of Byte, Byte, Byte)
+  overload: Tasha.Validation.RandomTashaSeeds.ProgressColour*
+  implements:
+  - XTMF.IModule.ProgressColour
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Tasha.Validation.RandomTashaSeeds.ExitRequest
+  commentId: M:Tasha.Validation.RandomTashaSeeds.ExitRequest
+  id: ExitRequest
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: ExitRequest()
+  nameWithType: RandomTashaSeeds.ExitRequest()
+  fullName: Tasha.Validation.RandomTashaSeeds.ExitRequest()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ExitRequest
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 68
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool ExitRequest()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ExitRequest As Boolean
+  overload: Tasha.Validation.RandomTashaSeeds.ExitRequest*
+  implements:
+  - XTMF.IModelSystemTemplate.ExitRequest
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.RuntimeValidation(System.String@)
+  commentId: M:Tasha.Validation.RandomTashaSeeds.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: RandomTashaSeeds.RuntimeValidation(ref String)
+  fullName: Tasha.Validation.RandomTashaSeeds.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 73
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function RuntimeValidation(ByRef error As String) As Boolean
+  overload: Tasha.Validation.RandomTashaSeeds.RuntimeValidation*
+  implements:
+  - XTMF.IModule.RuntimeValidation(System.String@)
+  nameWithType.vb: RandomTashaSeeds.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Tasha.Validation.RandomTashaSeeds.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: Tasha.Validation.RandomTashaSeeds.Start
+  commentId: M:Tasha.Validation.RandomTashaSeeds.Start
+  id: Start
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: RandomTashaSeeds.Start()
+  fullName: Tasha.Validation.RandomTashaSeeds.Start()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: Start
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 78
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: Tasha.Validation.RandomTashaSeeds.Start*
+  implements:
+  - XTMF.ISelfContainedModule.Start
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Tasha.Validation.RandomTashaSeeds.ToString
+  commentId: M:Tasha.Validation.RandomTashaSeeds.ToString
+  id: ToString
+  parent: Tasha.Validation.RandomTashaSeeds
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: RandomTashaSeeds.ToString()
+  fullName: Tasha.Validation.RandomTashaSeeds.ToString()
+  type: Method
+  source:
+    remote:
+      path: Code/Tasha.Validation/RandomTashaSeeds.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ToString
+    path: ../../XTMF/Code/Tasha.Validation/RandomTashaSeeds.cs
+    startLine: 89
+  assemblies:
+  - Tasha.Validation
+  namespace: Tasha.Validation
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Tasha.Validation.RandomTashaSeeds.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Tasha.Validation
+  commentId: N:Tasha.Validation
+  isExternal: false
+  name: Tasha.Validation
+  nameWithType: Tasha.Validation
+  fullName: Tasha.Validation
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: XTMF.IModelSystemTemplate
+  commentId: T:XTMF.IModelSystemTemplate
+  parent: XTMF
+  isExternal: false
+  name: IModelSystemTemplate
+  nameWithType: IModelSystemTemplate
+  fullName: XTMF.IModelSystemTemplate
+- uid: XTMF.ISelfContainedModule
+  commentId: T:XTMF.ISelfContainedModule
+  parent: XTMF
+  isExternal: false
+  name: ISelfContainedModule
+  nameWithType: ISelfContainedModule
+  fullName: XTMF.ISelfContainedModule
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Tasha.Common.ITashaRuntime
+  commentId: T:Tasha.Common.ITashaRuntime
+  parent: Tasha.Common
+  isExternal: false
+  name: ITashaRuntime
+  nameWithType: ITashaRuntime
+  fullName: Tasha.Common.ITashaRuntime
+- uid: Tasha.Common
+  commentId: N:Tasha.Common
+  isExternal: false
+  name: Tasha.Common
+  nameWithType: Tasha.Common
+  fullName: Tasha.Common
+- uid: Tasha.Validation.RandomTashaSeeds.InputBaseDirectory*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: RandomTashaSeeds.InputBaseDirectory
+  fullName: Tasha.Validation.RandomTashaSeeds.InputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.InputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.InputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: InputBaseDirectory
+  nameWithType: IModelSystemTemplate.InputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.InputBaseDirectory
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Tasha.Validation.RandomTashaSeeds.Name*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.Name
+  isExternal: false
+  name: Name
+  nameWithType: RandomTashaSeeds.Name
+  fullName: Tasha.Validation.RandomTashaSeeds.Name
+- uid: XTMF.IModule.Name
+  commentId: P:XTMF.IModule.Name
+  parent: XTMF.IModule
+  isExternal: false
+  name: Name
+  nameWithType: IModule.Name
+  fullName: XTMF.IModule.Name
+- uid: Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: RandomTashaSeeds.OutputBaseDirectory
+  fullName: Tasha.Validation.RandomTashaSeeds.OutputBaseDirectory
+- uid: XTMF.IModelSystemTemplate.OutputBaseDirectory
+  commentId: P:XTMF.IModelSystemTemplate.OutputBaseDirectory
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: OutputBaseDirectory
+  nameWithType: IModelSystemTemplate.OutputBaseDirectory
+  fullName: XTMF.IModelSystemTemplate.OutputBaseDirectory
+- uid: Tasha.Validation.RandomTashaSeeds.Progress*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.Progress
+  isExternal: false
+  name: Progress
+  nameWithType: RandomTashaSeeds.Progress
+  fullName: Tasha.Validation.RandomTashaSeeds.Progress
+- uid: XTMF.IModule.Progress
+  commentId: P:XTMF.IModule.Progress
+  parent: XTMF.IModule
+  isExternal: false
+  name: Progress
+  nameWithType: IModule.Progress
+  fullName: XTMF.IModule.Progress
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Tasha.Validation.RandomTashaSeeds.ProgressColour*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.ProgressColour
+  isExternal: false
+  name: ProgressColour
+  nameWithType: RandomTashaSeeds.ProgressColour
+  fullName: Tasha.Validation.RandomTashaSeeds.ProgressColour
+- uid: XTMF.IModule.ProgressColour
+  commentId: P:XTMF.IModule.ProgressColour
+  parent: XTMF.IModule
+  isExternal: false
+  name: ProgressColour
+  nameWithType: IModule.ProgressColour
+  fullName: XTMF.IModule.ProgressColour
+- uid: System.Tuple{System.Byte,System.Byte,System.Byte}
+  commentId: T:System.Tuple{System.Byte,System.Byte,System.Byte}
+  parent: System
+  definition: System.Tuple`3
+  name: Tuple<Byte, Byte, Byte>
+  nameWithType: Tuple<Byte, Byte, Byte>
+  fullName: System.Tuple<System.Byte, System.Byte, System.Byte>
+  nameWithType.vb: Tuple(Of Byte, Byte, Byte)
+  fullName.vb: System.Tuple(Of System.Byte, System.Byte, System.Byte)
+  name.vb: Tuple(Of Byte, Byte, Byte)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Tuple`3
+  commentId: T:System.Tuple`3
+  isExternal: true
+  name: Tuple<T1, T2, T3>
+  nameWithType: Tuple<T1, T2, T3>
+  fullName: System.Tuple<T1, T2, T3>
+  nameWithType.vb: Tuple(Of T1, T2, T3)
+  fullName.vb: System.Tuple(Of T1, T2, T3)
+  name.vb: Tuple(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Tuple`3
+    name: Tuple
+    nameWithType: Tuple
+    fullName: System.Tuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T3
+    nameWithType: T3
+    fullName: T3
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.RandomTashaSeeds.ExitRequest*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.ExitRequest
+  isExternal: false
+  name: ExitRequest
+  nameWithType: RandomTashaSeeds.ExitRequest
+  fullName: Tasha.Validation.RandomTashaSeeds.ExitRequest
+- uid: XTMF.IModelSystemTemplate.ExitRequest
+  commentId: M:XTMF.IModelSystemTemplate.ExitRequest
+  parent: XTMF.IModelSystemTemplate
+  isExternal: false
+  name: ExitRequest()
+  nameWithType: IModelSystemTemplate.ExitRequest()
+  fullName: XTMF.IModelSystemTemplate.ExitRequest()
+  spec.csharp:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModelSystemTemplate.ExitRequest
+    name: ExitRequest
+    nameWithType: IModelSystemTemplate.ExitRequest
+    fullName: XTMF.IModelSystemTemplate.ExitRequest
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Tasha.Validation.RandomTashaSeeds.RuntimeValidation*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: RandomTashaSeeds.RuntimeValidation
+  fullName: Tasha.Validation.RandomTashaSeeds.RuntimeValidation
+- uid: XTMF.IModule.RuntimeValidation(System.String@)
+  commentId: M:XTMF.IModule.RuntimeValidation(System.String@)
+  parent: XTMF.IModule
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: IModule.RuntimeValidation(String)
+  fullName: XTMF.IModule.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.IModule.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: IModule.RuntimeValidation
+    fullName: XTMF.IModule.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.RandomTashaSeeds.Start*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.Start
+  isExternal: false
+  name: Start
+  nameWithType: RandomTashaSeeds.Start
+  fullName: Tasha.Validation.RandomTashaSeeds.Start
+- uid: XTMF.ISelfContainedModule.Start
+  commentId: M:XTMF.ISelfContainedModule.Start
+  parent: XTMF.ISelfContainedModule
+  isExternal: false
+  name: Start()
+  nameWithType: ISelfContainedModule.Start()
+  fullName: XTMF.ISelfContainedModule.Start()
+  spec.csharp:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: XTMF.ISelfContainedModule.Start
+    name: Start
+    nameWithType: ISelfContainedModule.Start
+    fullName: XTMF.ISelfContainedModule.Start
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Tasha.Validation.RandomTashaSeeds.ToString*
+  commentId: Overload:Tasha.Validation.RandomTashaSeeds.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: RandomTashaSeeds.ToString
+  fullName: Tasha.Validation.RandomTashaSeeds.ToString

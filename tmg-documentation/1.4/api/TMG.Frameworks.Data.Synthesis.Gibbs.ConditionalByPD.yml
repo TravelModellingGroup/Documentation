@@ -1,0 +1,1608 @@
+### YamlMime:ManagedReference
+items:
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  commentId: T:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  id: ConditionalByPD
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs
+  children:
+  - TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor(XTMF.IConfiguration)
+  - TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData(System.Int32)
+  - TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+  - TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation(System.String@)
+  - TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ZoneSystemSource
+  langs:
+  - csharp
+  - vb
+  name: ConditionalByPD
+  nameWithType: ConditionalByPD
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  type: Class
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ConditionalByPD
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 25
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: 'public sealed class ConditionalByPD : Conditional, IDataSource, IModule'
+    content.vb: >-
+      Public NotInheritable Class ConditionalByPD
+
+          Inherits Conditional
+
+          Implements IDataSource, IModule
+  inheritance:
+  - System.Object
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  implements:
+  - XTMF.IDataSource
+  - XTMF.IModule
+  inheritedMembers:
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Root
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Name
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Progress
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ProgressColour
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalColumns
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Cdf
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ColumnIndex
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalSource
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Loaded
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.XTMF#IDataSource#Loaded
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+  - TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  - XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+  id: RequiresReloadingPerZone
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  langs:
+  - csharp
+  - vb
+  name: RequiresReloadingPerZone
+  nameWithType: ConditionalByPD.RequiresReloadingPerZone
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+  type: Property
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RequiresReloadingPerZone
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 27
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: public override bool RequiresReloadingPerZone { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property RequiresReloadingPerZone As Boolean
+  overridden: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RequiresReloadingPerZone
+  overload: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ZoneSystemSource
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ZoneSystemSource
+  id: ZoneSystemSource
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  langs:
+  - csharp
+  - vb
+  name: ZoneSystemSource
+  nameWithType: ConditionalByPD.ZoneSystemSource
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ZoneSystemSource
+  type: Field
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: ZoneSystemSource
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 36
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: >-
+      [SubModelInformation(Required = false, Description = "An optional source to load the zone system from.  If left blank the Travel Demand Model Zone system will be used.")]
+
+      public IDataSource<IZoneSystem> ZoneSystemSource
+    return:
+      type: XTMF.IDataSource{TMG.IZoneSystem}
+    content.vb: >-
+      <SubModelInformation(Required:=False, Description:="An optional source to load the zone system from.  If left blank the Travel Demand Model Zone system will be used.")>
+
+      Public ZoneSystemSource As IDataSource(Of IZoneSystem)
+  attributes:
+  - type: XTMF.SubModelInformation
+    ctor: XTMF.SubModelInformation.#ctor
+    arguments: []
+    namedArguments:
+    - name: Required
+      type: System.Boolean
+      value: false
+    - name: Description
+      type: System.String
+      value: An optional source to load the zone system from.  If left blank the Travel Demand Model Zone system will be used.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor(XTMF.IConfiguration)
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor(XTMF.IConfiguration)
+  id: '#ctor(XTMF.IConfiguration)'
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  langs:
+  - csharp
+  - vb
+  name: ConditionalByPD(IConfiguration)
+  nameWithType: ConditionalByPD.ConditionalByPD(IConfiguration)
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ConditionalByPD(XTMF.IConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: .ctor
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 42
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: public ConditionalByPD(IConfiguration config)
+    parameters:
+    - id: config
+      type: XTMF.IConfiguration
+    content.vb: Public Sub New(config As IConfiguration)
+  overload: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation(System.String@)
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation(System.String@)
+  id: RuntimeValidation(System.String@)
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  langs:
+  - csharp
+  - vb
+  name: RuntimeValidation(ref String)
+  nameWithType: ConditionalByPD.RuntimeValidation(ref String)
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation(ref System.String)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: RuntimeValidation
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 47
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: public override bool RuntimeValidation(ref string error)
+    parameters:
+    - id: error
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function RuntimeValidation(ByRef error As String) As Boolean
+  overridden: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String@)
+  overload: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation*
+  nameWithType.vb: ConditionalByPD.RuntimeValidation(ByRef String)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation(ByRef System.String)
+  name.vb: RuntimeValidation(ByRef String)
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData(System.Int32)
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData(System.Int32)
+  id: LoadConditionalsData(System.Int32)
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD
+  langs:
+  - csharp
+  - vb
+  name: LoadConditionalsData(Int32)
+  nameWithType: ConditionalByPD.LoadConditionalsData(Int32)
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+      branch: dev-1.4
+      repo: https://github.com/TravelModellingGroup/XTMF.git
+    id: LoadConditionalsData
+    path: ../../XTMF/Code/TMG.Frameworks/Data/Synthesis/Gibbs/ConditionalByPD.cs
+    startLine: 75
+  assemblies:
+  - TMG.Frameworks
+  namespace: TMG.Frameworks.Data.Synthesis.Gibbs
+  syntax:
+    content: public override void LoadConditionalsData(int currentZone)
+    parameters:
+    - id: currentZone
+      type: System.Int32
+    content.vb: Public Overrides Sub LoadConditionalsData(currentZone As Integer)
+  overridden: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+  overload: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs
+  commentId: N:TMG.Frameworks.Data.Synthesis.Gibbs
+  isExternal: false
+  name: TMG.Frameworks.Data.Synthesis.Gibbs
+  nameWithType: TMG.Frameworks.Data.Synthesis.Gibbs
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  commentId: T:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs
+  isExternal: false
+  name: Conditional
+  nameWithType: Conditional
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+- uid: XTMF.IDataSource
+  commentId: T:XTMF.IDataSource
+  parent: XTMF
+  isExternal: false
+  name: IDataSource
+  nameWithType: IDataSource
+  fullName: XTMF.IDataSource
+- uid: XTMF.IModule
+  commentId: T:XTMF.IModule
+  parent: XTMF
+  isExternal: false
+  name: IModule
+  nameWithType: IModule
+  fullName: XTMF.IModule
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Root
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Root
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: Root
+  nameWithType: Conditional.Root
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Root
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Name
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Name
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: Name
+  nameWithType: Conditional.Name
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Name
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Progress
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Progress
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: Progress
+  nameWithType: Conditional.Progress
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Progress
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ProgressColour
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ProgressColour
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: ProgressColour
+  nameWithType: Conditional.ProgressColour
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ProgressColour
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalColumns
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalColumns
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: ConditionalColumns
+  nameWithType: Conditional.ConditionalColumns
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalColumns
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Cdf
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Cdf
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: Cdf
+  nameWithType: Conditional.Cdf
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Cdf
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ColumnIndex
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ColumnIndex
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: ColumnIndex
+  nameWithType: Conditional.ColumnIndex
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ColumnIndex
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalSource
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalSource
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: ConditionalSource
+  nameWithType: Conditional.ConditionalSource
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConditionalSource
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Loaded
+  commentId: F:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Loaded
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: Loaded
+  nameWithType: Conditional.Loaded
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.Loaded
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.XTMF#IDataSource#Loaded
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.XTMF#IDataSource#Loaded
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: IDataSource.Loaded
+  nameWithType: Conditional.IDataSource.Loaded
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.XTMF.IDataSource.Loaded
+  nameWithType.vb: Conditional.XTMF.IDataSource.Loaded
+  name.vb: XTMF.IDataSource.Loaded
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: true
+  name: ConvertToCdf(Single[])
+  nameWithType: Conditional.ConvertToCdf(Single[])
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+  nameWithType.vb: Conditional.ConvertToCdf(Single())
+  fullName.vb: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single())
+  name.vb: ConvertToCdf(Single())
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+    name: ConvertToCdf
+    nameWithType: Conditional.ConvertToCdf
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf(System.Single[])
+    name: ConvertToCdf
+    nameWithType: Conditional.ConvertToCdf
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.ConvertToCdf
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: GenerateBackendData()
+  nameWithType: Conditional.GenerateBackendData()
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData()
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+    name: GenerateBackendData
+    nameWithType: Conditional.GenerateBackendData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+    name: GenerateBackendData
+    nameWithType: Conditional.GenerateBackendData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GenerateBackendData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: true
+  name: GetIndex(Int32[])
+  nameWithType: Conditional.GetIndex(Int32[])
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+  nameWithType.vb: Conditional.GetIndex(Int32())
+  fullName.vb: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32())
+  name.vb: GetIndex(Int32())
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+    name: GetIndex
+    nameWithType: Conditional.GetIndex
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex(System.Int32[])
+    name: GetIndex
+    nameWithType: Conditional.GetIndex
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.GetIndex
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: LoadData()
+  nameWithType: Conditional.LoadData()
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData()
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+    name: LoadData
+    nameWithType: Conditional.LoadData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+    name: LoadData
+    nameWithType: Conditional.LoadData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: UnloadData()
+  nameWithType: Conditional.UnloadData()
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData()
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+    name: UnloadData
+    nameWithType: Conditional.UnloadData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+    name: UnloadData
+    nameWithType: Conditional.UnloadData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.UnloadData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  name: EnsureExactlyOne(IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IModule.TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{{T}},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  parent: TMG.Functions.ModuleHelper
+  definition: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  name: EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: XTMF
+  commentId: N:XTMF
+  isExternal: false
+  name: XTMF
+  nameWithType: XTMF
+  fullName: XTMF
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureExactlyOneAndOfSameType(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType<T>
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureExactlyOneAndOfSameType(Of T)
+    nameWithType: ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOneAndOfSameType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper
+  commentId: T:TMG.Functions.ModuleHelper
+  parent: TMG.Functions
+  isExternal: false
+  name: ModuleHelper
+  nameWithType: ModuleHelper
+  fullName: TMG.Functions.ModuleHelper
+- uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+  isExternal: true
+  name: EnsureExactlyOne(IModule, IModule, IModule, String)
+  nameWithType: ModuleHelper.EnsureExactlyOne(IModule, IModule, IModule, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule, XTMF.IModule, XTMF.IModule, System.String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureExactlyOne(XTMF.IModule,XTMF.IModule,XTMF.IModule,System.String@)
+    name: EnsureExactlyOne
+    nameWithType: ModuleHelper.EnsureExactlyOne
+    fullName: TMG.Functions.ModuleHelper.EnsureExactlyOne
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  commentId: M:TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+  isExternal: true
+  name: EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  nameWithType: ModuleHelper.EnsureTypesMatch<T>(IModule, IDataSource<T>, IResource, String)
+  fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>(XTMF.IModule, XTMF.IDataSource<T>, XTMF.IResource, System.String)
+  nameWithType.vb: ModuleHelper.EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  fullName.vb: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)(XTMF.IModule, XTMF.IDataSource(Of T), XTMF.IResource, System.String)
+  name.vb: EnsureTypesMatch(Of T)(IModule, IDataSource(Of T), IResource, String)
+  spec.csharp:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch<T>
+    nameWithType: ModuleHelper.EnsureTypesMatch<T>
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Functions.ModuleHelper.EnsureTypesMatch``1(XTMF.IModule,XTMF.IDataSource{``0},XTMF.IResource,System.String@)
+    name: EnsureTypesMatch(Of T)
+    nameWithType: ModuleHelper.EnsureTypesMatch(Of T)
+    fullName: TMG.Functions.ModuleHelper.EnsureTypesMatch(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: XTMF.IModule
+    name: IModule
+    nameWithType: IModule
+    fullName: XTMF.IModule
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: XTMF.IResource
+    name: IResource
+    nameWithType: IResource
+    fullName: XTMF.IResource
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Functions
+  commentId: N:TMG.Functions
+  isExternal: false
+  name: TMG.Functions
+  nameWithType: TMG.Functions
+  fullName: TMG.Functions
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RequiresReloadingPerZone
+  commentId: P:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RequiresReloadingPerZone
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: false
+  name: RequiresReloadingPerZone
+  nameWithType: Conditional.RequiresReloadingPerZone
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RequiresReloadingPerZone
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone*
+  commentId: Overload:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+  isExternal: false
+  name: RequiresReloadingPerZone
+  nameWithType: ConditionalByPD.RequiresReloadingPerZone
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RequiresReloadingPerZone
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: XTMF.IDataSource{TMG.IZoneSystem}
+  commentId: T:XTMF.IDataSource{TMG.IZoneSystem}
+  parent: XTMF
+  definition: XTMF.IDataSource`1
+  name: IDataSource<IZoneSystem>
+  nameWithType: IDataSource<IZoneSystem>
+  fullName: XTMF.IDataSource<TMG.IZoneSystem>
+  nameWithType.vb: IDataSource(Of IZoneSystem)
+  fullName.vb: XTMF.IDataSource(Of TMG.IZoneSystem)
+  name.vb: IDataSource(Of IZoneSystem)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: TMG.IZoneSystem
+    name: IZoneSystem
+    nameWithType: IZoneSystem
+    fullName: TMG.IZoneSystem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: TMG.IZoneSystem
+    name: IZoneSystem
+    nameWithType: IZoneSystem
+    fullName: TMG.IZoneSystem
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: XTMF.IDataSource`1
+  commentId: T:XTMF.IDataSource`1
+  isExternal: false
+  name: IDataSource<T>
+  nameWithType: IDataSource<T>
+  fullName: XTMF.IDataSource<T>
+  nameWithType.vb: IDataSource(Of T)
+  fullName.vb: XTMF.IDataSource(Of T)
+  name.vb: IDataSource(Of T)
+  spec.csharp:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: XTMF.IDataSource`1
+    name: IDataSource
+    nameWithType: IDataSource
+    fullName: XTMF.IDataSource
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor*
+  commentId: Overload:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.#ctor
+  isExternal: false
+  name: ConditionalByPD
+  nameWithType: ConditionalByPD.ConditionalByPD
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.ConditionalByPD
+- uid: XTMF.IConfiguration
+  commentId: T:XTMF.IConfiguration
+  parent: XTMF
+  isExternal: false
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: XTMF.IConfiguration
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String@)
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String@)
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: true
+  name: RuntimeValidation(String)
+  nameWithType: Conditional.RuntimeValidation(String)
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String)
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: Conditional.RuntimeValidation
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation(System.String@)
+    name: RuntimeValidation
+    nameWithType: Conditional.RuntimeValidation
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.RuntimeValidation
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation*
+  commentId: Overload:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation
+  isExternal: false
+  name: RuntimeValidation
+  nameWithType: ConditionalByPD.RuntimeValidation
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.RuntimeValidation
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+  commentId: M:TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+  parent: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional
+  isExternal: true
+  name: LoadConditionalsData(Int32)
+  nameWithType: Conditional.LoadConditionalsData(Int32)
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+  spec.csharp:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+    name: LoadConditionalsData
+    nameWithType: Conditional.LoadConditionalsData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData(System.Int32)
+    name: LoadConditionalsData
+    nameWithType: Conditional.LoadConditionalsData
+    fullName: TMG.Frameworks.Data.Synthesis.Gibbs.Conditional.LoadConditionalsData
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData*
+  commentId: Overload:TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData
+  isExternal: false
+  name: LoadConditionalsData
+  nameWithType: ConditionalByPD.LoadConditionalsData
+  fullName: TMG.Frameworks.Data.Synthesis.Gibbs.ConditionalByPD.LoadConditionalsData
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
