@@ -59,6 +59,8 @@ The utility for the whole household is maximized.
 There are two passes, first for drivers who are currently on the road.  The second pass checks to see if there is someone at home and if there
 is also a vehicle available to facilitate the trip.  At each pass the household utility is maximized.
 
+![alt text](images/PassengerAlgorithmOverview.png "Passenger Algorithm Overview")  ![alt text](images/PassengerAlgorithmDetailed.png "Passenger Algorithm Detailed")
+
 ### Rideshare
 
 This mode serves as a dummy mode for persons who are not in charge of their joint trip chain.  If the tour-leader chooses to take Auto Drive
