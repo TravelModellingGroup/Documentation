@@ -16,11 +16,11 @@
 
 ### Generation new ModuleDoc metadata
 
-Included in this repo is a small command line utility to convert XTMF module assemblies to an input format usable by docfx. The utility is called "ModuleDocMetaGenerator". As an input, it takes a folder path containing compiled XTMF module assemblies (.dll) and an output path where the transformed meta data will be output (multiple .json and .md files).
+Included in this repo is a small command line utility to convert XTMF module assemblies to an input format usable by docfx. The utility is called `ModuleDocMetaGenerator`. As an input, it takes a folder path containing compiled XTMF module assemblies (.dll) and an output path where the transformed meta data will be output (multiple .json and .md files).
 
 #### Usage
 
-`ModuleDocMetaGenerator.exe -i *PATH_TO_MODULES_FOLDER* -o *PATH_TO_OUTOUT_FOLDER*
+`*ModuleDocMetaGenerator.exe* -i **PATH_TO_MODULES_FOLDER** -o **PATH_TO_OUTOUT_FOLDER**
 
 
 ## Building Documentation for 1.3 and lower (XTMF only)
