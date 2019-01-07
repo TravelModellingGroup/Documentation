@@ -20,7 +20,7 @@ Included in this repo is a small command line utility to convert XTMF module ass
 
 #### Usage
 
-`*ModuleDocMetaGenerator.exe* -i **PATH_TO_MODULES_FOLDER** -o **PATH_TO_OUTOUT_FOLDER**
+`ModuleDocMetaGenerator.exe -i **PATH_TO_MODULES_FOLDER** -o **PATH_TO_OUTOUT_FOLDER**`
 
 
 ## Building Documentation for 1.3 and lower (XTMF only)
