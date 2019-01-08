@@ -38,6 +38,7 @@ The second step is to set the output directory of the dynamically linked library
 If you have access to the XTMF Software Development Kit, you should find some examples in C# for how to make a module as a supplement to this documentation.
 
 To begin, all XTMF modules need to be public classes, and need to implement ‘XTMF.IModule’ or a descendent of it.  You will need the following:
+
    * A public property of type string called ‘Name’ with both a getter and setter
    * A public Boolean function called ‘RuntimeValidation’ with a reference to a string as a parameter
    * A public property of type float called ‘Progress’ with at least a getter.
@@ -51,6 +52,20 @@ Progress represents the progress of the module (if that makes sense for the give
 When XTMF creates an instance of your module it will detect what type of constructor you picked, and then use it to create it for the model system.  If you are going to be using ‘XTMF.Networking’ you may want to get a link to the configuration so you can interact more directly with XTMF.  If you fail to have any of these constructors marked as public, XTMF will be unable to create an instance of your module.  The default constructor created (by writing nothing) will be enough for XTMF to instantiate the module.
 
 In all of the following code examples are assuming that you have already included the XTMF namespace.  Some code will reference interfaces from the TMG Interfaces library though their types do not matter in understanding how to program XTMF.
+
+## Module meta-data and documentation annotations
+
+The XTMF module SDK includes support for various forms of module meta data that can be generated as part of the XTMF main documentation (or your own). The XTMF documentation site uses docfx. 
+
+### Custom Module Icons
+
+The XTMF `ModuleInformation` annotation includes support for custom icon displays as of XTMF 1.5. Use the IconURI property of the ModuleInformation initializer. A list of some of the available icons can be found at https://materialdesignicons.com/.
+
+```cs
+    [ModuleInformation(Description =
+        "Example Module Description",
+        IconURI = "TestTube")]
+```
 
 
 ## Root and Parent Module References
