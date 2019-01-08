@@ -30,7 +30,7 @@
 
 - The embedded module documentation will now display the appropriate information from the TMG documentation site (browser)/
 
-### Miscelaneous
+### Miscellaneous
 
 - Model systems now record their last-modified time. This information is displayed on the project display.
 - Bug fixes and other performance improvements.
