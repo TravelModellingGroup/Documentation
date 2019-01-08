@@ -63,7 +63,11 @@ The XTMF `ModuleInformation` annotation includes support for custom icon display
 
 ### Module Assembly Meta Information
 
-Assembly description information as part of your module project can be used as part of documentation generation.
+Assembly description information as part of your module project can be used as part of documentation generation. The assembly meta description and information can is found within the project / assembly's `AssemblyInfo.cs` file.
+
+```cs
+[assembly: AssemblyDescription( "<Example Assembly Description>" )]
+```
 
 ## Root and Parent Module References
 
