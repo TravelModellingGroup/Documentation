@@ -14,11 +14,15 @@ Region groups are child groups of regions. Region groups are the logical contain
 
 ### Creating a new Region Display
 
+### Renaming a Region Display
+
 ### Deleting a Region Display
 
 ## Working with Region Groups
 
 ### Creating a Region Group
+
+### Renaming a Region Group
 
 ### Deleting a Region Group
 
