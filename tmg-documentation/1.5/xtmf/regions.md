@@ -10,8 +10,18 @@ A region (or region display) is the top level grouping for modules when using th
 
 Region groups are child groups of regions. Region groups are the logical container that modules are collected under. A region group must be created as part of a parent region display.
 
-## Working with Regions
+## Working with Region Displays
 
-### Creating a new Region
+### Creating a new Region Display
 
-### Deleting a Region
+### Deleting a Region Display
+
+## Working with Region Groups
+
+### Creating a Region Group
+
+### Deleting a Region Group
+
+### Adding Modules to Region Groups
+
+### Removing Modules from Region Groups
