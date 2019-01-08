@@ -61,6 +61,10 @@ The XTMF `ModuleInformation` annotation includes support for custom icon display
         IconURI = "TestTube")]
 ```
 
+### Module Assembly Meta Information
+
+Assembly description information as part of your module project can be used as part of documentation generation.
+
 ## Root and Parent Module References
 
 One of the most common things needed in a module is a way to reference its ancestors. XTMF provides two different ways to do this. First, and most common, is an attribute for requesting the Root Module.
