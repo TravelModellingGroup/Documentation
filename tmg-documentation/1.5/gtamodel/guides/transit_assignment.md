@@ -37,7 +37,7 @@ Where,
 
 \begin{equation}
 \beta = \frac{2\alpha - 1}{2\alpha - 2} \\\\
-\alpha is similar to the exponential term in the BPR function
+\alpha \text{ is similar to the exponential term in the BPR function}
 \end{equation}
 
 The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated,
