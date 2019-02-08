@@ -30,7 +30,7 @@ In this case the conical volume-delay function is used, with different functions
 and regional buses (i.e. GO). 
 
 \begin{equation}
-f(x) = weight\left(1 + \sqrt{\alpha^{2}\left(1 - x\right)^2+\beta^2-\alpha\left(1 - x\right)-\beta\right)
+f(x) = weight\left(1 + \sqrt{\alpha^{2}\left(1 - x\right)^2+\beta^2}-\alpha\left(1 - x\right)-\beta\right)
 \end{equation}
 
 Where,
