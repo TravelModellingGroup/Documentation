@@ -22,11 +22,26 @@ Each transit line segment has a standard attribute of a transit time function (T
 
 ## Congestion Delay Functions
 
-Many transit lines in the GTHA are over-crowded, leading to degraded service levels and poor reliability.  If this is not accounted for in the path choice process the model may over-assign trips to popular but over-crowded routes and not capture “spill-over” to parallel competing paths.  This may also lead to under-estimation of the impacts of transit capacity improvements on transit ridership levels.  To capture at least a first-order sensitivity to crowding effects, the model uses the Emme congested transit assignment procedure.  This procedure is the direct analogue to the standard road volume-delay function approach to modelling roadway congestion.  In this case the conical volume-delay function is used, with different functions being used for heavy rail (commuter rail and subway), light rail (streetcars and LRT), local buses and regional buses (i.e. GO). 
+Many transit lines in the GTHA are over-crowded, leading to degraded service levels and poor reliability.  If this is not accounted
+for in the path choice process the model may over-assign trips to popular but over-crowded routes and not capture “spill-over” to parallel competing paths.
+This may also lead to under-estimation of the impacts of transit capacity improvements on transit ridership levels.  To capture at least a first-order sensitivity to crowding effects,
+the model uses the Emme congested transit assignment procedure.  This procedure is the direct analogue to the standard road volume-delay function approach to modelling roadway congestion.
+In this case the conical volume-delay function is used, with different functions being used for heavy rail (commuter rail and subway), light rail (streetcars and LRT), local buses 
+and regional buses (i.e. GO). 
 
-TODO
+\begin{equation}
+f(x) = weight\left(1 + \sqrt{\alpha^{2}\left(1 - x\right)^2+\beta^2-\alpha\left(1 - x\right)-\beta\right)
+\end{equation}
 
-The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated, one for each of the 5 different TTF functions (for various services/modes). The weights for all TTFs are fixed at 1. 
+Where,
+
+\begin{equation}
+\beta = \frac{2\alpha - 1}{2\alpha - 2} \\\\
+\alpha is similar to the exponential term in the BPR function
+\end{equation}
+
+The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated,
+one for each of the 5 different TTF functions (for various services/modes). The weights for all TTFs are fixed at 1. 
 
 ## Data of Transit Demand
 
@@ -40,7 +55,20 @@ Transit estimation and calibration uses the 2011 Transportation Tomorrow Survey 
 
 Transit assignment parameters were estimated using a Particle-Swarm Optimization procedure. The root-mean-square-error (RMSE) between predicted and observed transit line boardings jointly across the AM and PM time periods is minimized using the aforementioned procedure.  That is, parameters were chosen to minimize the following function:
 
-TODO
+\begin{equation}
+\min_{\beta}\sqrt{\sum_{r}{\sum_{t}{\frac{\left(\frac{\left(PB_{rt}\left(\beta \right) - OB_{rt}\right)}{d_{t}}^2\right)}{n}}}}
+\end{equation}
+
+Where,
+\begin{equation}
+\begin{split}
+\beta & = \text{Vector of transit assignment parameters} \\\\
+PB_{rt}(\beta) & = \text{Predicted boardings on transit route } r \text{ given transit assignment parameters } \beta \text{ for time period } t \\\\
+OB_{rt} & = \text{TTS observed boardings on transit route } r \text{ for time period} t \\\\
+d_t & = \text{Duration of time period } t \text{, } (t = \text{AM peak period; PM peak period}) \\\\
+n & = \text{Number of transit lines}
+\end{split}
+\end{equation}
 
 The values of the behavioural parameters are encouraging, falling within expected bounds. The estimated wait time perception of 2.67 is only a little higher than the industry rule of thumb of 2.5. 
 
@@ -63,7 +91,14 @@ After estimating the transit assignment parameters by optimizing the prediction 
 * Matching metro-to-metro transfers within Toronto to TTS data.
 * Observing that walk-all-way trip numbers were within acceptable standards.
 
-Walk-all-way trips: The model predicts that some short trips will “walk all-way” rather than board a transit vehicle.  A small number of such trips is deemed to be acceptable. Calibration involved adjusting agency-specific boarding penalties in order to match model boardings to TTS boardings. A ‘good match’ between modelled and TTS boardings, were within an absolute value of 6000. This metric was further expanded to consider the total boardings for the specific mode (by agency), i.e. the relative difference in trips observed and modelled. Boarding penalties were capped with a maximum and minimum value of 10 and 0 minutes respectively. In addition to matching boardings by agency, attention was paid to ensure that transfers between operators were accurate, relative to TTS data. It was critical to ensure that agency-specific initial boardings and final alightings were accurate. Successful model calibration was further predicated on observing accurate metro-to-metro transfers were observed at key interchanges within Toronto. A key interchange is the meeting point of the Yonge University Spadina line and the Bloor-Danforth line. Observing the trips south of Yonge and Bloor was a critical step during calibration.   Finally, metro station-specific boardings and alightings were compared to data provided by the TTC.
+Walk-all-way trips: The model predicts that some short trips will “walk all-way” rather than board a transit vehicle.  A small number of such trips is deemed to be acceptable.
+Calibration involved adjusting agency-specific boarding penalties in order to match model boardings to TTS boardings.
+A ‘good match’ between modelled and TTS boardings, were within an absolute value of 6000. This metric was further expanded to consider the total boardings
+for the specific mode (by agency), i.e. the relative difference in trips observed and modelled. Boarding penalties were capped with a maximum and minimum value of
+10 and 0 minutes respectively. In addition to matching boardings by agency, attention was paid to ensure that transfers between operators were accurate, relative to TTS data.
+It was critical to ensure that agency-specific initial boardings and final alightings were accurate. Successful model calibration was further predicated on observing accurate
+metro-to-metro transfers were observed at key interchanges within Toronto. A key interchange is the meeting point of the Yonge University Spadina line and the Bloor-Danforth line.
+Observing the trips south of Yonge and Bloor was a critical step during calibration.   Finally, metro station-specific boardings and alightings were compared to data provided by the TTC.
 
 TODO
 

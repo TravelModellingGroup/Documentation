@@ -10,7 +10,7 @@ The figure below shows a breakdown of how the model works.
 
 ## Modes
 
-All of the parameters for each mode are documented in `Mode Choice Parameters`.
+All of the parameters for each mode are documented in [Mode Choice Parameters](mode_choice_parameters.md).
 
 ### Auto
 

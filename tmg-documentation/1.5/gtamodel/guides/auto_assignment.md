@@ -12,6 +12,14 @@ Two route major parameters needed to be calibrated for the auto assignment: the 
 
 For assignment, trips are aggregated over several hours (e.g. 3 hours for the AM peak period), but must be factored down into a single peak hour for assignment.
 
+| Time Period | Peak Hour Factor |
+|-------------|------------------|
+| AM          | 0.437            |
+| Mid-Day     | 0.1667           |
+| PM          | 0.385            |
+| EV          | 0.2              |
+| ON          | 1                |
+
 ## Outputs
 
 The traffic assignment procedure produces three output matrices: auto in-vehicle travel time (AIVTT), OD average trips costs (in $), and OD average trip tolls (also in $). The auto costs matrix encompass several per-km components of auto ownership costs, including gasoline and maintenance. See the Input section below for more details.
@@ -22,7 +30,7 @@ The traffic assignment procedure produces three output matrices: auto in-vehicle
 
 In 2011, Highway 407 was the only road with tolls on it in the model area. 407ETR (the company which has leased the road) uses a per-km toll, changing by time-of-day, by vehicle-class, and by location: a ‘light’ fare zone running from Hamilton to the Highway 403 interchange in Oakville, and a ‘regular’ fare zone across the remaining highway.   Table 2 407 toll rates details the fare amounts, which were blended in order to apply them to the model time periods which differ from those used by the tolling company. 
 
-TODO
+![alt text](images/407Tolls.png "407 Tolls")
 
 ### Link Costs
 
@@ -43,4 +51,4 @@ Emme 4.1 introduced a new implementation of the Standard Traffic Assignment proc
 The SOLA tool was compared against the Standard tool to ensure consistency of results. The two tools were run to the same convergence criterion: relative gap of 10-3, which SOLA reached in 70 iterations compared to the Standard tool’s 145 iterations. OD travel times were identical; when plotted on a scatterplot the resulting linear REGULARression had a slope of 1.0 and an R2 of 1.0. This is expected, given that both traffic assignments strive to equilibrate travel times across all paths for each OD pair. Volumes on links were also plotted on a scatterplot (see Figure 14 a comparison between SOLA and traditional road assignment on links). The overall consistency is good with a slope of 0.9996 and an R2 of 0.9998, with higher-volume links showing better convergence than lower-volumes ones. This result is expected, since the two procedures converged to slightly different solutions of link flows. 
 
 
-TODO
+![alt text](images/SOLAGraph.png "SOLA Graph")
