@@ -38,3 +38,78 @@ Each person in the model starts building their day’s activities by putting tog
 Once all of the projects have been generated person schedules are built by taking the activity episodes from the project schedules and combing them.  First work and school episodes are added, first work if they are primarily a worker otherwise school episodes.  After that household level episodes are included, then finally individual market and other episodes.  As activities are being added into the person’s schedule locations are chosen for the activities.
 
 After the all of the person schedules in the household are completed trips are then generated for processing by the mode choice.  These trips are broken into trip chains, where a trip chain ends when a person returns home.  Since there is no activity (besides return home from work / lunch) where a person would go home, if a person could return home from their current position at the end of an activity and be home for over 15 minutes a return home activity is generated, and thus ends the trip chain.
+
+## Distributions
+
+### Overview
+
+There are ten different activity types that the Scheduler can produce from its 262 different distributions:
+  * Primary Work
+  * Secondary Work
+  * Work Based Business
+  * Work At Home Business
+  * School
+  * Return From Work
+  * Individual Other
+  * Joint Other
+  * Market
+  * Joint Market
+
+#### Primary Work
+\begin{equation}
+(ageOffset * 8) + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+\end{equation}
+
+#### Secondary Work
+
+\begin{equation}
+32 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+\end{equation}
+
+#### Work Based Business
+
+\begin{equation}
+40 + (ageOffset * 8) + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+\end{equation}
+
+#### Work At Home Business
+
+\begin{equation}
+72 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+\end{equation}
+
+#### School
+
+\begin{equation}
+84 + (ageOffset * 2) + occupationOffset
+\end{equation}
+
+#### Return From Work
+
+\begin{equation}
+94 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+\end{equation}
+
+#### Individual Other
+
+\begin{equation}
+102 + ( ageOffset * 12 ) + workProjestStatus + ( person.Female ? 6 : 0 )
+\end{equation}
+
+#### Joint Other
+
+\begin{equation}
+158 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+\end{equation}
+
+#### Market
+
+\begin{equation}
+182 + ( ageOffset * 14 ) + (int)workProjestStatus + ( person.Female ? 7 : 0 )
+\end{equation}
+
+#### Joint Market
+
+\begin{equation}
+238 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+\end{equation}
