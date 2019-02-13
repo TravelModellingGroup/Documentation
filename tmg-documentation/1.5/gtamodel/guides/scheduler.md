@@ -41,8 +41,6 @@ After the all of the person schedules in the household are completed trips are t
 
 ## Distributions
 
-### Overview
-
 There are ten different activity types that the Scheduler can produce from its 262 different distributions:
   * Primary Work
   * Secondary Work
@@ -55,61 +53,137 @@ There are ten different activity types that the Scheduler can produce from its 2
   * Market
   * Joint Market
 
-#### Primary Work
+The following sections will give the formulas to interpret the distribution id numbers mapping them onto the circumstances of the schedule and demographics of the person.
+
+#### Lookup Table Values
+
+The following tables give the conversions for the variables in the formulas to convert an activity to its distribution id number.
+
+| School Age Offset | Range   |
+|-------------------|---------|
+| 0                 | <=   15 |
+| 1                 | <= 18   |
+| 2                 | <=   25 |
+| 3                 | <= 30   |
+| 4                 | else    |
+
+| Non-School Age Offset | Range  |
+|-----------------------|--------|
+| -1                    | < 11   |
+| 0                     | < 18   |
+| 1                     | < 26   |
+| 2                     | < 65   |
+| 3                     | else   |
+
+| Occupation Offset | Type          |
+|-------------------|---------------|
+| 0                 | Office        |
+| 1                 | Manufacturing |
+| 2                 | Professional  |
+| 3                 | Retail        |
+
+| Work Project Status | Type                              |
+|---------------------|-----------------------------------|
+| 0                   | NoWorkOrSchool                    |
+| 1                   | FullTimeNoEveningWorkOrSchool     |
+| 2                   | FullTimeEveningWorkOrSchool       |
+| 3                   | FullTimeDayAndEveningWorkOrSchool |
+| 4                   | PartTimeDay                       |
+| 5                   | PartTimeEvening                   |
+| 6                   | Other                             |
+
+| Adult Offset | Range |
+|--------------|-------|
+| 0            | 1     |
+| 1            | 2     |
+| 2            | else  |
+
+
+#### Activity Generation ID Formulas
+
+##### Primary Work
 \begin{equation}
-(ageOffset * 8) + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+id = (ageOffset * 8) + occupationOffset * 2 +
+\begin{cases}
+1, & EmploymentStatus = FullTime \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Secondary Work
+##### Secondary Work
 
 \begin{equation}
-32 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+id = 32 + occupationOffset * 2 +
+\begin{cases}
+1, & EmploymentStatus = FullTime \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Work Based Business
+##### Work Based Business
 
 \begin{equation}
-40 + (ageOffset * 8) + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+id = 40 + (ageOffset * 8) + occupationOffset * 2 +
+\begin{cases}
+1, & EmploymentStatus = FullTime \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Work At Home Business
+##### Work At Home Business
 
 \begin{equation}
-72 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+id = 72 + occupationOffset * 2 +
+\begin{cases}
+1, & EmploymentStatus = FullTime \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### School
+##### School
 
 \begin{equation}
-84 + (ageOffset * 2) + occupationOffset
+id = 84 + (ageOffset * 2) + occupationOffset
 \end{equation}
 
-#### Return From Work
+##### Return From Work
 
 \begin{equation}
-94 + occupationOffset * 2 + (EmployMentStatus = FullTime ? 1 : 0)
+id = 94 + occupationOffset * 2 +
+\begin{cases}
+1, & EmploymentStatus = FullTime \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Individual Other
+##### Individual Other
 
 \begin{equation}
-102 + ( ageOffset * 12 ) + workProjestStatus + ( person.Female ? 6 : 0 )
+id = 102 + ( ageOffset * 12 ) + workProjestStatus +
+\begin{cases}
+6, & Female \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Joint Other
+##### Joint Other
 
 \begin{equation}
-158 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+id = 158 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
 \end{equation}
 
-#### Market
+##### Market
 
 \begin{equation}
-182 + ( ageOffset * 14 ) + (int)workProjestStatus + ( person.Female ? 7 : 0 )
+id = 182 + ( ageOffset * 14 ) + workProjestStatus +
+\begin{cases}
+7, & Female \\\\
+0, & else
+\end{cases}
 \end{equation}
 
-#### Joint Market
+##### Joint Market
 
 \begin{equation}
-238 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+id = 238 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
 \end{equation}
