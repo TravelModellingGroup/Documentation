@@ -1,5 +1,7 @@
 # Mode Choice Parameters
 
+### GTAModel V4.0.1
+
 | Parameter Name                                                                        | Value        |
 |---------------------------------------------------------------------------------------|--------------|
 | Auto Drive.ProfessionalTimeFactor                                                     | -0.05916234  |
