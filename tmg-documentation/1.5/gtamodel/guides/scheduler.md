@@ -61,21 +61,21 @@ The following sections will give the formulas to interpret the distribution id n
 
 The following tables give the conversions for the variables in the formulas to convert an activity to its distribution id number.
 
-| School Age Offset | Range   |
-|-------------------|---------|
-| 0                 | <=   15 |
-| 1                 | <= 18   |
-| 2                 | <=   25 |
-| 3                 | <= 30   |
-| 4                 | else    |
+| School Age Offset | Range |
+|-------------------|-------|
+| 0                 | <= 15 |
+| 1                 | <= 18 |
+| 2                 | <= 25 |
+| 3                 | <= 30 |
+| 4                 | else  |
 
-| Non-School Age Offset | Range  |
-|-----------------------|--------|
-| -1                    | < 11   |
-| 0                     | < 18   |
-| 1                     | < 26   |
-| 2                     | < 65   |
-| 3                     | else   |
+| Non-School Age Offset | Range |
+|-----------------------|-------|
+| -1                    | < 11  |
+| 0                     | < 18  |
+| 1                     | < 26  |
+| 2                     | < 65  |
+| 3                     | else  |
 
 | Occupation Offset | Type          |
 |-------------------|---------------|
