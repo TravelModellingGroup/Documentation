@@ -12,6 +12,8 @@ The generation process of GTAModel V4.0 works on a fixed probability matrix popu
 
 All of the rates are read in from the file “~/ActivityDistributions/FrequencyDistributions.zfc” besides the number of adults contained in a joint episode while is in “~/ActivityDistributions/AdultDistributions.zfc”.  When calibrating models it is best to never touch these files as they have been generated using XTMF from the 2011 TTS.
 
+The activity generation distributions are broken down into their 
+
 ![alt text](images/GenerateEpisodes.png "Generate Episodes")
 
 ## Combining Projects Into a Person Schedule
@@ -97,6 +99,12 @@ The following tables give the conversions for the variables in the formulas to c
 | 0            | 1     |
 | 1            | 2     |
 | 2            | else  |
+
+| Child Offset | Range |
+|--------------|-------|
+| 0            | 0     |
+| 12           | else  |
+
 
 
 #### Activity Generation ID Formulas
