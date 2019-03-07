@@ -20,7 +20,8 @@ Destination parking costs are applied for Non-home destined trips based on the a
 
 ### Carpool
 
-The carpool mode in GTAModel V4.0 is meant to represent inter household passenger trips, including taxi.  Explicitly this does not include passenger trips facilitated by household members.
+The carpool mode in GTAModel V4.0 is meant to represent inter household passenger trips, including taxi (GTAModel V4.0 only).
+Explicitly this does not include passenger trips facilitated by household members.
 
 ### DAT (Drive-Access-Transit)
 
@@ -65,3 +66,20 @@ is also a vehicle available to facilitate the trip.  At each pass the household 
 
 This mode serves as a dummy mode for persons who are not in charge of their joint trip chain.  If the tour-leader chooses to take Auto Drive
 then this mode will be assigned to the passenger.
+
+### Passenger Access Transit (PAT)
+
+Available in GTAModel V4.1+, this mode serves as an auto passenger trip to transit stations that have parking
+lots.  This mode does not require the facilitation by a household member, nor the allocation of a household
+auto.
+
+### Passenger Egress Transit (PET)
+
+Available in GTAModel V4.1+, this mode serves as an auto passenger trip from transit stations that have parking
+lots.  This mode does not require the facilitation by a household member, nor the allocation of a household
+auto.
+
+
+### Vehicle For Hire (VFH)
+
+Available in GTAModel V4.1+, this mode serves as a grouping for Taxi and Uber, Lift, and other Vehicle for Hire services.
