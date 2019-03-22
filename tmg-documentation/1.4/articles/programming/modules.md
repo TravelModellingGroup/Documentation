@@ -79,6 +79,8 @@ When we write this code, we are also restricting what XTMF is allowed to do with
 
 The second type of reference is to your direct parent.
 
+## Module Parameters
+
 ```cs
    [RunParameter("Random Seed", 12345, "A number to use as the seed for the random number generator.")]
    public int RandomSeed
@@ -88,7 +90,10 @@ The second type of reference is to your direct parent.
    }
 ```
 
-## Module Parameters
+```cs
+   [RunParameter("Random Seed", 12345, "A number to use as the seed for the random number generator.")]
+   public int RandomSeed;
+```
 
 One of the most important things for any module will be its parameters.  There are two different types of parameters in XTMF, ‘Parameter’, and ‘RuntimeParameter’.  A runtime parameter will be able to be edited locally in the project, where as a regular one will not.  In the TMG modules all parameters are runtime parameters allowing for the most flexibility for our end users.
 
