@@ -1,4 +1,4 @@
-###### Station Choice
+# Station Choice
 
 GTAModel V4.0's access station choice model has been improved to be a tour based station choice model.  This allows us to be able to consider different times of day
 when choosing what station is selected.  For example if you were to leave in the AM from Hamilton, you might chose to drive to Aldershot station instead of
