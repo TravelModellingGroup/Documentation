@@ -119,7 +119,7 @@ for the OL take the following form:
 \pi_{ij} = Pr\left(y_i = j|X_i\right) = \Lambda\left(\tau_j-X_i\beta\right) - \Lambda\left(\tau_{j - 1} - X_i\beta \right)
 \end{equation}
 
-where \\( \Lambda(.) represents the standard logistic cumulative distribution function. \\)
+where \\( \Lambda(.) \\) represents the standard logistic cumulative distribution function.
 
 In order to finalize the model specification, a systematic process of removing statistically insignificant variables,
 guided by intuition and parsimony considerations. The model estimation results are presented in Table 2.
