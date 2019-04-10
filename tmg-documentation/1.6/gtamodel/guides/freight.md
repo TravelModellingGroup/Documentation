@@ -37,11 +37,11 @@ is 0 is then taken to be the Peak Period Factor.
 
 ![alt text](images/Freight/AvgErrorAM.png "Average Error AM")
 
-#####_Figure 1 - Average Countpost Error based on PPF in the AM_
+####_Figure 1 - Average Countpost Error based on PPF in the AM_
 
 ![alt text](images/Freight/AvgErrorPM.png "Average Error AM")
 
-######_Figure 2 - Average Countpost Error based on PPF in the PM_
+####_Figure 2 - Average Countpost Error based on PPF in the PM_
 
 The peak hour factor from this method was found to be 0.46 and 0.39 for the AM and PM respectively. When comparing these numbers to the 2016 TTS Trip starts,
  they seem to get AM correct but the PM appears to be too high. For comparison, the TTS peak hour factors which were 0.469 and 0.307. This is likely due to
@@ -54,7 +54,8 @@ The peak hour factor from this method was found to be 0.46 and 0.39 for the AM a
 Since the freight model only provides freight demand data for a 12.5 hour period, it was necessary to break it in to time periods and peak hours for each time period in order to assign the freight into Emme.
 Table 1 summarizes the calculations that were done.
 
-#####_Table 1 - Freight factors_
+####_Table 1 - Freight factors_
+
 | Adjustment Factors              |          |          |          |
 |---------------------------------|----------|----------|----------|
 | Vehicle   Class                 | Light    | Medium   | Heavy    |
