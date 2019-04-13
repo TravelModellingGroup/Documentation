@@ -2,13 +2,32 @@
 
 ## Emme Version
 
-It is strongly recommended that users install the latest version of Emme, at least 4.2, for running the model. The model is mostly backwards compatible (although this is a currently untested statement) to at least Emme 4.0, but running the model with previous versions will significantly change its results.
+It is strongly recommended that users install the latest version of Emme, at least 4.2,
+ for running the model. The model is mostly backwards compatible (although this is a currently untested statement)
+ to at least Emme 4.0, but running the model with previous versions will significantly change its results.
 
 ## Emme Databank
 
-An Emme project of sufficient size is required to be set up before being able to run GTAModel 4. Table [1] below shows the recommended dimensions for each network element.
+An Emme project of sufficient size is required to be set up before being able to run GTAModel 4. 
+Table [1] below shows the recommended dimensions for each network element.
 
-TODO
+|    Emme   Databank Element    |    Recommended   Allotment    |
+|-------------------------------|-------------------------------|
+|    Scenarios                  |    100                        |
+|    Scalar Matrices            |    99                         |
+|    Origin Matrices            |    99                         |
+|    Destination Matrices       |    99                         |
+|    Full Matrices              |    200                        |
+|    Centroids                  |    3,250                      |
+|    Regular Nodes              |    29,249                     |
+|    Links                      |    162,500                    |
+|    Turn Entries               |    10,000                     |
+|    Transit Vehicles           |    30                         |
+|    Transit Lines              |    5,000                      |
+|    Transit Segments           |    200,000                    |
+|    Extra Attribute Values     |    4,000,000                  |
+|    Functions                  |    99                         |
+|    Operators                  |    2,000                      |
 
 In addition to the dimensions, proper units are also required.  The image below shows our configuration.
 
@@ -90,14 +109,49 @@ Generally speaking, the model assumes that the network is in compliance with Net
 
 Link Volume-Delay Functions (VDFs) are used to classify roads in accordance with NCS11. The actual functional form used is a tangent function, a hybrid between the BPR function (when volume is less than capacity), and a straight line (as volume exceeds capacity). Its expression is given below:
 
-TODO
+\begin{equation}
+atime_{ij}(volau) = fft_{ij} * delay_{ij}(volau)
+\end{equation}
+
+\begin{equation}
+fft_{ij} = length_{ij}* 60/speed_{ij}
+\end{equation}
+
+Where
+
+* \\( atime_{ij}(volau) \\) is the travel time on link ij for a given auto volume (volau).
+* \\( fft_{ij} \\)  is the freeflow travel time, in minutes.
+* \\( delay_{ij}(volau) \\)  is the delay function multiplier of the freeflow time
+* \\( length_{ij} \\)  is the length of link ij, in km.
+* \\( speed_{ij} \\) is the modelled speed of link ij, in km/hr.
+* \\( VCR_{ij}(volau) \\)  is the volume-capacity-ratio of link ij for a given auto volume
+* \\( \beta \\)  is the function exponent, set to 4 on most links, and 6 on highways.
+* \\( vola_{ij} \\) is the link additional volume.
+* \\( tvph_{ij} \\)  is the transit vehicle auto equivalencies per hour on link ij.
+* \\( lanes_{ij} \\) is the number of lanes of traffic on link ij.
+* \\( capacity_{ij} \\) is the capacity per lanes of link ij, in passenger vehicles per hour.
+
 
 ### Travel Time Functions
 
-Transit segments also have assigned travel time functions (TTFs), which classify the type of ROW being used, in accordance with NCS11. ROW-A (exclusive, grade-separated ROW) segments use TTF1, ROW-B (exclusive-lane, but not grade-separated) segments use TTF2, and ROW-C (mixed-traffic) segments use TTF3. In addition, TTF4 was defined for ROW-C services which travel on highways (e.g. GO Bus lines), to allow the segment speeds to be higher where the line travels along highways. Table [2] below lists the five TTF expressions:
+Transit segments also have assigned travel time functions (TTFs), which classify the type of ROW being used, in accordance with
+ NCS11. ROW-A (exclusive, grade-separated ROW) segments use TTF1, ROW-B (exclusive-lane, but not grade-separated) segments use
+ TTF2, and ROW-C (mixed-traffic) segments use TTF3. In addition, TTF4 was defined for ROW-C services which travel on highways
+ (e.g. GO Bus lines), to allow the segment speeds to be higher where the line travels along highways. Table [2] below lists the 
+five TTF expressions:
 
-TODO
+| Function | Applies To                                 | Expression          |
+|----------|--------------------------------------------|---------------------|
+| ft1      | subways                                    | length * 60 / us1   |
+| ft2      | exclusive ROW streetcars, LRT,   BRT, etc. | length * 60 / speed |
+| ft3      | mixed ROW streetcars, LRT, BRT,   etc.     | length * 60 / speed |
+| ft4      | local mixed ROW buses                      | length * 60 / speed |
+| ft5      | GO Buses                                   | length * 60 / speed |
 
 ## Fare Schema File
 
-The fare schema file is used by the model system to generate hyper-networks required for fare-based transit assignment, and defines the fare structure of the network. The model system is currently configured to use the fare prices and structures for the 2012 base year. This fare schema file identifies 10 layers within the network (see Table [3]); 4 fare zones (see Figure [1]); and 27 fare rules, including GO Transit co-fares, TTC premium routes, and YRT zonal fares. For further documentation on the base fare schema file, refer to the TMG report “Fare Based Transit Networks”.
+The fare schema file is used by the model system to generate hyper-networks required for fare-based transit assignment,
+ and defines the fare structure of the network. The model system is currently configured to use the fare prices and structures
+ for the 2012 base year. This fare schema file identifies 10 layers within the network (see Table [3]); 4 fare zones (see Figure [1]);
+ and 27 fare rules, including GO Transit co-fares, TTC premium routes, and YRT zonal fares. For further documentation
+ on the base fare schema file, refer to the TMG report [Fare Based Transit Networks](fare_schema_file_specification.html).
