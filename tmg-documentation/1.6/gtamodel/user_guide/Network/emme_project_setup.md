@@ -12,7 +12,7 @@ TODO
 
 In addition to the dimensions, proper units are also required.  The image below shows our configuration.
 
-![alt text](images/1.png "Figure 1")
+![alt text](images/database_properties.png "Figure 1")
 
 ## Adding TMG Toolbox
 
