@@ -1,4 +1,4 @@
-# Input File Structure
+# V4Input Directory Structure
 
 This section describes how files are organized within the XTMF project input directory.  Depending on your base version of GTAModel
 the exact structure will change.  If your model system was constructed outside of TMG please contact your provider for
@@ -38,7 +38,7 @@ This directory contains the parameters used to estimate the different models con
 
 This directory contains the results of the estimation process for GTAModel V4.  
 The mode choice algorithm’s parameters are read in from this directory.  
-For recalibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.
+For re-calibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.
 
 > [!NOTE]
 > In GTAModel V4.0 the mode choice estimation results are used in order to setup the parameters for the run.  Starting in
@@ -58,13 +58,33 @@ For recalibration you can edit the mode choice’s values, please contact TMG be
 #### Scenario-Network
 
 Each year contains a file called BaseNetwork.nwp containing the master network.  Each scenario then contains a set of files
-that are used for generating the time period networks.  More information can be found [here](Network/network_scenario_format.md) describing their format.
+that are used for generating the time period networks.  More information can be found [here](file_formats/network_scenario_format.md) describing their format.
 
 #### Scenario-Population
 
+* HouseholdData:
+  * Households.csv: 
+  * Persons.csv: 
+* WorkerCategories: For each occupation and employment category a CSV file is exists containing with three columns:
+Zone, WorkerCategory, and the ratio of that worker category for the given zone.
+* ZonalResidence: For each occupation and employment category a CSV exists containing two columns:
+Zone, and the number of workers in that zone that work within the GTHA and the number of non-roaming workers of that
+category living in that zone.
+* ZoneData: 
+  * Zones.csv: Contains information related to each zone in the zone system.  A detailed description of the format can be found [here](file_formats/zones_file_format.md).
+  * Zones.zfc: A binary cached version of the Zones.csv.  Starting in XTMF1.5 this file is no longer created during the model run.
+  * Regions.csv: A CSV file with two columns: (Zone, Region).  Each zone can only belong to a single region.  External zones
+    should be absent or given a region number of 0.
+
 #### Scenario-Stations
 
+* StationCapacity.csv: A CSV file with the columns in the order of Zone and Capacity for each station zone.
+
 #### Scenario-Transit Fares
+
+* Fare Rules.xml: An XML file in the [fare schema format](file_formats/fare_schema_file_specification.md) describing the fare policies
+    when initially boarding or transferring between transit agencies.
+* York_Region_Zone: A folder containing a shapefile that shows the different fare zones for York Region.
 
 #### School
 
@@ -80,7 +100,7 @@ This directory contains the information on how to generate activity episodes.  B
 
 This directory contains the results of the estimation process for GTAModel V4.  
 The mode choice algorithm’s parameters are read in from this directory.  
-For recalibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.
+For re-calibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.
 
 > [!NOTE]
 > In GTAModel V4.0 the mode choice estimation results are used in order to setup the parameters for the run.  Starting in
@@ -88,13 +108,13 @@ For recalibration you can edit the mode choice’s values, please contact TMG be
 
 #### Employment
 
-There are a couple different subdirectories inside of this directory.  The first, ‘EmpOccRates’, contains the probability of being part of an occupation and employment status for each zone.  The second, ‘WorkerCategories’ contains the probability of being in a worker mobility category.  This the first two directories are generated from population synthesis.  The third directory is ‘ZonalResidence’.  This directory contains the number of residents in each zone that belong to the employment status and occupation.
+There are a couple different sub-directories inside of this directory.  The first, ‘EmpOccRates’, contains the probability of being part of an occupation and employment status for each zone.  The second, ‘WorkerCategories’ contains the probability of being in a worker mobility category.  This the first two directories are generated from population synthesis.  The third directory is ‘ZonalResidence’.  This directory contains the number of residents in each zone that belong to the employment status and occupation.
 
 #### Estimation
 
-This directory contains all of the parameter files used in estimation.  Unless you are recalibrating GTAModel there are no files here to edit.
+This directory contains all of the parameter files used in estimation.  Unless you are re-calibrating GTAModel there are no files here to edit.
 
-#### Househould Data
+#### Household Data
 
 This directory contains the household and person files for the synthetic population. Titled Household.csv and Persons.csv respectively. In addition, you may have a Summary.csv file which contains the sum of the two aforementioned files.
 
