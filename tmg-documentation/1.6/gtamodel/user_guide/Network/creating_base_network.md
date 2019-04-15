@@ -19,21 +19,21 @@ ON = 0000-0600
 line=______ xor line=TS____ xor line=GT____
  (Prorate transit speeds)
 10. Clean the time period networks using the parameters listed (Remove Extra Nodes). Apply @stop as the stop filter.
-vdf: force
-length: sum
-type: first
-lanes: force
-ul1: avg
-ul2: force
-ul3: force
-dwt: sum
-dwfac: force
-ttf: force
-us1: avg_by_length
-us2: avg
-us3: avg
-@stn1: force
-@stn2: force
+  * vdf: force
+  * length: sum
+  * type: first
+  * lanes: force
+  * ul1: avg
+  * ul2: force
+  * ul3: force
+  * dwt: sum
+  * dwfac: force
+  * ttf: force
+  * us1: avg_by_length
+  * us2: avg
+  * us3: avg
+  * @stn1: force
+  * @stn2: force
 
 11. In order to send an edited network back to the network caretaker, first make sure to remove the zone system. Use Delete Nodes with subset i = 0,9000
 12. Then use Export Network Package to prepare the network for sending.
