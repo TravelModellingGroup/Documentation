@@ -10,11 +10,11 @@ Associated tool names in italics
 6. (might not be required) Assign values to @z407. Can be loaded in from a text file. (Import attribute values)
 7. (in development) Make an aggregation selection file so that headway generation can be performed using naïve or average aggregation. (Create Aggregation Selection File)
 8. Split the full base into time period bases. (Create Time Period Network)
-AM = 0600-0900
-MD = 0900-1500
-PM = 1500-1900
-EV = 1900-2400
-ON = 0000-0600
+  * AM = 0600-0900
+  * MD = 0900-1500
+  * PM = 1500-1900
+  * EV = 1900-2400
+  * ON = 0000-0600
 9. Assign values to us1 for all transit segments. Filter:
 line=______ xor line=TS____ xor line=GT____
  (Prorate transit speeds)
