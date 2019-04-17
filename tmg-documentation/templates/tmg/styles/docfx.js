@@ -117,10 +117,11 @@ $(function() {
 		var href = window.location.href;
 		var versionLinks = $('.version-link');
 
-		var hrefRegex = /((?:http[s]?:\/\/)?(?:[^\/\s]+)\/(?:\D*\/)?)(\d*.\d*){1}\/(?:\D*)?/;
+		//var hrefRegex = /(((?:(?:http[s]?:\/\/)?(?:[^\/\s]+)\/(?:\D*\/)?))(\d*.\d*)?\/(?:\D*\/)?)(?:\D*)?/;
+		var hrefRegex = /(((?:(?:http[s]?:\/\/)?(?:[^\/\s]+)\/(?:\D*\/)*))(\d+.\d+)?\/?(?:\D*\/)?)(?:\D*)?/;
 		var results = hrefRegex.exec(href);
 		for (var i = 0; i < versionLinks.length; i++) {
-			versionLinks[i].href = results !== null ? results[1] + $(versionLinks[i]).data('version') + '/' : href + $(versionLinks[i]).data('version')
+			versionLinks[i].href = results[3] !== undefined ? results[2] + $(versionLinks[i]).data('version') + '/' : results[2] + $(versionLinks[i]).data('version')
 		}
 	}
 
