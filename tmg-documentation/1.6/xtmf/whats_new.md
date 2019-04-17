@@ -1,4 +1,4 @@
-# What's new in XTMF Version 1.5?
+# What's new in XTMF Version 1.6?
 
 ## XTMF Software Changes
 
