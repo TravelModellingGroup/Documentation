@@ -88,7 +88,24 @@ category living in that zone.
 
 #### School
 
+* BaseYearStudentLinkages-Elementry.csv: A square CSV matrix of home zone to school zone linkages from TTS
+        for the elementry school aged students.
+* BaseYearStudentLinkages-Highschool.csv: A square CSV matrix of home zone to school zone linkages from TTS
+        for the highschool aged students.
+* BaseYearStudentLinkages-PostSecondary.csv: A square CSV matrix of home zone to school zone linkages from TTS
+        for the post secondary aged students.
+* ElementaryStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.
+* HighschoolStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.
+* UniversityStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.
+
 #### Validation
+
+* RoadCounts
+  * Screenline Mapping 2.csv: This file contains a mapping of screenline names to the station numbers within
+    TMG's base year network.  This file is used in the model system.
+  * Screenline Mapping.csv: This file contains the same mapping of screenline names to the station numbers
+    with the addition of local screenline names and local station ids.
+ 
 
 # [**GTAModel V4.0.1**](#tab/tabid-3)
 
