@@ -6,7 +6,7 @@ title: Getting Familiar with XTMF
 
 ## The XTMF Interface
 
-XTMF 1.5 in its most basic form functions as a single window user experience. The interface allows the user
+XTMF 1.6 in its most basic form functions as a single window user experience. The interface allows the user
 to work with projects and model systems, the underlying format of the XTMF work-flow. Multiple model systems
 and projects can be active at the same time.
 

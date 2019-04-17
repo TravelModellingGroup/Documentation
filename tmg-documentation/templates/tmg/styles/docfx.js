@@ -8,7 +8,7 @@ $(function() {
 	var hide = 'hide';
 	var util = new utility();
 
-	var default_version = '1.5';
+	var default_version = '1.6';
 	renderIsDoc();
 	workAroundFixedHeaderForAnchors();
 	highlight();
@@ -114,25 +114,25 @@ $(function() {
 	}
 
 	function updateVersionUrls() {
-		var href = window.location.pathname;
-
-		href = href.substring(0, href.indexOf('/', href.indexOf('/') + 1));
-
+		var href = window.location.href;
 		var versionLinks = $('.version-link');
 
+		var hrefRegex = /((?:http[s]?:\/\/)?(?:[^\/\s]+)\/(?:\D*\/)?)(\d*.\d*){1}\/(?:\D*)?/;
+		var results = hrefRegex.exec(href);
 		for (var i = 0; i < versionLinks.length; i++) {
-			versionLinks[i].href = href + '/' + $(versionLinks[i]).data('version') + '/';
+			versionLinks[i].href = results !== null ? results[1] + $(versionLinks[i]).data('version') + '/' : href + $(versionLinks[i]).data('version')
 		}
 	}
 
 	function getActiveVersion() {
 		var href = window.location.href;
-		var versionRegex = /(\d{1,2}\.)(\d{1,2})/;
+		var versionRegex = /(?:http[s]?:\/\/)?(?:[^\/\s]+\/)(?:\D*\/)?(\d*.\d*){1}\/(?:\D*)?/
 		var results = versionRegex.exec(href);
+
 		if (results !== null && results.length > 0) {
-			return results[0];
+			return results[1];
 		} else {
-			return null;
+			return default_version;
 		}
 	}
 
