@@ -15,6 +15,24 @@ GTAModelV4 has a population synthesized from the TTS (Transportation for Tomorro
 
 ### Installation and Setup
 
+#### Mysql Server Installation
+
+If you do not have a copy of MySQL Server - an installer is available for download at <https://dev.mysql.com/downloads/mysql/.> A minimum version of version 5.5 of the Community Edition is required.
+
+During the installation process, keep note of the server isntallation's root password that you provide. A valid database user and password is required is required to connect to the database server.
+
+##### Creating a Database
+
+Apart from the MySQL Server installation, a database must be created with the proper access privileges for the user account used to connect to the server.
+
+(TODO)
+
+
+#### Python Installation
+
+
+##### Installing Package Dependencies
+
 #### Input Configuration
 
 GTAModel's population synthesis procedure requires defining its inputs through a JSON formatted configuration file. A blank / schema version of the required input format is provided for guidance in creating the properly structured input.
