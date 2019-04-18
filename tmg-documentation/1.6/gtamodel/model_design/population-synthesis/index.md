@@ -102,3 +102,25 @@ After the required input configuration has been finalized, the population synthe
 ## Post-Processing
 
 ### Output Files
+
+After the population synthesis procedure has completed, the synthesized population will be written to the output folder specified in the configuration settings.
+
+#### Population Files
+
+##### Households
+
+
+##### Persons
+
+##### Zonal Residence
+
+##### Employment and Occupation Vectors
+
+
+#### Log Files
+
+Logginging information from different stages of execution are appended to several different log files in the output directory:
+    1. event.log - Output from PopSyn3
+    2. post-process.log - Output from the post process stage of execution.
+    3. pre-process.log - Output from the pre-process stage of execution.
+    4. run.log - Output during execution, which contains a mix of GTAModel specific information alongside PopSyn3 output information.
