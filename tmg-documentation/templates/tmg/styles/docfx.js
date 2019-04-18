@@ -121,13 +121,16 @@ $(function() {
 		var hrefRegex = /(((?:(?:http[s]?:\/\/)?(?:[^\/\s]+)\/(?:\D*\/)*))(\d+.\d+)?\/?(?:\D*\/)?)(?:\D*)?/;
 		var results = hrefRegex.exec(href);
 		for (var i = 0; i < versionLinks.length; i++) {
-			versionLinks[i].href = results[3] !== undefined ? results[2] + $(versionLinks[i]).data('version') + '/' : results[2] + $(versionLinks[i]).data('version')
+			versionLinks[i].href =
+				results[3] !== undefined
+					? results[2] + $(versionLinks[i]).data('version') + '/'
+					: results[2] + $(versionLinks[i]).data('version');
 		}
 	}
 
 	function getActiveVersion() {
 		var href = window.location.href;
-		var versionRegex = /(?:http[s]?:\/\/)?(?:[^\/\s]+\/)(?:\D*\/)?(\d*.\d*){1}\/(?:\D*)?/
+		var versionRegex = /(?:http[s]?:\/\/)?(?:[^\/\s]+\/)(?:\D*\/)?(\d*.\d*){1}\/(?:\D*)?/;
 		var results = versionRegex.exec(href);
 
 		if (results !== null && results.length > 0) {
@@ -1339,3 +1342,17 @@ $(function() {
 		scrollToCurrent();
 	}
 });
+
+function tocNavigate(event, element) {
+	var a = $(element).find('> a');
+	if (a.length > 0) {
+		if (a[0].href !== '') {
+			window.location = a[0].href;
+		}
+	}
+	event.cancelBubble = true;
+}
+
+function tocExpand(event) {
+	event.cancelBubble = true;
+}

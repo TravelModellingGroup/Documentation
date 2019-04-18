@@ -3,9 +3,9 @@
 <ul class="nav level{{level}}">
   {{#items}}
     {{^dropdown}}
-      <li>
+      <li onclick="tocNavigate(event,this);">
         {{^leaf}}
-          <span class="expand-stub"></span>
+          <span onclick="tocExpand(event);" class="expand-stub"></span>
         {{/leaf}}
         {{#topicHref}}
           <a href="{{topicHref}}" name="{{tocHref}}" title="{{name}}">{{name}}</a>
