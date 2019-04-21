@@ -21,11 +21,22 @@ If you do not have a copy of MySQL Server - an installer is available for downlo
 
 During the installation process, keep note of the server isntallation's root password that you provide. A valid database user and password is required is required to connect to the database server.
 
+##### Server Configuration
+
+It may be necessary to increase the size of the `max_allowed_packet` property before running the server. This property can be set in the server's configuration file. On Windows, the default property file loaded is `my.ini`, located in the root of the server installation directory. 
+
+> [!NOTE]
+> For more information about this server variable, please see the MySql documentation at <https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_allowed_packet.>
+
+
 ##### Creating a Database
 
 Apart from the MySQL Server installation, a database must be created with the proper access privileges for the user account used to connect to the server.
 
 (TODO)
+
+
+
 
 
 #### Python Installation
