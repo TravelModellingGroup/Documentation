@@ -76,8 +76,7 @@ C =
 \begin{equation}
 D =
  \begin{bmatrix}
-   1 \\\\
-    3
+   1 & 3
 \end{bmatrix} \end{equation}
 
 The following is the difference between the basic arithmetic with vertical and horizontal vectors applied to A:
@@ -92,8 +91,8 @@ A + C =
 \begin{equation}
 A + D =
 \begin{bmatrix}
-  1 & 2 \\\\
-  1 & 0.75
+  2 & 5 \\\\
+  4 & 7
 \end{bmatrix} \end{equation}
 
 ## Comparisons
