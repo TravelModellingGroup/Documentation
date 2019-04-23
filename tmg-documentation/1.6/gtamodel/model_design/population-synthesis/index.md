@@ -116,7 +116,7 @@ There are various several command line arguments available when running the modu
 	-h, --help            show this help message and exit
 	-c CONFIG, --config CONFIG
 							Path of the configuration file to use.
-	-p, --preprocess-only
+	-i, --input-process-only
 							Only generate synthesis files and don't run synthesis
 							procedure.
 	-o, --output-only     Only write synthesized population from existing
@@ -130,6 +130,8 @@ There are various several command line arguments available when running the modu
 > Please ensure that your MySQL server is started before starting the synthesis procedure.
 
 ## Post-Processing
+
+Post-processing is performed automatically in the standard execution of the gtamodel_popsyn module. To specifically target the post-processining step of `gtamodel_popsyn`, use either the `-r` or `-o` command line arguments to only generate a report, or only generate output files.
 
 ### Output Files
 
