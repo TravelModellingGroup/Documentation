@@ -23,11 +23,10 @@ During the installation process, keep note of the server isntallation's root pas
 
 ##### Server Configuration
 
-It may be necessary to increase the size of the `max_allowed_packet` property before running the server. This property can be set in the server's configuration file. On Windows, the default property file loaded is `my.ini`, located in the root of the server installation directory. 
+It may be necessary to increase the size of the `max_allowed_packet` property before running the server. This property can be set in the server's configuration file. On Windows, the default property file loaded is `my.ini`, located in the root of the server installation directory.
 
 > [!NOTE]
 > For more information about this server variable, please see the MySql documentation at <https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_allowed_packet.>
-
 
 ##### Creating a Database
 
@@ -35,12 +34,7 @@ Apart from the MySQL Server installation, a database must be created with the pr
 
 (TODO)
 
-
-
-
-
 #### Python Installation
-
 
 ##### Installing Package Dependencies
 
@@ -57,8 +51,8 @@ The default configuration JSON has the following format:
 	"DatabaseUser": "",
 	"DatabaseServer": "",
 	"PersonsSeedFile": "",
-    "HouseholdsSeedFile": "",
-    "OutputFolder": "",
+	"HouseholdsSeedFile": "",
+	"OutputFolder": "",
 	"MazLevelControls": "",
 	"TazLevelControls": "",
 	"MetaLevelControls": "",
@@ -83,7 +77,7 @@ The default configuration JSON has the following format:
 }
 ```
 
-| Configuration Value |                                                                                                          Description                                                                                                          |
+| Configuration Value | Description                                                                                                                                                                                                                   |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | DatabaseName        | The database name to be used during the population synthesis procedure.                                                                                                                                                       |
 | DatabasePassword    | The password to be used to connect to the database.                                                                                                                                                                           |
@@ -105,7 +99,32 @@ The default configuration JSON has the following format:
 
 ### Starting a Run
 
-After the required input configuration has been finalized, the population synthesis procedure can be run. The file `run.py` is the main python script that begins the synthesis procedure. These steps involve reading the input data and configuration settings. This information is then used to create and process the required database tables used by PopSyn3.
+The python module `gtamodel_popsyn` is used from the command line to perform all steps required to complete the population synthesis. The default behaviour when executing the `gtamodel_popsyn` module from the command line is perform all steps of the synthesis procedure:
+
+1. Input transformations.
+2. Control total calculations.
+3. Synthesize records.
+4. Write synthesized records to file.
+5. Generate a summary report.
+
+There are various several command line arguments available when running the module to target a specific step of the synthesis procedure. Command line arguments and their descriptions are listed below.
+
+```console
+	usage: __main__.py [-h] [-c CONFIG] [-p] [-o] [-r]
+
+	optional arguments:
+	-h, --help            show this help message and exit
+	-c CONFIG, --config CONFIG
+							Path of the configuration file to use.
+	-p, --preprocess-only
+							Only generate synthesis files and don't run synthesis
+							procedure.
+	-o, --output-only     Only write synthesized population from existing
+							database data.
+	-r, --report-only     Only generate a summary report from existing output
+							files.
+```
+
 
 > [!NOTE]
 > Please ensure that your MySQL server is started before starting the synthesis procedure.
@@ -120,18 +139,12 @@ After the population synthesis procedure has completed, the synthesized populati
 
 ##### Households
 
-
 ##### Persons
 
 ##### Zonal Residence
 
 ##### Employment and Occupation Vectors
 
-
 #### Log Files
 
-Logginging information from different stages of execution are appended to several different log files in the output directory:
-    1. event.log - Output from PopSyn3
-    2. post-process.log - Output from the post process stage of execution.
-    3. pre-process.log - Output from the pre-process stage of execution.
-    4. run.log - Output during execution, which contains a mix of GTAModel specific information alongside PopSyn3 output information.
+Logginging information from different stages of execution are appended to several different log files in the output directory: 1. event.log - Output from PopSyn3 2. post-process.log - Output from the post process stage of execution. 3. pre-process.log - Output from the pre-process stage of execution. 4. run.log - Output during execution, which contains a mix of GTAModel specific information alongside PopSyn3 output information.
