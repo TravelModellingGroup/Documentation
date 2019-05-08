@@ -3,8 +3,17 @@
 This tool allows the user to import a network into Emme using an NWP file (network package file)
 
 ## Opening the Tool with Modeller
-
+---
 This module can be found in Emme Modeller. Navigate to "TMG Toolbox" -> "Input Output" -> "Import Network Package". Double click the module to open it in Emme Modeller. 
+
+1. Open Emme Modeller
+![alt text](images/import_network_package_1.png "Open Emme Modeller")
+
+2. Navigate to TMG Toolbox
+![alt text](images/import_network_package_2.png "Navigate to TMG Toolbox")
+
+3. Open Import Network Package tool
+![alt text](images/import_network_package_3.png "Open Import Network Package tool")
 
 ## Using the Tool with Modeller
 
