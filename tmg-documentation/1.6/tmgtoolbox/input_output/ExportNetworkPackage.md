@@ -1,6 +1,6 @@
 ﻿# **Export Network Package**
 The export network package allows the user to export a scenario in a compact file. This makes use of the NWP format, the same format that is used in the Import Network Package tool
-> An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. It does not contain the strategies used in the transit assignment however.  NWP files can be "unzipped" using a software package like "7zip" or even windows (by changing the extension from ".nwp" to ".zip". After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be "zipped" again and the extension changed back to ".nwp" for use in the tool. Manually editing the files in this manner is only recommended for advanced users.
+> An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. However, it does not contain the strategies used in the transit assignment.  NWP files can be "unzipped" using a software package like "7zip" or even windows (by changing the extension from ".nwp" to ".zip". After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be "zipped" again and the extension changed back to ".nwp" for use in the tool. Manually editing the files in this manner is only recommended for advanced users.
 > An NWP file at minimum contains the following:
 > version.txt
 > info.txt
