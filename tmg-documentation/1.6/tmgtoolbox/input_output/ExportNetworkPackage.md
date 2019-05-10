@@ -1,4 +1,4 @@
-﻿# Export Network Package
+﻿# **Export Network Package**
 The export network package allows the user to export a scenario in a compact file. This makes use of the NWP format, the same format that is used in the Import Network Package tool
 > An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. It does not contain the strategies used in the transit assignment however.  NWP files can be "unzipped" using a software package like "7zip" or even windows (by changing the extension from ".nwp" to ".zip". After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be "zipped" again and the extension changed back to ".nwp" for use in the tool. Manually editing the files in this manner is only recommended for advanced users.
 > An NWP file at minimum contains the following:
@@ -25,10 +25,9 @@ The export network package allows the user to export a scenario in a compact fil
 > segment_results.csv
 > turn_results.csv
 
-## Opening the Tool with Modeller
-The tool be found in "TMG Toolbox" -> "Input Output" -> "Export Network Package"
 
-## Using the Tool with Modeller
+## **Using the Tool with Modeller**
+The tool be found in "TMG Toolbox" -> "Input Output" -> "Export Network Package"
 ### Scenario
 The scenario that you wish to export is specified here. Only one scenario can be exported at one time
 
@@ -38,13 +37,16 @@ The Exported NWP file name and file location is to be provided here. Press "Brow
 ### Dealing with Extra Attributes
 There are two ways to deal with Extra Attributes. One can export all of them by selecting the "Export all extra attributes?" box or individual Extra Attributes can be selected using the "Extra Attributes" search box. It is generally a good idea to only export the attributes you will need to make it a cleaner network. 
 
-## Using the Tool with XTMF
 
+## **Using the Tool with XTMF**
 The tool is called "ExportNetworkPackage". It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun
+
 ### Attributes to Export
 A list of extra attribute IDs to include in the NWP file (including the '@' symbol).  If you enter in 'All' all attributes will be exported."
+
 ### Scenario
 The Emme scenario to export
+
 ### Export File
 The location where the exported network package will be saved should be specified here by adding the appropriate module and then selecting the file location.
 
