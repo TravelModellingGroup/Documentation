@@ -20,3 +20,25 @@ Adding the toolbox can be done in a number of ways. One way is given below. Note
 6. Press "Ok"
 7. Close Modeller
 8. On Emme Desktop, press "File" at the top left, followed by " Save Project Settings"
+
+## Opening the Tool with Modeller
+
+1. Open Emme Modeller
+![alt text](images/Find_tool_step_1.png "Open Emme Modeller")
+
+2. Navigate to TMG Toolbox
+![alt text](images/Find_tool_step_2.png "Navigate to TMG Toolbox")
+
+3. Open the Tool
+![alt text](images/Find_tool_step_3.png "Open Import Network Package tool")
+
+## Opening the Tool with XTMF
+
+1. Open XTMF and Create a Model System
+![alt text](images/xtmf_new_model_system.png "Create a Model System in XTMF")
+
+2. Add a Module
+![alt text](images/xtmf_add_module.png "Add a Module to Tools")
+
+3. Search and Select the Module
+![alt text](images/xtmf_import_network_package.png "Search and Select the Module")
