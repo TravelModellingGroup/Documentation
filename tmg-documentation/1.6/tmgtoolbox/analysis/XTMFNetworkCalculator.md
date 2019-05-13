@@ -1,5 +1,5 @@
 # **XTMF Network Calculator**
-
+This tool is used to perform calculations of the Emme network, including Links, Nodes, Transit Lines, and Transit Segments.
 
 ## **Using the Tool with Modeller**
 The tool is not callable from Emme Modeller. Please use XTMF.
