@@ -4,7 +4,7 @@ This tool is used to calculate auto and transit accessibility.
 
 
 ## **Using the Tool with Modeller**
-The tool is not callable from Emme Modeller. Please use XTMF instead.
+The tool is not callable from Emme Modeller. Please use XTMF.
 
 
 ## **Using the Tool with XTMF**
