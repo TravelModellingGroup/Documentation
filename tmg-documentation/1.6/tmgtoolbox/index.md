@@ -23,22 +23,28 @@ Adding the toolbox can be done in a number of ways. One way is given below. Note
 
 ## Opening the Tool with Modeller
 
-1. Open Emme Modeller
+1. Open Emme Modeller<br />
 ![alt text](images/Find_tool_step_1.png "Open Emme Modeller")
+<br />
 
-2. Navigate to TMG Toolbox
+2. Navigate to TMG Toolbox<br />
 ![alt text](images/Find_tool_step_2.png "Navigate to TMG Toolbox")
+<br />
 
-3. Open the Tool
+3. Open the Tool<br />
 ![alt text](images/Find_tool_step_3.png "Open Import Network Package tool")
+<br />
+
 
 ## Opening the Tool with XTMF
 
-1. Open XTMF and Create a Model System
+1. Open XTMF and Create a Model System<br />
 ![alt text](images/xtmf_new_model_system.png "Create a Model System in XTMF")
+<br />
 
-2. Add a Module
+2. Add a Module<br />
 ![alt text](images/xtmf_add_module.png "Add a Module to Tools")
+<br />
 
-3. Search and Select the Module
+3. Search and Select the Module<br />
 ![alt text](images/xtmf_import_network_package.png "Search and Select the Module")
