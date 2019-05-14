@@ -23,7 +23,8 @@ After everything is installed the next step is to create your new project. You w
 
 Once that is done you will need to add a reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll` file. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
 
-> [!NOTE] >`XTMFInterfaces.dll` is included as part of the regular XTMF download package.
+> [!NOTE]
+> `XTMFInterfaces.dll` is included as part of the regular XTMF download package.
 
 The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page. To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
 

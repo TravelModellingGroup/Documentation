@@ -74,7 +74,7 @@ namespace ModuleDocMetaGenerator
                         {
                             href = (uidOption.HasValue() ?  uidOption.Value() + "_" : "") + info.Assembly.GetName().Name.Replace("`", "_") + "-assembly.json",
                             items = new List<TocElement>(),
-                            name = info.Assembly.GetName().Name 
+                            name = info.Assembly.GetName().Name.Replace("`", "_")
                         };
                         _tocElements.Add(tocElement);
 
@@ -85,7 +85,7 @@ namespace ModuleDocMetaGenerator
                             {
                                 href = (uidOption.HasValue() ? uidOption.Value() + "_" : "") + module.TypeName.Replace("+", "+").Replace("`","_") + ".json",
                                 items = new List<TocElement>(),
-                                name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1) 
+                                name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1).Replace("`", "_")
                             });
                         }
 
