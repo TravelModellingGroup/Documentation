@@ -89,7 +89,6 @@ namespace ModuleDocProcessor
                     context.SetValue("Module", ((Dictionary<string, object>) model.Content)["json"]);
                     context.SetValue("Json", ((Dictionary<string, object>) model.Content)["conceptual"]);
                     context.SetValue("ModuleName", moduleName);
-
                     var rendered = template.Render(context);
                     ((Dictionary<string, object>) model.Content)["conceptual"] = rendered;
                 }

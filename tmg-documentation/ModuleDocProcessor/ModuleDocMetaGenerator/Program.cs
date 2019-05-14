@@ -44,6 +44,11 @@ namespace ModuleDocMetaGenerator
                 "The input directory path.",
                 CommandOptionType.SingleValue);
 
+            CommandOption uidOption = commandLineApplication.Option(
+                "-$|-u | --uid-prefix",
+                "The UID prefix",
+                CommandOptionType.SingleValue);
+
             commandLineApplication.HelpOption("-? | -h | --help");
             commandLineApplication.OnExecute(() =>
             {
