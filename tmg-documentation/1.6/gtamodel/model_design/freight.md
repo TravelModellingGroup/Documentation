@@ -55,6 +55,6 @@ trucks obtained from gravity model.
 ### Trip Assignment
 
 The model implementation for GTAModelV4.1.0 then differs from the original model as the assignment is integrated into a multiclass auto assignment
-along with the passenger demand coming from TASHA.  For a detailed explanation please review GTAModelV4.1's [Auto Assignment Documentation](auto_assignment.html#gtamodel-v41).
+along with the passenger demand coming from TASHA.  For a detailed explanation please review GTAModelV4.1's [Auto Assignment Documentation](auto_assignment.md#gtamodel-v41).
 
 

@@ -34,7 +34,7 @@ namespace ModuleDocProcessor
 
             var assembly = Assembly.GetAssembly(typeof(ModuleDocBuildStep));
             var resourceName = "ModuleDocProcessor.Module.liquid";
-            Console.WriteLine(assembly);
+            // Console.WriteLine(assembly);
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             {
@@ -75,7 +75,7 @@ namespace ModuleDocProcessor
         {
             // model.Content = "transform test";
             // ((Dictionary<string, object>)model.Content)["conceptual"] = model.C;
-            Console.WriteLine(model.File);
+            Console.WriteLine(model.File + " - " + model.Key);
             if (!model.File.Contains("assembly"))
             {
                 if (FluidTemplate.TryParse(_template, out var template))

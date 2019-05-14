@@ -154,4 +154,4 @@ The fare schema file is used by the model system to generate hyper-networks requ
  and defines the fare structure of the network. The model system is currently configured to use the fare prices and structures
  for the 2012 base year. This fare schema file identifies 10 layers within the network (see Table [3]); 4 fare zones (see Figure [1]);
  and 27 fare rules, including GO Transit co-fares, TTC premium routes, and YRT zonal fares. For further documentation
- on the base fare schema file, refer to the TMG report [Fare Based Transit Networks](fare_schema_file_specification.html).
+ on the base fare schema file, refer to the TMG report [Fare Based Transit Networks](../file_formats/fare_schema_file_specification.md).

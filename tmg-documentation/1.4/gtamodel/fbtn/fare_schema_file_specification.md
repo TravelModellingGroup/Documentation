@@ -182,7 +182,7 @@ YRT divides York Region into three fare zones (1, 2, and 3). The boundaries betw
 
 ## GO Transit
 
-GO Transit fares work on a zone system, where the cost of a ticket depends on which station one boards at and which station one alights at – the cost paid per ticket was provided as an origin-destination matrix. This is difficult to model from the route-choice perspective given the constructive nature of path-building. Therefore GO fares are approximated as a per-km fare, with an initial boarding fare. 
+GO Transit fares work on a zone system, where the cost of a ticket depends on which station one boards at and which station one alights at – the cost paid per ticket was provided as an origin-destination matrix. This is difficult to model from the route-choice perspective given the constructive nature of path-building. Therefore GO fares are approximated as a per-km fare, with an initial boarding fare.
 
 The initial fare comes directly from the fare matrix and is the minimum cost of a GO trip and also the cost of travelling within a single zone.
 

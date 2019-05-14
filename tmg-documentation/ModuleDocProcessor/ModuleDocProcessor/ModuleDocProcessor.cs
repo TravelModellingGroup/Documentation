@@ -67,7 +67,7 @@ namespace ModuleDocProcessor
 
             var localPathFromRoot = PathUtility.MakeRelativePath(EnvironmentContext.BaseDirectory, EnvironmentContext.FileAbstractLayer.GetPhysicalPath(file.File));
             DirectoryInfo di = new DirectoryInfo(file.File);
-            var fm = new FileModel(file, content,null,null,di.Parent?.Name + "_" +file.File)
+            var fm = new FileModel(file, content)
             {
                 LocalPathFromRoot = localPathFromRoot,
 
