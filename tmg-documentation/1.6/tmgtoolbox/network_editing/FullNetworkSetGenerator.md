@@ -1,4 +1,8 @@
-﻿# Full Network Set Generator
+﻿---
+uid: 1_6_toolbox_fnsg
+title: Extending the Multi-Run Framework
+---
+# Full Network Set Generator
 This tool takes a "Base Scenario" and creates time period specific networks (AM, MD, PM, EV, ON). It also cleans those networks for use in Auto and Transit assignments. For more information on the tool algorithm and the various components within the tool please visit the [Full Network Set Generator Page](https://tmg.utoronto.ca/doc/1.5/gtamodel/full_network_generator.html)
 
 

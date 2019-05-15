@@ -44,6 +44,11 @@ namespace ModuleDocMetaGenerator
                 "The input directory path.",
                 CommandOptionType.SingleValue);
 
+            CommandOption uidOption = commandLineApplication.Option(
+                "-$|-u | --uid-prefix",
+                "The UID prefix",
+                CommandOptionType.SingleValue);
+
             commandLineApplication.HelpOption("-? | -h | --help");
             commandLineApplication.OnExecute(() =>
             {
@@ -57,7 +62,7 @@ namespace ModuleDocMetaGenerator
                 foreach (string file in Directory.EnumerateFiles(
                     inputDir, "*.dll", SearchOption.AllDirectories))
                 {
-                    totalModuleCount += ProcessAssembly(file, outputDir);
+                    totalModuleCount += ProcessAssembly(file, outputDir, uidOption);
                 }
 
                 foreach (var k in _assemblyModulesMap.Keys.ToList())
@@ -67,9 +72,9 @@ namespace ModuleDocMetaGenerator
                         var info = _assemblyModulesMap[k];
                         var tocElement = new TocElement()
                         {
-                            href = info.Assembly.GetName().Name + "-assembly.json",
+                            href = (uidOption.HasValue() ?  uidOption.Value() + "_" : "") + info.Assembly.GetName().Name.Replace("`", "_") + "-assembly.json",
                             items = new List<TocElement>(),
-                            name = info.Assembly.GetName().Name
+                            name = info.Assembly.GetName().Name.Replace("`", "_")
                         };
                         _tocElements.Add(tocElement);
 
@@ -78,15 +83,15 @@ namespace ModuleDocMetaGenerator
                         {
                             tocElement.items.Add(new TocElement()
                             {
-                                href = module.TypeName.Replace("+", "+") + ".json",
+                                href = (uidOption.HasValue() ? uidOption.Value() + "_" : "") + module.TypeName.Replace("+", "+").Replace("`","_") + ".json",
                                 items = new List<TocElement>(),
-                                name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1)
+                                name =  module.TypeName.Substring(module.TypeName.LastIndexOf('.')+1).Replace("`", "_")
                             });
                         }
 
                         _assemblyModulesMap[k].ModulesInfo = _assemblyModulesMap[k].ModulesInfo.OrderBy(x => x.Name).ToList();
                         string jsonData = JsonConvert.SerializeObject(_assemblyModulesMap[k]);
-                        System.IO.File.WriteAllText(Path.Combine(outputDir, $"{_assemblyModulesMap[k].Assembly.GetName().Name}-assembly.json"), jsonData);
+                        System.IO.File.WriteAllText(Path.Combine(outputDir, (uidOption.HasValue() ? uidOption.Value() +"_" : "") + $"{_assemblyModulesMap[k].Assembly.GetName().Name}-assembly.json".Replace("`","_")), jsonData);
                         Console.WriteLine();
 
                     }
@@ -113,7 +118,7 @@ namespace ModuleDocMetaGenerator
         /// <param name="assemblyPath"></param>
         /// <param name="outputDir"></param>
         /// <returns></returns>
-        public static int ProcessAssembly(string assemblyPath, string outputDir)
+        public static int ProcessAssembly(string assemblyPath, string outputDir, CommandOption uidOption)
         {
             
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
@@ -138,7 +143,7 @@ namespace ModuleDocMetaGenerator
                     if (interfaceType.Name == ("IModule") || interfaceType.Name == ("ISelfContainedModule"))
                     {
                         Console.WriteLine(type + " - " + assembly);
-                        ProcessModule(type, outputDir,assembly);
+                        ProcessModule(type, outputDir,assembly,uidOption);
                         moduleCount++;
                         break;
                     }
@@ -162,7 +167,7 @@ namespace ModuleDocMetaGenerator
         /// <param name="moduleType"></param>
         /// <param name="outputDir"></param>
         /// <param name="assembly"></param>
-        public static void ProcessModule(Type moduleType, string outputDir, Assembly assembly)
+        public static void ProcessModule(Type moduleType, string outputDir, Assembly assembly, CommandOption uidOption)
         {
             var info = new ModuleMetaInfo()
             {
@@ -208,7 +213,7 @@ namespace ModuleDocMetaGenerator
             }
 
             string jsonData = JsonConvert.SerializeObject(info);
-            System.IO.File.WriteAllText(Path.Combine(outputDir, $"{moduleType.FullName.Replace("+","+")}.json"), jsonData);
+            System.IO.File.WriteAllText(Path.Combine(outputDir, (uidOption.HasValue() ? uidOption.Value() + "_" : "") + $"{moduleType.FullName.Replace("+","+").Replace("`", "_")}.json"), jsonData);
         }
     }
 

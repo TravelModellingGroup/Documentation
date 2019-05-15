@@ -1,4 +1,5 @@
 ﻿# Toll Attribute Transit Background
+
 Executes a standard Emme traffic assignment using tolls for link costs converted to a time penalty, using a specified link extra attribute containing the toll value. The actual times and costs are recovered by running a second 'all-or-nothing' assignment. 
 
 This version uses a link extra attribute containing the link toll amount, as well as calculates custom transit BG traffic from segments with flagged TTFs. It assumes that segments flagged with ttf=3 mix with traffic. 
