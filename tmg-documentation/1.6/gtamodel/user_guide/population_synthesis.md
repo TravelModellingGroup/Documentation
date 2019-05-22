@@ -42,6 +42,14 @@ A valid installation of Python 3.5+ is required. Python can be downloaded at htt
 
 ##### Installing Package Dependencies
 
+Restore package requirements with pip:
+
+```sh
+
+>pip install -r requirements.txt
+
+```
+
 #### Input Configuration
 
 GTAModel's population synthesis procedure requires defining its inputs through a JSON formatted configuration file. A blank / schema version of the required input format is provided for guidance in creating the properly structured input.
