@@ -38,6 +38,8 @@ Apart from the MySQL Server installation, a database must be created with the pr
 
 #### Python Installation
 
+A valid installation of Python 3.5+ is required. Python can be downloaded at https://www.python.org/downloads/ or using the anaconda distrubtion: https://www.anaconda.com/distribution/. The Anaconda distrubtion is preferred, as there are some performance improvements available that are applicable to the packages used in gtamodel_popsyn (pandas, numpy).
+
 ##### Installing Package Dependencies
 
 #### Input Configuration
