@@ -35,8 +35,10 @@
 * Step 1: Right-click and select "Set Module" or Press "Ctrl"+"M"<br />
 ![alt text](images/Slide9.jpg "Right-click and select Set Module")
 <br />
+<br />
 * Step 2: Type any keyword to find the "BasicTravelDemandModel" module<br />(Note: there is no space in between each word of the module name)
 ![alt text](images/Slide10.jpg "find the BasicTravelDemandModel module")
+<br />
 <br />
 * The model system should look like this:<br />
 ![alt text](images/Slide11.jpg "Basic Travel Demand Model")
