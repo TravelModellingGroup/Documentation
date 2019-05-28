@@ -15,3 +15,6 @@ but not changing the rate between the non-zero frequencies.
 unemployed person 'works' in planning district 0.  If there are multiple generation rate
 adjustments that cover the same activity distribution and home and work planning districts,
 the adjustment that comes first in the list will be applied.
+
+The results of episode generation can be found in the [Microsim](../user_guide/file_formats/microsim.md)
+data within the Trips table.
