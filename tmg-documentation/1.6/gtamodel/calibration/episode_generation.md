@@ -2,8 +2,11 @@
 # Episode Generation
 
 The episode generation for GTAModel is based on 262 different distributions
-extracted from the TTS survey.  Documentation on how map these different distributions
-[here](../model_design/scheduler.md#generate-trip-chains).  
+extracted from the TTS survey. 
+ 
+> [!TIP]
+> Documentation on how map Distribution IDs to activities can be found
+> [here](../model_design/scheduler.md#generate-trip-chains).  
 
 ![alt text](images/episode_generation_1.png "Episode generation rate adjustments")
 
