@@ -29,3 +29,10 @@ until you have achieved the final model's calibration.
 > [!Warning]
 > If you change your planning district system please go through each calibration step to
 > see what parameters be effected, including the ones that came with the base GTAModel V4.
+
+When working with calibration modules TMG has the tradition of naming the module to describe
+the planning districts they apply to by planning district numbers using the range set format.
+For example, `1-4,6` refers to planning districts 1, 2, 3, 4, and 6.  If the calibration
+factor contains an origin and destination a colon ':' is used to separate the range sets.
+For example, `1-4,6:5,7-16` represents trips originating in the inner planning districts of
+Toronto going to the Outer planning districts of Toronto.
