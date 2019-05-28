@@ -28,7 +28,7 @@ until you have achieved the final model's calibration.
 
 > [!Warning]
 > If you change your planning district system please go through each calibration step to
-> see what parameters be effected, including the ones that came with the base GTAModel V4.
+> see what parameters be affected, including the ones that came with the base GTAModel V4.
 
 > [!Tip]
 > When working with calibration modules TMG has the tradition of naming the module to describe
