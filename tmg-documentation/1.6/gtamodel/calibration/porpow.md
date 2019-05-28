@@ -19,14 +19,14 @@ For this model, origin refers to home zone, and destination refers to the work z
 > origin and destination planning districts to remain within the initial
 > calibration provided by TMG.
 
-![alt text](images/porpow_2.png "PoRPoW location")
+![alt text](images/porpow_2.png "PoRPoW K-Factors")
 
 In order to validate the results GTAModel V4.1 will save the results of the
 final aggregate models to the output directory `Validation/PoRPoW/Compare/` in that
 directory you will see three folders: PD, Region, and Zone.  Each of these directories
 will have a matrix containing the \\( Model_{occemp} - TTS_{occemp} \\) at the given aggregation.
 
-![alt text](images/porpow_3.png "PoRPoW location")
+![alt text](images/porpow_3.png "PoRPoW model calibration results")
 
 
 
