@@ -12,7 +12,7 @@ Within the module there is a module list called `Constants` which contain module
 | Parameter | Description |
 |--------------------|-------------------------------------------------------------------------------|
 | Constant | A constant applied to the binary logit |
-| Planning Districts | The planning districts to select if the person lives in the   given home zone |
+| Planning Districts | The planning districts to select if the person lives in the given home zone |
 
 The results of the driver license model can be found in the [Microsim](../user_guide/file_formats/microsim.md)
 data within the Persons table.

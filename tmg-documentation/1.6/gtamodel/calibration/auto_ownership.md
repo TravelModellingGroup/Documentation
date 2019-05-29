@@ -8,7 +8,15 @@ model.  Documentation for the model itself can be found
 level, where a positive number will increase the probability that a higher number of cars
 will be allocated to the households.
 
-![alt text](images/auto_ownership_1.png "Auto ownership constants")
+You can find the auto ownership model at `Household Loader/Auto Ownership Model`.  Within the module
+you can increase or decrease the number of vehicles created by creating or modifying the modules within
+the `Constants` module list.  Each of these modules has two parameters.
+
+| Parameter | Description |
+|--------------------|-------------------------------------------------------------------------------|
+| Constant | A constant applied to the binary logit |
+| Planning Districts | The planning districts to select if the person lives in the given home zone |
+
 
 The results of the auto ownership model can be found in the [Microsim](../user_guide/file_formats/microsim.md)
 data within the Households table.
