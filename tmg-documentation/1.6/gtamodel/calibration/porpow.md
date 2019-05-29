@@ -6,27 +6,34 @@ focus on the aggregate PoRPoW models, one for each occupation category and full-
 employment.  If you are not similar with these models please review their documentation
 [here](../model_design/porpow.md).
 
-You can find the PoRPoW modules in the Resource list, as shown below.
+You can find the Professional Full-Time model in GTAModel V4.1 at
+`Resources/Professional FT Probabilities/PoRPoW`.  The other occupation and employment
+categories are located similarly.
 
-![alt text](images/porpow_1.png "PoRPoW location")
+Inside of each PoRPoW model's `Friction` module you will be able to create K-Factors between
+planning districts by adding, or modifying, the modules in the `KFactors` module list.
 
-Inside of each PoRPoW model you will be able to assign a K-Factor between planning districts.
+Each K-Factor has the following parameters:
+
+| Parameter | Description |
+|-----------------|----------------------------------------------------------------------------------------------------------------------|
+| Origin PDs | The planning districts to select if the person lives in the   given home zone. |
+| Destination PDs | The planning districts to select if the person would work in   the given work zone. |
+| Factor | The multiplicative factor to apply to the friction for the   defined home zone's and work zone's planning districts. |
+
+
 If a planning district OD is defined more than once, the K-Factors will be multiplied together.
-For this model, origin refers to home zone, and destination refers to the work zone.
 
 > [!Warning]
 > If you have created additional planning districts you may need to update these K-Factors
 > origin and destination planning districts to remain within the initial
 > calibration provided by TMG.
 
-![alt text](images/porpow_2.png "PoRPoW K-Factors")
-
 In order to validate the results GTAModel V4.1 will save the results of the
 final aggregate models to the output directory `Validation/PoRPoW/Compare/` in that
-directory you will see three folders: PD, Region, and Zone.  Each of these directories
+directory you will see three folders: `PD`, `Region`, and `Zone`.  Each of these directories
 will have a matrix containing the \\( Model_{occemp} - TTS_{occemp} \\) at the given aggregation.
 
-![alt text](images/porpow_3.png "PoRPoW model calibration results")
 
 
 
