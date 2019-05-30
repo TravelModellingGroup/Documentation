@@ -122,7 +122,8 @@ The python module `gtamodel_popsyn` is used from the command line to perform all
 There are various several command line arguments available when running the module to target a specific step of the synthesis procedure. Command line arguments and their descriptions are listed below.
 
 ```console
-	usage: __main__.py [-h] [-c CONFIG] [-p] [-o] [-r]
+	usage: __main__.py [-h] [-c CONFIG] [-i] [-d] [-o OUTPUT_ONLY]
+					[-r VALIDATION_REPORT_ONLY]
 
 	optional arguments:
 	-h, --help            show this help message and exit
@@ -131,10 +132,14 @@ There are various several command line arguments available when running the modu
 	-i, --input-process-only
 							Only generate synthesis files and don't run synthesis
 							procedure.
-	-o, --output-only     Only write synthesized population from existing
+	-d, --database-only   Only initialize the database and tables required for
+							PopSyn3.
+	-o OUTPUT_ONLY, --output-only OUTPUT_ONLY
+							Only write synthesized population from existing
 							database data.
-	-r, --report-only     Only generate a summary report from existing output
-							files.
+	-r VALIDATION_REPORT_ONLY, --validation-report-only VALIDATION_REPORT_ONLY
+							Only generate a summary report from existing output
+							files. Pass the generated output folder to use.
 ```
 
 
