@@ -20,7 +20,7 @@
 ![alt text](images/Slide16.jpg "ModellerControllerDataSource Module")
 <br />
 <br />
-* Step 2: Double-click **Project Folder** to add “DirectorySeperatedPathFromOutputDirectory” Module<br />
+* Step 2: Double-click **Project Folder** to add "DirectorySeperatedPathFromOutputDirectory" Module<br />
 ![alt text](images/Slide17.jpg "DirectorySeperatedPathFromOutputDirectory Module")
 <br />
 <br />
