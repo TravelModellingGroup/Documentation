@@ -150,6 +150,8 @@ There are various several command line arguments available when running the modu
 
 Post-processing is performed automatically in the standard execution of the gtamodel_popsyn module. To specifically target the post-processining step of `gtamodel_popsyn`, use either the `-r` or `-o` command line arguments to only generate a report, or only generate output files.
 
+When choosing to create the validation report only, the path to a previous run is required as part of the command line arguments. The relative path to the output folder is necessary. 
+
 ### Output Files
 
 After the population synthesis procedure has completed, the synthesized population will be written to the output folder specified in the configuration settings.
