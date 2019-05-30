@@ -65,19 +65,26 @@ _Table 1 Driver License Binary Logit Model Estimation Results_
 
 ## Vehicle Ownership
 
-An ordered logit model is used for modelling vehicle ownership on a sample of 28,937
-households of TTS 2016 households in GTHA with income reported. Vehicle ownership
-categories considered are: 0,1,2,3,4+ vehicles in the household.  A sample of 68251
-households are hold out for validation. Variables considered are household
-characteristics such as number of adults in the household, number of fulltime workers,
+A generalized ordered logit (GOL) model is used for modelling vehicle ownership on a sample of 28,937 households
+of TTS 2016 households in GTHA with income reported. Given the spatial variation in vehicle ownership in
+the region and inability of capturing such variation with typical independent variables (and since ignoring this 
+variation would result in under predicting of number of vehicles for household in 905 region and over predicting of
+number of vehicles for household in Toronto), a GOL model (instead of a simple ordered logit model) is used by
+parameterizing the thresholds to include spatial dummy variables. This way the estimated threshold parameters vary
+by the location. After a descriptive analysis, we determined four cluster to allow thresholds to vary by including a
+dummy variables for each in the model. The clusters are: inner are of Toronto, suburbs of Toronto, district in 905 region,
+and Hamilton. 
+
+Vehicle ownership categories considered are: 0,1,2,3,4+ vehicles in the household. 
+A sample of 68251 households are hold out for validation. Variables considered are household
+charcteristics such as number of adults in the household, number of fulltime workers,
 number of driver licenses and household income, as well as home location attributes
 such as population and job density at zonal level, and a set of accessibility variables
-based on home to work travel times. Home to work variables are at zonal level. Distance
-to work variable is the average distance (shortest path) to work of workers residing in a
-zone. Similarly, the travel times are average travel times by mode to work for workers in
-a zone. These typical zonal attributes outperformed the household level LoS attributes both
-in terms of fit and in prediction. These should also be more stable in the model, as they are
-at the same level of aggregation as PORPOW.
+based on home to work travel times. Home to work variables are at zonal level. Distance 
+to work variable is the average distance (shortest path) to work of workers residing in a zone. 
+Similarly, the travel times are average travel times by mode to work for workers in a zone. These typical
+zonal attributes outperformed the household level LoS attributes both in terms of fit and in prediction. 
+These should also be more stable in the model, as they are at the same level of aggregation as PORPOW.
 
 In the traditional ordered response model, the discrete ordered variable
 number of vehicles in the household) \\( \left(y_{i}\right) \\) is assumed to be associated with an underlying continuous latent variable
@@ -101,7 +108,8 @@ X_i & \text{ is a vector of exogenous variables (excluding a constant)} \\\\
 Let \\( j \text{ } \left(j=1,2,.........,J\right) \\) denote the vehicle ownership levels (in our case, 0,1,2,3,4+) and
 \\( \tau_{j} \\) represents the thresholds associated with these ownership levels. These unknown \\( \tau_{j} \\)
 represents the thresholds associated with these ownership levels. These unknown \\( \tau_{j} \\) are assumed to partition the
-propensity into \\( J - 1 \\) intervals. The unobservable latent variable \\( y_{i}^{*} \\) is related to the observable ordinal
+propensity into \\( J - 1 \\) intervals. We also consider \\( \tau_{j} \\) of a constant and a spatial
+dummy variable based on the planning district that the household belongs. The unobservable latent variable \\( y_{i}^{*} \\) is related to the observable ordinal
 variable \\( y_{i} \\) by the \\( \tau_{j} \\) with a response mechanism of the following form:
 
 \begin{equation}
@@ -126,48 +134,169 @@ guided by intuition and parsimony considerations. The model estimation results a
 
 _Table 2 Vehicle Ownership Ordered Logit Model Estimation Results_
 
-|    Variables                                                                                   |    Coef.      |    Std. Err.    |    z         |
-|------------------------------------------------------------------------------------------------|---------------|-----------------|--------------|
-|    Number of adults in HH                                                                      |    0.159      |    0.022        |    7.27      |
-|    Number of kids (<16) in HH                                                                  |    0.016      |    0.016        |    1.04      |
-|    Number of FT workers in HH                                                                  |    0.184      |    0.019        |    9.86      |
-|    Number of driver licenses in HH                                                             |               |                 |              |
-|    Zero (Base)                                                                                 |               |                 |              |
-|    One                                                                                         |    4.820      |    0.145        |    33.20     |
-|    Two                                                                                         |    6.957      |    0.150        |    46.46     |
-|    Three and more                                                                              |    8.704      |    0.160        |    54.49     |
-|    HH Income                                                                                   |               |                 |              |
-|    $0 to $14,999 (Base)                                                                        |               |                 |              |
-|    $15,000 to $39,999                                                                          |    0.470      |    0.077        |    6.09      |
-|    $40,000 to $59,999                                                                          |    0.746      |    0.077        |    9.63      |
-|    $60,000 to $99,999                                                                          |    1.060      |    0.076        |    13.86     |
-|    $100,000 to $124,999                                                                        |    1.374      |    0.082        |    16.80     |
-|    $125,000 and above                                                                          |    1.751      |    0.080        |    21.97     |
-|    Home location population density   (person/sq.m)                                            |    -49.620    |    2.222        |    -22.33    |
-|    Home location job density (jobs/sq.m)                                                       |    -19.492    |    1.561        |    -12.49    |
-|    Home-Work variables                                                                         |               |                 |              |
-|    Average distance to work for workers   in the zone of home location (km)                    |    0.104      |    0.009        |    11.65     |
-|    Average transit perceived travel time   to work for workers in the zone of home location    |    0.005      |    0.000        |    12.65     |
-|    Average auto travel time to work for   workers in the zone of home location                 |    -0.069     |    0.014        |    -5.07     |
-|    Thresholds                                                                                  |               |                 |              |
-|    Threshold1                                                                                  |    5.186      |    0.167        |              |
-|    Threshold2                                                                                  |    9.395      |    0.174        |    -         |
-|    Threshold3                                                                                  |    12.638     |    0.179        |    -         |
-|    Threshold4                                                                                  |    14.570     |    0.184        |    -         |
-|    Statistics                                                                                  |               |                 |              |
-|    N                                                                                           |    28937      |                 |              |
-|    LL                                                                                          |    -23613     |                 |              |
-|    Pseudo R2 (McFadden)                                                                        |    0.367      |                 |              |
+| Variables                                                                                | Coef.   | Std. Err. | z      |
+|------------------------------------------------------------------------------------------|---------|-----------|--------|
+| Number of adults in HH                                                                   | 0.1444  | 0.022     | 6.54   |
+| Number of FT workers in HH                                                               | 0.1984  | 0.019     | 10.66  |
+| Number of driver licenses in   HH                                                        |         |           |        |
+| Zero (Base)                                                                              |         |           |        |
+| One                                                                                      | 5.1644  | 0.15      | 34.4   |
+| Two                                                                                      | 7.2856  | 0.154     | 47.18  |
+| Three and more                                                                           | 8.9816  | 0.164     | 54.67  |
+| HH Income                                                                                |         |           |        |
+| $0 to $14,999 (Base)                                                                     |         |           |        |
+| $15,000 to $39,999                                                                       | 0.5424  | 0.082     | 6.6    |
+| $40,000 to $59,999                                                                       | 0.8795  | 0.082     | 10.69  |
+| $60,000 to $99,999                                                                       | 1.231   | 0.081     | 15.14  |
+| $100,000 to $124,999                                                                     | 1.5664  | 0.086     | 18.15  |
+| $125,000 and above                                                                       | 1.9862  | 0.084     | 23.51  |
+| Home location population   density (person/sq.m)                                         | -38.22  | 2.235     | -17.1  |
+| Home location job density   (jobs/sq.m)                                                  | -12.51  | 1.486     | -8.42  |
+| Home-Work variables                                                                      |         |           |        |
+| Average distance to work for   workers in the zone of home location (km)                 | 0.0151  | 0.004     | 3.76   |
+| Average transit perceived   travel time to work for workers in the zone of home location | 0.0045  | 0         | 12.45  |
+| Spatial Dummies                                                                          |         |           |        |
+| Sub-urban Toronto (PD 5, 7-16)                                                           | 1.2104  | 0.067     | 18     |
+| 905 Region (PD 17-45)                                                                    | 2.1488  | 0.079     | 27.06  |
+| Hamilton (PD 46)                                                                         | 1.131   | 0.136     | 8.32   |
+| Thresholds                                                                               |         |           |        |
+| Threshold1                                                                               | 6.2727  | 0.177     | 35.47  |
+| Sub-urban Toronto (PD 5, 7-16)                                                           | -       | -         | -      |
+| 905 Region (PD 17-45)                                                                    | -       | -         | -      |
+| Hamilton (PD 46)                                                                         | -       | -         | -      |
+| Threshold2                                                                               | 10.1737 | 0.18      | 56.52  |
+| Sub-urban Toronto (PD 5, 7-16)                                                           | 0.7054  | 0.08      | -8.78  |
+| 905 Region (PD 17-45)                                                                    | 0.9968  | 0.084     | -11.81 |
+| Hamilton (PD 46)                                                                         | 0.2133  | 0.16      | -1.34  |
+| Threshold3                                                                               | 12.8775 | 0.196     | 65.58  |
+| Sub-urban Toronto (PD 5, 7-16)                                                           | 0.9677  | 0.121     | -7.97  |
+| 905 Region (PD 17-45)                                                                    | 1.6857  | 0.116     | -14.48 |
+| Hamilton (PD 46)                                                                         | 0.6901  | 0.22      | -3.13  |
+| Threshold4                                                                               | 14.7459 | 0.261     | 56.47  |
+| Sub-urban Toronto (PD 5, 7-16)                                                           | 0.9921  | 0.232     | -4.28  |
+| 905 Region (PD 17-45)                                                                    | 1.7269  | 0.211     | -8.18  |
+| Hamilton (PD 46)                                                                         | 0.7934  | 0.4       | -1.98  |
+| Statistics                                                                               |         |           |        |
+| N                                                                                        | 28937   |           |        |
+| LL                                                                                       | -23069  |           |        |
+| Pseudo R2 (McFadden)                                                                     | 0.382   |           |        |
 
 The model is used to predict on both estimation sample and validation sample. As expected, the aggregated results are promising.
 
 _Table 3 Vehicle Ownership Model Validation Results_
 
-|                              |    Estimation Sample (n=28937)    |    Validation Sample (n=68251)    |                 |                |
-|------------------------------|-----------------------------------|-----------------------------------|-----------------|----------------|
-|    Number of Veh. in hhld    |    Predicted                      |    Observed                       |    Predicted    |    Observed    |
-|    0                         |    14.2                           |    14.3                           |    14.2         |    14.1        |
-|    1                         |    42.1                           |    42.2                           |    42.2         |    42.3        |
-|    2                         |    33.9                           |    33.7                           |    34.0         |    34.0        |
-|    3                         |    7.5                            |    7.4                            |    7.4          |    7.3         |
-|    4+                        |    2.3                            |    2.3                            |    2.2          |    2.3         |
+|                        | Estimation Sample (n=28937) | Validation Sample (n=68251) |           |          |
+|------------------------|-----------------------------|-----------------------------|-----------|----------|
+| Number of Veh. in hhld | Predicted                   | Observed                    | Predicted | Observed |
+| 0                      | 14.3                        | 14.3                        | 14.3      | 14.1     |
+| 1                      | 41.9                        | 42.2                        | 42.1      | 42.3     |
+| 2                      | 34                          | 33.7                        | 34        | 34       |
+| 3                      | 7.6                         | 7.4                         | 7.5       | 7.3      |
+| 4+                     | 2.3                         | 2.3                         | 2.2       | 2.3      |
+
+To highlight the improvement in terms of spatial distribution of errors in prediction, the predictions are explored by planning district.
+
+_Table 4 Prediction by Planning Districts on Estimation Sample_
+
+|    PD    |    Absolute Error in Shares based on the Model with fixed thresholds     |    Absolute Error in Shares based on the Model with thresholds varying by   region    |             |             |             |             |             |             |             |             |
+|----------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
+|          |    0                                                                     |    1                                                                                  |    2        |    3        |    4+       |    0        |    1        |    2        |    3        |    4+       |
+|    1     |    0.12                                                                  |    -0.05                                                                              |    -0.07    |    -0.01    |    0.00     |    0.03     |    -0.01    |    -0.02    |    0.00     |    0.00     |
+|    2     |    0.11                                                                  |    0.05                                                                               |    -0.14    |    -0.02    |    0.00     |    0.03     |    0.03     |    -0.05    |    0.00     |    0.00     |
+|    3     |    0.05                                                                  |    0.03                                                                               |    -0.06    |    -0.02    |    0.00     |    -0.05    |    0.02     |    0.02     |    0.00     |    0.00     |
+|    4     |    0.06                                                                  |    0.01                                                                               |    -0.04    |    -0.01    |    -0.01    |    -0.04    |    -0.01    |    0.05     |    0.00     |    0.00     |
+|    5     |    0.01                                                                  |    0.06                                                                               |    -0.06    |    -0.01    |    0.00     |    0.01     |    -0.01    |    -0.01    |    0.01     |    0.01     |
+|    6     |    0.10                                                                  |    0.06                                                                               |    -0.13    |    -0.02    |    0.00     |    0.00     |    0.03     |    -0.03    |    -0.01    |    0.00     |
+|    7     |    -0.01                                                                 |    0.06                                                                               |    -0.03    |    -0.01    |    0.00     |    -0.01    |    0.00     |    0.01     |    -0.01    |    0.00     |
+|    8     |    -0.01                                                                 |    0.04                                                                               |    -0.02    |    0.00     |    0.00     |    0.00     |    -0.03    |    0.02     |    0.01     |    0.00     |
+|    9     |    -0.03                                                                 |    0.07                                                                               |    -0.03    |    0.00     |    -0.01    |    -0.02    |    0.01     |    0.00     |    0.01     |    0.00     |
+|    10    |    0.03                                                                  |    0.06                                                                               |    -0.05    |    -0.03    |    -0.01    |    0.03     |    0.01     |    -0.01    |    -0.02    |    0.00     |
+|    11    |    -0.09                                                                 |    0.14                                                                               |    -0.01    |    -0.03    |    -0.01    |    -0.02    |    0.04     |    0.00     |    -0.02    |    0.00     |
+|    12    |    0.00                                                                  |    0.07                                                                               |    -0.05    |    -0.02    |    0.00     |    0.01     |    0.01     |    -0.01    |    -0.01    |    0.00     |
+|    13    |    0.02                                                                  |    0.06                                                                               |    -0.06    |    -0.01    |    -0.01    |    0.02     |    0.00     |    -0.02    |    0.00     |    0.00     |
+|    14    |    0.00                                                                  |    0.08                                                                               |    -0.08    |    -0.01    |    0.00     |    0.00     |    0.01     |    -0.03    |    0.01     |    0.01     |
+|    15    |    -0.01                                                                 |    0.03                                                                               |    -0.02    |    0.00     |    0.00     |    0.00     |    -0.03    |    0.01     |    0.01     |    0.01     |
+|    16    |    -0.02                                                                 |    0.08                                                                               |    -0.03    |    -0.02    |    -0.01    |    -0.01    |    0.02     |    0.01     |    -0.01    |    -0.01    |
+|    17    |    -0.03                                                                 |    -0.10                                                                              |    -0.01    |    0.07     |    0.08     |    -0.01    |    0.04     |    -0.05    |    0.00     |    0.02     |
+|    18    |    -0.03                                                                 |    -0.10                                                                              |    0.06     |    -0.02    |    0.08     |    0.00     |    -0.01    |    0.05     |    -0.07    |    0.04     |
+|    19    |    -0.02                                                                 |    -0.12                                                                              |    0.00     |    0.08     |    0.07     |    0.00     |    -0.01    |    -0.04    |    0.01     |    0.03     |
+|    20    |    -0.02                                                                 |    -0.03                                                                              |    0.02     |    0.02     |    0.02     |    0.00     |    0.00     |    -0.03    |    0.01     |    0.01     |
+|    21    |    -0.03                                                                 |    -0.02                                                                              |    0.04     |    0.01     |    0.00     |    -0.01    |    0.04     |    -0.01    |    -0.01    |    -0.01    |
+|    22    |    -0.03                                                                 |    -0.04                                                                              |    0.04     |    0.03     |    -0.01    |    0.00     |    0.00     |    0.00     |    0.02     |    -0.01    |
+|    23    |    -0.03                                                                 |    -0.01                                                                              |    0.03     |    0.02     |    -0.01    |    0.01     |    0.00     |    -0.01    |    0.01     |    -0.01    |
+|    24    |    -0.02                                                                 |    -0.07                                                                              |    0.00     |    0.06     |    0.02     |    0.01     |    -0.01    |    -0.04    |    0.04     |    0.01     |
+|    25    |    -0.04                                                                 |    -0.11                                                                              |    0.05     |    0.08     |    0.02     |    -0.01    |    -0.01    |    -0.03    |    0.04     |    0.01     |
+|    26    |    -0.03                                                                 |    -0.04                                                                              |    -0.01    |    0.03     |    0.05     |    -0.01    |    0.01     |    -0.05    |    0.01     |    0.04     |
+|    27    |    -0.03                                                                 |    -0.05                                                                              |    0.04     |    0.03     |    0.01     |    0.00     |    -0.02    |    -0.01    |    0.02     |    0.01     |
+|    28    |    -0.02                                                                 |    -0.04                                                                              |    0.05     |    0.00     |    0.01     |    0.00     |    0.01     |    0.00     |    -0.01    |    0.01     |
+|    29    |    -0.03                                                                 |    0.00                                                                               |    0.04     |    0.01     |    -0.01    |    0.00     |    0.01     |    0.00     |    0.00     |    -0.01    |
+|    30    |    -0.02                                                                 |    -0.09                                                                              |    0.11     |    0.01     |    -0.01    |    0.01     |    -0.01    |    0.07     |    -0.03    |    -0.03    |
+|    31    |    -0.03                                                                 |    -0.02                                                                              |    0.07     |    -0.01    |    0.00     |    0.00     |    0.00     |    0.02     |    -0.02    |    0.00     |
+|    32    |    -0.03                                                                 |    -0.12                                                                              |    0.06     |    0.02     |    0.07     |    -0.02    |    -0.05    |    0.04     |    -0.02    |    0.05     |
+|    33    |    -0.02                                                                 |    -0.04                                                                              |    0.08     |    -0.02    |    -0.01    |    0.00     |    -0.01    |    0.04     |    -0.02    |    0.00     |
+|    34    |    -0.02                                                                 |    -0.09                                                                              |    -0.01    |    0.08     |    0.04     |    -0.01    |    0.02     |    -0.01    |    0.01     |    -0.01    |
+|    35    |    -0.02                                                                 |    -0.02                                                                              |    0.04     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
+|    36    |    -0.05                                                                 |    0.02                                                                               |    0.03     |    0.00     |    0.00     |    0.01     |    0.01     |    -0.02    |    0.00     |    0.00     |
+|    37    |    -0.02                                                                 |    -0.08                                                                              |    0.06     |    0.02     |    0.02     |    0.01     |    -0.03    |    0.01     |    0.00     |    0.01     |
+|    38    |    -0.03                                                                 |    -0.09                                                                              |    0.13     |    0.00     |    0.00     |    -0.01    |    -0.02    |    0.07     |    -0.03    |    -0.01    |
+|    39    |    -0.03                                                                 |    -0.02                                                                              |    0.03     |    0.01     |    0.01     |    0.00     |    0.00     |    -0.01    |    0.00     |    0.01     |
+|    40    |    -0.03                                                                 |    -0.03                                                                              |    0.05     |    0.01     |    0.01     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
+|    41    |    -0.03                                                                 |    -0.06                                                                              |    -0.02    |    0.06     |    0.05     |    -0.01    |    0.04     |    -0.03    |    -0.01    |    0.00     |
+|    42    |    -0.04                                                                 |    0.02                                                                               |    0.03     |    -0.01    |    0.00     |    -0.01    |    0.02     |    -0.01    |    -0.01    |    0.00     |
+|    43    |    -0.03                                                                 |    -0.07                                                                              |    0.05     |    0.02     |    0.02     |    -0.01    |    -0.03    |    0.00     |    0.01     |    0.02     |
+|    44    |    -0.04                                                                 |    0.00                                                                               |    0.05     |    0.01     |    -0.01    |    -0.01    |    0.09     |    -0.03    |    -0.02    |    -0.02    |
+|    45    |    -0.04                                                                 |    -0.11                                                                              |    0.09     |    0.01     |    0.05     |    0.00     |    -0.06    |    0.05     |    -0.01    |    0.03     |
+|    46    |    0.00                                                                  |    0.00                                                                               |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
+
+_Table 6 Prediction by Planning Districts on Validation Sample_
+
+
+|    PD    |    Absolute Error in Shares based on the Model with fixed thresholds     |    Absolute Error in Shares based on the Model with thresholds varying by   region    |             |             |             |             |             |             |             |             |
+|----------|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
+|          |    0                                                                     |    1                                                                                  |    2        |    3        |    4+       |    0        |    1        |    2        |    3        |    4+       |
+|    1     |    0.06                                                                  |    -0.04                                                                              |    -0.03    |    0.00     |    0.00     |    0.01     |    0.00     |    -0.01    |    0.00     |    0.00     |
+|    2     |    0.12                                                                  |    -0.03                                                                              |    -0.09    |    0.00     |    0.00     |    0.04     |    0.00     |    -0.04    |    0.00     |    0.00     |
+|    3     |    0.04                                                                  |    -0.01                                                                              |    -0.03    |    0.00     |    0.01     |    -0.04    |    0.01     |    0.02     |    0.00     |    0.00     |
+|    4     |    0.03                                                                  |    -0.04                                                                              |    0.00     |    0.01     |    0.00     |    -0.04    |    -0.01    |    0.04     |    0.00     |    0.00     |
+|    5     |    -0.02                                                                 |    0.03                                                                               |    -0.03    |    0.01     |    0.00     |    -0.01    |    0.01     |    -0.01    |    0.00     |    0.00     |
+|    6     |    0.06                                                                  |    0.03                                                                               |    -0.09    |    0.00     |    0.00     |    -0.01    |    0.05     |    -0.03    |    -0.01    |    0.00     |
+|    7     |    -0.02                                                                 |    0.05                                                                               |    -0.03    |    0.00     |    0.00     |    -0.01    |    0.02     |    0.00     |    0.00     |    0.00     |
+|    8     |    -0.02                                                                 |    0.01                                                                               |    0.00     |    0.01     |    0.00     |    -0.01    |    -0.02    |    0.03     |    0.00     |    0.00     |
+|    9     |    -0.02                                                                 |    0.03                                                                               |    -0.03    |    0.01     |    0.01     |    -0.01    |    0.00     |    0.00     |    0.01     |    0.00     |
+|    10    |    -0.01                                                                 |    0.01                                                                               |    -0.01    |    0.01     |    0.00     |    0.01     |    -0.02    |    0.01     |    0.01     |    0.00     |
+|    11    |    -0.06                                                                 |    0.06                                                                               |    -0.01    |    0.00     |    0.00     |    -0.02    |    0.02     |    0.00     |    0.00     |    0.00     |
+|    12    |    0.01                                                                  |    0.04                                                                               |    -0.04    |    -0.01    |    -0.01    |    0.02     |    0.01     |    0.00     |    -0.01    |    -0.01    |
+|    13    |    0.01                                                                  |    0.04                                                                               |    -0.04    |    0.00     |    0.00     |    0.02     |    0.00     |    -0.02    |    -0.01    |    0.00     |
+|    14    |    0.00                                                                  |    0.03                                                                               |    -0.04    |    0.01     |    0.01     |    0.01     |    0.00     |    -0.02    |    0.01     |    0.01     |
+|    15    |    0.00                                                                  |    0.03                                                                               |    -0.02    |    -0.01    |    0.00     |    -0.01    |    -0.02    |    0.03     |    0.00     |    0.00     |
+|    16    |    -0.02                                                                 |    0.05                                                                               |    -0.03    |    0.00     |    -0.01    |    -0.01    |    0.01     |    0.01     |    0.00     |    -0.01    |
+|    17    |    0.00                                                                  |    0.14                                                                               |    -0.07    |    -0.05    |    -0.02    |    0.00     |    0.08     |    -0.08    |    -0.01    |    0.01     |
+|    18    |    0.00                                                                  |    0.04                                                                               |    0.03     |    -0.05    |    -0.02    |    0.00     |    0.02     |    0.00     |    -0.03    |    0.01     |
+|    19    |    -0.02                                                                 |    0.02                                                                               |    -0.02    |    0.00     |    0.01     |    -0.01    |    0.00     |    -0.05    |    0.02     |    0.04     |
+|    20    |    -0.01                                                                 |    -0.01                                                                              |    0.02     |    0.00     |    0.00     |    0.00     |    -0.02    |    0.00     |    0.01     |    0.01     |
+|    21    |    0.00                                                                  |    0.01                                                                               |    0.02     |    -0.01    |    -0.02    |    0.00     |    0.00     |    0.00     |    0.01     |    -0.01    |
+|    22    |    -0.01                                                                 |    0.02                                                                               |    0.01     |    -0.02    |    0.00     |    0.00     |    0.01     |    0.00     |    -0.01    |    0.00     |
+|    23    |    -0.01                                                                 |    0.00                                                                               |    -0.01    |    0.01     |    0.01     |    0.01     |    -0.01    |    -0.02    |    0.01     |    0.01     |
+|    24    |    -0.01                                                                 |    0.01                                                                               |    0.02     |    -0.01    |    0.00     |    -0.01    |    -0.02    |    0.00     |    0.02     |    0.01     |
+|    25    |    0.01                                                                  |    0.05                                                                               |    0.03     |    -0.06    |    -0.03    |    0.01     |    -0.01    |    0.01     |    -0.01    |    0.01     |
+|    26    |    -0.01                                                                 |    0.00                                                                               |    -0.02    |    0.00     |    0.04     |    -0.01    |    -0.02    |    -0.04    |    0.02     |    0.05     |
+|    27    |    -0.01                                                                 |    -0.03                                                                              |    0.03     |    -0.01    |    0.02     |    0.01     |    -0.04    |    0.01     |    0.00     |    0.02     |
+|    28    |    -0.02                                                                 |    -0.01                                                                              |    0.05     |    -0.01    |    -0.01    |    0.00     |    -0.01    |    0.02     |    -0.01    |    0.00     |
+|    29    |    -0.02                                                                 |    -0.02                                                                              |    0.05     |    -0.01    |    0.00     |    0.00     |    0.00     |    0.01     |    -0.01    |    0.00     |
+|    30    |    -0.01                                                                 |    0.03                                                                               |    0.00     |    -0.01    |    -0.01    |    0.00     |    0.02     |    -0.02    |    0.00     |    0.00     |
+|    31    |    -0.02                                                                 |    -0.02                                                                              |    0.04     |    0.00     |    0.00     |    0.00     |    0.01     |    0.01     |    -0.01    |    -0.01    |
+|    32    |    -0.01                                                                 |    -0.04                                                                              |    -0.05    |    0.07     |    0.03     |    0.00     |    -0.03    |    -0.08    |    0.07     |    0.04     |
+|    33    |    -0.02                                                                 |    -0.06                                                                              |    0.07     |    0.00     |    0.02     |    0.00     |    -0.03    |    0.03     |    -0.01    |    0.01     |
+|    34    |    0.00                                                                  |    0.02                                                                               |    0.05     |    -0.05    |    -0.02    |    0.00     |    0.01     |    0.02     |    -0.04    |    -0.01    |
+|    35    |    -0.02                                                                 |    -0.02                                                                              |    0.03     |    0.01     |    0.01     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
+|    36    |    -0.04                                                                 |    0.01                                                                               |    0.02     |    0.01     |    0.00     |    0.00     |    0.01     |    -0.01    |    0.00     |    0.00     |
+|    37    |    -0.02                                                                 |    -0.05                                                                              |    0.03     |    0.02     |    0.02     |    0.00     |    -0.04    |    0.01     |    0.02     |    0.02     |
+|    38    |    -0.01                                                                 |    -0.03                                                                              |    0.09     |    -0.05    |    0.00     |    -0.01    |    -0.04    |    0.07     |    -0.04    |    0.01     |
+|    39    |    -0.01                                                                 |    0.01                                                                               |    0.03     |    -0.02    |    -0.01    |    0.00     |    0.00     |    0.01     |    -0.01    |    -0.01    |
+|    40    |    -0.02                                                                 |    0.01                                                                               |    0.02     |    -0.01    |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
+|    41    |    -0.01                                                                 |    0.01                                                                               |    0.03     |    -0.02    |    -0.02    |    0.00     |    0.01     |    0.01     |    -0.01    |    -0.01    |
+|    42    |    -0.04                                                                 |    0.01                                                                               |    0.02     |    0.02     |    -0.01    |    -0.01    |    0.03     |    -0.02    |    0.01     |    -0.01    |
+|    43    |    -0.01                                                                 |    -0.01                                                                              |    -0.01    |    0.02     |    0.01     |    0.00     |    -0.01    |    -0.03    |    0.03     |    0.01     |
+|    44    |    -0.01                                                                 |    0.06                                                                               |    -0.03    |    -0.04    |    0.01     |    0.00     |    0.06     |    -0.06    |    -0.02    |    0.02     |
+|    45    |    -0.02                                                                 |    0.03                                                                               |    0.02     |    0.00     |    -0.02    |    -0.01    |    0.02     |    -0.01    |    0.01     |    -0.01    |
+|    46    |    -0.01                                                                 |    0.01                                                                               |    -0.02    |    0.01     |    0.01     |    -0.01    |    0.03     |    -0.03    |    0.00     |    0.01     |
