@@ -38,8 +38,8 @@ You can change the transit demand matrix in `Import Transit Demand` module, whic
 A list of modules to change the walk perception can be found in `Transit Assignment/Classes` for 5 types of links, including `Toronto/Non-Toronto`, `PD1`, and `Toronto/Non-Toronto Centroid Connectors`. 
 
 > [!Tip]
-> The detailed description of the five types of links can be found [here](../model_design/transit_assignment.md#Estimation-and-Calibration).
-
+> The detailed description of the five types of links can be found [here](../model_design/transit_assignment.md#estimation-and-calibration).
+ 
 Each module contains two parameters.
 
 | Parameter | Description |
@@ -66,12 +66,12 @@ You can modify the surface transit speed updating models in `Surface Transit Spe
 A list of modules to change the Transit Time Functions (TTF) can be found in `TTF` module. Currently in GTAModel V4.1, there are five types of TTF functions to apply for various services/modes.
 
 > [!Tip]
-> A more detailed introduction to TTF functions can be found [here](../model_design/transit_assignment.md#Congestion-Delay-Functions).
+> A more detailed introduction to TTF functions can be found [here](../model_design/transit_assignment.md#congestion-delay-functions).
 
 Each module contains three parameters.
 
 | Parameter | Description |
 |-----------------|----------------------------------------------------------------------------------------------------------------------|
-| Congestion Exponent | The congestion exponent term ($\alpha$) to apply to this TTF|
+| Congestion Exponent | The congestion exponent term to apply to this TTF|
 | Congestion Perception | The congestion perception to apply to this TTF |
 | TTF | The TTF number to assign to (e.g., 1 means TTF1) |
