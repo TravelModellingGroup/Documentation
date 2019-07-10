@@ -72,7 +72,7 @@ variation would result in under predicting of number of vehicles for household i
 number of vehicles for household in Toronto), a GOL model (instead of a simple ordered logit model) is used by
 parameterizing the thresholds to include spatial dummy variables. This way the estimated threshold parameters vary
 by the location. After a descriptive analysis, we determined four cluster to allow thresholds to vary by including a
-dummy variables for each in the model. The clusters are: inner are of Toronto, suburbs of Toronto, district in 905 region,
+dummy variables for each in the model. The clusters are: inner of Toronto, suburbs of Toronto, district in 905 region,
 and Hamilton. 
 
 Vehicle ownership categories considered are: 0,1,2,3,4+ vehicles in the household. 
@@ -248,7 +248,7 @@ _Table 4 Prediction by Planning Districts on Estimation Sample_
 |    45    |    -0.04                                                                 |    -0.11                                                                              |    0.09     |    0.01     |    0.05     |    0.00     |    -0.06    |    0.05     |    -0.01    |    0.03     |
 |    46    |    0.00                                                                  |    0.00                                                                               |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |    0.00     |
 
-_Table 6 Prediction by Planning Districts on Validation Sample_
+_Table 5 Prediction by Planning Districts on Validation Sample_
 
 
 |    PD    |    Absolute Error in Shares based on the Model with fixed thresholds     |    Absolute Error in Shares based on the Model with thresholds varying by   region    |             |             |             |             |             |             |             |             |
