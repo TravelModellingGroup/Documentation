@@ -45,19 +45,40 @@ Under "New Scenario Number", the scenario number that you want to import the net
 ### Scenario Description
 The "Scenario Description" allows the scenario name to be selected.
 
-### Function Conflict Option
-The "Function Conflict Option" describes how to reconcile the functions present in the project with the new functions that are present in the network package that is being imported. For example if 'fd1' is already defined in the project as "length * 60/ul2", but in the NWP, function 'fd1' is defined as "length * 60/ul3", this tells the module how to handle these conflicts. In all options, functions that do not have a conflict will be added.
+### Skip the merging of functions?
+Select the checkbox to skip the merging of functions (i.e., the functions in current Emmebank will remain the same).
+
+### (Optional) Function Conflict Option
+**Ignore this part if 'Skip the merging of functions' is checked, since no adding/changes will be made.**
+
+The "Function Conflict Option" describes how to reconcile the functions present in the project with the new functions that are present in the network package that is being imported. For example if 'fd1' is already defined in the project as "length * 60/ul2", but in the NWP, function 'fd1' is defined as "length * 60/ul3", this tells the module how to handle these conflicts. 
+
+| Option | For Non-conflict (Non-existing) Functions | For Conflict (Existing) Functions |
+|------|------|------|
+|EDIT  | Add new functions| User will decide to keep existing or use new functions | 
+|RAISE | No change | No change (Warning will be given) |
+|PRESERVE | Add new functions | Keeping existing functions and ignore new functions |
+|OVERWRITE | Add new functions | Use new functions and drop existing functions |
+
 #### Edit Option
 This opens a GUI which shows all the functions that have conflicts. It shows both the function in the Emme Project and the function in the NWP. It then allows the user to select which one they want to keep.
-
 #### Raise Option
 This stops the tool if any conflicts are found
-
 #### Preserve Option
 This keeps the functions as defined in the Emme Project if any conflicts exist
-
 #### Overwrite Option
 This overwrites any function defined in the Emme Project with the function in the NWP if a conflict exists. 
+
+##### Example
+- Current Emmebank: fd1 = length*50
+- Importing Emmebank: fd1 = length*100; fd2 = length/6
+
+| Option | Results for fd1 | Results for fd2 |
+|------|------|------|
+|EDIT  | will ask user to choose the desired definition for fd1 | fd2 will be added | 
+|RAISE | fd1 = length*50, warning will occur | no fd2 will be added |
+|PRESERVE | fd1 = length*50 | fd2 will be added | 
+|OVERWRITE |fd1 = length*100| fd2 will be added |
 
 
 
