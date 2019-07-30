@@ -1,15 +1,15 @@
 # Transit Assignment
-The first step recommended is to calibrate the Transit Assignment models. If you are not similar with these models please review their documentation
+The first step recommended is to calibrate the Transit Assignment models. If you are not familiar with these models please review their documentation
 [here](../model_design/transit_assignment.md).
 
 You can find the Transit Assignment model in GTAModel V4.1 at
 `Pre Run/Execute Transit Assignment` or `Post Iteration/Run Network Assignments`. Inside each Transit Assignment model, there are 6 modules that you may calibrate with as shown below:
-i. Fare-based Transit Network (FBTN)
-ii. Boarding Penalities
-iii. Transit Demand
-iv. Walk Perceptions
-v. Surface Transit Speed Updating Models (STSU)
-vi. Transit Time Functions (TTF)
+1. Fare-based Transit Network (FBTN)
+1. Boarding Penalities
+1. Transit Demand
+1. Walk Perceptions
+1. Surface Transit Speed Updating Models (STSU)
+1. Transit Time Functions (TTF)
 
 
 #### Fare-based Transit Network (FBTN)

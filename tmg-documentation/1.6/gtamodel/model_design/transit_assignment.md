@@ -43,6 +43,28 @@ Where,
 The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated,
 one for each of the 5 different TTF functions (for various services/modes). The weights for all TTFs are fixed at 1. 
 
+
+## Surface Transit Speed Updating (STSU)
+The speeds of surface transits were previously based on GTFS data, where the Shared right-of-way (SROW)transit uses the average line speeed normalized by segement length and the Exclusive right-of-way (EROW) transit uses the stop-to-stop speeds for each segment. This procedure is not only time-consuming and sujected to many assumptions, but also lacking of the consideration of SROW congestion effects. Therefore, a Surface Transit Speed Updating (STSU) is performed to model the surface transit speeds as a functin of roadway congestion.
+
+For each segment of the surface transit line, the travel time on that section is assumed to be a function of the Auto Travel Time on that section, plus an additional dwell time to account for the number of stops and the number of passengers boarding and alighting. An auto correlation factor (β<sub>1</sub>) is estimated to account for the fact that transit vehicles travel at different speeds than auto vehicles, using the following equations:
+
+\begin{equation}
+\beta = \frac{Transit Running Time}{Auto Time} \\\\
+\end{equation}
+
+where,
+\begin{equation}
+\Transit Running Time = Total Transit Time - Total Dwell Time \\\\
+\Auto Time is obtained from an EMME Road Assignment \\\\
+\Total Dwell Time = \Gamma<sub>5</sub>\left(\frac{Total Boardings in Time Period}{Runs}\right) + \Gamma<sub>6</sub>\left(\frac{Total Alightings in Time Period}{Runs}\right) + \sum_{stops} Default Duration Per Stop \\\\
+\end{equation}
+
+The STSU model is estimated for all time periods for three types of surface transit, including Local Bus, GO Bus, and Streetcar. Though the model closely represents the nature of surface transit travel behaviour, it is subjected to two assumptions: a) automobile travel time from EMME road assignment is representative, and b) the number of boarding and alighting passengers from EMME transit assignment is true. 
+
+In order to implement it in GTAModel V4.1, a new module was created for Transit Assignment. Since the EMME congested transit assignment algorithm already utilizes an iterational approach to transit assignment as it attempts to find convergence on congested lines, it seemed inefficient to have a larger loop that updates dwell times after each assignment. Therefore, TMG utilized the congested transit assignment algorithm from EMME but inserted a dwell time updated script which updates the dwell times between each iteration of the extended transit assignment. This allows for much faster transit assignment converging times and a much more efficient algorithm.
+
+
 ## Data of Transit Demand
 
 Transit estimation and calibration uses the 2011 Transportation Tomorrow Survey (TTS) data. TTS is a very large (5%) household telephone-based survey that collects weekday travel data for a random weekday all members of sampled households 11 years of age or older.  It has been conducted every five years since 1986, with the most recent survey being undertaken in 2011/12.  In 2011 118,280 households were surveyed within the GTHA, providing an exceptionally rich dataset for detailed activity/travel modelling.  Although a trip-based survey, the dataset was converted for modelling purposes into a set of out-of-home activity episodes describing personal activity patterns and trip chains (tours) for all observed persons.
