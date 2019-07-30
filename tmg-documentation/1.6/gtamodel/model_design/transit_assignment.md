@@ -50,14 +50,18 @@ The speeds of surface transits were previously based on GTFS data, where the Sha
 For each segment of the surface transit line, the travel time on that section is assumed to be a function of the Auto Travel Time on that section, plus an additional dwell time to account for the number of stops and the number of passengers boarding and alighting. An auto correlation factor (β<sub>1</sub>) is estimated to account for the fact that transit vehicles travel at different speeds than auto vehicles, using the following equations:
 
 \begin{equation}
-\beta = \frac{Transit Running Time}{Auto Time} \\\\
+\beta_1 = \frac{Transit Running Time}{Auto Time} \\\\
 \end{equation}
 
 where,
 \begin{equation}
-\Transit Running Time = Total Transit Time - Total Dwell Time \\\\
-\Auto Time is obtained from an EMME Road Assignment \\\\
-\Total Dwell Time = \Gamma<sub>5</sub>\left(\frac{Total Boardings in Time Period}{Runs}\right) + \Gamma<sub>6</sub>\left(\frac{Total Alightings in Time Period}{Runs}\right) + \sum_{stops} Default Duration Per Stop \\\\
+\text{ Transit Running Time = Total Transit Time - Total Dwell Time} \\\\
+\end{equation}
+\begin{equation}
+\text{ Auto Time is obtained from an EMME Road Assignment} \\\\
+\end{equation}
+\begin{equation}
+TotalDwellTime = \Gamma_5 \left(\frac{TotalBoardingsInTimePeriod}{Runs}\right) + \Gamma_6 \left(\frac{TotalAlightingsInTimePeriod}{Runs}\right) + \sum_{stops} DefaultDurationPerStop \\\\
 \end{equation}
 
 The STSU model is estimated for all time periods for three types of surface transit, including Local Bus, GO Bus, and Streetcar. Though the model closely represents the nature of surface transit travel behaviour, it is subjected to two assumptions: a) automobile travel time from EMME road assignment is representative, and b) the number of boarding and alighting passengers from EMME transit assignment is true. 
