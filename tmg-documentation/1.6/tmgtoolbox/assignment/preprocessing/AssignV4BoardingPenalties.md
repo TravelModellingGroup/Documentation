@@ -1,23 +1,23 @@
 ﻿
-# Assign V4 Boarding Penalties
+# **Assign V4 Boarding Penalties**
 Assigns line-specific boarding penalties (which will be stored in UT3) based on specified line groupings.
-## Opening the Tool with Modeller
-The tool is found in "TMG Toolbox" -> "Assignment" -> "Preprocessing" -> "Assign V4 Boarding Penalty"
-## Using the Tool with Modeller
+
+
+## **Using the Tool with Modeller**
+The tool can be found in "TMG Toolbox" -> "Assignment" -> "Preprocessing" -> "Assign V4 Boarding Penalty"
+
 ### Scenarios
 Choose the scenarios in which the specified boarding penalties should be applied. Note: More than one scenario can be selected.
 ### Line Group Boarding Penalties
 List of filters and boarding penalties for line groups. 
 
-Syntax: [label (line group name)] : [network selector expression] : [boarding penalty] : [IVTT Perception Factor] ... 
+> Syntax:
+> [label (line group name)] : [network selector expression] : [boarding penalty] : [IVTT Perception Factor] ... 
 
-Separate (label-filter-penalty) groups with a comma or new line. 
-
-Note that order matters, since penalties are applied sequentially.
+Separate (label-filter-penalty) groups with a comma or new line. Note that order matters, since penalties are applied sequentially.
 
 ## Using the Tool with XTMF
-
-The tool is called "AssignBoardingPenalties". It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.
+The tool is called "AssignBoardingPenalties". It is available to add under *ExecuteToolsFromModellerResource* or *EmmeToolsToRun*.
 
 ### Scenario Numbers
 In the main tool Parameters, the scenario numbers can be specified. More than one scenario can be specified here, separated by commas.
