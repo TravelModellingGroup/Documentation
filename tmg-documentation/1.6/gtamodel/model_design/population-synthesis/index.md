@@ -37,8 +37,6 @@ Apart from the MySQL Server installation, a database must be created with the pr
 
 
 
-
-
 #### Python Installation
 
 
@@ -105,7 +103,13 @@ The default configuration JSON has the following format:
 
 ### Starting a Run
 
-After the required input configuration has been finalized, the population synthesis procedure can be run. The file `run.py` is the main python script that begins the synthesis procedure. These steps involve reading the input data and configuration settings. This information is then used to create and process the required database tables used by PopSyn3.
+After the required input configuration has been finalized, the population synthesis procedure can be run. The application is started by running the python module.
+
+> python -m gtamodeL_popsyn
+
+> [!NOTE]
+> Use the -h flag to see command line switches available. (Documentation TODO)
+
 
 > [!NOTE]
 > Please ensure that your MySQL server is started before starting the synthesis procedure.
