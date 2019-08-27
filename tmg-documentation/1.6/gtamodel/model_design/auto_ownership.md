@@ -132,7 +132,7 @@ where \\( \Lambda(.) \\) represents the standard logistic cumulative distributio
 In order to finalize the model specification, a systematic process of removing statistically insignificant variables,
 guided by intuition and parsimony considerations. The model estimation results are presented in Table 2.
 
-_Table 2 Vehicle Ownership Ordered Logit Model Estimation Results_
+_Table 2 Vehicle Ownership Generalized Ordered Logit Model Estimation Results_
 
 | Variables                                                                                | Coef.   | Std. Err. | z      |
 |------------------------------------------------------------------------------------------|---------|-----------|--------|
