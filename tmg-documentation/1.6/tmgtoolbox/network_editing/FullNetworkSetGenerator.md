@@ -3,7 +3,7 @@ uid: 1_6_toolbox_fnsg
 title: Extending the Multi-Run Framework
 ---
 # Full Network Set Generator
-This tool takes a "Base Scenario" and creates time period specific networks (AM, MD, PM, EV, ON). It also cleans those networks for use in Auto and Transit assignments. For more information on the tool algorithm and the various components within the tool please visit the [Full Network Set Generator Page](https://tmg.utoronto.ca/doc/1.5/gtamodel/full_network_generator.html)
+This tool takes a "Base Scenario" and creates time period specific networks (AM, MD, PM, EV, ON). It also cleans those networks for use in Auto and Transit assignments. For more information on the tool algorithm and the various components within the tool please visit the [Full Network Set Generator Page](https://tmg.utoronto.ca/doc/1.6/gtamodel/full_network_generator.html)
 
 
 
@@ -27,18 +27,18 @@ This file contains information for transit lines that do not have any entries in
 
 - **emme_id**: This is the id of the transit line in Emme
 - **xxxx_hdw**: This is the headway column corresponding to the time period starting with "xxxx" in a "hhmm" format. For example: The "0600_hdw" column will contain the headways for the time period starting at 6:00 AM. 
--**xxxx_spd**: This is the speed column corresponding to the time period starting with "xxxx" in a "hhmm" format. For example: The "0600_spd" column will contain the speeds for the time period starting at 6:00 AM. 
+- **xxxx_spd**: This is the speed column corresponding to the time period starting with "xxxx" in a "hhmm" format. For example: The "0600_spd" column will contain the speeds for the time period starting at 6:00 AM. 
 
 If more than one time period is being created by this tool at the same time, the last two columns can be repeated for all time periods being created. 
 
 >Transit Lines that do not have an entry in either the Service Table file or the Data for Non-Service Table Lines file will be deleted from the time period specific networks. If a line is present in both files, the Data for Non-Service Table Lines file will take precedent.
 
 >The standard GTAModelV4 time periods are as follows:
->6:00 AM - 8:59 AM -- AM
->9:00 AM - 2:59 PM -- MD
->3:00 PM - 6:59 PM -- PM
->7:00 PM - 11:59 PM -- EV
->12:00 AM - 5:59 AM -- ON
+> - AM: 6:00AM - 8:59AM
+> - MD: 9:00AM - 2:59PM
+> - PM: 3:00PM - 6:59PM
+> - EV: 7:00PM - 11:59PM
+> - ON: 12:00AM - 5:59AM
 
 #### Aggregation Type Selection
 This csv file contains the transit lines and how the headway is to be calculated for each line if a Transit Service Table file is used for that line. It contains two columns
