@@ -4,6 +4,8 @@ In order to create a new access station in the model you will need to follow the
 
 ## Add Station to Zones.csv
 
+`Not required for GTAModelV4.1+`
+
 Inside of the folder “ZoneData” there is a file called “Zones.csv” which contains information about each zone in the model.  Station zones should have the planning district of 0, and be supplied with the correct spatial coordinates to match the network model.
 
 ## Add Station to StationCapacity.csv
