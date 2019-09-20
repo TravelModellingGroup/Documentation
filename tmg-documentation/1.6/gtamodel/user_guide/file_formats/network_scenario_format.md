@@ -65,7 +65,7 @@ Example:
 
 
 ## Parking Costs (.csv)
-This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer in calculation. It contains two columns as following:
+This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer in calculation. It is part of the `GTAModel starting in V4.1`, which contains two columns as following:
 
 - Zone#: the ID of the zone 
 - Parking Cost: the average hourly parking cost corresponding to the zone
@@ -79,7 +79,7 @@ Example:
 
 
 ## Shortest Path (.mtx)
-This optional file is a EMME binary matrix that is used to specify the distance between zones. It stores the OD shortest network distance (static, not the fastest path) in the unit of meters. 
+This optional file is a EMME binary matrix that is used to specify the distance between zones `starting in GTAModel V4.1`. It stores the OD shortest network distance (static, not the fastest path) in the unit of meters. 
 
 Example:
 
