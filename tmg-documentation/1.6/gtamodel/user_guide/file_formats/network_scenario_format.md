@@ -3,7 +3,7 @@
 ## Base Network (.nwp)
 This EMME network package file is used in GTAModel V4 to import a base network, which is based on the 2016 Network Coding Standard with 2016 data. It takes into consideration the freight mode (e.g., freight and auto only zone centroid connectors, lane capacity), and it does not include the Gormley Go Station.
 
-The base network will serve as a "Base Scenario" to create time period specific networks (AM, MD, PM, EV, ON) using the [Full Network Set Generator](https://tmg.utoronto.ca/doc/1.6/gtamodel/full_network_generator.html), and these networks will be cleaned for use in auto and transit assignments.
+The base network will serve as a "Base Scenario" to create time period specific networks (AM, MD, PM, EV, ON) using the [Full Network Set Generator](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html), and these networks will be cleaned for use in auto and transit assignments.
 
 > More information about how to use the Full Network Set Geneator tool, please refer to the [Toolbox Page](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/network_editing/FullNetworkSetGenerator.html)
 
@@ -63,6 +63,7 @@ Example:
 |T501|5:55:00|6:55:00|
 |T501|6:10:00|7:10:00|
 
+> [!WARNING] The transit line that has no definition in the **Service Table** nor in the **Alt File** will be removed from the network during the [Full Network Set Generating](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html).
 
 ## Parking Costs (.csv)
 This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer in calculation. It is part of the `GTAModel starting in V4.1`, which contains two columns as following:
