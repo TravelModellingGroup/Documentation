@@ -63,7 +63,7 @@ Example:
 |T501|5:55:00|6:55:00|
 |T501|6:10:00|7:10:00|
 
-> [!WARNING] The transit line that has no definition in the **Service Table** nor in the **Alt File** will be removed from the network during the [Full Network Set Generating](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html).
+> [!WARNING] If a transit line has no definition in both of the **Service Table** nor the **Alt File**, it will be removed from the network by the [Full Network Set Generating](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html) tool.
 
 ## Parking Costs (.csv)
 This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer in calculation. It is part of the `GTAModel starting in V4.1`, which contains two columns as following:
