@@ -1,6 +1,6 @@
 # Fare Schema File Specification
 
-The new TMG implementation uses a fare schema file, implemented in Extensible Markup Language (XML). XML is a widely-used, hierarchical format which is human-readable. The fare schema file specification prescribes 3 collections of items necessary for generating the hyper-network : <groups>, <zones>, and <fare_rules>.
+The new TMG implementation uses a fare schema file, implemented in Extensible Markup Language (XML). XML is a widely-used, hierarchical format which is human-readable. The fare schema file specification prescribes 3 collections of items necessary for generating the hyper-network: [groups](#groups), [zones](#zones), and [fare_rules](#fare-rules).
 
 ## Groups
 
@@ -34,10 +34,10 @@ An optional element containing a list of fare zones and a list of shapefiles. Ea
 Two different types of fare zones are supported: node_selection and from_shapefile.  Node selection zones apply a set of node selector expressions (used by Emme’s Network Calculator). Zones loaded from shapefile reference an FID (feature ID) in one of the included shapefile elements. 
 
 ```xml
-<shapefile id="1" path="D:/Workspace/08 GTAModel V4/Data/Fares/York_Region_Zones.shp" />
+<shapefile id="1" path="D:/Workspace/GTAModelV4.1/Data/Fares/York_Region_Zones.shp" />
     
     <zone id="Toronto" type="node_selection">
-    	<node_selector>i=10000,20000</node_selector>
+    	<node_selector>i=10000,40000</node_selector>
     </zone>
     <zone id="York 1" type="from_shapefile">
     	<from_shapefile id="1" FID="1" />
@@ -63,11 +63,11 @@ So, when egressing from GO to HSR, the on-link fare is $1.65 - $1.15 = $0.50, wh
 Initial boarding rules have their cost applied to all LINKS inbound to the layer of the specified group. This rule can be further restricted to applying only to links starting from a specified ZONE.
 
 ```xml
-<fare cost="1.98" type="initial_boarding">
+<fare cost="2.22" type="initial_boarding">
     <group>TTC Regular</group>
 </fare>
 
-<fare cost="0.15" type="initial_boarding">
+<fare cost="0.78" type="initial_boarding">
     <group>TTC Regular</group>
     <in_zone>York 1</in_zone>
 </fare>
@@ -78,12 +78,12 @@ Initial boarding rules have their cost applied to all LINKS inbound to the layer
 Transfer rules have their cost applied to all LINKS connecting one group’s layer to another’s. By default, this rule is applied one-way (to links ‘from’ to ‘to’) but can also be set to bidirectional (also applied to links ‘to’ to ‘from’).
 
 ```xml
-<fare cost="-2.23" type="transfer">
+<fare cost="-2.48" type="transfer">
 	<from_group>HSR</from_group>
 	<to_group>Burlington Transit</to_group>
 </fare>
 
-<fare cost="-1.28" type="transfer">
+<fare cost="-1.18" type="transfer">
 	<from_group>MiWay</from_group>
 	<to_group>GO Transit</to_group>
 	<bidirectional>True</bidirectional>
@@ -96,7 +96,7 @@ Zone crossing rules have their cost applied to all SEGMENTS whose i-node belong 
 
 ```xml
 
-<fare cost="2.13" type="zone_crossing">
+<fare cost="3.00" type="zone_crossing">
     <group>TTC Regular</group>
     <from_zone>Toronto</from_zone>
     <to_zone>York 1</to_zone>
@@ -118,7 +118,7 @@ Distance in-vehicle rules have their cost applied to all SEGMENTS belonging to t
 
 ```xml
 
-<fare cost="0.0825" type="distance_in_vehicle">
+<fare cost="0.0895" type="distance_in_vehicle">
     <group>GO Transit</group>
 </fare>
 
@@ -156,17 +156,13 @@ A separate tool to estimate the required network size has also been developed.
 
 # Base Fare Schema
 
-In creating the base fare schema file, 2012 fare prices were obtained from every GTHA transit agency. However, these data are what each agency shows to the public and do not reflect what is actually paid per-ride. A different value must be calculated, which blends the effects of different fare media: cash, tokens, and monthly passes. Fortunately, the TTC was able to provide a figure for average adult fare, which was used to pro-rate the unit price for 10 tickets for other agencies. This data is summarized in Table 1 below.
-
-The full base schema is transcribed in Appendix A.
+In creating the base fare schema file, the 2016 fares for every agency was first found by using the Operating Revenue per Passenger Trip. This is reported to CUTA by every transit agency, and is analogous to the average fare across all fare media and across all fare classes. Since GTAModelV4 is not expected to have different fare classes and fare media explicitly modelled, this amount is the most useful. The full base schema is transcribed in [Appendix A](#Appendix-A-2016-Fare-Schema-File).
 
 ## Co-fares and Transfers
 
-With the exception of the TTC, all agencies offer a lower co-fare when transferring to and from GO Transit. These have been implemented as negative-cost fare rules, where the initial boarding fare is subtracted from the co-fare to get the difference applied to the appropriate transfer links. These co-fares are documented in Table 1.
+As some transit agencies offer a lower co-fare (or free) when transferring to and from other agencies, the negative-cost fare rules are implemented, where the initial boarding fare is subtracted from the co-fare to get the difference applied to the appropriate transfer links. These co-fares are documented in [Appendix B](#Appendix-B-2016-Full-Fares). The overview of inter-agency fare transfer rules is summarized below:
 
-Additionally, several non-Toronto agencies accept free transfers from each other (for example, Hamilton and Burlington). However, these are usually restricted by time of trip (e.g. within a two-hour period from the original time of purchase). This is just not possible to model within a time-static framework, and so these free transfers were omitted from the base schema.
-
-TODO
+![alt text](images/4.png "Co-fares and Transfers")
 
 ## TTC Downtown Express, TTC Routes in York Region
 
@@ -178,7 +174,7 @@ Additionally, the TTC operates a number of routes north of Steeles Avenue, which
 
 YRT divides York Region into three fare zones (1, 2, and 3). The boundaries between the fare zones are fairly wide (containing several stops), where the $1.00 surcharge is applied only if a passenger’s trip starts on one side of the fare boundary and ends on the other side. This “soft boundary” is not possible to model using Emme, since it involves knowing both end of the trip in advance (see GO Transit below), and so it is approximated using a “hard” zone crossing halfway through the soft boundary. Figure 2 below illustrates the location of each of the YRT fare zone boundaries. The boundary between Zone 1 and Zone 2 follows King Road, while the boundary between Zone 2 and Zone 3 follows Ravenshore Road. 
 
-![alt text](images/2.png "Figure 2")
+![alt text](images/2.png "YRT Fare Zones")
 
 ## GO Transit
 
@@ -188,11 +184,12 @@ The initial fare comes directly from the fare matrix and is the minimum cost of 
 
 The per-km fare was estimated using linear regression, based on the network distance between fare zones; where the network distance is the minimum shortest path distance between GO stations/stops in each zone.  If between two zones there existed a path using just railway links, that path’s distance was used. Figure 3 shows the results of the linear regression.
 
-The actual fares used in the estimation were blended across different fare media, since the given fares were for cash-only (the highest price). Data from Metrolinx indicated that 60% of GO riders paid using a PRESTO card, realizing a 17.5% discount on the ticket price. It was assumed that the remaining 40% of riders paid by cash. With this blending, the final applied initial boarding fare was $4.07, and the final per-km fare was $0.0825 (8.28 cents).
+The actual fares used in the estimation were blended across different fare media, since the given fares were for cash-only (the highest price). Data from Metrolinx indicated that 60% of GO riders paid using a PRESTO card, realizing a 17.5% discount on the ticket price. It was assumed that the remaining 40% of riders paid by cash. With this blending, the final applied initial boarding fare was $5.12, and the final per-km fare was $0.0895 (8.95 cents).
 
-TODO 
+![alt text](images/3.png "GO Transit Fares")
+ 
 
-# Appendix A: Transcribed 2012 Fare Schema File
+# Appendix A: 2016 Fare Schema File
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -200,14 +197,17 @@ TODO
   <version number="1.0" />
 
   <groups>
+	<group id="GO Transit">
+    	<selection>mode=rg</selection>
+    </group>
+    <group id="UPX">
+    	<selection>line=GT08__</selection>
+    </group>
     <group id="TTC Regular">
     	<selection>line=T_____</selection>
     </group>
     <group id="TTC DT Express">
     	<selection>line=T14___</selection>
-    </group>
-    <group id="GO Transit">
-    	<selection>mode=rg</selection>
     </group>
     <group id="DRT">
     	<selection>line=D_____</selection>
@@ -231,15 +231,15 @@ TODO
     	<selection>line=HM____</selection>
     </group>
     <group id="HSR">
-      <selection>line=W_____</selection>
+      	<selection>line=W_____</selection>
     </group>
   </groups>
 
   <zones>
-    <shapefile id="1" path="D:/...YorkZones.shp"/>
-
+    <shapefile id="1" path="York_Region_Zones\York_Region_Zones.shp" />
+    
     <zone id="Toronto" type="node_selection">
-    	<node_selector>i=10000,20000</node_selector>
+    	<node_selector>i=10000,40000</node_selector>
     </zone>
     <zone id="York 1" type="from_shapefile">
     	<from_shapefile id="1" FID="1" />
@@ -251,64 +251,75 @@ TODO
     	<from_shapefile id="1" FID="2" />
     </zone>
   </zones>
-
-  <station_groups>
-  	<station_group for="GO Transit" selection="i=9700,9800"/>
-  	<station_group for="TTC Regular" selection="i=9800,9900"/>
-  </station_groups>
-
-
+  
   <fare_rules>
     <!--TTC (Toronto Transit Commission)-->
-    <fare cost="1.98" type="initial_boarding">
+    <fare cost="2.22" type="initial_boarding">
     	<group>TTC Regular</group>
     </fare>
-    <fare cost="4.68" type="initial_boarding">
+    <fare cost="4.44" type="initial_boarding">
     	<group>TTC DT Express</group>
     </fare>
-    <fare cost="-1.98" type="transfer">
+    <fare cost="-2.22" type="transfer">
     	<from_group>TTC Regular</from_group>
     	<to_group>TTC DT Express</to_group>
     	<bidirectional>True</bidirectional>
     </fare>
-    <fare cost="0.15" type="initial_boarding">
+    <fare cost="0.78" type="initial_boarding">
     	<group>TTC Regular</group>
     	<in_zone>York 1</in_zone>
     </fare>
-    <fare cost="2.13" type="zone_crossing">
+    <fare cost="3.00" type="zone_crossing">
     	<group>TTC Regular</group>
     	<from_zone>Toronto</from_zone>
     	<to_zone>York 1</to_zone>
     </fare>
-    <fare cost="1.98" type="zone_crossing">
+    <fare cost="2.22" type="zone_crossing">
     	<group>TTC Regular</group>
     	<from_zone>York 1</from_zone>
     	<to_zone>Toronto</to_zone>
     </fare>
     
+    <fare cost="-3.00" type="transfer">
+    	<from_group>TTC Regular</from_group>
+    	<to_group>YRT</to_group>
+    	<bidirectional>True</bidirectional>
+    	<in_zone>York 1</in_zone>
+    </fare> 
+    
     <!-- GO Transit Fares -->
-    <fare cost="4.07" type="initial_boarding">
+    <fare cost="5.12" type="initial_boarding">
     	<group>GO Transit</group>
     </fare>
-    <fare cost="0.0825" type="distance_in_vehicle">
+    <fare cost="0.0895" type="distance_in_vehicle">
     	<group>GO Transit</group>
+    </fare>
+    <fare cost="2.55" type="initial_boarding">
+    	<group>UPX</group>
+    </fare>
+    <fare cost="0.25" type="distance_in_vehicle">
+    	<group>UPX</group>
     </fare>
     
     <!-- Durham Transit -->
-    <fare cost="2.06" type="initial_boarding">
+    <fare cost="2.57" type="initial_boarding">
     	<group>DRT</group>
     </fare>
-	<fare cost="-1.41" type="transfer">
+	<fare cost="-1.82" type="transfer">
 		<from_group>DRT</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
 	
+	<fare cost="-3.00" type="transfer">
+		<from_group>DRT</from_group>
+		<to_group>YRT</to_group>
+	</fare>
 	<!-- York Region -->
-	<fare cost="2.13" type="initial_boarding">
+	<fare cost="3.00" type="initial_boarding">
 		<group>YRT</group>
 	</fare>
-	<fare cost="-1.38" type="transfer">
+	<fare cost="-2.25" type="transfer">
 		<from_group>YRT</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
@@ -325,72 +336,194 @@ TODO
 		<to_zone>York 3</to_zone>
 		<bidirectional>True</bidirectional>
 	</fare>
+	<fare cost="-2.57" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>DRT</to_group>
+	</fare>
+	<fare cost="-2.48" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>Brampton Transit</to_group>
+	</fare>
+	<fare cost="-1.98" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>MiWay</to_group>
+	</fare>
+	<fare cost="-1.97" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>Oakville Transit</to_group>
+	</fare>
+	<fare cost="-2.53" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	<fare cost="-1.90" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>HSR</to_group>
+	</fare>
 	
 	<!-- MiWay -->
 	<fare cost="1.98" type="initial_boarding">
 		<group>MiWay</group>
 	</fare>
-	<fare cost="-1.28" type="transfer">
+	<fare cost="-1.18" type="transfer">
 		<from_group>MiWay</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
+	<fare cost="-2.48" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>Brampton Transit</to_group>
+	</fare>
+	<fare cost="-1.97" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>Oakville Transit</to_group>
+	</fare>
+	<fare cost="-2.53" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	<fare cost="-1.90" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>HSR</to_group>
+	</fare>
+	<fare cost="-3.00" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>YRT</to_group>
+	</fare>
 	
 	<!-- Brampton Transit -->
-	<fare cost="2.09" type="initial_boarding">
+	<fare cost="2.48" type="initial_boarding">
 		<group>Brampton Transit</group>
 	</fare>
-	<fare cost="-1.44" type="transfer">
+	<fare cost="-1.68" type="transfer">
 		<from_group>Brampton Transit</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
+	<fare cost="-1.98" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>MiWay</to_group>
+	</fare>
+	<fare cost="-3.00" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>YRT</to_group>
+	</fare>
+	<fare cost="-1.97" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>Oakville Transit</to_group>
+	</fare>
+	<fare cost="-2.53" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	<fare cost="-1.90" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>HSR</to_group>
+	</fare>
 	
 	<!-- Oakville Transit -->
-	<fare cost="2.27" type="initial_boarding">
+	<fare cost="1.97" type="initial_boarding">
 		<group>Oakville Transit</group>
 	</fare>
-	<fare cost="-1.62" type="transfer">
+	<fare cost="-1.22" type="transfer">
 		<from_group>Oakville Transit</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
+	<fare cost="-2.48" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>Brampton Transit</to_group>
+	</fare>
+	<fare cost="-2.53" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	<fare cost="-1.98" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>MiWay</to_group>
+	</fare>
+	<fare cost="-1.90" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>HSR</to_group>
+	</fare>
+	<fare cost="-3.00" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>YRT</to_group>
+	</fare>
 	
 	<!-- Burlington Transit -->
-	<fare cost="2.23" type="initial_boarding">
+	<fare cost="2.53" type="initial_boarding">
 		<group>Burlington Transit</group>
 	</fare>
-	<fare cost="-1.58" type="transfer">
+	<fare cost="-1.83" type="transfer">
 		<from_group>Burlington Transit</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
-	<fare cost="-2.23" type="transfer">
-		<from_group>HSR</from_group>
-		<to_group>Burlington Transit</to_group>
+	<fare cost="-2.48" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>Brampton Transit</to_group>
+	</fare>
+	<fare cost="-1.90" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>HSR</to_group>
+	</fare>
+	<fare cost="-1.98" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>MiWay</to_group>
+	</fare>
+	<fare cost="-1.97" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>Oakville Transit</to_group>
+	</fare>
+	<fare cost="-3.00" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>YRT</to_group>
 	</fare>
 	
 	<!-- Milton Transit -->
-	<fare cost="1.83" type="initial_boarding">
+	<fare cost="2.55" type="initial_boarding">
 		<group>Milton Transit</group>
 	</fare>
-	<fare cost="-1.23" type="transfer">
+	<fare cost="-1.85" type="transfer">
 		<from_group>Milton Transit</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
 	
 	<!-- HSR -->
-	<fare cost="1.65" type="initial_boarding">
+	<fare cost="1.90" type="initial_boarding">
 		<group>HSR</group>
 	</fare>
-	<fare cost="-1.15" type="transfer">
+	<fare cost="-1.30" type="transfer">
 		<from_group>HSR</from_group>
 		<to_group>GO Transit</to_group>
 		<bidirectional>True</bidirectional>
 	</fare>
-	
+	<fare cost="-2.48" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>Brampton Transit</to_group>
+	</fare>
+	<fare cost="-2.53" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	<fare cost="-1.98" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>MiWay</to_group>
+	</fare>
+	<fare cost="-1.97" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>Oakville Transit</to_group>
+	</fare>
+	<fare cost="-3.00" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>YRT</to_group>
+	</fare>
   </fare_rules>
 </root>
 
 ```
+
+# Appendix B: 2016 Full Fares
+![alt text](images/5.png "2016 Full Fares")
