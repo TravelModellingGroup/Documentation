@@ -56,13 +56,13 @@ that are used for generating the time period networks.  More information can be 
 * HouseholdData:
   * Households.csv: 
   * Persons.csv: 
-* WorkerCategories: For each occupation and employment category a CSV file is exists containing with three columns:
-Zone, WorkerCategory, and the ratio of that worker category for the given zone.
 * ZonalResidence: For each occupation and employment category a CSV exists containing two columns:
 Zone, and the number of workers in that zone that work within the GTHA and the number of non-roaming workers of that
 category living in that zone.
 * ZoneData: 
-  * Zones.csv: Contains information related to each zone in the zone system.  A detailed description of the format can be found [here](file_formats/zones_file_format.md).
+  * IntrazonalDistance.csv: A CSV File in the format (Zone, Distance) describing the expected distance in metres that a trip will take.  This is usually done with \\( \frac{2\sqrt{Area}}{6} \\).
+  * PDs.csv: A CSV file in the format (Zone, PD) describing the planning district that each zone belongs in.  Zones not specified will be assigned to PD 0. 
+  * Population.csv: A CSV file in the format (Zone, Population) describing the population for each zone.  Zones that are not defined will get a population of zero.
   * Regions.csv: A CSV file with two columns: (Zone, Region).  Each zone can only belong to a single region.  External zones
     should be absent or given a region number of 0.
 
