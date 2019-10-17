@@ -1,6 +1,6 @@
-# TMG Toolbox
+# TMG Toolbox for Emme
 ## Introduction
-TMG Toolbox is toolbox for the Emme V4 software. It is a collection of tools that build upon the modelling capabilities already present in Emme. TMG Toolbox has been designed for two uses
+TMG Toolbox for Emme is a toolbox for the Emme V4 software. It is a collection of tools that build upon the modelling capabilities already present in Emme. TMG Toolbox has been designed for two uses
 
  1. Using Modeller to run tools in a direct manner. Not all tools support this as some are exclusively built for the second use case.
  2. Using XTMF (eXtensible Travel Modelling Framework) to call tools remotely as part of a reproducible workflow.
