@@ -50,7 +50,7 @@ within are not used in the model system.
 
 Each year contains a file called BaseNetwork.nwp containing the master network.  Each scenario then contains a set of files
 that are used for generating the time period networks.  More information can be found [here](file_formats/network_scenario_format.md) describing their format.
-Please note that starting in GTAModel V4.1 two new files are required. `Parking.csv` and `shortest_path.mtx`._
+Please note that starting in GTAModel V4.1 two new files are required. `ParkingCosts.csv` and `shortest_path.mtx`._
 
 #### Scenario-Population
 
