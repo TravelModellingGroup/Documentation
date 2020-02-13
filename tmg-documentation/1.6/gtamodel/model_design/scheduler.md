@@ -151,7 +151,11 @@ id = 72 + occupationOffset * 2 +
 ##### School
 
 \begin{equation}
-id = 84 + (ageOffset * 2) + occupationOffset
+id = 84 + (ageOffset * 2) +
+\begin{cases}
+0 & \text{Full-Time Student} \\\\
+1 & \text{Part-Time Student}
+\end{cases}
 \end{equation}
 
 ##### Return From Work
