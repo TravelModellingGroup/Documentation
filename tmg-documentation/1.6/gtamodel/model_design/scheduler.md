@@ -133,19 +133,22 @@ id = 32 + occupationOffset * 2 +
 \begin{equation}
 id = 40 + (ageOffset * 8) + occupationOffset * 2 +
 \begin{cases}
-1, & EmploymentStatus = FullTime \\\\
-0, & else
+0, & EmploymentStatus = FullTime \\\\
+1, & else
 \end{cases}
 \end{equation}
 
 ##### Work At Home Business
 
 \begin{equation}
-id = 72 + occupationOffset * 2 +
+id = 72 + 
 \begin{cases}
-1, & EmploymentStatus = FullTime \\\\
-0, & else
+N/A, & < 19 \\\\
+0, & < 25 \\\\
+1, & < 65 \\\\
+2, & else
 \end{cases}
+ * 4 + occupationOffset
 \end{equation}
 
 ##### School
@@ -163,8 +166,8 @@ id = 84 + (ageOffset * 2) +
 \begin{equation}
 id = 94 + occupationOffset * 2 +
 \begin{cases}
-1, & EmploymentStatus = FullTime \\\\
-0, & else
+0, & EmploymentStatus = FullTime \\\\
+1, & else
 \end{cases}
 \end{equation}
 
