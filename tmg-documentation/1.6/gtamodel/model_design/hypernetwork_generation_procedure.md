@@ -11,3 +11,8 @@ b.	Transit (or Station) nodes are connected to links with only transit or walk m
 5.	Virtual surface nodes and virtual station nodes are connected to each other using walk links.
 6.	Finally, each transit line is moved over to its appropriate layer in the hyper network. In-vehicle links are created between virtual nodes when none exist.
 It should be noted that, currently, no effort is made to make the network look visually appealing. Virtual nodes are given the exact same coordinates as their base node, and virtual links copy the same shape as their base links. Therefore, the created hyper-network appears to be identical to the base network – since the virtual nodes and links overlap the base precisely.
+
+
+![alt text](images/15.png "Figure 15")
+
+![alt text](images/16.png "Figure 16")

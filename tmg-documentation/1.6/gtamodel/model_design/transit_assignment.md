@@ -73,10 +73,6 @@ In order to implement it in GTAModel V4.1, a new module was created for Transit 
 
 Transit estimation and calibration uses the 2011 Transportation Tomorrow Survey (TTS) data. TTS is a very large (5%) household telephone-based survey that collects weekday travel data for a random weekday all members of sampled households 11 years of age or older.  It has been conducted every five years since 1986, with the most recent survey being undertaken in 2011/12.  In 2011 118,280 households were surveyed within the GTHA, providing an exceptionally rich dataset for detailed activity/travel modelling.  Although a trip-based survey, the dataset was converted for modelling purposes into a set of out-of-home activity episodes describing personal activity patterns and trip chains (tours) for all observed persons.
 
-![alt text](images/15.png "Figure 15")
-
-![alt text](images/16.png "Figure 16")
-
 ## Estimation and Calibration
 
 Transit assignment parameters were estimated using a Particle-Swarm Optimization procedure. The root-mean-square-error (RMSE) between predicted and observed transit line boardings jointly across the AM and PM time periods is minimized using the aforementioned procedure.  That is, parameters were chosen to minimize the following function:
