@@ -147,8 +147,7 @@ N/A, & < 19 \\\\
 0, & < 25 \\\\
 1, & < 65 \\\\
 2, & else
-\end{cases}
- * 4 + occupationOffset
+\end{cases} * 4 + occupationOffset
 \end{equation}
 
 ##### School
