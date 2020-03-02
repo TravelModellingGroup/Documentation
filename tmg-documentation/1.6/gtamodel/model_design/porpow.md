@@ -8,6 +8,9 @@ In the aggregate model workers are separated by both occupation and employment s
 
 One the probabilities for each worker category has been computed that data is then passed forward when loading in the synthetic population.  A discrete zone is then selected for each person in the worker, employment, and occupation category for each person.
 
+In `GTAModel V4.1` the model has been reduced to a 2D gravity model since it will execute before the number of
+vehicles will not have been assigned to the household before assigning discrete places of work.
+
 ## Equations
 
 The friction for the gravity model is given by the following equations:
@@ -30,7 +33,7 @@ e^{\beta_{intraPD_s}} & PD_i = PD_j \\\\
 1 & \text{else}
 \end{cases}
 \right)
-\left(e^{\beta_{aivtt_{sk}}AIVTT_{ij}} + e^{\beta_{ptivtt_s}PTIVTT_{ij}}\right)
+\left(e^{\beta_{aivtt_{sk}}AIVTT_{ij}} + e^{\beta_{TransitConstant}+\beta_{ptivtt_s}PTIVTT_{ij}}+e^{\beta_{DitanceConstant}+\beta_{Distance}Distance_{ij}}\right)
 \end{equation}
 
 Where,
@@ -45,6 +48,8 @@ k & = \text{Worker Category} \\\\
 K & = \text{K-Factor for zone } i \text{ to zone} j
 \end{split}
 \end{equation}
+
+The Distance term is included starting in GTAModel V4.1.
 
 
 ## Estimation
