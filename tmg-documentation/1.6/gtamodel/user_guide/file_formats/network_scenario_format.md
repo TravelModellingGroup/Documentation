@@ -36,7 +36,7 @@ An example line "T501" has 3 departures in the AM period (6 a.m. to 9 a.m.) at 8
 
 
 ## Alt File (.csv)
-This file is the Transit Alternative Table, which contains information for the transit lines that do not have any entries in the Transit Service Table; otherwise, these transit lines will not be present in the time periods that will be generated. It needs to contain at least three columns as following:
+This file is the Transit Alternative Table, which contains information for the transit lines that do not have any entries in the Transit Service Table; otherwise, these transit lines will not be present in the time periods that will be generated. If a line exists in both Alt File and Service Table, the information in Alt File will rule. It needs to contain at least three columns as following:
 
 - emme_id: the id of the transit line in EMME
 - xxxx_hdw: the headway column corresponding to the time period starting with "xxxx" in a "hhmm" format. For example, "0600_hdw" column will contain the headways for the time period starting at 6:00 AM.
