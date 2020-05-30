@@ -14,7 +14,7 @@ For heavy truck restrictions, new restrictions were updated where possible, but 
 
 ### Peak Hour Factor Auto
 
-When finding the Peak Hour Factors for the AM and PM time periods for auto, and a $0.067603/km charge with a $50/hour value of time. Various different Peak Period Factors were then tested out. For each Peak Period
+When finding the Peak Hour Factors for the AM and PM time periods for auto a $0.067603/km charge with a $50/hour value of time were used. Various different Peak Period Factors were then tested out. For each Peak Period
 Factor the following was done
 
 \begin{equation}
