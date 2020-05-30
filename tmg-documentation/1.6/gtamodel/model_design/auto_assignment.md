@@ -14,8 +14,7 @@ For heavy truck restrictions, new restrictions were updated where possible, but 
 
 ### Peak Hour Factor Auto
 
-When finding the Peak Hour Factors for the AM and PM time periods for auto, the link cost and perceptions were kept the same as
-GTAModelV4.0.2 at $0.153/km $50/hour respectively. Various different Peak Period Factors were then tested out. For each Peak Period
+When finding the Peak Hour Factors for the AM and PM time periods for auto, and a $0.067603/km charge with a $50/hour value of time. Various different Peak Period Factors were then tested out. For each Peak Period
 Factor the following was done
 
 \begin{equation}
