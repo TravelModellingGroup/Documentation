@@ -104,6 +104,8 @@ This file was added starting in GTAModel V4.1.0. The columns are as follows:
   * "auto2transit" or "transit2auto"
 * weight
   * The number of times that the station was selected
+* mode `(XTMF 1.8+)`
+  * The mode associated with this station choice.  This is required for analyzing PAT/PET modes.
 
 
 ## Facilitate_Passenger.csv (Optional)
