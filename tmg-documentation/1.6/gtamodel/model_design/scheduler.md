@@ -30,6 +30,41 @@ The location choice model for GTAModel V4.0 is separated into three sub models, 
 
 ![alt text](images/TimePrism.png "Time Prism")
 
+For GTAModel V4.1 and V4.0 we used the following equation for determining the attractiveness
+of going to zone \\( j \\) originating at \\( i \\) and going to \\( k \\).
+
+\begin{equation}
+V_{ijk} = Accessibility_{ijk} + \sum_{occemp}{\beta_{occemp} * ln(1 + emp_{j} * occempRatio_{occemp|j})}
+\end{equation}
+
+In GTAModel V4.2 we have changed this formulation to the following.
+
+\begin{equation}
+V_{ijk} = Accessibility_{ijk} + \sum_{occemp}{\beta_{occemp} * occempRatio_{occemp|j} * ln(1 + emp_{j})}
+\end{equation}
+
+For all model versions the following equation is used for computing the accessibility.
+
+\begin{equation}
+Accessibility_{ijk} = \beta_{TravelLogsumScale} * \left(
+\begin{array}{c}
+ln \left(
+\begin{array}{l}
+ e^{\beta_{aivtt} * AIVTT_{ij} + \beta_{cost} * ACOST_{ij}} \\\\
+\text{+} e^{\beta_{TransitConstant} + \beta_{TransitBoarding} * TPTT_{ij} + \beta_{cost} * {TFARE_{ij}}} \\\\
+\text{+} e^{\beta_{ActiveConstant} + \beta_{ActiveDistance} * Distance_{ij}}
+\end{array} \right) \\\\ 
+ \text{+} \\\\
+ln \left(
+\begin{array}{l}
+ e^{\beta_{aivtt} * AIVTT_{jk} + \beta_{cost} * ACOST_{jk}} \\\\
+\text{+} e^{\beta_{TransitConstant} + \beta_{TransitBoarding} * TPTT_{jk} + \beta_{cost} * {TFARE_{jk}}} \\\\
+\text{+} e^{\beta_{ActiveConstant} + \beta_{ActiveDistance} * Distance_{jk}} \\\\
+\end{array} \right)
+\end{array}
+\right)
+\end{equation}
+
 ## Generate Trip Chains
 
 ### Overview
