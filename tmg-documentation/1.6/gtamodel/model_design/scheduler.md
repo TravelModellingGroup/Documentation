@@ -34,13 +34,13 @@ For GTAModel V4.1 and V4.0 we used the following equation for determining the at
 of going to zone \\( j \\) originating at \\( i \\) and going to \\( k \\).
 
 \begin{equation}
-V_{ijk} = Accessibility_{ijk} + \beta_{population} + ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * ln(1 + emp_{j} * occempRatio_{occemp|j})}
+V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * ln(1 + emp_{j} * occempRatio_{occemp|j})}
 \end{equation}
 
 In GTAModel V4.2 we have changed this formulation to the following.
 
 \begin{equation}
-V_{ijk} = Accessibility_{ijk} + \beta_{population} + ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * occempRatio_{occemp|j} * ln(1 + emp_{j})}
+V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * occempRatio_{occemp|j} * ln(1 + emp_{j})}
 \end{equation}
 
 For all model versions the following equation is used for computing the accessibility.
