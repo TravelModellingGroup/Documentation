@@ -48,6 +48,9 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 |--------|--------|--------|--------|--------|
 |T501|10|50|5|50|
 
+> [!TIP] If you set the headway of a line to 9999 for any or all time periods, it will be
+> removed from the network for those time periods.
+
 
 ## Service Table (.csv)
 This Transit Service Table file contains trip starts and trip ends for transit lines. It contains three columns as following:
