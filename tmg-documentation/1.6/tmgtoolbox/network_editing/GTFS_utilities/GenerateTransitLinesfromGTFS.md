@@ -25,7 +25,7 @@ Select the factor to be applied to link speeds.
 Select the folder that conatins the GTFS feed files.
 
 ### Stop-to-Node File
-Select the *.csv file that contains Stop IDs and the corresponding Emme Node IDs. The default file format assumes that the first column is *Stop ID* and the second column is *Node ID*.
+Select the *.csv file that contains Stop IDs and the corresponding Emme Node IDs. The default file format assumes that the first column is *Stop ID* and the second column is *Node ID*. More information on how to generate the Stop-to-Node file can be found [here](../GTFSEmmeNodeMap.md).
 
 ### TOOL OUTPUTS
 
