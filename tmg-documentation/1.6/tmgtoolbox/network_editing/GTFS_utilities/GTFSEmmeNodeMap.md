@@ -1,5 +1,5 @@
 # **GTFS Stops to Emme Node File**
-This tool is used to generate a mapping file that shows the GTFS Stop IDs and their corresponding Node IDs in the EMME network, which is also known as the **Stop-to-Node** file used in the [Generate Transit Lines from GTFS](../GenerateTransitLinesfromGTFS.md) tool.
+This tool is used to generate a mapping file that shows the GTFS Stop IDs and their corresponding Node IDs in the EMME network, which is also known as the **Stop-to-Node** file used in the [Generate Transit Lines from GTFS](../GTFS_utilities/GenerateTransitLinesfromGTFS.md) tool.
 
 ## **Using the Tool with Modeller**
 The tool can be found in "TMG Toolbox" -> "Network Editing" -> "GTFS Utilities" -> "GTFS EMME Node Map"
