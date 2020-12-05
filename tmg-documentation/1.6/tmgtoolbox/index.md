@@ -9,6 +9,15 @@ The first use is simple enough, the user selects the tool and the parameters on 
 
 The second use involved the use of XTMF to call the tool with the paramters that are specified in XTMF. This allows for Emme to be part of a larger workflow in terms of a Travel Model. For example: GTAModelV4 is an agent based travel demand model that builds daily schedules for agents and then assigns them using Emme and the TMGToolbox.
 
+TMG Toolbox has seven categories:
+1. **Analysis**: Tools for analyzing networks, matrices, or model run results.
+2. **Assignment**: Tools for preparing and running road and transit assignments.
+3. **Common**: Libraries of smaller functions and helper classes.
+4. **Input Output**: Tools for loading and saving various data formats.
+5. **Logbook**: Tools for searching in Emme Logbook.
+6. **Network Editing**: Tools for performing automated network editing tasks.
+7. **XTMF Internal**: Tools which are designed only to be called by XTMF.
+
 ## Adding the Toolbox
 
 Adding the toolbox can be done in a number of ways. One way is given below. Note: Emme V4.3.7 is assumed. Older/newer versions may have differences. 
