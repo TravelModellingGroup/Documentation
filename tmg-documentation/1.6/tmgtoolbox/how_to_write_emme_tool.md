@@ -13,6 +13,9 @@ Custom tools can be created for running through the Modeller GUI, simply by sub-
 
 Tools can also be configured to report progress by implementing the `percent_completed(min, max, value)` method. 
 
+> [!NOTE]
+> For the tools to be called from **XTMF**, the attribute names used in the `__call__()` method need to be the same as in the parameter list. Four types of parameters are supported, which are `float`, `integer`, `string`, and `bool`. 
+
 ## Set up 
 Tools or scripts for Emme begin with the loading of the modeller library:
 
