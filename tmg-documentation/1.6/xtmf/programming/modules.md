@@ -5,11 +5,12 @@ title: Writing XTMF Modules
 
 # Writing XTMF Modules
 
-## Development Environment - Visual Studio 2017+
+## Development Environment - Visual Studio
 
 ### Installing Visual Studio
 
-Begin by downloading the Visual Studio 2017 installer. A link to the 2017 community edition is available [here](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15).
+Begin by downloading the Visual Studio 2017 (or newer) installer from 
+[here](https://visualstudio.microsoft.com/downloads/).
 
 In order to develop XTMF modules with Visual Studio, the appropriate packages must also be installed. If you have already installed Visual Studio - you can simply re-run the Visual Studio Installer and choose `modify` to add or remove packages from your current installation.
 
@@ -17,22 +18,32 @@ Required Package(s):
 
 1. .NET Desktop Development
 
+The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page. To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
+
+### Learning to Program
+
+The first step for creating any module is to learn gain at least a basic understanding of
+a .Net compatible language. [MSDN](https://docs.microsoft.com/en-us/learn/modules/csharp-write-first/1-introduction)
+has a good interactive tutorial for learning C#, the language that TMG uses to develop XTMF.
+Alternatively, you can also use the C++/CLI, F#, or VB.Net languages if they are more comfortable
+for yourself.  The following documentation is going to assume that you are working with C# however.
+
 ### Creating Your Module Project
 
-After everything is installed the next step is to create your new project. You will need to make it from a “Class Library”. (File -> New Project ... -> Class Library).
+After installing your code editor and having a working knowledge of C#, the next step is to
+create your new project. You will need to make it from a “Class Library”.
+(File -> New Project ... -> Class Library).
 
 Once that is done you will need to add a reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll` file. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
 
 > [!NOTE] 
 > `XTMFInterfaces.dll` is included as part of the regular XTMF download package.
 
-The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page. To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
-
-## Writing Your First Module
+### Writing Your First Module
 
 If you have access to the XTMF Software Development Kit, you should find some examples in C# for how to make a module as a supplement to this documentation.
 
-To begin, all XTMF modules need to be public classes, and need to implement ‘XTMF.IModule’ or a descendent of it. You will need the following:
+To begin, all XTMF modules need to be public classes, and need to implement ‘XTMF.IModule’ or a descendant of it. You will need the following:
 
 - A public property of type string called ‘Name’ with both a getter and setter
 - A public Boolean function called ‘RuntimeValidation’ with a reference to a string as a parameter
