@@ -146,7 +146,7 @@ if(A > 0, C, D) = ERROR
 
 \begin{equation}
 if(A > 0, 2, -2) = \begin{bmatrix}
-    -2 & 2 \\
+    -2 & 2 \\\\
     2 & -2
 \end{bmatrix}
 \end{equation}
