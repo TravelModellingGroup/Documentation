@@ -30,7 +30,10 @@ has not already been added you will need to do so.  Make sure to set the start a
 changing the parameters of the module accordingly.  Given the correct time period, check the `Spatial Constants` to see if
 a parameter already exists for the OD that you wish to modify.  All modifications are done at a planning district to planning district
 level.  For these parameters it is traditional to use the format `1-4,6:5,7-16` where the colon breaks up the two range sets, on the
-left the origin and on the right hand side the destination range set.
+left the origin and on the right hand side the destination range set.  If you add additional calibration constants
+make sure that if you add OD's that overlap that the more specific term comes first in the list or it will be ignored as the first
+module that satisfies the criteria will be selected.
+
 
 > [!Tip]
 > When working with the `Time Period Constants` remember that by modifying a parameter in any time period, the chosen modes in the other
