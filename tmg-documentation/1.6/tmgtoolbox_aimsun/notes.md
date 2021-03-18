@@ -17,6 +17,13 @@ python dependencies and modules will not be found.
 - Using model reference, various editing actions can now take place.
 - Save the model when finished, and close the console.
 
-### Location of Required Python Modules
+## Location of Required Python Modules
 
 - The Python modules required for interacting with the Aimsun API are located in the main installation folder under *plugins/python*. *PyANGApp*, *PyANGonsole*, *PyANGKernel*, *PyANGGui* are the more frequently used/critical module dependencies. Reference them in your IDE if it supports parsing external modules for automcomplete and other intellisense features. Otherwise, any documetation on these modules must be inferred from the C implementation included in the Aimsun scripting documentation.
+
+## Suggested development pipeline for efficient module testing / development
+
+Use a Python IDE that supports parsing/reading external python modules and libraries that are then included as part of autocomplete and other intellisense features. Point PYTHONPATH or related IDE variables to the Aimsun plugins/python folder for the required modules.
+
+Develop a launch task that passes the active file as the --script parameter to `aconsole.exe`.  Ensure that the active working directory is the same directory where `aconsole.exe` is located. 
+
