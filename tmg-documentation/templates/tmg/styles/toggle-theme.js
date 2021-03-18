@@ -8,7 +8,7 @@ if (sw && b) {
     b.classList.toggle("dark-theme", this.checked)
     b.classList.toggle("light-theme", !this.checked)
     if (window.localStorage) {
-      this.checked ? localStorage.setItem("theme", "dark-theme") : localStorage.setItem("theme", "light-theme")
+      this.checked ? localStorage.setItem("theme", "dark-theme") : localStorage.setItem("theme", "dark-theme")
     }
   })
 }
