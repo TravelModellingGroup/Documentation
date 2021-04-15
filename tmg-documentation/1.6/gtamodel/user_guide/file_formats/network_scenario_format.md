@@ -49,7 +49,8 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 |T501|10|50|5|50|
 
 > [!TIP] If you set the headway of a line to 9999 for any or all time periods, it will be
-> removed from the network for those time periods.
+> removed from the network for those time periods.  A headway of 0 will keep the calculated headway
+> from the service table.
 
 
 ## Service Table (.csv)
