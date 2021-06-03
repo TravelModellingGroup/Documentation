@@ -1,4 +1,4 @@
-# Log
+# Sqrt
 
 Performs Square Root on the input parameter. `XTMF 1.8+`
 
@@ -20,38 +20,38 @@ D = \begin{bmatrix}
 \end{bmatrix}
 \end{equation}
 
-### Log(Matrix) = Matrix
+### Sqrt(Matrix) = Matrix
 
 \begin{equation}
-Log(A) = \begin{bmatrix}
+Sqrt(A) = \begin{bmatrix}
     NaN & 1.4142136 \\\\
     1.732051 & NaN
 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
-Log(B) = \begin{bmatrix}
+Sqrt(B) = \begin{bmatrix}
     1.4142136 &  2\\\\
     2.4494897 & 2.8284271
 \end{bmatrix}
 \end{equation}
 
-### Log(Vector) = Vector
+### Sqrt(Vector) = Vector
 
 \begin{equation}
-Log(C) = \begin{bmatrix}
+Sqrt(C) = \begin{bmatrix}
     NaN \\\\
     1.732051
 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
-Log(D) = \begin{bmatrix}
+Sqrt(D) = \begin{bmatrix}
     NaN & 1.732051
 \end{bmatrix}
 \end{equation}
 
-### Log(Scalar) = Scalar
+### Sqrt(Scalar) = Scalar
 
 \begin{equation}
 Sqrt(1) = 1
