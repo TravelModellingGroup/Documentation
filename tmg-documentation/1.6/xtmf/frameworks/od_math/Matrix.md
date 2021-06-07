@@ -26,15 +26,15 @@ Matrix(A) = ERROR
 
 \begin{equation}
 Matrix(C) = \begin{bmatrix}
-    -1 & 3 \\\\
-    -1 & 3
+    -1 & -1 \\\\
+    3 & 3
 \end{bmatrix}
 \end{equation}
 
 \begin{equation}
 Matrix(D) = \begin{bmatrix}
-    -1 & -1 \\\\
-    3 & 3
+    -1 & 3 \\\\
+    -1 & 3
 \end{bmatrix}
 \end{equation}
 
