@@ -5,29 +5,6 @@ title: Writing XTMF Modules
 
 # Writing XTMF Modules
 
-## Development Environment - Visual Studio
-
-### Installing Visual Studio
-
-Begin by downloading the Visual Studio 2017 (or newer) installer from 
-[here](https://visualstudio.microsoft.com/downloads/).
-
-In order to develop XTMF modules with Visual Studio, the appropriate packages must also be installed. If you have already installed Visual Studio - you can simply re-run the Visual Studio Installer and choose `modify` to add or remove packages from your current installation.
-
-Required Package(s):
-
-1. .NET Desktop Development
-
-The second step is to set the output directory of the dynamically linked library to be inside of the XTMF’s Modules directory from the project’s properties page. To get ready for debugging, in the project’s property page go to the Debug tab and set the ‘Start Action’ to ‘Start external program’ and direct it to your ‘XTMF.GUI.exe’.
-
-### Learning to Program
-
-The first step for creating any module is to learn gain at least a basic understanding of
-a .Net compatible language. [MSDN](https://docs.microsoft.com/en-us/learn/modules/csharp-write-first/1-introduction)
-has a good interactive tutorial for learning C#, the language that TMG uses to develop XTMF.
-Alternatively, you can also use the C++/CLI, F#, or VB.Net languages if they are more comfortable
-for yourself.  The following documentation is going to assume that you are working with C# however.
-
 ### Creating Your Module Project
 
 After installing your code editor and having a working knowledge of C#, the next step is to
@@ -37,7 +14,7 @@ create your new project. You will need to make it from a “Class Library”.
 Once that is done you will need to add a reference to either the `XTMFInterfaces` project (if you are recompiling XTMF) or to the `XTMFInterfaces.dll` file. References can be added through the context menu on the `References` tree label located in the solution explorer. A list of your project's references will also be displayed here.
 
 > [!NOTE] 
-> `XTMFInterfaces.dll` is included as part of the regular XTMF download package.
+> `XTMFInterfaces.dll` is included in the Modules directory in your XTMF program directory.
 
 ### Writing Your First Module
 
@@ -68,9 +45,7 @@ The XTMF module SDK includes support for various forms of module meta data that 
 The XTMF `ModuleInformation` annotation includes support for custom icon displays as of XTMF 1.5. Use the IconURI property of the ModuleInformation initializer. A list of some of the available icons can be found at https://materialdesignicons.com/.
 
 ```cs
-    [ModuleInformation(Description =
-        "Example Module Description",
-        IconURI = "TestTube")]
+    [ModuleInformation(Description = "Example Module Description", IconURI = "TestTube")]
 ```
 
 ### Module Assembly Meta Information
@@ -134,6 +109,28 @@ One of the most important things for any module will be its parameters. There ar
 To create a new parameter, define a new public member variable or property with getter and setter of one of the supported types. On top of it add an attribute of type ‘RuntimeParameter’. All types that implement a TryParse( string input, out [TYPE]) method are supported. This includes all of the .Net primitives. In order to use non .Net primitives you will need to include the typeof([TYPE]) argument.
 Here are some examples of parameters:
 
+```cs
+[RunParameter("Random Seed", 12345, "A number to use as the seed for the random number generator.")]         
+public int RandomSeed 
+{             
+    get;               
+    set; 
+} 
+```
+This will create a new parameter of type integer called Random Seed and set its default value to 12345.  The last parameter will be the description of the parameter. 
+
+```cs
+[RunParameter("Max Mutation", 0.4f, "The maximum amount (in 0 to 1) that a parameter can be mutated")]         
+public float MaxMutationPercent; 
+```
+This creates a new parameter of float to bound how many percent are we allowed to mutate a parameter.  It is important to see here that the default value is not 0.4, it is 0.4f.  If we leave off the ‘f’ then it will be of type double, which will cause the module to not start-up correctly. 
+
+```cs
+[RunParameter("School Morning End", "12:00 PM", typeof(Time), "The highest number of attempts to schedule an episode")]         
+public Time SchoolMorningEndDateTime; 
+```
+This shows how to make a parameter out of a DateTime structure.  Note here that we enter in the default value as a string, and then manually say what type it is.  We recommend to avoid DateTime as when it is saved, the model systems will not be compatible between computers where their date/time format differs.  Such as a computer set up for Canadian and another set up for American date time formats. 
+
 ## Including Sub Modules
 
 Sub Modules can be added to a module similar to how you add parameters. The difference is that the type of the sub module can be inferred at runtime, since we do not have any default values.
@@ -147,6 +144,22 @@ Sub Modules can be added to a module similar to how you add parameters. The diff
    }
 ```
 
+In the above code we are creating a property, which is a list of INetworkData, a type of module defined in the TMG Interfaces. 
+Above that we have an attribute of type SubModelInformation.  By default all public member’s inside of a module are checked to
+see if they reference a XTMF.IModule.  If they do XTMF will assume that you want it to be filled with a sub module.  If you do not,
+there is another attribute that you can use to stop XTMF from allowing a match. 
+
+```cs
+    [DoNotAutomate]         
+    public List<ITashaMode> NonSharedModes 
+    {             
+        get;               
+        set; 
+    } 
+```
+
+The DoNotAutomate attribute will let XTMF know that NonSharedModes should not receive submodules. 
+
 ## Correct Use of Input Directories
 
 Before implementing any module to read a file unless otherwise needed please use the TMG.FileLocation abstract module instead of creating your own.
@@ -156,6 +169,18 @@ If you still need some other customization consider looking at extending TMG.Fil
 When you are going to use parameters for strings, please make sure to look at your root module’s ‘InputBaseDirectory’ for the directory to base the paths from.
 
 The following method will combine the path given to it with the root model system’s base directory. It assumes that your root module is referenced to in a member variable called ‘Root’.
+
+````cs
+    private string GetFullPath(string localPath) 
+    {        
+        var fullPath = localPath;
+        if (!Path.IsPathRooted(fullPath)) 
+        { 
+             fullPath = Path.Combine(this.Root.InputBaseDirectory, fullPath); 
+        } 
+         return fullPath; 
+    } 
+````
 
 ## Handling Resource Usage
 
@@ -172,3 +197,73 @@ The following method will combine the path given to it with the root model syste
 Runtime validation provides a way for the modules that you program to check their parameters before anything in the model system is allowed to run. If you need to look up a resource from a parent module before executing, this is also the place to do that. It is important to remember though that when you look at other modules, siblings may not have already had their validation code run, and the order is non-deterministic except for that a parent’s validation has always ran before a child’s. To report an error set the value of the error string equal to the message that you wish to return, and then return false. Returning true will let XTMF know that your module has passed validation.
 
 When working with this method, please make sure to not do any data processing inside of this. Progress may not be reported correctly if you are doing so.
+
+## Throwing Exceptions
+
+When an exception needs to be passed along to the user XTMF works best when wrapping that exception within an `XTMFRuntimeException`. This
+will allow XTMF to present the module within the model system that caused the error.  Though you shouldn't capture Exception itself,
+the following code shows you how in your module you can pass back an exception to the user while tying it to the particular module that the exception was
+caused in.
+
+```cs
+try
+{
+    // Code that throws here
+}
+catch(Exception e)
+{
+    throw new XTMFRuntimeException(this, e);
+}
+```
+
+## Custom Status Message
+
+If you are writing a `ModelSystemTemplate` or another module that is expected to pass back a status message you will need to override the
+`ToString` method for your module.  The resulting value will be passed back and displayed in the XTMF.GUI.
+
+## A Hello World
+
+Below we have a simple 'Hello World' module implementing a ModelSystemTemplate for reference.
+
+```cs
+using System;
+using XTMF;
+
+namespace MyModules
+{
+    [ModuleInformation(Description="A hello world module.")]
+    public class MyModule : IModelSystemTemplate
+    {
+        public string Name {get;set;}
+        
+        public void Start()
+        {
+            Console.WriteLine("Hello World");
+        }
+
+        public Tuple<byte, byte, byte> ProgressColour => new Tuple<byte, byte, byte>( 50, 150, 50 );
+        public bool RuntimeValidation(ref string error) => true;
+
+        [Parameter("Input Base Directory", "Input", "The directory relative to the Run Directory where all of the input is kept." )]
+        public string InputBaseDirectory {get;set;}
+        // The OutputBaseDirectory property has been deprecated.
+        public string OutputBaseDirectory {get;set;}
+        public bool ExitRequest => false;        
+    }
+}
+```
+
+Assuming you are familiar with C#, you will quickly see that we have an attribute attached to the class that provides
+meta-data to describe this modules' functionality. Additionally you see a property named `Name`. This property will be filled out
+by XTMF during runtime with the name selected by the model system designer.  Additionally you will see two methods `ProgressColour`,
+and `RuntimeValidation`. `ProgressColour` provides an RGB value to associate with the module at runtime with values
+0-255 for each channel.  All modules will share these elements in common however an `IModelSystemTemplate` requires some additional
+elements.
+
+`InputBaseDirectory` contains the path where the model system's input files are contained. `ExitRequest` will be called when the user
+requests that the model system should terminate.  Setting this to false will let XTMF know that there is no termination sequence
+that the model system will provide, so it will instead force the process to close. `OutputBaseDirectory` is vestigial for XTMF1 and
+has been removed for XTMF2.
+
+A recommended exercise is to create a new parameter that takes in a string and instead of writing 'Hello World' to the console
+writes out that parameter.
