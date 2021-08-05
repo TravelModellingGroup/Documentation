@@ -1,4 +1,4 @@
-﻿# Freight
+﻿# Freight Truck Model
 
 ```Available in GTAModel V4.1.0```
 
@@ -8,6 +8,8 @@
 
 Included in GTAModel V4.0.1 is an adaptation of a new commercial vehicle model, created by Tufayel Chowhury and Matthew Roorda.  Slight modifications
 were made to the original model in order to incorporate it into GTAModel V4.1's model system structure and to allow forecasting.
+
+In GTAModel V4.2.0 a re-calibrated model targeting 2016 cordon-counts has replaced the original model.
 
 ### Trip Generation
 
