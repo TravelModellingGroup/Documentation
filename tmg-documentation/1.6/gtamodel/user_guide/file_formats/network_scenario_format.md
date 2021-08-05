@@ -49,7 +49,8 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 |--------|--------|--------|--------|--------|
 |T501|10|50|5|50|
 
-> [!TIP] If you set the headway and speed of a line to 9999 for any or all time periods, it will be
+> [!TIP]
+> If you set the headway and speed of a line to 9999 for any or all time periods, it will be
 > removed from the network for those time periods.  A headway or speed of 0 will keep the calculated headway
 > and speed from the service table.
 
@@ -68,7 +69,8 @@ Example:
 |T501|5:55:00|6:55:00|
 |T501|6:10:00|7:10:00|
 
-> [!WARNING] If a transit line has no definition in both of the **Service Table** nor the **Alt File**, it will be removed from the network by the [Full Network Set Generating](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html) tool.
+> [!WARNING] 
+> If a transit line has no definition in both of the **Service Table** nor the **Alt File**, it will be removed from the network by the [Full Network Set Generating](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html) tool.
 
 ## Parking Costs (.csv)
 This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer in calculation. It is part of the `GTAModel starting in V4.1`, which contains two columns as following:

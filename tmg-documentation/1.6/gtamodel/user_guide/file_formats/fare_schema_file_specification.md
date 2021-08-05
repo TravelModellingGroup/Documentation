@@ -156,11 +156,11 @@ A separate tool to estimate the required network size has also been developed.
 
 # Base Fare Schema
 
-In creating the base fare schema file, the 2016 fares for every agency was first found by using the Operating Revenue per Passenger Trip. This is reported to CUTA by every transit agency, and is analogous to the average fare across all fare media and across all fare classes. Since GTAModelV4 is not expected to have different fare classes and fare media explicitly modelled, this amount is the most useful. The full base schema is transcribed in [Appendix A](#Appendix-A-2016-Fare-Schema-File).
+In creating the base fare schema file, the 2016 fares for every agency was first found by using the Operating Revenue per Passenger Trip. This is reported to CUTA by every transit agency, and is analogous to the average fare across all fare media and across all fare classes. Since GTAModelV4 is not expected to have different fare classes and fare media explicitly modelled, this amount is the most useful. The full base schema is transcribed in [Appendix A](#appendix-a-2016-fare-schema-file).
 
 ## Co-fares and Transfers
 
-As some transit agencies offer a lower co-fare (or free) when transferring to and from other agencies, the negative-cost fare rules are implemented, where the initial boarding fare is subtracted from the co-fare to get the difference applied to the appropriate transfer links. These co-fares are documented in [Appendix B](#Appendix-B-2016-Full-Fares). The overview of inter-agency fare transfer rules is summarized below:
+As some transit agencies offer a lower co-fare (or free) when transferring to and from other agencies, the negative-cost fare rules are implemented, where the initial boarding fare is subtracted from the co-fare to get the difference applied to the appropriate transfer links. These co-fares are documented in [Appendix B](#appendix-b-2016-full-fares). The overview of inter-agency fare transfer rules is summarized below:
 
 ![alt text](images/4.png "Co-fares and Transfers")
 
@@ -189,7 +189,7 @@ The actual fares used in the estimation were blended across different fare media
 ![alt text](images/3.png "GO Transit Fares")
  
 
-# Appendix A: 2016 Fare Schema File
+## Appendix A: 2016 Fare Schema File
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -525,5 +525,5 @@ The actual fares used in the estimation were blended across different fare media
 
 ```
 
-# Appendix B: 2016 Full Fares
+## Appendix B: 2016 Full Fares
 ![alt text](images/5.png "2016 Full Fares")
