@@ -81,7 +81,7 @@ category living in that zone.
 
 * ElementaryStudents.csv: A CSV vector containing the number of students from TTS by home zone.
 * ElementaryStudentsLinkages.csv: A square CSV matrix of home zone to school zone linkages from TTS
-        for the elementry school aged students.
+        for the elementary school aged students.
 * HighschoolStudents.csv: A CSV vector containing the number of students from TTS by home zone.
 * HighschoolStudentsLinkages.csv: A square CSV matrix of home zone to school zone linkages from TTS
         for the highschool aged students.
@@ -176,7 +176,7 @@ category living in that zone.
 #### School
 
 * BaseYearStudentLinkages-Elementry.csv: A square CSV matrix of home zone to school zone linkages from TTS
-        for the elementry school aged students.
+        for the elementary school aged students.
 * BaseYearStudentLinkages-Highschool.csv: A square CSV matrix of home zone to school zone linkages from TTS
         for the highschool aged students.
 * BaseYearStudentLinkages-PostSecondary.csv: A square CSV matrix of home zone to school zone linkages from TTS
