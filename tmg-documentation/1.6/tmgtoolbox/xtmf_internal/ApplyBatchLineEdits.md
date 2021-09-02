@@ -2,9 +2,9 @@
 This tool is used to make changes to headways and speeds of transit lines in a set of scenarios. `ApplyBatchLineEdits` processes a csv file that is seleceted through XTMF.
 
 Example file header:
-> |filter|x_hdwchange/x_spdchange/
+> |filter|x_hdwchange|x_spdchange|
 > |------|------|------|
-> |filter|x_hdwchange/x_spdchange/
+> |line=T501|1|1|
 
 Where:
 >filter is a network calculator filter expression
