@@ -21,13 +21,15 @@ Example file with multilple defintions in a single file:
 > |------|------|------|------|------|
 > |line=T501|1|1|0.5|1|
 
+
 ## **Using the Tool with Modeller**
 `ApplyBatchLineEdits` tool is not callable from Modeller. It is intended only to be called from XTMF.
 
 The tool can be found in "TMG Toolbox" -> "XTMF Internal" -> "Apply Batch Line Edits". 
 
+
 ## **Using the Tool with XTMF**
-The tool is called "ApplyBatchLineEdits". In XTMF, it is available to add under *ExecuteToolsFromModellerResource* or *EmmeToolsToRun*.
+The tool is called "ApplyBatchLineEdits". In XTMF, it is available to add under **ExecuteToolsFromModellerResource** or **EmmeToolsToRun**.
 
 ### Input Data File
 Enter an absolute filepath to the file that specifies which headways and speeds to change based on a particular filter expressions. 
