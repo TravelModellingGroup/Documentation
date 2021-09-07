@@ -17,7 +17,7 @@ The tool can be found in "TMG Toolbox" -> "XTMF Internal" -> "Multi Class Road A
 ## **Using the Tool with XTMF**
 The tool is called "MultiClassRoadAssignment". In XTMF, it is available to add under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
 
-## ***Module Parameters - "MultiClassRoadAssignment" ***
+## Module Parameters - "MultiClassRoadAssignment"
 
 ### Background Transit
 Set this to FALSE to not assign transite vehicles ont he roads. 
@@ -46,7 +46,7 @@ The name of the run to appear in the logbook
 ### Scenario Number
 The scenario number to execute against
 
-## ***Sub-Module Parameters - MultiClassRoadAssignment -> Class ***
+## Sub-Module Parameters - MultiClassRoadAssignment -> Class
 
 ### Cost Matrix
 The matrix number to save the total cost into. 
@@ -75,7 +75,7 @@ The attribute containing the road tolls for this class of vehicle.
 ### VolumeAttribute
 The name of the attribute to save the volumes into (or None for no saving).
 
-## ***Sub-Module Parameters - MultiClassRoadAssignment -> Classes -> Analysis ***
+## Sub-Module Parameters - MultiClassRoadAssignment -> Classes -> Analysis
 
 ### Aggregation Matrix
 The matrix number to store the results into. 
