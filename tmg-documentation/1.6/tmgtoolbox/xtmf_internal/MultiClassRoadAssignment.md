@@ -95,7 +95,7 @@ Choose whether to multiply the path proportion by the path value.
 ### Operator
 The operator to use to aggregate the matrix. Example: '+' for emissions, 'max' for select link analysis. 
 
-Full list of operators that can be used: `***+, -, *, /, %, .max., .min.***`
+Full list of operators that can be used: `+, -, *, /, %, .max., .min.`
 
 ### Paths to Select
 The paths that will be used for analysis.
