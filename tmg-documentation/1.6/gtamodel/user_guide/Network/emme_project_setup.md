@@ -13,19 +13,19 @@ Table [1] below shows the recommended dimensions for each network element.
 
 |    Emme   Databank Element    |    Recommended Allotment for GTAModel V4.0    |    Recommended Allotment for GTAModel V4.1    |
 |-------------------------------|-----------------------------------------------|-----------------------------------------------|
-|    Scenarios                  |    100                                        |    100                                        |
+|    Scenarios                  |    100                                        |    15                                         |
 |    Scalar Matrices            |    99                                         |    99                                         |
 |    Origin Matrices            |    99                                         |    99                                         |
 |    Destination Matrices       |    99                                         |    99                                         |
-|    Full Matrices              |    200                                        |    200                                        |
-|    Centroids                  |    3,250                                      |    3,750                                      |
+|    Full Matrices              |    200                                        |    99                                         |
+|    Zones or Centroids         |    3,250                                      |    3,750                                      |
 |    Regular Nodes              |    29,249                                     |    33,749                                     |
-|    Links                      |    162,500                                    |    187,500                                    |
-|    Turn Entries               |    10,000                                     |    10,000                                     |
+|    Directional Links          |    162,500                                    |    187,500                                    |
+|    Turn Table Entries         |    10,000                                     |    10,000                                     |
 |    Transit Vehicles           |    30                                         |    30                                         |
-|    Transit Lines              |    5,000                                      |    5,000                                      |
-|    Transit Segments           |    200,000                                    |    300,000                                    |
-|    Extra Attribute Values     |    4,000,000                                  |    8,000,000                                  |
+|    Transit Lines or Routes    |    5,000                                      |    5,000                                      |
+|    Transit Line Segments      |    200,000                                    |    300,000                                    |
+|    Extra Attribute Size       |    4,000,000                                  |    10,000,000                                 |
 |    Functions                  |    99                                         |    99                                         |
 |    Operators                  |    2,000                                      |    5,000                                      |
 
