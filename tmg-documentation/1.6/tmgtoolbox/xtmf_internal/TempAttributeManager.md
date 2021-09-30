@@ -1,11 +1,10 @@
 # **Temp Attribute Manager**
-This tool creates an extra attribute context-manager equivalent for XTMF. `TempAttributeManager` is a low-level tool. 
+This low-level tool creates an extra attribute context-manager equivalent for XTMF. If the extra attribute does not exist in the network, `TempAttributeManager` creates it. It also has the optional ability to delete extra attributes when the tool finishes.
 
 Latest version of this tool includes the ability to:
 
 > only optionally reset the values to their default
->
->in 0.0.2+
+
 
 ## **Using the Tool with Modeller**
 `TempAttributeManager` tool is not callable from Modeller. It is intended only to be called from XTMF.
