@@ -26,7 +26,15 @@ During this process the activities start times are adjusted as needed in order t
 
 ### Overview
 
-The location choice model for GTAModel V4.0 is separated into three sub models, Work-Based-Business, Market, and Other.  To be specific ‘Other’ is for the ‘Individual Other’ and ‘Joint Other’ activity types, and not everything besides work and market.  Probabilities are then generated for each time period based on the population and employment in the zone among other factors.  Later when producing person schedules the location choice model eliminates all infeasible zones and then pops a random location choice from the remaining probabilities.  A zone is considered infeasible if there is not enough from to get from the person’s pervious activity, do the current activity and then travel to their next activity in time.  For the location choice model the auto network travel time is used to calculate times.  Below is a diagram showing a time prism.  Here we can see that zones 1, 2, and 3 are viable candidates whereas 4, 5, 6, and 7 are not.  In the case of zone 4 is too far away from the destination since the travel time from origin to 4 plus the travel time from 4 to the final destination is greater than the time available.
+The location choice model for GTAModel V4.0 is separated into three sub models, Work-Based-Business, Market, and Other.
+To be specific ‘Other’ is for the ‘Individual Other’ and ‘Joint Other’ activity types, and not everything besides work and market.
+Probabilities are then generated for each time period based on the population and employment in the zone among other factors. 
+Later when producing person schedules the location choice model eliminates all infeasible zones and then pops a random location
+choice from the remaining probabilities. A zone is considered infeasible if there is not enough time to get from the person’s
+previous activity, do the current activity, and then finally travel to their next activity within the allocated time. For the location choice
+model the auto network travel time is used to calculate times. Below is a diagram showing a time prism.  Here we can see that zones 1, 2, and 3 are
+viable candidates whereas 4, 5, 6, and 7 are not.  In the case of zone 4 is too far away from the destination since the travel time 
+from origin to 4 plus the travel time from 4 to the final destination is greater than the time available.
 
 ![alt text](images/TimePrism.png "Time Prism")
 
