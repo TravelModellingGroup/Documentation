@@ -84,19 +84,35 @@ Once all of the projects have been generated person schedules are built by takin
 
 After the all of the person schedules in the household are completed trips are then generated for processing by the mode choice.  These trips are broken into trip chains, where a trip chain ends when a person returns home.  Since there is no activity (besides return home from work / lunch) where a person would go home, if a person could return home from their current position at the end of an activity and be home for over 15 minutes a return home activity is generated, and thus ends the trip chain.
 
-## Distributions
+## Activity types
 
 There are ten different activity types that the Scheduler can produce from its 262 different distributions:
   * Primary Work
+    * This activity represents the main work episode during the day. It can be split into parts by a Work-Based-Business or Return-From-Work episode. This activity always
+      takes place at the person's employment zone.
   * Secondary Work
+    * This activity represents a work activity to a non-primary job held by the person.
   * Work Based Business
+    * This activity represents work related activities such as business meetings that take place in a location different from the primary work zone.
   * Work At Home Business
+    * This activity represents a work activity that is conducted within the household.  This activity type is not currently implemented in GTAModel.
   * School
+    * This activity represents an activity going to some educational institution. The location choice for these activities are based on the age of the individual
+      broken down by elementary, secondary, and post-secondary or professional schools.
   * Return From Work
+    * This activity type represents a break in the main work day where the person returns back home.  We typically imagine this as going back for lunch.
   * Individual Other
+    * This activity type represents going to a non-market activity such as a doctor's visit or going to a library where the activity is not conducted with another member of
+      the person's household.
   * Joint Other
+    * Similar to the Individual Other activity with the exception that the activity is conducted with at least one other household member.
   * Market
+    * This activity represents an individual going shopping.  This activity purpose additionally means that it is not conducted with any other household member.
   * Joint Market
+    * This activity represents a market activity that is conducted with at least one other household member.
+  * Home
+    * This activity type does not come from the distributions but is instead the result of not having another activity to travel to.  If the person is able to travel
+      back home and spend a minimum amount of time (10 minutes in GTAModel V4.2) this activity is injected and will break up the activities into two different trip chains.
 
 The following sections will give the formulas to interpret the distribution id numbers mapping them onto the circumstances of the schedule and demographics of the person.
 
