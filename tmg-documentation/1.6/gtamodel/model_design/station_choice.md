@@ -23,7 +23,7 @@ We use the inverse of the conical function to achieve this so as a station becom
 is diminished for the next iteration as given by the following formulas.
 
 \begin{equation}
-CapacityFactor_A = \frac{1}{2 + \sqrt{\alpha^{2}\left(1 - CR_A\right) + \beta^2} - \alpha\left(1 - CR_A\right) - \beta}
+CapacityFactor_A = \frac{1}{2 + \sqrt{\alpha^{2}\left(1 - CR_A\right)^2 + \beta^2} - \alpha\left(1 - CR_A\right) - \beta}
 \end{equation}
 
 Where,
