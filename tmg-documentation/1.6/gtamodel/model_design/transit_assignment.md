@@ -45,7 +45,7 @@ one for each of the 5 different TTF functions (for various services/modes). The 
 
 
 ## Surface Transit Speed Updating (STSU)
-The speeds of surface transits were previously based on GTFS data, where the Shared right-of-way (SROW)transit uses the average line speeed normalized by segement length and the Exclusive right-of-way (EROW) transit uses the stop-to-stop speeds for each segment. This procedure is not only time-consuming and sujected to many assumptions, but also lacking of the consideration of SROW congestion effects. Therefore, a Surface Transit Speed Updating (STSU) is performed to model the surface transit speeds as a functin of roadway congestion.
+The speeds of surface transits were previously based on GTFS data, where the Shared right-of-way (SROW)transit uses the average line speeed normalized by segement length and the Exclusive right-of-way (EROW) transit uses the stop-to-stop speeds for each segment. This procedure is not only time-consuming and subjected to many assumptions, but also lacking of the consideration of SROW congestion effects. Therefore, a Surface Transit Speed Updating (STSU) is performed to model the surface transit speeds as a functin of roadway congestion.
 
 For each segment of the surface transit line, the travel time on that section is assumed to be a function of the Auto Travel Time on that section, plus an additional dwell time to account for the number of stops and the number of passengers boarding and alighting. An auto correlation factor (β<sub>1</sub>) is estimated to account for the fact that transit vehicles travel at different speeds than auto vehicles, using the following equations:
 
