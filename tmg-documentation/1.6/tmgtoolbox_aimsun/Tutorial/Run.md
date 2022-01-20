@@ -1,8 +1,8 @@
 # **Run**
 
-## 1. Save the modifications and Run the entire model system
+* Step 1: Save the modifications and Run the entire model system
 
-## 2. Click the run button on the top of the page (running person). A popup will appear. Give the test a name and then click the blue run button as show in the screenshot below.
+* Step 2: Click the run button on the top of the page (running person). A popup will appear. Give the test a name and then click the blue run button as show in the screenshot below.
 ![alt text](images/Image36.jpg "Collapse all Modules")
 <br />
 <br />

@@ -17,7 +17,7 @@
 
 * Step 3: The model system should now look like this:
 * You should now see a "Data Source" attribute now available
-* ![alt text](images/Image12.jpg "Output")
+![alt text](images/Image12.jpg "Output")
 <br />
 <br />
 
@@ -38,25 +38,25 @@
 
 * Step 6: Right-click on "Aimsun Path" and select "Set Module" or Press "Ctrl"+"M"
 * Click on "FilePathFromInputDirectory"
-* ![alt text](images/Image15.jpg "FilePathFromInputDirectory Module")
+![alt text](images/Image15.jpg "FilePathFromInputDirectory Module")
 <br />
 <br />
 
 * Step 7: Add the path to the Aimsun aconsole.exe file path
-* ![alt text](images/Image16.jpg "aconsole path Module")
+![alt text](images/Image16.jpg "aconsole path Module")
 <br />
 <br />
 
 * Step 8: Right-click on "Project File" and select "Set Module" or Press "Ctrl"+"M"
 * Click on "FilePathFromInputDirectory"
-* * Copy and paste the path to the Project File folder as shown in the image
-* ![alt text](images/Image17.jpg "ProjectFile Module")
+* Copy and paste the path to the Project File folder as shown in the image
+![alt text](images/Image17.jpg "ProjectFile Module")
 <br />
 <br />
 
 * Step 9: Right-click on "Toolbox Default Directory" and select "Set Module" or Press "Ctrl"+"M"
 * Click on "FilePathFromInputDirectory"
 * Copy and paste the path to the Toolbox Directory folder as shown in the image
-* ![alt text](images/Image18.jpg "Toolbox Default Directory Module")
+![alt text](images/Image18.jpg "Toolbox Default Directory Module")
 <br />
 <br />
