@@ -2,7 +2,7 @@
 
 ## Writing Aimsun Scripts
 
-- Aimsun scripts are run from the command line using a tool aconsole.exe. This exists in teh main Aimsun installation folder as of Aimsun Next 20. 
+- Aimsun scripts are run from the command line using a tool aconsole.exe. This exists in the main Aimsun installation folder as of Aimsun Next 20. 
 It is important that the working directory for the current execution context is set the the location of the aconsole.exe application, otherwise several
 python dependencies and modules will not be found.
 - `aconsole.exe` takes a single parameter --script which must be the absolute path to the python script to be run.
