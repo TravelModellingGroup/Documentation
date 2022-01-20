@@ -1,7 +1,3 @@
-# Frabitztown Example
-
-## How to run a simulation using XTMF and Aimsun
-
 # **Create a New Project and a Model System**
 
 ## 1. Create a New Project or Open an Existing Project
