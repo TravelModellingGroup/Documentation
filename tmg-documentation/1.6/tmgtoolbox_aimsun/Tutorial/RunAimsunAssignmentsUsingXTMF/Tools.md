@@ -11,7 +11,7 @@
 
 * Step 2: Right click and on NetworkPackageFile and Add Module
 * Click on "FilePathFromInputDirectory" and add that module
-* ![alt text](images/Image20.jpg "ImportNetwork NetworkPackage File Module")
+![alt text](images/Image20.jpg "ImportNetwork NetworkPackage File Module")
 <br />
 <br />
 * Step 3: Copy paste in the path to the network package nwp file location
