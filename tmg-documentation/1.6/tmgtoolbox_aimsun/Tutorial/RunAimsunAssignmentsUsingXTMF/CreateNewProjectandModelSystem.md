@@ -1,5 +1,7 @@
 # **Create a New Project and a Model System**
 
+## In this tutorial create a brand new project and import a new model system.
+
 ## 1. Create a New Project or Open an Existing Project
 * Step 1: Create a new project<br />
 ![alt text](images/Slide2.JPG "Create a new project")
