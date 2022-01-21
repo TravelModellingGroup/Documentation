@@ -1,5 +1,7 @@
 # **Save Project**
 
+## In this tutorial import the SaveProject module to save the network as an .ang file.
+
 ## 1. SaveProject
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "SaveProject" and add that module to the model
