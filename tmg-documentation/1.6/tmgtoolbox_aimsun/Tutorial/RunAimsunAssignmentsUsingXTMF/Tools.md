@@ -14,7 +14,7 @@
 * ![alt text](images/Image20.jpg "ImportNetwork NetworkPackage File Module")
 <br />
 <br />
-* Step 3 : Copy paste in the path to the network package nwp file location
+* Step 3: Copy paste in the path to the network package nwp file location
 ![alt text](images/Image21.jpg "ImportNetwork NetworkPackage File Location")
 <br />
 <br />
