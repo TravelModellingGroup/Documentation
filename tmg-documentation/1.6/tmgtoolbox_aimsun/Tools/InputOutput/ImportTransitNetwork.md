@@ -28,9 +28,6 @@ As shown in the figures below the Network Package File is a separate inner modul
     <figcaption>Figure 1: XTMF submodules inside ImportTransitNetwork Tool</figcaption>
 </figure>
 
-<br>
-</br>
-
 <figure>
     <img src="images/ImportTransitNetworkModuleParameters.jpg"
          alt="ImportTransitNetwork Module Input Parameters">
