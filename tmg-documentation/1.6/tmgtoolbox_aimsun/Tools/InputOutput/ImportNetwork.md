@@ -16,7 +16,7 @@ There is only one parameter the user has to input which is the following:
 As shown in the figures below the Network Package File is a separate inner module and an example of the file path on the right hand side
 
 <figure>
-    <img src="images/ImportNetworksubmodules.jpg" class="centreFigure"
+    <img src="images/ImportNetworksubmodules.jpg"
          alt="ImportNetwork SubModules">
     <figcaption>Figure 1: XTMF submodules inside ImportNetwork Tool</figcaption>
 </figure>
@@ -25,7 +25,7 @@ As shown in the figures below the Network Package File is a separate inner modul
 </br>
 
 <figure>
-    <img src="images/ImportNetworkParameters.jpg" class="centreFigure"
+    <img src="images/ImportNetworkParameters.jpg"
          alt="ImportNetwork Module Input Parameters">
     <figcaption>Figure 2: ImportNetwork module parameteres for ImportNetworkPackageFile</figcaption>
 </figure>
