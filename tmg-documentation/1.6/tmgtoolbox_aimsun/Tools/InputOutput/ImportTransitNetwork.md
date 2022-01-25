@@ -20,10 +20,3 @@ There is only one parameter the user has to input which is the following:
 
 ## In XTMF
 
-As shown in the figures below the Network Package File is a separate inner module and an example of the file path on the right hand side
-
-<figure>
-    <img src="images/ImportTransitNetworkParameters.jpg"
-         alt="ImportTransitNetwork SubModules">
-    <figcaption>Figure 1: Submodules of ImportTransitNetwork along with example image of the network package file path written in the module parameter box</figcaption>
-</figure>
