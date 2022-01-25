@@ -12,20 +12,17 @@ There is only one parameter the user has to input which is the following:
 
 
 ## In XTMF
+As shown in the Figure 1 below, ImportTransitNetwork contains one inner 
+submodule called NetworkPackageFile highlighted with the bottom left red 
+box.
+On the right hand side we see the red box on the top right side 
+of the page where user is responsbile for pasting in the 
+file path to the network package file (.nwp). 
 
-As shown in the figures below the Network Package File is a separate inner module and an example of the file path on the right hand side
 
 <figure>
-    <img src="images/ImportNetworksubmodules.jpg"
+    <img src="images/ImportNetwork.jpg"
          alt="ImportNetwork SubModules">
-    <figcaption>Figure 1: XTMF submodules inside ImportNetwork Tool</figcaption>
-</figure>
-
-<br>
-</br>
-
-<figure>
-    <img src="images/ImportNetworkParameters.jpg"
-         alt="ImportNetwork Module Input Parameters">
-    <figcaption>Figure 2: ImportNetwork module parameters for ImportNetworkPackageFile</figcaption>
+    <figcaption>Figure 1: ImportNetwork Tool with submodules and 
+                location of module paramters</figcaption>
 </figure>
