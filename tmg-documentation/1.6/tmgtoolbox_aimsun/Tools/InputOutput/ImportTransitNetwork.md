@@ -23,13 +23,7 @@ There is only one parameter the user has to input which is the following:
 As shown in the figures below the Network Package File is a separate inner module and an example of the file path on the right hand side
 
 <figure>
-    <img src="images/ImportTransitNetworkSubModules.jpg"
+    <img src="images/ImportTransitNetworkParameters.jpg"
          alt="ImportTransitNetwork SubModules">
-    <figcaption>Figure 1: XTMF submodules inside ImportTransitNetwork Tool</figcaption>
-</figure>
-
-<figure>
-    <img src="images/ImportTransitNetworkModuleParameters.jpg"
-         alt="ImportTransitNetwork Module Input Parameters">
-    <figcaption>Figure 2: ImportTransitNetwork module parameters for ImportNetworkPackageFile</figcaption>
+    <figcaption>Figure 1: Submodules of ImportTransitNetwork along with example image of the network package file path written in the module parameter box</figcaption>
 </figure>
