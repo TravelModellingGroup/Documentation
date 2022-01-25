@@ -21,9 +21,6 @@ As shown in the figures below the Network Package File is a separate inner modul
     <figcaption>Figure 1: XTMF submodules inside ImportNetwork Tool</figcaption>
 </figure>
 
-<br>
-</br>
-
 <figure>
     <img src="images/ImportNetworkParameters.jpg"
          alt="ImportNetwork Module Input Parameters">
