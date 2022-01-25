@@ -27,5 +27,5 @@ As shown in the figures below the Network Package File is a separate inner modul
 <figure>
     <img src="images/ImportNetworkParameters.jpg"
          alt="ImportNetwork Module Input Parameters">
-    <figcaption>Figure 2: ImportNetwork module parameteres for ImportNetworkPackageFile</figcaption>
+    <figcaption>Figure 2: ImportNetwork module parameters for ImportNetworkPackageFile</figcaption>
 </figure>
