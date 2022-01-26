@@ -50,7 +50,7 @@ the following:
 Figure 2 shows the header screenshot of the OD csv files. As shown
 in the image below there are three columns the csv file contains: 
 * Origin
-* Destianation
+* Destination
 * Data
 
 <figure>
