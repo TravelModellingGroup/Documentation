@@ -7,13 +7,12 @@ ImportPedestrian tool creates the pedestrian layer and adds the pedestrian
 components to network. 
 
 ImportPedestrian tool is responsible for generating the following: 
-* Creates a pedestrian layer returning the object 
-* Create a pedestrian centroid configuraiton along with the folder where the data is stored 
-* returns a list of nearby bus stops on any link to and from a node
+* Creates the pedestrian layers across the network.
+* Computes walk time to stops.
 
 ## Parameters
 
-There are no parameters this module needs to be inputted by the user
+There are no input module parameters that are required to be inputted by the user
 
 
 ## In XTMF
