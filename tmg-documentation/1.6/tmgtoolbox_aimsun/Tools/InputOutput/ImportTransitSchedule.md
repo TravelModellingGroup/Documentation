@@ -3,8 +3,8 @@
 
 ## Overview 
 
-ImportTransitSchedule tool is responsible for adding the transit schedule
-across the transit lines previously added by the tool ImportTransitNetwork
+The ImportTransitSchedule tool is responsible for adding the transit schedule
+across the transit lines previously added by the tool ImportTransitNetwork.
 
 ## Parameters
 
@@ -28,6 +28,8 @@ path.
     </figcaption>
 </figure>
 
+
+
 Figure 2 shows the header screenshot of the service table csv files. As shown
 in the image below there are three columns the csv file contains 
 * emmed_id
@@ -36,8 +38,8 @@ in the image below there are three columns the csv file contains
 
 <figure>
     <img src="images/ServiceTableCSVImage.jpg"
-         alt="ServiceTableCSV csv screenshot">
-    <figcaption>Figure 1: Screenshot of service table csv to show sample data
+         alt="ServiceTableCSV screenshot">
+    <figcaption>Figure 2: Screenshot of service table csv to show sample data
     and headers. 
     </figcaption>
 </figure>
