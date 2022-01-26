@@ -31,10 +31,13 @@ path.
 
 
 Figure 2 shows the header screenshot of the service table csv files. As shown
-in the image below there are three columns the csv file contains 
+in the image below there are three columns the csv file contains: 
 * emmed_id
 * trip deprature time labelled trip_depart
 * trip arrival time labelled trip_arrive
+
+You can find more information about the [ServiceTable](http://tmg.utoronto.ca/doc/1.6/gtamodel/user_guide/file_formats/network_scenario_format.html#service-table-csv)
+here by clicking on the link.
 
 <figure>
     <img src="images/ServiceTableCSVImage.jpg"
