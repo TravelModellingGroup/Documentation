@@ -8,7 +8,7 @@ transit assignment.
 ## Parameters
 
 There are four user parameters the user has to input 
-which are the following: 
+which are the following:
 * **AutoDemand**: String id of auto 
 * **Duration**: Duration time in minutes
 * **StartTime**: Start time in minutes
@@ -18,8 +18,8 @@ Note these are the same inputs as the Road Assignment tool.
 
 ## In XTMF
 
-As shown in Figure1 below, TransitAssignment has four input module 
-parameters the user has to input.
+As shown in Figure1 below, TransitAssignment has four input parameters 
+the user must input.
 
 <figure>
     <img src="images/TransitAssignmentParameters.png"
