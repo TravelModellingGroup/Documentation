@@ -1,4 +1,4 @@
-# **To Execute**
+# **Import and setup Aimsun**
 
 ## In this tutorial import and add the AimsunModeller Controller to run the Aimsun software.
 
