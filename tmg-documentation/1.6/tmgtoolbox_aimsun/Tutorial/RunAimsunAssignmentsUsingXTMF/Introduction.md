@@ -2,8 +2,9 @@
 
 ## Introduction
 
-This tutorial uses a small city called Frabitztown to create, setup and 
-run a simulation using the Aimsun Tools. 
+In this tutorial we will use a small city called Frabitztown to setup 
+a connection from XTMF to run Aimsun and execute macro assignments.
+
 
 The tutorial is broken into the following five sections 
 * **[Create New Project Model System](CreateNewProjectandModelSystem.md):** In the first section we create a 
