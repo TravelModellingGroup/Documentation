@@ -5,18 +5,14 @@
 In this tutorial we will use a small city called Frabitztown to setup 
 a connection from XTMF to run Aimsun and execute macro assignments.
 
-
-The tutorial is broken into the following five sections 
-* **[Create New Project Model System](CreateNewProjectandModelSystem.md):** In the first section we create a 
-new project and model system called FrabitstownTutorial.
-* **[To Execute](ToExecute.md):** In the second section we import and add the 
-AimsunModeller Controller that is required to run the Aimsun software. 
-* **[Tools](Tools.md):** In the third section we import and setup all the Aimsun tools that are 
-available. 
-* **[Save Project](SaveProject.md):** In the fourth section we give a name to where our final
-network is to be saved too as an .ang format.  
-* **[Run](Run.md):** In the fifth and final section, we run the simulation 
-* using the XTMF Gui. 
+The tutorial is broken into the following six overarching objectives
+1. First we create a new project and model system 
+1. Second we import and setup the Aimsun software
+1. Third we import a blank network along with a network package
+1. Fourth we import and setup the nodes, centroids, pedestrian and 
+transit lines
+1. Fifth we import the demand matrices and then run the road and transit macro assignments.
+1. Sixth we save and run the simulation. 
 
 ## Links
 
