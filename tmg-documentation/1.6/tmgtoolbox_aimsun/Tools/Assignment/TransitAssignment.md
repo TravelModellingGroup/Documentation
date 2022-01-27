@@ -7,8 +7,7 @@ transit assignment.
 
 ## Parameters
 
-There are four user parameters the user has to input 
-which are the following:
+TransitAssignment tool has four input parameters which are the following:
 * **AutoDemand**: String id of auto 
 * **Duration**: Duration time in minutes
 * **StartTime**: Start time in minutes
