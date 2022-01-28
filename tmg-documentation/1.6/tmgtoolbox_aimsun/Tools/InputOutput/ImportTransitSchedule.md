@@ -28,8 +28,6 @@ path.
     </figcaption>
 </figure>
 
-
-
 Figure 2 shows the header screenshot of the service table csv files. As shown
 in the image below there are three columns the csv file contains: 
 * emmed_id
