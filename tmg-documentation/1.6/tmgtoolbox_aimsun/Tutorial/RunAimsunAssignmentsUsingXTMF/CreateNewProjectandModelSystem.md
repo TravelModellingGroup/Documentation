@@ -1,48 +1,85 @@
 # **Create a New Project and a Model System**
 
-## In this tutorial create a brand new project and import a new model system.
+## Overview
+In this tutorial create a brand new project and import a new model system.
 
 ## 1. Create a New Project or Open an Existing Project
-* Step 1: Create a new project<br />
-![alt text](images/Slide2.JPG "Create a new project")
-<br />
-<br />
+
+* Step 1: Create a new project
+
+<figure>
+    <img src="images/Slide2.JPG"
+         alt="Create a new Project">
+    <figcaption>Figure 1:Create a new project</figcaption>
+</figure>
+
 * Step 2: Enter the project name. 
-* In this example we named it Frabitztown Tutorial<br />
-![alt text](images/Image3.JPG "Enter the project name")
-<br />
-<br />
+* In this example we named it Frabitztown Tutorial
+
+<figure>
+    <img src="images/Image3.jpg"
+         alt="Enter the project name">
+    <figcaption>Figure 2: Enter the project name</figcaption>
+</figure>
 
 ## 2. Create a New Model System or Import a Model System File
-* Step 1: Click the yellow button in the lower-right corner<br />
-<br />
-* Step 2: Choose from the following<br />
-![alt text](images/Slide4.jpg "Click the lower-right corner")
-<br />
-<br />
+* Step 1: Click the yellow button in the lower-right corner
+* Step 2: Choose from the following
+
+<figure>
+    <img src="images/Slide4.jpg"
+         alt="Click the lower-right corner">
+    <figcaption>Figure 3: Click the lower-right corner</figcaption>
+</figure>
+
 * Step 3: Enter the model system name. 
-* In this example the model system is named  FrabitztownModel<br />
-![alt text](images/Image4.jpg "Enter the model system name")
-<br />
-<br />
-* Step 4: Double-click to open the new model system<br />
-![alt text](images/Image5.jpg "Double-click to open the new model system")
-<br />
-<br />
-* The main screen should look like the following:<br />
-![alt text](images/Image6.jpg "Main Screen")
-<br />
-<br />
-<br />
+* In this example the model system is named  FrabitztownModel
+
+<figure>
+    <img src="images/Image4.jpg"
+         alt="Enter the model system name">
+    <figcaption>Figure 4: Enter the model system name</figcaption>
+</figure>
+
+* Step 4: Double-click to open the new model system
+
+<figure>
+    <img src="images/Image5.jpg"
+         alt="Double-click to open the new model system">
+    <figcaption>Figure 5: Double-click to open the new model system</figcaption>
+</figure>
+
+* The main screen should look like the following:
+
+<figure>
+    <img src="images/Image6.jpg"
+         alt="Main Screen">
+    <figcaption>Figure 6: Main Screen</figcaption>
+</figure>
+
 
 ## 3. Load the Basic Travel Demand Model Template
-* Step 1: Right-click and select "Set Module" or Press "Ctrl"+"M"<br />
-![alt text](images/Image7.png "Right-click and select Set Module")
-<br />
-<br />
-* Step 2: Type any keyword to find the "BasicTravelDemandModel" module<br />(Note: there is no space in between each word of the module name)
-![alt text](images/Image8.jpg "find the BasicTravelDemandModel module")
-<br />
-<br />
-* The model system should look like this:<br />
-![alt text](images/Image9.jpg "Basic Travel Demand Model")
+* Step 1: Right-click and select "Set Module" or Press "Ctrl"+"M"
+
+<figure>
+    <img src="images/Image7.png"
+         alt="Right-click and select set module">
+    <figcaption>Figure 7: Right-click and select set module</figcaption>
+</figure>
+
+* Step 2: Type any keyword to find the "BasicTravelDemandModel" module
+
+<figure>
+    <img src="images/Image8.jpg"
+         alt="Search BasicTravelDemandModel Module">
+    <figcaption>Figure 8: Search BasicTravelDemandModel Module</figcaption>
+</figure>
+
+
+* The model system should look like this:
+* 
+<figure>
+    <img src="images/Image9.jpg"
+         alt="Basic Travel Demand Model">
+    <figcaption>Figure 9: Basic Travel Demand Model</figcaption>
+</figure>
