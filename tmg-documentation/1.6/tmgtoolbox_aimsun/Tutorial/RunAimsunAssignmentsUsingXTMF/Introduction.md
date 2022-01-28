@@ -10,7 +10,7 @@ The tutorial is broken into the following six overarching objectives
 1. [Load Aimsun](LoadAimsun.md)
 1. [Build the network](Tools.md)
 1. [Save the Project](SaveProject.md)
-1. [Run the Simulation](Run.md)
+1. [Run the Model System](Run.md)
 
 ## Links
 

@@ -1,6 +1,6 @@
 # **Run**
 
-## In this tutorial save and run the model. Upon successful completion user may open the .ang file in Aimsun to see there completed network.
+## In this tutorial save and run the model system. Upon successful completion user may open the .ang file in Aimsun to see there completed network.
 
 
 * Step 1: Save the modifications and Run the entire model system
