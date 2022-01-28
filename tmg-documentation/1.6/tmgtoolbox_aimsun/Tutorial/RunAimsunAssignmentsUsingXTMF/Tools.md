@@ -1,6 +1,6 @@
 # **Tools**
 
-## In this tutorial import the Aimsun tools needed to build a network. At the end of this tutorial all tools will be successfully imported
+## In this tutorial we build a network. At the end of this tutorial all tools will be successfully imported
 
 ### 1. ImportNetwork 
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
