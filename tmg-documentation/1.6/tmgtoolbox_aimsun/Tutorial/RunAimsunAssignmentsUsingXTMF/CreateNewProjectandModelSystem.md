@@ -10,7 +10,7 @@ In this tutorial create a brand new project and import a new model system.
 <figure>
     <img src="images/Slide2.JPG"
          alt="Create a new Project">
-    <figcaption>Figure 1:Create a new project</figcaption>
+    <figcaption>Figure 1: Create a new project</figcaption>
 </figure>
 
 * Step 2: Enter the project name. 

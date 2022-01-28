@@ -4,7 +4,7 @@
 
 In this tutorial we build a network. At the end of this tutorial all tools will be successfully imported
 
-### 1. ImportNetwork 
+## 1. ImportNetwork 
 
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "ImportNetwork" and add that module to the tool
@@ -32,7 +32,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 3: ImportNetwork NetworkPackage File Location</figcaption>
 </figure>
 
-### 2. ImportTransitNetwork
+## 2. ImportTransitNetwork
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "ImportTransitNetwork" and add that module to the tool
 
@@ -52,7 +52,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 5: ImportTransitNetwork NetworkPackage File Module</figcaption>
 </figure>
 
-### 3. ImportPedestrian
+## 3. ImportPedestrian
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "ImportPedestrian" and add that module to the tool
 
@@ -70,7 +70,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 7: ImportPedestrian model tree output</figcaption>
 </figure>
 
-### 3. ImportTransitSchedule
+## 4. ImportTransitSchedule
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "ImportTransitSchedule" and add that module to the tool
 
@@ -100,7 +100,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 10: ImportTransitSchedule servicetable csv File Location</figcaption>
 </figure>
 
-### 4. ImportMatrixFromCSVThirdNormalized
+## 5. ImportMatrixFromCSVThirdNormalized
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "ImportMatrixFromCSVThirdNormalized" and add the module to the tool
 
@@ -148,7 +148,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 15: ImportMatrixFromCSVThirdNormalized ODCSV Module</figcaption>
 </figure>
 
-### 5. RoadAssignment
+## 6. RoadAssignment
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "RoadAssignment" and add the module to the tool
 
@@ -158,7 +158,7 @@ In this tutorial we build a network. At the end of this tutorial all tools will 
     <figcaption>Figure 16: RoadAssignment Module</figcaption>
 </figure>
 
-### 6. TransitAssignment
+## 7. TransitAssignment
 * Step 1: Right-click on "Tools" and select "Add Module" or Press "Ctrl"+"M"
 * Search for the term "TransitAssignment" and add the module to the tool
 

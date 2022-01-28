@@ -1,8 +1,7 @@
 # **Load Aimsun**
 
 ## Overview
-In this tutorial load the AimsunModeller Controller which is required to run the Aimsun software.
-
+In this tutorial we will launch Aimsun and connect it to XTMF using the module `TMG.Aimsun.LoadModellerController`.
 
 ## 1. Add the Module to Execute Aimsun Tools
 * Step 1: Right-click on To Execute and select "Add Module" or Press "Ctrl"+"M"
