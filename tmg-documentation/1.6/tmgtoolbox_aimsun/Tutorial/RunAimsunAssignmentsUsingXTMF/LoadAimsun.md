@@ -1,6 +1,6 @@
-# **To Execute**
+# **Load Aimsun**
 
-## In this tutorial import and add the AimsunModeller Controller to run the Aimsun software.
+## In this tutorial load the AimsunModeller Controller which is required to run the Aimsun software.
 
 
 ## 1. Add the Module to Execute Aimsun Tools
