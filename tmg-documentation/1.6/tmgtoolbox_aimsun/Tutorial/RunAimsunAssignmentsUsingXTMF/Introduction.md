@@ -7,7 +7,7 @@ a connection from XTMF to run Aimsun and execute macro assignments.
 
 The tutorial is broken into the following six overarching objectives
 1. [Create a new Project and Model System](CreateNewProjectandModelSystem.md)
-1. [Import and setup Aimsun](ToExecute.md)
+1. [Load Aimsun](LoadAimsun.md)
 1. [Import the tools which will build the network](Tools.md)
 1. [Save the Project](SaveProject.md)
 1. [Run the Simulation](Run.md)

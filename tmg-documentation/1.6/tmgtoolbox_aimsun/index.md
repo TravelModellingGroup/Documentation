@@ -10,7 +10,7 @@ The documentation is divided into sections Tools and Tutorials.
 
 ### Tools section
 
-Lists all the Aimsun tools built and available. Each page has three major sections,
+Lists all the Aimsun tools built and currently available. Each page has three major sections,
 an overview of the objective of the tool, the input parameters required 
 to be added by the use, and screenshots of how the tools is used in
 XTMF
