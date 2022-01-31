@@ -16,7 +16,7 @@ to XTMF:
 * **0**: Tell XTMF we are ready to accept messages 
 * **1**: Tells XTMF that we exited. 
 * **4**: Tells XTMF an error occured in generating the parameters
-* **5**: Totifies XTMF an error occured in running the Aimsun tool
+* **5**: Tells XTMF an error occured in running the Aimsun tool
 
 The bridge is responsible for loading and running Aimsun. To run Aimsun
 the bridge does the following:
@@ -60,7 +60,7 @@ is required
     1. Third -args the input parameters required for the tool. 
 
 ```
- " "C:\\Program Files\\Aimsun\\Aimsun Next 22\\aconsole.exe\" -script src\\TMGToolbox\\inputOutput\\importNetwork.py -args"
+ " "C:\\Program Files\\Aimsun\\Aimsun Next 22\\aconsole.exe\" -script src\\TMGToolbox\\inputOutput\\importNetwork.py args"
 ```
 
-1. The second way to run the tool is to run it using the XTMF Gui. 
+1. The second way to run the tool is to run it using the XTMF. 
