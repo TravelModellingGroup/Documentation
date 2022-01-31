@@ -15,8 +15,6 @@ using integer signal commands. Each integer corresponds to a specific action.
 Below is an example of a few signal commands and the responses passed back
 to XTMF:
 * **0**: Tell XTMF we are ready to accept messages.
-* **1**: Tell XTMF that we exited the Aimsun program. 
-* **4**: Tell XTMF an error occured in generating the parameters.
 * **5**: Tell XTMF an error occured in running the Aimsun tool.
 
 The bridge is responsible for loading and running Aimsun. To run Aimsun
