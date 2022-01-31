@@ -2,14 +2,15 @@
 
 ## Overview 
 
-Aimsun Bridge is the connection between the Aimsun software and XTMF.
+AimsunBridge is the connection between the Aimsun software and XTMF.
 
 AimsunBridge has two main general activities: 
-1. Read and process the signals and data coming fromt XTMF.
+1. Read and process the signals and data coming from XTMF.
 1. Load and run the Aimsun software.
 
 ## Protocol
-The bridge internally communicates with XTMF via the AimsunController 
+
+The AimsunBridge internally communicates with XTMF via the AimsunController 
 using integer signal commands. Each integer corresponds to a specific action. 
 Below is an example of a few signal commands and the responses passed back
 to XTMF:
@@ -20,7 +21,7 @@ to XTMF:
 
 The bridge is responsible for loading and running Aimsun. To run Aimsun
 the bridge does the following:
-1. Determine which aimsun tool needs to be run
+1. Determine which Aimsun tool needs to be run
 1. Determine the inputs the tool needs to run and passes them in
 1. Evaluates the tool runs successful. For unsuccessful runs, the bridge is 
 responsible for outputting detailed error messages back to the user

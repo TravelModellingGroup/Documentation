@@ -27,7 +27,7 @@ format.
     1. Filepath to network package file
     1. Name of the saved network (optional) 
 1. Upon sending the data, the controller waits for the Aimsun bridge 
-to return back a reponse of success or failure of the tool. 
+to return back a response of success or failure of the tool. 
 1. The resulting information is then passed back to the XTMF accordingly
 
 ## Writing Custom Tools/Scripts 
@@ -43,5 +43,5 @@ searchable using the new module.
 <figure>
     <img src="images\ToolBoxDirectoryPath.png"
          alt="ToolBox Directory Moule">
-    <figcaption>Figure 1: ToolBox Directory Tool where user inputs there path to there custom tools</figcaption>
+    <figcaption>Figure 1: ToolBoxDirectoryTool module path to the custom tool location</figcaption>
 </figure>
