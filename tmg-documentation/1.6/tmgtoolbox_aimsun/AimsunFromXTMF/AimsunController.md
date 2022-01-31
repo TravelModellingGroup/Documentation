@@ -7,7 +7,7 @@ the AimsunBridge.
 
 ## Protocol
 
-AimsunController initates a pipe by which all signals and data 
+AimsunController initiates  a pipe by which all signals and data 
 are passed between the controller and AimsunBridge.
 
 As discussed in the AimsunBridge documentation internal communication 

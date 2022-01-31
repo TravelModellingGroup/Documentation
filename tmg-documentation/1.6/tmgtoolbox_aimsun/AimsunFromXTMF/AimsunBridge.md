@@ -15,12 +15,12 @@ using integer signal commands. Each integer corresponds to a specific action.
 Below is an example of a few signal commands and the responses passed back
 to XTMF:
 * **0**: Tell XTMF we are ready to accept messages.
-* **5**: Tell XTMF an error occured in running the Aimsun tool.
+* **5**: Tell XTMF an error occurred in running the Aimsun tool.
 
 The bridge is responsible for loading and running Aimsun. To run Aimsun
 the bridge does the following:
 1. Determine which Aimsun tool needs to be run.
-1. Run the Aimsun tool with the appropiate parameters.
+1. Run the Aimsun tool with the appropriate  parameters.
 1. Evaluate the progress of the tool. For unsuccessful runs, the bridge is 
 responsible for outputting detailed error messages back to XTMF.
 
@@ -55,13 +55,13 @@ your custom tools.
 run the tool ImportNetwork from the command line. The following information
 is required 
     1. First argument is the path to the location of aconsole.exe.
-    1. Scond argument after the -script keyword is the relative path location to the tool to run.
+    1. Second argument after the -script keyword is the relative path location to the tool to run.
     1. Third argument labelled generically as -args are the input parameters required for the tool to run. 
 
 ```
- " "C:\\Program Files\\Aimsun\\Aimsun Next 22\\aconsole.exe\" -script src\\TMGToolbox\\inputOutput\\importNetwork.py args"
+ "C:\\Program Files\\Aimsun\\Aimsun Next 22\\aconsole.exe\ -script src\\TMGToolbox\\inputOutput\\importNetwork.py args"
 ```
 
 The second way to run the custom tool is directly from XTMF.
-You can find more information about the [Running  custom Aimsun tools from XTMF](AimsunController.md)
+You can find more information about the [Running custom Aimsun tools from XTMF](AimsunController.md)
 by clicking on the link.
