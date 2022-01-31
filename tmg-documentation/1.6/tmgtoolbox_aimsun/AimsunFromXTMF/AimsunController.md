@@ -18,7 +18,7 @@ Below are the steps of the general process:
 1. AimsunController opens a pipe to the AimsunBridge.
 1. Upon confirmation pipe is successfully open, 
 AimsunController sends a SignalCommand.
-1. Upon confimration that Signal was properly received, AimsunController
+1. Upon confirmation that Signal was properly received, AimsunController
 sends the data as a json payload execute the tool. 
 1. AimsunController waits for the AimsunBridge to execute the tool.
 1. AimsunController reports back to user any failures and errors of the tool
