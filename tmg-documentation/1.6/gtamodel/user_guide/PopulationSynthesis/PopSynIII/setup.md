@@ -47,4 +47,4 @@ For the Visual Studio C Runtime just follow the default settings in the installe
 
 ## Install Java Runtime Environment 7
 
-Install the JRE 7 revision 80 with default settings.  Other revisions and versions of Java have been found to be incompatible.
+Install the JRE 7 revision 80 with default settings.  Other revisions and versions of Java have been found to be incompatible.  A link to the JRE used by TMG can be found above.
