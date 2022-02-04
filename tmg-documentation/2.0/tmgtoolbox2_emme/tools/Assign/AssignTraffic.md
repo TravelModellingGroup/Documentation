@@ -14,16 +14,16 @@ Latest version of this tool includes the ability to:
 `AssignTraffic` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
 
 The tool can be found in "TMG Toolbox 2" -> "Assign" -> "Assign Traffic". You can
-find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Assign/assign_traffic.py).  
+find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Assign/assign_traffic.py).
 
 ## **Using the Tool with XTMF2**
 > [!CAUTION]
 > **NOTE TMG Modeller**: Update the location where tool could be found when within the model system in XTMF2.
 
-Using XTMF2 graphical user interface, parameters (defined below) needed to run the `AssignTraffic` tool can be set by the users. This tool is called `AssignTraffic`. In XTMF2, it is available to add within a model system under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
+Using XTMF2 graphical user interface, parameters (defined below) needed to run the `AssignTraffic` tool can be set by the users. This tool is called `AssignTraffic`. In **XTMF1**, it is available to add within a model system under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
 
 ## **Using the Tool from an external Python API call**
-You can call the `AssignTraffic` via by calling the python API. Below is a script sample.
+You can call the `AssignTraffic` by calling the python API. Below is a script sample.
 
 **script example**
 ```python
@@ -73,15 +73,15 @@ assignTransit(parameters)
 ### Module Parameter Explanation: "Assign Traffic"
 |Parameter|Explanation|
 | :------------------- | :------------------- |
-|Background Transit|Set this to FALSE to not assign transite vehicles on the roads.|
-|Best Relative Gap|The minimum gap required to terminate the algorithm.| 
-|Iterations|The maximum number of iterations to run.|
-|Normalized Gap|The minimum gap required to terminate the algorithm.|
-|Peak Hour Factor|A factor to apply to the demand in order to build a representative hour.|
-|Performance Mode|Set this to FALSE to leave a free core for other work, recommended to leave set to TRUE.|
-|Relative Gap|The minimum gap required to terminate the algorithm. |
-|Run TItle|The name of the run to appear in the logbook|
-|Scenario Number|The scenario number to execute against|
+|Background Transit `boolean`|Set this to FALSE to not assign transite vehicles on the roads.|
+|Best Relative Gap `integer`|The minimum gap required to terminate the algorithm.| 
+|Iterations `integer`|The maximum number of iterations to run.|
+|Normalized Gap `integer`|The minimum gap required to terminate the algorithm.|
+|Peak Hour Factor `integer`|A factor to apply to the demand in order to build a representative hour.|
+|Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended to leave set to TRUE.|
+|Relative Gap `integer`|The minimum gap required to terminate the algorithm. |
+|Run Title `string`|The name of the run to appear in the logbook|
+|Scenario Number `integer`|The scenario number to execute against|
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
 |Parameter|Explanation|
 | :------------------- | :------------------- |
