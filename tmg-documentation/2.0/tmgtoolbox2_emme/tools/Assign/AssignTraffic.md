@@ -74,34 +74,34 @@ assignTransit(parameters)
 |Parameter|Explanation|
 | :------------------- | :------------------- |
 |Background Transit `boolean`|Set this to FALSE to not assign transite vehicles on the roads.|
-|Best Relative Gap `integer`|The minimum gap required to terminate the algorithm.| 
+|Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
 |Iterations `integer`|The maximum number of iterations to run.|
-|Normalized Gap `integer`|The minimum gap required to terminate the algorithm.|
-|Peak Hour Factor `integer`|A factor to apply to the demand in order to build a representative hour.|
+|Normalized Gap `float`|The minimum gap required to terminate the algorithm.|
 |Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended to leave set to TRUE.|
-|Relative Gap `integer`|The minimum gap required to terminate the algorithm. |
+|Relative Gap `float`|The minimum gap required to terminate the algorithm. |
 |Run Title `string`|The name of the run to appear in the logbook|
 |Scenario Number `integer`|The scenario number to execute against|
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
 |Parameter|Explanation|
 | :------------------- | :------------------- |
-|Cost Matrix|The matrix number to save the total cost into.|
-|Demand Matrix|The id of the demand matrix to use.|
-|LinkCost|The penalty in minutes per dollar to apply when traversing a link.|
-|Mode|The mode for this class.|
-|Time Matrix|The matrix number to save in vehicle travel times.|
-|Toll Matrix|The matrix to save the toll costs into.|
-|Toll Weight|to be updated.|
-|TollAttributeID|The attribute containing the road tolls for this class of vehicle.|
-|VolumeAttribute|The name of the attribute to save the volumes into (or None for no saving).|
+|Cost Matrix `string`|The matrix number e.g. "mf4" to save the total cost into.|
+|Demand Matrix `string`|The id of the demand matrix to use.|
+|LinkCost `float`|The penalty in minutes per dollar to apply when traversing a link.|
+|Mode `string`|The mode for this class.|
+|Time Matrix `string`|The matrix number to save in vehicle travel times.|
+|Toll Matrix `string`|The matrix to save the toll costs into.|
+|Toll Weight `string`|to be updated.|
+|TollAttributeID `string`|The attribute containing the road tolls for this class of vehicle.|
+|VolumeAttribute `string`|The name of the attribute to save the volumes into (or None for no saving).|
+|Peak Hour Factor `float`|A factor to apply to the demand in order to build a representative hour.|
 ### Sub-Module Parameter Explanation: "Traffic Classes -> Path Analysis"
 |Parameter|Explanation|
 | :------------------- | :------------------- |
-|Aggregation Matrix|The matrix number to store the results into.|
-|Attribute ID|The attribute to use for analysis.|
-|Lower Bound for Path Selector|The number to use for the lower bound in path selection, or None if using all paths|
-|Multiply Path Proportion By Analyzed Demand|Choose whether to multiply the path proportion by the analyzed demand.|
-|Multiply Path Proportion By Path Value|Choose whether to multiply the path proportion by the path value.|
-|Operator|The operator to use to aggregate the matrix. Example: '+' for emissions, 'max' for select link analysis. `Full list of operators that can be used: +, -, *, /, %, .max., .min.`|
-|Paths to Select|The paths that will be used for analysis.|
-|Upper Bound for Path Selector|The number to use for the upper bound in path selection, or None if using all paths.|
+|Aggregation Matrix `string`|The matrix number to store the results into.|
+|Attribute ID `string`|The attribute to use for analysis.|
+|Lower Bound for Path Selector `string`|The number to use for the lower bound in path selection, or None if using all paths|
+|Multiply Path Proportion By Analyzed Demand `string`|Choose whether to multiply the path proportion by the analyzed demand.|
+|Multiply Path Proportion By Path Value `string`|Choose whether to multiply the path proportion by the path value.|
+|Operator `string`|The operator to use to aggregate the matrix. Example: '+' for emissions, 'max' for select link analysis. `Full list of operators that can be used: +, -, *, /, %, .max., .min.`|
+|Paths to Select `string`|The paths that will be used for analysis.|
+|Upper Bound for Path Selector `string`|The number to use for the upper bound in path selection, or None if using all paths.|
