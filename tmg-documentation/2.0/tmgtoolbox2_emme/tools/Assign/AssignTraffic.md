@@ -23,7 +23,7 @@ find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.E
 Using XTMF2 graphical user interface, parameters (defined below) needed to run the `AssignTraffic` tool can be set by the users. This tool is called `AssignTraffic`. In XTMF2, it is available to add within a model system under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
 
 ## **Using the Tool from an external Python API call**
-You can call the `AssignTraffic` via by call the python API. Below is a script sample.
+You can call the `AssignTraffic` via by calling the python API. Below is a script sample.
 
 **script example**
 ```python
