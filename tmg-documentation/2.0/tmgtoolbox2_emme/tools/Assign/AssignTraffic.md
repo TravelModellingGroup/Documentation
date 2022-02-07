@@ -1,14 +1,21 @@
 # **Assign Traffic**
 > [!NOTE]
->This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the Multi Class Road Assigntment tool in XTMF1/TMGToolbox1.
+>This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the Multi Class Road Assignment tool in XTMF1/TMGToolbox1.
 
-The Assign Traffic tool executes a multi-class road assignment which allows for the generalized penalty of road tolls. `AssignTraffic` is a toll-based road assignemnt tool.
+The Assign Traffic tool executes a multi-class road assignment which allows for the generalized penalty of road tolls. `AssignTraffic` is a toll-based road assignment tool.
 
 Latest version of this tool includes the ability to:
   > * Increase resolution of analysis by adding link volume attributes
   > * Allow for multi-threaded matrix calculation in 4.2.1+
   > * Receive JSON object parameters from XTMF2
   > * Receive JSON file parameters from Python API call
+
+## **Tool Flowchart**
+To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the `AssignTraffic` tool works.
+<br /> 
+
+![alt text](images/assign_traffic_flow.png "Assign Traffic Flow")
+<br />
 
 ## **Using the Tool with Modeller**
 `AssignTraffic` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
@@ -18,14 +25,14 @@ find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.E
 
 ## **Using the Tool with XTMF2**
 > [!CAUTION]
-> **NOTE TMG Modeller**: Update the location where tool could be found when within the model system in XTMF2.
+> **NOTE TMG Modeller**: Update the location where Assign Traffic tool could be found when within the model system in XTMF2.
 
-Using XTMF2 graphical user interface, parameters (defined below) needed to run the `AssignTraffic` tool can be set by the users. This tool is called `AssignTraffic`. In **XTMF1**, it is available to add within a model system under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
+Using XTMF2 graphical user interface, parameters (defined below) needed to run the `AssignTraffic` tool can be set by the users. This tool is called `AssignTraffic`. In **XTMF2**, it is available to add within a model system under ***ExecuteToolsFromModellerResource*** or ***EmmeToolsToRun***.
 
-## **Using the Tool from an external Python API call**
+## **Using the Tool from an External Python API Call**
 You can call the `AssignTraffic` by calling the python API. Below is a script sample.
 
-**script example**
+**Script Example**
 ```python
 import AssignTraffic as assignTransit
 parameters = {
@@ -71,13 +78,13 @@ parameters = {
 assignTransit(parameters) 
 ```
 ### Module Parameter Explanation: "Assign Traffic"
-|Parameter|Explanation|
+|Parameter `type`|Explanation|
 | :------------------- | :------------------- |
-|Background Transit `boolean`|Set this to FALSE to not assign transite vehicles on the roads.|
+|Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
 |Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
 |Iterations `integer`|The maximum number of iterations to run.|
 |Normalized Gap `float`|The minimum gap required to terminate the algorithm.|
-|Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended to leave set to TRUE.|
+|Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.|
 |Relative Gap `float`|The minimum gap required to terminate the algorithm. |
 |Run Title `string`|The name of the run to appear in the logbook|
 |Scenario Number `integer`|The scenario number to execute against|
