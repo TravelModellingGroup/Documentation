@@ -13,8 +13,9 @@ Latest version of this tool includes the ability to:
 ## **Tool Flowchart**
 To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the `AssignTraffic` tool works.
 <br /> 
+<br /> 
 
-![alt text](images/assign_traffic_flow.png "Assign Traffic Flow")
+![alt text](images/assign_traffic_flow.svg "Assign Traffic Flowchart")
 <br />
 
 ## **Using the Tool with Modeller**
