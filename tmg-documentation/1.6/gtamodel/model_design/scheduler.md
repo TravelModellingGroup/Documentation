@@ -239,9 +239,9 @@ id = 94 + occupationOffset * 2 +
 ##### Individual Other
 
 \begin{equation}
-id = 102 + ( ageOffset * 12 ) + workProjectStatus +
+id = 102 + ( ageOffset * 14 ) + workProjectStatus +
 \begin{cases}
-6, & Female \\\\
+7, & Female \\\\
 0, & else
 \end{cases}
 \end{equation}
