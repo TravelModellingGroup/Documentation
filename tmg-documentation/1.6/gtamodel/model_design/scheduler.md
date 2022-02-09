@@ -153,16 +153,23 @@ The following tables give the conversions for the variables in the formulas to c
 | 5                   | PartTimeEvening                   |
 | 6                   | Other                             |
 
-| Adult Offset | Range |
-|--------------|-------|
-| 0            | 1     |
-| 1            | 2     |
-| 2            | else  |
+| Household Work Project Status | Type                           |
+|-------------------------------|--------------------------------|
+| 0                             | No work or school              |
+| 1                             | No evening Work or School      |
+| 2                             | Evening Work or School         |
+| 3                             | Day And Evening Work or School |
+
+| Adult Offset | Range       |
+|--------------|-------------|
+| 0            | 1 Adult     |
+| 1            | 2 Adults    |
+| 2            | 3+ Adults   |
 
 | Child Offset | Range |
 |--------------|-------|
-| 0            | 0     |
-| 12           | else  |
+| 0            | 1+ children |
+| 12           | 0 children  |
 
 
 
@@ -232,7 +239,7 @@ id = 94 + occupationOffset * 2 +
 ##### Individual Other
 
 \begin{equation}
-id = 102 + ( ageOffset * 12 ) + workProjestStatus +
+id = 102 + ( ageOffset * 12 ) + workProjectStatus +
 \begin{cases}
 6, & Female \\\\
 0, & else
@@ -242,13 +249,13 @@ id = 102 + ( ageOffset * 12 ) + workProjestStatus +
 ##### Joint Other
 
 \begin{equation}
-id = 158 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+id = 158 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
 \end{equation}
 
 ##### Market
 
 \begin{equation}
-id = 182 + ( ageOffset * 14 ) + workProjestStatus +
+id = 182 + ( ageOffset * 14 ) + workProjectStatus +
 \begin{cases}
 7, & Female \\\\
 0, & else
@@ -258,5 +265,5 @@ id = 182 + ( ageOffset * 14 ) + workProjestStatus +
 ##### Joint Market
 
 \begin{equation}
-id = 238 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
+id = 238 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
 \end{equation}
