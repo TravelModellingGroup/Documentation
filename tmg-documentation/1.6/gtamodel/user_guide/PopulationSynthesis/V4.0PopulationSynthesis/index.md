@@ -13,8 +13,8 @@ the future year population by zone.
 ## Algorithm
 
 1. Read in the seed population and aggregate it into planning districts.
-1. For each zone randomly draw a households until we meet the zone's total population.
-    1. When drawing a zone we do so without replacement to help reduce statistical drift.
+1. For each zone randomly draw households until we meet the zone's total population.
+    1. When drawing a zone, we do so without replacement to help reduce statistical drift.
     1. If there are no households left to draw from, re-initialize the pool to their original weightings.
 1. Gather the zonal residence and worker categories from the selected persons.
 1. Store the results to file.
@@ -60,7 +60,7 @@ which seed pool that this zone will draw records from. A PD of 0 will tell the m
 
 ## Forecast Population
 
-In addition to the input directory you will also need to include a CSV file that gives the forecast population you wish to generate.
+In addition to the input directory, you will also need to include a CSV file that gives the forecast population you wish to generate.
 
 * Zone
 * FuturePopulation
@@ -68,8 +68,8 @@ In addition to the input directory you will also need to include a CSV file that
 
 ## Output File Directory
 
-The results of the synthesis include the Household and Person records. Additionally we also export an updated ZonalResidence and WorkerCategories directory that
-contain eight CSV files, one for each combination of occupation and non-home-based employment class. For example "PF.csv" would refer to the combination of "Professional Full-Time".
+The results of the synthesis include the Household and Person records. Additionally, we also export an updated ZonalResidence and WorkerCategories directory that
+contain eight CSV files, one for each combination of occupation and non-home-based employment class. For example, "PF.csv" would refer to the combination of "Professional Full-Time".
 
 ### HouseholdData/Households.csv
 
