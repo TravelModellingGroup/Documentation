@@ -129,7 +129,7 @@ After running the synthesis, you will need to append some files to this director
 * Region.csv
 * Zones.csv `V4.0`
 
-In all cases copy the base scenario's folder and then update either `Zones.csv` for `Population.csv` depeding on your model's version.
+In all cases copy the base scenario's folder and then update either `Zones.csv` or `Population.csv` depending on your model's version.
 
 > [!Warning]
 > Make sure to include population for your external zones! If you do not there will be no trips made from the external residents into the study area.
