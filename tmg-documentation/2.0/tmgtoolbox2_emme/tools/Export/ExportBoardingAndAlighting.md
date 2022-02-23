@@ -13,7 +13,7 @@ Latest version of this tool includes the ability to:
 To run the this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call. 
 
 <figure>
-    <img src="images/boarding_alighting.drawio.svg "
+    <img src="images/boarding_alighting.drawio.svg"
          alt="Export Boarding and Alighting Flowchart">
     <figcaption>Figure 1: Export Boarding and Alighting Flowchart</figcaption>
 </figure>
