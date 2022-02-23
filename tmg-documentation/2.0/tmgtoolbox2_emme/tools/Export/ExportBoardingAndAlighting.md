@@ -53,4 +53,4 @@ export_board_and_alight(parameters)
 | :------------------- | :------------------- |
 |Scenario Number `integer`|The scenario number to execute against|
 |Input File `string`|CSV file path containing id of stop of interest and description of stop (eg. station_desc), if available, to read from|
-|Scenario Number `string`|CSV file path right output to. The output has the following header `"node_id", "boardings", "alightings", "x", "y", "station"`|
+|Output File `string`|CSV file path right output to. The output has the following header `"node_id", "boardings", "alightings", "x", "y", "station"`|
