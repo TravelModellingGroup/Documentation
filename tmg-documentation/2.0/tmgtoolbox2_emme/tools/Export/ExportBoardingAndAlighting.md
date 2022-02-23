@@ -12,9 +12,11 @@ Latest version of this tool includes the ability to:
 ## **Tool Flow**
 To run the this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call. 
 
-
-![alt text](images/boarding_alighting.drawio.svg "Export Boarding and Alighting Flowchart")
-
+<figure>
+    <img src="images/boarding_alighting.drawio.svg "
+         alt="Export Boarding and Alighting Flowchart">
+    <figcaption>Figure 1: Export Boarding and Alighting Flowchart</figcaption>
+</figure>
 
 ## **Using the Tool with Modeller**
 `ExportBoardingAndAlighting` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
