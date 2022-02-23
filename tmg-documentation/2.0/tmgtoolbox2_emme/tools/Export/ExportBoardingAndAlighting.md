@@ -2,12 +2,12 @@
 > [!NOTE]
 >This tool works with Emme version 4.5.1+ and XTMF2.
 
-The Export Boarding And Alighting tool extracts total number of boardings and alightings on each transit stops.  `ExportBoardingAndAlighting` is a tool that is used to process Assigned Networks coming out of a GTAModel run.
+The Export Boarding And Alighting tool extracts total number of boardings and alightings on each transit stop.  `ExportBoardingAndAlighting` is a tool that is used to process Assigned Networks coming out of a GTAModel run.
 
 Latest version of this tool includes the ability to:
-  > * Receive JSON object parameters from XTMF2 containing location to input files, output files, and scenario containing assigned network to process
-  > * Receive JSON file parameters from Python API call containing location to input files, output files, and scenario containing assigned network to process (see parameter Script Example below)
-  > * Input file is a comma-separated values (CSV) containing id of stop of interest and description of stop (eg. station name), if available
+  > * Receive JSON object parameters from XTMF2 containing location to input files, output files, and EMME scenario containing assigned network (from GTAModel) to process
+  > * Receive JSON file parameters from Python API call containing location to input files, output files, and EMME scenario containing assigned network (from GTAModel) to process (see parameter Script Example below)
+  > * The input file is a comma-separated values (CSV) file containing id of stop of interest and description of stop (eg. station name), if available
 
 ## **Tool Flow**
 To run the this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call. 
@@ -15,7 +15,7 @@ To run the this tool, parameters can be provided by the user through the XTMF2 G
 <br /> 
 <br /> 
 
-![alt text](boarding_alighting.drawio.svg "Export Boarding and Alighting Flowchart")
+![alt text](images/boarding_alighting.drawio.svg "Export Boarding and Alighting Flowchart")
 <br />
 
 ## **Using the Tool with Modeller**
