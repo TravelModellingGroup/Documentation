@@ -32,7 +32,8 @@ You can call the `ExportBoardingAndAlighting` by calling the python API. Below i
 
 **Script Example**
 ```python
-import ExportBoardingAndAlighting as export_a_b
+import inro.modeller as _m
+_MODELLER = _m.Modeller()
 """
     sample inputs.csv
         id, station_desc
@@ -44,7 +45,8 @@ parameters = {
     "input_file": "inputs.csv",
     "export_file": "stops.csv",
 }
-export_a_b.run(parameters)
+export_board_and_alight = _MODELLER.tool("tmg2.Export.export_boarding_and_alighting")
+export_board_and_alight(parameters)
 ```
 ### Module Parameter Explanation: "Assign Traffic"
 |Parameter `type`|Explanation|
