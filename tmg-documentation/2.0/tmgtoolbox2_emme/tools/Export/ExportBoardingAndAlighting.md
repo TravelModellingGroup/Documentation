@@ -10,7 +10,7 @@ Latest version of this tool includes the ability to:
   > * The input file is a comma-separated values (CSV) file containing id of stop of interest and description of stop (eg. station name), if available
 
 ## **Tool Flow**
-To run the this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call. 
+To run this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call. 
 
 > [!IMPORTANT]
 >This tool only works if scenario has transit result.
