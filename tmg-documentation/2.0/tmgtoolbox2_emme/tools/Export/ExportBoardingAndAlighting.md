@@ -47,7 +47,7 @@ parameters = {
     "scenario_number": 5,
     "input_file": "node_of_interest.csv",
     "export_file": "stops_boarding_alightings_PM.csv",
-    "file_to_write": False
+    "write_to_file": False
 }
 export_board_and_alight = _MODELLER.tool("tmg2.Export.export_boarding_and_alighting")
 export_board_and_alight(parameters)
@@ -58,4 +58,4 @@ export_board_and_alight(parameters)
 |Scenario Number `integer`|The scenario number to execute against|
 |Input File `string`|CSV file path containing id of stop of interest and description of stop (eg. station_desc), if available, to read from|
 |Output File `string`|CSV file path right output to. The output has the following header `"node_id", "boardings", "alightings", "x", "y", "station"`|
-|File to Write `boolean`|Set to `true` if you have your node ids of interest or `false` if you want the tool to use the nodes of interest from network in specified scenario|
+|Write to File `boolean`|Set to `true` if you have your node ids of interest or `false` if you want the tool to use the nodes of interest from network in specified scenario|
