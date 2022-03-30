@@ -7,7 +7,7 @@ Below is an example directory containing microsim data.  Optionally the data can
 using the gzip algorithm during a model run.
 
 All times are reported in either "Minutes from Midnight", or optionally as a time stamp in the format H:M[&lt;optional&gt;:S].
-The "Minutes From Midnight" allows you to easilly add times or durations together where zero is the midnight of the day the simulation starts.
+The "Minutes From Midnight" allows you to easily add times or durations together where zero is the midnight of the day the simulation starts.
 
 ![alt text](images/microsim_1.png "Microsim folder")
 
