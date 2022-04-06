@@ -7,7 +7,6 @@ The Assign Transit tool runs a multi-class transit assignment which executes a c
 Hard-coded assumptions in the `AssignTransit` tool include:
   > * Boarding penalties are assumed stored in UT3. 
   > * The congestion term is stored in US3.
-  > * In-vehicle time perception is 1.0
   > * All available transit modes are used.
 
 ## **Using the Tool with Modeller**
