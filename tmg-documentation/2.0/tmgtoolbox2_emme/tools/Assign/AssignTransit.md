@@ -116,3 +116,5 @@ assign_transit(parameters)
 | Walk Time Perception Attribute Id `string`     |The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0. |
 | Walk Time Matrix `string`     | The ID of the FULL matrix in which to save total walk time. Enter mf0 to skip saving this matrix|
 | Walk Perceptions `list`     | Contains the walk perception values fo this multi-class assignment|
+
+
