@@ -109,10 +109,10 @@ assign_transit(parameters)
 | Impedance Matrix `string`     | The ID of the FULL matrix in which to save the impedance.Enter mf0 to skip saving this matrix|
 | Link Fare Attribute Id `string`     | The ID of the LINK extra attribute containing actual fare costs.|
 | Mode `string`     | A character array of all the modes applied to this class. \'*\' selects all.|
-| Perceived Travel Time Matrix `string`     | The ID of the FULL matrix in which to save the incurred penalties. Enter 0 to skip saving this matrix|
+| Perceived Travel Time Matrix `string`     | The ID of the FULL matrix in which to save the incurred penalties. Enter mf0 to skip saving this matrix|
 | Segment Fare Attribute Id `string`     |The ID of the SEGMENT extra attribute containing actual fare costs. |
 | Wait Time Perception `flaot`     | Perception factor applied to wait time component.|
-| Wait Time Matrix `string`     |The ID of the FULL matrix in which to save total waiting time. Enter 0 to skip saving this matrix |
+| Wait Time Matrix `string`     |The ID of the FULL matrix in which to save total waiting time. Enter mf0 to skip saving this matrix |
 | Walk Time Perception Attribute Id `string`     |The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0. |
-| Walk Time Matrix `string`     | The ID of the FULL matrix in which to save total walk time. Enter 0 to skip saving this matrix|
+| Walk Time Matrix `string`     | The ID of the FULL matrix in which to save total walk time. Enter mf0 to skip saving this matrix|
 | Walk Perceptions `list`     | Contains the walk perception values fo this multi-class assignment|
