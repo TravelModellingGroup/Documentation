@@ -95,6 +95,7 @@ parameters = {
 assign_transit = _MODELLER.tool("tmg2.Assign.assign_transit")
 assign_transit(parameters)
 ```
+
 ### Sub-Module Parameter Explanation: "Transit Classes"
 
 | Parameter `type`       | Explanation |
@@ -117,4 +118,22 @@ assign_transit(parameters)
 | Walk Time Matrix `string`     | The ID of the FULL matrix in which to save total walk time. Enter mf0 to skip saving this matrix|
 | Walk Perceptions `list`     | Contains the walk perception values fo this multi-class assignment|
 
+### Sub-Module Parameter Explanation: "TTF Definitions"
 
+| Parameter `type`       | Explanation |
+| :----------------------------- | :---------------------------------------------- |
+| TTF `integer`   | The TTF number to assign to. 1 would mean TTF1. |
+| Congestion Exponent `float`   | The congestion exponent to apply to this TTF.   |
+| Congestion Perception `integer` | The congestion perception to apply to this TTF. |
+
+### Sub-Module Parameter Explanation: "Surface Transit Speed Model"
+
+| Parameter `type`   | Explanation  |
+| :----------------- | :----------------------------- |
+| Alighting Duration `float` | The alighting duration in seconds per passenger to apply.|
+| Boarding Duration `float` | The boarding duration in seconds per passenger to apply. |
+| Default Duration `float` | The default duration in seconds per stop to apply.       |
+| Global EROW Speed `float` | The speed to use in segments that have Exclusive Right of Way for transit and do not have @erow_speed defined. Note that the speed includes acceleration and deceleration time. |
+| Line Filter Expression `string` | The line filter that will be used to determing which lines will get surface transit speed applied to them. To select all lines, leave this and the line filter blank|
+| Mode Filter Expression `string`| The modes that will get surface transit speed updating applied to them. To select all lines, leave this and the line filter blank|
+| Transit Auto Correlation `float`| The multiplier to auto time to use to find transit time.|
