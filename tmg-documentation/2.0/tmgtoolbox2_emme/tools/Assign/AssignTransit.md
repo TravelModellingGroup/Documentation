@@ -99,7 +99,7 @@ assign_transit(parameters)
 ### Module Parameter Explanation: "Assign Transit"
 
 |Parameter `type`|Explanation|
-| :------------------- | :------------------- |
+| :----------------------------- | :---------------------------------------------- |
 |Calculate Congested Ivtt Flag `bool`|Set to TRUE to extract the congestion matrix and add its weighted value to the in vehicle time (IVTT) matrix.|
 |Node Logit Scale `float`|This is the scale parameter for the logit model at critical nodes. Set it to 1 to turn it off logit. Set it to 0 to ensure equal proportion on all connected auxiliary transfer links. Critical nodes are defined as the non centroid end of centroid connectors and nodes that have transit lines from more than one agency|
 |Effective Headway Attribute Id `string`|The name of the attribute to use for the effective headway|
@@ -125,7 +125,7 @@ assign_transit(parameters)
 ### Sub-Module Parameter Explanation: "Transit Classes"
 
 | Parameter `type`       | Explanation |
-| :--------------------- | :---------------------------------- |
+| :----------------------------- | :---------------------------------------------- |
 | Demand Matrix `string` |The ID of the full matrix containing transit demand ODs. |
 | Board Penalty Matrix `string`| The ID of the FULL matrix in which to save the applied boarding penalties.  Enter mf0 to skip this matrix.|
 | Board Penalty Perception `float`| Perception factor applied to boarding penalty component. |
@@ -155,7 +155,7 @@ assign_transit(parameters)
 ### Sub-Module Parameter Explanation: "Surface Transit Speed Model"
 
 | Parameter `type`   | Explanation  |
-| :----------------- | :----------------------------- |
+| :----------------------------- | :---------------------------------------------- |
 | Alighting Duration `float` | The alighting duration in seconds per passenger to apply.|
 | Boarding Duration `float` | The boarding duration in seconds per passenger to apply. |
 | Default Duration `float` | The default duration in seconds per stop to apply.       |
