@@ -95,3 +95,24 @@ parameters = {
 assign_transit = _MODELLER.tool("tmg2.Assign.assign_transit")
 assign_transit(parameters)
 ```
+### Sub-Module Parameter Explanation: "Transit Classes"
+
+| Parameter `type`       | Explanation |
+| :--------------------- | :---------------------------------- |
+| Demand Matrix `string` |The ID of the full matrix containing transit demand ODs. |
+| Board Penalty Matrix `string`| The ID of the FULL matrix in which to save the applied boarding penalties.  Enter mf0 to skip this matrix.|
+| Board Penalty Perception `float`| Perception factor applied to boarding penalty component. |
+| Congestion Matrix `string`     | The ID of the FULL matrix in which to save transit congestion. Enter mf0 to skip saving this matrix |
+| Fare Matrix `string`     | The ID of the FULL matrix in which to save transit fares. Enter mf0 to skip saving this matrix|
+| Fare Perception `float`     |Perception factor applied to path transit fares, in $/hr. |
+| InVehicle Time Matrix `string`     | The ID of the FULL matrix in which to save in-vehicle travel time. Enter mf0 to skip saving this matrix|
+| Impedance Matrix `string`     | The ID of the FULL matrix in which to save the impedance.Enter mf0 to skip saving this matrix|
+| Link Fare Attribute Id `string`     | The ID of the LINK extra attribute containing actual fare costs.|
+| Mode `string`     | A character array of all the modes applied to this class. \'*\' selects all.|
+| Perceived Travel Time Matrix `string`     | The ID of the FULL matrix in which to save the incurred penalties. Enter mf0 to skip saving this matrix|
+| Segment Fare Attribute Id `string`     |The ID of the SEGMENT extra attribute containing actual fare costs. |
+| Wait Time Perception `flaot`     | Perception factor applied to wait time component.|
+| Wait Time Matrix `string`     |The ID of the FULL matrix in which to save total waiting time. Enter mf0 to skip saving this matrix |
+| Walk Time Perception Attribute Id `string`     |The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0. |
+| Walk Time Matrix `string`     | The ID of the FULL matrix in which to save total walk time. Enter mf0 to skip saving this matrix|
+| Walk Perceptions `list`     | Contains the walk perception values fo this multi-class assignment|
