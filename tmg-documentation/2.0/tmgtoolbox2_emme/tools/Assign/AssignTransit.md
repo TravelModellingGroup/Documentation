@@ -124,7 +124,7 @@ assign_transit(parameters)
 
 ### Sub-Module Parameter Explanation: "Transit Classes"
 
-| Parameter `type`       | Explanation |
+| Parameter `type`| Explanation |
 | :----------------------------- | :---------------------------------------------- |
 | Demand Matrix `string` |The ID of the full matrix containing transit demand ODs. |
 | Board Penalty Matrix `string`| The ID of the FULL matrix in which to save the applied boarding penalties.  Enter mf0 to skip this matrix.|
@@ -146,15 +146,15 @@ assign_transit(parameters)
 
 ### Sub-Module Parameter Explanation: "TTF Definitions"
 
-| Parameter `type`       | Explanation |
+| Parameter `type`| Explanation |
 | :----------------------------- | :---------------------------------------------- |
-| TTF `integer`   | The TTF number to assign to. 1 would mean TTF1. |
-| Congestion Exponent `float`   | The congestion exponent to apply to this TTF.   |
-| Congestion Perception `integer` | The congestion perception to apply to this TTF. |
+| TTF `integer` | The TTF number to assign to. 1 would mean TTF1. |
+| Congestion Exponent `float`| The congestion exponent to apply to this TTF.   |
+| Congestion Perception `integer`| The congestion perception to apply to this TTF. |
 
 ### Sub-Module Parameter Explanation: "Surface Transit Speed Model"
 
-| Parameter `type`   | Explanation  |
+| Parameter `type`| Explanation  |
 | :----------------------------- | :---------------------------------------------- |
 | Alighting Duration `float` | The alighting duration in seconds per passenger to apply.|
 | Boarding Duration `float` | The boarding duration in seconds per passenger to apply. |
