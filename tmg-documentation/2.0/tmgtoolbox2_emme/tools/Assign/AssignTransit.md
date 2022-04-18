@@ -9,6 +9,14 @@ Hard-coded assumptions in the `AssignTransit` tool include:
   > * The congestion term is stored in US3.
   > * All available transit modes are used.
 
+## **Tool Flowchart**
+To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the `AssignTransit` tool works.
+<figure>
+    <img src="images/assign_transit_flow.svg"
+         alt="Assign Transit Flowchart">
+    <figcaption>Figure 1: Assign Transit Flowchart</figcaption>
+</figure>
+
 ## **Using the Tool with Modeller**
 `AssignTransit` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
 
