@@ -33,7 +33,7 @@ The diagram below expands on the assign transit flow that deals with the congest
 <figure>
     <img src="images/run_congested_assignment_flow.svg"
          alt="Congested Transit Assignment Flowchart">
-    <figcaption>Figure 2: Congested Transit Assignment Flowchart</figcaption>
+    <figcaption>Figure 3: Congested Transit Assignment Flowchart</figcaption>
 </figure>
 
 ## **Using the Tool with Modeller**
