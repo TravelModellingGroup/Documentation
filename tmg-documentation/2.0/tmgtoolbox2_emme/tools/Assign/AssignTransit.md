@@ -18,6 +18,7 @@ To run the this tool, parameters can be provided by the modeller through the XTM
     <figcaption>Figure 1: Assign Transit Flowchart</figcaption>
 </figure>
 
+The diagram below expands on the assign transit flow that deals with the uncongested transit assignment.
 <figure>
     <img src="images/run_uncongested_assignment_flow.svg"
          alt="Uncongested Transit Assignment Flowchart">
