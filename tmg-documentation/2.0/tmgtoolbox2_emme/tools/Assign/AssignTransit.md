@@ -11,10 +11,18 @@ Hard-coded assumptions in the `AssignTransit` tool include:
 
 ## **Tool Flowchart**
 To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the `AssignTransit` tool works.
+
 <figure>
     <img src="images/assign_transit_flow.svg"
          alt="Assign Transit Flowchart">
     <figcaption>Figure 1: Assign Transit Flowchart</figcaption>
+</figure>
+
+The diagram below expands on the assign transit flow that deals with the uncongested transit assignment.
+<figure>
+    <img src="images/run_uncongested_assignment_flow.svg"
+         alt="Uncongested Transit Assignment Flowchart">
+    <figcaption>Figure 2: Uncongested Transit Assignment Flowchart</figcaption>
 </figure>
 
 ## **Using the Tool with Modeller**
