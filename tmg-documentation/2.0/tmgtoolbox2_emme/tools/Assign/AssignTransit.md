@@ -19,6 +19,7 @@ To run the this tool, parameters can be provided by the modeller through the XTM
 </figure>
 
 The diagram below expands on the assign transit flow that deals with the uncongested transit assignment.
+
 <figure>
     <img src="images/run_uncongested_assignment_flow.svg"
          alt="Uncongested Transit Assignment Flowchart">
@@ -132,7 +133,7 @@ assign_transit(parameters)
 | Origin Distribution Logit Scale `float`| Scale parameter for logit model at origin connectors. |
 | Surface Transit Speed `bool`| Set to TRUE to allow surface transit speed to be used in the assignment|
 |Walk All Way Flag `bool`|Set to TRUE to allow walk all way in the assignment|
-| Xrow TTF Range `string`| Set this to the TTF, TTFs or range of TTFs (seperated by commas) that represent going in an exclusive right of way. This is for use in STSU|
+| Xrow TTF Range `string`| Set this to the TTF, TTFs or range of TTFs (separated by commas) that represent going in an exclusive right of way. This is for use in STSU|
 | Transit Classes `list`| The classes for this multi-class assignment.|
 | Surface Transit Speed Model `list`| Surface Transit Speed Model|
 | TTF Definitions `string`| The TTF's to apply in the assignment.|
@@ -176,6 +177,6 @@ assign_transit(parameters)
 | Boarding Duration `float` | The boarding duration in seconds per passenger to apply. |
 | Default Duration `float` | The default duration in seconds per stop to apply.       |
 | Global EROW Speed `float` | The speed to use in segments that have Exclusive Right of Way for transit and do not have @erow_speed defined. Note that the speed includes acceleration and deceleration time. |
-| Line Filter Expression `string` | The line filter that will be used to determing which lines will get surface transit speed applied to them. To select all lines, leave this and the line filter blank|
+| Line Filter Expression `string` | The line filter that will be used to determine which lines will get surface transit speed applied to them. To select all lines, leave this and the line filter blank|
 | Mode Filter Expression `string`| The modes that will get surface transit speed updating applied to them. To select all lines, leave this and the line filter blank|
 | Transit Auto Correlation `float`| The multiplier to auto time to use to find transit time.|
