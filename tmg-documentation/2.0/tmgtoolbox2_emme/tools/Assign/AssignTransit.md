@@ -18,18 +18,14 @@ To run the this tool, parameters can be provided by the modeller through the XTM
     <figcaption>Figure 1: Assign Transit Flowchart</figcaption>
 </figure>
 
-##
 The diagram below expands on the assign transit flow that deals with the uncongested transit assignment.
-
 <figure>
     <img src="images/run_uncongested_assignment_flow.svg"
          alt="Uncongested Transit Assignment Flowchart">
     <figcaption>Figure 2: Uncongested Transit Assignment Flowchart</figcaption>
 </figure>
 
-##
 The diagram below expands on the assign transit flow that deals with the congested transit assignment.
-
 <figure>
     <img src="images/run_congested_assignment_flow.svg"
          alt="Congested Transit Assignment Flowchart">
@@ -127,33 +123,33 @@ assign_transit(parameters)
 
 |Parameter `type`|Explanation|
 | :----------------------------- | :---------------------------------------------- |
-|Calculate Congested Ivtt Flag `bool`|Set to TRUE to extract the congestion matrix and add its weighted value to the in vehicle time (IVTT) matrix.|
-|Node Logit Scale `float`|This is the scale parameter for the logit model at critical nodes. Set it to 1 to turn it off logit. Set it to 0 to ensure equal proportion on all connected auxiliary transfer links. Critical nodes are defined as the non centroid end of centroid connectors and nodes that have transit lines from more than one agency|
-|Effective Headway Attribute Id `string`|The name of the attribute to use for the effective headway|
-|Effective Headway Slope `float`|Effective Headway Slope|
-|Headway Fraction Attribute Id `string`|The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.|
-|Iterations `integer`|Convergence criterion: The maximum number of iterations performed by the transit assignment.|
-|Normalized Gap `float`|Convergence criterion|
-|Relative Gap `float`|Convergence criterion|
-|Scenario Number `integer`|Emme Scenario Number to execute against|
-|Walk Speed `float`|Walking speed in km/hr. Applied to all walk (aux. transit) modes in the Emme scenario.|
-|Assignment Period `float`|A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.|
-| Congested Assignment `bool`| Set this to false in order to not apply congestion during assignment.|
-| CSV File `string`| A link to the csv file that will specify iterational information|
+|Calculate Congested Ivtt Flag `bool` | Set to TRUE to extract the congestion matrix and add its weighted value to the in vehicle time (IVTT) matrix.|
+|Node Logit Scale `float` | This is the scale parameter for the logit model at critical nodes. Set it to 1 to turn it off logit. Set it to 0 to ensure equal proportion on all connected auxiliary transfer links. Critical nodes are defined as the non centroid end of centroid connectors and nodes that have transit lines from more than one agency|
+|Effective Headway Attribute Id `string` | The name of the attribute to use for the effective headway|
+|Effective Headway Slope `float` | Effective Headway Slope|
+|Headway Fraction Attribute Id `string` | The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.|
+|Iterations `integer` |Convergence criterion: The maximum number of iterations performed by the transit assignment.|
+|Normalized Gap `float` | Convergence criterion |
+|Relative Gap `float` | Convergence criterion|
+|Scenario Number `integer` | Emme Scenario Number to execute against|
+|Walk Speed `float` | Walking speed in km/hr. Applied to all walk (aux. transit) modes in the Emme scenario.|
+|Assignment Period `float` | A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.|
+| Congested Assignment `bool` | Set this to false in order to not apply congestion during assignment.|
+| CSV File `string` | A link to the csv file that will specify iterational information|
 | Origin Distribution Logit Scale `float`| Scale parameter for logit model at origin connectors. |
-| Surface Transit Speed `bool`| Set to TRUE to allow surface transit speed to be used in the assignment|
-|Walk All Way Flag `bool`|Set to TRUE to allow walk all way in the assignment|
-| Xrow TTF Range `string`| Set this to the TTF, TTFs or range of TTFs (separated by commas) that represent going in an exclusive right of way. This is for use in STSU|
-| Transit Classes `list`| The classes for this multi-class assignment.|
-| Surface Transit Speed Model `list`| Surface Transit Speed Model|
-| TTF Definitions `string`| The TTF's to apply in the assignment.|
-| Transit Class `string`| The classes for this multi-class assignment.|
+| Surface Transit Speed `bool` | Set to TRUE to allow surface transit speed to be used in the assignment |
+|Walk All Way Flag `bool` |Set to TRUE to allow walk all way in the assignment|
+| Xrow TTF Range `string` | Set this to the TTF, TTFs or range of TTFs (separated by commas) that represent going in an exclusive right of way. This is for use in STSU |
+| Transit Classes `list` | The classes for this multi-class assignment. |
+| Surface Transit Speed Model `list`| Surface Transit Speed Model. |
+| TTF Definitions `string` | The TTF's to apply in the assignment. |
+| Transit Class `string` | The classes for this multi-class assignment. |
 
 ### Sub-Module Parameter Explanation: "Transit Classes"
 
 | Parameter `type`| Explanation |
 | :----------------------------- | :---------------------------------------------- |
-| Demand Matrix `string` |The ID of the full matrix containing transit demand ODs. |
+| Demand Matrix `string` | The ID of the full matrix containing transit demand ODs. |
 | Board Penalty Matrix `string`| The ID of the FULL matrix in which to save the applied boarding penalties.  Enter mf0 to skip this matrix.|
 | Board Penalty Perception `float`| Perception factor applied to boarding penalty component. |
 | Congestion Matrix `string`     | The ID of the FULL matrix in which to save transit congestion. Enter mf0 to skip saving this matrix |
