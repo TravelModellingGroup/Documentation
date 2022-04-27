@@ -140,9 +140,10 @@ In all cases copy the base scenario's folder and then update either `Zones.csv` 
 When launching V4.0 Population Synthesis you will be presented with a small window that takes in 4 inputs and presents to you a button called `Run`.
 To select a file click the button _..._ and it will bring up a directory/file selection dialog to help.
 
-1. `Input Directory`: Select the the location of your *Input File Directory* as described above.
+1. `Input Directory`: Select the location of your *Input File Directory* as described above.
 1. `Population Forecast File`: Select the future year population CSV file described above to generate.
 1. `Output Directory`: Select the directory that the results will be stored into.  You may wish to create a new folder to store the output into.
-1. `Random Seed`: This seed will control the random selection process.  You can leave this to the default unless you want to recreate a particular run.
+1. `Random Seed`: This seed will control the random selection process.  This number will be used to initialize the random number generator to a fixed state.  This means that if
+you run with the same inputs and the same random seed the outputted population will be identical.  Changing this number will generate a slightly different population.
 1. With Everything setup you can press Run and the population will be generated.
 
