@@ -2,7 +2,7 @@
 > [!NOTE]
 >This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the TMG FBTN From Schema Multiclass Tool in XTMF1/TMGToolbox1.
 
-The Generate Hypernetwork From Schema tool generates a hyper-network to support fare-based transit assignment (FBTA) for at least one fare class, from an XML schema file. `GenerateHypernetworkFromSchema` reports to the logbook links and segments with negative fare values for further inspection. For fare schema specification, please consult TMG documentation. 
+The Generate Hypernetwork From Schema tool generates a hyper-network to support fare-based transit assignment (FBTA) for at least one fare class, from an XML schema file. `GenerateHypernetworkFromSchema` reports to the logbook links and segments with negative fare values for further inspection. For fare schema specification, please consult TMG documentation [here](http://tmg.utoronto.ca/doc/1.6/gtamodel/user_guide/file_formats/fare_schema_file_specification.html). 
 
 Temporary storage requirements for `GenerateHypernetworkFromSchema`: 
 > * One transit line extra attribute, 
