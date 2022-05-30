@@ -14,7 +14,7 @@ The concept of a hyper network is that each agency has its own “layer” of vi
 
 The map below shows base layer of a transport network.
 <figure>
-    <img src="images/base_network.svg"
+    <img src="images/base_network.png"
          alt="Example Base Layer">
     <figcaption>Figure 1: Base Network Layer without Transit Layers</figcaption>
 </figure>
@@ -31,7 +31,7 @@ b.	Transit (or Station) nodes are connected to links with only transit or walk m
 6.	Finally, each transit line is moved over to its appropriate layer in the hyper network. In-vehicle links are created between virtual nodes when none exist. The image below shows an 3D layer representing how the Hyper Network would look like in a pictorial representation.
 
 <figure>
-    <img src="images/hyper_network.svg"
+    <img src="images/hyper_network.png"
          alt="Example Hyper Network Layer">
     <figcaption>Figure 2: Example 3D Hyper Network showing Generated Transit Layers</figcaption>
 </figure>
