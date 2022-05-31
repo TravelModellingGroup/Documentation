@@ -2,7 +2,7 @@
 > [!NOTE]
 >This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the TMG FBTN From Schema Multiclass Tool in XTMF1/TMGToolbox1.
 
-The Generate Hypernetwork From Schema tool generates a hyper-network to support fare-based transit assignment (FBTA) for at least one fare class, from an XML schema file. `GenerateHypernetworkFromSchema` reports to the logbook links and segments with negative fare values for further inspection. For fare schema specification, please consult TMG documentation [here](http://tmg.utoronto.ca/doc/1.6/gtamodel/user_guide/file_formats/fare_schema_file_specification.html). 
+The Generate Hypernetwork From Schema tool generates a hyper-network to support fare-based transit assignment (FBTA) for at least one fare class, from an XML schema file. `GenerateHypernetworkFromSchema` reports to the logbook links and segments with negative fare values for further inspection. Please consult the [TMG fare schema specification documentation](http://tmg.utoronto.ca/doc/1.6/gtamodel/user_guide/file_formats/fare_schema_file_specification.html). 
 
 Temporary storage requirements for `GenerateHypernetworkFromSchema`: 
 > * One transit line extra attribute, 
@@ -19,10 +19,9 @@ The map below shows base layer of a transport network.
     <figcaption>Figure 1: Base Network Layer without Transit Layers</figcaption>
 </figure>
 
-In this implementation, this has been generalized to have each transit line belong to a “group” (instead of a hard-coded operator), in order to give the procedure more flexibility. The groups are specified using a fare schema file (see next section for details). The main assumption of this approach is that transfers between lines within the same group are free (unless a boarding cost is applied during assignment).
-To generate the appropriate hyper-network, six steps are followed:
+In this implementation, this has been generalized to have each transit line belong to a “group” (instead of a hard-coded operator), in order to give the procedure more flexibility. The groups are specified using a fare schema file (see next section for details). The main assumption of this approach is that transfers between lines within the same group are free (unless a boarding cost is applied during assignment). To generate the appropriate hyper-network, six steps are followed:
 1.	Transit lines are classified into groups based on the fare schema file.
-2.	The network is pre-processed. The procedure attaches to each node a two sets of data: groups which are stopping at the node, and groups which are passing through the node. The two sets are mutually exclusive. Two groups of (non-zone) nodes are identified:
+2.	The network is pre-processed. The procedure attaches to each node two sets of data: groups which are stopping at the node, and groups which are passing through the node. The two sets are mutually exclusive. Two groups of (non-zone) nodes are identified:
 a.	Road (or Surface) nodes are connected to at least one link with the auto mode.
 b.	Transit (or Station) nodes are connected to links with only transit or walk modes. 
 3.	Surface nodes are processed first. For each group using a surface node (either stopping at or passing through), a new virtual node is created. The base node’s attributes are copied over. For groups stopping at the node, the associated virtual node is connected using walk links to the base node and to each other. These walk links are indexed for later use .
