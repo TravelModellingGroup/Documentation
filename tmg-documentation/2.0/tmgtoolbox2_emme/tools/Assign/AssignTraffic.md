@@ -47,6 +47,12 @@ parameters = {
     "run_title": "road assignment",
     "scenario_number": 1,
     "sola_flag": True,
+    "mixed_use_ttf_ranges" : [
+        {
+            start : 3,
+            stop : 128
+        }
+    ],
     "traffic_classes": [
         {
             "name": "traffic class 1",
@@ -90,6 +96,7 @@ assignTransit(parameters)
 |Relative Gap `float`|The minimum gap required to terminate the algorithm. |
 |Run Title `string`|The name of the run to appear in the logbook|
 |Scenario Number `integer`|The scenario number to execute against|
+|Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
 |Parameter|Explanation|
 | :------------------- | :------------------- |
