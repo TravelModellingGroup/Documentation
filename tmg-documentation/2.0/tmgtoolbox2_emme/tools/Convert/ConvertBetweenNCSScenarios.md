@@ -35,8 +35,8 @@ Csv file of lane capacities
 Csv file of the transit lines
 #### Skip Missing Transit Lines
 Boolean value to determine if user should skip missing transit lines.
-Default is True. Click checkbox to select False so missing transit
-lines are not skipped
+Default is False. Click checkbox to select True so missing transit
+lines are skipped
 
 ## Using the tool with EMME Modeller GUI
 The tool can be found in "TMG Toolbox2" -> "Convert" -> "Convert Between NCS Scenarios"
