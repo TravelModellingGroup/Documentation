@@ -17,8 +17,8 @@ to change to.
 
 #### Old NCS Scenario: 
 This is the original network scenario
-#### New NCS Scenario: 
-The new network scenrio where the ncs conversion will happen on
+#### New NCS Scenario:
+The new network scenario where the NCS conversion will happen on
 #### Station Centroid File CSV File Location: 
 Csv file with the station centroid data
 #### Zone Centroid CSV File Location: 
@@ -30,7 +30,7 @@ Csv file of link attributes
 #### Transit vehicle definitions CSV File Location: 
 Csv file of traffic vehicles
 #### Lane Capacities CSV File Location: 
-Csv file of lane capacidies 
+Csv file of lane capacities 
 #### Transit Line Code CSV File Location:
 Csv file of the transit lines
 #### Skip Missing Transit Lines
@@ -45,4 +45,4 @@ The tool can be found in "TMG Toolbox2" -> "Convert" -> "Convert Between NCS Sce
 
 ## Note
 For every new network that a user wants to convert into ncs22, 
-user has to provide the correspnding input files for that network.
+user has to provide the corresponding input files for that network.
