@@ -18,7 +18,7 @@ to change to.
 #### Old NCS Scenario: 
 This is the original network scenario
 #### New NCS Scenario:
-The new network scenario where the NCS conversion will happen on
+The location where the converted scenario will be stored in
 #### Station Centroid File CSV File Location: 
 Csv file with the station centroid data
 #### Zone Centroid CSV File Location: 
