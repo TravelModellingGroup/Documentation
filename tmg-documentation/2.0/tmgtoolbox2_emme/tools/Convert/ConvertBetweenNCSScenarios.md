@@ -13,7 +13,7 @@ Assumptions in the `ConvertBetweenNCSScenarios` tool include:
 ## **Tool Flow**
 To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. THe tool begins by reading and getting the Emme network from the scenario specified. After the `ConvertBetweenNCSScenarios` tool reads all the input files files provided, it begins by updating zone centroid numbers, mode code definitions, extra attributes, transit vehicle definitions, lane capacity, and then finishes updating transit line codes.
 
-Finally, the tool copies the sceanrio, with all the new updates into a clean scenario specified by the user before run.
+Finally, the tool copies the scenario, with all the new updates into a clean scenario specified by the user before run.
 
 
 ## **Using the Tool with Modeller**
