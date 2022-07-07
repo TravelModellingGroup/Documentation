@@ -11,7 +11,7 @@ It is strongly recommended that users install the latest version of Emme, at lea
 An Emme project of sufficient size is required to be set up before being able to run GTAModel. 
 Table [1] below shows the recommended dimensions for each network element.
 
-|    Emme   Databank Element    |    Recommended Allotment for GTAModel V4.0    |    Recommended Allotment for GTAModel V4.1    |
+|    Emme   Databank Element    |    Recommended Allotment for GTAModel V4.0    |    Recommended Allotment for GTAModel V4.1+   |
 |-------------------------------|-----------------------------------------------|-----------------------------------------------|
 |    Scenarios                  |    100                                        |    15                                         |
 |    Scalar Matrices            |    99                                         |    99                                         |
@@ -35,9 +35,15 @@ In addition to the dimensions, proper units are also required.  The image below 
 
 ## Adding TMG Toolbox
 
-All network assignment modules in the model system are implemented in the TMG Toolbox. As such, in order to run GTAModel V4 users will need to ensure that their Emme project is using the Toolbox. If this is not done properly, then Emme will raise an error “A tool with the following namespace could not be found…” This can be fixed by launching Emme Modeller, right-clicking at the top left on “Add a Toolbox…” and browsing to the location of the file TMG_Toolbox.mtbx. Note that Emme maintains a static link to this file location so if the file is moved then Emme will not be able to find it. Updated versions of the toolbox can safely overwrite this file, and will always have the same name.
+All network assignment modules in the model system are implemented in the TMG Toolbox. As such, in order to run GTAModel V4
+users will need to ensure that their Emme project is using the Toolbox. If this is not done properly, then Emme will raise an error
+“A tool with the following namespace could not be found…” This can be fixed by launching Emme Modeller, right-clicking at the top left on “Add a Toolbox…”
+and browsing to the location of the file TMG_Toolbox.mtbx. Note that Emme maintains a static link to this file location so if the file is moved then Emme
+will not be able to find it. When running GTAModel please make sure to use the version of the TMGToolbox that came with your copy of XTMF.  You can find the
+associated toolbox in the `Modules` directory.  If you are using EMME 4.6+ please link to the toolbox `TMG_Toolbox_Python3.mtbx` otherwise please use `TMG_Toolbox.mtbx`.
+**XTMF does not support EMME 4.5.**
 
-The latest version of the TMG Toolbox can be found at: https://github.com/TravelModellingGroup/TMGToolbox.
+If necessary, the latest version of the TMG Toolbox can be found at: https://github.com/TravelModellingGroup/TMGToolbox.
 
 ## Scenarios
 
