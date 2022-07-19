@@ -1,15 +1,15 @@
-## Setting up Inputs
+# Initial Configuration
 
 In this section we will setup the inputs and EMME databases required for running GTAModel V4.
 
-### GTAModel V4 Inputs
+## GTAModel V4 Inputs
 
 In order to run GTAModel you will require inputs that describe the land-use, population, and network configuration.
 You can find a full outlining of the input directories for various versions
 [here](../InputDirectory/index.md).  To get the input files for your base model
 please contact TMG and they will prepare it for download or give you the internal network file path for the input folder.
 
-### Setting up the EMME Run Databases
+## Setting up the EMME Run Databases
 
 Now that we have EMME installed and are able to run the software we can create one of the databases that GTAModel will require to execute its network assignments.  You can
 find detailed information on how to do this, and setup the TMGToolbox for EMME [here](../Network/emme_project_setup.md).  **Please make sure to link to the TMGToolbox that
