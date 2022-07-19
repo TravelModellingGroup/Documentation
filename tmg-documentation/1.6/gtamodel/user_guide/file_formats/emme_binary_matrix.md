@@ -2,7 +2,7 @@
 
 ## Overview
 
-The .mtx file format is used in GTAModel V4 to store matrix data
+The `.mtx` file format is used in GTAModel V4 to store matrix data
 in a compact form that is extremely quick to write and load.
 Additionally, the format also contains a copy of the zone system
 allowing it to be checked first before loading in order to weed out
@@ -13,6 +13,10 @@ The TMGToolbox contains two tools that allow for the
 and 
 [exporting](https://github.com/TravelModellingGroup/TMGToolbox/blob/dev-1.6/TMGToolbox/src/input_output/export_binary_matrix.py)
  of these files to and from EMME.
+
+ There is also an alternative extension `.mtx.gz` which can be loaded in with version 1.10+ of
+ the TMGToolbox and XTMF.  The `.mtx.gz` format is compressed using the GZip algorithm but otherwise
+ idential to the original `.mtx` format.
 
 ## File Specification
 
@@ -26,3 +30,4 @@ and
 | Zone Number | int32 | For each dimension an index size worth of zone numbers |
 | Raw Data | Depends on Type | One value per expected cell |
 
+You can review example code [here](https://github.com/TravelModellingGroup/XTMF/blob/dev/Code/TMG.Emme/EmmeMatrix.cs) for reading and writing this file format.

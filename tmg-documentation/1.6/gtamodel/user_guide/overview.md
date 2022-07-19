@@ -9,7 +9,7 @@ onto any other sections.
 * [Software Setup](initial_setup/software_setup.md) - Install EMME and setup XTMF.  This step will require administrative access on the computer.
 * [Initial Configuration](initial_setup/initial_configuration.md) - Setup EMME for GTAModel and Import your Model System into XTMF.
 * [Executing a Run](initial_setup/executing_a_run.md) - Learn how to configure your run with different scenarios.
-* [Output Analysis](initial_setup/model_outputs.md) - Goes through the default outputs of GTAModel V4.
+* [Model Outputs](initial_setup/model_outputs.md) - Goes through the default outputs of GTAModel V4.
 
 ## Population Synthesis
 
@@ -64,4 +64,3 @@ GTAModel uses a number of different file formats for both input and output data.
     and is slowly being phased out of the model system.  It was originally formulated efficiently load tables off of disk when we were restricted to 2GB of RAM for our
     models.
 * [Zones.csv](file_formats/zones_file_format.md) - This goes over the CSV file used for giving GTAModel V4.0 the description of the zone system.
-
