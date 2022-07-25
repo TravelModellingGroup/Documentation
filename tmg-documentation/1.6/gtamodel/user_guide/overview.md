@@ -42,10 +42,10 @@ One of the ways to do that is to program one or more new modules for XTMF.  Thes
 some common extensions.
 
 * [Overview](programming/overview.md) - This tutorial goes through the setup for creating new modules for GTAModel and gives a high level overview of where
-    GTAModel is designed to be extended.
-* [Mode Choice Post Processor](programming/post_household_iteration.md) - This tutorial goes through the steps to create a new module that is able to analyse the results for each
+    GTAModel is designed to be extended.  We recommend that you start with this before moving onto more specific examples.
+* [Mode Choice Post Processor](programming/interfaces/post_household_iteration.md) - This tutorial goes through the steps to create a new module that is able to analyse the results for each
     internal iteration of mode choice.
-* [Creating a New Mode](programming/new_mode.md) - This tutorial goes through the steps required to program a new tutorial
+* [Creating a New Mode](programming/examples/new_mode.md) - This tutorial goes through the steps required to program a new tutorial
 
 ## File Formats
 
