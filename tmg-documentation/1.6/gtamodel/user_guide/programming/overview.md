@@ -50,9 +50,6 @@ re-implementing that pipeline without breaking compatability with other modules.
     picking discrete the destinations for other, market, and work-based-business activities when
     constructing the schedule.
 
-* [ITashaMode](interfaces/tasha_mode.md) - This interface is extended to implement a new mode
-    that can be chosen by TASHA.
-
 * [IParkingCost](interfaces/parking_cost.md) - This interface is extended to implement a
     new model for computing parking costs given the gap between two activities.
  
@@ -67,6 +64,9 @@ re-implementing that pipeline without breaking compatability with other modules.
 
 * [IPreIteration](interfaces/pre_iteration.md) - This interface executes before any household has
     been processed for the current outer-loop.
+
+* [ITashaMode](interfaces/tasha_mode.md) - This interface is extended to implement a new mode
+    that can be chosen by TASHA.
 
 * [ITashaModeChoice](interfaces/tasha_modechoice.md) - This interface provides interopability
     for the ITashaRuntime to use different mode choice algorithms.
