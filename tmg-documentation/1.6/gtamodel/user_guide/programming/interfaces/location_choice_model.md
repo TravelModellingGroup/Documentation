@@ -113,6 +113,19 @@ namespace Example
         {
             throw new NotImplementedException("This method is no longer supported for V4.0+");
         }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple<byte, byte, byte> ProgressColour { get { return new Tuple<byte, byte, byte>(50, 150, 50); } }
     }
 }
 ```
