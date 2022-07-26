@@ -1,4 +1,4 @@
-# GTAModel V4 Walkthrough - Software Setup
+# Software Setup
 
 This section will walk you through installing and setting up
 all of the software required to execute GTAModel V4 and the process for importing the base model.

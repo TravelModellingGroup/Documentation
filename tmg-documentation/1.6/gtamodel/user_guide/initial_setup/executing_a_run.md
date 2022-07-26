@@ -1,4 +1,4 @@
-# GTAModel V4 Walkthrough - Executing A Run
+# Executing A Run
 
 After completing your initial configuration of the model system you are now ready to execute your first run.
 
