@@ -57,7 +57,7 @@ namespace Example
 
         public void Execute(int iterationNumber, int totalIterations)
         {
-            Console.WriteLine("Finished processing all of the households in iteration"
+            Console.WriteLine("Finished processing all of the households in iteration "
                 + iterationNumber);
         }
 
