@@ -82,7 +82,7 @@ namespace Example
                     {
                         if(episode != null)
                         {
-                            lostTime += Math.Max(OriginalDuration - Duration, 0.0);
+                            lostTime += Math.Max(episode.OriginalDuration - episode.Duration, 0.0);
                         }
                     }
                 }
