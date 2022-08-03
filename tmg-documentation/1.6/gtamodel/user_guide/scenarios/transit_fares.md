@@ -23,7 +23,12 @@ to create a transit hyper-network used for fare based congested transit assignme
 ### Fare Rules.xml
 
 This [Fare Rules.xml file](../file_formats/fare_schema_file_specification.md) contains a
-set of policies that allows you to 
+set of policies that allows you to generate costs for:
+
+* Initial Boarding
+* Transfers
+* Zone Crossings
+* In-Vehicle Distances
 
 ### York_Region_Zones
 
