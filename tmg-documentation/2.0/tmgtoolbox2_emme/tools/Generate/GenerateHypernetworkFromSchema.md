@@ -68,8 +68,8 @@ parameters = {
         {"link_fare_attribute": "@lfare", "segment_fare_attribute": "@sfare", "schema_file": "TestFiles/fares.xml"}
     ],
 }
-assign_transit = _MODELLER.tool("tmg2.Assign.assign_transit")
-assign_transit(parameters)
+generate_time_period_networks = _MODELLER.tool("tmg2.Generate.generate_time_period_networks")
+generate_time_period_networks(parameters)
 ```
 
 ### Module Parameter Explanation: "Generate Hypernetwork From Schema"
