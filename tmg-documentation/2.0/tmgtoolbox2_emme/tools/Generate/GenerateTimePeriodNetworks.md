@@ -26,7 +26,7 @@ The diagram below expands on the Time Period Networks Generation flow. It begins
 
 ### Create Transit Time Period
 
-`Create Transit Time Period`generates new scenarios for different time periods and uses a service table (a list of trips times) to generate headways and speeds for transit lines in each of those periods. Currently, this tool is run five separate times. 
+`Create Transit Time Period` generates new scenarios for different time periods and uses a service table (a list of trips times) to generate headways and speeds for transit lines in each of those periods. Currently, this tool is run five separate times. 
 
 ### Prorate Transit Speed
 
