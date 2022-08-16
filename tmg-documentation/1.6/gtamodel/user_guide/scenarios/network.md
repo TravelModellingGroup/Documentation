@@ -124,4 +124,10 @@ It stores the OD shortest network distance (static, not the fastest path) in the
 
 ## Creating a New Scenario
 
-TODO:
+Creating a new network scenario requires preparing `BaseNetwork.nwp` by editing transit lines in Emme to meet the transit policy or situation to be tested and simultaneously editing the Transit Alternative Table File also known as `AltFile.csv`. 
+
+The `AltFile.csv` contains headways and speeds for transit lines that are not listed in the service table or for which the user would like to override in the service table data. More on how this is used during the time period generation process can be found [here](http://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html#create-transit-time-period).
+
+To update the Alternative table file the user would have to provide the corresponding *emme_id*, *xxxx_hdw*, and *xxxx_spd* in the `AltFile.csv` file.
+
+Please note: In the GTAModel folder setup, the files needed to prepare your base network for your transit policy test can be found in *V4Input\Scenario-Network\20XX\Base*
