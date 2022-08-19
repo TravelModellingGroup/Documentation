@@ -7,7 +7,7 @@ The Copy Scenario tool allows XTMF to be able to copy scenario within an EMME Da
 ## **Using the Tool with Modeller**
 `CopyScenario` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
 
-The tool can be found in "TMG Toolbox 2" -> "Generate" -> "Copy Scenario". You can
+The tool can be found in "TMG Toolbox 2" -> "Copy" -> "Copy Scenario". You can
 find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Copy/copy_scenario.py).
 
 ## **Using the Tool with XTMF2**
