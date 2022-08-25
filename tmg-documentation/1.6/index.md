@@ -11,7 +11,7 @@ an up-to-date user guide and documentation.
 
 ## XTMF - The eXtensible Travel Modelling Framework
 
-The [eXtensible Travel Modelling Framework (XTMF)]() is an open-source (GPLv3)
+The [eXtensible Travel Modelling Framework (XTMF)](xtmf/index.md) is an open-source (GPLv3)
 software platform developed by the University of Toronto to build model systems 
 through the composition and configuration of different modules. This means that all
 modules used to construct GTAModel V4.0+ have their code available for inspection or recompilation
