@@ -7,9 +7,9 @@ The Export Network Shapefile exports network data from an EMME scenario to a spe
 
 ## **Using the Tool with Modeller**
 
-`ExportNetworkShapefile` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
+`ExportNetworkShapefile` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call. However, INRO has a version of this tool in its Emme Standard Toolbox. To use this version in the Modeller, navigate to "Data management" -> "Network" -> "Export network as shapefile".
 
-The tool can be found in "TMG Toolbox 2" -> "Export" -> "Export Network Shapefile". You can
+The TMG tool can be found in "TMG Toolbox 2" -> "Export" -> "Export Network Shapefile". You can
 find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Export/export_network_shapefile.py).
 
 ## **Using the Tool with XTMF2**
