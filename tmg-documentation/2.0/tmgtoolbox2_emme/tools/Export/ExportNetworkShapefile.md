@@ -44,4 +44,4 @@ export_network_shapefile(parameters)
 | :------------------------ | :------------------------------------------------------- |
 | Scenario Number `integer` | The scenario number containing network to export.        |
 | Save To `string`          | The location to write the file.                          |
-| TransitShapes `string`    | Type of geometry or transit shape to export e.g. SEGMENT |
+| TransitShapes `string`    | Type of geometry or transit shape to export e.g. SEGMENTS |
