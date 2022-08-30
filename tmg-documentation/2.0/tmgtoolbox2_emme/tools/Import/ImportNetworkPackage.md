@@ -25,10 +25,10 @@ You can call the `ImportNetworkPackage` by calling the python API. Below is a sc
 import inro.modeller as _m
 _MODELLER = _m.Modeller()
  parameters = {
-            "network_package_file": self.network_package_file,
-            "scenario_description": self.scenario_description,
-            "scenario_number": self.scenario_number,
-            "conflict_option": self.conflict_option,
+            "network_package_file": "TestFiles/test.nwp",
+            "scenario_description": "From XTMF",
+            "scenario_number": 1,
+            "conflict_option": "PRESERVE",
         }
 
 import_network_package = _MODELLER.tool("tmg2.Import.import_network_package")
