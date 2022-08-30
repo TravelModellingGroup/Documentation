@@ -3,11 +3,11 @@
 > [!NOTE]
 > This tool works with Emme version 4.6.0+, XTMF2, and produces results similar to the TMG Clean GTFS in XTMF1/TMGToolbox1.
 
-The Filter GTFS For Service Id And Routes exports network data from an EMME scenario to a specified shape file..
+The Filter GTFS for Service Id And Routes cleans a set of GTFS files by service ID. Filters all GTFS files except for routes, calendar, and shapes.
 
 ## **Using the Tool with Modeller**
 
-`FilterGTFSForServiceIdAndRoutes` Cleans a set of GTFS files by service ID. Filters all GTFS files except for routes, calendar, and shapes.
+`FilterGTFSForServiceIdAndRoutes` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.
 
 The TMG tool can be found in "TMG Toolbox 2" -> "Filter" -> "Filter GTFS For Service Id And Routes". You can
 find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Filter/filter_gtfs_for_service_id_and_routes.py).
