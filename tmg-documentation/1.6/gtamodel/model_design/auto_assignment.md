@@ -4,6 +4,37 @@
 
 GTAModel V4.0 uses a Static User Equilibrium (SUE), single-class traffic assignment procedure implemented in Emme 4.1/4.2. Road tolls (e.g., the 407 ETR) are included as a generalized cost, and converted to perceived minutes using a Time Value of Money (TVALM) parameter. This model is nearly identical to other traffic assignment models commonly in-use around the region, save for minor implementation details. 
 
+## Volume Delay Functions
+
+When working with EMME auto assignments the network is encoded with 
+Volume Delay Functions (VDFs).  These VDFs describe how
+a road's travel time changes as the volume on the road changes.
+
+Below is a table describing the VDFs for the different NCS16 
+road types.
+
+### _Table 1 - NCS16 GTAModel VDFs_
+
+| VDF     | Formula                                                                  |
+|---------|--------------------------------------------------------------------------|
+| 11      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))  |
+| 12      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))  |
+| 13      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))  |
+| 14      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))  |
+| 15      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))  |
+| 16      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))  |
+| 17      | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))  |
+| 20 - 51 | (length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3)) |
+|         |            ^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))  |
+| 90      | (length * 60 / ul2)                                                      |
+
 ## GTAModel V4.1
 
 ### Preparation of Input Data
@@ -32,11 +63,11 @@ is 0 is then taken to be the Peak Period Factor.
 
 ![alt text](images/Freight/AvgErrorAM.png "Average Error AM")
 
-#####_Figure 1 - Average Countpost Error based on PPF in the AM_
+#### _Figure 1 - Average Countpost Error based on PPF in the AM_
 
 ![alt text](images/Freight/AvgErrorPM.png "Average Error AM")
 
-#####_Figure 2 - Average Countpost Error based on PPF in the PM_
+#### _Figure 2 - Average Countpost Error based on PPF in the PM_
 
 The peak hour factor from this method was found to be 0.46 and 0.39 for the AM and PM respectively. When comparing these numbers to the 2016 TTS Trip starts,
  they seem to get AM correct but the PM appears to be too high. For comparison, the TTS peak hour factors which were 0.469 and 0.307. This is likely due to
@@ -49,7 +80,7 @@ The peak hour factor from this method was found to be 0.46 and 0.39 for the AM a
 Since the freight model only provides freight demand data for a 12.5 hour period, it was necessary to break it in to time periods and peak hours for each time period in order to assign the freight into Emme.
 Table 2 summarizes the calculations that were done.
 
-#####_Table 2 - Freight factors_
+#### _Table 2 - Freight factors_
 
 | Adjustment Factors              |          |          |          |
 |---------------------------------|----------|----------|----------|
