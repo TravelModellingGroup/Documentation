@@ -6,9 +6,6 @@
 The Export Subarea Network exports the road network for a subarea as defined by the node attribute containing the subarea definition. In addition, this tool extracts the traversal demand matrices, link, and turn volumes for .
 each class. Optionally, you can specify the transit network, traffic and transit traversal demand matrices.
 
-## **Procedure use to run the export subarea tool**
-
-
 ## **Using the Tool with Modeller**
 
 TMG's `ExportSubareaNetwork` tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call. However, INRO has a version of this tool in its Emme Standard Toolbox. To use this version in the Modeller, navigate to "Subarea" -> "Subarea".
