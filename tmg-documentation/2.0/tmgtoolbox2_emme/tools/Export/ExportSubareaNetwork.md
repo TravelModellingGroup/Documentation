@@ -95,13 +95,13 @@ export_subarea_network(parameters)
 |Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
 
 ### Sub-Module Parameter Explanation:  "Subarea Node Attribute Definition - Shape File"
-|Parameter|Explanation|
+|Parameter  `type`|Explanation|
 | :------------------- | :------------------- |
 |Shape file Location  `string` | The shapefile name containing  the boundary of the subarea polygon |
 |Create Nflag From Shapefile  `boolean` | set to False if subarea node attribute  is already defined in the network  |
 
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
-|Parameter|Explanation|
+|Parameter  `type`|Explanation|
 | :------------------- | :------------------- |
 |Cost Matrix `string`|The matrix number e.g. "mf4" to save the total cost into.|
 |Demand Matrix `string`|The id of the demand matrix to use.|
