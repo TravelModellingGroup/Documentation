@@ -77,8 +77,8 @@ export_subarea_network(parameters)
 
 ### Module Parameter Explanation: "Export Subarea Network"
 
-| Parameter `type`        | Explanation                                      |
-| :---------------------- | :----------------------------------------------- |
+| Parameter `type`| Explanation|
+| :------------------- | :------------------- |
 |I Subarea Link Selection  `string` |The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34" |
 |J Subarea Link Selection  `string` | The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"  |
 |Subarea Output Folder  `string` | Folder directory to write output of the subarea database|
