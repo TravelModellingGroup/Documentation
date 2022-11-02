@@ -79,11 +79,11 @@ export_subarea_network(parameters)
 
 | Parameter `type`| Explanation|
 | :------------------- | :------------------- |
-|I Subarea Link Selection  `string` |The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34" |
-|J Subarea Link Selection  `string` | The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"  |
-|Subarea Output Folder  `string` | Folder directory to write output of the subarea database|
-|Subarea Node Attribute  `string` | The node attribute that will be used to define the subarea.  |
-|Subarea Gate Attribute  `string` | The link extra attribute that defines your gate numbers |
+|I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
+|J Subarea Link Selection  `string`| The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
+|Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
+|Subarea Node Attribute  `string`| The node attribute that will be used to define the subarea.|
+|Subarea Gate Attribute  `string`| The link extra attribute that defines your gate numbers |
 |Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
 |Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
 |Iterations `integer`|The maximum number of iterations to run.|
@@ -97,8 +97,8 @@ export_subarea_network(parameters)
 ### Sub-Module Parameter Explanation:  "Subarea Node Attribute Definition - Shape File"
 |Parameter  `type`|Explanation|
 | :------------------- | :------------------- |
-|Shape file Location  `string` | The shapefile name containing  the boundary of the subarea polygon |
-|Create Nflag From Shapefile  `boolean` | set to False if subarea node attribute  is already defined in the network  |
+|Shape file Location  `string`| The shapefile name containing  the boundary of the subarea polygon|
+|Create Nflag From Shapefile  `boolean`| set to False if subarea node attribute  is already defined in the network|
 
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
 |Parameter  `type`|Explanation|
