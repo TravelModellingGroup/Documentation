@@ -3,7 +3,17 @@
 > [!NOTE]
 > This tool works with Emme version 4.6.0+, XTMF2.
 
-The Export Subarea Network exports the road network for a subarea as defined by the node attribute containing the subarea definition. In addition, this tool extracts the traversal demand matrices, link, and turn volumes for each class. Optionally, you can specify the transit network, traffic and transit traversal demand matrices.
+The Export Subarea Network exports the road network for a subarea as defined by the node attribute containing the subarea definition. For each class, the `ExportSubareaNetwork` tool extracts:
+
+* the traversal demand matrices, 
+* link volumes
+* turn volumes 
+* transit network (optional)
+* traffic and transit traversal demand matrices  (optional)
+
+Latest version of this tool includes the ability to:
+  > * Optionally, use a polygon shapefile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From Shapefile  to False.
+
 
 ## **Using the Tool with Modeller**
 
@@ -67,13 +77,13 @@ export_subarea_network(parameters)
 
 ### Module Parameter Explanation: "Export Subarea Network"
 
-| Parameter `type`        | Explanation                                      |
-| :---------------------- | :----------------------------------------------- |
-|I Subarea Link Selection  `string` |The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34" |
-|J Subarea Link Selection  `string` | The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"  |
-|Subarea Output Folder  `string` | Folder directory to write output of the subarea database|
-|Subarea Node Attribute  `string` | The node attribute that will be used to define the subarea.  |
-|Subarea Gate Attribute  `string` | The link extra attribute that defines your gate numbers |
+| Parameter `type`| Explanation|
+| :------------------- | :------------------- |
+|I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
+|J Subarea Link Selection  `string`| The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
+|Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
+|Subarea Node Attribute  `string`| The node attribute that will be used to define the subarea.|
+|Subarea Gate Attribute  `string`| The link extra attribute that defines your gate numbers |
 |Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
 |Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
 |Iterations `integer`|The maximum number of iterations to run.|
@@ -85,13 +95,13 @@ export_subarea_network(parameters)
 |Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
 
 ### Sub-Module Parameter Explanation:  "Subarea Node Attribute Definition - Shape File"
-|Parameter|Explanation|
+|Parameter  `type`|Explanation|
 | :------------------- | :------------------- |
-|Shape file Location  `string` | The shapefile name containing  the boundary of the subarea polygon |
-|Create Nflag From Shapefile  `boolean` | set to False if subarea node attribute  is already defined in the network  |
+|Shape file Location  `string`| The shapefile name containing  the boundary of the subarea polygon|
+|Create Nflag From Shapefile  `boolean`| set to False if subarea node attribute  is already defined in the network|
 
 ### Sub-Module Parameter Explanation:  "Traffic Classes"
-|Parameter|Explanation|
+|Parameter  `type`|Explanation|
 | :------------------- | :------------------- |
 |Cost Matrix `string`|The matrix number e.g. "mf4" to save the total cost into.|
 |Demand Matrix `string`|The id of the demand matrix to use.|
