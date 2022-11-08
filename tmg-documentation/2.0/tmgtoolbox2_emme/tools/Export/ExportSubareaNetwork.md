@@ -84,6 +84,7 @@ export_subarea_network(parameters)
 |Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
 |Subarea Node Attribute  `string`| The node attribute that will be used to define the subarea.|
 |Subarea Gate Attribute  `string`| The link extra attribute that defines your gate numbers |
+|Create Gate Attribute `boolean`|Set this to TRUE to create gate labels for your network. NOTE: i & j link selections must be defined|
 |Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
 |Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
 |Iterations `integer`|The maximum number of iterations to run.|
