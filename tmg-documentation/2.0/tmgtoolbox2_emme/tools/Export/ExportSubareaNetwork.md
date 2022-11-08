@@ -37,12 +37,14 @@ You can call the `ExportSubareaNetwork` by calling the python API. Below is a sc
 import inro.modeller as _m
 _MODELLER = _m.Modeller()
 parameters = {
+    "extract_transit": True,
     "i_subarea_link_selection": "i=21,24 or i=27 or i=31,34",
     "j_subarea_link_selection": "j=21,24 or j=27 or j=31,34",
     "scenario_number": 3,
     "shape_file_location": "TestFiles/subarea_border.shp",
     "subarea_output_folder": "TestFiles\\Subarea",
     "create_nflag_from_shapefile": True,
+    "create_gate_attribute": True,
     "subarea_node_attribute": "@nflag",
     "subarea_gate_attribute": "@gate",
     "background_transit": True,
@@ -79,6 +81,7 @@ export_subarea_network(parameters)
 
 | Parameter `type`| Explanation|
 | :------------------- | :------------------- |
+|Extract Transit `boolean`|Set this to TRUE to export the subarea transit |
 |I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
 |J Subarea Link Selection  `string`| The incoming connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
 |Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
