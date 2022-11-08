@@ -80,7 +80,7 @@ export_subarea_network(parameters)
 | Parameter `type`| Explanation|
 | :------------------- | :------------------- |
 |I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
-|J Subarea Link Selection  `string`| The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
+|J Subarea Link Selection  `string`| The incoming connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
 |Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
 |Subarea Node Attribute  `string`| The node attribute that will be used to define the subarea.|
 |Subarea Gate Attribute  `string`| The link extra attribute that defines your gate numbers |
