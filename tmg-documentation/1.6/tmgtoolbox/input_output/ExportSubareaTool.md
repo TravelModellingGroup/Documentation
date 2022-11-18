@@ -67,7 +67,6 @@ Below contains details on how to add the tool to XTMF
 </figure>
 
 **3. Add all the class sub-module you want to run. You can add as many as you want.**
-
 <figure>
     <img src="images/add_module_to_class.png"
          alt="Add class sub-module">
@@ -81,7 +80,6 @@ Below contains details on how to add the tool to XTMF
 </figure>
 
 **4. Enter class sub-module parameters needed to run the tool.**
-
 <figure>
     <img src="images/class_modules.png"
          alt="">
@@ -89,7 +87,6 @@ Below contains details on how to add the tool to XTMF
 </figure>
 
 **5. (Optional) Add shape file location sub-module and set the name of the shape file to use.**
-
 <figure>
     <img src="images/post_run_add_shapefile_dir.png"
          alt="Add shape file sub-module">
@@ -103,7 +100,6 @@ Below contains details on how to add the tool to XTMF
 </figure>
 
 **6. Run model system**
-
 <figure>
     <img src="images/run_model.png"
          alt="">
@@ -118,7 +114,6 @@ Below contains details on how to add the tool to XTMF
 
 
 ## **Tutorial - Adding Export Subarea Tool within a GTAModel System in XTMF**
-
 The `ExportSubareaTool` can be added into a GTAModel model system under the post run.
 
 <figure>
