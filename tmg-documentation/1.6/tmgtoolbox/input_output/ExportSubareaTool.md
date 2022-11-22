@@ -47,7 +47,7 @@ Below contains details on how to add the tool to XTMF
 **1. Add the Export Subarea Tool Module to the Tools to execute or run in XTMF**
 <figure>
     <img src="images/add_module.png"
-         alt="Add Module" width="200"/>
+         alt="Add Module" width="600"/>
     <figcaption>Figure 1: Add Module</figcaption>
 </figure>
 
