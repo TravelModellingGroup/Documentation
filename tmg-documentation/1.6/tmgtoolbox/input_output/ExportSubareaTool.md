@@ -14,9 +14,10 @@ To use the `ExportSubareaTool`, the user must specify either of the followings t
 > * the gates link extra attributes - i.e., the centroid connectors within the subarea and links crossing the boundary (e.g., @gate)
 
 > [!NOTE]
-Latest version of this tool includes the ability to:
-> Optionally, use a polygon shapefile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.
-> More details can be found in the Emme Help of *Subarea (Tool Category)* on defining the subarea from the regional model and *Subarea O-D matrix* on defining the gate labels.
+> Latest version of this tool includes the ability to:<br>
+> \* To run this requires XTMF 1.11 and above to run<br>
+> \* Optionally, use a polygon shapefile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.<br>
+> \* More details can be found in the Emme Help of *Subarea (Tool Category)* on defining the subarea from the regional model and *Subarea O-D matrix* on defining the gate labels.<br>
 
 
 ## **Using the Tool with Modeller**
