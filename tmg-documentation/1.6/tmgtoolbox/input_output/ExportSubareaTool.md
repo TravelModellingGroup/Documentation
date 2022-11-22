@@ -169,4 +169,4 @@ The `ExportSubareaTool` can be added into a GTAModel model system under the post
     <figcaption align="center">Figure 11: Adding Export Subarea Tool in GTAModel</figcaption>
 </figure>
 
-The tutorial above to set up the module
+To set up the subarea tool, use the tutorial in the preceding section
