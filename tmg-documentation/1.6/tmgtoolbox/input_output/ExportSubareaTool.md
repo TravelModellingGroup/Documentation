@@ -57,14 +57,16 @@ Below contains details on how to add the tool to XTMF
     <figcaption>Figure 2: Search for and ExportSubareaTool</figcaption>
 </figure>
 
-**2. Enter all module parameters needed to run the tool.**
+
+#### **2. Enter all module parameters needed to run the tool.**
 <figure>
     <img src="images/export_subarea_tool_added.png"
          alt="Add subarea module parameters" width="600"/>
     <figcaption align="center">Figure 3: Enter subarea module parameters</figcaption>
 </figure>
 
-**3. Enter all class sub-module you want to run. You can add as many as you want.**
+
+#### **3. Enter all class sub-module you want to run. You can add as many as you want.**
 <figure>
     <img src="images/add_module_to_class.png"
          alt="Add class sub-module" width="600"/>
@@ -77,14 +79,16 @@ Below contains details on how to add the tool to XTMF
     <figcaption align="center">Figure 5: Add class sub-module </figcaption>
 </figure>
 
-**4. Enter class sub-module parameters needed to run the tool.**
+
+#### **4. Enter class sub-module parameters needed to run the tool.**
 <figure>
     <img src="images/class_modules.png"
          alt="" width="600"/>
     <figcaption align="center">Figure 6: Enter class module parameters</figcaption>
 </figure>
 
-**5. (Optional) Add shape file location sub-module and set the name of the shape file to use.**
+
+#### **5. (Optional) Add shape file location sub-module and set the name of the shape file to use.**
 <figure>
     <img src="images/post_run_add_shapefile_dir.png"
          alt="Add shape file sub-module" width="600"/>
@@ -97,7 +101,8 @@ Below contains details on how to add the tool to XTMF
     <figcaption align="center">Figure 8: Enter shapefile name </figcaption>
 </figure>
 
-**6. Run model system**
+
+#### **6. Run model system**
 <figure>
     <img src="images/run_model.png"
          alt="" width="600"/>
