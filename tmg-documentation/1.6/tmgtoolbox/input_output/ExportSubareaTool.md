@@ -45,7 +45,6 @@ The subarea tool can be added as many times (with a many classes as is needed)
 Below contains details on how to add the tool to XTMF
 
 **1. Add the Export Subarea Tool Module to the Tools to execute or run in XTMF**
-
 <figure>
     <img src="images/add_module.png"
          alt="Add Module">
@@ -59,20 +58,18 @@ Below contains details on how to add the tool to XTMF
 </figure>
 
 **2. Enter all module parameters needed to run the tool.**
-
 <figure>
     <img src="images/export_subarea_tool_added.png"
          alt="Add subarea module parameters">
     <figcaption>Figure 3: Enter subarea module parameters</figcaption>
 </figure>
 
-**3. Add all the class sub-module you want to run. You can add as many as you want.**
+**3. Enter all class sub-module you want to run. You can add as many as you want.**
 <figure>
     <img src="images/add_module_to_class.png"
-         alt="Add class sub-module">
+         alt="Add class sub-module" style="float: center"/>
     <figcaption>Figure 4: Add module (Ctrl + M) </figcaption>
 </figure>
-
 <figure>
     <img src="images/add_class.png"
          alt="">
@@ -89,13 +86,12 @@ Below contains details on how to add the tool to XTMF
 **5. (Optional) Add shape file location sub-module and set the name of the shape file to use.**
 <figure>
     <img src="images/post_run_add_shapefile_dir.png"
-         alt="Add shape file sub-module">
+         alt="Add shape file sub-module"/>
     <figcaption>Figure 7: Add shape file sub-module</figcaption>
 </figure>
-
 <figure>
     <img src="images/shapefile_directory.png"
-         alt="Enter shapefile name">
+         alt="Enter shapefile name"/>
     <figcaption>Figure 8: Enter shapefile name </figcaption>
 </figure>
 
@@ -105,7 +101,6 @@ Below contains details on how to add the tool to XTMF
          alt="">
     <figcaption>Figure 9: Run Model</figcaption>
 </figure>
-
 <figure>
     <img src="images/run_finished.png"
          alt="Run Finished">
@@ -128,22 +123,23 @@ The tutorial above to set up the module
 
 | Parameter `type`| Explanation|
 | :------------------- | :------------------- |
+|Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
+|Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
+|Create Gate Attribute `boolean`|Set this to TRUE to create gate labels for your network. NOTE: i & j link selections must be defined|
 |Extract Transit `boolean`|Set this to TRUE to export the subarea transit |
+|Iterations `integer`|The maximum number of iterations to run.|
 |I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
 |J Subarea Link Selection  `string`| The incoming connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
+|Normalized Gap `float`|The minimum gap required to terminate the algorithm.|
+|Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
+|Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.|
 |Subarea Output Folder  `string`| Folder directory to write output of the subarea database|
 |Subarea Node Attribute  `string`| The node attribute that will be used to define the subarea.|
 |Subarea Gate Attribute  `string`| The link extra attribute that defines your gate numbers |
-|Create Gate Attribute `boolean`|Set this to TRUE to create gate labels for your network. NOTE: i & j link selections must be defined|
-|Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
-|Best Relative Gap `float`|The minimum gap required to terminate the algorithm.| 
-|Iterations `integer`|The maximum number of iterations to run.|
-|Normalized Gap `float`|The minimum gap required to terminate the algorithm.|
-|Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.|
 |Relative Gap `float`|The minimum gap required to terminate the algorithm. |
 |Run Title `string`|The name of the run to appear in the logbook|
 |Scenario Number `integer`|The scenario number to execute against|
-|Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
+
 
 ### Sub-Module Parameter Explanation:  "Subarea Node Attribute Definition - Shape File"
 |Parameter  `type`|Explanation|
