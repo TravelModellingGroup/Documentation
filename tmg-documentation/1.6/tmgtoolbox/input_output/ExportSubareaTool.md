@@ -45,10 +45,10 @@ The subarea tool can be added as many times (with a many classes as is needed)
 Below contains details on how to add the tool to XTMF
 
 **1. Add the Export Subarea Tool Module to the Tools to execute or run in XTMF**
-<figure align="center">
+<figure>
     <img src="images/add_module.png"
-         alt="Add Module" width="600"/>
-    <figcaption>Figure 1: Add Module</figcaption>
+         alt="Add Module" width="600"  align="middle"/>
+    <figcaption align="middle">Figure 1: Add Module</figcaption>
 </figure>
 
 <figure>
