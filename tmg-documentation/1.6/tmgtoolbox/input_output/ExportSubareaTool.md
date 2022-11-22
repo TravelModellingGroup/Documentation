@@ -61,53 +61,53 @@ Below contains details on how to add the tool to XTMF
 <figure>
     <img src="images/export_subarea_tool_added.png"
          alt="Add subarea module parameters" width="600"/>
-    <figcaption>Figure 3: Enter subarea module parameters</figcaption>
+    <figcaption align="center">Figure 3: Enter subarea module parameters</figcaption>
 </figure>
 
 **3. Enter all class sub-module you want to run. You can add as many as you want.**
 <figure>
     <img src="images/add_module_to_class.png"
          alt="Add class sub-module" width="600"/>
-    <figcaption>Figure 4: Add module (Ctrl + M) </figcaption>
+    <figcaption align="center">Figure 4: Add module (Ctrl + M) </figcaption>
 </figure>
 
 <figure>
     <img src="images/add_class.png"
          alt="" width="600"/>
-    <figcaption>Figure 5: Add class sub-module </figcaption>
+    <figcaption align="center">Figure 5: Add class sub-module </figcaption>
 </figure>
 
 **4. Enter class sub-module parameters needed to run the tool.**
 <figure>
     <img src="images/class_modules.png"
          alt="" width="600"/>
-    <figcaption>Figure 6: Enter class module parameters</figcaption>
+    <figcaption align="center">Figure 6: Enter class module parameters</figcaption>
 </figure>
 
 **5. (Optional) Add shape file location sub-module and set the name of the shape file to use.**
 <figure>
     <img src="images/post_run_add_shapefile_dir.png"
          alt="Add shape file sub-module" width="600"/>
-    <figcaption>Figure 7: Add shape file sub-module</figcaption>
+    <figcaption align="center">Figure 7: Add shape file sub-module</figcaption>
 </figure>
 
 <figure>
     <img src="images/shapefile_directory.png"
          alt="Enter shapefile name" width="600"/>
-    <figcaption>Figure 8: Enter shapefile name </figcaption>
+    <figcaption align="center">Figure 8: Enter shapefile name </figcaption>
 </figure>
 
 **6. Run model system**
 <figure>
     <img src="images/run_model.png"
          alt="" width="600"/>
-    <figcaption>Figure 9: Run Model</figcaption>
+    <figcaption align="center">Figure 9: Run Model</figcaption>
 </figure>
 
 <figure>
     <img src="images/run_finished.png"
          alt="Run Finished" width="600"/>
-    <figcaption>Figure 10: Run Finished </figcaption>
+    <figcaption align="center">Figure 10: Run Finished </figcaption>
 </figure>
 
 
@@ -117,7 +117,7 @@ The `ExportSubareaTool` can be added into a GTAModel model system under the post
 <figure>
     <img src="images/post_run_export_subarea.png"
          alt="Add export subarea to GTAModel ">
-    <figcaption>Figure 11: Adding Export Subarea Tool in GTAModel</figcaption>
+    <figcaption align="center">Figure 11: Adding Export Subarea Tool in GTAModel</figcaption>
 </figure>
 
 The tutorial above to set up the module
