@@ -13,7 +13,6 @@ To use the `ExportSubareaTool`, the user must specify either of the followings t
 > * The node extra attributes within the subarea  that defines the subarea  (e.g., @nflag) 
 > * the gates link extra attributes - i.e., the centroid connectors within the subarea and links crossing the boundary (e.g., @gate)
 
-
 > [!NOTE]
 Latest version of this tool includes the ability to:
 > Optionally, use a polygon shapefile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.
@@ -30,7 +29,6 @@ The tool is called "ExportSubareaTool". It is available to add under ExecuteTool
 
 
 ### Module Parameter Explanation: "Export Subarea Tool"
-
 | Parameter `type`| Explanation|
 | :------------------- | :------------------- |
 |Background Transit `boolean`|Set this to FALSE to not assign transit vehicles on the roads.|
@@ -69,7 +67,6 @@ The tool is called "ExportSubareaTool". It is available to add under ExecuteTool
 |TollAttributeID `string`|The attribute containing the road tolls for this class of vehicle.|
 |VolumeAttribute `string`|The name of the attribute to save the volumes into (or None for no saving).|
 |Peak Hour Factor `float`|A factor to apply to the demand in order to build a representative hour.|
-
 
 
 ## **Tutorial - How to add the tool within XTMF**
