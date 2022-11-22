@@ -34,7 +34,7 @@ Adding the `ExportSubareaTool` to XTMF GUI requires following the following step
 
 * Add the Export Subarea Tool Module to the Tools to execute or run in XTMF
 * Enter all module parameters needed to run the tool. See module parameter explanation for "export subarea tool" below for more.
-* Add all the class sub-module you want to run. YOu add as many as you want.
+* Add all the class sub-module you want to run. You add as many as you want.
 * Add sub-module parameter needed to run the tool. See sub-module parameter explanation for "Traffic Classes".
 * Add shape file location sub-module and set the name of the shape file to use. This is required only if you want XTMF define a subarea based on a shapefile representing the subarea.
 * Run model system
