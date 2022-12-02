@@ -104,3 +104,9 @@ The `ExportSubareaTool` can be added into a GTAModel model system under the post
 </figure>
 
 To set up the subarea tool with all its parameters within a GTAModel system, use the tutorial in the preceding section.
+
+## **Next Steps** 
+
+<ul>
+    <li> Use [Add Export Subarea Tool to Modeller](AddTMGToolbox2Emme.md) if you are using Emme Notebook</li>
+</ul>

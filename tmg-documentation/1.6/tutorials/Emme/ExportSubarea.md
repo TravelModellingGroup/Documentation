@@ -7,15 +7,21 @@ In this workshop, we are going to learn how to use the TMG `ExportSubareaTool` t
 ## **Download resources needed to complete this tutorial**
 
 1. Regional Network (\*.NWP) file
-  <li>Frabitztown Network package [file](#)</li>
-
+    <ul>
+        <li>Frabitztown Network package [file](#)</li>
+    </ul>
+    
 2. Shapefile (\*.SHP) representing subarea to export
-  <li> Polygon [Shapefile](#) of the subarea within Frabitztown</li>
+    <ul>
+        <li> Polygon [Shapefile](#) of the subarea within Frabitztown</li>
+    </ul>
 
 3. TMGToolbox (\*.MTBX) files 
-  <li> [Toolbox is compatible with EMME 4.6.0+](#)</li>
-  <li> [Toolbox is compatible with EMME 4.4.4.2](#)</li>
-  
+    <ul>
+        <li> [Toolbox is compatible with EMME 4.6.0+](#)</li>
+        <li> [Toolbox is compatible with EMME 4.4.4.2](#)</li>
+    </ul>
+
 4. Completed [XTMF Model System file(*.XML)]()
 
 5. Sample [subarea output folder ]()
@@ -24,6 +30,13 @@ In this workshop, we are going to learn how to use the TMG `ExportSubareaTool` t
 > [!NOTE]
  >  Adding Export Subarea Tool to XTMF requires XTMF 1.11+.
 
+## **Set up XTMF or Emme Modeller**
+
+The subarea tool can be added to the Emme Modeller or XTMF.
+<ul>
+    <li> [Export Subarea Tutorial](ExportSubarea.md) if you are using Emme notebook or </li>
+    <li> [Add Export Subarea Tool to XTMF](AddSubareaTool2XTMF.md) if you are using XTMF</li>
+</ul>
 
 ## **Frabitztown Regional Network**
 
