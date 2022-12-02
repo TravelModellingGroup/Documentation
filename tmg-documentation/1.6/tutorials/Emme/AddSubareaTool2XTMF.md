@@ -3,6 +3,9 @@
 
 This tutorial shows how the subarea tool can be added to XTMF in general and also where to add it within the GTAModel setup in XTMF.
 
+> [!NOTE]
+ >  Adding Export Subarea Tool to XTMF requires XTMF 1.11+.
+
 ## **Tutorial - How to add the tool within XTMF**
 
 Adding the `ExportSubareaTool` to XTMF GUI requires following the following step:

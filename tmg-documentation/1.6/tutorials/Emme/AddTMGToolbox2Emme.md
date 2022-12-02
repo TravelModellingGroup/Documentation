@@ -60,3 +60,8 @@ c. You should get the below page (here we renamed to TMG Workshop – Export Sub
 </figure>
 
 d. We are ready to start writing the subarea tool JSON parameters.
+
+## **Next Steps**
+Now that Emme is setup, next step is to continue to 
+<li> [Export Subarea Tutorial](ExportSubarea.md) if you are using Emme notebook or </li>
+<li> [Add Export Subarea Tool to XTMF](AddSubareaTool2XTMF.md) if you are using XTMF</li>

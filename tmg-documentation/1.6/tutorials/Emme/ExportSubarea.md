@@ -3,17 +3,26 @@ The `ExportSubareaTool` is used to export the road network from a regional netwo
 
 In this workshop, we are going to learn how to use the TMG `ExportSubareaTool` to export a subarea from a regional network.
 
+
 ## **Download resources needed to complete this tutorial**
 
 1. Regional Network (\*.NWP) file
-  -  Frabitztown Network package [file](#)
+  <li>Frabitztown Network package [file](#)</li>
 
 2. Shapefile (\*.SHP) representing subarea to export
-  - Polygon [Shapefile](#) of the subarea within Frabitztown
+  <li> Polygon [Shapefile](#) of the subarea within Frabitztown</li>
 
 3. TMGToolbox (\*.MTBX) files 
-  - [Toolbox is compatible with EMME 4.6.0+](#)
-  - [Toolbox is compatible with EMME 4.4.4.2](#)
+  <li> [Toolbox is compatible with EMME 4.6.0+](#)</li>
+  <li> [Toolbox is compatible with EMME 4.4.4.2](#)</li>
+  
+4. Completed [XTMF Model System file(*.XML)]()
+
+5. Sample [subarea output folder ]()
+
+
+> [!NOTE]
+ >  Adding Export Subarea Tool to XTMF requires XTMF 1.11+.
 
 
 ## **Frabitztown Regional Network**
@@ -30,9 +39,9 @@ In this workshop, we will be exporting a subarea road & transit network from the
 
 **1. Define the node extra attribute (@nflag) used to hold the subarea definition**
 
-- Before running the Export subarea tool we must identify the nodes of the subarea we want to export from the regional network. The extra attribute @nflag is set to 1 representing the subarea or 0 otherwise.
-- If the regional network does not already have a node extra attribute defining the subarea, then there are various ways to define the subarea. 
-- The TMGToolbox Export Subarea Tool provides an optional method to define the subarea within a network using polygon shape files. To do this, the TMG `ExportSubareaTool` create an extra node attribute (e.g. @nflag) from the polygon shapefile provided, and set it to either 0 or 1 to define the subarea.
+<li> Before running the Export subarea tool we must identify the nodes of the subarea we want to export from the regional network. The extra attribute @nflag is set to 1 representing the subarea or 0 otherwise.
+<li> If the regional network does not already have a node extra attribute defining the subarea, then there are various ways to define the subarea. 
+<li> The TMGToolbox Export Subarea Tool provides an optional method to define the subarea within a network using polygon shape files. To do this, the TMG `ExportSubareaTool` create an extra node attribute (e.g. @nflag) from the polygon shapefile provided, and set it to either 0 or 1 to define the subarea.
 
 <figure>
     <img src="images/frabitztown_shapefile.png"
@@ -42,8 +51,8 @@ In this workshop, we will be exporting a subarea road & transit network from the
 
 **2. Define link attribute (@gate) used to hold the gate information.**
 
-- If the regional network does not have gate information defined, supplying all the centroid connections within the subarea as input parameters into the TMGToolbox Export Subarea Tool creates gate information for your network.
-- In this workshop, we will be setting the parameters i subarea link selection and j subarea link selection to all the centroid connections within the subarea. i.e. 
+<li> If the regional network does not have gate information defined, supplying all the centroid connections within the subarea as input parameters into the TMGToolbox Export Subarea Tool creates gate information for your network.</li>
+<li> In this workshop, we will be setting the parameters i subarea link selection and j subarea link selection to all the centroid connections within the subarea. i.e. </li>
 
 ```python
     "i_subarea_link_selection": "i=21,24 or i=27,28 or i=31,34", 
@@ -61,15 +70,15 @@ In this workshop, we will be exporting a subarea road & transit network from the
 
 ### **Prepare Export Subarea tool JSON parameters**
 So far we have prepared 
-- The needed input files (network files, shapefiles, etc.)
-- Identified all the centroid connections within our subarea to use for gate link selection
-
+<ul>
+    <li>The needed input files (network files, shapefiles, etc.)</li>
+    <li> Identified all the centroid connections within our subarea to use for gate link selection</li>
+</ul>
 Now we are going to prepare the JSON parameters needed to successfully run the subarea tool. Below is a sample parameter script. Parameter explanation can be found in the [Export Subarea Tool Documentation](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html)
 
 ```python
 
 #parameters
-
 scenario_number = "1"
 
 #Import Network Package parameters
@@ -116,8 +125,10 @@ on_road_ttf_ranges = "3-128"
 
 > [!CAUTION]
 > **Export Subarea Tool parameters require editing:**
- - Follow the code along exercise to fix export subarea tool parameters.
- - Frabitztown network does not have transit result stored.
+    <ul>
+        <li> Follow the code along exercise to fix export subarea tool parameters.</li>
+        <li> Frabitztown network does not have transit result stored.</li>
+    </ul>
 
 ### **Add the TMGToolbox to Emme Modeller**
 Follow this link to learn how to [add TMGToolbox to the Emme Modeller]().
