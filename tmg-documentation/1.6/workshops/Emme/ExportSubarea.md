@@ -134,6 +134,49 @@ Complete the following exercise to get the correct parameters above
         j_subarea_link_selection = "j=21,24 or j=27,28 or j=31,34"
         extract_transit = False 
     ```
+3. Add the script below to the below the parameters and run script
+    ```python
+            
+        import_matrix = m.tool("tmg.input_output.import_binary_matrix")
+        import_network = m.tool("tmg.input_output.import_network_package")
+        export_subarea_network = m.tool("tmg.input_output.export_subarea_tool")
+
+        import_network(network_file, scenario_number, conflict_option)
+        
+        import_matrix(matrix_type, matrix_number,import_file,scenario_number,matrix_description)
+        
+        export_subarea_network(
+            scenario_number,
+            modes,
+            demand_matrix_id,
+            time_matrix_id,
+            cost_matrix_id,
+            toll_matrix_id,
+            peak_hour_factor,
+            link_cost,
+            toll_weight,
+            iterations,
+            r_gap,
+            br_gap,
+            norm_gap,
+            shape_file_location,
+            i_subarea_link_selection,
+            j_subarea_link_selection,
+            subarea_gate_attribute,
+            subarea_node_attribute,
+            create_node_flag_from_shapefile,
+            create_gate_attrib,
+            extract_transit,
+            output_folder,
+            performance_flag,
+            run_title,
+            link_toll_attribute_id,
+            name_string,
+            result_attributes,
+            background_transit,
+            on_road_ttf_ranges,
+        )
+    ```
  > [!NOTE]
  > Running this tool within XTMF makes it much easier to manage. Learn more on how to set up the Export Subarea tool within XTMF/TMGToolbox and within a GTAModel System [here](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html#tutorial---how-to-add-the-tool-within-xtmf).
 
@@ -145,7 +188,7 @@ Complete the following exercise to get the correct parameters above
 <figure>
     <img src="images/frabitztown-subarea-network.png"
          alt="Frabitztown Subarea Network" style="width:600px;" />
-    <figcaption text-align="center">Figure 2: Frabitztown Subarea Network</figcaption>
+    <figcaption text-align="center">Figure 4: Frabitztown Subarea Network</figcaption>
 </figure>
 
 Detailed analysis of the trips into and out of the Frabitztown subarea.
