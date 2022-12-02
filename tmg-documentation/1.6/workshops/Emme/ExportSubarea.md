@@ -57,126 +57,95 @@ In this workshop, we will be exporting a subarea road & transit network from the
 </figure>
 
 
-## **Setting up EMME**
-
-### **Add the toolbox to Emme Modeller**
-
-a.	Open Emme modeller
-
-<figure>
-    <img src="images/open_modeller.png"
-         alt="Open Modeller in Emme Tools" style="width:600px;" />
-    <figcaption text-align="center">Figure 4: Modeller in Emme Tools</figcaption>
-</figure>
-
-b.	Click “Add a toolbox…”
-
- <figure>
-    <img src="images/add_toolbox.png"
-         alt="Add Downloaded TMG Toolbox" style="width:600px;" />
-    <figcaption text-align="center">Figure 5: Add Downloaded TMG Toolbox</figcaption>
-</figure>
-
-c.	Choose the .mtbx file path, enter a title and set the namespace to “tmg”
- 
-  <figure>
-    <img src="images/set_toolbox_file_path.png"
-         alt="Set file path, title and namespace " style="width:400px;" />
-    <figcaption text-align="center">Figure 6: Set new toolbox file path, title and namespace </figcaption>
-</figure>
-
-d.	Check to confirm the toolbox has been added and close the modeller
- 
- <figure>
-    <img src="images/confirm_toolbox_added.png"
-         alt=" Verify TMG Toolbox is added" style="width:600px;" />
-    <figcaption text-align="center">Figure 7: Verify TMG Toolbox is added</figcaption>
-</figure>
-
-### **Launch Emme Notebook**
-
-a. Launch EMME notebook
-  <figure>
-    <img src="images/launch_notebook.png"
-         alt="Launch EMME notebook" style="width:400px;" />
-    <figcaption text-align="center">Figure 8: Launch EMME notebook </figcaption>
-</figure>
-
-b. Create a new Python notebook and rename
-
-<figure>
-    <img src="images/create_and_rename_notebook.png"
-         alt="Create and rename a new python EMME notebook" style="width:400px;" />
-    <figcaption text-align="center">Figure 8: Create and rename a new python EMME notebook </figcaption>
-</figure>
-
-c. You should get the below page (here we renamed to TMG Workshop – Export Subarea)
- 
-<figure>
-    <img src="images/notebook_ready.png"
-         alt="Notebook ready for coding" style="width:600px;" />
-    <figcaption text-align="center">Figure 8: EMME notebook ready for coding </figcaption>
-</figure>
-
-d. We are ready to start writing the subarea tool JSON parameters.
-
-## **START CODING**
+## **Start Coding**
 
 ### **Prepare Export Subarea tool JSON parameters**
 So far we have prepared 
 - The needed input files (network files, shapefiles, etc.)
 - Identified all the centroid connections within our subarea to use for gate link selection
 
-Now we are going to prepare the JSON parameters needed to successfully run the subarea tool. Below is a sample parameter script. Parameter explanation can be found in the [Export Subarea Tool Documentation](https://tmg.utoronto.ca/doc/2.0/tmgtoolbox2_emme/tools/Export/ExportSubareaNetwork.html)
+Now we are going to prepare the JSON parameters needed to successfully run the subarea tool. Below is a sample parameter script. Parameter explanation can be found in the [Export Subarea Tool Documentation](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html)
 
 ```python
-parameters = {
-    "extract_transit": True,
-    "i_subarea_link_selection": "i=21,24 or i=27 or i=800000",
-    "j_subarea_link_selection": "j=21,389 or j=27 or j=31,34",
-    "scenario_number": 3,
-    "shape_file_location": "TestFiles/subarea_border.shp",
-    "subarea_output_folder": "TestFiles/Subarea",
-    "create_nflag_from_shapefile": True,
-    "create_gate_attribute": True,
-    "subarea_node_attribute": "@nflag",
-    "subarea_gate_attribute": "@gate",
-    "background_transit": True,
-    "br_gap": 0,
-    "iterations": 4,
-    "norm_gap": 0,
-    "performance_flag": True,
-    "r_gap": 0,
-    "run_title": "road assignment",
-    "sola_flag": True,
-    "mixed_use_ttf_ranges": [{"start": 3, "stop": 128}],
-    "traffic_classes": [
-        {
-            "name": "traffic class 1",
-            "mode": "c",
-            "demand_matrix": "mf10",
-            "time_matrix": "mf0",
-            "cost_matrix": "mf4",
-            "toll_matrix": "mf0",
-            "peak_hour_factor": 1,
-            "volume_attribute": "@auto_volume1",
-            "link_toll_attribute": " @toll",
-            "toll_weight": 1,
-            "link_cost": 0,
-        }
-    ],
-}
+
+#parameters
+
+scenario_number = "1"
+
+#Import Network Package parameters
+network_file = "test.nwp"
+conflict_option = "OVERWRITE"
+scenario_name = "Frabitztown"
+
+# Import Binary Matrix parameters
+matrix_type = 4
+matrix_number = "10"
+import_file =  "Test0.25.mtx"
+matrix_description = "demand matrix"
+
+# Export Subarea Tool parameters
+modes = "c"
+demand_matrix_id = "mf10"
+time_matrix_id = "mf0"
+cost_matrix_id = "mf0"
+toll_matrix_id = "mf1"
+peak_hour_factor = "1"
+link_cost = "0"
+toll_weight = "1"
+iterations = 4
+r_gap = 0
+br_gap = 0
+norm_gap = 0
+shape_file_location = "frab_shape/frab_border.shp"
+i_subarea_link_selection = "i"
+j_subarea_link_selection = "j"
+subarea_gate_attribute = "@gate"
+subarea_node_attribute = "@nflag"
+create_node_flag_from_shapefile = True
+create_gate_attrib = True
+extract_transit = True
+output_folder = "Subarea5"
+performance_flag = True
+run_title = "road assignment"
+link_toll_attribute_id = "@toll"
+name_string = "traffic class 1"
+result_attributes = "@auto_volume1"
+background_transit = True
+on_road_ttf_ranges = "3-128"
 ```
+
+> [!CAUTION]
+> **Export Subarea Tool parameters require editing:**
+ - Follow the code along exercise to fix export subarea tool parameters.
+ - Frabitztown network does not have transit result stored.
+
+### **Add the TMGToolbox to Emme Modeller**
+Follow this link to learn how to [add TMGToolbox to the Emme Modeller]().
+
 ### **Code Along Exercise**
 
 Complete the following exercise to get the correct parameters above
 
 1. Copy the above parameters into the EMME notebook
-2. Set the parameters below to match the frabitztown network:
- - `i_subarea_link_selection to i=21,24 or i=27,28 or i=31,34`
- - `j_subarea_link_selection to j=21,24 or j=27,28 or j=31,34`
- - `shape_file_location`
- - `subarea_output_folder`
- - `extract_transit to False (because the Frabitztown network does not have transit result stored.)`
+2. Edit the three Export Subarea Tool parameters above to match the following:
+
+    ```python
+        i_subarea_link_selection = "i=21,24 or i=27,28 or i=31,34"
+        j_subarea_link_selection = "j=21,24 or j=27,28 or j=31,34"
+        extract_transit = False 
+    ```
+ > [!NOTE]
+ > Running this tool within XTMF makes it much easier to manage. Learn more on how to set up the Export Subarea tool within XTMF/TMGToolbox and within a GTAModel System [here](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html#tutorial---how-to-add-the-tool-within-xtmf).
+
+ ### **Output - Export Subarea Tool**
+
+ The tool outputs a folder that contains a new database containing only the network of the subarea. After loading the emmebank into Emme, the subarea of the Frabitztown regional network looks like
 
 
+<figure>
+    <img src="images/frabitztown-subarea-network.png"
+         alt="Frabitztown Subarea Network" style="width:600px;" />
+    <figcaption text-align="center">Figure 2: Frabitztown Subarea Network</figcaption>
+</figure>
+
+Detailed analysis of the trips into and out of the Frabitztown subarea.
