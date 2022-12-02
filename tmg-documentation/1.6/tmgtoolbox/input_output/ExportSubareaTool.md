@@ -82,7 +82,7 @@ Adding the `ExportSubareaTool` to XTMF GUI requires following the following step
 * Run model system
 
 > [!NOTE]
-The subarea tool can be added as many times (with a many classes as is needed)
+The subarea tool can be added as many times (within as many classes as is needed)
 
 Below contains details on how to add the tool to XTMF
 
