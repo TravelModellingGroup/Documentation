@@ -1,5 +1,13 @@
 # **Add the toolbox to EMME**
 
+## **Download resources needed to complete this tutorial**
+
+TMGToolbox (\*.MTBX) files 
+    <ul>
+        <li> [Toolbox is compatible with EMME 4.6.0+](download/3b.TMGToolbox_MTBX_Python3.zip)</li>
+        <li> [Toolbox is compatible with EMME 4.4.4.2](download/3a.TMGToolbox_MTBX.zip)</li>
+    </ul>
+
 ## **Add the toolbox to Emme Modeller**
 
 a.	Open Emme modeller
