@@ -8,23 +8,23 @@ In this workshop, we are going to learn how to use the TMG `ExportSubareaTool` t
 
 1. Regional Network (\*.NWP) file
     <ul>
-        <li>Frabitztown Network package [file](#)</li>
+        <li> [Frabitztown regional network package file](download/1.frabiztown.zip)</li>
     </ul>
     
 2. Shapefile (\*.SHP) representing subarea to export
     <ul>
-        <li> Polygon [Shapefile](#) of the subarea within Frabitztown</li>
+        <li> Polygon [Shapefile](download/2.frabiztown_shapefile.zip) of the subarea within Frabitztown</li>
     </ul>
 
 3. TMGToolbox (\*.MTBX) files 
     <ul>
-        <li> [Toolbox is compatible with EMME 4.6.0+](#)</li>
-        <li> [Toolbox is compatible with EMME 4.4.4.2](#)</li>
+        <li> [Toolbox is compatible with EMME 4.6.0+](download/3b.TMGToolbox_MTBX_Python3.zip)</li>
+        <li> [Toolbox is compatible with EMME 4.4.4.2](download/3a.TMGToolbox_MTBX.zip)</li>
     </ul>
 
-4. Completed [XTMF Model System file(*.XML)]()
+4. Completed [XTMF Model System file(*.XML)](download/4.export_subarea_model_system.zip)
 
-5. Sample [subarea output folder ]()
+5. Sample [subarea output folder ](download/5.sample_output_folder.zip)
 
 
 > [!NOTE]
