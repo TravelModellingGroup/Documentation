@@ -134,7 +134,7 @@ if <condition>:
     pass
 ```
 
-In the folling code we will compare against a variable `x` and only print out
+In the following code we will compare against a variable `x` and only print out
 if x is less than 1, exactly one, or greater than one.  You can modify `x` to
 see that one one of the branches is taken and then execution resumes once
 we have moved back our tabbing.
