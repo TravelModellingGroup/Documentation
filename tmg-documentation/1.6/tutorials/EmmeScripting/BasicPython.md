@@ -65,7 +65,7 @@ print(x)
 # Add two to x and assign it to x
 x = x + 2
 print(x)
-# Subtract one from x  and assign it to x
+# Subtract one from x and assign it to x
 x = x - 1
 print(x)
 # Divide 2 from x and assign it to x
@@ -136,7 +136,7 @@ if <condition>:
 
 In the following code we will compare against a variable `x` and only print out
 if x is less than 1, exactly one, or greater than one.  You can modify `x` to
-see that one one of the branches is taken and then execution resumes once
+see that one of the branches is taken and then execution resumes once
 we have moved back our tabbing.
 
 Code:
@@ -255,7 +255,7 @@ x = {
 }
 ```
 
-We can can add an additional name to that dictionary using the following code:
+We can add an additional name to that dictionary using the following code:
 
 ```python
 x[4] = "James"
@@ -292,6 +292,68 @@ for x in range(3):
 1
 2
 3
+```
+
+We can also implement function that are able to return values.
+
+Code:
+```python
+def add(x, y):
+    return x + y
+
+x = add(1, 2)
+print(x)
+```
+
+Output:
+```console
+3
+```
+
+## 13. Classes
+
+The next level of abstraction that we will cover in Python are classes.  A `class` is a grouping of data
+and operations that allows us to help simplify the design of a system by restricting, as much as we can,
+correlation within the class.
+
+Below we will write a simple class that implements a stack data structure.
+
+```python
+class Stack:
+    def __init__(self):
+        self._data = []
+
+    def push(self, value):
+        self._data.append(value)
+
+    def pop(self):
+        if len(self._data) > 0:
+            return self._data.pop()
+        else:
+            return 0
+```
+
+In our case, if there is no data left to pop we will just continue to return zeros.
+
+You can also extend the functionality of a class through inheritance.
+
+```python
+class FancyStack(Stack):
+    def fancy_push(self):
+        self._data.append("fancy")
+```
+
+We can use this class with the following code:
+
+```python
+x = FancyStack()
+x.fancy_push()
+# Note: Don't use member variables directly if they start with an underscore
+print(x._data)
+```
+
+```console
+['fancy']
 ```
 
 ## Next Steps
