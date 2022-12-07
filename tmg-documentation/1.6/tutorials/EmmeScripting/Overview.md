@@ -5,6 +5,9 @@ EMME's class structure, scripting a simple algorithm editing a network, and fina
 an EMME Tool.  This tutorial is designed to work with both EMME 4's which use Python 2.X (EMME 4.0-EMME 4.4.5.1)
 and Python 3 (EMME 4.6.0+).
 
+If you already have an understanding of Python and EMME you might prefer the [How to write Emme tools](../../tmgtoolbox/how_to_write_emme_tool.md) tutorial.
+That tutorial will walk you directly into creating a custom tool with example code.
+
 ## Steps
 
 1. [Launching Jupyter Notebook From EMME](LaunchingNotebook.md)
