@@ -4,8 +4,8 @@
 
 TMGToolbox (\*.MTBX) files 
     <ul>
-        <li> [Toolbox is compatible with EMME 4.6.0+](download/3b.TMGToolbox_MTBX_Python3.zip)</li>
-        <li> [Toolbox is compatible with EMME 4.4.4.2](download/3a.TMGToolbox_MTBX.zip)</li>
+        <li> [Toolbox is compatible with EMME 4.6.0+](https://tmg.utoronto.ca/files/tutorials/3b.TMGToolbox_MTBX_Python3.zip)</li>
+        <li> [Toolbox is compatible with EMME 4.4.4.2](https://tmg.utoronto.ca/files/tutorials/3a.TMGToolbox_MTBX.zip)</li>
     </ul>
 
 ## **Add the toolbox to Emme Modeller**
