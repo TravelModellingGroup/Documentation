@@ -1,0 +1,3 @@
+# EMME Class Structure
+
+TODO:
