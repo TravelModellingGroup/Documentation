@@ -14,7 +14,9 @@ find the code for this tool [here](https://github.com/TravelModellingGroup/TMG.E
 
 ## **Using the Tool with XTMF2**
 
-> [!CAUTION] > **NOTE TMG Modeller**: Update (and delete this warning) the location where Filter GTFS For Service Id And Routes tool could be found when within the model system in XTMF2.
+> [!CAUTION] 
+> **NOTE TMG Modeller**: Update (and delete this warning) the location where Filter GTFS
+> For Service Id And Routes tool could be found when within the model system in XTMF2.
 
 Using XTMF2 graphical user interface, parameters (defined below) needed to run the `FilterGTFSForServiceIdAndRoutes` tool can be set by the users. This tool is called `FilterGTFSForServiceIdAndRoutes`. In **XTMF2**, it is available to add within a model system under **_ExecuteToolsFromModellerResource_** or **_EmmeToolsToRun_**.
 
