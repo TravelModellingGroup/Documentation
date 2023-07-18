@@ -23,9 +23,16 @@ Destination parking costs are applied for Non-home destined trips based on the a
 The carpool mode in GTAModel V4.0 is meant to represent inter household passenger trips, including taxi (GTAModel V4.0 only).
 Explicitly this does not include passenger trips facilitated by household members.
 
+### School bus
+
+The school bus mode for GTAAModel V4.0+ provides a simple mode that is only allowed to go to or from a school activity.  This mode does not explicitly model school buses
+however provides a utility based on the age of the student, the distance of the trip, and the auto travel times.
+
 ### DAT (Drive-Access-Transit)
 
-The drive access transit mode is the only tour based mode in GTAModel V4.0, where the utility of the mode depends on an entire tour as opposed to an individual trip.  External to the model is an access station choice model that defines feasible zone pairs and provides a logsum of the different station choices.  If this mode is chosen a discrete access station choice will be generated for integration into the EMME demand matrices.
+The drive access transit mode is the only tour based mode in GTAModel V4.0, where the utility of the mode depends on an entire tour as opposed to an individual trip.
+External to the model is an access station choice model that defines feasible zone pairs and provides a logsum of the different station choices.
+If this mode is chosen a discrete access station choice will be generated for integration into the EMME demand matrices.
 
 The access station choice model is described here.
 
