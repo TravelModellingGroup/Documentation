@@ -16,8 +16,15 @@ To use the `ExportSubareaTool`, the user must specify either of the followings t
 > [!NOTE]
 > Latest version of this tool includes the ability to:<br>
 > \* To run this requires XTMF 1.11 and above to run<br>
-> \* Optionally, use a polygon shapefile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.<br>
+> \* Optionally, use a polygon ShapeFile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.<br>
 > \* More details can be found in the Emme Help of *Subarea (Tool Category)* on defining the subarea from the regional model and *Subarea O-D matrix* on defining the gate labels.<br>
+
+> [!WARNING]
+> We noticed that the traversal analysis logic in EMME does not scale on Many-Core systems particularly well, where past the optimal point there is exponential run-time.<br/>
+> In `XTMF1.12` we have added a new parameter `Max Cores` to control the number of threads used.<br/>
+> For AMD Zen2 based CPUs we have found that 8 is the optimal number of cores.<br/>
+> For AMD Zen3/4+ based CPUs we recommend using 16.<br/>
+> We have defaulted to using 16 cores moving forward.<br/>
 
 
 ## **Using the Tool with Modeller**
@@ -39,6 +46,7 @@ The tool is called "ExportSubareaTool". It is available to add under ExecuteTool
 |Iterations `integer`|The maximum number of iterations to run.|
 |I Subarea Link Selection  `string`|The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "i=21,24 or i=27 or i=31,34"|
 |J Subarea Link Selection  `string`| The incoming connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. "j=21,24 or j=27 or j=31,34"|
+|Max Cores `integer` `XTMF1.12+` | Set this to the maximum number of CPU cores that the subarea SOLA is allowed to use.  We have noticed exponential performance deterioration if run with more than 16. |
 |Normalized Gap `float`|The minimum gap required to terminate the algorithm.|
 |Mixed Used TTF Ranged `range set`|The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.|
 |Performance Mode `boolean`|Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.|
@@ -82,7 +90,7 @@ Adding the `ExportSubareaTool` to XTMF GUI requires following the following step
 * Run model system
 
 > [!NOTE]
-The subarea tool can be added as many times (within as many classes as is needed)
+> The subarea tool can be added as many times (with as many classes as is needed)
 
 Below contains details on how to add the tool to XTMF
 
