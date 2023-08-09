@@ -11,7 +11,7 @@ In this workshop, we are going to learn how to use the TMG `ExportSubareaTool` t
         <li> [Frabitztown regional network package file](https://tmg.utoronto.ca/files/tutorials/1.frabiztown.zip)</li>
     </ul>
     
-2. Shapefile (\*.SHP) representing subarea to export
+2. ShapeFile (\*.SHP) representing subarea to export
     <ul>
         <li> Polygon [Shapefile](https://tmg.utoronto.ca/files/tutorials/2.frabiztown_shapefile.zip) of the subarea within Frabitztown</li>
     </ul>
@@ -52,14 +52,15 @@ In this workshop, we will be exporting a subarea road & transit network from the
 
 **1. Define the node extra attribute (@nflag) used to hold the subarea definition**
 
-<li> Before running the Export subarea tool we must identify the nodes of the subarea we want to export from the regional network. The extra attribute @nflag is set to 1 representing the subarea or 0 otherwise.
-<li> If the regional network does not already have a node extra attribute defining the subarea, then there are various ways to define the subarea. 
-<li> The TMGToolbox Export Subarea Tool provides an optional method to define the subarea within a network using polygon shape files. To do this, the TMG `ExportSubareaTool` create an extra node attribute (e.g. @nflag) from the polygon shapefile provided, and set it to either 0 or 1 to define the subarea.
+<li> Before running the Export subarea tool we must identify the nodes of the subarea we want to export from the regional network. The extra attribute @nflag is set to 1 representing the subarea or 0 otherwise.</li>
+<li> If the regional network does not already have a node extra attribute defining the subarea, then there are various ways to define the subarea. </li>
+<li> The TMGToolbox Export Subarea Tool provides an optional method to define the subarea within a network using polygon shape files. To do this, the TMG ExportSubareaTool
+create an extra node attribute (e.g. @nflag) from the polygon ShapeFile provided, and set it to either 0 or 1 to define the subarea.</li>
 
 <figure>
     <img src="images/frabitztown_shapefile.png"
-         alt="Subarea Polygon Shapefile within Frabitztown Network" style="width:600px;" />
-    <figcaption text-align="center">Figure 2: Subarea Polygon Shapefile within Frabitztown Network</figcaption>
+         alt="Subarea Polygon ShapeFile within Frabitztown Network" style="width:600px;" />
+    <figcaption text-align="center">Figure 2: Subarea Polygon ShapeFile within Frabitztown Network</figcaption>
 </figure>
 
 **2. Define link attribute (@gate) used to hold the gate information.**
@@ -84,7 +85,7 @@ In this workshop, we will be exporting a subarea road & transit network from the
 ### **Prepare Export Subarea tool JSON parameters**
 So far we have prepared 
 <ul>
-    <li>The needed input files (network files, shapefiles, etc.)</li>
+    <li>The needed input files (network files, shapeFiles, etc.)</li>
     <li> Identified all the centroid connections within our subarea to use for gate link selection</li>
 </ul>
 Now we are going to prepare the JSON parameters needed to successfully run the subarea tool. Below is a sample parameter script. Parameter explanation can be found in the [Export Subarea Tool Documentation](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html)
@@ -134,6 +135,7 @@ name_string = "traffic class 1"
 result_attributes = "@auto_volume1"
 background_transit = True
 on_road_ttf_ranges = "3-128"
+max_cores = 16 # XTMF 1.12+
 ```
 
 > [!CAUTION]
@@ -199,6 +201,7 @@ Complete the following exercise to get the correct parameters above
             result_attributes,
             background_transit,
             on_road_ttf_ranges,
+            max_cores  # XTMF 1.12+
         )
     ```
  > [!NOTE]
