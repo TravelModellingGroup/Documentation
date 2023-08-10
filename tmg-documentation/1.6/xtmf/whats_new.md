@@ -1,5 +1,71 @@
 # What's new in XTMF 
 
+## Version 1.12
+
+> [!WARNING]
+> This version of XTMF uses the new .Net 7.0 and will not work if you just directly
+> paste it directly over previous versions of XTMF.  If your copy of XTMF contains
+> additional libraries not distributed by TMG, you will need to copy those .dll
+> files into the `Modules` directory of your XTMF installation folder.
+
+
+New Features:
+* Supports EMME 2023.
+* Updated to .Net 7.0.
+* Fixed regression in the transit assignment tool.
+* Improved performance for ExportSubarea tool by adding a max core count.
+* Improved stability when opening/saving projects on network drives.
+* Improved performance of GTAModel V4 when running on high core count machines.
+
+
+Change Log:
+* Update references to XTMF 1.12. by @JamesVaughan in [160](https://github.com/TravelModellingGroup/XTMF/pull/160)
+* Stta xtmf1 by @wdiogu in [161](https://github.com/TravelModellingGroup/XTMF/pull/161)
+* Edit parameters by @wdiogu in [162](https://github.com/TravelModellingGroup/XTMF/pull/162)
+* add parameter descriptions by @wdiogu in [163](https://github.com/TravelModellingGroup/XTMF/pull/163)
+* Adds support for the new AddTransferTimeAdjustments tool. by @JamesVaughan in [164](https://github.com/TravelModellingGroup/XTMF/pull/164)
+* Rearranged files by @wdiogu in [165](https://github.com/TravelModellingGroup/XTMF/pull/165)
+* Added the codes for calculate and copy background traffic by @wdiogu in [166](https://github.com/TravelModellingGroup/XTMF/pull/166)
+* DotNet7 by @JamesVaughan in https://github.com/TravelModellingGroup/XTMF/pull/167
+* added ability to choose create tvph or not in STTA by @wdiogu in [168](https://github.com/TravelModellingGroup/XTMF/pull/168)
+* Fix Command Line Build by @JamesVaughan in [169](https://github.com/TravelModellingGroup/XTMF/pull/169)
+* Fix Assigning Linked Parameter by @JamesVaughan in [170](https://github.com/TravelModellingGroup/XTMF/pull/170)
+* Rename Module and Description fix. by @JamesVaughan in [171](https://github.com/TravelModellingGroup/XTMF/pull/171)
+* Fix Recent Projects by @JamesVaughan in [172](https://github.com/TravelModellingGroup/XTMF/pull/172)
+* Aggregations for Network Calculations in  EMME by @JamesVaughan in [173](https://github.com/TravelModellingGroup/XTMF/pull/173)
+* Fix Enter moving to next parameter by @JamesVaughan in [174](https://github.com/TravelModellingGroup/XTMF/pull/174)
+* Created Publishing profiles. by @JamesVaughan in [175](https://github.com/TravelModellingGroup/XTMF/pull/175)
+* Fix unit tests for ODC. by @JamesVaughan in [176](https://github.com/TravelModellingGroup/XTMF/pull/176)
+* Fixes from STTA setup + New tool to set has transit or traffic by @wdiogu in [177](https://github.com/TravelModellingGroup/XTMF/pull/177)
+* Tasha performance by @JamesVaughan in [178](https://github.com/TravelModellingGroup/XTMF/pull/178)
+* Reduce DAT memory usage. by @JamesVaughan in [179](https://github.com/TravelModellingGroup/XTMF/pull/179)
+* Upgrade DirectorySeperatedPathFromOutputDirectory by @JamesVaughan in [180](https://github.com/TravelModellingGroup/XTMF/pull/180)
+* Remove Newtonsoft.JSON references by @JamesVaughan in [181](https://github.com/TravelModellingGroup/XTMF/pull/181)
+* Update references to external libraries. by @JamesVaughan in [182](https://github.com/TravelModellingGroup/XTMF/pull/182)
+* Add modules for converting matrices and vectors between zone systems. by @JamesVaughan in [183](https://github.com/TravelModellingGroup/XTMF/pull/183)
+* Use Matrix zone system for ConvertMatrixIntoZoneSystem by @JamesVaughan in [184](https://github.com/TravelModellingGroup/XTMF/pull/184)
+* Revert to MaterialDesign 0.2.8 to fix hint text by @JamesVaughan in [185](https://github.com/TravelModellingGroup/XTMF/pull/185)
+* Add nullable to interfaces by @JamesVaughan in [186](https://github.com/TravelModellingGroup/XTMF/pull/186)
+* Added a new module for loading in a matrix for a given zone system. by @JamesVaughan in [187](https://github.com/TravelModellingGroup/XTMF/pull/187)
+* Create Square SparseTwinIndex with 2D data by @JamesVaughan in [194](https://github.com/TravelModellingGroup/XTMF/pull/194)
+* Dispose IDisposable modules by @JamesVaughan in [195](https://github.com/TravelModellingGroup/XTMF/pull/195)
+* Fix no keyboard focus when renaming. by @JamesVaughan in [196](https://github.com/TravelModellingGroup/XTMF/pull/196)
+* Clear Keyboard Focus when opening a StringRequestDialog. by @JamesVaughan in [197](https://github.com/TravelModellingGroup/XTMF/pull/197)
+* Return Keyboard Focus for StringRequests by @JamesVaughan in [198](https://github.com/TravelModellingGroup/XTMF/pull/198)
+* Add option to paste multiple parameters from a Spreadsheet. by @JamesVaughan in [199](https://github.com/TravelModellingGroup/XTMF/pull/199)
+* Fix regression in V4.1 place of school assignment by @JamesVaughan in [200](https://github.com/TravelModellingGroup/XTMF/pull/200)
+* Synchronize TMGToolbox by @JamesVaughan in [201](https://github.com/TravelModellingGroup/XTMF/pull/201)
+* Force Keyboard focus by @JamesVaughan in [203](https://github.com/TravelModellingGroup/XTMF/pull/203)
+* Fix AddTransferTimeAdjustmentsFromCSV by @JamesVaughan in [202](https://github.com/TravelModellingGroup/XTMF/pull/202)
+* Added Scaling Parameters for AutoOwnership by @JamesVaughan in [204](https://github.com/TravelModellingGroup/XTMF/pull/204)
+* Update Subarea tool by @JamesVaughan in [205](https://github.com/TravelModellingGroup/XTMF/pull/205)
+* Enable delayed loading of model systems by @JamesVaughan in [206](https://github.com/TravelModellingGroup/XTMF/pull/206)
+* Fix renaming a model system that is not loaded. by @JamesVaughan in [207](https://github.com/TravelModellingGroup/XTMF/pull/207)
+* Removed self update. by @JamesVaughan in [208](https://github.com/TravelModellingGroup/XTMF/pull/208)
+* Fixed tab overhang by @JamesVaughan in [209](https://github.com/TravelModellingGroup/XTMF/pull/209)
+
+Full Changelog: [1.11.1414...1.12.1418](https://github.com/TravelModellingGroup/XTMF/compare/1.11.1414...1.12.1418)
+
 ## Version 1.11
 
 > [!NOTE]
@@ -10,7 +76,7 @@
 New Features
 * Searching a model system now also searches parameter names and their values!
 * Calibrating Start Times for TASHA activity episodes.
-* New Export Subarea Tool - Documentation can be found here!
+* New Export Subarea Tool - Documentation can be found [here](/1.6/tmgtoolbox/input_output/ExportSubareaTool.html)!
 
 What's Changed
 * Fix Start Time Adjustments by @JamesVaughan in [#159](https://github.com/TravelModellingGroup/XTMF/pull/159)
