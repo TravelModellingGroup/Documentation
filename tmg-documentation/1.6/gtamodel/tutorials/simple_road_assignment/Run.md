@@ -23,7 +23,7 @@ The results matrices in the outputs folder:<br />
 <br />
 <br />
 These results are best viewed in Emme. In order to do this, import the matrix into Emme using the TMG toolbox. Go to:<br />
-Emme > Modeller > TMG Toolbox > Input Output > Import Binary Matrix.<br /> 
+`Emme > Modeller > TMG Toolbox > Input Output > Import Binary Matrix` <br /> 
 Under 'Import File' select your XTMF matrix results. Under 'Matrix' select an existing matrix corresponding to the results of yours, or create a new category.
 To view the matrix, click 'New matrix table' under the explorer tab, and select your matrix under 'O-D Value'. The O-D Value field takes expressions, and operations between matrices can be done here if you'd like.
 
