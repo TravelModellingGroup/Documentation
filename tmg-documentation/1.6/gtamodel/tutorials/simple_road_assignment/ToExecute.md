@@ -39,7 +39,7 @@
 ![alt text](images/Slide34.jpg "ExtraAttributeContextManager Module")
 <br />
 <br />
-* Step 2: Add the extra attributes to *Attribute To Create** module<br />
+* Step 2: Add the extra attributes to *Attribute To Create** module and right click each attribute to rename it<br />
 ![alt text](images/Slide35.jpg "Add the extra attributes")
 <br />
 <br />
@@ -49,7 +49,7 @@
   ![alt text](images/Slide37.jpg "Calc407Tolls")<br />
   2. ImportBinaryMatrixIntoEmme (Import Demand Matrix)
   ![alt text](images/Slide38.jpg "ImportBinaryMatrixIntoEmme")<br />
-  3. TollAttributeRoadAssignment (Road Assignment Settings)
+  3. TollAttributeRoadAssignment (Road Assignment Settings), parameter 'On Road TTFs' is missing from the example image, leave as default value 3-128. Leave 'Tallies' sub-module empty
   ![alt text](images/Slide39.jpg "TollAttributeRoadAssignment")<br />
   4. ExportBinaryMatrixFromEmme (Export Auto Travel Cost Matrix)
   ![alt text](images/Slide40.jpg "Export ACOST Matrix")<br />
