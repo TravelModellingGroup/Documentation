@@ -110,88 +110,108 @@ The following tables give the conversions for the variables in the formulas to c
 #### Activity Generation ID Formulas
 
 ##### Primary Work
-\begin{equation}
+
+$$
 id = (ageOffset * 8) + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Secondary Work
 
-\begin{equation}
+
+$$
 id = 32 + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Work Based Business
 
-\begin{equation}
+
+$$
 id = 40 + (ageOffset * 8) + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Work At Home Business
 
-\begin{equation}
+
+$$
 id = 72 + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### School
 
-\begin{equation}
+
+$$
 id = 84 + (ageOffset * 2) + occupationOffset
-\end{equation}
+
+$$
 
 ##### Return From Work
 
-\begin{equation}
+
+$$
 id = 94 + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Individual Other
 
-\begin{equation}
+
+$$
 id = 102 + ( ageOffset * 12 ) + workProjestStatus +
 \begin{cases}
 6, & Female \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Joint Other
 
-\begin{equation}
+
+$$
 id = 158 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
-\end{equation}
+
+$$
 
 ##### Market
 
-\begin{equation}
+
+$$
 id = 182 + ( ageOffset * 14 ) + workProjestStatus +
 \begin{cases}
 7, & Female \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Joint Market
 
-\begin{equation}
+
+$$
 id = 238 + ( baseOffset + childOffset ) + ( adultOffset * 4 ) + statusOffset
-\end{equation}
+
+$$

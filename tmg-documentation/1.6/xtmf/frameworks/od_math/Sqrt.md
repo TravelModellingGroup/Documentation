@@ -2,7 +2,8 @@
 
 Performs Square Root on the input parameter. `XTMF 1.8+`
 
-\begin{equation}
+
+$$
 A = \begin{bmatrix}
     -1 & 2          \\\\
     3 & -4
@@ -18,41 +19,52 @@ C = \begin{bmatrix}
 D = \begin{bmatrix}
     -1 & 3
 \end{bmatrix}
-\end{equation}
+
+$$
 
 ### Sqrt(Matrix) = Matrix
 
-\begin{equation}
+
+$$
 Sqrt(A) = \begin{bmatrix}
     NaN & 1.4142136 \\\\
     1.732051 & NaN
 \end{bmatrix}
-\end{equation}
 
-\begin{equation}
+$$
+
+
+$$
 Sqrt(B) = \begin{bmatrix}
     1.4142136 &  2\\\\
     2.4494897 & 2.8284271
 \end{bmatrix}
-\end{equation}
+
+$$
 
 ### Sqrt(Vector) = Vector
 
-\begin{equation}
+
+$$
 Sqrt(C) = \begin{bmatrix}
     NaN \\\\
     1.732051
 \end{bmatrix}
-\end{equation}
 
-\begin{equation}
+$$
+
+
+$$
 Sqrt(D) = \begin{bmatrix}
     NaN & 1.732051
 \end{bmatrix}
-\end{equation}
+
+$$
 
 ### Sqrt(Scalar) = Scalar
 
-\begin{equation}
+
+$$
 Sqrt(1) = 1
-\end{equation}
+
+$$

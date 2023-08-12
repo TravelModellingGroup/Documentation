@@ -29,16 +29,20 @@ the model uses the Emme congested transit assignment procedure.  This procedure 
 In this case the conical volume-delay function is used, with different functions being used for heavy rail (commuter rail and subway), light rail (streetcars and LRT), local buses 
 and regional buses (i.e. GO). 
 
-\begin{equation}
+
+$$
 f(x) = weight\left(1 + \sqrt{\alpha^{2}\left(1 - x\right)^2+\beta^2}-\alpha\left(1 - x\right)-\beta\right)
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 \beta = \frac{2\alpha - 1}{2\alpha - 2} \\\\
 \alpha \text{ is similar to the exponential term in the BPR function}
-\end{equation}
+
+$$
 
 The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated,
 one for each of the 5 different TTF functions (for various services/modes). The weights for all TTFs are fixed at 1. 
@@ -49,20 +53,28 @@ The speeds of surface transits were previously based on GTFS data, where the Sha
 
 For each segment of the surface transit line, the travel time on that section is assumed to be a function of the Auto Travel Time on that section, plus an additional dwell time to account for the number of stops and the number of passengers boarding and alighting. An auto correlation factor (β<sub>1</sub>) is estimated to account for the fact that transit vehicles travel at different speeds than auto vehicles, using the following equations:
 
-\begin{equation}
+
+$$
 \beta_1 = \frac{Transit Running Time}{Auto Time} \\\\
-\end{equation}
+
+$$
 
 where,
-\begin{equation}
+
+$$
 \text{ Transit Running Time = Total Transit Time - Total Dwell Time} \\\\
-\end{equation}
-\begin{equation}
+
+$$
+
+$$
 \text{ Auto Time is obtained from an EMME Road Assignment} \\\\
-\end{equation}
-\begin{equation}
+
+$$
+
+$$
 TotalDwellTime = \Gamma_5 \left(\frac{TotalBoardingsInTimePeriod}{Runs}\right) + \Gamma_6 \left(\frac{TotalAlightingsInTimePeriod}{Runs}\right) + \sum_{stops} DefaultDurationPerStop \\\\
-\end{equation}
+
+$$
 
 The STSU model is estimated for all time periods for three types of surface transit, including Local Bus, GO Bus, and Streetcar. Though the model closely represents the nature of surface transit travel behaviour, it is subjected to two assumptions: a) automobile travel time from EMME road assignment is representative, and b) the number of boarding and alighting passengers from EMME transit assignment is true. 
 
@@ -77,12 +89,15 @@ Transit estimation and calibration uses the 2011 Transportation Tomorrow Survey 
 
 Transit assignment parameters were estimated using a Particle-Swarm Optimization procedure. The root-mean-square-error (RMSE) between predicted and observed transit line boardings jointly across the AM and PM time periods is minimized using the aforementioned procedure.  That is, parameters were chosen to minimize the following function:
 
-\begin{equation}
+
+$$
 \min_{\beta}\sqrt{\sum_{r}{\sum_{t}{\frac{\left(\frac{\left(PB_{rt}\left(\beta \right) - OB_{rt}\right)}{d_{t}}^2\right)}{n}}}}
-\end{equation}
+
+$$
 
 Where,
-\begin{equation}
+
+$$
 \begin{split}
 \beta & = \text{Vector of transit assignment parameters} \\\\
 PB_{rt}(\beta) & = \text{Predicted boardings on transit route } r \text{ given transit assignment parameters } \beta \text{ for time period } t \\\\
@@ -90,7 +105,8 @@ OB_{rt} & = \text{TTS observed boardings on transit route } r \text{ for time pe
 d_t & = \text{Duration of time period } t \text{, } (t = \text{AM peak period; PM peak period}) \\\\
 n & = \text{Number of transit lines}
 \end{split}
-\end{equation}
+
+$$
 
 The values of the behavioural parameters are encouraging, falling within expected bounds. The estimated wait time perception of 2.67 is only a little higher than the industry rule of thumb of 2.5. 
 

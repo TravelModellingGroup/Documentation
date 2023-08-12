@@ -41,19 +41,24 @@ from origin to 4 plus the travel time from 4 to the final destination is greater
 For GTAModel V4.1 and V4.0 we used the following equation for determining the attractiveness
 of going to zone \\( j \\) originating at \\( i \\) and going to \\( k \\).
 
-\begin{equation}
+
+$$
 V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * ln(1 + emp_{j} * occempRatio_{occemp|j})}
-\end{equation}
+
+$$
 
 In GTAModel V4.2 we have changed this formulation to the following.
 
-\begin{equation}
+
+$$
 V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * occempRatio_{occemp|j} * ln(1 + emp_{j})}
-\end{equation}
+
+$$
 
 For all model versions the following equation is used for computing the accessibility.
 
-\begin{equation}
+
+$$
 Accessibility_{ijk} = \beta_{TravelLogsumScale} * \left(
 \begin{array}{c}
 ln \left(
@@ -71,7 +76,8 @@ ln \left(
 \end{array} \right)
 \end{array}
 \right)
-\end{equation}
+
+$$
 
 ## Generate Trip Chains
 
@@ -176,37 +182,44 @@ The following tables give the conversions for the variables in the formulas to c
 #### Activity Generation ID Formulas
 
 ##### Primary Work
-\begin{equation}
+
+$$
 id = (ageOffset * 8) + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Secondary Work
 
-\begin{equation}
+
+$$
 id = 32 + occupationOffset * 2 +
 \begin{cases}
 1, & EmploymentStatus = FullTime \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Work Based Business
 
-\begin{equation}
+
+$$
 id = 40 + (ageOffset * 8) + occupationOffset * 2 +
 \begin{cases}
 0, & EmploymentStatus = FullTime \\\\
 1, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Work At Home Business
 
-\begin{equation}
+
+$$
 id = 72 + 
 \begin{cases}
 N/A, & < 19 \\\\
@@ -214,56 +227,69 @@ N/A, & < 19 \\\\
 1, & < 65 \\\\
 2, & else
 \end{cases} * 4 + occupationOffset
-\end{equation}
+
+$$
 
 ##### School
 
-\begin{equation}
+
+$$
 id = 84 + (ageOffset * 2) +
 \begin{cases}
 0 & \text{Full-Time Student} \\\\
 1 & \text{Part-Time Student}
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Return From Work
 
-\begin{equation}
+
+$$
 id = 94 + occupationOffset * 2 +
 \begin{cases}
 0, & EmploymentStatus = FullTime \\\\
 1, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Individual Other
 
-\begin{equation}
+
+$$
 id = 102 + ( ageOffset * 14 ) + workProjectStatus +
 \begin{cases}
 7, & Female \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Joint Other
 
-\begin{equation}
+
+$$
 id = 158 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
-\end{equation}
+
+$$
 
 ##### Market
 
-\begin{equation}
+
+$$
 id = 182 + ( ageOffset * 14 ) + workProjectStatus +
 \begin{cases}
 7, & Female \\\\
 0, & else
 \end{cases}
-\end{equation}
+
+$$
 
 ##### Joint Market
 
-\begin{equation}
+
+$$
 id = 238 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
-\end{equation}
+
+$$

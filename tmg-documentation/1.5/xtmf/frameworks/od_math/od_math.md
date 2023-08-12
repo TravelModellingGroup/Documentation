@@ -12,111 +12,138 @@ There are three TMG modules that allow access to this processing utility working
 
 For example, define two matrices A and B.
 
-\begin{equation} A = \begin{bmatrix}
+
+$$ 
+A = \begin{bmatrix}
       1 & 2          \\\\
       3 & 4
 \end{bmatrix},
 B = \begin{bmatrix}
     2 & 4          \\\\
     6 & 8
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 
 If we used the expression string `2 * A + B` we would get the following.
 
-\begin{equation}
+
+$$
 2 \times A + B = \begin{bmatrix}
     4 & 8          \\\\
     12 & 16
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 You can also use brackets to change the order of operations.
 
-\begin{equation}
+
+$$
 2 \times (A + B) = \begin{bmatrix}
    6 & 12          \\\\
    18 & 24
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 Division can also be performed using `B / A`.
 
-\begin{equation}
+
+$$
 B / A = \begin{bmatrix}
     2 & 2          \\\\
     2 & 2
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 Multiplication `A * B` would result in:
 
-\begin{equation}
+
+$$
 A \times B = \begin{bmatrix}
     2 & 8          \\\\
     18 & 32
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 Powers `A ^ B` would result in:
 
-\begin{equation}
+
+$$
 A^B = \begin{bmatrix}
     1 & 16          \\\\
    729 & 65536
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 ## Vectors
 
 Vectors can also be used in arithmetic.  In the following we define C as a Vertical matrix, and D is a Horizontal matrix.  If a matrix is loaded from a data source it will not have a directionality and must be given one before being used with matrices.
 
-\begin{equation}
+
+$$
 C =
 \begin{bmatrix}
     1 \\\\
    3
- \end{bmatrix} \end{equation}
+ \end{bmatrix} 
+$$
 
-\begin{equation}
+
+$$
 D =
  \begin{bmatrix}
    1 \\\\
     3
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 The following is the difference between the basic arithmetic with vertical and horizontal vectors applied to A:
 
-\begin{equation}
+
+$$
 A + C =
 \begin{bmatrix}
   2 & 3 \\\\
   6 & 7
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
-\begin{equation}
+
+$$
 A + D =
 \begin{bmatrix}
   1 & 2 \\\\
   1 & 0.75
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 ## Comparisons
 
 For certain functions comparisons are required.  If a comparison is true, a 1 is the result otherwise 0.
 The comparison operators are <, >, <=, >=, == (equal), != (not equal), | (or), and & (and).
 
-\begin{equation}
+
+$$
 A = \begin{bmatrix}
        1 & 2          \\\\
        3 & 4
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
-\begin{equation}
+
+$$
  F = 
 \begin{bmatrix}
   4 & 3 \\\\
   2 & 1
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
-\begin{equation}
+
+$$
 A < F =
   \begin{bmatrix}
     1 & 1 \\\\
     0 & 0
-  \end{bmatrix} \end{equation}
+  \end{bmatrix} 
+$$

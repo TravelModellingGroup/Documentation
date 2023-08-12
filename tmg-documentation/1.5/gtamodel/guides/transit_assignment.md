@@ -29,16 +29,20 @@ the model uses the Emme congested transit assignment procedure.  This procedure 
 In this case the conical volume-delay function is used, with different functions being used for heavy rail (commuter rail and subway), light rail (streetcars and LRT), local buses 
 and regional buses (i.e. GO). 
 
-\begin{equation}
+
+$$
 f(x) = weight\left(1 + \sqrt{\alpha^{2}\left(1 - x\right)^2+\beta^2}-\alpha\left(1 - x\right)-\beta\right)
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 \beta = \frac{2\alpha - 1}{2\alpha - 2} \\\\
 \alpha \text{ is similar to the exponential term in the BPR function}
-\end{equation}
+
+$$
 
 The exponent term (α) is estimated during the PSO procedure, described in section 2.0. In total, 5 exponent terms are estimated,
 one for each of the 5 different TTF functions (for various services/modes). The weights for all TTFs are fixed at 1. 
@@ -55,12 +59,15 @@ Transit estimation and calibration uses the 2011 Transportation Tomorrow Survey 
 
 Transit assignment parameters were estimated using a Particle-Swarm Optimization procedure. The root-mean-square-error (RMSE) between predicted and observed transit line boardings jointly across the AM and PM time periods is minimized using the aforementioned procedure.  That is, parameters were chosen to minimize the following function:
 
-\begin{equation}
+
+$$
 \min_{\beta}\sqrt{\sum_{r}{\sum_{t}{\frac{\left(\frac{\left(PB_{rt}\left(\beta \right) - OB_{rt}\right)}{d_{t}}^2\right)}{n}}}}
-\end{equation}
+
+$$
 
 Where,
-\begin{equation}
+
+$$
 \begin{split}
 \beta & = \text{Vector of transit assignment parameters} \\\\
 PB_{rt}(\beta) & = \text{Predicted boardings on transit route } r \text{ given transit assignment parameters } \beta \text{ for time period } t \\\\
@@ -68,7 +75,8 @@ OB_{rt} & = \text{TTS observed boardings on transit route } r \text{ for time pe
 d_t & = \text{Duration of time period } t \text{, } (t = \text{AM peak period; PM peak period}) \\\\
 n & = \text{Number of transit lines}
 \end{split}
-\end{equation}
+
+$$
 
 The values of the behavioural parameters are encouraging, falling within expected bounds. The estimated wait time perception of 2.67 is only a little higher than the industry rule of thumb of 2.5. 
 
