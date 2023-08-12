@@ -115,13 +115,17 @@ Generally speaking, the model assumes that the network is in compliance with Net
 
 Link Volume-Delay Functions (VDFs) are used to classify roads in accordance with NCS11. The actual functional form used is a tangent function, a hybrid between the BPR function (when volume is less than capacity), and a straight line (as volume exceeds capacity). Its expression is given below:
 
-\begin{equation}
-atime_{ij}(volau) = fft_{ij} * delay_{ij}(volau)
-\end{equation}
 
-\begin{equation}
+$$
+atime_{ij}(volau) = fft_{ij} * delay_{ij}(volau)
+
+$$
+
+
+$$
 fft_{ij} = length_{ij}* 60/speed_{ij}
-\end{equation}
+
+$$
 
 Where
 

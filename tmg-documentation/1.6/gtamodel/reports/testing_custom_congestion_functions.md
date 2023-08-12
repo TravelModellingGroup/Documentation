@@ -5,15 +5,19 @@ Using the Winnipeg test network, the congestion functions were tested, both for 
  tool were performed. All tests used a weight of 0.15 and an exponent of 4. A final run was performed, utilizing the 
 custom function option and using the assumed form of the Conical congestion function. The form is as follows, as per Speiss (1990):
 
-\begin{equation}
+
+$$
 f(x)^C = weight(1 + \sqrt{\alpha^2(1-x)^2+\beta^2} - \alpha(1-x) - \beta)
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 \beta = \frac{2\alpha - 1}{2\alpha -2}
-\end{equation}
+
+$$
 
 \\( \alpha \\) is assumed to correspond to the exponent term. In the test, \\( \beta \\) worked out to 1.1667, from an \\( \alpha \\) of 4.
 

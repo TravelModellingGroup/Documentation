@@ -48,15 +48,19 @@ For heavy truck restrictions, new restrictions were updated where possible, but 
 When finding the Peak Hour Factors for the AM and PM time periods for auto a $0.067603/km charge with a $50/hour value of time were used. Various different Peak Period Factors were then tested out. For each Peak Period
 Factor the following was done
 
-\begin{equation}
+
+$$
 \Delta_x = (\text{Emme Volume})_x - (\text{Observed Peak Hour Volume in Time Period})_x
-\end{equation}
+
+$$
 
 Where \\( x \\) is a countpost.
 
-\begin{equation}
+
+$$
 \text{Average Error} = \dfrac{\sum_{x}{\Delta_x}}{\text{Count}(\Delta_x)}
-\end{equation}
+
+$$
 
 This was then plotted on a graph for both the AM and the PM, shown below in Figure 1 and Figure 2. The point at which the Average Error
 is 0 is then taken to be the Peak Period Factor. 
@@ -119,13 +123,17 @@ The fitness function was set up using the following formula
 
 Where
 
-\begin{equation}
-\text{Period} = \dfrac{\text{Sum}(Error Auto)}{\text{Count}(Error Auto)} + \dfrac{\text{Sum}(Error Light)}{\text{Count}(Error Light)} + \dfrac{\text{Sum}(Error Medium)}{\text{Count}(Error Medium)} + \dfrac{\text{Sum}(Error Heavy)}{\text{Count}(Error Heavy)}
-\end{equation}
 
-\begin{equation}
+$$
+\text{Period} = \dfrac{\text{Sum}(Error Auto)}{\text{Count}(Error Auto)} + \dfrac{\text{Sum}(Error Light)}{\text{Count}(Error Light)} + \dfrac{\text{Sum}(Error Medium)}{\text{Count}(Error Medium)} + \dfrac{\text{Sum}(Error Heavy)}{\text{Count}(Error Heavy)}
+
+$$
+
+
+$$
 Error = (Observed - Modelled)^2
-\end{equation}
+
+$$
 
 The error was calculated for each station, summed up for each time period, and divided by the number of stations in that time period to obtain the fitness. A lower fitness value implies a better model,
  with 0 being a perfect model. The same method was done for the PM time period.

@@ -90,20 +90,24 @@ In the traditional ordered response model, the discrete ordered variable
 number of vehicles in the household) \\( \left(y_{i}\right) \\) is assumed to be associated with an underlying continuous latent variable
 \\( \left(y_{i}^{*}\right) \\). This latent variable is typically specified as the following linear function:  
 
-\begin{equation}
+
+$$
 \left(y_{i}^{*}\right) = X_{i}\beta + \epsilon_{i} \text{ for } i = 1,2,... ... ...,N
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 \begin{split}
 i & \left(i = 1,2,... ... ...,N\right) \text{ represents the households} \\\\
 X_i & \text{ is a vector of exogenous variables (excluding a constant)} \\\\
 \beta & \text{ is a vector of unknown parameters to be estimated } \\\\
 \epsilon & \text{ is the random disturbance term assumed to be standard logistic }
 \end{split}
-\end{equation}
+
+$$
 
 Let \\( j \text{ } \left(j=1,2,.........,J\right) \\) denote the vehicle ownership levels (in our case, 0,1,2,3,4+) and
 \\( \tau_{j} \\) represents the thresholds associated with these ownership levels. These unknown \\( \tau_{j} \\)
@@ -112,9 +116,11 @@ propensity into \\( J - 1 \\) intervals. We also consider \\( \tau_{j} \\) of a 
 dummy variable based on the planning district that the household belongs. The unobservable latent variable \\( y_{i}^{*} \\) is related to the observable ordinal
 variable \\( y_{i} \\) by the \\( \tau_{j} \\) with a response mechanism of the following form:
 
-\begin{equation}
+
+$$
 y_i = j\text{, if }\tau_{j - 1} < y_{i}^* < \tau_j \text{, for } j = 1,2,... ... ...,J
-\end{equation}
+
+$$
 
 In order to ensure the well-defined intervals and natural ordering of observed vehicle ownership,
 the thresholds are assumed to be ascending in order,
@@ -123,9 +129,11 @@ Given these relationships across the different parameters, the resulting probabi
 for the OL take the following form:
 
 
-\begin{equation}
+
+$$
 \pi_{ij} = Pr\left(y_i = j|X_i\right) = \Lambda\left(\tau_j-X_i\beta\right) - \Lambda\left(\tau_{j - 1} - X_i\beta \right)
-\end{equation}
+
+$$
 
 where \\( \Lambda(.) \\) represents the standard logistic cumulative distribution function.
 

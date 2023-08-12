@@ -45,7 +45,7 @@ d.	Check to confirm the toolbox has been added and close the modeller
 ## **Launch Emme Notebook**
 
 a. Launch EMME notebook
-  <figure>
+<figure>
     <img src="images/launch_notebook.png"
          alt="Launch EMME notebook" style="width:400px;" />
     <figcaption text-align="center">Figure 5: Launch EMME notebook </figcaption>

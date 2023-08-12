@@ -12,22 +12,28 @@ There are three TMG modules that allow access to this processing utility working
 
 For example, define two matrices A and B.
 
-\begin{equation} A = \begin{bmatrix}
+
+$$ A = \begin{bmatrix}
       1 & 2          \\\\
       3 & 4
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 , \\
 
-\begin{equation} B = \begin{bmatrix}
+
+$$ B = \begin{bmatrix}
     2 & 4          \\\\
     6 & 8
-\end{bmatrix} \end{equation}
+\end{bmatrix} 
+$$
 
 
-\\begin{equation}
+\
+$$
    E = mc^2
-\\end{equation}
+\
+$$
 
 If we used the expression string ‘2 * A + B’ we would get the following.
 

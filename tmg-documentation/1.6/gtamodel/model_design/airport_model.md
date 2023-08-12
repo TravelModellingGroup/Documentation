@@ -19,17 +19,22 @@ building demand matrices.
 The model is a nested logit model with an upper level consisting of a two layers.  The top layer
 is for the distribution of trips to Pearson airport with the lower level of a mode choice model providing an accessibility term.
 
-\begin{equation}
+
+$$
 P_{i} = \frac{e^{\alpha X_{i}+\theta I_{i}}}{\sum_{i' \epsilon C}e^{\alpha X_{i'}+\theta{i'}}}
-\end{equation}
 
-\begin{equation}
+$$
+
+
+$$
 P_{m|i} = \frac{e^{\beta Z_{m|i}}}{\sum_{m' \epsilon M_i}e^{\beta Z_{m'|i}}}
-\end{equation}
 
-\begin{equation}
+$$
+
+
+$$
 I_{i} = log(\sum_{m' \epsilon M_i}e^{\beta Z_{m'|i}})
-\end{equation}
+$$
 
 Where:
 

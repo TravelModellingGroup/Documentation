@@ -12,13 +12,16 @@ One the probabilities for each worker category has been computed that data is th
 
 The friction for the gravity model is given by the following equations:
 
-\begin{equation}
+
+$$
 e^{Friction_{ijk}} = K_{ij}e^{V_{ijk}}
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 e^{V_{ijk}} = e^{\beta_{Constant_s}} \left(
 \begin{cases}
 e^{\beta_{intrazonal_s}} & i = j \\\\
@@ -31,11 +34,13 @@ e^{\beta_{intraPD_s}} & PD_i = PD_j \\\\
 \end{cases}
 \right)
 \left(e^{\beta_{aivtt_{sk}}AIVTT_{ij}} + e^{\beta_{ptivtt_s}PTIVTT_{ij}}\right)
-\end{equation}
+
+$$
 
 Where,
 
-\begin{equation}
+
+$$
 \begin{split}
 i & = \text{Origin Zone} \\\\
 j & = \text{Destination Zone} \\\\
@@ -44,7 +49,8 @@ PD & = \text{Planning District} \\\\
 k & = \text{Worker Category} \\\\
 K & = \text{K-Factor for zone } i \text{ to zone} j
 \end{split}
-\end{equation}
+
+$$
 
 
 ## Estimation

@@ -1,22 +1,35 @@
 {
-  "template": ["default", "templates/tmg"],
+  "template": [ "default", "templates/modern" ],
   "build": {
-    "template": ["default", "templates/darkfx", "templates/tmg"],
+    "template": [ "default", "templates/modern" ],
     "dest": "_site",
     "globalMetadata": {
       "_appTitle": "Travel Modelling Group Documentation",
       "_gitContribute": {
-        "repo": "https://github.com/TravelModellingGroup",
+        "repo": "https://github.com/TravelModellingGroup/Documentation",
         "branch": "master",
         "apiSpecFolder": "docs-ref-overwrite"
       },
       "_appLogoPath": "images/tmg.png",
-      "_appFooter": "©2017-2023, Travel Modelling Group"
+      "_appFooter": "©2017-2023, Travel Modelling Group, University of Toronto",
+      "_enableSearch": true
     },
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": true,
+    "disableGitFeatures": false,
     "content": [
       {
+        "exclude": [ "_site/**" ],
         "files": [
           "index.md",
+          "toc.yml",
+          "legacy/toc.yml",
+          "1.6/**.md",
+          "1.6/**.yml",
+          "2.0/**.md",
+          "2.0/**.yml",
           "1.5/index.md",
           "1.5/toc.yml",
           "1.5/xtmf/**.md",
@@ -28,17 +41,26 @@
           "1.4/**.md",
           "1.4/**.yml",
           "1.5/**.md",
-          "1.5/**.yml",
-          "1.6/**.md",
-          "1.6/**.yml",
-          "2.0/**.md",
-          "2.0/**.yml"
+          "1.5/**.yml"
         ]
       }
     ],
     "resource": [
       {
-        "files": ["images/**", "**/images/**", "logo.png"]
+        "files": [
+          "**.*"
+        ],
+        "exclude": [
+          "**.md",
+          "**.yml",
+          "**.json",
+          "**.targets",
+          "**.csproj*",
+          "bin/**",
+          "obj/**",
+          "**/_template/**",
+          "_site/**"
+        ]
       }
     ]
   }

@@ -2,7 +2,8 @@
 
 Returns a vector of the summation of the matrix rows
 
-\begin{equation}
+
+$$
 A = \begin{bmatrix}
     -1 & 2          \\\\
     3 & -4
@@ -18,31 +19,40 @@ C = \begin{bmatrix}
 D = \begin{bmatrix}
     -1 & 3
 \end{bmatrix}
-\end{equation}
+
+$$
 
 ### SumRows(Matrix) = Vector
 
-\begin{equation}
+
+$$
 SumRows(A) = \begin{bmatrix}
      1 \\\\
     -1
 \end{bmatrix}
-\end{equation}
 
-\begin{equation}
+$$
+
+
+$$
 SumRows(B) = \begin{bmatrix}
     6 \\\\
     14
 \end{bmatrix}
-\end{equation}
+
+$$
 
 ### SumRows(Vector) = ERROR
 
-\begin{equation}
+
+$$
 SumRows(C) = ERROR
-\end{equation}
+
+$$
 
 ### SumRows(Scalar) = ERROR
-\begin{equation}
+
+$$
 SumRows(0) = ERROR
-\end{equation}
+
+$$
