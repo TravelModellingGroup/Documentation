@@ -5,7 +5,7 @@ This EMME network package file is used in GTAModel V4 to import a base network, 
 
 The base network will serve as a "Base Scenario" to create time period specific networks (AM, MD, PM, EV, ON) using the [Full Network Set Generator](https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html), and these networks will be cleaned for use in auto and transit assignments.
 
-> More information about how to use the Full Network Set Geneator tool, please refer to the [Toolbox Page](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/network_editing/FullNetworkSetGenerator.html)
+> More information about how to use the Full Network Set Generator tool, please refer to the [Toolbox Page](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/network_editing/FullNetworkSetGenerator.html)
 
 ## Batch Line Edit (.csv)
 This file allows the user to make changes to particular lines as specified by the filter. It needs to contain at least three columns as following:
