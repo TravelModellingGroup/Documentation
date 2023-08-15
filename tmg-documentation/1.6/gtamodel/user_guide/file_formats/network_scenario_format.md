@@ -54,6 +54,10 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 > removed from the network for those time periods.  A headway or speed of 0 will keep the calculated headway
 > and speed from the service table.
 
+> [!Warning]
+> If you set a speed to 0, weather or not if the TTF uses line speed, the line will be ignored from the alt file for that time period.
+> If there is no record of the line in the service table, _**then the line will be deleted**_!
+
 
 ## Service Table (.csv)
 This Transit Service Table file contains trip starts and trip ends for transit lines. It contains three columns as following:
