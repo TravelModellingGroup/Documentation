@@ -55,7 +55,7 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 > and speed from the service table.
 
 > [!Warning]
-> If you set a speed to 0, weather or not if the TTF uses line speed, the line will be ignored from the alt file for that time period.
+> If you set a speed to 0, whether or not if the TTF uses line speed, the line will be ignored from the alt file for that time period.
 > If there is no record of the line in the service table, _**then the line will be deleted**_!
 
 
