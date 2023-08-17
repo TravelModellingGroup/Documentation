@@ -64,3 +64,9 @@ GTAModel uses a number of different file formats for both input and output data.
     and is slowly being phased out of the model system.  It was originally formulated efficiently load tables off of disk when we were restricted to 2GB of RAM for our
     models.
 * [Zones.csv](file_formats/zones_file_format.md) - This goes over the CSV file used for giving GTAModel V4.0 the description of the zone system.
+
+## Outputs
+
+While each version of GTAModel can contain different outputs the following document some of the options:
+
+* [ShapeFiles](Outputs/shapefile.md) - Contains one or more sets of ShapeFiles representing the road and transit networks.
