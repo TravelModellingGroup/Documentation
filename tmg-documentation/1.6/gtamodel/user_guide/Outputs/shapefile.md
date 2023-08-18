@@ -11,6 +11,20 @@ not have access to your network assignment software.
 > model systems will generate ShapeFiles, but when they
 > do it will be like this.
 
+## Format
+
+Each "ShapeFile" is composed of multiple files.
+
+| Extension | Description |
+|-----------|-------------|
+| .cpg      | Specifies the code page for the `.dbf` file. |
+| .dbf      | Data for each geometry object defined in the ShapeFile.  You can open this file in Excel. |
+| .prj      | A file containing a reference to the projection system the geometry object data is in. |
+| .shp      | Contains the definitions for the geometry objects, such as points, lines, or polygons. |
+| .shx      | Provides indexing information allowing for GIS programs to quickly find the location of geometry objects in the `.shp` file. |
+
+For more information on ShapeFiles, you can [read here](https://en.wikipedia.org/wiki/Shapefile).
+
 ## Scenario Numbers
 
 When reading these files the scenario numbers can differ however, the
@@ -45,7 +59,7 @@ planes in order to facilitate transfers and our logic for applying fare policy.
 
 ## Files
 
-Each scenario directory will contain the following files:
+Each scenario directory will contain the following ShapeFiles:
 
 * emme_links - Contains information for the roads, links, that go between nodes.
 * emme_nodes - Contains information about points that outline roads and Traffic Analysis Zone centroids.
