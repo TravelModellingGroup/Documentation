@@ -25,7 +25,11 @@ is open source under GPL3.0 (see license file for full text)
 ## TMGToolbox for Aimsun
 
 The [TMG Toolbox for Aimsun](tmgtoolbox_aimsun/index.md) is a set of scripts for [Aimsun Next](https://www.aimsun.com/) that allow XTMF
-to automate the usage of it. 
+to automate the usage of it.
+
+## TMG.Visum
+
+[TMG.Visum](tmg.visum/index.md) is an optional set of modules for XTMF that can automate [PTV's VISUM](https://www.ptvgroup.com/en/products/ptv-visum) software.
 
 ## GTAModel V4
 
