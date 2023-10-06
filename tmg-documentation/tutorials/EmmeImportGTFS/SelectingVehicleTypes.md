@@ -23,6 +23,8 @@ Now select the correct TTF's. The following are the vehicle codes.
 5.	Bus - ft4
 6.	EROW bus - ft6
 
+Note: EROW bus is only marked as TTF6 if using GTA Model V4.2+. For older GTA models the ERROW bus is marked as TTF2.
+
 
 <figure>
     <img src="images/ChoosingTTFs.png"
@@ -30,7 +32,7 @@ Now select the correct TTF's. The following are the vehicle codes.
     <figcaption text-align="center">Figure 1: Choosing TTFs</figcaption>
 </figure>
 
-To ensure correct branch names have all been correctly uploaded ands have correct vehicles and TTFs
+To ensure correct branch names have all been correctly uploaded and have correct vehicles and TTFs
 
 1.	Open Notebook
 2.	Open GTFS Renamer python script
