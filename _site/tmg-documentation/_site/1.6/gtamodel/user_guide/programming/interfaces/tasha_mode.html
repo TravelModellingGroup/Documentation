@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ITashaMode | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ITashaMode | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_mode.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="itashamode">ITashaMode</h1>
+
+<p>This interface is extended to implement a new mode that can be chosen by TASHA.  This interface
+inherits a from the <code>IMode</code> interface, which in turn implements the <code>IModeChoiceNode</code>,
+used for GTAModel V2.  Some of the calls have been deprecated and replaced with newer interfaces
+that support the <code>ITrip</code> interface instead of just taking in multiple zones.</p>
+<h2 id="methods-from-imode">Methods from IMode</h2>
+<p>These are the methods that <code>ITashaMode</code> has inherited from the <code>TMG.IMode</code> interface which in
+turn inherits IModeChoiceNode. While some of these methods are redundant they are required
+to be implemented for backwards comparability.</p>
+<h3 id="networktype">NetworkType</h3>
+<p>This gives which network level of service data that the mode will be using.  This string
+should match the parameter <code>Network Name</code> for one of the</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Get the type (name) of the network type to store the information in
+/// &lt;/summary&gt;
+string NetworkType { get; }
+</code></pre>
+<h3 id="nonpersonalvehicle">NonPersonalVehicle</h3>
+<p>This property is called to check if the mode uses a personal vehicle. If <code>RequiresVehicle</code>
+is not null, then set this to true, false otherwise.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Gets if this mode does not use a personal vehicle
+/// &lt;/summary&gt;
+bool NonPersonalVehicle { get; }
+</code></pre>
+<h3 id="cost">Cost</h3>
+<p>This method is called to test how expensive it is to go between the two zones.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// How much does it cost to go between the zones?
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;origin&quot;&gt;Where to start from&lt;/param&gt;
+/// &lt;param name=&quot;destination&quot;&gt;Where to go to&lt;/param&gt;
+/// &lt;param name=&quot;time&quot;&gt;The time to get the cost for&lt;/param&gt;
+/// &lt;returns&gt;Cost of going between the zones&lt;/returns&gt;
+float Cost(IZone origin, IZone destination, Time time);
+</code></pre>
+<h3 id="traveltime">TravelTime</h3>
+<p>This method is called to test how long it takes to go between the two zones.  GTAModel
+will call the TravelTime variant which instead uses the ITrip interface.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Get how long it will take to get between zones
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;origin&quot;&gt;The zone to start from&lt;/param&gt;
+/// &lt;param name=&quot;destination&quot;&gt;The zone to go to&lt;/param&gt;
+/// &lt;param name=&quot;time&quot;&gt;The time of the day in (hhmm.ss)&lt;/param&gt;
+/// &lt;returns&gt;Travel time in minutes between the zones, Not a Number if it is not possible&lt;/returns&gt;
+Time TravelTime(IZone origin, IZone destination, Time time);
+</code></pre>
+<h2 id="methods-for-imodechoicenode">Methods for IModeChoiceNode</h2>
+<h3 id="currentlyfeasible">CurrentlyFeasible</h3>
+<p><em>This is not used for GTAModel, you can set this to 1.</em></p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// What percentage of the population can currently use this?
+/// &lt;/summary&gt;
+float CurrentlyFeasible { get; set; }
+</code></pre>
+<h3 id="modename">ModeName</h3>
+<p>The name of the mode. GTAModel uses this instead of the Name coming from XTMF's <code>IModule</code> interface
+when referring to modes in parameters.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// The name of the mode category.
+/// This can be used for applying additional factors to their variables
+/// &lt;/summary&gt;
+string ModeName { get; }
+</code></pre>
+<h3 id="calculatev">CalculateV</h3>
+<p>Calculate the systematic utility for travelling between the two zones.  <em>This
+call is not used for GTAModel.</em></p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+///
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;origin&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;destination&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;time&quot;&gt;&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+float CalculateV(IZone origin, IZone destination, Time time);
+</code></pre>
+<h3 id="feasible">Feasible</h3>
+<p>Checks to see if the mode is allowed to be used for going between the two zones.
+<em>This call is not used in GTAModel.</em></p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// See if this node is feasible
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;origin&quot;&gt;The starting zone&lt;/param&gt;
+/// &lt;param name=&quot;destination&quot;&gt;The destination zone&lt;/param&gt;
+/// &lt;param name=&quot;time&quot;&gt;The starting time of day&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+bool Feasible(IZone origin, IZone destination, Time time);
+</code></pre>
+<h2 id="methods-from-itashamode">Methods From ITashaMode</h2>
+<h3 id="calculatev-1">CalculateV</h3>
+<p>This method is invoked when TASHA needs to compute the systematic utility for a trip.
+The result should be in utils without the random term added.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Calculates the V for the given trip using this mode
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;trip&quot;&gt;The trip to calculate for&lt;/param&gt;
+/// &lt;returns&gt;The V for this trip&lt;/returns&gt;
+double CalculateV(ITrip trip);
+</code></pre>
+<h3 id="feasible-1">Feasible</h3>
+<p>These methods are used to see if the mode is available for the given trip or the
+given trip chain.  The trip version should only take into consider the individual
+trip.  The ITripChain version is used to analyze the full tour.  For example
+the Auto mode in GTAMdodel checks that the vehicle makes it along the tour
+and back home at its end.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Check to see if this mode is feasible for the given trip
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;trip&quot;&gt;The trip to check if we can possibly be used for&lt;/param&gt;
+/// &lt;returns&gt;If trip is feasible&lt;/returns&gt;
+bool Feasible(ITrip trip);
+
+/// &lt;summary&gt;
+/// Checks to see if this trip chain as a whole is feasible.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;
+/// This is used for modes like Train access, where you need to egress to the same station
+/// so you can pick back up your car.
+/// &lt;/remarks&gt;
+/// &lt;param name=&quot;tripChain&quot;&gt;The trip chain to validate&lt;/param&gt;
+/// &lt;returns&gt;If this trip chain is feasible according to this mode&lt;/returns&gt;
+bool Feasible(ITripChain tripChain);
+</code></pre>
+<h3 id="requiresvehicle">RequiresVehicle</h3>
+<p>If this is set to none, then tours that use this mode will not be required to use
+the given vehicle type.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Which Vehicle [if any] does this mode require
+/// &lt;/summary&gt;
+IVehicleType RequiresVehicle { get; }
+</code></pre>
+<h3 id="variancescale">VarianceScale</h3>
+<p>The variable will be used as the standard deviation for the normal distribution when
+computing the trip's utility.</p>
+<pre><code class="lang-cs">double VarianceScale { get; set; }
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>You can go <a href="../examples/new_mode.html">here</a> for a full example of how to create a new mode for GTAModel.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_mode.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

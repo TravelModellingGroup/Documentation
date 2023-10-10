@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IPostIteration | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IPostIteration | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/post_iteration.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="ipostiteration">IPostIteration</h1>
+
+<p>This interface executes after all households have been processed through
+the scheduler and mode choice.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="execute">Execute</h3>
+<p>This method will be executed after all households have been processed.
+This is often when we add modules into GTAModel to prepare matrices
+for EMME or execute other models that build up demand.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// This will be called before the iteration starts
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;iterationNumber&quot;&gt;The iteration that we are able to run&lt;/param&gt;
+/// &lt;param name=&quot;totalIterations&quot;&gt;The total number of iterations tasha will do&lt;/param&gt;
+void Execute(int iterationNumber, int totalIterations);
+</code></pre>
+<h3 id="load">Load</h3>
+<p>This method is executed at the beginning of the model run after the zone
+system has been loaded in.  You can use this to build a memory cache
+for processing.  This method is not used often.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Loads the module, letting it know how many iterations there will be
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;config&quot;&gt;The configuration file&lt;/param&gt;
+/// &lt;param name=&quot;totalIterations&quot;&gt;The total number of iterations&lt;/param&gt;
+void Load(IConfiguration config, int totalIterations);
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>For this example we will implement a small module that writes out to the console
+when a model system has finished an iteration.</p>
+<pre><code class="lang-cs">using XTMF;
+using Tasha.Common;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;An example post household iteration module implementation&quot;)]
+    public sealed class MyPostIteration : IPostIteration
+    {
+        public void Load(IConfiguration config, int totalIterations)
+        {
+            // You could use this to build a memory cache
+        }
+
+        public void Execute(int iterationNumber, int totalIterations)
+        {
+            Console.WriteLine(&quot;Finished processing all of the households in iteration &quot;
+                + iterationNumber);
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/post_iteration.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

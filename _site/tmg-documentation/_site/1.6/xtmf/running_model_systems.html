@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Running Model Systems | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Running Model Systems | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/running_model_systems.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="running-model-systems">Running Model Systems</h1>
+
+<h2 id="understanding-runs">Understanding Runs</h2>
+<p>In previous versions of XTMF model system runs were launched in a separate tab page in the XTMF interface. In 1.3, runs were docked into the bottom part of the model system display. XTMF 1.5 makes further changes and now introduces the &quot;Sheduler&quot; display which
+collects all runs under the same easy-to-access hub.</p>
+<p>A new run can be started by first opening the model system you wish to use. Next, XTMF provides two shortcuts to start the run process: Keypress F5 or simply click the “Run Model System” button located above the model system tree view.</p>
+<p>Once a new run has been initiated, a user prompt will be displayed asking to enter a name for the new run. Each run’s name is associated with the file location / folder name inside of the project directory. Due to this design, run names are considered unique and previous output data can be corrupted if careful attention is not paid in choosing a suitable name. In the case a run name already exists, XTMF will ask for further instruction in whether or not to delete the previous run’s output. Choosing no at the message box prompt will continue the run, however there will be no explicit deletion of previous data existing in the output folder.</p>
+<p>If the model system being run has any disabled modules, a small reminder is displayed as part of the run name input dialog. This can serve as a useful reminder if the user was unaware that certain modules are currently disabled.</p>
+<p>Once a run has started, the “Model System Run” pane will be present at the bottom of the XTMF window. The run pane contains various crucial information related to the run progress. On the left hand side, information regarding elapsed time and progress information is layed out. The progress bar percented is calculated based on the total amount of modules within the model system that have finished executing. On the right, an area for output is displayed. This console will output any debug or information printed by modules.</p>
+<h2 id="model-system-validation">Model System Validation</h2>
+<p>Prior to a run starting, XTMF will perform an initial validation check on the model system. The initial validation will check for the presence of required modules or configurations that are known to be incorrect before runtime. If model system validation fails, the run will return an error and be placed under the &quot;Finished&quot; runs section of the Scheduler window. To view details about any validation errors, select the correct run under the 'Finish runs' list and examine the Error group box that is located on the bottom
+right hand side of the Run Window, which is just the right hand &quot;content&quot; side of the Scheduler display.</p>
+<h2 id="run-completion-and-output">Run Completion and Output</h2>
+<p>The current run’s output can be found by clicking the “Open Run Output” button at the top of the run pane. This action launches the file system explorer at the output location. Clicking “Cancel Run” will begin cancellation of the current run. Depending on which module is currently active (or how it is designed), cancellation may not be immediate. When a run has completed, previous output information can be cleared by pressing “Clear Run Display.</p>
+<h2 id="run-errors">Run Errors</h2>
+<p>If an error occurs during the model system execution, a dialog will be shown to the user indicating
+what module or section of the model system the error occured. Often times there are problems that cannot
+be tested for before running and will only become apparent once model system running has started.</p>
+<p>The output window contains line numbers for both the XTMF module and possible modules of python tools that may be called.</p>
+<h2 id="error-logs">Error Logs</h2>
+<p>In the event that an error occurs during a model system run, in addition to a dialog window being presented,
+XTMF will output error details to file <strong>XTMF.error.log</strong> in the active run directory.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/running_model_systems.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Import Binary Matrix | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Import Binary Matrix | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportBinaryMatrix.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="import-binary-matrix"><strong>Import Binary Matrix</strong></h1>
+
+<p>This is used to import a matrix with a binary format into Emme for use within Desktop and Modeller.</p>
+<blockquote>
+<p>If a matrix that needs to be imported uses the CSV format, please use the following tool &quot;Emme Standard Toolbox&quot; -&gt; &quot;Data Management&quot; -&gt; &quot;Matrix&quot; -&gt; &quot;Import matrix data from CSV&quot;.</p>
+</blockquote>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Input Output&quot; -&gt; &quot;Import Binary Matrix&quot;</p>
+<h3 id="import-file">Import File</h3>
+<p>Select &quot;Browse...&quot; to navigate to the location of the matrix that is to be imported.</p>
+<h3 id="matrix">Matrix</h3>
+<p>Select an existing matrix that will be used to store the imported matrix. Note: If a matrix number is not on this list, it will likely need to be initialized. To initialize a matrix, please use the following tool &quot;Emme Standard Toolbox&quot; -&gt; &quot;Data Management&quot; -&gt; &quot;Matrix&quot; -&gt; &quot;Initialize matrix&quot;.</p>
+<h3 id="scenario">Scenario</h3>
+<p>If there are different zone systems within the Emme Project, select the Scenario which contains the zone system that corresponds to the matrix zone system.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;ImportBinaryMatrixIntoEmme&quot;. It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.</p>
+<h3 id="description">Description</h3>
+<p>The description of the matrix. This will be shown in the Emme Project when looking up the matrix</p>
+<h3 id="matrix-number">Matrix Number</h3>
+<p>The number of the imported matrix. This can be a an existing matrix (in which case it will be overwritten) or it can be a new matrix which will be automatically created.</p>
+<h3 id="matrix-type">Matrix Type</h3>
+<p>The type of matrix that is being imported. 1 for SCALAR, 2 for ORIGIN, 3 for DESTINATION, 4 for FULL.</p>
+<h3 id="scenario-1">Scenario</h3>
+<p>The scenario which has the same zone system that is present in the imported matrix.</p>
+<h3 id="matrix-file">Matrix File</h3>
+<p>The location of the matrix that is to be imported is specified here using the appropriate module and then selecting the file location..</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportBinaryMatrix.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

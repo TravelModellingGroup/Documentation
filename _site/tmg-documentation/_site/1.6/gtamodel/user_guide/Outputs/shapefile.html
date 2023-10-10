@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ShapeFile | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ShapeFile | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/Outputs/shapefile.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="shapefile">ShapeFile</h1>
+
+<p>At the end of a GTAModel run you might have some ShapeFiles
+for the network generated.  This format is useful if you
+plan on sharing the results with other people who do
+not have access to your network assignment software.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In this documentation we will cover the ShapeFile outputs
+from a standard EMME based GTAModel V4.  Not all GTAModel
+model systems will generate ShapeFiles, but when they
+do it will be like this.</p>
+</div>
+<h2 id="format">Format</h2>
+<p>Each &quot;ShapeFile&quot; is composed of multiple files.</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.cpg</td>
+<td>Specifies the code page for the <code>.dbf</code> file.</td>
+</tr>
+<tr>
+<td>.dbf</td>
+<td>Data for each geometry object defined in the ShapeFile.  You can open this file in Excel.</td>
+</tr>
+<tr>
+<td>.prj</td>
+<td>A file containing a reference to the projection system the geometry object data is in.</td>
+</tr>
+<tr>
+<td>.shp</td>
+<td>Contains the definitions for the geometry objects, such as points, lines, or polygons.</td>
+</tr>
+<tr>
+<td>.shx</td>
+<td>Provides indexing information allowing for GIS programs to quickly find the location of geometry objects in the <code>.shp</code> file.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information on ShapeFiles, you can <a href="https://en.wikipedia.org/wiki/Shapefile">read here</a>.</p>
+<h2 id="scenario-numbers">Scenario Numbers</h2>
+<p>When reading these files the scenario numbers can differ however, the
+standard configuration is that:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The BaseNetwork, loaded from NWP with changes that affect all time periods.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>AM Uncleaned Network</td>
+</tr>
+<tr>
+<td>11</td>
+<td>AM Cleaned Network</td>
+</tr>
+<tr>
+<td>12</td>
+<td>AM Transit Hypernetwork</td>
+</tr>
+<tr>
+<td>20</td>
+<td>MD Uncleaned Network</td>
+</tr>
+<tr>
+<td>21</td>
+<td>MD Cleaned Network</td>
+</tr>
+<tr>
+<td>22</td>
+<td>MD Transit Hypernetwork</td>
+</tr>
+<tr>
+<td>30</td>
+<td>PM Uncleaned Network</td>
+</tr>
+<tr>
+<td>31</td>
+<td>PM Cleaned Network</td>
+</tr>
+<tr>
+<td>32</td>
+<td>PM Transit Hypernetwork</td>
+</tr>
+<tr>
+<td>40</td>
+<td>EV Uncleaned Network</td>
+</tr>
+<tr>
+<td>41</td>
+<td>EV Cleaned Network</td>
+</tr>
+<tr>
+<td>42</td>
+<td>EV Transit Hypernetwork</td>
+</tr>
+<tr>
+<td>49</td>
+<td>ON Uncleaned Network</td>
+</tr>
+<tr>
+<td>50</td>
+<td>ON Cleaned Network</td>
+</tr>
+</tbody>
+</table>
+<p>Where:</p>
+<p>A cleaned network has nodes removed to help reduce the network size where possible
+A cleaned network also has transit lines with no service in the time period removed.</p>
+<p>A Hyper-Network is our representation of the network where each transit agency has
+been lifted into a different plane and transfer links have been added between the
+planes in order to facilitate transfers and our logic for applying fare policy.</p>
+<h2 id="files">Files</h2>
+<p>Each scenario directory will contain the following ShapeFiles:</p>
+<ul>
+<li>emme_links - Contains information for the roads, links, that go between nodes.</li>
+<li>emme_nodes - Contains information about points that outline roads and Traffic Analysis Zone centroids.</li>
+<li>emme_tlines - Contains information about whole transit lines.  For segment level data use tsegs.</li>
+<li>emme_tsegs - Contains information about individual transit line segments.</li>
+</ul>
+<p>The files can contain additional attributes starting with the <code>@</code> symbol.  These properties are often model specific.</p>
+<p><code>PCU</code> refers to Passenger Car Equivalent Units.</p>
+<h3 id="emme_links">emme_links</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>A <code>string</code> in the format <code>{inode}-{jnode}</code></td>
+</tr>
+<tr>
+<td>INODE</td>
+<td>The id number of the node where the link starts from.</td>
+</tr>
+<tr>
+<td>JNODE</td>
+<td>The id number of the node where the link goes to.</td>
+</tr>
+<tr>
+<td>LENGTH</td>
+<td>The length of the link in KMs.  This does not have to be the same as the shape length.</td>
+</tr>
+<tr>
+<td>TYPE</td>
+<td>By convention a 3 digit number where the region id is the first digit and the planning district are the next two.</td>
+</tr>
+<tr>
+<td>MODES</td>
+<td>The different auto and transit modes that are allowed on the link.  To know what the modes mean, please refer to your network coding guide.</td>
+</tr>
+<tr>
+<td>LANES</td>
+<td>A floating point number containing the number of lanes available for auto traffic.</td>
+</tr>
+<tr>
+<td>VDF</td>
+<td>A number to make reference to the volume-delay-function used to compute the travel time of a road given congestion.</td>
+</tr>
+<tr>
+<td>DATA1</td>
+<td>This is the same as <code>UL1</code>.</td>
+</tr>
+<tr>
+<td>DATA2</td>
+<td>This is the same as <code>UL2</code>.</td>
+</tr>
+<tr>
+<td>DATA3</td>
+<td>This is the same as <code>UL3</code>.</td>
+</tr>
+<tr>
+<td>VOLAX</td>
+<td>This is the auxiliary transit volume (people walking) on the link.</td>
+</tr>
+<tr>
+<td>VOLAU</td>
+<td>This is the total passenger car equivalent units (PCUs) on the link during the hour.</td>
+</tr>
+<tr>
+<td>VOLAD</td>
+<td>This is used for auxiliary demand applied to the link.  This is unused in GTAModel.</td>
+</tr>
+<tr>
+<td>TIMAU</td>
+<td>The number of minutes for an road vehicle to traverse the link.</td>
+</tr>
+<tr>
+<td>@auto_volu</td>
+<td>The number of autos traversing the link in the hour.</td>
+</tr>
+<tr>
+<td>@heavy_vol</td>
+<td>The PCUs of volume used by heavy truck.  In standard GTAModel 1 heavy truck is 2.5 PCUs.</td>
+</tr>
+<tr>
+<td>@lkcap</td>
+<td>The lane capacity of the link in PCU per hour.</td>
+</tr>
+<tr>
+<td>@lkspd</td>
+<td>The speed in km/h for the link.</td>
+</tr>
+<tr>
+<td>@medium_vo</td>
+<td>The volume of medium trucks on the link in PCUs. In GTAModel 1 medium truck is 1.75 PCUs.</td>
+</tr>
+<tr>
+<td>@ramp_toll</td>
+<td>The toll to enter the ramp for the toll highway for a passenger car.</td>
+</tr>
+<tr>
+<td>@ramp_tol0</td>
+<td>The toll to enter the ramp for the toll highway for a light truck.</td>
+</tr>
+<tr>
+<td>@ramp_tol1</td>
+<td>The toll to enter the ramp for the toll highway for a medium truck.</td>
+</tr>
+<tr>
+<td>@ramp_tol2</td>
+<td>The toll to enter the ramp for the toll highway for a heavy truck.</td>
+</tr>
+<tr>
+<td>@stn1</td>
+<td>A reference to the count station id for the road, 0 if there is none.</td>
+</tr>
+<tr>
+<td>@stn2</td>
+<td>A second reference to an additional count station id for the link, 0 if there is none.</td>
+</tr>
+<tr>
+<td>@toll</td>
+<td>This is used for the road tolls for GTAModel V4.0 for an auto to pass through the link in Base Year $.</td>
+</tr>
+<tr>
+<td>@toll_auto</td>
+<td>The amount of money it costs to cross the link for an auto passenger vehicle in Base Year $.</td>
+</tr>
+<tr>
+<td>@toll_heav</td>
+<td>The amount of money it costs to cross the link for a heavy truck in Base Year $.</td>
+</tr>
+<tr>
+<td>@toll_ligh</td>
+<td>The amount of money it costs to cross the link for a light or medium truck in Base Year $.</td>
+</tr>
+<tr>
+<td>@walkp</td>
+<td>The factor to apply to walk time to generate the perceived walk time on links.</td>
+</tr>
+<tr>
+<td>@z407</td>
+<td>The index to the toll to apply for traversing a link.</td>
+</tr>
+<tr>
+<td>@z407ramp</td>
+<td>The index to the toll to apply for entering a ramp.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="emme_nodes">emme_nodes</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>A unique number for identifying the node.</td>
+</tr>
+<tr>
+<td>X</td>
+<td>The x-coordinate of the node in metres using UTM.</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>The y-coordinate of the node in metres using UTM.</td>
+</tr>
+<tr>
+<td>DATA1</td>
+<td>The same as <code>ui1</code>, unused in GTAModel.</td>
+</tr>
+<tr>
+<td>DATA2</td>
+<td>The same as <code>ui2</code>, unused in GTAModel.</td>
+</tr>
+<tr>
+<td>DATA3</td>
+<td>The same as <code>ui3</code>, unused in GTAModel.</td>
+</tr>
+<tr>
+<td>ISZONE</td>
+<td>1 if the node represents a traffic analysis zone, 0 otherwise.</td>
+</tr>
+<tr>
+<td>ISINTERSEC</td>
+<td>1 if the node has intersection data, 0 otherwise.</td>
+</tr>
+<tr>
+<td>LABEL</td>
+<td>A string that can be used to document the node.  Unused directly in GTAModel.</td>
+</tr>
+<tr>
+<td>INBOAI</td>
+<td>The number of initial boardings at node.</td>
+</tr>
+<tr>
+<td>FIALII</td>
+<td>The number of final alightings at node.</td>
+</tr>
+<tr>
+<td>@gofz</td>
+<td>GO Rail fare zone index.</td>
+</tr>
+<tr>
+<td>@stationla</td>
+<td>Station Label</td>
+</tr>
+<tr>
+<td>@stop</td>
+<td>1 if there is a transit stop at this location, 0 otherwise.</td>
+</tr>
+<tr>
+<td>@transfer</td>
+<td>1 if the link is only used for transit transfers.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="emme_tlines">emme_tlines</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID</td>
+<td>A unique name for the transit line.</td>
+</tr>
+<tr>
+<td>MODE</td>
+<td>The transit mode that the transit line uses.</td>
+</tr>
+<tr>
+<td>VEHICLE</td>
+<td>The index to the vehicle that the transit line uses.</td>
+</tr>
+<tr>
+<td>HEADWAY</td>
+<td>The time between runs of the transit line.</td>
+</tr>
+<tr>
+<td>SPEED</td>
+<td>The average speed of the transit line, <strong>unused in GTAModel V4.1+</strong>.</td>
+</tr>
+<tr>
+<td>DESC</td>
+<td>A short description for the transit line.</td>
+</tr>
+<tr>
+<td>NUM_SEGS</td>
+<td>The number of transit segments that compose the line.</td>
+</tr>
+<tr>
+<td>LAYOVER_TI</td>
+<td>The time a vehicle waits at the end of the line. <strong>Unused in GTAModel</strong>.</td>
+</tr>
+<tr>
+<td>DATA1</td>
+<td>The same as <code>ut1</code>.</td>
+</tr>
+<tr>
+<td>DATA2</td>
+<td>The same as <code>ut2</code>.</td>
+</tr>
+<tr>
+<td>DATA3</td>
+<td>The same as <code>ut3</code>.</td>
+</tr>
+<tr>
+<td>@doors</td>
+<td>The number of doors for vehicles in the transit lines, 0 resolves to 2.</td>
+</tr>
+<tr>
+<td>@ehdw</td>
+<td>The effective headway of the line.  How long does a person actually wait, in minutes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="emme_tsegs">emme_tsegs</h3>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SEG_ID</td>
+<td>The segment's id in the format <code>{Line_Id}-{iNode}-{jNode}</code>.</td>
+</tr>
+<tr>
+<td>LINE_ID</td>
+<td>The id for the transit line that the segment belongs to.</td>
+</tr>
+<tr>
+<td>SEG_NUM</td>
+<td>The ordered index of the transit segment within the transit line.</td>
+</tr>
+<tr>
+<td>INODE</td>
+<td>The node that the transit segment starts at.</td>
+</tr>
+<tr>
+<td>JNODE</td>
+<td>The node that the transit segment ends at.</td>
+</tr>
+<tr>
+<td>DWELL_TIME</td>
+<td>The amount of time that the transit vehicle spends boarding and alighting passengers.</td>
+</tr>
+<tr>
+<td>TTF</td>
+<td>An index into the 'transit time function' that is used for computing the time it takes to traverse the link.  Does not include dwell time.</td>
+</tr>
+<tr>
+<td>DWT_IS_FAC</td>
+<td></td>
+</tr>
+<tr>
+<td>CAN_ALIGHT</td>
+<td>Can passengers alight at the end of the segment?</td>
+</tr>
+<tr>
+<td>CAN_BOARD</td>
+<td>Can passengers board at the end of the segment?</td>
+</tr>
+<tr>
+<td>DATA1</td>
+<td>The same as <code>us1</code>.</td>
+</tr>
+<tr>
+<td>DATA2</td>
+<td>The same as <code>us2</code>.</td>
+</tr>
+<tr>
+<td>DATA3</td>
+<td>The same as <code>us3</code>.</td>
+</tr>
+<tr>
+<td>VOLTR</td>
+<td>The number of passengers travelling on the transit line through the segment.</td>
+</tr>
+<tr>
+<td>TIMTR</td>
+<td>The time, in minutes, it takes to traverse the segment.</td>
+</tr>
+<tr>
+<td>BOARD</td>
+<td>The number of people who board the vehicle.</td>
+</tr>
+<tr>
+<td>@alighting</td>
+<td>The number of people who alight from the vehicle.</td>
+</tr>
+<tr>
+<td>@boardings</td>
+<td>The number of people who board the vehicle.  This will be the same as BOARD.</td>
+</tr>
+<tr>
+<td>@ccost</td>
+<td>The cost, in in-vehicle-minute utilities, of crowding.</td>
+</tr>
+<tr>
+<td>@erow_spee</td>
+<td>The exclusive-right-of-way speed of the vehicle to use, 0 if default or not a erow segment.</td>
+</tr>
+<tr>
+<td>@sfare</td>
+<td>The fare for traversing the segment.</td>
+</tr>
+<tr>
+<td>@tstop</td>
+<td>The number of transit stops that will be used to traverse the segment. This might be greater than one if not all stops are modelled.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/Outputs/shapefile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

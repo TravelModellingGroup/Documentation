@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Calibration Guide | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Calibration Guide | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/index.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="calibration-guide">Calibration Guide</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>This section is designed for consultants or individuals who have received a copy of
+GTAModel V4 and need to adjust the model to better fit a specific region.  If you
+wish to learn how to use the model instead please look to the User Guide section instead.</p>
+</div>
+<p>Models based on GTAModel V4 will require calibration. Before beginning calibration please make sure that your network
+model has been updated with all of the changes for your base year and including all changes
+to the zone system.  Additionally, please familiarize yourself
+with the <a href="../model_design/overview.html">model system's design</a>.
+Below is the recommended order of steps, designed in such as to reduce the
+amount of iteration required as the models interact with each other.</p>
+<ol>
+<li><a href="transit_assignment.html">Transit Assignment</a></li>
+<li><a href="porpow.html">Place-of-Residence Place-of-Work (PoRPoW)</a></li>
+<li><a href="dlic.html">Driver's License</a></li>
+<li><a href="auto_ownership.html">Auto Ownership</a></li>
+<li><a href="episode_generation.html">Episode Generation</a></li>
+<li><a href="location_choice.html">Location Choice</a></li>
+<li><a href="mode_choice.html">Mode Choice</a></li>
+</ol>
+<p>In the above sections the location of the models within the model system will be described
+using the following standard. For example to find <code>Other Modes/WAT/Time Period Constants</code>
+within XTMF, expand the root module <code>GTAModel V4.1.0</code> and inside of it, <code>Other Modes</code>, <code>WAT</code>,
+and finally <code>Time Period Constants</code>.  If you need additional assistance in using XTMF, you can
+find the documentation for working with model systems <a href="../../xtmf/model_systems.html">here</a>.</p>
+<p>It is recommended to create a single iteration model system that avoids calling any network
+assignment modules in order to reduce the model run-time while making the initial calibration
+steps.  After the single iteration runs have come to an acceptable calibration you would then
+move on to full model runs, increasing by one iteration at a time and running network assignments,
+until you have achieved the final model's calibration.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you change your planning district system please go through each calibration step to
+see what parameters be affected, including the ones that came with the base GTAModel V4.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When working with calibration modules TMG has the tradition of naming the module to describe
+the planning districts they apply to by planning district numbers using the range set format.
+For example, <code>1-4,6</code> refers to planning districts 1, 2, 3, 4, and 6.  If the calibration
+factor contains an origin and destination a colon ':' is used to separate the range sets.
+For example, <code>1-4,6:5,7-16</code> represents trips originating in the inner planning districts of
+Toronto going to the Outer planning districts of Toronto.</p>
+</div>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

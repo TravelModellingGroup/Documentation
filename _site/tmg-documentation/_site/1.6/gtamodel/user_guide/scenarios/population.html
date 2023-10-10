@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Population | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Population | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/population.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="population">Population</h1>
+
+<p>The population scenario contains the households and persons agents that will be run through GTAModel.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<ul>
+<li>HouseholdData
+<ul>
+<li>Households.csv</li>
+<li>Persons.csv</li>
+</ul>
+</li>
+<li>WorkerCategories (V4.0)</li>
+<li>ZonalResidence</li>
+<li>ZoneData
+<ul>
+<li>ElementaryStudents.csv (V4.2+)</li>
+<li>HighSchoolStudents.csv (V4.2+)</li>
+<li>IntrazonalDistance.csv (V4.2+)</li>
+<li>PDs.csv (V4.1+)</li>
+<li>Population.csv (V4.1+)</li>
+<li>PostSecondaryStudents.csv (V4.2+)</li>
+<li>Regions.csv</li>
+<li>Zones.csv (V4.0)</li>
+</ul>
+</li>
+</ul>
+<h3 id="householddatahouseholdscsv">HouseholdData/Households.csv</h3>
+<p>The household records are stored in a CSV file with the following columns in order, identical to the input seed's format:</p>
+<ul>
+<li>HouseholdId
+<ul>
+<li>A unique number for the household [0, 2147483647].</li>
+</ul>
+</li>
+<li>Zone
+<ul>
+<li>The traffic analysis zone that the household resides in.</li>
+</ul>
+</li>
+<li>ExpansionFactor
+<ul>
+<li>The factor to expand this record up to get the full population.</li>
+</ul>
+</li>
+<li>DwellingType
+<ul>
+<li>1 - House</li>
+<li>2 - Apartment</li>
+<li>3 - Townhouse</li>
+</ul>
+</li>
+<li>NumberOfPersons
+<ul>
+<li>The number of persons living the house household.</li>
+</ul>
+</li>
+<li>NumberOfVehicles
+<ul>
+<li>The number of vehicles owned by the household.</li>
+</ul>
+</li>
+<li>IncomeClass <code>(V4.1+)</code>
+<ul>
+<li>1 - $0 to $14,999</li>
+<li>2 - $15,000 to $39,999</li>
+<li>3 - $40,000 to $59,999</li>
+<li>4 - $60,000 to $99,999</li>
+<li>5 - $100,000 to $124,999</li>
+<li>6 - $125,000 and above</li>
+<li>7 - Decline / don't know</li>
+</ul>
+</li>
+</ul>
+<h3 id="householddatapersonscsv">HouseholdData/Persons.csv</h3>
+<p>The person records are stored in a CSV file with the following columns in order, identical to the input seed's format:</p>
+<ul>
+<li>HouseholdId
+<ul>
+<li>A unique number for the household that contains this person.</li>
+</ul>
+</li>
+<li>PersonNumber
+<ul>
+<li>A unique number within the household for the person.</li>
+</ul>
+</li>
+<li>Age</li>
+<li>Sex
+<ul>
+<li>F - female</li>
+<li>M - male</li>
+</ul>
+</li>
+<li>License
+<ul>
+<li>Y - Yes</li>
+<li>N - No</li>
+</ul>
+</li>
+<li>TransitPass
+<ul>
+<li>N - None</li>
+</ul>
+</li>
+<li>EmploymentStatus
+<ul>
+<li>O - Not employed</li>
+<li>F - Full-time</li>
+<li>P - Part-Time</li>
+<li>H - Full-time work-at-home</li>
+<li>J - Part-time work-at-home</li>
+</ul>
+</li>
+<li>Occupation
+<ul>
+<li>G - General Office / Clerical</li>
+<li>M - Manufacturing / Construction / Trades</li>
+<li>P - Professional / Management / Technical</li>
+<li>S - Retail Sales and Service</li>
+<li>O - Not Employed</li>
+</ul>
+</li>
+<li>FreeParking
+<ul>
+<li>N - No</li>
+<li>O - Not applicable</li>
+<li>Y - Yes</li>
+</ul>
+</li>
+<li>StudentStatus
+<ul>
+<li>O - Not a student</li>
+<li>P - Part time student</li>
+<li>S - Full time student</li>
+</ul>
+</li>
+<li>EmploymentPD
+<ul>
+<li>0, the external zone number where they work, or 8888 if they have a non-fixed place-of-work.</li>
+</ul>
+</li>
+<li>SchoolPD
+<ul>
+<li>0, or the external zone number where they go to school.</li>
+</ul>
+</li>
+<li>ExpansionFactor
+<ul>
+<li>The factor to expand this record up to get the full population.</li>
+</ul>
+</li>
+</ul>
+<h3 id="zonalresidencecsv">ZonalResidence/*.csv</h3>
+<ul>
+<li>HomeZone</li>
+<li>NumberOfWorkers</li>
+</ul>
+<h3 id="workercategoriescsv">WorkerCategories/*.csv</h3>
+<p><code>This folder is only used in GTAModel V4.0.</code></p>
+<p>The worker category files provide GTAModel a way of splitting the aggregate workers into different auto accessibility categories. There are
+eight files in this directory representing each combination of occupation and employment status category.</p>
+<p>Each of the files will contain the following columns</p>
+<ul>
+<li>HomeZone</li>
+<li>WorkerCategory</li>
+<li>Ratio</li>
+</ul>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>To create a new population scenario you will need to run your <a href="../PopulationSynthesis/index.html">population synthesis algorithm</a>.
+Your population synthesis alogrithm should provide you with your new <code>HouseholdData</code>, <code>WorkerCategories</code> (if your model requires it),
+and <code>ZonalResidence</code> directories.</p>
+<p>For the <code>ZoneData</code> directory you will need to do the following:</p>
+<ol>
+<li>Clone the files from a similar scenario to get your <code>IntrazonalDistance.csv</code>, <code>PDs.csv</code>, <code>Population.csv</code>, <code>Regions.csv</code>, and or <code>Zones.csv</code>
+to get the starting point.</li>
+<li>Copy your three student files from population synthesis. (V4.2+)</li>
+<li>Update the <code>Zones.csv</code>'s Population column (V4.0) or <code>Population.csv</code> (V4.1+) to match your inputs for population synthesis.</li>
+</ol>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/population.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

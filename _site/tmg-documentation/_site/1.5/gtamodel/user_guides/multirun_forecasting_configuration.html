@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Multi-Run Forecasting Configuration | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Multi-Run Forecasting Configuration | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/user_guides/multirun_forecasting_configuration.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="multi-run-forecasting-configuration">Multi-Run Forecasting Configuration</h1>
+
+<p>In addition to the regular GTAModel V4.0 model system configuration there is another common configuration that allows the batch execution of different scenarios.  Utilizing TMG’s multi-run framework the model system will execute the runs specified in an XML file.  This XML file lets you change parameters on the fly, interact with the model system’s resources, and copy files among other things.  A full documentation of its capabilities is included in XTMF’s documentation.  The following will show how it has been used in previous work with GTAModel V4.</p>
+<h2 id="example-multi-run-configuration-file">Example Multi-Run Configuration File</h2>
+<pre><code class="lang-xml">&lt;Root&gt;
+        &lt;copy Origin=&quot;../../V4Input/Multi-RunV4Analysis.xml&quot; Destination=&quot;Multi-Run.xml&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;AM Airport Arrivals&quot; Value=&quot;1&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;MD Airport Arrivals&quot; Value=&quot;2&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;PM Airport Arrivals&quot; Value=&quot;3&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;EV Airport Arrivals&quot; Value=&quot;4&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;AM Departures&quot; Value=&quot;5&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;MD Departures&quot; Value=&quot;6&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;PM Departures&quot; Value=&quot;7&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;EV Departures&quot; Value=&quot;8&quot; /&gt;
+
+    &lt;run Name=&quot;Base:&quot; RunAs=&quot;Base&quot;&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/Base&quot; Destination=&quot;Network Scenario&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/Base/Fares.xml&quot; Destination=&quot;../../../V4Input/Transit Fares/LastScenarioFares.xml&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecast-Stations/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Employment/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Population/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;/run&gt;
+    &lt;unload Path=&quot;Resources&quot; /&gt;
+
+        &lt;changelinkedparameter Name=&quot;AM Airport Arrivals&quot; Value=&quot;100&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;MD Airport Arrivals&quot; Value=&quot;200&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;PM Airport Arrivals&quot; Value=&quot;300&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;EV Airport Arrivals&quot; Value=&quot;400&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;AM Departures&quot; Value=&quot;500&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;MD Departures&quot; Value=&quot;600&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;PM Departures&quot; Value=&quot;700&quot; /&gt;
+        &lt;changelinkedparameter Name=&quot;EV Departures&quot; Value=&quot;800&quot; /&gt;
+
+
+    &lt;run Name=&quot;Future:&quot; RunAs=&quot;Future&quot;&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/Future&quot; Destination=&quot;Network Scenario&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/ Future /Fares.xml&quot; Destination=&quot;../../../V4Input/Transit Fares/LastScenarioFares.xml&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecast-Stations/Future &quot; Destination=&quot;../../../V4Input&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Employment/Future &quot; Destination=&quot;../../../V4Input&quot; /&gt;
+        &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Population/Future &quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;/run&gt;
+    &lt;unload Path=&quot;Resources&quot; /&gt;
+&lt;/Root&gt;
+</code></pre>
+<p>Above we have a configuration that will evaluate two scenarios, Base and Future.  The first instruction will copy the multi-run parameters into the run directory.</p>
+<pre><code class="lang-xml">&lt;copy Origin=&quot;../../V4Input/Multi-RunV4Analysis.xml&quot; Destination=&quot;Multi-Run.xml&quot; /&gt;
+</code></pre>
+<p>The next set of instructions will update the airport model parameters to have the given year’s expected airport volumes.  For this example we have made up some numbers.</p>
+<pre><code class="lang-xml">&lt;changelinkedparameter Name=&quot;AM Airport Arrivals&quot; Value=&quot;1&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;MD Airport Arrivals&quot; Value=&quot;2&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;PM Airport Arrivals&quot; Value=&quot;3&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;EV Airport Arrivals&quot; Value=&quot;4&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;AM Departures&quot; Value=&quot;5&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;MD Departures&quot; Value=&quot;6&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;PM Departures&quot; Value=&quot;7&quot; /&gt;
+&lt;changelinkedparameter Name=&quot;EV Departures&quot; Value=&quot;8&quot; /&gt;
+</code></pre>
+<p>After all of the parameters have been setup we are going to define a run for the Base scenario.</p>
+<pre><code class="lang-xml">&lt;run Name=&quot;Base:&quot; RunAs=&quot;Base&quot;&gt;
+</code></pre>
+<p>This line sets up the run with the name ‘Base:’.  We currently add a ‘:’ in order to format the run status better, this name will not be used anywhere.  The RunAs attribute will be used to define the name of the directory inside of the main run directory to save the output.  All file path references from this point on will be relative to this directory.</p>
+<pre><code class="lang-xml">&lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/Base&quot; Destination=&quot;Network Scenario&quot; /&gt;
+&lt;copy Origin=&quot;../../../Scenarios/Network Scenarios/Base/Fares.xml&quot; Destination=&quot;../../../V4Input/Transit Fares/LastScenarioFares.xml&quot; /&gt;
+</code></pre>
+<p>These copy instructions will copy in the wanted network scenario for the run and load in the file for generating the transit fare-based hyper-networks.</p>
+<pre><code class="lang-xml">    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Stations/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Employment/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Population/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+</code></pre>
+<p>These next copies load in the station capacities, employment information, and population data for the base scenario.  In our experience separating these three pieces separately helps deal with ranged land use forecast years and where different station configurations could occur.  If you have different possible station locations, all of them should be added in as different zones in the network and inside of the station capacity file set to a 0 capacity to disable them.</p>
+<pre><code class="lang-xml">&lt;/run&gt;
+&lt;unload Path=&quot;Resources&quot; /&gt;
+
+</code></pre>
+<p>This next part defines the end of the run’s instructions.  The model then will finish executing before unloading the model’s resources, reading it for the next scenario.</p>
+<p>Each run repeats with the same logic for each run.  You can switch the airport model values between runs as we have shown in our example.</p>
+<pre><code class="lang-xml">&lt;/Root&gt;
+</code></pre>
+<p>Once all of the runs have been specified the above end tag is required to be XML compliant.</p>
+<h2 id="multi-run-forecast-data-file-system">Multi-Run Forecast Data File System</h2>
+<p>In our example run configuration we copied in data using the following lines:</p>
+<pre><code class="lang-xml">    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Stations/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Employment/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+    &lt;copy Origin=&quot;../../../Scenarios/Forecasts-Population/Base&quot; Destination=&quot;../../../V4Input&quot; /&gt;
+
+</code></pre>
+<p>Each of these copies will take the data inside of that forecast and replace the data currently in V4Input.  In order for this to work properly a mirrored directory structure is required within each of these folders reflecting the subdirectories in V4Input.  The following table lists all of the files that we change between runs.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/user_guides/multirun_forecasting_configuration.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

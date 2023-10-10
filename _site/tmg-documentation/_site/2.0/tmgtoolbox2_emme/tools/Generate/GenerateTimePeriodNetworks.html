@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Generate Time Period Networks | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Generate Time Period Networks | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Generate/GenerateTimePeriodNetworks.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="generate-time-period-networks"><strong>Generate Time Period Networks</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.6.0+, XTMF2, and produces results similar to the TMG Full Network Set Generator Tool in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Generate Time Period Networks tool generates a cleaned base network for all time periods (AM, MD, PM, EV,and ON) modelled in a GTAModel run. The <code>GenerateTimePeriodNetworks</code> tool takes in a base network with zones and generates a full set of usable cleaned time period networks. The goal is that this tool will replace the standard TMG workflow from base to time period networks.</p>
+<p>This tool depends on a number of input files whose content depends on the network characteristics to be modelled.</p>
+<p>Input file requirements for <code>GenerateTimePeriodNetworks</code> tool:</p>
+<blockquote>
+<ul>
+<li>Transit Service Table File</li>
+<li>Transit Aggregation Selection Table File</li>
+<li>Batch Edit File</li>
+<li>Additional Transit Alternative Table Files
+More on this can found in the parameters explanation below.</li>
+</ul>
+</blockquote>
+<h2 id="time-period-networks-generation-algorithm">Time Period Networks Generation Algorithm</h2>
+<p>The diagram below expands on the Time Period Networks Generation flow. It begins with creating transit time periods, then the transit speeds are prorated, and finally extra links and nodes are removed.</p>
+<figure>
+    <img src="images/FullNetworkSetGenerator.png" alt="Generate Time Period Networks flow">
+    <figcaption>Figure 1: Generate Time Period Networks flow</figcaption>
+</figure>
+<h3 id="create-transit-time-period">Create Transit Time Period</h3>
+<p><code>Create Transit Time Period</code> generates new scenarios for different time periods and uses a service table (a list of trips times) to generate headways and speeds for transit lines in each of those periods. Currently, this tool is run five separate times.</p>
+<h3 id="prorate-transit-speed">Prorate Transit Speed</h3>
+<p>The next is <code>Prorate Transit Speed</code>. This function takes the overall transit line speeds and apportions speeds to individual transit segments (stored in <em>us1</em>) based on the link free flow speed (<em>ul2</em>).</p>
+<h3 id="remove-extra-links">Remove Extra Links</h3>
+<p>The <code>Remove Extra Links</code> function cleans the network of unnecessary or detrimental links. This is done in several steps:</p>
+<ul>
+<li>Links which have no transit lines but only transit modes are deleted.</li>
+<li>Non-connector dead-end links are removed.</li>
+<li>Links with transfer modes that do not connect two stations, or connect a station to the road network are deleted. Links of this nature which have other, non-transfer modes are not deleted; however, the transfer modes are removed from these links. Retaining transfer modes on these links can result in agents being able to bypass paying a fare in the hyper network.</li>
+</ul>
+<h3 id="remove-extra-nodes">Remove Extra Nodes</h3>
+<p>Finally, the <code>Remove Extra Nodes</code> function “cleans” the network of all cosmetic nodes. For example, a node that does not connect to a centroid connector, is not an intersection and is not a transit stop will be removed. Using extra attributes, the set of nodes to be removed can be expanded to allow for removal of, for example, certain transit stops. This tool is necessary in order to allow for a hyper network to be generated that does not exceed the node limit.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>GenerateTimePeriodNetworks</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Generate&quot; -&gt; &quot;Generate Time Period Networks&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Generate/generate_time_period_networks.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Generate Time Period Networks tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>GenerateTimePeriodNetworks</code> tool can be set by the users. This tool is called <code>GenerateTimePeriodNetworks</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>GenerateTimePeriodNetworks</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+parameters = {
+    &quot;base_scenario_number&quot;: 1,
+    &quot;transit_service_table_file&quot;: &quot;Service Table.csv&quot;,
+    &quot;batch_edit_file&quot;: &quot;Batch Line Edit.csv&quot;,
+    &quot;transit_aggregation_selection_table_file&quot;: &quot;Aggregation.csv&quot;,
+    &quot;transit_alternative_table_file&quot;: &quot;Alt File.csv&quot;,
+    &quot;attribute_aggregator&quot;: &quot;vdf: force,length: sum,type: first,lanes: force,ul1: avg,ul2: force,ul3: force,dwt: sum,dwfac: force,ttf: force,us1: avg_by_length,us2: avg,us3: avg,ui1: avg,ui2: avg,ui3: avg,@stop: avg,@lkcap: avg,@lkspd: avg,@stn1: force,@stn2: force,@z407: avg&quot;,
+    &quot;connector_filter_attribute&quot;: &quot;None&quot;,
+    &quot;default_aggregation&quot;: &quot;Naive&quot;,
+    &quot;line_filter_expression&quot;: &quot;line=______ xor line=TS____ xor line=GT____ xor line=T9____ xor line=T601__&quot;,
+    &quot;node_filter_attribute&quot;: &quot;None&quot;,
+    &quot;stop_filter_attribute&quot;: &quot;@stop&quot;,
+    &quot;transfer_mode_string&quot;: &quot;tuy&quot;,
+    &quot;unposted_speed_limit&quot;:50,
+    &quot;time_periods&quot;: [
+        {
+            &quot;name&quot;: &quot;PM&quot;,
+            &quot;uncleaned_scenario_number&quot;: 30,
+            &quot;cleaned_scenario_number&quot;: 31,
+            &quot;uncleaned_description&quot;: &quot;PM - Uncleaned Network&quot;,
+            &quot;cleaned_description&quot;: &quot;PM - Cleaned Network&quot;,
+            &quot;start_time&quot;: &quot;15:00&quot;,
+            &quot;end_time&quot;: &quot;19:00&quot;,
+            &quot;scenario_network_update_file&quot;: &quot;&quot;,
+        },
+        {
+            &quot;name&quot;: &quot;EV&quot;,
+            &quot;uncleaned_scenario_number&quot;: 40,
+            &quot;cleaned_scenario_number&quot;: 41,
+            &quot;uncleaned_description&quot;: &quot;EV - Uncleaned Network&quot;,
+            &quot;cleaned_description&quot;: &quot;EV - Cleaned Network&quot;,
+            &quot;start_time&quot;: &quot;19:00&quot;,
+            &quot;end_time&quot;: &quot;24:00&quot;,
+            &quot;scenario_network_update_file&quot;: &quot;&quot;,
+        },
+    ],
+    &quot;additional_transit_alternative_table&quot;: [{&quot;name&quot;: &quot;alt_file_1&quot;, &quot;alternative_table_file&quot;: &quot;&quot;}],
+}
+generate_time_period_networks = _MODELLER.tool(&quot;tmg2.Generate.generate_time_period_networks&quot;)
+generate_time_period_networks(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-generate-time-period-networks">Module Parameter Explanation: &quot;Generate Time Period Networks&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Base Scenario <code>integer</code></td>
+<td style="text-align: left;">The scenario number for the base network.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Service Table File <code>string</code></td>
+<td style="text-align: left;">A link to the file containing transit service data. The service table should be organized with the following header: <code>emme_id, trip_depart, and trip_arrive</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Attribute Aggregator <code>string</code></td>
+<td style="text-align: left;">The formatted string to aggregate attributes. 'vdf: force, <br> length: sum, <br> type: first, <br> lanes: avg, <br> ul1: avg, <br> ul2: force, <br> ul3: avg, <br> dwt: sum, <br> dwfac: force, <br> ttf: force, <br> us1: avg_by_length, <br> us2: avg, <br> us3: avg, <br> ui1: avg, <br> ui2: avg, <br> ui3: avg'</td>
+<td>'vdf: force, <br> length: sum, <br> type: first, <br> lanes: force, <br> ul1: avg, <br> ul2: force, <br> ul3: force, <br> dwt: sum, <br> dwfac: force, <br> ttf: force, <br> us1: avg_by_length, <br> us2: avg, <br> us3: avg, <br> ui1: avg, <br> ui2: avg, <br> ui3: avg, <br> @stn1: force, <br> @stn2: force'</td>
+<td>Choose which functions to apply to attributes when combining affected links. Will apply <em>avg</em> to all extra attributes if not specified.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connector Filter Attribute <code>string</code></td>
+<td style="text-align: left;">The name of the attribute to use as a filter. Use set to &quot;None&quot; if not available</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Default Aggregation <code>string</code></td>
+<td style="text-align: left;">set to either <code>Agg</code>or <code>naïve</code> The name of the attribute to use as a filter.Specifies which aggregation type to use for lines NOT listed in <code>Agg Type Selection File</code>.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Line Filter Expression <code>string</code></td>
+<td style="text-align: left;">The formatted string to use as an expression to filter lines. Leave blank to skip prorating transit speeds. e.g. <code>'line=______ xor line=TS____ xor line=GT____'</code> The transit lines to apply applies this filter by default tool to all transit lines except for TTC subways and GO trains due to hand-coded <em>us1</em> values.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Node Filter Attribute ID <code>string</code></td>
+<td style="text-align: left;">Extra attribute used to change the selection of nodes. By default, all nodes will be accepted.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Stop Filter Attribute ID <code>string</code></td>
+<td style="text-align: left;">Extra attribute used to change the selection of transit stops. By default, all stops will be accepted. Recommended to use <code>@stop</code> (all nodes value = 1) to allow for removal of some transit stops, otherwise node limit will be exceeded in hyper network.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transfer Mode String <code>string</code></td>
+<td style="text-align: left;">Modes used to transfer between transit stops, or to transit stops. <br> Default list contains three modes: <code>t</code> Transfer between two transit lines for the same transit agency, <code>u</code> Transfer between two different transit agencies, <code>y</code> Walk between park &amp; ride lot and a transit station.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Batch Edit File <code>string</code></td>
+<td style="text-align: left;">A path to the batch edit file.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Aggregation Selection Table File <code>string</code></td>
+<td style="text-align: left;">This file specifies, for each line, what type of aggregation to use – naïve or average. <code>Naïve</code> sums up all trips in a time period and divides by the time period length; <code>Average</code> averages all headways throughout the period. The aggregation type selection file should be organized with the following header: <code>emme_id and agg_type</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Alternative Table <code>string</code></td>
+<td style="text-align: left;">A link to the file containing how to modify transit schedules.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;">Unposted Speed Limit <code>integer</code></td>
+<td style="text-align: left;">Unposted Speed Limit in km/h</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-time-periods">Sub-Module Parameter Explanation: &quot;Time Periods&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Uncleaned Scenario Number <code>integer</code></td>
+<td style="text-align: left;">The scenario number for the uncleaned network</td>
+</tr>
+<tr>
+<td style="text-align: left;">Uncleaned Description <code>string</code></td>
+<td style="text-align: left;">The description for the uncleaned scenario</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cleaned Scenario Number <code>integer</code></td>
+<td style="text-align: left;">The scenario number for the cleaned network</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cleaned Description <code>string</code></td>
+<td style="text-align: left;">The description for the cleaned scenario</td>
+</tr>
+<tr>
+<td style="text-align: left;">Start Time <code>integer</code></td>
+<td style="text-align: left;">The start time for this scenario. Start of the time period. User integer time, e.g., 2:30PM should be 1430.</td>
+</tr>
+<tr>
+<td style="text-align: left;">End Time <code>integer</code></td>
+<td style="text-align: left;">The end time for this scenario. End of the time period. User integer time, e.g., 2:30PM should be 1430.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scenario Network Update File <code>string</code></td>
+<td style="text-align: left;">The location of the network update file for this time period.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-additional-transit-alternative-tables">Sub-Module Parameter Explanation: &quot;Additional Transit Alternative Tables&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Additional Alternative Table File <code>string</code></td>
+<td style="text-align: left;">Additional Alternative Table File</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Generate/GenerateTimePeriodNetworks.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

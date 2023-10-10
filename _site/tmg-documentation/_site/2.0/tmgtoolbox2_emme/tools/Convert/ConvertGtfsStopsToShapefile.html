@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Convert GTFS Stops To Shapefile | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Convert GTFS Stops To Shapefile | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Convert/ConvertGtfsStopsToShapefile.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="convert-gtfs-stops-to-shapefile"><strong>Convert GTFS Stops To Shapefile</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.6.0+, XTMF2, and produces results similar to the TMG Convert GTFS Stops To Shapefile in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Convert GTFS Stops To Shapefile converts the <code>stops.txt</code> file to a shapefile, flagging which modes it serves as well.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>ConvertGTFSStopsToShapefile</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Convert&quot; -&gt; &quot;Convert GTFS Stops To Shapefile&quot;. You can find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Convert/convert_gtfs_stops_to_shapefile.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Convert GTFS
+Stops To Shapefile tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>ConvertGTFSStopsToShapefile</code> tool can be set by the users. This tool is called <code>ConvertGTFSStopsToShapefile</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <strong><em>ExecuteToolsFromModellerResource</em></strong> or <strong><em>EmmeToolsToRun</em></strong>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>ConvertGTFSStopsToShapefile</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+ parameters = {
+    &quot;gtfs_folder&quot;: &quot;TestFiles/FrabtiztownGTFS&quot;,
+    &quot;shapefile_name&quot;: &quot;OutputTestFiles/FrabtiztownStopShp&quot;,
+}
+
+convert_gtfs_stops_to_shapefile = _MODELLER.tool(&quot;tmg2.Convert.convert_gtfs_stops_to_shapefile&quot;)
+convert_gtfs_stops_to_shapefile(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-convert-gtfs-stops-to-shapefile">Module Parameter Explanation: &quot;Convert GTFS Stops To Shapefile&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">GTFS Folder <code>string</code></td>
+<td style="text-align: left;">The GTFS folder that contains the stops.txt file</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shapefile Name <code>string</code></td>
+<td style="text-align: left;">The name of the shapefile for export.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Convert/ConvertGtfsStopsToShapefile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

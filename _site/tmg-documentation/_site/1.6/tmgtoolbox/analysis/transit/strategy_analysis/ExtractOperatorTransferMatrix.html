@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Extract Operator Transfer Matrix | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Extract Operator Transfer Matrix | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/strategy_analysis/ExtractOperatorTransferMatrix.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="extract-operator-transfer-matrix"><strong>Extract Operator Transfer Matrix</strong></h1>
+
+<p>This tool is used to extract a matrix of passenger volumes transferring from and to each operator, including initial boardings, final alightings and total walk-all-way volumes.</p>
+<p>Summing over each column is equivalent to aggregating the boardings for each operator, but only if each line has a non-zero group number (i.e. full coverage). Each operator (or line group) is identified numerically based on several pre-set schemes (e.g. 1 for the first group, 2 for the second).</p>
+<blockquote>
+<p>The <strong>0th 'group'</strong> is special. The 0th row corresponds to initial boardings, and the 0th column to final alightings. The cell [0,0] contains the total walk-all-way volumes for the scenario.</p>
+</blockquote>
+<blockquote>
+<p><strong>Walk-all-way Matrix</strong>: the fraction of trips walking all-way for each OD pair. The user may aggregate this matrix based on an existing Zone Partition.</p>
+</blockquote>
+<p>Temporary storage requirements are as following:</p>
+<ol>
+<li>One full matrix</li>
+<li>Two transit segment attributes</li>
+<li>One transit line attribute (if using a pre-built grouping scheme)</li>
+</ol>
+<p><strong>Performance note for Emme 4.1 and newer</strong>: when analyzing the results of a congested transit assignment, this tool will automatically blend the results over all iterations in order to keep the results consistent with those saved to the network. This is a slow operation so please allow for additional run time when analyzing many iterations.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Analysis&quot; -&gt; &quot;Tranist&quot; -&gt; &quot;Strategy Analysis&quot; -&gt; &quot;Extract Operator Transfer Matrix&quot;</p>
+<h3 id="scenario">Scenario</h3>
+<p>Select the scenario to execute against. Only one scenario at a time can be selected.</p>
+<h3 id="demand-to-analyze">Demand to Analyze</h3>
+<p>Choose the demand matrix to use for analysis. If set to NONE, the tool will search for the demand matrix used in the most recent assignment.</p>
+<h3 id="class-name-optional">Class Name (Optional)</h3>
+<p>Choose the name of the assignment class to analyze. This is only required if a multiclass transit assignment has been run (Emme 4.1 and newer).</p>
+<h3 id="transfer-matrix">TRANSFER MATRIX</h3>
+<h4 id="export-transfer-matrix">Export Transfer Matrix?</h4>
+<p>Uncheck the box if the user only need the walk-all-way matrix. Default is checked (TRUE).</p>
+<h4 id="line-group--grouping-scheme">Line Group / Grouping Scheme</h4>
+<p>Select a pre-built option or an existing transit line attribute with group codes.</p>
+<h4 id="transit-matrix-file">Transit Matrix File</h4>
+<p>Specify the output file (*.csv) to store the transfer matrix.</p>
+<h3 id="walk-all-way-matrix">WALK-ALL-WAY MATRIX</h3>
+<h4 id="export-walk-all-way-matrix">Export walk-all-way matrix?</h4>
+<p>Check the box to export walk-all-way matrix. Default is unchecked (FALSE).</p>
+<h4 id="aggregation-partition-optional">Aggregation Partition (Optional)</h4>
+<p>Specify the zone partition for the aggregation of walk-all-way matrix. Select NONE if not needed.</p>
+<h4 id="walk-all-way-matrix-file">Walk-all-way Matrix File</h4>
+<p>Specify the output file (*.csv) to store the walk-all-way matrix.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;ExportOperatorTransferMatrix&quot;.  It is available to add under <em>ExecuteToolsFromModellerResource</em> or <em>EmmeToolsToRun</em>.</p>
+<h3 id="aggregation-partition-for-the-walk-all-way-matrix">Aggregation Partition for the Walk-all-way matrix</h3>
+<p>Specify the zone partition for the aggregation of walk-all-way matrix. Select NONE if not required.</p>
+<h3 id="export-transfer-matrix-flag">Export Transfer Matrix Flag</h3>
+<p>Default is TRUE. Select FALSE if the user does not need the transfer matrix output.</p>
+<h3 id="export-walk-all-way-matrix-flag">Export Walk-all-way Matrix Flag</h3>
+<p>Default is FALSE. Select TRUE if the user needs the walk-all-way matrix output.</p>
+<h3 id="line-group-option-or-attribute-id">Line Group Option or Attribute ID</h3>
+<p>Specify a pre-built option or an existing transit line attribute with group codes.</p>
+<h3 id="scenario-number">Scenario Number</h3>
+<p>Select the scenario to execute against.</p>
+<h3 id="transfer-matrix-file">Transfer Matrix File</h3>
+<p>Specify the location to store the transfer matrix.</p>
+<h3 id="walk-all-way-matrix-file-1">Walk-all-way Matrix File</h3>
+<p>Specify the location to store the walk-all-way matrix.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/strategy_analysis/ExtractOperatorTransferMatrix.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

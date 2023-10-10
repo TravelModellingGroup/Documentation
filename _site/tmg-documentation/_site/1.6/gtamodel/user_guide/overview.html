@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>GTAModel User Guide - Overview | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="GTAModel User Guide - Overview | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/overview.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gtamodel-user-guide---overview">GTAModel User Guide - Overview</h1>
+
+<p>This user guide will walk you through using GTAModel V4.  We recommend that you complete the <code>Initial Setup and First Run</code> guide before moving
+onto any other sections.</p>
+<h2 id="initial-setup-and-first-run">Initial Setup and First Run</h2>
+<ul>
+<li><a href="initial_setup/preface.html">Preface</a> - Gives an introduction to the tutorial.</li>
+<li><a href="initial_setup/software_setup.html">Software Setup</a> - Install EMME and setup XTMF.  This step will require administrative access on the computer.</li>
+<li><a href="initial_setup/initial_configuration.html">Initial Configuration</a> - Setup EMME for GTAModel and Import your Model System into XTMF.</li>
+<li><a href="initial_setup/executing_a_run.html">Executing a Run</a> - Learn how to configure your run with different scenarios.</li>
+<li><a href="initial_setup/model_outputs.html">Model Outputs</a> - Goes through the default outputs of GTAModel V4.</li>
+</ul>
+<h2 id="population-synthesis">Population Synthesis</h2>
+<p>Up until this point we have been using populations already built by TMG.  To generate your own synthetic population you will have to learn about
+one of the population synthesizers that are used with GTAModel.  Make sure to pick the version designed for your model.</p>
+<ul>
+<li><a href="PopulationSynthesis/V4.0PopulationSynthesis/index.html">V4.0 Population Synthesis</a> - GTAModel V4.0</li>
+<li><a href="PopulationSynthesis/PopSynIII/index.html">PopsynIII</a> - GTAModel V4.1</li>
+<li><a href="PopulationSynthesis/MetroPop/index.html">MetroPop</a> - GTAModel V4.2</li>
+</ul>
+<h2 id="creating-alternative-scenarios">Creating Alternative Scenarios</h2>
+<p>Each scenario page will go over what files exist in each Scenario folder and how to construct a new scenario.</p>
+<ul>
+<li><a href="scenarios/c_19.html">Scenario-C-19</a> - Only used by C-19 variant models.</li>
+<li><a href="scenarios/employment.html">Scenario-Employment</a> - Provides land-use information for GTAModel regarding the location of jobs, their occupation/employment split, and
+the ratio of how many people work from home or are external workers.</li>
+<li><a href="scenarios/network.html">Scenario-Network</a> - This goes over the inputs that GTAModel load in to construct the different time period networks for both auto and transit.</li>
+<li><a href="scenarios/parking.html">Scenario-Parking</a> - This scenario directory, in <code>GTAModel V4.2+</code> gives fine grained control over how much parking costs.</li>
+<li><a href="scenarios/population.html">Scenario-Population</a> - This directory contains all of the information about the households and people that live in the simulation area.</li>
+<li><a href="scenarios/school.html">Scenario-School</a> - This directory contains all of the information about the linkages between household zone and school zone for Elementary, Secondary,
+and post-secondary schools.</li>
+<li><a href="scenarios/stations.html">Scenario-Stations</a> - Learn how to add a new station to your model.</li>
+<li><a href="scenarios/transit_fares.html">Scenario-Transit Fares</a> - These scenarios allow you to change the public transit fare policy.</li>
+</ul>
+<h2 id="integrating-custom-code">Integrating Custom Code</h2>
+<p>Now that you have finished your intial setup and completed your first run you are ready to start modifying your model system.
+One of the ways to do that is to program one or more new modules for XTMF.  These guides below will walk you through the process of creating
+some common extensions.</p>
+<ul>
+<li><a href="programming/overview.html">Overview</a> - This tutorial goes through the setup for creating new modules for GTAModel and gives a high level overview of where
+GTAModel is designed to be extended.  We recommend that you start with this before moving onto more specific examples.</li>
+<li><a href="programming/interfaces/post_household_iteration.html">Mode Choice Post Processor</a> - This tutorial goes through the steps to create a new module that is able to analyse the results for each
+internal iteration of mode choice.</li>
+<li><a href="programming/examples/new_mode.html">Creating a New Mode</a> - This tutorial goes through the steps required to program a new tutorial</li>
+</ul>
+<h2 id="file-formats">File Formats</h2>
+<p>GTAModel uses a number of different file formats for both input and output data.</p>
+<ul>
+<li><a href="file_formats/fare_schema_file_specification.html">Fare Schema File Specification</a> -
+An XML based file format for describing how fare policies are applied to GTAModel.</li>
+<li><a href="file_formats/microsim.html">Microsim</a> - A series of CSV tables generated by GTAModel V4 runs that gives detailed records about households,
+persons, trips, modes taken, station access, and passenger facilitation.</li>
+<li><a href="multirun_forecasting_configuration.html">Multi-Run Forecasting Configuration</a> - This file format was used for GTAModel V4.0 in order to execute multiple
+runs of the model before XTMF was able to queue runs.  If your model system is based on GTAModel V4.0 this will cover everything you need to execute a &quot;Multi-Run&quot;.</li>
+<li><a href="file_formats/emme_binary_matrix.html">MTX</a> - A binary matrix format designed by INRO for moving matrices efficiently in and out of EMME.</li>
+<li><a href="file_formats/network_scenario_format.html">Network Scenario Format</a> - This goes over TMG's standard grouping of files that form everything required for GTAModel to
+automatically load in, and create time periods networks.</li>
+<li><a href="file_formats/zone_file_cache.html">Zone File Cache</a> - This covers how the .zfc file format is structured.  Currently in GTAModel it is used for storing scheduler distributions
+and is slowly being phased out of the model system.  It was originally formulated efficiently load tables off of disk when we were restricted to 2GB of RAM for our
+models.</li>
+<li><a href="file_formats/zones_file_format.html">Zones.csv</a> - This goes over the CSV file used for giving GTAModel V4.0 the description of the zone system.</li>
+</ul>
+<h2 id="outputs">Outputs</h2>
+<p>While each version of GTAModel can contain different outputs the following document some of the options:</p>
+<ul>
+<li><a href="Outputs/shapefile.html">ShapeFiles</a> - Contains one or more sets of ShapeFiles representing the road and transit networks.</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/overview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

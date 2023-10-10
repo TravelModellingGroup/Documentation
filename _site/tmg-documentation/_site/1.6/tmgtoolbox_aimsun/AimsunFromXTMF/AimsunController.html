@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AimsunController | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AimsunController | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/AimsunFromXTMF/AimsunController.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="aimsuncontroller">AimsunController</h1>
+
+<h2 id="overview">Overview</h2>
+<p>AimsunController is the interface on the C# side to interact with
+the AimsunBridge.</p>
+<h2 id="protocol">Protocol</h2>
+<p>AimsunController initiates  a pipe by which all signals and data
+are passed between the controller and AimsunBridge.</p>
+<p>As discussed in the AimsunBridge documentation internal communication
+between the AimsunController and the AimsunBridge is done using integer
+signal commands where a specific integer corresponds to a specific action.</p>
+<p>Below are the steps of the general process:</p>
+<ol>
+<li>AimsunController opens a pipe to the AimsunBridge.</li>
+<li>Upon confirmation pipe is successfully open,
+AimsunController sends a SignalCommand.</li>
+<li>Upon confirmation that Signal was properly received, AimsunController
+sends the data as a json payload execute the tool.</li>
+<li>AimsunController waits for the AimsunBridge to execute the tool.</li>
+<li>AimsunController reports back to user any failures and errors of the tool
+not properly executing.</li>
+</ol>
+<h2 id="writing-custom-toolsscripts">Writing Custom Tools/Scripts</h2>
+<p>The user may be required to either write their own custom Aimsun
+tools/scripts to be executed. If the user wishes to run the tool using
+XTMF follow the following steps:</p>
+<ol>
+<li>Copy the path location of your custom tool directory into the
+Toolbox Default Directory module as shown in Figure 1.</li>
+<li>XTMF will now detect your custom tools.</li>
+</ol>
+<figure>
+    <img src="images/ToolBoxDirectoryPath.png" alt="ToolBox Directory Moule">
+    <figcaption>Figure 1: ToolBoxDirectoryTool module path to the custom tool location</figcaption>
+</figure>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/AimsunFromXTMF/AimsunController.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

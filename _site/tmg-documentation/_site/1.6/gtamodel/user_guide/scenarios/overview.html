@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Overview - Scenarios | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Overview - Scenarios | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/overview.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="overview---scenarios">Overview - Scenarios</h1>
+
+<p>The scenario directories are used for quickly swapping which inputs will be used when running GTAModel V4.
+Each scenario contains a grouping of files required to test a variety of policies but decoupled from each other allowing
+the user to test different combinations of scenarios.  For instance there might be a three different population scenarios,
+possibly a low, medium, and high forecast, that you would like to test against four different subway station locations.
+In this case you would have three population scenarios and four transit scenarios, a total of twelve possible runs.</p>
+<p>These scenario directories are then referenced in XTMF using quick parameters to select which policies to run.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<p>Below are links to each scenario directory:</p>
+<ul>
+<li><a href="c_19.html">Scenario-C-19</a> - Only used by C-19 variant models.</li>
+<li><a href="employment.html">Scenario-Employment</a> - Provides land-use information for GTAModel regarding the location of jobs, their occupation/employment split, and
+the ratio of how many people work from home or are external workers.</li>
+<li><a href="network.html">Scenario-Network</a> - This goes over the inputs that GTAModel load in to construct the different time period networks for both auto and transit.</li>
+<li><a href="parking.html">Scenario-Parking</a> - This scenario directory, in <code>GTAModel V4.2+</code> gives fine grained control over how much parking costs.</li>
+<li><a href="population.html">Scenario-Population</a> - This directory contains all of the information about the households and people that live in the simulation area.</li>
+<li><a href="school.html">Scenario-School</a> - This directory contains all of the information about the linkages between household zone and school zone for Elementary, Secondary,
+and post-secondary schools.</li>
+<li><a href="stations.html">Scenario-Stations</a> - Learn how to add a new station to your model.</li>
+<li><a href="transit_fares.html">Scenario-Transit Fares</a> - These scenarios allow you to change the public transit fare policy.</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/overview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

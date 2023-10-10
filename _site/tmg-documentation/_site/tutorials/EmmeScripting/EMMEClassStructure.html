@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>EMME Class Structure | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="EMME Class Structure | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeScripting/EMMEClassStructure.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="emme-class-structure">EMME Class Structure</h1>
+
+<p>This section will go over some of EMME's classes and walk through.
+We will load in order each object so we can start writing our custom script that can access an EMME network.
+While not this is not the complete documentation this will give
+you a foothold to go through INRO's documentation.  You can find the full modeller documentation in the
+&quot;Emme APU Reference&quot;.</p>
+<figure>
+    <img src="images/EMMEDocumentation.png" alt="Add Module">
+    <figcaption text-align="center">Figure 1: Finding EMME's Documentation</figcaption>
+</figure>
+<h2 id="loading-the-network">Loading the Network</h2>
+<p>To get access to an EMME network you will first need to get access to modeller, the databank, load a scenario,
+and then read in the network.</p>
+<h3 id="getting-access-to-modeller">Getting Access to Modeller</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are not writing this script from within EMME's Jupyter Notebook
+you will need to add the following line before the rest of your script <br>
+<code>import inro.modeller</code></p>
+</div>
+<p>Modeller is going to be the starting point for interacting with EMME.</p>
+<pre><code class="lang-python">m = inro.modeller.Modeller()
+</code></pre>
+<h3 id="acessing-the-databank">Acessing the Databank</h3>
+<p>Our next step after getting access to modeller is loading a databank.  The following example
+shows how you can access the active databank:</p>
+<pre><code class="lang-python">databank = m.emmebank
+</code></pre>
+<h3 id="loading-a-scenario">Loading a scenario</h3>
+<p>The following code loads scenario 1 from the databank:</p>
+<pre><code class="lang-python">scenario = databank.scenario(1)
+</code></pre>
+<h3 id="loading-a-network">Loading a Network</h3>
+<p>The next line of code will load the network belonging to the scenario.  This
+network will be an in-RAM copy of the network, <strong>changes made to it will not
+be saved to the scenario</strong>.</p>
+<pre><code class="lang-python">network = scenario.get_network()
+</code></pre>
+<p>To save changes to the network you will need to use the scenario's <code>publish_network</code> function:</p>
+<pre><code class="lang-python">scenario.publish_network(network)
+</code></pre>
+<h2 id="network-objects">Network Objects</h2>
+<p>Now that we have our network loaded into memory we have everything we need to start manipulating the network.</p>
+<figure>
+    <img src="images/ClassRelations.png" alt="Add Module">
+    <figcaption text-align="center">Figure 2: EMME Network Components</figcaption>
+</figure>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that we have an understanding of how EMME's classes are related we are ready to start
+<a href="WritingAScript.html">Writing A Script</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeScripting/EMMEClassStructure.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

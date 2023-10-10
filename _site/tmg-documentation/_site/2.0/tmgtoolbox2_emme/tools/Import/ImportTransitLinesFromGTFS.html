@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Import Transit Lines From Gtfs | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Import Transit Lines From Gtfs | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Import/ImportTransitLinesFromGTFS.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="import-transit-lines-from-gtfs"><strong>Import Transit Lines From Gtfs</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.6.0+, XTMF2, and produces results similar to the TMG Generate Transit Lines From Gtfs in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Import Transit Lines From Gtfs imports transit line ITINERARIES ONLY from GTFS data. Assumes that most GTFS stop are matched to a group ID (GID) and each GID is matched to a network node. Both tables are inputs for this tool.</p>
+<p>Additionally, the 'routes' file of the GTFS feed must define two additional columns: 'emme_id' (defining up to the first 5 characters of the Emme transit line id), and 'emme_vehicle' (defining the Emme vehicle number used by the line). For convenience, if both 'routes.txt' and 'routes.csv' are defined, the CSV file will be used (since this is likely to be edited using Excel).</p>
+<p>During the map-matching process, this tool will attempt to find the shortest path between two nodes in an itinerary, up to a maximum of 10 links. Any line requiring a path of more than 5 links will be flagged for review. Lines requiring longer paths will not be added at all (but will be reported in the logbook).</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>TMG's <code>ImportTransitLinesFromGtfs</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call. However, INRO has a tool called Import from GTFS, which can be found within the EMME Modeller at Data management -&gt; Network -&gt; Transit -&gt; Import from GTFS.</p>
+<p>The TMG tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Import&quot; -&gt; &quot;Import Transit Lines From Gtfs&quot;. You can find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Import/import_transit_lines_from_gtfs.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Import Transit Lines From Gtfs tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>ImportTransitLinesFromGtfs</code> tool can be set by the users. This tool is called <code>ImportTransitLinesFromGtfs</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <strong><em>ExecuteToolsFromModellerResource</em></strong> or <strong><em>EmmeToolsToRun</em></strong>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>ImportTransitLinesFromGtfs</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+parameters = {
+    &quot;scenario_id&quot;: 1,
+    &quot;max_non_stop_nodes&quot;: 15,
+    &quot;link_priority_attribute&quot;: &quot;&quot;,
+    &quot;gtfs_folder&quot;: &quot;TestFiles/FrabtiztownGTFS&quot;,
+    &quot;stop_to_node_file&quot;: &quot;TestFiles/FrabtiztownGTFS/stop_to_node.csv&quot;,
+    &quot;new_scenario_id&quot;: 2,
+    &quot;new_scenario_title&quot;: &quot;Test Transit Network&quot;,
+    &quot;service_table_file&quot;: &quot;ServiceTable&quot;,
+    &quot;mapping_file&quot;: &quot;mapping&quot;,
+    &quot;publish_flag&quot;: True,
+}
+
+import_transit_lines_from_gtfs = _MODELLER.tool(&quot;tmg2.Import.import_transit_lines_from_gtfs&quot;)
+import_transit_lines_from_gtfs(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-import-transit-lines-from-gtfs">Module Parameter Explanation: &quot;Import Transit Lines From Gtfs&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Base Scenario <code>integer</code></td>
+<td style="text-align: left;">The scenario to execute against</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxNonStopNodes <code>integer</code></td>
+<td style="text-align: left;">Lines requiring links more than the maximum will not be added.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Link Priority Attribute Id <code>string</code></td>
+<td style="text-align: left;">The factor to be applied to link speeds.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gtfs Folder <code>string</code></td>
+<td style="text-align: left;">The folder that conatins the GTFS feed files.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stop To Node File <code>string</code></td>
+<td style="text-align: left;">The csv file that contains Stop IDs and the corresponding Emme Node IDs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">NewScenarioId <code>integer</code></td>
+<td style="text-align: left;">The scenario ID to publish the new network.</td>
+</tr>
+<tr>
+<td style="text-align: left;">NewScenarioTitle <code>string</code></td>
+<td style="text-align: left;">The title of the new scenario.&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;">LineServiceTableFile <code>string</code></td>
+<td style="text-align: left;">The file name to store the output service table file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mapping File Name <code>string</code></td>
+<td style="text-align: left;">The file name to store the output that maps between EMME ID and GTFS Trip ID.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Publish Flag <code>boolean</code></td>
+<td style="text-align: left;">Set as True to publish the network to the new scenario.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Import/ImportTransitLinesFromGTFS.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

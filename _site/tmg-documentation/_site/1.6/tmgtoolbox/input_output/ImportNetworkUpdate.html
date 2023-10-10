@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Import Network Update | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Import Network Update | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportNetworkUpdate.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="import-network-update"><strong>Import Network Update</strong></h1>
+
+<p>This tool can update one or more scenarios using a Network Update (*.nup) file that contains scripts and macros. Macros used to perform a network update are based on Emme's Network Editor, which can sometimes cause an error when network elements are missing. It is recommended to check the Database directory for the created reports file(s).</p>
+<blockquote>
+<p><strong>Create a Network Update (*.NUP) File</strong></p>
+<p>The NUP file is a renamed ZIP file with the following specifications.
+Two text files need to be created and Macros need to be updated.</p>
+<ul>
+<li><p><em>info.txt</em>: Contains information and metadata about the update. The first
+line of the file must be the date of the export. Subsequent lines
+will just be printed verbatim to the page. Lines starting with '*'
+will be displayed as lists.</p>
+</li>
+<li><p><em>run_order.txt</em>: For each line in this file, a script or macro of the same
+name will be executed (currently only macros ending in '.mac' are
+supported).</p>
+<ul>
+<li>For each script named in <em>run_order.txt</em>, the corresponding script file must also exist in the NUP file. For Emme macro scripts, the folder containing the sub-components must also exist within the NUP file and have the same name as the script. This folder can be copied from the Database folder of the Emme project which saved the macro (from a Network Editor session).</li>
+</ul>
+</li>
+<li><p><em>macros</em>: Macro itself also need be edited by replacing all instances of the subfolder's name with '<span class="math">\(DIR\)</span>'.</p>
+<ul>
+<li><p>For example, if the macro was originally titled &quot;Update_Yonge_St_lanes.mac',
+there will be a folder named &quot;Update_Yong_St_lanes&quot; inside of Database. In the
+.mac file itself, replace all instances of &quot;Update_Yong_St_lanes&quot; with &quot;<span class="math">\(DIR\)</span>&quot;: <br>
+<em>~&lt;<em>edb</em> 2 211 Update_Yong_St_lanes/00000_nodes</em> <br>
+becomes <br>
+<em>~&lt;<em>edb</em> 2 211 <span class="math">\(DIR\)</span>/00000_nodes</em> <br></p>
+<p>It also recommended to replace the &quot;reports=[macro name]-%s%.rep&quot; line with: <br>
+<em>reports=<span class="math">\(REP\)</span>-%s%.rep</em> <br>
+<em>~t9=<span class="math">\(REP\)</span>-%s%.rep</em> <br>
+This ensures that the reports files are written to the Database folder, not
+the temporary directory which gets deleted.</p>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Input Output&quot; -&gt; &quot;Import Network Update&quot;</p>
+<h3 id="scenarios">Scenarios</h3>
+<p>Select the scenario(s) to be updated with.</p>
+<h3 id="network-update-file">Network Update file</h3>
+<p>Select &quot;Browse...&quot; to navigate to the location of the Network Update file (*.nup) that is to be imported.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is not callable from XTMF. Please use Emme Modeller.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportNetworkUpdate.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

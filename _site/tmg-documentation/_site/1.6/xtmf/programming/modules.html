@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Writing XTMF Modules | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Writing XTMF Modules | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/programming/modules.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="writing-modules-1-6.md">
+<h1 id="writing-xtmf-modules">Writing XTMF Modules</h1>
+
+<h3 id="creating-your-module-project">Creating Your Module Project</h3>
+<p>After installing your code editor and having a working knowledge of C#, the next step is to
+create your new project. You will need to make it from a “Class Library”.
+(File -&gt; New Project ... -&gt; Class Library).</p>
+<p>Once that is done you will need to add a reference to either the <code>XTMFInterfaces</code> project (if you are recompiling XTMF) or to the <code>XTMFInterfaces.dll</code> file. References can be added through the context menu on the <code>References</code> tree label located in the solution explorer. A list of your project's references will also be displayed here.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>XTMFInterfaces.dll</code> is included in the Modules directory in your XTMF program directory.</p>
+</div>
+<h3 id="writing-your-first-module">Writing Your First Module</h3>
+<p>If you have access to the XTMF Software Development Kit, you should find some examples in C# for how to make a module as a supplement to this documentation.</p>
+<p>To begin, all XTMF modules need to be public classes, and need to implement ‘XTMF.IModule’ or a descendant of it. You will need the following:</p>
+<ul>
+<li>A public property of type string called ‘Name’ with both a getter and setter</li>
+<li>A public Boolean function called ‘RuntimeValidation’ with a reference to a string as a parameter</li>
+<li>A public property of type float called ‘Progress’ with at least a getter.</li>
+<li>A public property of type ‘Tuple&lt;byte, byte, byte&gt;’ called ‘ProgressColour’ with at least a getter.</li>
+<li>A public constructor with no parameters or a single parameter of type ‘XTMF.IConfiguration’.</li>
+</ul>
+<p>The name field will be set by XTMF with the name given to the module from the model system.</p>
+<p>Progress represents the progress of the module (if that makes sense for the given component) with values 0 to 1. ‘ProgressColour’ contains 3 bytes that represent the red, green, and blue components of colour that you wish the progress bar in XTMF to be of. The value used in the components from TMG is typically 50, 150, and 50 respectively.</p>
+<p>When XTMF creates an instance of your module it will detect what type of constructor you picked, and then use it to create it for the model system. If you are going to be using ‘XTMF.Networking’ you may want to get a link to the configuration so you can interact more directly with XTMF. If you fail to have any of these constructors marked as public, XTMF will be unable to create an instance of your module. The default constructor created (by writing nothing) will be enough for XTMF to instantiate the module.</p>
+<p>In all of the following code examples are assuming that you have already included the XTMF namespace. Some code will reference interfaces from the TMG Interfaces library though their types do not matter in understanding how to program XTMF.</p>
+<h2 id="module-meta-data-and-documentation-annotations">Module meta-data and documentation annotations</h2>
+<p>The XTMF module SDK includes support for various forms of module meta data that can be generated as part of the XTMF main documentation (or your own). The XTMF documentation site uses docfx.</p>
+<h3 id="custom-module-icons">Custom Module Icons</h3>
+<p>The XTMF <code>ModuleInformation</code> annotation includes support for custom icon displays as of XTMF 1.5. Use the IconURI property of the ModuleInformation initializer. A list of some of the available icons can be found at <a href="https://materialdesignicons.com/">https://materialdesignicons.com/</a>.</p>
+<pre><code class="lang-cs">    [ModuleInformation(Description = &quot;Example Module Description&quot;, IconURI = &quot;TestTube&quot;)]
+</code></pre>
+<h3 id="module-assembly-meta-information">Module Assembly Meta Information</h3>
+<p>Assembly description information as part of your module project can be used as part of documentation generation. The assembly meta description and information can is found within the project / assembly's <code>AssemblyInfo.cs</code> file.</p>
+<pre><code class="lang-cs">[assembly: AssemblyDescription( &quot;&lt;Example Assembly Description&gt;&quot; )]
+</code></pre>
+<h2 id="root-and-parent-module-references">Root and Parent Module References</h2>
+<p>One of the most common things needed in a module is a way to reference its ancestors. XTMF provides two different ways to do this. First, and most common, is an attribute for requesting the Root Module.</p>
+<p>The following code provides an example of how to ask for this:</p>
+<pre><code class="lang-cs">   [RootModule]
+   public ITravelDemandModel Root;
+</code></pre>
+<pre><code class="lang-cs">    public class DemoModule : IModule
+    {
+       [RootModule]
+       public ITravelDemandModel Root;
+    }
+</code></pre>
+<p>When we write this code, we are also restricting what XTMF is allowed to do with respect of who can include our module as a sub module. In this case, only a model system with the root module implementing</p>
+<p><code>TMG.ITravelDemandModel</code> is allowed to use this module. So when implementing your module make sure to use the least restrictive interface for your parent as possible so it can be used by the most things in the future.</p>
+<p>The second type of reference is to your direct parent.</p>
+<h2 id="module-parameters">Module Parameters</h2>
+<pre><code class="lang-cs">   [RunParameter(&quot;Random Seed&quot;, 12345, &quot;A number to use as the seed for the random number generator.&quot;)]
+   public int RandomSeed
+   {
+    get;
+    set;
+   }
+</code></pre>
+<pre><code class="lang-cs">   [RunParameter(&quot;Random Seed&quot;, 12345, &quot;A number to use as the seed for the random number generator.&quot;)]
+   public int RandomSeed;
+</code></pre>
+<p>One of the most important things for any module will be its parameters. There are two different types of parameters in XTMF, ‘Parameter’, and ‘RuntimeParameter’. A runtime parameter will be able to be edited locally in the project, where as a regular one will not. In the TMG modules all parameters are runtime parameters allowing for the most flexibility for our end users.</p>
+<p>To create a new parameter, define a new public member variable or property with getter and setter of one of the supported types. On top of it add an attribute of type ‘RuntimeParameter’. All types that implement a TryParse( string input, out [TYPE]) method are supported. This includes all of the .Net primitives. In order to use non .Net primitives you will need to include the typeof([TYPE]) argument.
+Here are some examples of parameters:</p>
+<h3 id="creating-custom-parameters">Creating Custom Parameters</h3>
+<p>One of the most important things for any module will be its parameters. There are two different types of parameters in XTMF, ‘Parameter’, and ‘RuntimeParameter’. A runtime parameter will be able to be edited locally in the project, where as a regular one will not. In the TMG modules all parameters are runtime parameters allowing for the most flexibility for our end users.</p>
+<p>To create a new parameter, define a new public member variable or property with getter and setter of one of the supported types. On top of it add an attribute of type ‘RuntimeParameter’. All types that implement a TryParse( string input, out [TYPE]) method are supported. This includes all of the .Net primitives. In order to use non .Net primitives you will need to include the typeof([TYPE]) argument.
+Here are some examples of parameters:</p>
+<pre><code class="lang-cs">[RunParameter(&quot;Random Seed&quot;, 12345, &quot;A number to use as the seed for the random number generator.&quot;)]         
+public int RandomSeed 
+{             
+    get;               
+    set; 
+} 
+</code></pre>
+<p>This will create a new parameter of type integer called Random Seed and set its default value to 12345.  The last parameter will be the description of the parameter.</p>
+<pre><code class="lang-cs">[RunParameter(&quot;Max Mutation&quot;, 0.4f, &quot;The maximum amount (in 0 to 1) that a parameter can be mutated&quot;)]         
+public float MaxMutationPercent; 
+</code></pre>
+<p>This creates a new parameter of float to bound how many percent are we allowed to mutate a parameter.  It is important to see here that the default value is not 0.4, it is 0.4f.  If we leave off the ‘f’ then it will be of type double, which will cause the module to not start-up correctly.</p>
+<pre><code class="lang-cs">[RunParameter(&quot;School Morning End&quot;, &quot;12:00 PM&quot;, typeof(Time), &quot;The highest number of attempts to schedule an episode&quot;)]         
+public Time SchoolMorningEndDateTime; 
+</code></pre>
+<p>This shows how to make a parameter out of a DateTime structure.  Note here that we enter in the default value as a string, and then manually say what type it is.  We recommend to avoid DateTime as when it is saved, the model systems will not be compatible between computers where their date/time format differs.  Such as a computer set up for Canadian and another set up for American date time formats.</p>
+<h2 id="including-sub-modules">Including Sub Modules</h2>
+<p>Sub Modules can be added to a module similar to how you add parameters. The difference is that the type of the sub module can be inferred at runtime, since we do not have any default values.</p>
+<pre><code class="lang-cs">   [SubModelInformation(Description=&quot;The different data for the modes.&quot;, Required=false)]
+   public IList&lt;INetworkData&gt; NetworkData
+   {
+        get;
+        set;
+   }
+</code></pre>
+<p>In the above code we are creating a property, which is a list of INetworkData, a type of module defined in the TMG Interfaces.
+Above that we have an attribute of type SubModelInformation.  By default all public member’s inside of a module are checked to
+see if they reference a XTMF.IModule.  If they do XTMF will assume that you want it to be filled with a sub module.  If you do not,
+there is another attribute that you can use to stop XTMF from allowing a match.</p>
+<pre><code class="lang-cs">    [DoNotAutomate]         
+    public List&lt;ITashaMode&gt; NonSharedModes 
+    {             
+        get;               
+        set; 
+    } 
+</code></pre>
+<p>The DoNotAutomate attribute will let XTMF know that NonSharedModes should not receive submodules.</p>
+<h2 id="correct-use-of-input-directories">Correct Use of Input Directories</h2>
+<p>Before implementing any module to read a file unless otherwise needed please use the TMG.FileLocation abstract module instead of creating your own.</p>
+<p>If you still need some other customization consider looking at extending TMG.FileLocation to allow greater flexibility in TMG modules that have already used this interface.</p>
+<p>When you are going to use parameters for strings, please make sure to look at your root module’s ‘InputBaseDirectory’ for the directory to base the paths from.</p>
+<p>The following method will combine the path given to it with the root model system’s base directory. It assumes that your root module is referenced to in a member variable called ‘Root’.</p>
+<pre><code class="lang-cs">    private string GetFullPath(string localPath) 
+    {        
+        var fullPath = localPath;
+        if (!Path.IsPathRooted(fullPath)) 
+        { 
+             fullPath = Path.Combine(this.Root.InputBaseDirectory, fullPath); 
+        } 
+         return fullPath; 
+    } 
+</code></pre>
+<h2 id="handling-resource-usage">Handling Resource Usage</h2>
+<p>Before implementing any module to read a file unless otherwise needed please use the TMG.FileLocation abstract module instead of creating your own.</p>
+<p>If you still need some other customization consider looking at extending TMG.FileLocation to allow greater flexibility in TMG modules that have already used this interface.</p>
+<p>When you are going to use parameters for strings, please make sure to look at your root module’s <code>InputBaseDirectory</code> for the directory to base the paths from.</p>
+<p>The following method will combine the path given to it with the root model system’s base directory. It assumes that your root module is referenced to in a member variable called <code>Root</code>.</p>
+<h2 id="runtime-validation">Runtime Validation</h2>
+<p>Runtime validation provides a way for the modules that you program to check their parameters before anything in the model system is allowed to run. If you need to look up a resource from a parent module before executing, this is also the place to do that. It is important to remember though that when you look at other modules, siblings may not have already had their validation code run, and the order is non-deterministic except for that a parent’s validation has always ran before a child’s. To report an error set the value of the error string equal to the message that you wish to return, and then return false. Returning true will let XTMF know that your module has passed validation.</p>
+<p>When working with this method, please make sure to not do any data processing inside of this. Progress may not be reported correctly if you are doing so.</p>
+<h2 id="throwing-exceptions">Throwing Exceptions</h2>
+<p>When an exception needs to be passed along to the user XTMF works best when wrapping that exception within an <code>XTMFRuntimeException</code>. This
+will allow XTMF to present the module within the model system that caused the error.  Though you shouldn't capture Exception itself,
+the following code shows you how in your module you can pass back an exception to the user while tying it to the particular module that the exception was
+caused in.</p>
+<pre><code class="lang-cs">try
+{
+    // Code that throws here
+}
+catch(Exception e)
+{
+    throw new XTMFRuntimeException(this, e);
+}
+</code></pre>
+<h2 id="custom-status-message">Custom Status Message</h2>
+<p>If you are writing a <code>ModelSystemTemplate</code> or another module that is expected to pass back a status message you will need to override the
+<code>ToString</code> method for your module.  The resulting value will be passed back and displayed in the XTMF.GUI.</p>
+<h2 id="a-hello-world">A Hello World</h2>
+<p>Below we have a simple 'Hello World' module implementing a ModelSystemTemplate for reference.</p>
+<pre><code class="lang-cs">using System;
+using XTMF;
+
+namespace MyModules
+{
+    [ModuleInformation(Description=&quot;A hello world module.&quot;)]
+    public class MyModule : IModelSystemTemplate
+    {
+        public string Name {get;set;}
+        
+        public void Start()
+        {
+            Console.WriteLine(&quot;Hello World&quot;);
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour =&gt; new Tuple&lt;byte, byte, byte&gt;( 50, 150, 50 );
+        public bool RuntimeValidation(ref string error) =&gt; true;
+
+        [Parameter(&quot;Input Base Directory&quot;, &quot;Input&quot;, &quot;The directory relative to the Run Directory where all of the input is kept.&quot; )]
+        public string InputBaseDirectory {get;set;}
+        // The OutputBaseDirectory property has been deprecated.
+        public string OutputBaseDirectory {get;set;}
+        public bool ExitRequest =&gt; false;        
+    }
+}
+</code></pre>
+<p>Assuming you are familiar with C#, you will quickly see that we have an attribute attached to the class that provides
+meta-data to describe this modules' functionality. Additionally you see a property named <code>Name</code>. This property will be filled out
+by XTMF during runtime with the name selected by the model system designer.  Additionally you will see two methods <code>ProgressColour</code>,
+and <code>RuntimeValidation</code>. <code>ProgressColour</code> provides an RGB value to associate with the module at runtime with values
+0-255 for each channel.  All modules will share these elements in common however an <code>IModelSystemTemplate</code> requires some additional
+elements.</p>
+<p><code>InputBaseDirectory</code> contains the path where the model system's input files are contained. <code>ExitRequest</code> will be called when the user
+requests that the model system should terminate.  Setting this to false will let XTMF know that there is no termination sequence
+that the model system will provide, so it will instead force the process to close. <code>OutputBaseDirectory</code> is vestigial for XTMF1 and
+has been removed for XTMF2.</p>
+<p>A recommended exercise is to create a new parameter that takes in a string and instead of writing 'Hello World' to the console
+writes out that parameter.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/programming/modules.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

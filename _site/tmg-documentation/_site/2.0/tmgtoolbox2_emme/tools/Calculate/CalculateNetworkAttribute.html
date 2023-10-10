@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Calculate Network Attribute | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Calculate Network Attribute | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Calculate/CalculateNetworkAttribute.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="calculate-network-attribute"><strong>Calculate Network Attribute</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the Network Calculator Tool in XTMF1/TMGToolbox1.
+In TMGToolbox1 this tool is similar to Network Calculator tool.</p>
+</div>
+<p>The Calculate Network Attribute tool queries and modifies most node, link, turn, transit line, vehicle, and segment attributes using algebraic expressions. <code>CalculateNetworkAttribute</code> also allows result to be saved in an attribute.</p>
+<h2 id="tool-flowchart"><strong>Tool Flowchart</strong></h2>
+<p>To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>CalculateNetworkAttribute</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Calculate&quot; -&gt; &quot;Calculate Network Attribute&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Calculate.calculate_network_attribute.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Calculate Network Attribute tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>CalculateNetworkAttribute</code> tool can be set by the users. This tool is called <code>CalculateNetworkAttribute</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>CalculateNetworkAttribute</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+parameters = {
+    &quot;scenario_number&quot;: 1,
+    &quot;domain&quot;: 0,
+    &quot;expression&quot;: &quot;sqrt((xi - xj) ^ 2 +...- yj) ^ 2)&quot;,
+    &quot;node_selection&quot;: None,
+    &quot;link_selection&quot;: &quot;all&quot;,
+    &quot;transit_line_selection&quot;: None,
+    &quot;result&quot;: None,
+}
+
+network_attribute_calculator = _MODELLER.tool(&quot;tmg2.Calculate.calculate_network_attribute&quot;)
+network_attribute_calculator(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-calculate-network-attribute">Module Parameter Explanation: &quot;Calculate Network Attribute&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Scenario Number <code>integer</code></td>
+<td style="text-align: left;">Emme Scenario Number to execute tool against</td>
+</tr>
+<tr>
+<td style="text-align: left;">Domain <code>integer</code></td>
+<td style="text-align: left;">What Emme domain type is the result? Options: <span style="color:blue"><code>Link</code>, <code>Node</code>, <code>Transit_Line</code>, <code>Transit_Segment</code></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Expression <code>string</code></td>
+<td style="text-align: left;">What is the expression you want to compute?</td>
+</tr>
+<tr>
+<td style="text-align: left;">Node Selection <code>string</code></td>
+<td style="text-align: left;">What specific nodes would you like to include in the calculation? <span style="color:blue"><code>Default=all</code></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Link Selection <code>string</code></td>
+<td style="text-align: left;">What specific links would you like to include in the calculation? <span style="color:blue"><code>Default=all</code></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Line Selection <code>string</code></td>
+<td style="text-align: left;">What specific transit lines would you like to include in the calculation? <span style="color:blue"><code>Default=all</code></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Result <code>string</code></td>
+<td style="text-align: left;">The attribute to save the result into, leave blank to not save.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Calculate/CalculateNetworkAttribute.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

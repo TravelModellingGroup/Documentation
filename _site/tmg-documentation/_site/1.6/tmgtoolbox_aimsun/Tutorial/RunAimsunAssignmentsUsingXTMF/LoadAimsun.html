@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Load Aimsun | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Load Aimsun | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/Tutorial/RunAimsunAssignmentsUsingXTMF/LoadAimsun.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="load-aimsun"><strong>Load Aimsun</strong></h1>
+
+<h2 id="overview">Overview</h2>
+<p>In this tutorial we will launch Aimsun and connect it to XTMF using the module <code>TMG.Aimsun.LoadModellerController</code>.</p>
+<h2 id="1-add-the-module-to-execute-aimsun-tools">1. Add the Module to Execute Aimsun Tools</h2>
+<ul>
+<li>Step 1: Right-click on To Execute and select &quot;Add Module&quot; or Press &quot;Ctrl&quot;+&quot;M&quot;</li>
+<li>Search for the term &quot;aimsun&quot;</li>
+<li>Add &quot;ExecuteToolsFromModellerResource&quot; module to &quot;To Execute&quot;</li>
+<li>Note that it should read TMG.Aimsun.ExecuteToolsFromModellerResource. An equivalent one for EMMME also exists<br></li>
+</ul>
+<figure>
+    <img src="images/Image10.JPG" alt="ExecuteToolsFromModellerResource Module">
+    <figcaption>Figure 1: ExecuteToolsFromModellerResource Module</figcaption>
+</figure>
+<ul>
+<li>Step 2: Double click on Aimsun Modeller</li>
+<li>Select &quot;Tasha.Common.Resource&quot; from the three available options. This is second in the box.</li>
+<li>This will result in a new attribute to appear called Data Source<br></li>
+</ul>
+<figure>
+    <img src="images/Image11.JPG" alt="Select ResourceLookup Module">
+    <figcaption>Figure 2: Select ResourceLookup Module</figcaption>
+</figure>
+<ul>
+<li>Step 3: The model system should now look like this:</li>
+<li>You should now see a &quot;Data Source&quot; attribute now available</li>
+</ul>
+<figure>
+    <img src="images/Image12.JPG" alt="Data Source Output Module">
+    <figcaption>Figure 3: Data Source Output Module</figcaption>
+</figure>
+<ul>
+<li>Step 4: Right-click on &quot;Data Source&quot; and select &quot;Set Module&quot; or Press &quot;Ctrl&quot;+&quot;M&quot;</li>
+<li>Type LoadAimsunController to load the AimsunController<br></li>
+</ul>
+<figure>
+    <img src="images/Image13.JPG" alt="Enter Resource Name">
+    <figcaption>Figure 4: Enter Resource Name</figcaption>
+</figure>
+<ul>
+<li>Step 5: Loading the AimsunController will result in three attributes to be displayed
+<ul>
+<li><strong>AimsunPath</strong>: The directory where the Aimsun aconsole.exe is located. Typically on the C drive</li>
+<li><strong>ProjectFile</strong>: The directory where the network package .nwp file is located.</li>
+<li><strong>ToolboxDefault Directory</strong>: The directory where the Aimsun tools are located.</li>
+</ul>
+</li>
+</ul>
+<figure>
+    <img src="images/Image14.JPG" alt="Input path to AimsunController">
+    <figcaption>Figure 5: Input path to AimsunController</figcaption>
+</figure>
+<ul>
+<li>Step 6: Right-click on &quot;Aimsun Path&quot; and select &quot;Set Module&quot; or Press &quot;Ctrl&quot;+&quot;M&quot;</li>
+<li>Click on &quot;FilePathFromInputDirectory&quot;</li>
+</ul>
+<figure>
+    <img src="images/Image15.JPG" alt="FilePathFromInputDirectory Module">
+    <figcaption>Figure 6: FilePathFromInputDirectory Module</figcaption>
+</figure>
+<ul>
+<li>Step 7: Add the path to the Aimsun aconsole.exe file path</li>
+</ul>
+<figure>
+    <img src="images/Image16.JPG" alt="Aconsole path Module">
+    <figcaption>Figure 7: Aconsole path Module</figcaption>
+</figure>
+<ul>
+<li>Step 8: Right-click on &quot;Project File&quot; and select &quot;Set Module&quot; or Press &quot;Ctrl&quot;+&quot;M&quot;</li>
+<li>Click on &quot;FilePathFromInputDirectory&quot;</li>
+<li>Copy and paste the path to the Project File folder as shown in the image</li>
+</ul>
+<figure>
+    <img src="images/Image17.JPG" alt="ProjectFile Module">
+    <figcaption>Figure 8: ProjectFile Module</figcaption>
+</figure>
+<ul>
+<li>Step 9: Right-click on &quot;Toolbox Default Directory&quot; and select &quot;Set Module&quot; or Press &quot;Ctrl&quot;+&quot;M&quot;</li>
+<li>Click on &quot;FilePathFromInputDirectory&quot;</li>
+<li>Copy and paste the path to the Toolbox Directory folder as shown in the image</li>
+</ul>
+<figure>
+    <img src="images/Image18.JPG" alt="Toolbox Default Directory Module">
+    <figcaption>Figure 9: Toolbox Default Directory Modules</figcaption>
+</figure>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/Tutorial/RunAimsunAssignmentsUsingXTMF/LoadAimsun.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

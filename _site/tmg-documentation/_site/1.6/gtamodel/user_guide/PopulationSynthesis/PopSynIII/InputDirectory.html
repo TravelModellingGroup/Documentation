@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Input Directory | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Input Directory | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/PopSynIII/InputDirectory.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="input-directory">Input Directory</h1>
+
+<p>In the following documentation we will review the files contained in the PopSynIII package that you have received from TMG.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>When modifying the files in the input directory all columns must be in the same order otherwise your data will be loaded incorrectly!</p>
+</div>
+<h2 id="directories">Directories</h2>
+<p>The following are the main directories of the Input files.</p>
+<h3 id="baseyeardata">BaseYearData</h3>
+<p>This folder holds the static data describing the zone system and the base year conditions that will be scaled in order to do forecasting.</p>
+<h4 id="hhtablecsv">hhtable.csv</h4>
+<p>This file contains the seed household records used in PopSynIII with the default columns as follows:</p>
+<ul>
+<li>HouseholdId
+<ul>
+<li>The unique ID for this household, used for mapping the assosiated person records to this household</li>
+</ul>
+</li>
+<li>puma
+<ul>
+<li>The PUMA that this household belongs to.</li>
+</ul>
+</li>
+<li>DwellingType
+<ul>
+<li>1 for ground</li>
+<li>2 for apartment</li>
+</ul>
+</li>
+<li>NumberOfPersons
+<ul>
+<li>The number of persons that live in this household.</li>
+</ul>
+</li>
+<li>Vehicles
+<ul>
+<li>The number of vehicles this household has</li>
+</ul>
+</li>
+<li>IncomeClass
+<ul>
+<li>The TTS's income class for the household</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The expansion factor for the household</li>
+</ul>
+</li>
+</ul>
+<h4 id="meta_controlscsv">meta_controls.csv</h4>
+<p>This file contains the base year's control totals by PUMA/Region.  These should match the aggregation of the totals from <code>taz_controls.csv</code>.</p>
+<h4 id="perstablecsv">perstable.csv</h4>
+<p>This file contains the seed person records used in PopSynIII with the following columns by default:</p>
+<ul>
+<li>HouseholdId</li>
+<li>PersonNumber</li>
+<li>puma</li>
+<li>Age</li>
+<li>Sex
+<ul>
+<li>1 for female</li>
+<li>2 for male</li>
+</ul>
+</li>
+<li>License
+<ul>
+<li>1 if they have a license, 0 otherwise</li>
+</ul>
+</li>
+<li>TransitPass
+<ul>
+<li>This field is ignored for the moment</li>
+</ul>
+</li>
+<li>EmploymentStatus
+<ul>
+<li>1 if they are unemployed</li>
+<li>2 if they are full-time</li>
+<li>3 if they are part-time</li>
+<li>4 if they are full-time work at home</li>
+<li>5 if they are part-time work at home</li>
+</ul>
+</li>
+<li>Occupation
+<ul>
+<li>0 if unemployed</li>
+<li>1 if General/Clerial worker</li>
+<li>2 if Professional/Mangerial worker</li>
+<li>3 if in Retail/Sales</li>
+<li>4 if in manufacturing or construction</li>
+</ul>
+</li>
+<li>FreeParking
+<ul>
+<li>1 if they have free parking at work, 0 otherwise</li>
+</ul>
+</li>
+<li>StudentStatus
+<ul>
+<li>1 FullTime</li>
+<li>2 PartTime</li>
+<li>3 Not a student</li>
+</ul>
+</li>
+<li>EmploymentZone
+<ul>
+<li>0 unless it is an external zone or non-fixed-place-of-work (NFPW) 8888</li>
+</ul>
+</li>
+<li>SchoolZone
+<ul>
+<li>0 unless it is an external zone</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The expansion factor for this person rounded to the nearest integer</li>
+</ul>
+</li>
+</ul>
+<h4 id="settingsxml">settings.xml</h4>
+<p>This file contains the weights and configuration for PopSynIII.  Inside of this file you will need to update the database parameters as shown below:</p>
+<pre><code class="lang-XML">&lt;database&gt;
+    &lt;server&gt;localhost&lt;/server&gt;
+    &lt;type&gt;MYSQL&lt;/type&gt;
+    &lt;user&gt;root&lt;/user&gt;
+    &lt;password&gt;[ROOTs PASSWORD]&lt;/password&gt;
+    &lt;dbName&gt;[The name of your database, we use TorontoPopSynIII]&lt;/dbName&gt;
+&lt;/database&gt;
+</code></pre>
+<p>The rest of the parameters in this file tell the model how to trade off between the control totals.  Edit this only if necessary.</p>
+<h4 id="taz_controlscsv">taz_controls.csv</h4>
+<p>This file contains the base year's control totals by TAZ.  The following are the columns:</p>
+<ul>
+<li>region
+<ul>
+<li>The seed pool to draw from, region must be the same as puma</li>
+</ul>
+</li>
+<li>puma
+<ul>
+<li>The seed pool to draw from, region must be the same as region</li>
+</ul>
+</li>
+<li>taz
+<ul>
+<li>The traffic zone we are defining control totals for, same as maz</li>
+</ul>
+</li>
+<li>maz
+<ul>
+<li>The traffic zone we are defining control totals for, same as taz</li>
+</ul>
+</li>
+<li>totalhh
+<ul>
+<li>The total number of households in the zone</li>
+</ul>
+</li>
+<li>totpop
+<ul>
+<li>The total number of persons in the zone</li>
+</ul>
+</li>
+<li>income_class_1
+<ul>
+<li>The total number of households in TTS's income class 1 in the zone</li>
+</ul>
+</li>
+<li>income_class_2
+<ul>
+<li>The total number of households in TTS's income class 2 in the zone</li>
+</ul>
+</li>
+<li>income_class_3
+<ul>
+<li>The total number of households in TTS's income class 3 in the zone</li>
+</ul>
+</li>
+<li>income_class_4
+<ul>
+<li>The total number of households in TTS's income class 4 in the zone</li>
+</ul>
+</li>
+<li>income_class_5
+<ul>
+<li>The total number of households in TTS's income class 5 in the zone</li>
+</ul>
+</li>
+<li>income_class_6
+<ul>
+<li>The total number of households in TTS's income class 6 in the zone</li>
+</ul>
+</li>
+<li>male
+<ul>
+<li>The total number of male persons persons in the zone</li>
+</ul>
+</li>
+<li>female
+<ul>
+<li>The total number of female persons in the zone</li>
+</ul>
+</li>
+</ul>
+<h4 id="zonesystemcsv">ZoneSystem.csv</h4>
+<p>This file contains all of the zones in the zone system with the following columns in order.</p>
+<ul>
+<li>TAZ
+<ul>
+<li>The zone number</li>
+</ul>
+</li>
+<li>PD
+<ul>
+<li>The planning district number</li>
+</ul>
+</li>
+<li>PUMA
+<ul>
+<li>The number used for specifying what pool of seeds that we will draw from.</li>
+</ul>
+</li>
+<li>Population
+<ul>
+<li>The base year number of persons living within the zone.</li>
+</ul>
+</li>
+</ul>
+<h3 id="runtime">Runtime</h3>
+<p>This folder contains the program files that are required for running PopSynIII.  You should not edit any of these files.</p>
+<h3 id="scripts">Scripts</h3>
+<p>This directory contains the SQL code that will operate on the MySQL database.  If you are using non-standard controls, you will need to modify
+your version of <code>ControlsTableCreation.sql</code> to import the required data appropriately.</p>
+<ul>
+<li>ControlsTableCreation.sql
+<ul>
+<li>This file is used for creating the tables used as controls during the IPU.</li>
+</ul>
+</li>
+<li>PUMFTableCreation.sql
+<ul>
+<li>This file is used for creating the tables used to store the seed household and peron records.</li>
+</ul>
+</li>
+<li>PUMFTableProcessing.sql
+<ul>
+<li>This file is used to instruct the model how to prepare the seed household and person records for processing by PopSynIII.</li>
+</ul>
+</li>
+</ul>
+<h4 id="controlstablecreationsql">ControlsTableCreation.sql</h4>
+<p>This file contains the scripts to create the tables in the MySQL database for the tables that hold the control totals for MAZ, TAZ, and Meta level controls. The control files
+that are read into these tables are generated by PopSynIIIAutomation at the start of the run.  <strong>Please make sure to check the order of the columns against your control total CSV files</strong> to
+ensure that the totals are being loaded with the correct values.</p>
+<h4 id="pumftabelcreationsql">PUMFTabelCreation.sql</h4>
+<p>This script creates the tables that are used to hold the original household and persons records before they have started to be processed.  it is unlikely that you will need to modify this
+file however <strong>please ensure that these columns match your seed population's Household.csv and Persons.csv files.</strong></p>
+<h4 id="pumftableprocessingsql">PUMFTableProcessing.sql</h4>
+<p>This script takes the original households and persons and generates new tables that will be operated upon during the algorithm.  You should not modify this file.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/PopSynIII/InputDirectory.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

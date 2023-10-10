@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmg.visum/index.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction">Introduction</h1>
+
+<p>TMG.Visum is a set of libraries for interacting with Visum. Modules are compatible with
+<code>XTMF 1.12+</code>. XTMF versions before 1.12 will not support these modules.
+This library is similar to the TMGToolbox for EMME and TMGToolbox for Aimsun in that
+it provides access to network assignment software.</p>
+<p>Currently TMG.Visum is in active development with no release available at the moment.  We are targeting XTMF 1.13 for the first
+release where this will be integrated into the main distribution.  Please follow <a href="#setting-up-xtmf">Setting up XTMF</a> to see how to
+manually setup TMG.Visum for XTMF1.12 or to integrate in the latest development build into your copy of XTMF.</p>
+<h2 id="setup">Setup</h2>
+<p>To starting working with PTV VISUM you will need to setup your XTMF build with new modules from TMG.Visum and make sure that
+your Visum application has been registered as a COM server so XTMF can find it.</p>
+<h3 id="setting-up-xtmf">Setting up XTMF</h3>
+<p>To enable TMG.Visum with your instance of XTMF1.12 you will need to copy <code>TMG.Visum.dll</code> and their respective <code>TMG.Visum-XTMF1.dll</code>
+or <code>TMG.Visum-XTMF2.dll</code> into the <code>Modules</code> directory for your version of XTMF.</p>
+<h3 id="setting-up-visum">Setting up Visum</h3>
+<p>In order for TMG.Visum to know which version of Visum it should connect to you will need to
+set the corresponding version of Visum up as a COM server.  You can do this during the installation of Visum
+or by selecting <code>Register as COM server</code> in the help menu inside of the Visum GUI.</p>
+<figure>
+    <img src="img/SetupCOM.png" alt="Register as COM server">
+    <figcaption text-align="center">Figure 1: Selecting COM Server From Help Menu</figcaption>
+</figure>
+<h2 id="software-repository">Software Repository</h2>
+<p>There are four projects in the <a href="https://github.com/TravelModellingGroup/TMG.Visum">TMG.Visum repository</a>.
+The first two (TMG.Visum and TMG.Visum.Test) provide
+an abstraction layer and testing to simplify the implementation for implementing modules in XTMF1 and XTMF2.</p>
+<ul>
+<li><a href="https://github.com/TravelModellingGroup/TMG.Visum/tree/main/TMG.Visum">TMG.Visum</a> -
+Contains an interface that abstracts VISUM and provides functionality for the other repositories to link to.</li>
+<li><a href="https://github.com/TravelModellingGroup/TMG.Visum/tree/main/TMG.Visum.Test">TMG.Visum.Test</a> -
+Contains and integration testing for TMG.Visum</li>
+<li><a href="https://github.com/TravelModellingGroup/TMG.Visum/tree/main/TMG.Visum-XTMF1">TMG.Visum-XTMF1</a> -
+Contains modules for XTMF1 that interface to PTV's Visum through TMG.Visum.</li>
+<li>TMG.Visum-XTMF2 - COMING SOON: Will contain modules for XTMF2 that interface to PTV's Visum through TMG.Visum.</li>
+</ul>
+<p>Instructions for compiling the repository can be found <a href="https://github.com/TravelModellingGroup/TMG.Visum">here</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmg.visum/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

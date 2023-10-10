@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Estimate Transit Operating Costs | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Estimate Transit Operating Costs | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/EstimateTransitOperatingCosts.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="estimate-transit-operating-costs"><strong>Estimate Transit Operating Costs</strong></h1>
+
+<p>This tool computes estimated route-by-route transit operating costs for the time period depicted
+by the selected scenario, in addition to revenue hours, revenue kilometres, and estimated vehicle
+count. Individual transit lines are grouped into routes. The tool takes the transit service table
+file as well as a cost parameters file as input.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Analysis&quot; -&gt; &quot;Transit&quot; -&gt; &quot;Estimate Transit Operating
+Costs&quot;</p>
+<h3 id="scenario">Scenario</h3>
+<p>Select the scenario to perform the cost computation for. Be sure to have the time period information
+(AM, MD, PM, EV, or ON) present in the scenario title. For time periods other than ON, please select
+a scenario with completed transit assignment results for better accuracy.</p>
+<h3 id="service-table-file">Service Table File</h3>
+<p>The service table file is a CSV file that follows the same format as the service table file found in
+the GTAModel input folder. It contains three columns with a header row: <code>emme_id</code>, <code>trip_depart</code>,
+<code>trip_arrive</code>. <code>emme_id</code> is the Emme transit line ID, and <code>trip_depart</code> and <code>trip_arrive</code> are the
+start and end times of each scheduled transit trip in <code>HH:MM:SS</code> (zero-padded, 24 hour format).
+Non-zero padded formatting is also accepted, such as <code>7:14:00</code>. Some transit agencies schedule
+late-night, post-midnight trips in the same service day with the <code>HH</code> field being 24 or greater
+(e.g. <code>25:01:00</code>). This is also accepted.</p>
+<h3 id="cost-parameters-file">Cost Parameters File</h3>
+<p>The cost parameters CSV file contains ten columns with a header row. Each subsequent row is a set
+of cost parameters for the particular agency / mode combo. The columns are:</p>
+<ul>
+<li><code>agency_prefix</code>: the first one or two capital letters of the Emme transit line ID that
+identifies the agency (e.g. &quot;B&quot;, &quot;HM&quot;, etc.) the set of parameters is for</li>
+<li><code>mode</code>: the ID of the mode the set of parameters is for (e.g. &quot;b&quot;, &quot;r&quot;, m&quot;, etc.)</li>
+<li><code>uc_revhr</code>: unit cost per revenue hour</li>
+<li><code>uc_revkm</code>: unit cost per revenue kilometre</li>
+<li><code>uc_veh_annual</code>: annual unit cost per peak vehicle</li>
+<li><code>uc_veh_daily</code>: daily unit cost per peak vehicle. <strong>Note:</strong> Only one of <code>uc_veh_annual</code> and
+<code>uc_veh_daily</code> is required. Simply leave the other field blank.</li>
+<li><code>weekday_ratio_revhr</code>: multiplier to get annual estimates of revenue hours from a weekday daily
+value</li>
+<li><code>weekday_ratio_revkm</code>: multiplier to get annual estimates of revenue km from a weekday daily value</li>
+<li><code>adj_revhr</code>: calibrated adjustment factor for revenue hours</li>
+<li><code>adj_revkm</code>: calibrated adjustment factor for revenue km</li>
+</ul>
+<p>If there is no specified cost parameter set for a particular agency / mode combo that is present in
+the Emme transit lines in the network, the cost computation will return the default cost of $0 for
+routes with that combo.</p>
+<h3 id="report-file">Report File</h3>
+<p>Select &quot;Browse...&quot; to navigate to the target folder to store the results in a CSV file.</p>
+<p>The results will have 6 columns:</p>
+<ul>
+<li><code>route_id</code>: the ID of the route which is obtained from grouping individual lines under the same
+overall route</li>
+<li><code>mode</code>: the mode ID of a representative line of the route</li>
+<li><code>rev_hr</code>: the estimated revenue hours for the route within the time period</li>
+<li><code>rev_km</code>: the estimated revenue kilometres for the route within the time period</li>
+<li><code>no_veh</code>: the estimated count of unique vehicles deployed on the route within the time period</li>
+<li><code>op_cost</code>: the estimated operating costs for the route within the time period</li>
+</ul>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;EstimateTransitOperatingCosts&quot;.  It is available to add under
+<em>ExecuteToolsFromModellerResource</em> or <em>EmmeToolsToRun</em>.</p>
+<p>The individual input and output file specifications are exactly the same as in the above section.</p>
+<h3 id="scenario-1">Scenario</h3>
+<p>The number of the Emme scenario to perform the cost computation for.</p>
+<h3 id="service-table-file-1">Service Table File</h3>
+<p>The CSV file that contains scheduled trip departure and arrival times for each Emme transit line.</p>
+<h3 id="cost-parameters-file-1">Cost Parameters File</h3>
+<p>The CSV file that contains individual sets of cost parameters specific to each agency / mode combo.</p>
+<h3 id="report-file-1">Report File</h3>
+<p>Select the target folder to store the results in a CSV file.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/EstimateTransitOperatingCosts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

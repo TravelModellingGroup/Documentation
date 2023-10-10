@@ -1,0 +1,521 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Scheduler | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Scheduler | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/scheduler.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="scheduler">Scheduler</h1>
+
+<h2 id="overview">Overview</h2>
+<p>In GTAModel V4.0 the scheduler has the responsibility of generating trips, picking their destinations, and start-times.  In order to accomplish this the scheduler first builds up activity episodes.  At first the activity episodes are organized into projects by activity type.  After all of the activities are generated they are then scheduled into each person’s personal schedule.  After each person’s day has been scheduled trips are then created which can be processed by the mode choice algorithm to be assigned modes.</p>
+<p><img src="images/SchedulerOverview.png" alt="alt text" title="Scheduler Overview"></p>
+<h2 id="generate-episodes">Generate Episodes</h2>
+<p>The generation process of GTAModel V4.0 works on a fixed probability matrix populated from TTS.  The exact breakdown linking distribution number to the type of individual is given in the table below.  The process for generating an activity however is unified across the different types of activities.  Firstly, we generate the frequency of the activity type.  Secondly, given the frequency of the activity we generate a start time.  Lastly, given that start time we generate the activity’s duration.  If that start time and duration is feasible in the persons’ project’s schedule it is included otherwise a new start time and duration are generated.  This is attempted a number of times (default 10), and if no successful combination is found it will be thrown out.</p>
+<p>All of the rates are read in from the file “~/ActivityDistributions/FrequencyDistributions.zfc” besides the number of adults contained in a joint episode while is in “~/ActivityDistributions/AdultDistributions.zfc”.  When calibrating models it is best to never touch these files as they have been generated using XTMF from the 2011 TTS.</p>
+<p>The activity generation distributions are broken down into their</p>
+<p><img src="images/GenerateEpisodes.png" alt="alt text" title="Generate Episodes"></p>
+<h2 id="combining-projects-into-a-person-schedule">Combining Projects Into a Person Schedule</h2>
+<p>After all of the projects for the household have been developed they will need to be combined into a person schedule before being converted into trips.  The order in which a person schedule is developed depends if they are a student or not.  If they are a full-time student their school episodes are scheduled in first, otherwise work episodes are and then their school episodes.  At this point travel times between episodes are taken into consideration and location choices are being assigned as each episode is included.  After work and school have been added, household level episodes are included into the schedules, first other episodes then market episodes.  After the household activities have been added, individual other and market episodes are included.</p>
+<p>During this process the activities start times are adjusted as needed in order to fit the episodes and if needed the duration is changes.  Durations cannot be modified to be less than fifty percent of their originally scheduled duration.</p>
+<h2 id="location-choice">Location Choice</h2>
+<h3 id="overview-1">Overview</h3>
+<p>The location choice model for GTAModel V4.0 is separated into three sub models, Work-Based-Business, Market, and Other.
+To be specific ‘Other’ is for the ‘Individual Other’ and ‘Joint Other’ activity types, and not everything besides work and market.
+Probabilities are then generated for each time period based on the population and employment in the zone among other factors.
+Later when producing person schedules the location choice model eliminates all infeasible zones and then pops a random location
+choice from the remaining probabilities. A zone is considered infeasible if there is not enough time to get from the person’s
+previous activity, do the current activity, and then finally travel to their next activity within the allocated time. For the location choice
+model the auto network travel time is used to calculate times. Below is a diagram showing a time prism.  Here we can see that zones 1, 2, and 3 are
+viable candidates whereas 4, 5, 6, and 7 are not.  In the case of zone 4 is too far away from the destination since the travel time
+from origin to 4 plus the travel time from 4 to the final destination is greater than the time available.</p>
+<p><img src="images/TimePrism.png" alt="alt text" title="Time Prism"></p>
+<p>For GTAModel V4.1 and V4.0 we used the following equation for determining the attractiveness
+of going to zone \( j \) originating at \( i \) and going to \( k \).</p>
+<div class="math">
+\[
+V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * ln(1 + emp_{j} * occempRatio_{occemp|j})}
+
+\]</div>
+<p>In GTAModel V4.2 we have changed this formulation to the following.</p>
+<div class="math">
+\[
+V_{ijk} = Accessibility_{ijk} + \beta_{population} * ln(Pop_{j}) + \sum_{occemp}{\beta_{occemp} * occempRatio_{occemp|j} * ln(1 + emp_{j})}
+
+\]</div>
+<p>For all model versions the following equation is used for computing the accessibility.</p>
+<div class="math">
+\[
+Accessibility_{ijk} = \beta_{TravelLogsumScale} * \left(
+\begin{array}{c}
+ln \left(
+\begin{array}{l}
+ e^{\beta_{aivtt} * AIVTT_{ij} + \beta_{cost} * ACOST_{ij}} \\\\
+\text{+} e^{\beta_{TransitConstant} + \beta_{TransitBoarding} * TPTT_{ij} + \beta_{cost} * {TFARE_{ij}}} \\\\
+\text{+} e^{\beta_{ActiveConstant} + \beta_{ActiveDistance} * Distance_{ij}}
+\end{array} \right) \\\\ 
+ \text{+} \\\\
+ln \left(
+\begin{array}{l}
+ e^{\beta_{aivtt} * AIVTT_{jk} + \beta_{cost} * ACOST_{jk}} \\\\
+\text{+} e^{\beta_{TransitConstant} + \beta_{TransitBoarding} * TPTT_{jk} + \beta_{cost} * {TFARE_{jk}}} \\\\
+\text{+} e^{\beta_{ActiveConstant} + \beta_{ActiveDistance} * Distance_{jk}} \\\\
+\end{array} \right)
+\end{array}
+\right)
+
+\]</div>
+<h2 id="generate-trip-chains">Generate Trip Chains</h2>
+<h3 id="overview-2">Overview</h3>
+<p>There are two types of schedules in GTAModel V4.0.  The first is called a Project.  A Project contains all of the activity episodes for one larger type of activity.  For instance the Work Project contains all of the activity episodes with respect to Primary Work, Return-From-Work, and Work-Based-Business.  The second type of schedule is called the Person Schedule.  This schedule is the one that will represent the activities for the given day.  It is produced by combining the project’s schedules together, adjusting them as needed.
+Each person in the model starts building their day’s activities by putting together their projects.  There are four different personal projects, Work, School, individual other, and individual market.  In addition there is a household level project for joint activities.</p>
+<p>Once all of the projects have been generated person schedules are built by taking the activity episodes from the project schedules and combing them.  First work and school episodes are added, first work if they are primarily a worker otherwise school episodes.  After that household level episodes are included, then finally individual market and other episodes.  As activities are being added into the person’s schedule locations are chosen for the activities.</p>
+<p>After the all of the person schedules in the household are completed trips are then generated for processing by the mode choice.  These trips are broken into trip chains, where a trip chain ends when a person returns home.  Since there is no activity (besides return home from work / lunch) where a person would go home, if a person could return home from their current position at the end of an activity and be home for over 15 minutes a return home activity is generated, and thus ends the trip chain.</p>
+<h2 id="activity-types">Activity types</h2>
+<p>There are ten different activity types that the Scheduler can produce from its 262 different distributions:</p>
+<ul>
+<li>Primary Work
+<ul>
+<li>This activity represents the main work episode during the day. It can be split into parts by a Work-Based-Business or Return-From-Work episode. This activity always
+takes place at the person's employment zone.</li>
+</ul>
+</li>
+<li>Secondary Work
+<ul>
+<li>This activity represents a work activity to a non-primary job held by the person.</li>
+</ul>
+</li>
+<li>Work Based Business
+<ul>
+<li>This activity represents work related activities such as business meetings that take place in a location different from the primary work zone.</li>
+</ul>
+</li>
+<li>Work At Home Business
+<ul>
+<li>This activity represents a work activity that is conducted within the household.  This activity type is not currently implemented in GTAModel.</li>
+</ul>
+</li>
+<li>School
+<ul>
+<li>This activity represents an activity going to some educational institution. The location choice for these activities are based on the age of the individual
+broken down by elementary, secondary, and post-secondary or professional schools.</li>
+</ul>
+</li>
+<li>Return From Work
+<ul>
+<li>This activity type represents a break in the main work day where the person returns back home.  We typically imagine this as going back for lunch.</li>
+</ul>
+</li>
+<li>Individual Other
+<ul>
+<li>This activity type represents going to a non-market activity such as a doctor's visit or going to a library where the activity is not conducted with another member of
+the person's household.</li>
+</ul>
+</li>
+<li>Joint Other
+<ul>
+<li>Similar to the Individual Other activity with the exception that the activity is conducted with at least one other household member.</li>
+</ul>
+</li>
+<li>Market
+<ul>
+<li>This activity represents an individual going shopping.  This activity purpose additionally means that it is not conducted with any other household member.</li>
+</ul>
+</li>
+<li>Joint Market
+<ul>
+<li>This activity represents a market activity that is conducted with at least one other household member.</li>
+</ul>
+</li>
+<li>Home
+<ul>
+<li>This activity type does not come from the distributions but is instead the result of not having another activity to travel to.  If the person is able to travel
+back home and spend a minimum amount of time (10 minutes in GTAModel V4.2) this activity is injected and will break up the activities into two different trip chains.</li>
+</ul>
+</li>
+</ul>
+<p>The following sections will give the formulas to interpret the distribution id numbers mapping them onto the circumstances of the schedule and demographics of the person.</p>
+<h4 id="lookup-table-values">Lookup Table Values</h4>
+<p>The following tables give the conversions for the variables in the formulas to convert an activity to its distribution id number.</p>
+<table>
+<thead>
+<tr>
+<th>School Age Offset</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>&lt;= 15</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&lt;= 18</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&lt;= 25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&lt;= 30</td>
+</tr>
+<tr>
+<td>4</td>
+<td>else</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Non-School Age Offset</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1</td>
+<td>&lt; 11</td>
+</tr>
+<tr>
+<td>0</td>
+<td>&lt; 18</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&lt; 26</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&lt; 65</td>
+</tr>
+<tr>
+<td>3</td>
+<td>else</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Occupation Offset</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Office</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Manufacturing</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Professional</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Retail</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Work Project Status</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>NoWorkOrSchool</td>
+</tr>
+<tr>
+<td>1</td>
+<td>FullTimeNoEveningWorkOrSchool</td>
+</tr>
+<tr>
+<td>2</td>
+<td>FullTimeEveningWorkOrSchool</td>
+</tr>
+<tr>
+<td>3</td>
+<td>FullTimeDayAndEveningWorkOrSchool</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PartTimeDay</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PartTimeEvening</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Other</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Household Work Project Status</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>No work or school</td>
+</tr>
+<tr>
+<td>1</td>
+<td>No evening Work or School</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Evening Work or School</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Day And Evening Work or School</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Adult Offset</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1 Adult</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2 Adults</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3+ Adults</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Child Offset</th>
+<th>Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1+ children</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0 children</td>
+</tr>
+</tbody>
+</table>
+<h4 id="activity-generation-id-formulas">Activity Generation ID Formulas</h4>
+<h5 id="primary-work">Primary Work</h5>
+<div class="math">
+\[
+id = (ageOffset * 8) + occupationOffset * 2 +
+\begin{cases}
+1, &amp; EmploymentStatus = FullTime \\\\
+0, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="secondary-work">Secondary Work</h5>
+<div class="math">
+\[
+id = 32 + occupationOffset * 2 +
+\begin{cases}
+1, &amp; EmploymentStatus = FullTime \\\\
+0, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="work-based-business">Work Based Business</h5>
+<div class="math">
+\[
+id = 40 + (ageOffset * 8) + occupationOffset * 2 +
+\begin{cases}
+0, &amp; EmploymentStatus = FullTime \\\\
+1, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="work-at-home-business">Work At Home Business</h5>
+<div class="math">
+\[
+id = 72 + 
+\begin{cases}
+N/A, &amp; &lt; 19 \\\\
+0, &amp; &lt; 25 \\\\
+1, &amp; &lt; 65 \\\\
+2, &amp; else
+\end{cases} * 4 + occupationOffset
+
+\]</div>
+<h5 id="school">School</h5>
+<div class="math">
+\[
+id = 84 + (ageOffset * 2) +
+\begin{cases}
+0 &amp; \text{Full-Time Student} \\\\
+1 &amp; \text{Part-Time Student}
+\end{cases}
+
+\]</div>
+<h5 id="return-from-work">Return From Work</h5>
+<div class="math">
+\[
+id = 94 + occupationOffset * 2 +
+\begin{cases}
+0, &amp; EmploymentStatus = FullTime \\\\
+1, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="individual-other">Individual Other</h5>
+<div class="math">
+\[
+id = 102 + ( ageOffset * 14 ) + workProjectStatus +
+\begin{cases}
+7, &amp; Female \\\\
+0, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="joint-other">Joint Other</h5>
+<div class="math">
+\[
+id = 158 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
+
+\]</div>
+<h5 id="market">Market</h5>
+<div class="math">
+\[
+id = 182 + ( ageOffset * 14 ) + workProjectStatus +
+\begin{cases}
+7, &amp; Female \\\\
+0, &amp; else
+\end{cases}
+
+\]</div>
+<h5 id="joint-market">Joint Market</h5>
+<div class="math">
+\[
+id = 238 + childOffset + ( adultOffset * 4 ) + householdWorkProjectStatus
+
+\]</div>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/scheduler.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

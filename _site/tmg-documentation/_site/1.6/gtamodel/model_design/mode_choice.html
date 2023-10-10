@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Mode Choice | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Mode Choice | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/mode_choice.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="mode-choice">Mode Choice</h1>
+
+<h2 id="algorithm-overview">Algorithm Overview</h2>
+<p>The mode choice algorithm in GTAModel V4.0 is significantly different from previous GTAModels.  To begin with, Mode choice is computed
+for each household individually instead of in aggregate terms, such as zonal origin destinations.<br>
+The figure below shows a breakdown of how the model works.</p>
+<p><img src="images/ModeChoiceOverview.png" alt="alt text" title="Mode Choice Overview"></p>
+<h2 id="modes">Modes</h2>
+<p>All of the parameters for each mode are documented in <a href="mode_choice_parameters.html">Mode Choice Parameters</a>.</p>
+<h3 id="auto">Auto</h3>
+<p>The auto mode in GTAModel V4.0 is meant to represent when a person is the driver inside of a vehicle (be is car, motorcycle or any other personally owned vehicle) that runs on the auto network.  No special considerations are made in this model for motorcycle and are treated identically to cars both in mode choice and on the network.</p>
+<p>Destination parking costs are applied for Non-home destined trips based on the average hourly weighted parking cost for the zone applied to the duration of the activity episode.  Currently only parking data from the city of Toronto, and downtown Hamilton have been included in the model.  In the future other regions can apply this data into the zone system file.</p>
+<h3 id="carpool">Carpool</h3>
+<p>The carpool mode in GTAModel V4.0 is meant to represent inter household passenger trips, including taxi (GTAModel V4.0 only).
+Explicitly this does not include passenger trips facilitated by household members.</p>
+<h3 id="school-bus">School bus</h3>
+<p>The school bus mode for GTAAModel V4.0+ provides a simple mode that is only allowed to go to or from a school activity.  This mode does not explicitly model school buses
+however provides a utility based on the age of the student, the distance of the trip, and the auto travel times.</p>
+<h3 id="dat-drive-access-transit">DAT (Drive-Access-Transit)</h3>
+<p>The drive access transit mode is the only tour based mode in GTAModel V4.0, where the utility of the mode depends on an entire tour as opposed to an individual trip.
+External to the model is an access station choice model that defines feasible zone pairs and provides a logsum of the different station choices.
+If this mode is chosen a discrete access station choice will be generated for integration into the EMME demand matrices.</p>
+<p>The access station choice model is described here.</p>
+<h3 id="wat-walk-access-transit">WAT (Walk-Access-Transit)</h3>
+<p>Walk access transit primarily represents all public transportation trips that do not involve driving to and leaving a vehicle at a station.  This includes both walking to a station/stop and being dropped off as a passenger to a station/stop.  In the future we will look at designing the passenger mode to encompass the latter functionality.</p>
+<h3 id="walk">Walk</h3>
+<p>The walk mode is a simple mode that by default will use the zone system's straight line distance and convert it into time using a global walking speed.</p>
+<p>This module has been upgraded in XTMF 1.5 to be able to take in a custom distance matrix (in metres) to override the distance matrix from the zone system.
+If the zone system is using a custom distance matrix, that will be used instead of a straight line distance unless overridden.</p>
+<h3 id="bike">Bike</h3>
+<p>The bike mode is a simple mode that by default will use the zone system's straight line distance and convert it into time using a global walking speed.
+Additionally this mode has the requirement that the bicycle must return back home at the end of the day.  The bicycle also can not be used if it is not current
+located at the zone during a trip chain.</p>
+<p>This module has been upgraded in XTMF 1.5 to be able to take in a custom distance matrix (in metres) to override the distance matrix from the zone system.
+If the zone system is using a custom distance matrix, that will be used instead of a straight line distance unless overridden.</p>
+<h3 id="passenger">Passenger</h3>
+<p>This mode, and Rideshare, are applied after the main mode choice model.  Persons within their household who were not allocated an auto for their tour will and
+who have persons who could possibly facilitate their trips are checked to see if they can be facilitated to their destination.  The potential
+driver will chose to make the highest utility choice between either not facilitating the passenger, facilitating the passenger, or choosing
+to facilitate a different passenger.  That is to say that even if there is a driver available the potential passenger is not guaranteed the trip.
+The utility for the whole household is maximized.</p>
+<p>There are two passes, first for drivers who are currently on the road.  The second pass checks to see if there is someone at home and if there
+is also a vehicle available to facilitate the trip.  At each pass the household utility is maximized.</p>
+<p><img src="images/PassengerAlgorithmOverview.png" alt="alt text" title="Passenger Algorithm Overview">  <img src="images/PassengerAlgorithmDetailed.png" alt="alt text" title="Passenger Algorithm Detailed"></p>
+<h3 id="rideshare">Rideshare</h3>
+<p>This mode serves as a dummy mode for persons who are not in charge of their joint trip chain.  If the tour-leader chooses to take Auto Drive
+then this mode will be assigned to the passenger.</p>
+<h3 id="passenger-access-transit-pat">Passenger Access Transit (PAT)</h3>
+<p>Available in GTAModel V4.1+, this mode serves as an auto passenger trip to transit stations that have parking
+lots.  This mode does not require the facilitation by a household member, nor the allocation of a household
+auto.</p>
+<h3 id="passenger-egress-transit-pet">Passenger Egress Transit (PET)</h3>
+<p>Available in GTAModel V4.1+, this mode serves as an auto passenger trip from transit stations that have parking
+lots.  This mode does not require the facilitation by a household member, nor the allocation of a household
+auto.</p>
+<h3 id="vehicle-for-hire-vfh">Vehicle For Hire (VFH)</h3>
+<p>Available in GTAModel V4.1+, this mode serves as a grouping for Taxi and Uber, Lift, and other Vehicle for Hire services.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/mode_choice.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

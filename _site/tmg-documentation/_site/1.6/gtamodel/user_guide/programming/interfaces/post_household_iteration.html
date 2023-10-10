@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IPostHouseholdIteration | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IPostHouseholdIteration | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/post_household_iteration.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="iposthouseholditeration">IPostHouseholdIteration</h1>
+
+<p>Using this interface, you can implement a module that runs after the mode choice has
+finished processing a single mode choice iteration through the household.  This allows
+you to see the combination of modes, access choice data, and other extremely detailed
+data that is recycled between the iterations of mode choice.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="householdcomplete">HouseholdComplete</h3>
+<p>This is the function that will be executed when TASHA has finished running both
+the Scheduler and Mode choice modules.</p>
+<pre><code class="lang-cs">void HouseholdComplete(ITashaHousehold household, bool success);
+</code></pre>
+<h3 id="householditerationcomplete">HouseholdIterationComplete</h3>
+<p>This method will be invoked when the mode choice has finished processing all of the mode choice
+iterations for the household.</p>
+<pre><code class="lang-cs">void HouseholdIterationComplete(ITashaHousehold household, int hhldIteration, int totalHouseholdIterations);
+</code></pre>
+<h3 id="householdstart">HouseholdStart</h3>
+<p>This method will be executed when the household has finished running through the scheduler and entered into
+the mode choice model.  You can use this method for building any temporary memory for your analysis
+instead of checking if the iteration is zero in <code>HouseholdIterationComplete</code>.</p>
+<pre><code class="lang-cs">void HouseholdStart(ITashaHousehold household, int householdIterations);
+</code></pre>
+<h3 id="iterationstarting">IterationStarting</h3>
+<p>This method gets executed when a new iteration of GTAModel is starting
+after the Level of Service has been updated.</p>
+<pre><code class="lang-cs">void IterationStarting(int iteration, int totalIterations);
+</code></pre>
+<h3 id="iterationfinished">IterationFinished</h3>
+<p>This method gets executed when an iteration of GTAModel all of the households have been
+processed for an iteration but before the <code>IPostIteration</code> modules have run.</p>
+<pre><code class="lang-cs">void IterationFinished(int iteration, int totalIterations);
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>For this example we will implement a barebones IPostHouseholdIteration module that counts
+up the number of times each mode has been selected and writes it out when the iteration finishes.</p>
+<pre><code class="lang-cs">using XTMF;
+using System.Linq;
+using System.Threading;
+using Tasha.Common;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;An example post household iteration module implementation&quot;)]
+    public sealed class MyPostHouseholdIteration : IPostHouseholdIteration
+    {
+        [RootModule]
+        public ITashaRuntime Root;
+
+        private long[] _tripsByMode;
+
+        public IterationStarting(int iteration)
+        {
+            _tripsByMode = new long[Root.AllModes.Count];
+        }
+
+        public void HouseholdStart(ITashaHousehold household int householdIterations)
+        {
+            // This is where your would initialize your temporary memory cache
+        }
+
+        public void HouseholdIterationComplete(ITashaHousehold household, int iteration, int totalHouseholdIterations)
+        {
+            var modes = Root.AllModes;
+
+            foreach(var person in household.Persons)
+            {
+                foreach(var tripChain in person.TripChains)
+                {
+                    foreach(var trip in tripChain.Trips)
+                    {
+                        int index = modes.IndexOf(trip.Mode);
+                        if(index &gt;= 0)
+                        {
+                            Interlocked.Increment(ref _numberOfTrips[index]);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void HouseholdComplete(ITashaHousehold, bool success)
+        {
+            // If you are caching your results you would commit your changes into
+            // your larger data cache here
+        }
+
+        public IterationFinishing(int iteration)
+        {
+            var modes = Root.AllModes;
+            for(int i = 0; i &lt; modes.Count; i++)
+            {
+                Console.Write(modes[i].ModeName);
+                Console.Write(&quot; = &quot;);
+                Console.WriteLine(_tripsByMode[i]);
+            }
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/post_household_iteration.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

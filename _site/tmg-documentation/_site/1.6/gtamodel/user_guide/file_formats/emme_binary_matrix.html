@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>EMME Binary Matrix (.mtx) | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="EMME Binary Matrix (.mtx) | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/emme_binary_matrix.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="emme-binary-matrix-mtx">EMME Binary Matrix (.mtx)</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The <code>.mtx</code> file format is used in GTAModel V4 to store matrix data
+in a compact form that is extremely quick to write and load.
+Additionally, the format also contains a copy of the zone system
+allowing it to be checked first before loading in order to weed out
+a large number of potential errors.</p>
+<p>The TMGToolbox contains two tools that allow for the
+<a href="https://github.com/TravelModellingGroup/TMGToolbox/blob/dev-1.6/TMGToolbox/src/input_output/import_binary_matrix.py">importing</a>
+and
+<a href="https://github.com/TravelModellingGroup/TMGToolbox/blob/dev-1.6/TMGToolbox/src/input_output/export_binary_matrix.py">exporting</a>
+of these files to and from EMME.</p>
+<p>There is also an alternative extension <code>.mtx.gz</code> which can be loaded in with version 1.10+ of
+the TMGToolbox and XTMF.  The <code>.mtx.gz</code> format is compressed using the GZip algorithm but otherwise
+idential to the original <code>.mtx</code> format.</p>
+<h2 id="file-specification">File Specification</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>DataType</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Magic Number</td>
+<td>uint32</td>
+<td>0xC4D4F1B2</td>
+</tr>
+<tr>
+<td>Version Number</td>
+<td>int32</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>int32</td>
+<td>float32 = 1, float64 = 2, int32 = 3, int64 = 4</td>
+</tr>
+<tr>
+<td>Dimensions</td>
+<td>int32</td>
+<td>Scalar = 0, Vector = 1, Matrix = 2</td>
+</tr>
+<tr>
+<td>IndexSize</td>
+<td>int32</td>
+<td>The size per dimension of the Vector.  A matrix will have 2 values.</td>
+</tr>
+<tr>
+<td>Zone Number</td>
+<td>int32</td>
+<td>For each dimension an index size worth of zone numbers</td>
+</tr>
+<tr>
+<td>Raw Data</td>
+<td>Depends on Type</td>
+<td>One value per expected cell</td>
+</tr>
+</tbody>
+</table>
+<p>You can review example code <a href="https://github.com/TravelModellingGroup/XTMF/blob/dev/Code/TMG.Emme/EmmeMatrix.cs">here</a> for reading and writing this file format.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/emme_binary_matrix.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

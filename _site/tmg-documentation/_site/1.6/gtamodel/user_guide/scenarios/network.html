@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Network | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Network | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/network.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="network">Network</h1>
+
+<p>The network scenario contains the inputs required for loading in the base network, splitting it into
+different time periods, and modifying the transit networks to have the appropriate speeds and headways.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<p>Each scenario contains a file called BaseNetwork.nwp containing the master network.  Each scenario then contains a set of files
+that are used for generating the time period networks.  The following sections goes over those files.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please note that starting in GTAModel V4.1+ <code>shortest_path.mtx</code> is also required.
+<code>ParkingCosts.csv</code> is required for GTAModel V4.1, though it is replaced in V4.2 with its own scenario directory.</p>
+</div>
+<h3 id="base-network-nwp">Base Network (.nwp)</h3>
+<p>This EMME network package file is used in GTAModel V4 to import a base network, which is based on the 2016 Network Coding Standard with 2016 data.
+It takes into consideration the freight mode (e.g., freight and auto only zone centroid connectors, lane capacity), and it does not include the Gormley Go Station.</p>
+<p>The base network will serve as a &quot;Base Scenario&quot; to create time period specific networks (AM, MD, PM, EV, ON) using the
+<a href="../../model_design/full_network_generator.html">Full Network Set Generator</a>, and these networks will be cleaned for use in auto and transit assignments.</p>
+<blockquote>
+<p>More information about how to use the Full Network Set Geneator tool, please refer to the <a href="../../../tmgtoolbox/network_editing/FullNetworkSetGenerator.html">Toolbox Page</a></p>
+</blockquote>
+<h3 id="batch-line-edit-csv">Batch Line Edit (.csv)</h3>
+<p>This file allows the user to make changes to particular lines as specified by the filter. It needs to contain at least three columns as following:</p>
+<ul>
+<li>filter</li>
+<li>x_hdwchange (x = scenario number, e.g., 10)</li>
+<li>x_spdchange (x = scenario number, e.g., 10)</li>
+</ul>
+<p>Additional headway and speed pairs can be added for more scenarios, such as the example below:</p>
+<table>
+<thead>
+<tr>
+<th>filter</th>
+<th>10_hdwchange</th>
+<th>10_spdchange</th>
+<th>20_hdwchange</th>
+<th>20_spdchange</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>line=T501</td>
+<td>1</td>
+<td>1</td>
+<td>0.5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aggregation-csv">Aggregation (.csv)</h3>
+<p>This file is the Transit Aggregation Selection Table, which contains the transit lines and how the headway is to be calculated
+for each line if a Transit Service Table file is used for that line. It contains two columns:</p>
+<ul>
+<li>emme_id: this is the id of the transit line in Emme</li>
+<li>agg_type: this is the headway calculation method. It can either be '<strong>naive</strong>' or '<strong>average</strong>'</li>
+</ul>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>emme_id</th>
+<th>agg_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T501</td>
+<td>naive</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Naive</strong> vs <strong>Average</strong> headway calculation method: <br>
+An example line &quot;T501&quot; has 3 departures in the AM period (6 a.m. to 9 a.m.) at 8:01, 8:11, and 8:31. The <strong>naive</strong>
+aggregation approach would simply take the number of departures in a time period. For line &quot;T501&quot; the naive aggregation
+approach would say that 3 hour AM period means 180 minutes. 180/3 = 60 minute headways. On the other hand, the <strong>average</strong>
+aggregation method looks at the time in between departures and takes the average of that time. For line &quot;T501&quot;, the average
+approach would say that the time in between departures is 10 and 20 mins, the average of which is 15 minutes. The headway is
+then imputed as 15 minutes.</p>
+<h3 id="alt-file-csv">Alt File (.csv)</h3>
+<p>This file is the Transit Alternative Table, which contains information for the transit lines that do not have any
+entries in the Transit Service Table; otherwise, these transit lines will not be present in the time periods that will be generated.
+If a line exists in both Alt File and Service Table, the information in Alt File will rule. It needs to contain at least three columns as following:</p>
+<ul>
+<li>emme_id: the id of the transit line in EMME</li>
+<li>xxxx_hdw: the headway column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example,
+&quot;0600_hdw&quot; column will contain the headways for the time period starting at 6:00 AM.</li>
+<li>xxxx_spd: the speed column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format.
+For example, &quot;0600_spd&quot; column will contain the speeds for the time period starting at 6:00 AM.</li>
+</ul>
+<p>Additional xxxx_hdw and xxxx_spd columns should be specified for all time periods that need to be modified, such as the example below:</p>
+<table>
+<thead>
+<tr>
+<th>emme_id</th>
+<th>0600_hdw</th>
+<th>0600_spd</th>
+<th>0900_hdw</th>
+<th>0900_spd</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T501</td>
+<td>10</td>
+<td>50</td>
+<td>5</td>
+<td>50</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you set the headway and speed of a line to 9999 for any or all time periods, it will be
+removed from the network for those time periods.  A headway or speed of 0 will keep the calculated headway
+and speed from the service table.</p>
+</div>
+<h3 id="service-table-csv">Service Table (.csv)</h3>
+<p>This Transit Service Table file contains trip starts and trip ends for transit lines. It contains three columns as following:</p>
+<ul>
+<li>emme_id: the id of the transit line in EMME</li>
+<li>trip_depart: the departure time of the trip from the initial stop in a hh:mm format</li>
+<li>trip_arrive: the arrival time of the trip to the final destination in a hh:mm format</li>
+</ul>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>emme_id</th>
+<th>trip_depart</th>
+<th>trip_arrive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T501</td>
+<td>5:55:00</td>
+<td>6:55:00</td>
+</tr>
+<tr>
+<td>T501</td>
+<td>6:10:00</td>
+<td>7:10:00</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If a transit line has no definition in both of the <strong>Service Table</strong> nor the <strong>Alt File</strong>, it will be removed from
+the network by the <a href="https://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html">Full Network Set Generating</a> tool.</p>
+</div>
+<h3 id="parking-costs-csv">Parking Costs (.csv)</h3>
+<p>This file contains the hourly capacity-weighted average parking cost for each destination zone using a 500m buffer
+in calculation. It is part of the <code>GTAModel V4.1</code>, which contains two columns as following:</p>
+<ul>
+<li>Zone#: the ID of the zone</li>
+<li>Parking Cost: the average hourly parking cost corresponding to the zone</li>
+</ul>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>Zone#</th>
+<th>Parking Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1.5</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This file was removed in GTAModel V4.2+ and replaced with its own scenario directory.</p>
+</div>
+<h3 id="shortest-path-mtx">Shortest Path (.mtx)</h3>
+<p>This optional file is an <a href="../file_formats/emme_binary_matrix.html">EMME binary matrix</a> that is used to specify the distance between zones <code>in GTAModel V4.1+</code>.
+It stores the OD shortest network distance (static, not the fastest path) in the unit of meters.</p>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>Creating a new network scenario requires preparing <code>BaseNetwork.nwp</code> by editing transit lines in Emme to meet the transit policy or situation to be tested and simultaneously editing the Transit Alternative Table File also known as <code>AltFile.csv</code>.</p>
+<p>The <code>AltFile.csv</code> contains headways and speeds for transit lines that are not listed in the service table or for which the user would like to override in the service table data. More on how this is used during the time period generation process can be found <a href="http://tmg.utoronto.ca/doc/1.6/gtamodel/model_design/full_network_generator.html#create-transit-time-period">here</a>.</p>
+<p>To update the Alternative table file the user would have to provide the corresponding <em>emme_id</em>, <em>xxxx_hdw</em>, and <em>xxxx_spd</em> in the <code>AltFile.csv</code> file.</p>
+<p>Please note: In the GTAModel folder setup, the files needed to prepare your base network for your transit policy test can be found in <em>V4Input\Scenario-Network\20XX\Base</em></p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/network.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

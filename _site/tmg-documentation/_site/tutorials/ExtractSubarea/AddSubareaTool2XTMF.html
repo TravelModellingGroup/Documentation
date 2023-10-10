@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add Export Subarea Tool to XTMF | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add Export Subarea Tool to XTMF | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/ExtractSubarea/AddSubareaTool2XTMF.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="add-export-subarea-tool-to-xtmf"><strong>Add Export Subarea Tool to XTMF</strong></h1>
+
+<p>This tutorial shows how the subarea tool can be added to XTMF in general and also where to add it within the GTAModel setup in XTMF.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Adding Export Subarea Tool to XTMF requires XTMF 1.11+.</p>
+</div>
+<h2 id="tutorial---how-to-add-the-tool-within-xtmf"><strong>Tutorial - How to add the tool within XTMF</strong></h2>
+<p>Adding the <code>ExportSubareaTool</code> to XTMF GUI requires following the following step:</p>
+<ul>
+<li>Add the Export Subarea Tool Module to the Tools to execute or run in XTMF</li>
+<li>Enter all module parameters needed to run the tool. See module parameter explanation for &quot;export subarea tool&quot; below for more.</li>
+<li>Add all the class sub-module you want to run. You add as many as you want.</li>
+<li>Add sub-module parameter needed to run the tool. See sub-module parameter explanation for &quot;Traffic Classes&quot;.</li>
+<li>Add shape file location sub-module and set the name of the shape file to use. This is required only if you want XTMF define a subarea based on a shapefile representing the subarea.</li>
+<li>Run model system</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+</div>
+<p>The subarea tool can be added as many times (within as many classes as is needed)</p>
+<p>Below contains details on how to add the tool to XTMF</p>
+<h4 id="1-add-the-export-subarea-tool-module-to-the-tools-to-execute-or-run-in-xtmf"><strong>1. Add the Export Subarea Tool Module to the Tools to execute or run in XTMF</strong></h4>
+<figure>
+    <img src="images/add_module.png" alt="Add Module" width="600">
+    <figcaption text-align="center">Figure 1: Add Module</figcaption>
+</figure>
+<figure>
+    <img src="images/search_module.png" alt="Search for and ExportSubareaTool" width="600">
+    <figcaption>Figure 2: Search for and ExportSubareaTool</figcaption>
+</figure>
+<h4 id="2-enter-all-module-parameters-needed-to-run-the-tool"><strong>2. Enter all module parameters needed to run the tool.</strong></h4>
+<figure>
+    <img src="images/export_subarea_tool_added.png" alt="Add subarea module parameters" width="600">
+    <figcaption align="center">Figure 3: Enter subarea module parameters</figcaption>
+</figure>
+<h4 id="3-enter-all-class-sub-module-you-want-to-run-you-can-add-as-many-as-you-want"><strong>3. Enter all class sub-module you want to run. You can add as many as you want.</strong></h4>
+<figure>
+    <img src="images/add_module_to_class.png" alt="Add class sub-module" width="600">
+    <figcaption align="center">Figure 4: Add module (Ctrl + M) </figcaption>
+</figure>
+<figure>
+    <img src="images/add_class.png" alt="" width="600">
+    <figcaption align="center">Figure 5: Add class sub-module </figcaption>
+</figure>
+<h4 id="4-enter-class-sub-module-parameters-needed-to-run-the-tool"><strong>4. Enter class sub-module parameters needed to run the tool.</strong></h4>
+<figure>
+    <img src="images/class_modules.png" alt="" width="600">
+    <figcaption align="center">Figure 6: Enter class module parameters</figcaption>
+</figure>
+<h4 id="5-optional-add-shape-file-location-sub-module-and-set-the-name-of-the-shape-file-to-use"><strong>5. (Optional) Add shape file location sub-module and set the name of the shape file to use.</strong></h4>
+<figure>
+    <img src="images/post_run_add_shapefile_dir.png" alt="Add shape file sub-module" width="600">
+    <figcaption align="center">Figure 7: Add shape file sub-module</figcaption>
+</figure>
+<figure>
+    <img src="images/shapefile_directory.png" alt="Enter shapefile name" width="600">
+    <figcaption align="center">Figure 8: Enter shapefile name </figcaption>
+</figure>
+<h4 id="6-run-model-system"><strong>6. Run model system</strong></h4>
+<figure>
+    <img src="images/run_model.png" alt="" width="600">
+    <figcaption align="center">Figure 9: Run Model</figcaption>
+</figure>
+<figure>
+    <img src="images/run_finished.png" alt="Run Finished" width="600">
+    <figcaption align="center">Figure 10: Run Finished </figcaption>
+</figure>
+<h2 id="tutorial---adding-export-subarea-tool-within-a-gtamodel-system-in-xtmf"><strong>Tutorial - Adding Export Subarea Tool within a GTAModel System in XTMF</strong></h2>
+<p>The <code>ExportSubareaTool</code> can be added into a GTAModel model system under the post run.</p>
+<figure>
+    <img src="images/post_run_export_subarea.png" alt="Add export subarea to GTAModel" width="600">
+    <figcaption align="center">Figure 11: Adding Export Subarea Tool in GTAModel</figcaption>
+</figure>
+<p>To set up the subarea tool with all its parameters within a GTAModel system, use the tutorial in the preceding section.</p>
+<h2 id="next-steps"><strong>Next Steps</strong></h2>
+<ul>
+<li>Use <a href="AddTMGToolbox2Emme.html">Add Export Subarea Tool to Modeller</a> if you are using Emme Notebook</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/ExtractSubarea/AddSubareaTool2XTMF.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

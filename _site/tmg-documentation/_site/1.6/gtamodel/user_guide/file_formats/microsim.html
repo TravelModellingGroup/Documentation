@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Microsim | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Microsim | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/microsim.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="microsim">Microsim</h1>
+
+<p>The Microsim format allows GTAModel V4 models to record the results of the
+TASHA/Mode Choice simulations into a set of files that can be imported into many
+different data analysis tools. A few examples are Microsoft Access, SQL Server, and Pandas.
+Below is an example directory containing microsim data.  Optionally the data can be compressed
+using the gzip algorithm during a model run.</p>
+<p>All times are reported in either &quot;Minutes from Midnight&quot;, or optionally as a time stamp in the format H:M[&lt;optional&gt;:S].
+The &quot;Minutes From Midnight&quot; allows you to easily add times or durations together where zero is the midnight of the day the simulation starts.</p>
+<p><img src="images/microsim_1.png" alt="alt text" title="Microsim folder"></p>
+<h2 id="householdscsv-optional">Households.csv (Optional)</h2>
+<p>This file was added starting in GTAModel V4.1.0. The columns are as follows:</p>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>home_zone</li>
+<li>weight
+<ul>
+<li>This is the same thing as the household expansion factor in TTS</li>
+</ul>
+</li>
+<li>persons
+<ul>
+<li>The number of people living within the household</li>
+</ul>
+</li>
+<li>dwelling_type</li>
+<li>vehicles
+<ul>
+<li>The number of vehicles assigned to the household from the auto ownership model</li>
+</ul>
+</li>
+<li>income_class
+<ul>
+<li>The income class according to TTS2016 that the household belongs to</li>
+</ul>
+</li>
+</ul>
+<h2 id="personscsv">Persons.csv</h2>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>person_id
+<ul>
+<li>The unique identifier for the person within the household</li>
+</ul>
+</li>
+<li>age</li>
+<li>sex
+<ul>
+<li>Currently the options are 'M' or 'F'</li>
+</ul>
+</li>
+<li>license
+<ul>
+<li>TRUE, or FALSE</li>
+</ul>
+</li>
+<li>transit_pass
+<ul>
+<li>TRUE, or FALSE</li>
+</ul>
+</li>
+<li>employment_status
+<ul>
+<li>These statuses match that from the DMG's TTS data guide</li>
+</ul>
+</li>
+<li>occupation
+<ul>
+<li>These statuses match that from the DMG's TTS data guide</li>
+</ul>
+</li>
+<li>free_parking
+<ul>
+<li>TRUE, or FALSE</li>
+</ul>
+</li>
+<li>student_status
+<ul>
+<li>F = Full-time, P = Part-Time, O = Not a student</li>
+</ul>
+</li>
+<li>work_zone
+<ul>
+<li>If the zone is 0, then they have not been assigned a work zone</li>
+</ul>
+</li>
+<li>school_zone
+<ul>
+<li>If the zone is 0, then they have not been assigned a school zone</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The person's expansion factor to scale the agent to the global population</li>
+</ul>
+</li>
+</ul>
+<h2 id="tripscsv">Trips.csv</h2>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>person_id
+<ul>
+<li>The unique identifier for the person within the household</li>
+</ul>
+</li>
+<li>trip_id
+<ul>
+<li>The unique identifier for the trip for the given person</li>
+</ul>
+</li>
+<li>o_act
+<ul>
+<li>The activity at the origin of the trip</li>
+</ul>
+</li>
+<li>o_zone
+<ul>
+<li>The zone number of the trip's origin</li>
+</ul>
+</li>
+<li>d_act
+<ul>
+<li>The activity at the destination of the trip</li>
+</ul>
+</li>
+<li>d_zone
+<ul>
+<li>The zone number of the trip's destination</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The factor to apply to scale this trip to scale the trip for the global population</li>
+<li>This will be the same as the person's weight</li>
+</ul>
+</li>
+</ul>
+<h2 id="trip_modescsv">Trip_Modes.csv</h2>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>person_id
+<ul>
+<li>The unique identifier for the person within the household</li>
+</ul>
+</li>
+<li>trip_id
+<ul>
+<li>The unique identifier for the trip for the given person</li>
+</ul>
+</li>
+<li>mode
+<ul>
+<li>The name of the mode that was used</li>
+</ul>
+</li>
+<li>o_depart
+<ul>
+<li>The time that the trip started / departed the origin</li>
+</ul>
+</li>
+<li>d_arrive
+<ul>
+<li>The time that the trip ended / arrived at the destination</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The number of times that this mode was selected for the given trip</li>
+</ul>
+</li>
+</ul>
+<h2 id="trip_stationscsv">Trip_Stations.csv</h2>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>person_id
+<ul>
+<li>The unique identifier for the person within the household</li>
+</ul>
+</li>
+<li>trip_id
+<ul>
+<li>The unique identifier for the trip for the given person</li>
+</ul>
+</li>
+<li>station
+<ul>
+<li>The zone number for the station</li>
+</ul>
+</li>
+<li>direction
+<ul>
+<li>&quot;auto2transit&quot; or &quot;transit2auto&quot;</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The number of times that the station was selected</li>
+</ul>
+</li>
+<li>mode <code>(XTMF 1.8+)</code>
+<ul>
+<li>The mode associated with this station choice.  This is required for analyzing PAT/PET modes.</li>
+</ul>
+</li>
+</ul>
+<h2 id="facilitate_passengercsv-optional">Facilitate_Passenger.csv (Optional)</h2>
+<ul>
+<li>household_id
+<ul>
+<li>The unique identifier for the household</li>
+</ul>
+</li>
+<li>passenger_id
+<ul>
+<li>The unique identifier for the passenger within the household</li>
+</ul>
+</li>
+<li>passenger_trip_id
+<ul>
+<li>The unique identifier for the trip for the passenger that is being facilitated</li>
+</ul>
+</li>
+<li>driver_id
+<ul>
+<li>The unique identifier for the driver within the household</li>
+</ul>
+</li>
+<li>driver_trip_id
+<ul>
+<li>The unique identifier for the trip that the driver is being diverted from in
+order to facilitate the trip.</li>
+<li>-1 if the driver is facilitating the trip from home</li>
+</ul>
+</li>
+<li>weight
+<ul>
+<li>The number of times the passenger's trip was facilitated in this manner</li>
+</ul>
+</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/microsim.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

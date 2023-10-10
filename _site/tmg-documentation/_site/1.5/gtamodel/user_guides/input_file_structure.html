@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Input File Structure | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Input File Structure | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/user_guides/input_file_structure.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="input-file-structure">Input File Structure</h1>
+
+<p>This section describes how files are organized within the XTMF project input directory.</p>
+<h2 id="activity-distributions">Activity Distributions</h2>
+<p>This directory contains the information on how to generate activity episodes.  Between runs these files should not change unless it has been recalibrated.</p>
+<h2 id="employment">Employment</h2>
+<p>There are a couple different subdirectories inside of this directory.  The first, ‘EmpOccRates’, contains the probability of being part of an occupation and employment status for each zone.  The second, ‘WorkerCategories’ contains the probability of being in a worker mobility category.  This the first two directories are generated from population synthesis.  The third directory is ‘ZonalResidence’.  This directory contains the number of residents in each zone that belong to the employment status and occupation.</p>
+<h2 id="estimation">Estimation</h2>
+<p>This directory contains all of the parameter files used in estimation.  Unless you are recalibrating GTAModel there are no files here to edit.</p>
+<h2 id="estimation-result">Estimation Result</h2>
+<p>This directory contains the results of the estimation process for GTAModel V4.0.  The mode choice algorithm’s parameters are read in from this directory.  For recalibration you can edit the mode choice’s values, please contact TMG before doing this though for guidance.</p>
+<h2 id="househould-data">Househould Data</h2>
+<p>This directory contains the household and person files for the synthetic population. Titled Household.csv and Persons.csv respectively. In addition, you may have a Summary.csv file which contains the sum of the two aforementioned files.</p>
+<h2 id="school">School</h2>
+<p>This directory contains the base year school linkages and the vectors of students by zone in order to do future year updating.</p>
+<h2 id="stations">Stations</h2>
+<p>This directory contains information for every station that provides drive-access capabilities.  If you are going to add a new station to the model a corresponding entry must be made into the ‘StationCapacity.csv’ database.  Follow the guidelines in the section for “Adding a new Station” for more information.</p>
+<h2 id="transit-fares">Transit Fares</h2>
+<p>This directory contains the information used to generate the transit hyper-networks.</p>
+<h2 id="validation">Validation</h2>
+<p>This directory will contain different worksheets and other files used for highly detailed analysis of the model’s performance.  It will also contain EMME worksheets for visualization of results.</p>
+<h2 id="zone-data">Zone Data</h2>
+<p>This directory contains the information to generate the zone system for the model.  Every centroid in EMME must be represented in the zones file.  The regions file contains a linkage of zones to region, if left out a zone will belong to the null/external region (region 0).</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/user_guides/input_file_structure.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

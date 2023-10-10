@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>C-19 Model | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="C-19 Model | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/c-19.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="c-19-model">C-19 Model</h1>
+
+<h2 id="overivew">Overivew</h2>
+<p>To help explore what-if scenarios inspired by the COVID-19 pandemic the Travel Modelling Group has designed an variant of GTAModel called C-19.  While we are lacking
+enough information to create a new version of GTAModel to truly replicate the pandemic's conditions, this tool will allow you to modify the results of a previous
+GTAModel V4.1+ run by taking in the results and modifying the population's schedules.  These modified schedules are then passed through location choice, mode choice, and assigned
+to the network giving us updated road and transit conditions.</p>
+<p><em><strong>Using the C-19 modules requires <code>XTMF 1.9+</code>.</strong></em></p>
+<h2 id="model-workflow">Model Workflow</h2>
+<p>To run this model system you first start by running the &quot;base conditions&quot; using your existing GTAModel implementation.</p>
+<figure>
+    <img src="images/C-19/Workflow.svg" alt="Workflow Diagram">
+    <figcaption>Figure 1: Model Workflow</figcaption>
+</figure>
+<h2 id="additional-inputs">Additional Inputs</h2>
+<p>In addition to the rest of your Scenario inputs the C-19 model variants are designed to read in a new set of inputs that contain the probabilities
+for an activity of that type to remain within the schedule.  Each of these files are the CSV format containing the columns <code>Zone</code> and <code>Rate</code>,
+ordered respectively. For work activities the Zone represents the person's place of work, for other activities it represents their home zone.
+For a description of the different activity types in GTAModel please refer to the <a href="scheduler.html#activity-types">Scheduler's documentation</a>.
+Additionally, for the Primary Work activity episodes, the survival rates are divided by the person's occupation category.
+Below are the following file names required for each scenario.</p>
+<ul>
+<li>PrimaryProfessionalWork.csv</li>
+<li>PrimaryGeneralWork.csv</li>
+<li>PrimarySalesWork.csv</li>
+<li>PrimaryManufacturingWork.csv</li>
+<li>SecondaryWork.csv</li>
+<li>WorkBasedBusiness.csv</li>
+<li>School.csv</li>
+<li>Other.csv</li>
+<li>Market.csv</li>
+</ul>
+<h2 id="constructing-the-model-system-variant">Constructing the model system variant</h2>
+<ol>
+<li>To modify your GTAModel implementation to support the C-19 variant you will need to first create a copy of your model system.</li>
+<li>Change your Household Loader to the type <code>TMG.Tasha.RemoveActivities</code>.</li>
+<li>Copy the Location Choice model from the <code>Scheduler</code> into the Household Loader's child module <code>Location Choice</code>.</li>
+<li>Set the <code>Main Loader</code> to type <code>TMG.Tasha.MicrosimLoader.LoadHouseholdsFromMicrosim</code>.</li>
+<li>Either set the parameter <code>Household Iterations</code> in the <code>Main Loader</code> to the number of household iterations that the mode choice is using
+or preferably link it to the Household Iterations Linked Parameter for your model system.</li>
+<li>Set the child modules of <code>Main Loader</code> to the appropriate <a href="../user_guide/file_formats/microsim.html">microsim files</a>.  We recommend using the
+<code>TMG.Input.DirectorySeperatedPathFromOutputDirectory</code> module for these links and set the <code>Directory Relative To Run Directory</code> to the <code>Microsim Results</code>
+output folder and then specifying the <code>File Name</code> appropriate to the individual module's file.</li>
+<li>Setup the activity survival rates in <code>TMG.Tasha.RemoveActivities</code> by setting the modules to use the type <code>Tasha.Data.ZoneInformation</code>.
+Then set the <code>Reader</code> to use <code>TMG.Data.Loading.LoadODDataFromCSV</code>, setting the parameter <code>Format</code>  to <code>ThirdNormalized</code> and <code>Read Type</code> to <code>Vector</code>.
+Set <code>Reader</code>'s <code>Load From</code> to <code>TMG.Input.DirectorySeperatedPathFromOutputDirectory</code>.  You will need to setup its parameters similarly to the
+<code>Microsim Results</code>'s, in this case though setting <code>Directory Relative To Input Directory</code> to the folder that contains the directory containing the rate scenario.
+You should then set it up with a new Linked Parameter so that it is easier to change during application later on. Finally set the <code>File Name</code> parameter to
+the file name of the specific rate file in the scenario directory.</li>
+<li>Delete the <code>Scheduler</code> module now that the schedules will be modified by the <code>Household Loader</code>.</li>
+<li>In <code>Pre Iteration</code> delete <code>Place of Residence Place of School Gravity Model</code> since all of the school zones have already been assigned.</li>
+</ol>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/c-19.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

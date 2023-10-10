@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Extract Transit OD Vectors | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Extract Transit OD Vectors | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/strategy_analysis/ExtractTransitODVectors.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="extract-transit-od-vectors"><strong>Extract Transit OD Vectors</strong></h1>
+
+<p>This tool constructs origin and destination vectors for combined walk-access and drive-access transit trips for a user-specified group of transit lines.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Analysis&quot; -&gt; &quot;Tranist&quot; -&gt; &quot;Strategy Analysis&quot; -&gt; &quot;Extract Transit OD Vectors&quot;</p>
+<h3 id="scenario">Scenario</h3>
+<p>Select the scenario to execute against. Only one scenario at a time can be selected.</p>
+<h3 id="line-filter-expression">Line Filter Expression</h3>
+<p>Specify the transit lines to be included in the analysis.</p>
+<h3 id="line-od-matrix">Line OD Matrix</h3>
+<p>Choose an existing or use next available FULL matrix (mf) to store the OD demand using the user-specified transit lines.</p>
+<h3 id="aggregate-origin-vector">Aggregate Origin Vector</h3>
+<p>Choose an existing or use next available ORIGIN matrix (mo) to store the summed demand going through the user-specified transit lines.</p>
+<h3 id="aggregate-destination-vector">Aggregate Destination Vector</h3>
+<p>Choose an existing or use next available DESTINATION matrix (md) to store the summed demand going through the user-specified transit lines.</p>
+<h3 id="auto-od-matrix">Auto OD Matrix</h3>
+<p>Specify the auto demand matrix to yield origin and destination drive-access-transit demands.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;ExtractTransitODVectors&quot;.  It is available to add under <em>ExecuteToolsFromModellerResource</em> or <em>EmmeToolsToRun</em>.</p>
+<h3 id="aggregation-destination-matrix-number">Aggregation Destination Matrix Number</h3>
+<p>Enter the number of an existing DESTINATION matrix to store the summed demand going through the user-specified transit lines.</p>
+<h3 id="aggregation-origin-matrix-number">Aggregation Origin Matrix Number</h3>
+<p>Enter the number of an existing ORIGIN matrix to store the summed demand going through the user-specified transit lines.</p>
+<h3 id="auto-od-matrix-number">Auto OD Matrix Number</h3>
+<p>Enter the number of the auto demand matrix to yield origin and destination drive-access-transit demands.</p>
+<h3 id="line-filter-expression-1">Line Filter Expression</h3>
+<p>Specify the transit lines to be included in the analysis.</p>
+<h3 id="line-od-matrix-number">Line OD Matrix Number</h3>
+<p>Enter the number of an existing FULL matrix to store the OD demand using the user-specified transit lines.</p>
+<h3 id="scenario-number">Scenario Number</h3>
+<p>Select the scenario to execute against.</p>
+<h3 id="station-centroids">Station Centroids</h3>
+<p>Specify the range of zone centroid IDs that are access stations (e.g., 9000-9999).</p>
+<h3 id="zone-centroids">Zone Centroids</h3>
+<p>Specify the range of zone centroid IDs that are regular TAZ zones to get the ODs for (e.g., 1-8999).</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/strategy_analysis/ExtractTransitODVectors.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

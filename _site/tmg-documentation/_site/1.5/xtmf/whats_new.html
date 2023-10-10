@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>What&#39;s new in XTMF Version 1.5? | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="What&#39;s new in XTMF Version 1.5? | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/xtmf/whats_new.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="whats-new-in-xtmf-version-15">What's new in XTMF Version 1.5?</h1>
+
+<h2 id="xtmf-software-changes">XTMF Software Changes</h2>
+<h3 id="updated-model-system-display">Updated Model System Display</h3>
+<ul>
+<li>The Model System display has been updated replacing the parameter tabs with collapsible panels. Both the quick parameter display and active module parameter display can be active at the same time.</li>
+<li>A status bar has been added to the bottom of the display containing quick-glance information of the model system.</li>
+<li>Modules now have customizable icons that are rendered in the display.</li>
+<li>Previous run names are now enumerated into the run dialog.</li>
+</ul>
+<h3 id="model-system-regions">Model System Regions</h3>
+<ul>
+<li>A new regions pane is added to the model system display.</li>
+<li>Regions allow for customized grouping of specific modules outside of the model system hierarchy.</li>
+<li>A model system can have an unlimited numer of custom regions to help with quick logical grouping of modules specific to certain tasks.</li>
+</ul>
+<h3 id="improved-logging">Improved Logging</h3>
+<ul>
+<li>The run window console logger now includes timestamped information.</li>
+<li>Modules that make use of the ILogger interface will can also include logging info that details which module a message originated from.</li>
+<li>The run window console logger now saves / mirrors the same information to a XTMF.Console.log file in the current run directory.</li>
+</ul>
+<h3 id="run-schedule-re-ordering">Run Schedule Re-Ordering</h3>
+<ul>
+<li>Queued runs can now be re-ordered from the scheduler window. Simply drag and drop the run into the desired spot - or use the available context menu to shift runs in the queue up or down.</li>
+</ul>
+<h3 id="updated-documentation-browser">Updated Documentation Browser</h3>
+<ul>
+<li>The embedded module documentation will now display the appropriate information from the TMG documentation site (browser)/</li>
+</ul>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<ul>
+<li>Model systems now record their last-modified time. This information is displayed on the project display.</li>
+<li>Bug fixes and other performance improvements.</li>
+<li>A module exlude list can be provided to prevent XTMF from loading specified modules at application startup.</li>
+<li>Updated project and model system save format. Each model system in a project is now separated into multiple files, rather than being grouped as part of the same project file.</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<p>As always, new iterations of XTMF address bugs previously identified in any of the issues created on the Github project tracker, and others
+we may find internally.</p>
+<h2 id="xtmf-sdk-changes">XTMF SDK Changes</h2>
+<ul>
+<li>The XTMF <code>ModuleInformation</code> attribute has an added property for customized module icons.</li>
+<li>Dependency injection support for log4net ILogger is now provided for modules. Creating an ILogger field in an IModule definition will have have the logger created when the module is initialized. Use this functionality for more detailed log output.</li>
+</ul>
+<h2 id="development">Development</h2>
+<ul>
+<li>The XTMF code database has undergone substantial code cleanup and refactoring for this version.</li>
+</ul>
+<h2 id="requesting-new-features">Requesting New Features</h2>
+<p>New feature requests are always welcome for the XTMF project. If you would like to contribute, make any suggestions for a new feature, or report any
+bugs encountered during your usage of XTMF please see: <a href="https://github.com/TravelModellingGroup/XTMF/issues">https://github.com/TravelModellingGroup/XTMF/issues</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/xtmf/whats_new.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

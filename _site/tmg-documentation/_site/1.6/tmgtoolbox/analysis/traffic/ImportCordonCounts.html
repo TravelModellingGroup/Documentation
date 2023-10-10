@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Import Cordon Counts | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Import Cordon Counts | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/traffic/ImportCordonCounts.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="import-cordon-counts"><strong>Import Cordon Counts</strong></h1>
+
+<p>This tool is used to validate traffic assignment by comparing assigned volumes with the cordon count results from a file. An extra attribute (@cord) will be created to store the cordon counts on the relevant links. The difference in assigned volumes and counts can be visualized using the <em>Links</em> Layer in Emme Desktop (set Bar Value = Volau - @cord).</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Analysis&quot; -&gt; &quot;Traffic&quot; -&gt; &quot;Import Cordon Counts&quot;</p>
+<h3 id="scenario">Scenario</h3>
+<p>Select the scenario to execute against. Only one scenario at a time can be selected.</p>
+<h3 id="cordon-count-file-csv">Cordon Count File (*.csv)</h3>
+<p>Select &quot;Browse...&quot; to navigate to the cordon count file that contains at least three columns: countpost IDs, link IDs, and cordon counts. An extra attribute (@cord) will be created or overwritten to store the cordon counts.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;CordonCountEstimation&quot;.  It is available to use as a standalone module.</p>
+<h4 id="absolute-error-factor">Absolute Error Factor</h4>
+<p>The factor applied to <em>the sum of each station's Abs(error)</em>.</p>
+<h4 id="input-directory">Input Directory</h4>
+<p>Specify the input directory for this model system.</p>
+<h4 id="mean-squared-error-factor">Mean Squared Error Factor</h4>
+<p>The factor applied to <em>the sum of each station's (error)^2</em>.</p>
+<h4 id="total-error-factor">Total Error Factor</h4>
+<p>The factor applied to <em>the sum of error</em>.</p>
+<h3 id="model-output-file">Model Output FIle</h3>
+<p>A CSV file contains the modelled traffic volumes with the first column being the name and the second column being the value.</p>
+<h3 id="station-name-map-file">Station Name Map File</h3>
+<p>A mapping between the truth data and the model data's names for stations.</p>
+<h3 id="truth-file">Truth File</h3>
+<p>A CSV file contains the cordon counts with the first column being the name and the second column being the value.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/traffic/ImportCordonCounts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

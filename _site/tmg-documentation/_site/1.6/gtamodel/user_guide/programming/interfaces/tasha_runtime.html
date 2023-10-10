@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ITashaRuntime | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ITashaRuntime | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_runtime.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="itasharuntime">ITashaRuntime</h1>
+
+<p>This interface is used for implementing the logic
+of running a TASHA based model.  The interface allows for
+the scheduler and mode choice to be able to share common resources.</p>
+<p>This interface inherits the <code>TMG.ITravelDemandModel</code> and <code>TMG.IResourceSource</code>
+interfaces. <code>TMG.ITravelDemandModel</code> in turn inherits <code>XTMF.IModelSystemTemplate</code>.</p>
+<h2 id="methods-for-itraveldemandmodel">Methods for ITravelDemandModel</h2>
+<p>The ITravelDemandModel interface is shared with simpler four step models.  It
+provides child modules access to network level data (times, costs) for the
+auto and transit networks as well as the ZoneSystem that is being used.</p>
+<h3 id="networkdata">NetworkData</h3>
+<p>Provides a list of different network data entities that can be bound to
+for child modules.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// The network level data that will be used in this model
+/// &lt;/summary&gt;
+IList&lt;INetworkData&gt; NetworkData { get; }
+</code></pre>
+<h3 id="zonesystem">ZoneSystem</h3>
+<p>This provides child modules access to the run's zone system.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// The zone system that will be used in the model
+/// &lt;/summary&gt;
+IZoneSystem ZoneSystem { get; }
+</code></pre>
+<h2 id="methods-for-iresourcesource">Methods for IResourceSource</h2>
+<p>The IResourceSource is used to share data between modules, allowing
+them to use the name of an IResource to bind between data sources.</p>
+<h3 id="resources">Resources</h3>
+<p>This property provides access to the different data Resources that TASHA has.
+Typically you will have some matrices for PoRPoW / PoRPoS, your EMME Databank controllers,
+and your freight models defined within these resources amoung other things.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Provides access to all of the model system's resources
+/// &lt;/summary&gt;
+List&lt;IResource&gt; Resources { get; }
+</code></pre>
+<h2 id="methods-for-imodelsystemtemplate">Methods for IModelSystemTemplate</h2>
+<p>These methods are used by XTMF to support the starting point
+of a model system.</p>
+<h3 id="inputbasedirectory">InputBaseDirectory</h3>
+<p>This property methods is used by XTMF for allowing child modules to find the
+directory that input files are expected to start from.  This allows
+those modules to use relative paths from this point.  This allows
+the user to only edit this one path when the input directory is moved or
+when setting up the model system on a new computer.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// The base directory for input
+/// (Should be a relative path so that XMTF can put it inside of the project)
+/// &lt;/summary&gt;
+string InputBaseDirectory { get; set; }
+</code></pre>
+<h3 id="outputbasedirectory">OutputBaseDirectory</h3>
+<p>This property is depricated in the current convention.  We recommend setting this
+property to return the current working directory.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// The base directory for output
+/// (Should be a relative path so that XMTF can put it inside of the project)
+/// &lt;/summary&gt;
+string OutputBaseDirectory { get; set; }
+</code></pre>
+<h3 id="exitrequest">ExitRequest</h3>
+<p>This method is called when the user presses the stop button in the XTMF.GUI.
+It should return true if the model system has accepted the exit request, false otherwise.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Setting this flag will request that the model system template will exit prematurely
+/// &lt;/summary&gt;
+/// &lt;returns&gt;True if this model system template supports exiting (and will exit), false otherwise.&lt;/returns&gt;
+bool ExitRequest();
+</code></pre>
+<h2 id="methods-for-iselfcontainedmodule">Methods for ISelfContainedModule</h2>
+<p>This interface is used for many modules for XTMF that do not require anything besides a point to start.</p>
+<h3 id="start">Start</h3>
+<p>This method is invoked when the module should execute.</p>
+<pre><code class="lang-cs">void Start();
+</code></pre>
+<h2 id="methods-for-itasharuntime">Methods for ITashaRuntime</h2>
+<h3 id="allmodes">AllModes</h3>
+<p>This list is requested by child modules that need to get access to all modes.
+This would include the AutoMode, Other Modes, and Shared Modes.</p>
+<pre><code class="lang-cs">[DoNotAutomate]
+List&lt;ITashaMode&gt; AllModes { get; }
+</code></pre>
+<h3 id="automode">AutoMode</h3>
+<p>This mode represents a drive all way auto mode.  It is used by the scheduler to get
+the travel times between zones when working with activity episodes.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;The Auto mode to use for Tasha&quot;, Required = true )]
+ITashaMode AutoMode { get; set; }
+</code></pre>
+<h3 id="autotype">AutoType</h3>
+<p>This property represents the type of vehicle that the auto mode will use.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;The type of vehicle used for auto trips&quot;, Required = true )]
+IVehicleType AutoType { get; set; }
+</code></pre>
+<h3 id="endofday">EndOfDay</h3>
+<p>This gives a representation for the end of day, for TASHA that is expected to be 28:00.</p>
+<pre><code class="lang-cs">Time EndOfDay { get; set; }
+</code></pre>
+<h3 id="householdloader">HouseholdLoader</h3>
+<p>This module will be used to load in the households to process through the scheduler and mode choice.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;The model that will load our household&quot;, Required = true )]
+IDataLoader&lt;ITashaHousehold&gt; HouseholdLoader { get; set; }
+</code></pre>
+<h3 id="totaliterations">TotalIterations</h3>
+<p>This gives the total number of iterations that the TASHA algorithm will execute before
+ending.</p>
+<pre><code class="lang-cs">int TotalIterations { get; set; }
+</code></pre>
+<h3 id="modechoice">ModeChoice</h3>
+<p>This module gets called with the household after the scheduler has finished processing.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;The ModeChoice Module&quot;, Required = false )]
+ITashaModeChoice ModeChoice { get; set; }
+</code></pre>
+<h3 id="nonsharedmodes">NonSharedModes</h3>
+<p>This returns back a list of all of the modes that are not shared (Passenger/Rideshare).</p>
+<pre><code class="lang-cs">List&lt;ITashaMode&gt; NonSharedModes { get; set; }
+</code></pre>
+<h3 id="othermodes">OtherModes</h3>
+<p>This list of modes contains all of the modes that are not shared and are not the auto mode.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modes other than shared modes and auto&quot;, Required = false )]
+List&lt;ITashaMode&gt; OtherModes { get; set; }
+</code></pre>
+<h3 id="parallel">Parallel</h3>
+<p>This returns true if households are being processed in parallel, false if in serial.</p>
+<pre><code class="lang-cs">bool Parallel { get; set; }
+</code></pre>
+<h3 id="posthousehold">PostHousehold</h3>
+<p>These modules will be executed in order after both the scheduler and mode choice have finished processing the household.
+Modules in this list need to be thread-safe as households are typically processed in parallel.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modules to run after the household has finished&quot;, Required = false )]
+List&lt;IPostHousehold&gt; PostHousehold { get; set; }
+</code></pre>
+<h3 id="postiteration">PostIteration</h3>
+<p>These modules will be executed in order after all households have been processed for the iteration.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modules to run after an iteration is complete&quot;, Required = false )]
+List&lt;IPostIteration&gt; PostIteration { get; set; }
+</code></pre>
+<h3 id="postrun">PostRun</h3>
+<p>These modules will be executed in order after all of TASHA's iterations have completed.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A Collection of models that will run before the Tasha Method.&quot;, Required = false )]
+List&lt;ISelfContainedModule&gt; PostRun { get; set; }
+</code></pre>
+<h3 id="postscheduler">PostScheduler</h3>
+<p>These modules will be executed in order after the scheduler has finished processing the household
+but before the mode choice has run.  Modules running in this interface will need to be thread-safe
+as households are often processed in parallel.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modules to run after the scheduler has finished&quot;, Required = false )]
+List&lt;IPostScheduler&gt; PostScheduler { get; set; }
+</code></pre>
+<h3 id="preiteration">PreIteration</h3>
+<p>These modules will be executed in order before the households start processing.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A Collection of models that will run before the Tasha Method.&quot;, Required = false )]
+List&lt;IPreIteration&gt; PreIteration { get; set; }
+</code></pre>
+<h3 id="prerun">PreRun</h3>
+<p>These modules will be executed in order before the TASHA starts running, but after the zone system has been loaded.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A Collection of models that will run before the Tasha Method.&quot;, Required = false )]
+List&lt;ISelfContainedModule&gt; PreRun { get; set; }
+</code></pre>
+<h3 id="randomseed">RandomSeed</h3>
+<p>This is a number used to create random number generators.  It is recommended to
+not use this number directly but combine it with another number as a starting point for the
+generator.</p>
+<pre><code class="lang-cs">int RandomSeed { get; set; }
+</code></pre>
+<h3 id="sharedmodes">SharedModes</h3>
+<p>This list of modes contain the modes that are shared across multiple household members.
+Traditionally this would contain one for the passenger and one for rideshare mode.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modes that can be shared.&quot;, Required = false )]
+List&lt;ISharedMode&gt; SharedModes { get; set; }
+</code></pre>
+<h3 id="startofday">StartOfDay</h3>
+<p>This stores the start of the simulation day, typically for TASHA this is 4:00.</p>
+<pre><code class="lang-cs">Time StartOfDay { get; set; }
+</code></pre>
+<h3 id="vehicletypes">VehicleTypes</h3>
+<p>This contains a list of all of the vehicle types that are required
+outside of the <code>AutoType</code> vehicle.</p>
+<pre><code class="lang-cs">[SubModelInformation( Description = &quot;A collection of modes other than shared modes and auto&quot;, Required = false )]
+List&lt;IVehicleType&gt; VehicleTypes { get; set; }
+</code></pre>
+<h3 id="createtrip">CreateTrip</h3>
+<p>This creates a new trip object for the given chain.</p>
+<pre><code class="lang-cs">ITrip CreateTrip(ITripChain chain, IZone originalZone, IZone destinationZone, Activity purpose, Time startTime);
+</code></pre>
+<h3 id="getindexofmode">GetIndexOfMode</h3>
+<p>This returns the index of the given mode relative to the <code>AllModes</code> list.</p>
+<pre><code class="lang-cs">int GetIndexOfMode(ITashaMode mode);
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_runtime.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

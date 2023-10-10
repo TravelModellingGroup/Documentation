@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Trip Distribution | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Trip Distribution | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.4/tutorial/frabitztown/trip_distribution.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="trip-distribution">Trip Distribution</h1>
+
+<h2 id="calculating-friction--cost">Calculating Friction / Cost</h2>
+<p>Before moving onto the next section, there needs to be some preliminary work creating a cost matrix representing travel time ( in this guide ) between zones. Travel times between zones is calculated by inserting a 0 demand matrix in EMME for both auto and transit. The next steps
+outline the preliminary set-up required to calculate the travel times for both auto and transit modes. A zero demand matrices are included as part
+of input files.</p>
+<p>Before XTMF can successfully call some of TMG Toolbox tools, some work must be done to prepare the network with attributes that are used in the assignment steps. Please see :ref:<code>AttributesToCreate</code> and :ref:<code>FullNetworkSetGenerator</code>. These modules are specific to initializing certain attributes in the Emme project
+that are not within the scope of this tutorial. For simplicity the module setup is already provided from the appendix
+part of the guide. To demonstrate module copy and paste functionality, follow the next steps to import the premade
+modules into the Frabitztown model system.</p>
+<p>Under the <code>Tools</code> module list of <code>Execute Tools from Modeller Resource</code>, add a new module of type <code>ExtraAttributeContextManager</code> .</p>
+<h3 id="copying-pre-existing-modules-into-frabitztown">Copying Pre-existing Modules into Frabitztown</h3>
+<p>Under the <code>ExtraAttributeContextManager</code> module just created copy and paste the xml [:ref:<code>AttributesToCreate</code>] into
+into the model system. Make sure the module <code>AttributesToCreate</code> is highlighted. You can directly copy XML text
+data into the model system.</p>
+<p>Next, under the same <code>ExtrAttributeContextManager</code> module, copy and paste the pre-generated module xml from
+:ref:<code>FullNetworkSetGenerator</code> under the Emme Tools module list.</p>
+<h3 id="base-travel-time-calculation">Base Travel Time Calculation</h3>
+<p>Under the &quot;Tools&quot; module of <code>Execute Tools from Modeller Resource</code>, add a <code>Multi Class Road Assignment</code> module. Under parameters, make sure to
+set the Scenario ID (this is the scenario ID in EMME for the Frabitztown input provided). Next, add a child module <code>Class</code> under the module list <code>Classes</code>. Update
+the parameter <code>Time Matrix</code> in the class module to 5.</p>
+<p>.. thumbnail:: images/xtmf_000039.png
+:align: center
+:width: 50%
+:group: multiclass</p>
+<p>XTMF with the Multiclass road assignment module selected.</p>
+<p>.. thumbnail:: images/xtmf_000038.png
+:align: center
+:width: 50%
+:group: multiclass</p>
+<p>XTMF with the single class road assignment module selected.</p>
+<p>.. note::</p>
+<pre><code>If the model system size becomes difficult to manage - remember to make use of the renaming (F2) and description (Shit + F2) commands that are available. Overriding modules names and descriptions can be useful for
+navigating the model system.
+</code></pre>
+<h2 id="exporting-emme-matrices-to-file">Exporting Emme matrices to file.</h2>
+<p>For sake of clarity, this tutorial includes this step to demonstrate how information might be extracted from a model system
+during a run process. Typically these &quot;debug&quot; steps can be ignored in a production ready model system.</p>
+<p>.. thumbnail:: images/xtmf_000040.png
+:align: center
+:width: 50%</p>
+<p>A module for exporting the in vehicle travel time matrix.</p>
+<h2 id="calculating-cost--friction-matrix-with-odmath">Calculating Cost / Friction Matrix with ODMath</h2>
+<p>Begin by scrolling to the top of the model system tree. Under resources, add a new module of type <code>Resource</code> and set its data source
+to the module of type <code>ODMath</code>. ODMath provides a useful set of tools to perform basic mathematical processing on matrices. Set the <code>Resource Name</code> to something memorable and descriptive like <em>CostMatrixResource</em> to help identify
+what data this resource contains, and that is in fact a resource.</p>
+<p>.. seealso::</p>
+<p>For a more detailed guide to using ODMath, please see :ref:<code>ODMath</code>.</p>
+<p>The output of OD Math will be the final cost matrix that will be used to generate trip distributions with a gravity model. Under the
+<code>Data Sources</code> module list, add two new <code>Zone O D Information</code> modules. Select their Reader as <code>LoadEmme4BinaryMatrix</code> and point one to
+<code>TransitDemandMatrix.mtx</code> and the other to <code>AutoDemandMatrix.mtx</code>. Set each Data source name with with right-click context
+menu, or press F2 while the module is highlighted. Naming is required as the ODMath calculation performs resource / value lookup
+based on the name of the module referenced in the equation string. Change the ODMath Resource's parameter to <code>e()^((0.02 * AUTO) + (0.03 * TRANSIT))</code>. Here, <code>AUTO</code> and <code>TRANSIT</code> are the names that have been assigned
+to the two <code>DataSource</code> modules.</p>
+<p>.. math::</p>
+<pre><code>\beta^1_{tivtt} = 0.03 \\
+\beta^2_{aivtt} = 0.02
+\\
+e^{\beta{tivtt} + \beta{aivtt}}
+</code></pre>
+<p>For the sake of learning and debug purposes, some of this guide makes redundant steps in the model
+system construction process. It is not always necessary to write out every <code>ODMath</code> calculation to file. The calculated
+results can simply be passed from module to module as it requires them. Typically outputting the results of an <code>ODMath</code> calculation will be done for debugging or other related purposes.</p>
+<p>To examine the output of the CostMatrix, add a new module under <code>To Execute</code> of type <code>SaveAsCSVMatrix</code>. Set the type
+of <code>ODMatrix</code> to <code>ResourceLookup</code>. Enter the resource name that was chosen for the cost matrix calculation. When working with the module <code>SaveAsCSVMatrix</code>, only one of <code>ODMatrix</code> and <code>ODMatrixRaw</code> can be used. Next, set the
+<code>SaveLocation</code> module to <code>FilePathFromOutputDirectory</code> and enter <em>CostMatrix.csv</em> as the output file name.</p>
+<p>.. topic:: Tip</p>
+<p>When a model system makes constant use of resource modules, it can be helpful to bind the ResourceName as a linked paramaeter with <code>ResourceLookup</code> <code>Resource Name</code> parameter. When these parameters are linked, any update to the
+resource name is automatically changed in the other modules that are connected through the linked paramaeter. Pressing <code>ctrl+L</code> with a paramaeter selected displays the linked paramater editor.</p>
+<h2 id="gravity-model">Gravity Model</h2>
+<p>The main distribution of XTMF includes a module <code>GravityModel2D</code> that alleviates some of the process required in calculating trip distribution matrices. This module reads in zone attractions, productions and a cost (friction) matrix and outputs trip distrubutions (demand matrix) for use in the mode choice step. Frabitztown will be using a simple
+cost function that is simply the in-vehicle travel time between each OD pair / zone. The GravityModel2D also includes options for balancing against either productions or attractions - so it is not necessary to balance
+the trip generation matrix before calculating trip distributions.</p>
+<p>.. math::</p>
+<p>T_{ij} = \frac{A_j f(C_{ij}) K_{ij}}{\sum_{j=1}^{n} A_j f(C_{ij}) K_{ij}}</p>
+<p>Begin again by adding a <code>GravityModel2D</code> under Resources. For Attraction and Friction, use the <em>ZoneProductions.csv</em> and <em>ZoneAttractions.csv</em> files that are included with this guide's files as the input for those child modules. The Friction module should take the output from the previous step (<em>CostMatrix.csv</em>).</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.4/tutorial/frabitztown/trip_distribution.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

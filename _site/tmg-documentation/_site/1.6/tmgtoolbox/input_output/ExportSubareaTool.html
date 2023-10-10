@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Export Subarea Tool | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Export Subarea Tool | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ExportSubareaTool.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="export-subarea-tool"><strong>Export Subarea Tool</strong></h1>
+
+<p>The <code>ExportSubareaTool</code> exports the road network for a subarea as defined by the node attribute containing the subarea definition. For each class, the <code>ExportSubareaNetwork</code> tool extracts:</p>
+<ul>
+<li>the traversal demand matrices,</li>
+<li>link volumes</li>
+<li>turn volumes</li>
+<li>transit network (optional)</li>
+<li>traffic and transit traversal demand matrices  (optional)</li>
+</ul>
+<p>This tool allows users to extract the road network for a subarea as well as the traffic demand matrices and link and turn volumes for a multi-class assignment. The transit network and demand may also be extracted if a transit assignment specification is provided.</p>
+<p>To use the <code>ExportSubareaTool</code>, the user must specify either of the followings to define the subarea:</p>
+<blockquote>
+<ul>
+<li>The node extra attributes within the subarea  that defines the subarea  (e.g., @nflag)</li>
+<li>the gates link extra attributes - i.e., the centroid connectors within the subarea and links crossing the boundary (e.g., @gate)</li>
+</ul>
+</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Latest version of this tool includes the ability to:<br>
+* To run this requires XTMF 1.11 and above to run<br>
+* Optionally, use a polygon ShapeFile to create the node extra attribute that defines the subarea. There are various ways to create/define a subarea. If the subarea is already defined, set the Create Nflag From shapefile  to False.<br>
+* More details can be found in the Emme Help of <em>Subarea (Tool Category)</em> on defining the subarea from the regional model and <em>Subarea O-D matrix</em> on defining the gate labels.<br></p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>We noticed that the traversal analysis logic in EMME does not scale on Many-Core systems particularly well, where past the optimal point there is exponential run-time.<br>
+In <code>XTMF1.12</code> we have added a new parameter <code>Max Cores</code> to control the number of threads used.<br>
+For AMD Zen2 based CPUs we have found that 8 is the optimal number of cores.<br>
+For AMD Zen3/4+ based CPUs we recommend using 16.<br>
+We have defaulted to using 16 cores moving forward.<br></p>
+</div>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>TMG's <code>ExportSubareaTool</code> is not callable from Emme Modeller. It is intended and only to be called from XTMF or via a python API call. However, INRO has a version of this tool in its Emme Standard Toolbox. To use this version in the Modeller, navigate to &quot;Subarea&quot; -&gt; &quot;Subarea&quot;.</p>
+<p>The TMG tool can be found in &quot;TMG Toolbox 1&quot; -&gt; &quot;Input_output&quot; -&gt; &quot;Export Subarea Tool&quot; You can find the code for this tool <a href="https://github.com/TravelModellingGroup/TMGToolbox/blob/dev/TMGToolbox/src/input_output/export_subarea_tool.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;ExportSubareaTool&quot;. It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.</p>
+<h3 id="module-parameter-explanation-export-subarea-tool">Module Parameter Explanation: &quot;Export Subarea Tool&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Background Transit <code>boolean</code></td>
+<td style="text-align: left;">Set this to FALSE to not assign transit vehicles on the roads.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Best Relative Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Create Gate Attribute <code>boolean</code></td>
+<td style="text-align: left;">Set this to TRUE to create gate labels for your network. NOTE: i &amp; j link selections must be defined</td>
+</tr>
+<tr>
+<td style="text-align: left;">Extract Transit <code>boolean</code></td>
+<td style="text-align: left;">Set this to TRUE to export the subarea transit</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iterations <code>integer</code></td>
+<td style="text-align: left;">The maximum number of iterations to run.</td>
+</tr>
+<tr>
+<td style="text-align: left;">I Subarea Link Selection  <code>string</code></td>
+<td style="text-align: left;">The outgoing connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. &quot;i=21,24 or i=27 or i=31,34&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;">J Subarea Link Selection  <code>string</code></td>
+<td style="text-align: left;">The incoming connectors used to tag the centroids within the subarea. results are stored in the gate link attribute specified eg. &quot;j=21,24 or j=27 or j=31,34&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max Cores <code>integer</code> <code>XTMF1.12+</code></td>
+<td style="text-align: left;">Set this to the maximum number of CPU cores that the subarea SOLA is allowed to use.  We have noticed exponential performance deterioration if run with more than 16.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Normalized Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mixed Used TTF Ranged <code>range set</code></td>
+<td style="text-align: left;">The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Performance Mode <code>boolean</code></td>
+<td style="text-align: left;">Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subarea Output Folder  <code>string</code></td>
+<td style="text-align: left;">Folder directory to write output of the subarea database</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subarea Node Attribute  <code>string</code></td>
+<td style="text-align: left;">The node attribute that will be used to define the subarea.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subarea Gate Attribute  <code>string</code></td>
+<td style="text-align: left;">The link extra attribute that defines your gate numbers</td>
+</tr>
+<tr>
+<td style="text-align: left;">Relative Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Run Title <code>string</code></td>
+<td style="text-align: left;">The name of the run to appear in the logbook</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scenario Number <code>integer</code></td>
+<td style="text-align: left;">The scenario number to execute against</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation--subarea-node-attribute-definition---shape-file">Sub-Module Parameter Explanation:  &quot;Subarea Node Attribute Definition - Shape File&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter  <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Shape file Location  <code>string</code></td>
+<td style="text-align: left;">The shapefile name containing  the boundary of the subarea polygon</td>
+</tr>
+<tr>
+<td style="text-align: left;">Create Nflag From Shapefile  <code>boolean</code></td>
+<td style="text-align: left;">set to False if subarea node attribute  is already defined in the network</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation--traffic-classes">Sub-Module Parameter Explanation:  &quot;Traffic Classes&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter  <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cost Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix number e.g. &quot;mf4&quot; to save the total cost into.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Demand Matrix <code>string</code></td>
+<td style="text-align: left;">The id of the demand matrix to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;">LinkCost <code>float</code></td>
+<td style="text-align: left;">The penalty in minutes per dollar to apply when traversing a link.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mode <code>string</code></td>
+<td style="text-align: left;">The mode for this class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix number to save in vehicle travel times.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Toll Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix to save the toll costs into.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Toll Weight <code>string</code></td>
+<td style="text-align: left;">to be updated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">TollAttributeID <code>string</code></td>
+<td style="text-align: left;">The attribute containing the road tolls for this class of vehicle.</td>
+</tr>
+<tr>
+<td style="text-align: left;">VolumeAttribute <code>string</code></td>
+<td style="text-align: left;">The name of the attribute to save the volumes into (or None for no saving).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Peak Hour Factor <code>float</code></td>
+<td style="text-align: left;">A factor to apply to the demand in order to build a representative hour.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tutorial---how-to-add-the-tool-within-xtmf"><strong>Tutorial - How to add the tool within XTMF</strong></h2>
+<p>Adding the <code>ExportSubareaTool</code> to XTMF GUI requires following the following step:</p>
+<ul>
+<li>Add the Export Subarea Tool Module to the Tools to execute or run in XTMF</li>
+<li>Enter all module parameters needed to run the tool. See module parameter explanation for &quot;export subarea tool&quot; below for more.</li>
+<li>Add all the class sub-module you want to run. You add as many as you want.</li>
+<li>Add sub-module parameter needed to run the tool. See sub-module parameter explanation for &quot;Traffic Classes&quot;.</li>
+<li>Add shape file location sub-module and set the name of the shape file to use. This is required only if you want XTMF define a subarea based on a shapefile representing the subarea.</li>
+<li>Run model system</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The subarea tool can be added as many times (with as many classes as is needed)</p>
+</div>
+<p>Below contains details on how to add the tool to XTMF</p>
+<h4 id="1-add-the-export-subarea-tool-module-to-the-tools-to-execute-or-run-in-xtmf"><strong>1. Add the Export Subarea Tool Module to the Tools to execute or run in XTMF</strong></h4>
+<figure>
+    <img src="images/add_module.png" alt="Add Module" width="600">
+    <figcaption text-align="center">Figure 1: Add Module</figcaption>
+</figure>
+<figure>
+    <img src="images/search_module.png" alt="Search for and ExportSubareaTool" width="600">
+    <figcaption>Figure 2: Search for and ExportSubareaTool</figcaption>
+</figure>
+<h4 id="2-enter-all-module-parameters-needed-to-run-the-tool"><strong>2. Enter all module parameters needed to run the tool.</strong></h4>
+<figure>
+    <img src="images/export_subarea_tool_added.png" alt="Add subarea module parameters" width="600">
+    <figcaption align="center">Figure 3: Enter subarea module parameters</figcaption>
+</figure>
+<h4 id="3-enter-all-class-sub-module-you-want-to-run-you-can-add-as-many-as-you-want"><strong>3. Enter all class sub-module you want to run. You can add as many as you want.</strong></h4>
+<figure>
+    <img src="images/add_module_to_class.png" alt="Add class sub-module" width="600">
+    <figcaption align="center">Figure 4: Add module (Ctrl + M) </figcaption>
+</figure>
+<figure>
+    <img src="images/add_class.png" alt="" width="600">
+    <figcaption align="center">Figure 5: Add class sub-module </figcaption>
+</figure>
+<h4 id="4-enter-class-sub-module-parameters-needed-to-run-the-tool"><strong>4. Enter class sub-module parameters needed to run the tool.</strong></h4>
+<figure>
+    <img src="images/class_modules.png" alt="" width="600">
+    <figcaption align="center">Figure 6: Enter class module parameters</figcaption>
+</figure>
+<h4 id="5-optional-add-shape-file-location-sub-module-and-set-the-name-of-the-shape-file-to-use"><strong>5. (Optional) Add shape file location sub-module and set the name of the shape file to use.</strong></h4>
+<figure>
+    <img src="images/post_run_add_shapefile_dir.png" alt="Add shape file sub-module" width="600">
+    <figcaption align="center">Figure 7: Add shape file sub-module</figcaption>
+</figure>
+<figure>
+    <img src="images/shapefile_directory.png" alt="Enter shapefile name" width="600">
+    <figcaption align="center">Figure 8: Enter shapefile name </figcaption>
+</figure>
+<h4 id="6-run-model-system"><strong>6. Run model system</strong></h4>
+<figure>
+    <img src="images/run_model.png" alt="" width="600">
+    <figcaption align="center">Figure 9: Run Model</figcaption>
+</figure>
+<figure>
+    <img src="images/run_finished.png" alt="Run Finished" width="600">
+    <figcaption align="center">Figure 10: Run Finished </figcaption>
+</figure>
+<h2 id="tutorial---adding-export-subarea-tool-within-a-gtamodel-system-in-xtmf"><strong>Tutorial - Adding Export Subarea Tool within a GTAModel System in XTMF</strong></h2>
+<p>The <code>ExportSubareaTool</code> can be added into a GTAModel model system under the post run.</p>
+<figure>
+    <img src="images/post_run_export_subarea.png" alt="Add export subarea to GTAModel" width="600">
+    <figcaption align="center">Figure 11: Adding Export Subarea Tool in GTAModel</figcaption>
+</figure>
+<p>To set up the subarea tool with all its parameters within a GTAModel system, use the tutorial in the preceding section.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ExportSubareaTool.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -45,9 +45,9 @@ databank = _m.emmebank
 scenario = databank.scenario(14)
 network = scenario.get_network()
 
-#Note:Replace the file location below with the directory where the Fixed Names CSV file is located
+# Note:Replace the file location below with the directory where the Fixed Names CSV file is located and uncomment below.
 
-file_path = r"C:\Users\mukukaje\Documents\Fixed Names.csv"
+# file_path = r"Documents\Fixed Names.csv"
 
 def replace_name(network, old, new, delay):
     

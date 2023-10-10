@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>V4 Fare-Based Transit Assignment | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="V4 Fare-Based Transit Assignment | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/V4 Fare-Based Transit Assignment.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="v4-fare-based-transit-assignment">V4 Fare-Based Transit Assignment</h1>
+
+<p>Executes a congested transit assignment procedure for GTAModel V4.0.</p>
+<p>Hard-coded assumptions:
+Boarding penalties are assumed to be stored in UT3
+The congestion term is stored in US3
+In-vehicle time perception is stored in US2.
+All available transit modes will be used.
+This tool is only compatible with Emme 4.1.5 and later versions</p>
+<h2 id="opening-the-tool-with-modeller">Opening the Tool with Modeller</h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Assignment&quot; -&gt; &quot;Transit&quot; -&gt;&quot;V4 FBTA&quot;</p>
+<h2 id="using-the-tool-with-modeller">Using the Tool with Modeller</h2>
+<h3 id="scenario-inputs">Scenario Inputs</h3>
+<h4 id="scenario">Scenario</h4>
+<p>The scenario in which to execute the transit assignment.</p>
+<h4 id="demand-matrix">Demand Matrix</h4>
+<p>The matrix which contains the OD transit demand</p>
+<h4 id="headway-fraction-attribute">Headway Fraction Attribute</h4>
+<p>This is the attribute which the assignment uses to store the headway fraction. Select NONE to create a temporary attribute.
+<strong>Warning:</strong> using a temporary attribute causes an error with subsequent strategy-based analyses.</p>
+<h4 id="effective-headway-attribute">Effective Headway Attribute</h4>
+<p>TRANSIT_LINE extra attribute to store effective headway value. Select NONE to create a temporary attribute.
+<strong>Warning:</strong> using a temporary attribute causes an error with subsequent strategy-based analyses.</p>
+<h4 id="walk-perception-attribute">Walk Perception Attribute</h4>
+<p>Link extra attribute to store walk perception value. Select NONE to create a temporary attribute.
+<strong>Warning:</strong> using a temporary attribute causes an error with subsequent strategy-based analyses.</p>
+<h4 id="link-fare-attribute">Link Fare Attribute</h4>
+<p>Link extra attribute that contains actual fare costs.</p>
+<h4 id="segment-fare-attribute">Segment Fare Attribute</h4>
+<p>SEGMENT extra attribute that contains actual fare costs.</p>
+<h3 id="output-matrices">Output Matrices</h3>
+<p>This section allows the user to save output matrices in the specified matrix. Note: Matrices may need to be initialized first in order to appear in the matrix list. To initialize a matrix, please use the following tool &quot;Emme Standard Toolbox&quot; -&gt; &quot;Data Management&quot; -&gt; &quot;Matrix&quot; -&gt; &quot;Initialize matrix&quot;.</p>
+<blockquote>
+<p>An &quot;Impedance&quot; matrix stores the total perceived cost to travel between any OD.</p>
+</blockquote>
+<h3 id="parameters">Parameters</h3>
+<h4 id="effective-headway-slope">Effective Headway Slope</h4>
+<p>Applies to headways greater than 15 minutes.</p>
+<blockquote>
+<p>It is used in the following formula
+Effective Headway = 15+2*(Slope)*(Actual Headway-15)</p>
+</blockquote>
+<h4 id="wait-time-perception">Wait Time Perception</h4>
+<p>Converts waiting minutes to impedance</p>
+<h4 id="walking-speed">Walking Speed</h4>
+<p>Walking speed, in km/hr. Applied to all walk modes.</p>
+<h4 id="toronto-access-perception">Toronto Access Perception</h4>
+<p>Walk perception on Toronto centroid connectors</p>
+<h4 id="toronto-walk-time-perception">Toronto Walk Time Perception</h4>
+<p>Walk perception on Toronto links not including centroid connectors</p>
+<h4 id="non-toronto-access-perception">Non-Toronto Access Perception</h4>
+<p>Walk perception on Non-Toronto centroid connectors</p>
+<h4 id="non-toronto-walk-time-perception">Non-Toronto Walk Time Perception</h4>
+<p>Walk perception on Non-Toronto links not including centroid connectors</p>
+<h4 id="pd1-walk-time-perception">PD1 Walk Time Perception</h4>
+<p>Walk perception on links inside Planning District 1 (PD1) where link type == 101.</p>
+<h4 id="boarding-perception">Boarding Perception</h4>
+<p>Converts boarding penalties into impedance.</p>
+<h4 id="fare-perception">Fare Perception</h4>
+<p>Converts fare costs to impedance. In $/hr. Effectively, it is a value of time (VOT)</p>
+<h4 id="assignment-period">Assignment Period</h4>
+<p>Network Capacities are multiplied by this value to allow Emme to get correct congestion values.
+Typically equal to the number of hours in the assignment period of the demand matrix.</p>
+<h3 id="congestion-parameters">Congestion Parameters</h3>
+<p>List of congestion perceptions and exponents. Applies different congestion parameter values based on a segment's ttf value.</p>
+<p>Syntax: [ttf] : [perception] : [exponent] ...</p>
+<p>Separate (ttf-perception-exponent) groups with a comma or new line.</p>
+<p>The ttf value must be an integer.</p>
+<p>Any segments with a ttf not specified above will be assigned the congestion parameters of the final group in the list.</p>
+<h3 id="convergence-criteria">Convergence Criteria</h3>
+<h4 id="iterations">Iterations</h4>
+<p>The maximum number of iterations to perform. If the gaps have been achieved before this number, the assignment will stop</p>
+<h4 id="normalized-gap-and-relative-gap">Normalized Gap and Relative Gap</h4>
+<p>The gaps that show how well converged the assignment is. It can be thought of as the difference between iterations.</p>
+<h3 id="number-of-processors">Number of Processors</h3>
+<p>The higher the value, the faster the assignment can be completed. It comes at a cost of slowing down other processes on the computer.</p>
+<h3 id="use-boarding-levels">Use boarding levels?</h3>
+<p>The use of boarding levels forces all trips to board a transit vehicle at least once in their journey (no walk-all-ways).</p>
+<h2 id="using-the-tool-with-xtmf">Using the Tool with XTMF</h2>
+<p>The module is called &quot;V4FBTA&quot;. It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.</p>
+<h3 id="add-congestion-to-ivtt">Add Congestion to IVTT</h3>
+<p>This option adds the congestion time to the In Vehicle Travel Times.</p>
+<h3 id="boarding-matrix">Boarding Matrix</h3>
+<p>This stores the average boarding penalty paid in an OD matrix. Specify that matrix number here. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="boarding-penalty-perception">Boarding Penalty Perception</h3>
+<p>The boarding penalty perception factor</p>
+<h3 id="congestion-matrix">Congestion Matrix</h3>
+<p>This stores the average congestion time in an OD matrix. Specify that matrix number here. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="connector-logit-scale">Connector Logit Scale</h3>
+<p>This specifies the logit scale for connectors (between 0 and 1). If &quot;0&quot; is chosen, every centroid connector has an equal chance of being selected, regardless of whichever one is best for the trip. If &quot;1&quot; is chosen, no probabilities are used and only the best centroid connector for the trip is selected.</p>
+<h3 id="demand-matrix-number">Demand Matrix Number</h3>
+<p>The matrix which contains the OD transit demand.</p>
+<h3 id="distance-matrix">Distance Matrix</h3>
+<p>The matrix that gives that average distance traveled in an OD format. Specify that matrix number here. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="effective-headway-attribute-1">Effective Headway attribute</h3>
+<p>TRANSIT_LINE extra attribute to store effective headway value. Include the &quot;@&quot; character</p>
+<h3 id="effective-headway-slope-1">Effective Headway Slope</h3>
+<p>The slope used to calculate headways for headways that are longer than 15 minutes.</p>
+<blockquote>
+<p>It is used in the following formula
+Effective Headway = 15+2*(Slope)*(Actual Headway-15)</p>
+</blockquote>
+<h3 id="fare-matrix">Fare Matrix</h3>
+<p>This matrix will store the average fair paid in OD format. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="fare-perception-1">Fare Perception</h3>
+<p>Perception factor applied to transit fares to convert them from <span class="math">\(to a value of time. This should be given in\)</span>/hr. It can be thought of as Value of Time (VOT)</p>
+<h3 id="headway-fraction-attribute-1">Headway Fraction Attribute</h3>
+<p>This is the attribute which the assignment uses to store the headway fraction. Include the &quot;@&quot; character.</p>
+<h3 id="impedance-matrix">Impedance Matrix</h3>
+<p>The matrix that stores the average Perceived Travel Time (PTT). If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="in-vehicle-time-matrix">In-vehicle Time Matrix</h3>
+<p>The matrix that stores the average In vehicle times. If the &quot;Add Congestion to IVTT&quot; option is set to True, this matrix will include congestion times. If it is set to False, this will give the &quot;Actual&quot; in vehicle times. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="iterations-1">Iterations</h3>
+<p>The number of iterations to perform. If the gaps are reached before this number, the assignment will stop.</p>
+<h3 id="link-fare-attribute-1">Link Fare Attribute</h3>
+<p>This is the LINK extra attribute that contains the fare information. Include the &quot;@&quot; character</p>
+<h3 id="non-toronto-access-perception-1">Non-Toronto Access Perception</h3>
+<p>Walk perception on Non-Toronto centroid connectors</p>
+<h3 id="non-toronto-walk-perception">Non-Toronto Walk Perception</h3>
+<p>Walk perception on Non-Toronto links not including centroid connectors</p>
+<h3 id="normalized-gap-relative-gap">Normalized Gap, Relative Gap</h3>
+<p>The gaps that measure the level of convergence in the assignment.</p>
+<h3 id="pd1-walk-perception">PD1 Walk Perception</h3>
+<p>Walk perception in Planning District 1 (link type == 101)</p>
+<h3 id="representative-hour-factor">Representative Hour Factor</h3>
+<p>Network Capacities are multiplied by this value to allow Emme to get correct congestion values.
+Typically equal to the number of hours in the assignment period of the demand matrix.</p>
+<h3 id="scenario-number">Scenario Number</h3>
+<p>The scenario number of the scenario in which the assignment is to be performed</p>
+<h3 id="segment-fare-attribute-1">Segment Fare Attribute</h3>
+<p>The SEGMENT extra attribute that contains the fare information. This is typically used in distance based fare calculations. Include the &quot;@&quot; character when specifying the attribute.</p>
+<h3 id="toronto-access-perception-1">Toronto Access Perception</h3>
+<p>Walk perception on Toronto centroid connectors</p>
+<h3 id="toronto-walk-perception">Toronto Walk Perception</h3>
+<p>Walk perception on Toronto links not including centroid connectors</p>
+<h3 id="use-boarding-levels-1">Use Boarding Levels</h3>
+<p>The use of boarding levels forces all trips to board a transit vehicle at least once in their journey (no walk-all-ways).</p>
+<h3 id="wait-time-perception-1">Wait Time Perception</h3>
+<p>Converts waiting minutes to impedance</p>
+<h3 id="wait-times-matrix">Wait Times Matrix</h3>
+<p>The matrix that stores the average Wait Times. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+<h3 id="walk-perception-attribute-1">Walk Perception Attribute</h3>
+<p>A LINK extra attribute that will be used to store the perception of walking on that link. Include the &quot;@&quot; symbol.</p>
+<h3 id="walk-speed">Walk Speed</h3>
+<p>The walk speed for all auxiliary transit modes in km/hr.</p>
+<h3 id="walk-times-matrix">Walk Times Matrix</h3>
+<p>The matrix that stores the average Walk Times. If the matrix doesn't exist, it will be created. If it exists, it will be overwritten. Input &quot;0&quot; to not save it.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/V4 Fare-Based Transit Assignment.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

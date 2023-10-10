@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>TMG Toolbox for Aimsun | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="TMG Toolbox for Aimsun | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/index.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tmg-toolbox-for-aimsun">TMG Toolbox for Aimsun</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>TMG Toolbox for Aimsun is designed for the Aimsun Next software
+(version 22). Aimsun Next software is a multi-resolution, multi-modal
+modeling tool.</p>
+<p>The documentation is divided into sections Tools and Tutorials.</p>
+<h3 id="tools-section">Tools section</h3>
+<p>Lists all the Aimsun tools built and currently available. Each page has three major sections,
+an overview of the objective of the tool, the input parameters required
+to be added by the use, and screenshots of how the tools is used in
+XTMF</p>
+<h3 id="tutorial">Tutorial</h3>
+<p>This section goes through building a full network with the Aimsun tools
+using a small city called Frabitztown.</p>
+<h1 id="development-notes-and-other-miscellaneous-information">Development Notes and Other Miscellaneous Information</h1>
+<h2 id="writing-aimsun-scripts">Writing Aimsun Scripts</h2>
+<ul>
+<li>Aimsun scripts are run from the command line using a tool aconsole.exe. This exists in the main Aimsun installation folder as of Aimsun Next 20.
+It is important that the working directory for the current execution context is set the the location of the aconsole.exe application, otherwise several
+python dependencies and modules will not be found.</li>
+<li><code>aconsole.exe</code> takes a single parameter --script which must be the absolute path to the python script to be run.</li>
+<li>Any arguments after the path to the python sript are sent as command line arguments (argv) to the python script itself.</li>
+</ul>
+<h2 id="a-brief-explanation-of-writing-a-new-tool--for-the-aimsun-toolbox">A Brief Explanation of Writing a new Tool  for the Aimsun Toolbox</h2>
+<ul>
+<li>Take a look at smaller existing tools for examples</li>
+<li>Get a reference to the Console object from Aimsum
+<ul>
+<li>Get the active Model from the console object provided</li>
+<li>If none exists, make a new model.</li>
+</ul>
+</li>
+<li>Using model reference, various editing actions can now take place.</li>
+<li>Save the model when finished, and close the console.</li>
+</ul>
+<h2 id="location-of-required-python-modules">Location of Required Python Modules</h2>
+<ul>
+<li>The Python modules required for interacting with the Aimsun API are located in the main installation folder under <em>plugins/python</em>. <em>PyANGApp</em>, <em>PyANGonsole</em>, <em>PyANGKernel</em>, <em>PyANGGui</em> are the more frequently used/critical module dependencies. Reference them in your IDE if it supports parsing external modules for automcomplete and other intellisense features. Otherwise, any documetation on these modules must be inferred from the C implementation included in the Aimsun scripting documentation.</li>
+</ul>
+<h2 id="suggested-development-pipeline-for-efficient-module-testing--development">Suggested development pipeline for efficient module testing / development</h2>
+<p>Use a Python IDE that supports parsing/reading external python modules and libraries that are then included as part of autocomplete and other intellisense features. Point PYTHONPATH or related IDE variables to the Aimsun plugins/python folder for the required modules.</p>
+<p>Develop a launch task that passes the active file as the --script parameter to <code>aconsole.exe</code>.  Ensure that the active working directory is the same directory where <code>aconsole.exe</code> is located.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox_aimsun/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

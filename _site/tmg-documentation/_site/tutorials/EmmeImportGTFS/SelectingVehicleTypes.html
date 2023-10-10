@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Selecting Vehicle Types | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Selecting Vehicle Types | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeImportGTFS/SelectingVehicleTypes.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="selecting-vehicle-types">Selecting Vehicle Types</h1>
+
+<p>After setting up the transit lines, next we need to select the vehicle types in the GTFS data.
+In general, if there are different vehicles of same mode may require separate uploads.</p>
+<p>The following are the vehicle mode codes for TTC vehicles:</p>
+<ol>
+<li><p>Streetcar - LFLRV30</p>
+</li>
+<li><p>Metro</p>
+<ol>
+<li>Line 1 - Sub6carRkt</li>
+<li>Line 2 - Sub6carT1</li>
+<li>Line 3 - SRT4car</li>
+<li>Line 4 - Sub4carT1</li>
+</ol>
+</li>
+<li><p>Buses - bus12</p>
+</li>
+</ol>
+<p>Now select the correct TTF's. The following are the vehicle codes.</p>
+<ol>
+<li>Streetcar - ft3</li>
+<li>EROW Streetcar - ft2</li>
+<li>TTC currently runs 509, 510, and 512 streetcars EROW but verify at time of upload</li>
+<li>Metro - ft1</li>
+<li>Bus - ft4</li>
+<li>EROW bus - ft6</li>
+</ol>
+<p>Note: EROW bus is only marked as TTF6 if using GTA Model V4.2+. For older GTA models the ERROW bus is marked as TTF2.</p>
+<figure>
+    <img src="Images/ChoosingTTFs.png" alt="Add Module">
+    <figcaption text-align="center">Figure 1: Choosing TTFs</figcaption>
+</figure>
+<p>To ensure correct branch names have all been correctly uploaded and have correct vehicles and TTFs</p>
+<ol>
+<li>Open Notebook</li>
+<li>Open GTFS Renamer python script</li>
+<li>Run first cell to generate CSV of all existing TTC lines</li>
+<li>Rework line selection criteria to first char in branch name = x for other regions</li>
+<li>Open CSV in excel to perform branch renaming
+<ol>
+<li>Use find and replace to modify line names</li>
+<li>Replace branch names going from emme automatic format to NCS format</li>
+<li>Branch letters switch so branch identifier is first and direction is second</li>
+<li>Branch identifier is capitalized and direction lower case</li>
+<li>N and E become a and S and W become b</li>
+<li>Branch identifiers shift one letter down, blank ones become branch A</li>
+<li>Ea -&gt; Ba (E becomes a, a becomes B, switch places)</li>
+<li>W -&gt; Ab (W becomes b, _ becomes A, switch places)</li>
+<li>Nb -&gt; Ca (N becomes a, b becomes C, switch places)</li>
+<li>Double check cases where Nd or Ed become Ea and make sure that the Ea cases aren`t all changed to Fb</li>
+<li>Create document containing changed names where the first column is the original names, and the second column is the corresponding new name</li>
+<li>Use conditional formatting &gt; Highlight duplicate values to ensure that no two branches have the same name, this occurs when a single line has both N and E components or S and W components, something that happens when two branches start in different spots and in different directions</li>
+<li>Once all branch names are NCS compliant and no duplicates exist, run the second cell of the python script with current scenario and the filepath to the document with the converted names</li>
+</ol>
+</li>
+</ol>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeImportGTFS/SelectingVehicleTypes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

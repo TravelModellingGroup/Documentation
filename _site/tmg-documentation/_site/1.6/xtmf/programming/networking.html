@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>XTMF.Networking | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="XTMF.Networking | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/programming/networking.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="xtmfnetworking">XTMF.Networking</h1>
+
+<p>The following documentation will walk you through programmatically accessing the networking subsystem for XTMF.</p>
+<h2 id="creating-your-host">Creating Your Host</h2>
+<p>In order for an XTMF.Networking.IHost to be initialized for your model system the root module will need to create a public
+variable/property with that type. XTMF's that support creating network hosts (XTMF.GUI) will initialize the host and setup your
+module's reference to it.  Just like any other parameter or sub module will not be available during the constructor.  Sometimes you
+will also want to include a constructor in your Root Module that has an 'XTMF.IConfiguration' parameter.
+Typically you will want to save this for later so you can do things such as adding Progress Reports for your clients so you can observe
+them from your host. Example code can be found at:
+<a href="https://github.com/TravelModellingGroup/XTMF/blob/master/Code/XtmfSDK/MyHostModule.cs">https://github.com/TravelModellingGroup/XTMF/blob/master/Code/XtmfSDK/MyHostModule.cs</a></p>
+<h2 id="creating-your-client">Creating Your Client</h2>
+<p>In order for an 'XTMF.Networking.IClient' to be initialized for your model system the root module will need to create a public variable/property with that type.  XTMF's that support creating network clients
+(XTMF.RemoteClient) will initialize the client and setup your module's reference to it.  Just like any other parameter or sub module will not be available during the constructor.</p>
+<p>In the Runtime Validation you will need to check to see if your model system was created with a client or not, this can allow you to build modules that can optionally use the networking infrastructure or just run stand alone.
+This code is available at: <a href="https://github.com/TravelModellingGroup/XTMF/blob/master/Code/XtmfSDK/MyClientModule.cs">https://github.com/TravelModellingGroup/XTMF/blob/master/Code/XtmfSDK/MyClientModule.cs</a></p>
+<h2 id="using-custom-messages-with-the-host">Using Custom Messages With The Host</h2>
+<p>Custom messages are used to pass model system dependent data between host and clients.  With regard to the Host, in order to send a message it will need to specify which remote XTMF to send the message to.</p>
+<p>To send a custom message you need to register a 'CustomSender' and register it to a custom message number.  You can think
+of these custom message numbers like Socket ports, they let XTMF route the messages to the handlers that you specify behind the scene.
+They are full-duplex, so instead of our example of having sending done on custom message number 1 and receiving on 2
+they could have both been on 1.  The custom message sender is supposed to take in an object, look at the client if
+needed and then build a message and write it to the 'outputStream'.  After the custom message sender finishes the data
+is then compiled together with the custom message header sent to the remote XTMF for decoding.</p>
+<p>Receiving messages is similar to sending messages; however it has a two part decoding process.  In the first part the custom message
+receiver is invoked.  It takes in the custom message payload and which client it came from.  Its job is to then create
+an object (probably decoded from the client's message).  This object is then transported out to the second stage of
+processing.  The second part is the custom message handler.  It is important to note that you can have multiple custom
+message handlers.  Handlers are tasked with the job of taking the object and then carrying out the logic associated with it.
+For example, if the message was a set of parameters to use to estimate a model it could create a new task to be processed
+for those parameters. While it might sound much easier to just use the custom message handler to
+process your data, please do not as it will
+block the host from interacting with that client until the message has been fully processed leading to possible disconnection
+of that client.  Similarly, with sending messages the same problem can apply as it will not be able to ask for progress updates
+while you are building your custom message.</p>
+<h2 id="using-custom-messages-with-the-client">Using Custom Messages With The Client</h2>
+<p>All of the same logic from using custom messages from the host also apply to using them from the client side.</p>
+<p>The primary difference is that there is only one host, so no remote XTMF reference is required to send the messages as
+such they are not included in the parameters.  Make sure to not do too much processing in the senders/receivers to avoid
+locking the networking module.</p>
+<h2 id="host-events">Host Events</h2>
+<p>The 'XTMF.Networking.IHost' also provides a number of events for connected remote clients.</p>
+<p>Typically you will not need to implement many of these however, new clients and disconnecting clients are very important
+in many cases.  For 'client run complete' and 'all model system runs complete' these refer to a second way of imagining how
+a host should operate.  You can optionally give the model system many different model systems to execute, and as clients connect
+/ finish it will send them new model systems to run.  Typically once a client starts up their model system they will not
+want to stop running until the whole system has completed and to run different configurations a custom message is sent.
+This allows you to load data once and then run as many parameters as you want instead of reloading each time and also avoid
+the overhead of sending model systems across the network and building them on the client side.</p>
+<p>Again please make sure to not do too much processing inside these events as they lock the host from processing any more messages
+from that specific client.</p>
+<h2 id="looking-at-connected-remote-xtmf-instances">Looking At Connected Remote XTMF Instances</h2>
+<p>When you want to do something that requires you to know about what remote XTMF's are connected you need to lock the host so you
+have a constant state.</p>
+<pre><code class="lang-cs">private void LookAtConnectedClients() 
+{ 
+    lock ( this.Host ) 
+    { 
+        foreach ( var client in this.Host.ConnectedClients ) 
+        { 
+                // Access the client here 
+        } 
+    } 
+}
+</code></pre>
+<p>This will make sure that as you are looking at the connected clients no new ones will be able to finish connecting or disconnect
+as you are looking at them.</p>
+<h2 id="xtmfnetworkingmessagequeuet">XTMF.Networking.MessageQueue&lt;T&gt;</h2>
+<p>XTMF also includes a thread-safe message queue to help with reducing the time you spend in your event handlers and your message handlers.</p>
+<pre><code class="lang-cs">private MessageQueue&lt;int&gt; Jobs;
+private volatile bool exit = false;
+private void RunJobs() 
+{ 
+    using ( Jobs = new MessageQueue&lt;int&gt;() ) 
+    {                 
+        while ( !exit ) 
+        { 
+            var message = Jobs.GetMessageOrTimeout(200);                     
+            if(message != default(int)) 
+            { 
+                // Process your message here 
+            } 
+        } 
+    } 
+} 
+</code></pre>
+<p>The code above shows how you can poll the queue to see if a new job is ready.  If the MessageQueue's type was a class as opposed
+to a structure, you could just test for null.  With this call, if there is nothing on the queue for 200 milliseconds it will return
+the default value for the type.  If there was at least one message the first one will be returned.</p>
+<pre><code class="lang-cs">private void CustomMessageHandler(object data, IRemoteXTMF client) 
+{             
+    if ( data is int )
+    { 
+        this.Jobs.Add( (int)data ); 
+    } 
+} 
+</code></pre>
+<p>This code shows how a message handler can add to the message queue a new task for the model system to perform.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/programming/networking.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

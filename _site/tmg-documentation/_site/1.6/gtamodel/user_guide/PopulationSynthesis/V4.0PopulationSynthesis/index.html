@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>V4.0 Population Synthesis | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="V4.0 Population Synthesis | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/V4.0PopulationSynthesis/index.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="v40-population-synthesis">V4.0 Population Synthesis</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The V4.0 Population Synthesis program provides a convenient program for generating synthetic populations for GTAModel V4.0 based models.  This includes
+not just the household and person records but also the required supporting files for <a href="../../../model_design/porpow.html">PoRPoW</a>.  To create a new
+synthetic population the only file you will need to provide, in addition to the standard input directory, is a CSV which specifies
+the future year population by zone.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>All CSV files expect to have the first row be the column's header!</p>
+</div>
+<h2 id="algorithm">Algorithm</h2>
+<ol>
+<li>Read in the seed population and aggregate it into planning districts.</li>
+<li>For each zone randomly draw households until we meet the zone's total population.
+<ol>
+<li>When drawing a zone, we do so without replacement to help reduce statistical drift.</li>
+<li>If there are no households left to draw from, re-initialize the pool to their original weightings.</li>
+</ol>
+</li>
+<li>Gather the zonal residence and worker categories from the selected persons.</li>
+<li>Store the results to file.</li>
+</ol>
+<h2 id="input-file-directory">Input File Directory</h2>
+<p>The following files are required to be stored in an input directory to be able to complete a run.<br>
+All CSV files below expect their columns with a header and in the given order.</p>
+<h3 id="seedhouseholdscsv">SeedHouseholds.csv</h3>
+<ul>
+<li>HouseholdId</li>
+<li>HouseholdPD</li>
+<li>ExpansionFactor</li>
+<li>DwellingType</li>
+<li>NumberOfPersons</li>
+<li>NumberOfVehicles</li>
+<li>IncomeClass</li>
+</ul>
+<h3 id="seedpersonscsv">SeedPersons.csv</h3>
+<ul>
+<li>HouseholdId</li>
+<li>PersonNumber</li>
+<li>Age</li>
+<li>Sex</li>
+<li>License</li>
+<li>TransitPass</li>
+<li>EmploymentStatus</li>
+<li>Occupation</li>
+<li>FreeParking</li>
+<li>StudentStatus</li>
+<li>EmploymentPD</li>
+<li>SchoolPD</li>
+<li>ExpansionFactor</li>
+</ul>
+<h3 id="zonesystemcsv">ZoneSystem.csv</h3>
+<p>The ZoneSystem.csv gives us the ability to map each traffic analysis zone to a given planning district. This information is used for choosing
+which seed pool that this zone will draw records from. A PD of 0 will tell the model to not generate population for this zone.</p>
+<ul>
+<li>Zone</li>
+<li>PD</li>
+</ul>
+<h2 id="forecast-population">Forecast Population</h2>
+<p>In addition to the input directory, you will also need to include a CSV file that gives the forecast population you wish to generate.</p>
+<ul>
+<li>Zone</li>
+<li>FuturePopulation</li>
+</ul>
+<h2 id="output-file-directory">Output File Directory</h2>
+<p>The results of the synthesis include the Household and Person records. Additionally, we also export an updated ZonalResidence and WorkerCategories directory that
+contain eight CSV files, one for each combination of occupation and non-home-based employment class. For example, &quot;PF.csv&quot; would refer to the combination of &quot;Professional Full-Time&quot;.</p>
+<h3 id="householddatahouseholdscsv">HouseholdData/Households.csv</h3>
+<p>The household records are stored in a CSV file with the following columns in order, identical to the input seed's format:</p>
+<ul>
+<li>HouseholdId
+<ul>
+<li>A unique number for the household [0, 2147483647].</li>
+</ul>
+</li>
+<li>Zone
+<ul>
+<li>The traffic analysis zone that the household resides in.</li>
+</ul>
+</li>
+<li>ExpansionFactor
+<ul>
+<li>The factor to expand this record up to get the full population.</li>
+</ul>
+</li>
+<li>DwellingType
+<ul>
+<li>1 - House</li>
+<li>2 - Apartment</li>
+<li>3 - Townhouse</li>
+</ul>
+</li>
+<li>NumberOfPersons
+<ul>
+<li>The number of persons living the house household.</li>
+</ul>
+</li>
+<li>NumberOfVehicles
+<ul>
+<li>The number of vehicles owned by the household.</li>
+</ul>
+</li>
+<li>IncomeClass
+<ul>
+<li>1 - $0 to $14,999</li>
+<li>2 - $15,000 to $39,999</li>
+<li>3 - $40,000 to $59,999</li>
+<li>4 - $60,000 to $99,999</li>
+<li>5 - $100,000 to $124,999</li>
+<li>6 - $125,000 and above</li>
+<li>7 - Decline / don't know</li>
+</ul>
+</li>
+</ul>
+<h3 id="householddatapersonscsv">HouseholdData/Persons.csv</h3>
+<p>The person records are stored in a CSV file with the following columns in order, identical to the input seed's format:</p>
+<ul>
+<li>HouseholdId
+<ul>
+<li>A unique number for the household that contains this person.</li>
+</ul>
+</li>
+<li>PersonNumber
+<ul>
+<li>A unique number within the household for the person.</li>
+</ul>
+</li>
+<li>Age</li>
+<li>Sex
+<ul>
+<li>F - female</li>
+<li>M - male</li>
+</ul>
+</li>
+<li>License
+<ul>
+<li>Y - Yes</li>
+<li>N - No</li>
+</ul>
+</li>
+<li>TransitPass
+<ul>
+<li>N - None</li>
+</ul>
+</li>
+<li>EmploymentStatus
+<ul>
+<li>O - Not employed</li>
+<li>F - Full-time</li>
+<li>P - Part-Time</li>
+<li>H - Full-time work-at-home</li>
+<li>J - Part-time work-at-home</li>
+</ul>
+</li>
+<li>Occupation
+<ul>
+<li>G - General Office / Clerical</li>
+<li>M - Manufacturing / Construction / Trades</li>
+<li>P - Professional / Management / Technical</li>
+<li>S - Retail Sales and Service</li>
+<li>O - Not Employed</li>
+</ul>
+</li>
+<li>FreeParking
+<ul>
+<li>N - No</li>
+<li>O - Not applicable</li>
+<li>Y - Yes</li>
+</ul>
+</li>
+<li>StudentStatus
+<ul>
+<li>O - Not a student</li>
+<li>P - Part time student</li>
+<li>S - Full time student</li>
+</ul>
+</li>
+<li>EmploymentPD
+<ul>
+<li>0, the external zone number where they work, or 8888 if they have a non-fixed place-of-work.</li>
+</ul>
+</li>
+<li>SchoolPD
+<ul>
+<li>0, or the external zone number where they go to school.</li>
+</ul>
+</li>
+<li>ExpansionFactor
+<ul>
+<li>The factor to expand this record up to get the full population.</li>
+</ul>
+</li>
+</ul>
+<h3 id="zonalresidencecsv">ZonalResidence/*.csv</h3>
+<ul>
+<li>HomeZone</li>
+<li>NumberOfWorkers</li>
+</ul>
+<h3 id="workercategoriescsv">WorkerCategories/*.csv</h3>
+<p>The worker category files provide GTAModel a way of splitting the aggregate workers into different auto accessibility categories. There are
+eight files in this directory representing each combination of occupation and employment status category.</p>
+<p>Each of the files will contain the following columns</p>
+<ul>
+<li>HomeZone</li>
+<li>WorkerCategory</li>
+<li>Ratio</li>
+</ul>
+<h2 id="creating-a-v40-population-scenario">Creating a V4.0 Population Scenario</h2>
+<p>After running the synthesis, you will need to append some files to this directory for it to be compatible with your model. if you review the
+<code>ZoneData</code> folder from your input directory you should find some of the following files depending on your version of GTAModel.</p>
+<ul>
+<li>IntrazonalDistance.csv <code>V4.1+</code></li>
+<li>PDs.csv <code>V4.1+</code></li>
+<li>Population.csv <code>V4.1+</code></li>
+<li>Region.csv</li>
+<li>Zones.csv <code>V4.0</code></li>
+</ul>
+<p>In all cases copy the base scenario's folder and then update either <code>Zones.csv</code> or <code>Population.csv</code> depending on your model's version.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Make sure to include population for your external zones! If you do not there will be no trips made from the external residents into the study area.</p>
+</div>
+<h2 id="user-interface">User Interface</h2>
+<p>When launching V4.0 Population Synthesis you will be presented with a small window that takes in 4 inputs and presents to you a button called <code>Run</code>.
+To select a file click the button <em>...</em> and it will bring up a directory/file selection dialog to help.</p>
+<ol>
+<li><code>Input Directory</code>: Select the location of your <em>Input File Directory</em> as described above.</li>
+<li><code>Population Forecast File</code>: Select the future year population CSV file described above to generate.</li>
+<li><code>Output Directory</code>: Select the directory that the results will be stored into.  You may wish to create a new folder to store the output into.</li>
+<li><code>Random Seed</code>: This seed will control the random selection process.  This number will be used to initialize the random number generator to a fixed state.  This means that if
+you run with the same inputs and the same random seed the outputted population will be identical.  Changing this number will generate a slightly different population.</li>
+<li>With Everything setup you can press Run and the population will be generated.</li>
+</ol>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/V4.0PopulationSynthesis/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

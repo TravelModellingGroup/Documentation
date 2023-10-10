@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Writing A Script | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Writing A Script | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/EmmeScripting/WritingAScript.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="writing-a-script">Writing A Script</h1>
+
+<p>For this tutorial we are going to write a script that move the whole transit network.</p>
+<h2 id="starting-point">Starting Point</h2>
+<p>Building on what we learned from the <a href="EMMEClassStructure.html">EMME Class Structure</a> step we have the following code
+to start building our script.</p>
+<pre><code class="lang-python">import six
+m = inro.modeller.Modeller()
+databank = m.emmebank
+scenario = databank.scenario(1)
+network = scenario.get_network()
+# Our code goes here
+# ...
+# And finally save the network
+scenario.publish_network(network)
+print(&quot;Done&quot;)
+</code></pre>
+<p>In order to move the nodes we need to pick how fare we want to move the nodes.  Since that we want to move
+the network might change, we are going to set those amounts as variables.</p>
+<pre><code class="lang-python">delta_x = 10
+delta_y = -20
+</code></pre>
+<p>With that set our next step is to iterate through each node in the network.  In order to do that we are going
+to use a <code>for</code> loop.  To start with we will create that <code>for</code> loop that goes through each node and then do nothing.
+To do nothing in a for loop (or an if statement) you can use that <code>pass</code> keyword.</p>
+<pre><code class="lang-python">for node in network.nodes():
+  pass
+</code></pre>
+<p>Our next step is to apply the transformation to each node.</p>
+<pre><code class="lang-python">for node in network.nodes():
+    node.x = node.x + delta_x
+    node.y = node.y + delta_y
+</code></pre>
+<p>Putting it all together we now have:</p>
+<pre><code class="lang-python">import six
+m = inro.modeller.Modeller()
+databank = m.emmebank
+scenario = databank.scenario(1)
+network = scenario.get_network()
+
+delta_x = 10_000
+delta_y = -20_000
+
+# Update the nodes
+for node in network.nodes():
+    node.x = node.x + delta_x
+    node.y = node.y + delta_y
+
+# And finally save the network
+scenario.publish_network(network)
+print(&quot;Done&quot;)
+</code></pre>
+<p>If we run the code something looks off though.  If our network contains vertices we need to also move them.
+To do this we will loop through all of the links in the network and get a copy of their vertices.  We will
+then move each vertex and apply it back to the link.</p>
+<pre><code class="lang-python">for link in network.links():
+    # Get a copy of the vertices
+    vertices = link.vertices
+    for i in range(len(link.vertices)):
+        vertices[i] = (vertices[i][0] + delta_x,  vertices[i][1] + delta_y)
+    # You must assign the list back to vertices since it is a copy
+    link.vertices = vertices
+</code></pre>
+<p>Putting it all together again we now have the working script:</p>
+<pre><code class="lang-python">import six
+m = inro.modeller.Modeller()
+databank = m.emmebank
+scenario = databank.scenario(1)
+network = scenario.get_network()
+
+delta_x = 10_000
+delta_y = -20_000
+
+# Update the nodes
+for node in network.nodes():
+    node.x = node.x + delta_x
+    node.y = node.y + delta_y
+
+# Update the vertices
+for link in network.links():
+    # Get a copy of the vertices
+    vertices = link.vertices
+    for i in range(len(link.vertices)):
+        vertices[i] = (vertices[i][0] + delta_x,  vertices[i][1] + delta_y)
+    # You must assign the list back to vertices since it is a copy
+    link.vertices = vertices
+
+# And finally save the network
+scenario.publish_network(network)
+print(&quot;Done&quot;)
+</code></pre>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that we have a working script the next step is to <a href="ConvertScriptToTool.html">convert that script</a> into a tool
+that can be integrated into an EMME Toolbox.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/EmmeScripting/WritingAScript.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

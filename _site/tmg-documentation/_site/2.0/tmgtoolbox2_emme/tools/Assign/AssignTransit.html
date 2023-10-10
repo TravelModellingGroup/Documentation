@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Assign Transit | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Assign Transit | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Assign/AssignTransit.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="assign-transit"><strong>Assign Transit</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the TMG Transit Assignment Tool in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Assign Transit tool runs a multi-class transit assignment which executes a congested transit assignment procedure for the GTAModel V4.0. <code>AssignTransit</code> also allows for surface transit speed updating.</p>
+<p>Hard-coded assumptions in the <code>AssignTransit</code> tool include:</p>
+<blockquote>
+<ul>
+<li>Boarding penalties are assumed stored in UT3.</li>
+<li>The congestion term is stored in US3.</li>
+<li>All available transit modes are used.</li>
+</ul>
+</blockquote>
+<h2 id="tool-flowchart"><strong>Tool Flowchart</strong></h2>
+<p>To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the <code>AssignTransit</code> tool works.</p>
+<figure>
+    <img src="images/assign_transit_flow.svg" alt="Assign Transit Flowchart">
+    <figcaption>Figure 1: Assign Transit Flowchart</figcaption>
+</figure>
+<p>The diagram below expands on the assign transit flow that deals with the uncongested transit assignment.</p>
+<figure>
+    <img src="images/run_uncongested_assignment_flow.svg" alt="Uncongested Transit Assignment Flowchart">
+    <figcaption>Figure 2: Uncongested Transit Assignment Flowchart</figcaption>
+</figure>
+<p>The diagram below expands on the assign transit flow that deals with the congested transit assignment.</p>
+<figure>
+    <img src="images/run_congested_assignment_flow.svg" alt="Congested Transit Assignment Flowchart">
+    <figcaption>Figure 3: Congested Transit Assignment Flowchart</figcaption>
+</figure>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>AssignTransit</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Assign&quot; -&gt; &quot;Assign Transit&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Assign/assign_transit.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Assign Transit tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>AssignTransit</code> tool can be set by the users. This tool is called <code>AssignTransit</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>AssignTransit</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+parameters = {
+    &quot;calculate_congested_ivtt_flag&quot;: True,
+    &quot;node_logit_scale&quot;: True,
+    &quot;effective_headway_attribute&quot;: &quot;@ehdw1&quot;,
+    &quot;effective_headway_slope&quot;: 0.165,
+    &quot;headway_fraction_attribute&quot;: &quot;@frac1&quot;,
+    &quot;iterations&quot;: 100,
+    &quot;norm_gap&quot;: 0,
+    &quot;rel_gap&quot;: 0,
+    &quot;scenario_number&quot;: 1,
+    &quot;walk_speed&quot;: 0,
+    &quot;transit_classes&quot;: [
+        {
+            &quot;name&quot;: &quot;transit_class_name&quot;,
+            &quot;board_penalty_matrix&quot;: &quot;mf0&quot;,
+            &quot;board_penalty_perception&quot;: 1,
+            &quot;congestion_matrix&quot;: &quot;mf0&quot;,
+            &quot;demand_matrix&quot;: &quot;mf0&quot;,
+            &quot;fare_matrix&quot;: &quot;mf0&quot;,
+            &quot;fare_perception&quot;: 35,
+            &quot;in_vehicle_time_matrix&quot;: &quot;mf0&quot;,
+            &quot;impedance_matrix&quot;: &quot;mf0&quot;,
+            &quot;link_fare_attribute_id&quot;: &quot;@lfare&quot;,
+            &quot;mode&quot;: &quot;*&quot;,
+            &quot;perceived_travel_time_matrix&quot;: &quot;mf0&quot;,
+            &quot;segment_fare_attribute&quot;: &quot;@sfare&quot;,
+            &quot;wait_time_perception&quot;: 0,
+            &quot;wait_time_matrix&quot;: &quot;mf0&quot;,
+            &quot;walk_time_perception_attribute&quot;: &quot;@walkp&quot;,
+            &quot;walk_time_matrix&quot;: &quot;mf0&quot;,
+            &quot;walk_perceptions&quot;: [
+                {
+                    &quot;filter&quot;: &quot;i=10000,20000 or j=1...7000,98000&quot;,
+                    &quot;walk_perception_value&quot;: 1.8,
+                }
+            ],
+        }
+    ],
+    &quot;surface_transit_speeds&quot;: [
+        {
+            &quot;alighting_duration&quot;: 1.1219,
+            &quot;boarding_duration&quot;: 1.9577,
+            &quot;default_duration&quot;: 7.4331,
+            &quot;global_erow_speed&quot;: 35,
+            &quot;line_filter_expression&quot;: &quot;&quot;,
+            &quot;mode_filter_expression&quot;: &quot;b&quot;,
+            &quot;transit_auto_correlation&quot;: 1.612,
+        }
+    ],
+    &quot;ttf_definitions&quot;: [
+        {&quot;congestion_exponent&quot;: 5.972385, &quot;congestion_perception&quot;: 1, &quot;ttf&quot;: 1},
+        {&quot;congestion_exponent&quot;: 6.72, &quot;congestion_perception&quot;: 2, &quot;ttf&quot;: 2}
+    ],
+    &quot;congestion_exponent&quot;: &quot;&quot;,
+    &quot;assignment_period&quot;: 0,
+    &quot;name_string&quot;: &quot;&quot;,
+    &quot;congested_assignment&quot;: True,
+    &quot;csvfile&quot;: &quot;&quot;,
+    &quot;origin_distribution_logit_scale&quot;: 0,
+    &quot;walk_distribution_logit_scale&quot;: 3,
+    &quot;surface_transit_speed&quot;: True,
+    &quot;walk_all_way_flag&quot;: False,
+    &quot;xrow_ttf_range&quot;: &quot;&quot;,
+}
+assign_transit = _MODELLER.tool(&quot;tmg2.Assign.assign_transit&quot;)
+assign_transit(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-assign-transit">Module Parameter Explanation: &quot;Assign Transit&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Calculate Congested Ivtt Flag <code>bool</code></td>
+<td style="text-align: left;">Set to TRUE to extract the congestion matrix and add its weighted value to the in vehicle time (IVTT) matrix.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Node Logit Scale <code>float</code></td>
+<td style="text-align: left;">This is the scale parameter for the logit model at critical nodes. Set it to 1 to turn it off logit. Set it to 0 to ensure equal proportion on all connected auxiliary transfer links. Critical nodes are defined as the non centroid end of centroid connectors and nodes that have transit lines from more than one agency</td>
+</tr>
+<tr>
+<td style="text-align: left;">Effective Headway Attribute Id <code>string</code></td>
+<td style="text-align: left;">The name of the attribute to use for the effective headway</td>
+</tr>
+<tr>
+<td style="text-align: left;">Effective Headway Slope <code>float</code></td>
+<td style="text-align: left;">Effective Headway Slope</td>
+</tr>
+<tr>
+<td style="text-align: left;">Headway Fraction Attribute Id <code>string</code></td>
+<td style="text-align: left;">The ID of the NODE extra attribute in which to store headway fraction. Should have a default value of 0.5.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iterations <code>integer</code></td>
+<td style="text-align: left;">Convergence criterion: The maximum number of iterations performed by the transit assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Normalized Gap <code>float</code></td>
+<td style="text-align: left;">Convergence criterion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Relative Gap <code>float</code></td>
+<td style="text-align: left;">Convergence criterion</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scenario Number <code>integer</code></td>
+<td style="text-align: left;">Emme Scenario Number to execute against</td>
+</tr>
+<tr>
+<td style="text-align: left;">Walk Speed <code>float</code></td>
+<td style="text-align: left;">Walking speed in km/hr. Applied to all walk (aux. transit) modes in the Emme scenario.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assignment Period <code>float</code></td>
+<td style="text-align: left;">A multiplier applied to the demand matrix to scale it to match the transit line capacity period. This is similar to the peak hour factor used in auto assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Congested Assignment <code>bool</code></td>
+<td style="text-align: left;">Set this to false in order to not apply congestion during assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">CSV File <code>string</code></td>
+<td style="text-align: left;">A link to the csv file that will specify iterational information</td>
+</tr>
+<tr>
+<td style="text-align: left;">Origin Distribution Logit Scale <code>float</code></td>
+<td style="text-align: left;">Scale parameter for logit model at origin connectors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Surface Transit Speed <code>bool</code></td>
+<td style="text-align: left;">Set to TRUE to allow surface transit speed to be used in the assignment</td>
+</tr>
+<tr>
+<td style="text-align: left;">Walk All Way Flag <code>bool</code></td>
+<td style="text-align: left;">Set to TRUE to allow walk all way in the assignment</td>
+</tr>
+<tr>
+<td style="text-align: left;">Xrow TTF Range <code>string</code></td>
+<td style="text-align: left;">Set this to the TTF, TTFs or range of TTFs (separated by commas) that represent going in an exclusive right of way. This is for use in STSU</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Classes <code>list</code></td>
+<td style="text-align: left;">The classes for this multi-class assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Surface Transit Speed Model <code>list</code></td>
+<td style="text-align: left;">Surface Transit Speed Model.</td>
+</tr>
+<tr>
+<td style="text-align: left;">TTF Definitions <code>string</code></td>
+<td style="text-align: left;">The TTF's to apply in the assignment.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Class <code>string</code></td>
+<td style="text-align: left;">The classes for this multi-class assignment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-transit-classes">Sub-Module Parameter Explanation: &quot;Transit Classes&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Demand Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the full matrix containing transit demand ODs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Board Penalty Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save the applied boarding penalties.  Enter mf0 to skip this matrix.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Board Penalty Perception <code>float</code></td>
+<td style="text-align: left;">Perception factor applied to boarding penalty component.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Congestion Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save transit congestion. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fare Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save transit fares. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fare Perception <code>float</code></td>
+<td style="text-align: left;">Perception factor applied to path transit fares, in $/hr.</td>
+</tr>
+<tr>
+<td style="text-align: left;">InVehicle Time Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save in-vehicle travel time. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Impedance Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save the impedance.Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Link Fare Attribute Id <code>string</code></td>
+<td style="text-align: left;">The ID of the LINK extra attribute containing actual fare costs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mode <code>string</code></td>
+<td style="text-align: left;">A character array of all the modes applied to this class. '*' selects all.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Perceived Travel Time Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save the incurred penalties. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Segment Fare Attribute Id <code>string</code></td>
+<td style="text-align: left;">The ID of the SEGMENT extra attribute containing actual fare costs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wait Time Perception <code>flaot</code></td>
+<td style="text-align: left;">Perception factor applied to wait time component.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wait Time Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save total waiting time. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Walk Time Perception Attribute Id <code>string</code></td>
+<td style="text-align: left;">The ID of the LINK extra attribute in which to store walk time perception. Should have a default value of 1.0.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Walk Time Matrix <code>string</code></td>
+<td style="text-align: left;">The ID of the FULL matrix in which to save total walk time. Enter mf0 to skip saving this matrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Walk Perceptions <code>list</code></td>
+<td style="text-align: left;">Contains the walk perception values fo this multi-class assignment</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-ttf-definitions">Sub-Module Parameter Explanation: &quot;TTF Definitions&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">TTF <code>integer</code></td>
+<td style="text-align: left;">The TTF number to assign to. 1 would mean TTF1.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Congestion Exponent <code>float</code></td>
+<td style="text-align: left;">The congestion exponent to apply to this TTF.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Congestion Perception <code>integer</code></td>
+<td style="text-align: left;">The congestion perception to apply to this TTF.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-surface-transit-speed-model">Sub-Module Parameter Explanation: &quot;Surface Transit Speed Model&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Alighting Duration <code>float</code></td>
+<td style="text-align: left;">The alighting duration in seconds per passenger to apply.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Boarding Duration <code>float</code></td>
+<td style="text-align: left;">The boarding duration in seconds per passenger to apply.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Default Duration <code>float</code></td>
+<td style="text-align: left;">The default duration in seconds per stop to apply.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Global EROW Speed <code>float</code></td>
+<td style="text-align: left;">The speed to use in segments that have Exclusive Right of Way for transit and do not have @erow_speed defined. Note that the speed includes acceleration and deceleration time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Line Filter Expression <code>string</code></td>
+<td style="text-align: left;">The line filter that will be used to determine which lines will get surface transit speed applied to them. To select all lines, leave this and the line filter blank</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mode Filter Expression <code>string</code></td>
+<td style="text-align: left;">The modes that will get surface transit speed updating applied to them. To select all lines, leave this and the line filter blank</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transit Auto Correlation <code>float</code></td>
+<td style="text-align: left;">The multiplier to auto time to use to find transit time.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Assign/AssignTransit.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

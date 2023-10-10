@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>General Base Workflow | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="General Base Workflow | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/general_base_workflow.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="general-base-workflow">General Base Workflow</h1>
+
+<p>Associated tool names in italics</p>
+<ol>
+<li><p>Start with the pristine, fully NCS11-compliant full base network</p>
+</li>
+<li><p>Import a zone system if one is not in place. Use a scenario known to work fine. (Copy Zone System)</p>
+</li>
+<li><p>(might not be required) Connect centroids (CCGEN).</p>
+</li>
+<li><p>Create a node extra attribute (default value = 1) to allow for removal of transit stops later on (Create extra attribute)</p>
+</li>
+<li><p>(might not be required) Create a link extra attribute (default value = 0) called @z407. (Create extra attribute)</p>
+</li>
+<li><p>(might not be required) Assign values to @z407. Can be loaded in from a text file. (Import attribute values)</p>
+</li>
+<li><p>(in development) Make an aggregation selection file so that headway generation can be performed using naïve or average aggregation. (Create Aggregation Selection File)</p>
+</li>
+<li><p>Split the full base into time period bases. (Create Time Period Network)
+AM = 0600-0900
+MD = 0900-1500
+PM = 1500-1900
+EV = 1900-2400
+ON = 0000-0600</p>
+</li>
+<li><p>Assign values to us1 for all transit segments. Filter:
+line=______ xor line=TS____ xor line=GT____
+(Prorate transit speeds)</p>
+</li>
+<li><p>Clean the time period networks using the parameters listed (Remove Extra Nodes). Apply @stop as the stop filter.
+vdf: force
+length: sum
+type: first
+lanes: force
+ul1: avg
+ul2: force
+ul3: force
+dwt: sum
+dwfac: force
+ttf: force
+us1: avg_by_length
+us2: avg
+us3: avg
+@stn1: force
+@stn2: force</p>
+</li>
+<li><p>In order to send an edited network back to the network caretaker, first make sure to remove the zone system. Use Delete Nodes with subset i = 0,9000</p>
+</li>
+<li><p>Then use Export Network Package to prepare the network for sending.</p>
+</li>
+</ol>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/general_base_workflow.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

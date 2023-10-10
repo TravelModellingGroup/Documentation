@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Multi Class Road Assignment | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Multi Class Road Assignment | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/xtmf_internal/MultiClassRoadAssignment.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="multi-class-road-assignment"><strong>Multi Class Road Assignment</strong></h1>
+
+<p>This tool executes a multi-class road assignment which allows for the generalized penalty of road tolls.. <code>MultiClassRoadAssignment</code> is a toll-based road assignemnt tool.</p>
+<p>Latest version of this tool includes the ability to:</p>
+<blockquote>
+<p>increase resolution of analysis by adding link volume attributes</p>
+<p>allow for multi-threaded matrix calculation in 4.2.1+</p>
+</blockquote>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>MultiClassRoadAssignment</code> tool is not callable from Modeller. It is intended only to be called from XTMF.</p>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;XTMF Internal&quot; -&gt; &quot;Multi Class Road Assignment&quot;.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;MultiClassRoadAssignment&quot;. In XTMF, it is available to add under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="module-parameters---multiclassroadassignment">Module Parameters - &quot;MultiClassRoadAssignment&quot;</h2>
+<h3 id="background-transit">Background Transit</h3>
+<p>Set this to FALSE to not assign transite vehicles ont he roads.</p>
+<h3 id="best-relative-gap">Best Relative Gap</h3>
+<p>The minimum gap required to terminate the algorithm.</p>
+<h3 id="iterations">Iterations</h3>
+<p>The maximum number of iterations to run.</p>
+<h3 id="normalized-gap">Normalized Gap</h3>
+<p>The minimum gap required to terminate the algorithm.</p>
+<h3 id="peak-hour-factor">Peak Hour Factor</h3>
+<p>A factor to apply to the demand in order to build a representative hour.</p>
+<h3 id="performance-mode">Performance Mode</h3>
+<p>Set this to FALSE to leave a free core for other work, recommended to leave set to TRUE.</p>
+<h3 id="relative-gap">Relative Gap</h3>
+<p>The minimum gap required to terminate the algorithm.</p>
+<h3 id="run-title">Run TItle</h3>
+<p>The name of the run to appear in the logbook</p>
+<h3 id="scenario-number">Scenario Number</h3>
+<p>The scenario number to execute against</p>
+<h2 id="sub-module-parameters---multiclassroadassignment---class">Sub-Module Parameters - MultiClassRoadAssignment -&gt; Class</h2>
+<h3 id="cost-matrix">Cost Matrix</h3>
+<p>The matrix number to save the total cost into.</p>
+<h3 id="demand-matrix">Demand Matrix</h3>
+<p>The id of the demand matrix to use.</p>
+<h3 id="linkcost">LinkCost</h3>
+<p>The penalty in minutes per dollar to apply when traversing a link.</p>
+<h3 id="mode">Mode</h3>
+<p>The mode for this class.</p>
+<h3 id="time-matrix">Time Matrix</h3>
+<p>The matrix number to save in vehicle travel times.</p>
+<h3 id="toll-matrix">Toll Matrix</h3>
+<p>The matrix to save the toll costs into.</p>
+<h3 id="toll-weight">Toll Weight</h3>
+<p>to be updated.</p>
+<h3 id="tollattributeid">TollAttributeID</h3>
+<p>The attribute containing the road tolls for this class of vehicle.</p>
+<h3 id="volumeattribute">VolumeAttribute</h3>
+<p>The name of the attribute to save the volumes into (or None for no saving).</p>
+<h2 id="sub-module-parameters---multiclassroadassignment---classes---analysis">Sub-Module Parameters - MultiClassRoadAssignment -&gt; Classes -&gt; Analysis</h2>
+<h3 id="aggregation-matrix">Aggregation Matrix</h3>
+<p>The matrix number to store the results into.</p>
+<h3 id="attribute-id">Attribute ID</h3>
+<p>The attribute to use for analysis.</p>
+<h3 id="lower-bound-for-path-selector">Lower Bound for Path Selector</h3>
+<p>The number to use for the lower bound in path selection, or None if using all paths</p>
+<h3 id="multiply-path-proportion-by-analyzed-demand">Multiply Path Proportion By Analyzed Demand</h3>
+<p>Choose whether to multiply the path proportion by the analyzed demand.</p>
+<h3 id="multiply-path-proportion-by-path-value">Multiply Path Proportion By Path Value</h3>
+<p>Choose whether to multiply the path proportion by the path value.</p>
+<h3 id="operator">Operator</h3>
+<p>The operator to use to aggregate the matrix. Example: '+' for emissions, 'max' for select link analysis.</p>
+<p>Full list of operators that can be used: <code>+, -, *, /, %, .max., .min.</code></p>
+<h3 id="paths-to-select">Paths to Select</h3>
+<p>The paths that will be used for analysis.</p>
+<h3 id="upper-bound-for-path-selector">Upper Bound for Path Selector</h3>
+<p>The number to use for the upper bound in path selection, or None if using all paths.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/xtmf_internal/MultiClassRoadAssignment.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

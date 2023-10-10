@@ -1,0 +1,1986 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Auto Ownership And Driver&#39;s License | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Auto Ownership And Driver&#39;s License | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/auto_ownership.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="auto-ownership-and-drivers-license">Auto Ownership And Driver's License</h1>
+
+<p><code>Available in GTAModel  V4.1</code></p>
+<h2 id="background">Background</h2>
+<p>Without having a driver license, people are not allowed to drive a vehicle.
+Thus, an individual decision to have a driver license directly influence his/her
+decision making in terms of both activity scheduling and mode choice.
+The number of vehicles in a household also has effects on the availability of cars
+for pursuing a trip and therefore influence the activity scheduling. Hence,
+it is important to model individuals’ decision to have a driver license and
+households’ decision to own one or several vehicles. These decisions are
+interconnected and usually made together; although one is at the individual
+level and the other is at the household level. We start with independent models
+for driver license and number of vehicles in the household (presented in this technical memo). The hope is that we later replace these models with a joint econometric model or neural network model of driver license and vehicle ownership.</p>
+<h2 id="driver-license">Driver License</h2>
+<p>For modelling individual’s driver license, a binary logit model is used.
+A sample of 10,269 individuals who are older than 16 years old from the households
+who reported their income and live in GTHA is selected for model estimation.
+Variables included are age, gender, occupation type, part time status, household
+income, home location population density, perceived transit travel time to work and
+school, distance (shortest path) to work and school. The summation of travel time
+(distance) to work and school locations are used for individuals who are both worker
+and student.</p>
+<p><em>Table 1 Driver License Binary Logit Model Estimation Results</em></p>
+<table>
+<thead>
+<tr>
+<th>Variables</th>
+<th>Coef.</th>
+<th>Std err</th>
+<th>t-stat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constant</td>
+<td>-0.7586</td>
+<td>0.188</td>
+<td>-4.03</td>
+</tr>
+<tr>
+<td>Female</td>
+<td>-0.7775</td>
+<td>0.064</td>
+<td>-12.10</td>
+</tr>
+<tr>
+<td>Age</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Age 16-17</td>
+<td>-0.3646</td>
+<td>0.209</td>
+<td>-1.75</td>
+</tr>
+<tr>
+<td>Age   18-20</td>
+<td>0.9070</td>
+<td>0.213</td>
+<td>4.25</td>
+</tr>
+<tr>
+<td>Age 21-25</td>
+<td>1.3652</td>
+<td>0.194</td>
+<td>7.05</td>
+</tr>
+<tr>
+<td>Age 26-35</td>
+<td>1.7433</td>
+<td>0.180</td>
+<td>9.69</td>
+</tr>
+<tr>
+<td>Age 36-45</td>
+<td>2.1094</td>
+<td>0.183</td>
+<td>11.56</td>
+</tr>
+<tr>
+<td>Age 46-55</td>
+<td>2.0226</td>
+<td>0.177</td>
+<td>11.42</td>
+</tr>
+<tr>
+<td>Age 56-65</td>
+<td>1.9770</td>
+<td>0.169</td>
+<td>11.71</td>
+</tr>
+<tr>
+<td>Age 66-75</td>
+<td>1.9461</td>
+<td>0.165</td>
+<td>11.83</td>
+</tr>
+<tr>
+<td>Age 76-85</td>
+<td>1.2269</td>
+<td>0.168</td>
+<td>7.28</td>
+</tr>
+<tr>
+<td>Age 86+ (Base)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Occupation=g</td>
+<td>0.5737</td>
+<td>0.142</td>
+<td>4.05</td>
+</tr>
+<tr>
+<td>Occupation=m</td>
+<td>0.7314</td>
+<td>0.173</td>
+<td>4.24</td>
+</tr>
+<tr>
+<td>Occupation=p</td>
+<td>1.2349</td>
+<td>0.120</td>
+<td>10.25</td>
+</tr>
+<tr>
+<td>Occupation=s</td>
+<td>0.4507</td>
+<td>0.117</td>
+<td>3.87</td>
+</tr>
+<tr>
+<td>Part time employment status</td>
+<td>-0.3366</td>
+<td>0.119</td>
+<td>-2.84</td>
+</tr>
+<tr>
+<td>Income</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$0 to $14,999 (base)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$15,000 to $39,999</td>
+<td>0.4493</td>
+<td>0.128</td>
+<td>3.52</td>
+</tr>
+<tr>
+<td>$40,000 to $59,999</td>
+<td>0.7008</td>
+<td>0.130</td>
+<td>5.40</td>
+</tr>
+<tr>
+<td>$60,000 to $99,999</td>
+<td>0.8689</td>
+<td>0.127</td>
+<td>6.83</td>
+</tr>
+<tr>
+<td>$100,000 to $124,999</td>
+<td>1.0242</td>
+<td>0.146</td>
+<td>7.00</td>
+</tr>
+<tr>
+<td>$125,000 and above</td>
+<td>1.3385</td>
+<td>0.140</td>
+<td>9.56</td>
+</tr>
+<tr>
+<td>Population density of home location (person/sq.m)</td>
+<td>-29.0526</td>
+<td>3.882</td>
+<td>-7.48</td>
+</tr>
+<tr>
+<td>Transit perceived travel time to work/school</td>
+<td>0.0018</td>
+<td>0.001</td>
+<td>2.71</td>
+</tr>
+<tr>
+<td>Distance to work/school (km)</td>
+<td>0.0200</td>
+<td>0.006</td>
+<td>3.14</td>
+</tr>
+<tr>
+<td>Log-likelihood at constant</td>
+<td>-4629</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Final Log-likelihood</td>
+<td>-3684</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pseudo R2 (McFadden)</td>
+<td>0.20</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="vehicle-ownership">Vehicle Ownership</h2>
+<p>A generalized ordered logit (GOL) model is used for modelling vehicle ownership on a sample of 28,937 households
+of TTS 2016 households in GTHA with income reported. Given the spatial variation in vehicle ownership in
+the region and inability of capturing such variation with typical independent variables (and since ignoring this
+variation would result in under predicting of number of vehicles for household in 905 region and over predicting of
+number of vehicles for household in Toronto), a GOL model (instead of a simple ordered logit model) is used by
+parameterizing the thresholds to include spatial dummy variables. This way the estimated threshold parameters vary
+by the location. After a descriptive analysis, we determined four cluster to allow thresholds to vary by including a
+dummy variables for each in the model. The clusters are: inner of Toronto, suburbs of Toronto, district in 905 region,
+and Hamilton.</p>
+<p>Vehicle ownership categories considered are: 0,1,2,3,4+ vehicles in the household.
+A sample of 68251 households are hold out for validation. Variables considered are household
+charcteristics such as number of adults in the household, number of fulltime workers,
+number of driver licenses and household income, as well as home location attributes
+such as population and job density at zonal level, and a set of accessibility variables
+based on home to work travel times. Home to work variables are at zonal level. Distance
+to work variable is the average distance (shortest path) to work of workers residing in a zone.
+Similarly, the travel times are average travel times by mode to work for workers in a zone. These typical
+zonal attributes outperformed the household level LoS attributes both in terms of fit and in prediction.
+These should also be more stable in the model, as they are at the same level of aggregation as PORPOW.</p>
+<p>In the traditional ordered response model, the discrete ordered variable
+number of vehicles in the household) \( \left(y_{i}\right) \) is assumed to be associated with an underlying continuous latent variable
+\( \left(y_{i}^{*}\right) \). This latent variable is typically specified as the following linear function:</p>
+<div class="math">
+\[
+\left(y_{i}^{*}\right) = X_{i}\beta + \epsilon_{i} \text{ for } i = 1,2,... ... ...,N
+
+\]</div>
+<p>Where,</p>
+<div class="math">
+\[
+\begin{split}
+i &amp; \left(i = 1,2,... ... ...,N\right) \text{ represents the households} \\\\
+X_i &amp; \text{ is a vector of exogenous variables (excluding a constant)} \\\\
+\beta &amp; \text{ is a vector of unknown parameters to be estimated } \\\\
+\epsilon &amp; \text{ is the random disturbance term assumed to be standard logistic }
+\end{split}
+
+\]</div>
+<p>Let \( j \text{ } \left(j=1,2,.........,J\right) \) denote the vehicle ownership levels (in our case, 0,1,2,3,4+) and
+\( \tau_{j} \) represents the thresholds associated with these ownership levels. These unknown \( \tau_{j} \)
+represents the thresholds associated with these ownership levels. These unknown \( \tau_{j} \) are assumed to partition the
+propensity into \( J - 1 \) intervals. We also consider \( \tau_{j} \) of a constant and a spatial
+dummy variable based on the planning district that the household belongs. The unobservable latent variable \( y_{i}^{*} \) is related to the observable ordinal
+variable \( y_{i} \) by the \( \tau_{j} \) with a response mechanism of the following form:</p>
+<div class="math">
+\[
+y_i = j\text{, if }\tau_{j - 1} &lt; y_{i}^* &lt; \tau_j \text{, for } j = 1,2,... ... ...,J
+
+\]</div>
+<p>In order to ensure the well-defined intervals and natural ordering of observed vehicle ownership,
+the thresholds are assumed to be ascending in order,
+such that \( \tau_0&lt;\tau_1&lt; ……… \tau_J \text{ where } \tau_0=-\infty \text{ and } \tau_J=+\infty \).
+Given these relationships across the different parameters, the resulting probability expressions for household i and alternative j
+for the OL take the following form:</p>
+<div class="math">
+\[
+\pi_{ij} = Pr\left(y_i = j|X_i\right) = \Lambda\left(\tau_j-X_i\beta\right) - \Lambda\left(\tau_{j - 1} - X_i\beta \right)
+
+\]</div>
+<p>where \( \Lambda(.) \) represents the standard logistic cumulative distribution function.</p>
+<p>In order to finalize the model specification, a systematic process of removing statistically insignificant variables,
+guided by intuition and parsimony considerations. The model estimation results are presented in Table 2.</p>
+<p><em>Table 2 Vehicle Ownership Generalized Ordered Logit Model Estimation Results</em></p>
+<table>
+<thead>
+<tr>
+<th>Variables</th>
+<th>Coef.</th>
+<th>Std. Err.</th>
+<th>z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of adults in HH</td>
+<td>0.1444</td>
+<td>0.022</td>
+<td>6.54</td>
+</tr>
+<tr>
+<td>Number of FT workers in HH</td>
+<td>0.1984</td>
+<td>0.019</td>
+<td>10.66</td>
+</tr>
+<tr>
+<td>Number of driver licenses in   HH</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Zero (Base)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>One</td>
+<td>5.1644</td>
+<td>0.15</td>
+<td>34.4</td>
+</tr>
+<tr>
+<td>Two</td>
+<td>7.2856</td>
+<td>0.154</td>
+<td>47.18</td>
+</tr>
+<tr>
+<td>Three and more</td>
+<td>8.9816</td>
+<td>0.164</td>
+<td>54.67</td>
+</tr>
+<tr>
+<td>HH Income</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$0 to $14,999 (Base)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>$15,000 to $39,999</td>
+<td>0.5424</td>
+<td>0.082</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>$40,000 to $59,999</td>
+<td>0.8795</td>
+<td>0.082</td>
+<td>10.69</td>
+</tr>
+<tr>
+<td>$60,000 to $99,999</td>
+<td>1.231</td>
+<td>0.081</td>
+<td>15.14</td>
+</tr>
+<tr>
+<td>$100,000 to $124,999</td>
+<td>1.5664</td>
+<td>0.086</td>
+<td>18.15</td>
+</tr>
+<tr>
+<td>$125,000 and above</td>
+<td>1.9862</td>
+<td>0.084</td>
+<td>23.51</td>
+</tr>
+<tr>
+<td>Home location population   density (person/sq.m)</td>
+<td>-38.22</td>
+<td>2.235</td>
+<td>-17.1</td>
+</tr>
+<tr>
+<td>Home location job density   (jobs/sq.m)</td>
+<td>-12.51</td>
+<td>1.486</td>
+<td>-8.42</td>
+</tr>
+<tr>
+<td>Home-Work variables</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Average distance to work for   workers in the zone of home location (km)</td>
+<td>0.0151</td>
+<td>0.004</td>
+<td>3.76</td>
+</tr>
+<tr>
+<td>Average transit perceived   travel time to work for workers in the zone of home location</td>
+<td>0.0045</td>
+<td>0</td>
+<td>12.45</td>
+</tr>
+<tr>
+<td>Spatial Dummies</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sub-urban Toronto (PD 5, 7-16)</td>
+<td>1.2104</td>
+<td>0.067</td>
+<td>18</td>
+</tr>
+<tr>
+<td>905 Region (PD 17-45)</td>
+<td>2.1488</td>
+<td>0.079</td>
+<td>27.06</td>
+</tr>
+<tr>
+<td>Hamilton (PD 46)</td>
+<td>1.131</td>
+<td>0.136</td>
+<td>8.32</td>
+</tr>
+<tr>
+<td>Thresholds</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Threshold1</td>
+<td>6.2727</td>
+<td>0.177</td>
+<td>35.47</td>
+</tr>
+<tr>
+<td>Sub-urban Toronto (PD 5, 7-16)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>905 Region (PD 17-45)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Hamilton (PD 46)</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Threshold2</td>
+<td>10.1737</td>
+<td>0.18</td>
+<td>56.52</td>
+</tr>
+<tr>
+<td>Sub-urban Toronto (PD 5, 7-16)</td>
+<td>0.7054</td>
+<td>0.08</td>
+<td>-8.78</td>
+</tr>
+<tr>
+<td>905 Region (PD 17-45)</td>
+<td>0.9968</td>
+<td>0.084</td>
+<td>-11.81</td>
+</tr>
+<tr>
+<td>Hamilton (PD 46)</td>
+<td>0.2133</td>
+<td>0.16</td>
+<td>-1.34</td>
+</tr>
+<tr>
+<td>Threshold3</td>
+<td>12.8775</td>
+<td>0.196</td>
+<td>65.58</td>
+</tr>
+<tr>
+<td>Sub-urban Toronto (PD 5, 7-16)</td>
+<td>0.9677</td>
+<td>0.121</td>
+<td>-7.97</td>
+</tr>
+<tr>
+<td>905 Region (PD 17-45)</td>
+<td>1.6857</td>
+<td>0.116</td>
+<td>-14.48</td>
+</tr>
+<tr>
+<td>Hamilton (PD 46)</td>
+<td>0.6901</td>
+<td>0.22</td>
+<td>-3.13</td>
+</tr>
+<tr>
+<td>Threshold4</td>
+<td>14.7459</td>
+<td>0.261</td>
+<td>56.47</td>
+</tr>
+<tr>
+<td>Sub-urban Toronto (PD 5, 7-16)</td>
+<td>0.9921</td>
+<td>0.232</td>
+<td>-4.28</td>
+</tr>
+<tr>
+<td>905 Region (PD 17-45)</td>
+<td>1.7269</td>
+<td>0.211</td>
+<td>-8.18</td>
+</tr>
+<tr>
+<td>Hamilton (PD 46)</td>
+<td>0.7934</td>
+<td>0.4</td>
+<td>-1.98</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>N</td>
+<td>28937</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LL</td>
+<td>-23069</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Pseudo R2 (McFadden)</td>
+<td>0.382</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The model is used to predict on both estimation sample and validation sample. As expected, the aggregated results are promising.</p>
+<p><em>Table 3 Vehicle Ownership Model Validation Results</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Estimation Sample (n=28937)</th>
+<th>Validation Sample (n=68251)</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of Veh. in hhld</td>
+<td>Predicted</td>
+<td>Observed</td>
+<td>Predicted</td>
+<td>Observed</td>
+</tr>
+<tr>
+<td>0</td>
+<td>14.3</td>
+<td>14.3</td>
+<td>14.3</td>
+<td>14.1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>41.9</td>
+<td>42.2</td>
+<td>42.1</td>
+<td>42.3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>34</td>
+<td>33.7</td>
+<td>34</td>
+<td>34</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.6</td>
+<td>7.4</td>
+<td>7.5</td>
+<td>7.3</td>
+</tr>
+<tr>
+<td>4+</td>
+<td>2.3</td>
+<td>2.3</td>
+<td>2.2</td>
+<td>2.3</td>
+</tr>
+</tbody>
+</table>
+<p>To highlight the improvement in terms of spatial distribution of errors in prediction, the predictions are explored by planning district.</p>
+<p><em>Table 4 Prediction by Planning Districts on Estimation Sample</em></p>
+<table>
+<thead>
+<tr>
+<th>PD</th>
+<th>Absolute Error in Shares based on the Model with fixed thresholds</th>
+<th>Absolute Error in Shares based on the Model with thresholds varying by   region</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4+</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.12</td>
+<td>-0.05</td>
+<td>-0.07</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.11</td>
+<td>0.05</td>
+<td>-0.14</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.03</td>
+<td>0.03</td>
+<td>-0.05</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.05</td>
+<td>0.03</td>
+<td>-0.06</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>-0.05</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.06</td>
+<td>0.01</td>
+<td>-0.04</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>-0.04</td>
+<td>-0.01</td>
+<td>0.05</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.01</td>
+<td>0.06</td>
+<td>-0.06</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.10</td>
+<td>0.06</td>
+<td>-0.13</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.03</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-0.01</td>
+<td>0.06</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>8</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>9</td>
+<td>-0.03</td>
+<td>0.07</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0.03</td>
+<td>0.06</td>
+<td>-0.05</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>11</td>
+<td>-0.09</td>
+<td>0.14</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.04</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0.00</td>
+<td>0.07</td>
+<td>-0.05</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0.02</td>
+<td>0.06</td>
+<td>-0.06</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0.00</td>
+<td>0.08</td>
+<td>-0.08</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>15</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>16</td>
+<td>-0.02</td>
+<td>0.08</td>
+<td>-0.03</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>17</td>
+<td>-0.03</td>
+<td>-0.10</td>
+<td>-0.01</td>
+<td>0.07</td>
+<td>0.08</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>-0.05</td>
+<td>0.00</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>18</td>
+<td>-0.03</td>
+<td>-0.10</td>
+<td>0.06</td>
+<td>-0.02</td>
+<td>0.08</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.05</td>
+<td>-0.07</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>19</td>
+<td>-0.02</td>
+<td>-0.12</td>
+<td>0.00</td>
+<td>0.08</td>
+<td>0.07</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.03</td>
+</tr>
+<tr>
+<td>20</td>
+<td>-0.02</td>
+<td>-0.03</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>21</td>
+<td>-0.03</td>
+<td>-0.02</td>
+<td>0.04</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>22</td>
+<td>-0.03</td>
+<td>-0.04</td>
+<td>0.04</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>23</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>24</td>
+<td>-0.02</td>
+<td>-0.07</td>
+<td>0.00</td>
+<td>0.06</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.04</td>
+<td>0.04</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>25</td>
+<td>-0.04</td>
+<td>-0.11</td>
+<td>0.05</td>
+<td>0.08</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.04</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>26</td>
+<td>-0.03</td>
+<td>-0.04</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>0.05</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.05</td>
+<td>0.01</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>27</td>
+<td>-0.03</td>
+<td>-0.05</td>
+<td>0.04</td>
+<td>0.03</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>28</td>
+<td>-0.02</td>
+<td>-0.04</td>
+<td>0.05</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>29</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.04</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>30</td>
+<td>-0.02</td>
+<td>-0.09</td>
+<td>0.11</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.07</td>
+<td>-0.03</td>
+<td>-0.03</td>
+</tr>
+<tr>
+<td>31</td>
+<td>-0.03</td>
+<td>-0.02</td>
+<td>0.07</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>-0.02</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>32</td>
+<td>-0.03</td>
+<td>-0.12</td>
+<td>0.06</td>
+<td>0.02</td>
+<td>0.07</td>
+<td>-0.02</td>
+<td>-0.05</td>
+<td>0.04</td>
+<td>-0.02</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>33</td>
+<td>-0.02</td>
+<td>-0.04</td>
+<td>0.08</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>-0.02</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>34</td>
+<td>-0.02</td>
+<td>-0.09</td>
+<td>-0.01</td>
+<td>0.08</td>
+<td>0.04</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>35</td>
+<td>-0.02</td>
+<td>-0.02</td>
+<td>0.04</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>36</td>
+<td>-0.05</td>
+<td>0.02</td>
+<td>0.03</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>37</td>
+<td>-0.02</td>
+<td>-0.08</td>
+<td>0.06</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>38</td>
+<td>-0.03</td>
+<td>-0.09</td>
+<td>0.13</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.07</td>
+<td>-0.03</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>39</td>
+<td>-0.03</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>40</td>
+<td>-0.03</td>
+<td>-0.03</td>
+<td>0.05</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>41</td>
+<td>-0.03</td>
+<td>-0.06</td>
+<td>-0.02</td>
+<td>0.06</td>
+<td>0.05</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>42</td>
+<td>-0.04</td>
+<td>0.02</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>43</td>
+<td>-0.03</td>
+<td>-0.07</td>
+<td>0.05</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>44</td>
+<td>-0.04</td>
+<td>0.00</td>
+<td>0.05</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.09</td>
+<td>-0.03</td>
+<td>-0.02</td>
+<td>-0.02</td>
+</tr>
+<tr>
+<td>45</td>
+<td>-0.04</td>
+<td>-0.11</td>
+<td>0.09</td>
+<td>0.01</td>
+<td>0.05</td>
+<td>0.00</td>
+<td>-0.06</td>
+<td>0.05</td>
+<td>-0.01</td>
+<td>0.03</td>
+</tr>
+<tr>
+<td>46</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<p><em>Table 5 Prediction by Planning Districts on Validation Sample</em></p>
+<table>
+<thead>
+<tr>
+<th>PD</th>
+<th>Absolute Error in Shares based on the Model with fixed thresholds</th>
+<th>Absolute Error in Shares based on the Model with thresholds varying by   region</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4+</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4+</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0.06</td>
+<td>-0.04</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.12</td>
+<td>-0.03</td>
+<td>-0.09</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.04</td>
+<td>0.00</td>
+<td>-0.04</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.04</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.03</td>
+<td>-0.04</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.04</td>
+<td>-0.01</td>
+<td>0.04</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0.06</td>
+<td>0.03</td>
+<td>-0.09</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.05</td>
+<td>-0.03</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>7</td>
+<td>-0.02</td>
+<td>0.05</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>8</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>9</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>10</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>11</td>
+<td>-0.06</td>
+<td>0.06</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0.01</td>
+<td>0.04</td>
+<td>-0.04</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0.01</td>
+<td>0.04</td>
+<td>-0.04</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0.00</td>
+<td>0.03</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0.00</td>
+<td>0.03</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>16</td>
+<td>-0.02</td>
+<td>0.05</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>17</td>
+<td>0.00</td>
+<td>0.14</td>
+<td>-0.07</td>
+<td>-0.05</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.08</td>
+<td>-0.08</td>
+<td>-0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>18</td>
+<td>0.00</td>
+<td>0.04</td>
+<td>0.03</td>
+<td>-0.05</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>19</td>
+<td>-0.02</td>
+<td>0.02</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.05</td>
+<td>0.02</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>20</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>21</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>22</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>23</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>24</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>25</td>
+<td>0.01</td>
+<td>0.05</td>
+<td>0.03</td>
+<td>-0.06</td>
+<td>-0.03</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>26</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.04</td>
+<td>-0.01</td>
+<td>-0.02</td>
+<td>-0.04</td>
+<td>0.02</td>
+<td>0.05</td>
+</tr>
+<tr>
+<td>27</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>28</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.05</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>29</td>
+<td>-0.02</td>
+<td>-0.02</td>
+<td>0.05</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>30</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>31</td>
+<td>-0.02</td>
+<td>-0.02</td>
+<td>0.04</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>32</td>
+<td>-0.01</td>
+<td>-0.04</td>
+<td>-0.05</td>
+<td>0.07</td>
+<td>0.03</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>-0.08</td>
+<td>0.07</td>
+<td>0.04</td>
+</tr>
+<tr>
+<td>33</td>
+<td>-0.02</td>
+<td>-0.06</td>
+<td>0.07</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.03</td>
+<td>0.03</td>
+<td>-0.01</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>34</td>
+<td>0.00</td>
+<td>0.02</td>
+<td>0.05</td>
+<td>-0.05</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>-0.04</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>35</td>
+<td>-0.02</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>36</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>37</td>
+<td>-0.02</td>
+<td>-0.05</td>
+<td>0.03</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>38</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.09</td>
+<td>-0.05</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.04</td>
+<td>0.07</td>
+<td>-0.04</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>39</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.03</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>40</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>41</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>0.03</td>
+<td>-0.02</td>
+<td>-0.02</td>
+<td>0.00</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>42</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.02</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>43</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>-0.01</td>
+<td>-0.03</td>
+<td>0.03</td>
+<td>0.01</td>
+</tr>
+<tr>
+<td>44</td>
+<td>-0.01</td>
+<td>0.06</td>
+<td>-0.03</td>
+<td>-0.04</td>
+<td>0.01</td>
+<td>0.00</td>
+<td>0.06</td>
+<td>-0.06</td>
+<td>-0.02</td>
+<td>0.02</td>
+</tr>
+<tr>
+<td>45</td>
+<td>-0.02</td>
+<td>0.03</td>
+<td>0.02</td>
+<td>0.00</td>
+<td>-0.02</td>
+<td>-0.01</td>
+<td>0.02</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>46</td>
+<td>-0.01</td>
+<td>0.01</td>
+<td>-0.02</td>
+<td>0.01</td>
+<td>0.01</td>
+<td>-0.01</td>
+<td>0.03</td>
+<td>-0.03</td>
+<td>0.00</td>
+<td>0.01</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/auto_ownership.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IParkingCost | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IParkingCost | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/parking_cost.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="iparkingcost">IParkingCost</h1>
+
+<p>This interface is extended to implement a
+new model for computing parking costs given the gap between two activities.</p>
+<h2 id="methods">Methods</h2>
+<p>Below are the functions that will need to be implemented to build functional
+parking cost model.</p>
+<h3 id="computeparkingcost">ComputeParkingCost</h3>
+<p>The following two methods will need to be implemented to building a parking
+cost model.  In most implemetnations you will see that the
+first method will just do a lookup in the zone in the zone system and call
+the second with its flat zone number (the index in the zone array with the zone).</p>
+<pre><code class="lang-cs">float ComputeParkingCost(Time parkingStart, Time parkingEnd, IZone zone);
+
+float ComputeParkingCost(Time parkingStart, Time parkingEnd, int flatZone);
+</code></pre>
+<h3 id="givedata">GiveData</h3>
+<p>This method is called to get a reference to the parking cost model.  Typically
+this returns a reference to the current parking cost model.</p>
+<pre><code class="lang-cs">IParkingCost GiveData();
+</code></pre>
+<h3 id="loaddata">LoadData</h3>
+<p>This method is called if <code>Loaded</code> is false.  It is designed to
+load cached data.</p>
+<pre><code class="lang-cs">void LoadData();
+</code></pre>
+<h3 id="loaded">Loaded</h3>
+<p>This property is used to see if the parking cost model has already been loaded.
+If this is False then modules using this will be required to call the
+<code>LoadData</code> method before calling its methods.</p>
+<pre><code class="lang-cs">bool Loaded {get;}
+</code></pre>
+<h3 id="unloaddata">UnloadData</h3>
+<p>This method is called when the model needs to release its cached data.</p>
+<pre><code class="lang-cs">void UnloadData();
+</code></pre>
+<h2 id="example-module">Example Module</h2>
+<p>In the following gives a simple example module with a constant price per hour.</p>
+<pre><code class="lang-cs">using XTMF;
+using Tasha.Common;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;An example parking cost module implementation&quot;)]
+    public sealed class MyParkingCost : IParkingCost
+    {
+        [RootModule]
+        public ITravelDemandModel Root;
+
+        [RunParameter(&quot;Cost Per Hour&quot;, 2.0f, &quot;The price per hour to apply to all zones.&quot;)]
+        public float CostPerHour;
+
+        public bool Loaded {get; private set;} = true;
+
+        public void LoadData()
+        {
+            // Load any data we need to cache here
+        }
+    
+        public float ComputeParkingCost(Time parkingStart, Time parkingEnd, IZone zone)
+        {
+            return ComputeParkingCost(parkingStart, parkingEnd,
+                Root.ZoneSystem.ZoneArray.GetFlatIndex(zone.ZoneNumber));
+        }
+
+        public float ComputeParkingCost(Time parkingStart, Time parkingEnd, int flatZone)
+        {
+            return (parkingEnd - parkingStart).ToMinutes() / 60.0f * CostPerHour;
+        }
+
+        public IParkingCost GiveData()
+        {
+            return this;
+        }
+
+        public void UnloadData()
+        {
+            // Unload any cached data here
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/parking_cost.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Auto Assignment | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Auto Assignment | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/auto_assignment.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="auto-assignment">Auto Assignment</h1>
+
+<h2 id="overview">Overview</h2>
+<p>GTAModel V4.0 uses a Static User Equilibrium (SUE), single-class traffic assignment procedure implemented in Emme 4.1/4.2. Road tolls (e.g., the 407 ETR) are included as a generalized cost, and converted to perceived minutes using a Time Value of Money (TVALM) parameter. This model is nearly identical to other traffic assignment models commonly in-use around the region, save for minor implementation details.</p>
+<h2 id="volume-delay-functions">Volume Delay Functions</h2>
+<p>When working with EMME auto assignments the network is encoded with
+Volume Delay Functions (VDFs).  These VDFs describe how
+a road's travel time changes as the volume on the road changes.</p>
+<p>Below is a table describing the VDFs for the different NCS16
+road types.</p>
+<h3 id="table-1---ncs16-gtamodel-vdfs"><em>Table 1 - NCS16 GTAModel VDFs</em></h3>
+<table>
+<thead>
+<tr>
+<th>VDF</th>
+<th>Formula</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>12</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>13</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>14</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>15</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>16</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>17</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>20 - 51</td>
+<td>(length * 60 / ul2) * ((1 +   put((volau + volad + el1) / (lanes * ul3))</td>
+</tr>
+<tr>
+<td></td>
+<td>^ 4) * (get(1) .le. 1) + (4 * get(1) - 2) * (get(1) .gt. 1))</td>
+</tr>
+<tr>
+<td>90</td>
+<td>(length * 60 / ul2)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gtamodel-v41">GTAModel V4.1</h2>
+<h3 id="preparation-of-input-data">Preparation of Input Data</h3>
+<p>All counts for all stations and screenlines for auto vehicles, light trucks, medium trucks, and heavy trucks were obtained from CCDRS in 15 minute windows. A python script was then run in order to determine the peak hour using a rolling hour window for each time period. This was done for both screenlines and stations. Stations were mapped to screenlines based on data obtained from DMG. The stations were also mapped to stations in the Emme Network.
+The Emme Network was updated to 2016 and the collector and express were split on the highways that used a core collector system (401, 403, 404). The 407 Tolls were also updated with the 2016 values.
+For heavy truck restrictions, new restrictions were updated where possible, but improvements focused mainly on Toronto, Peel Region, and Hamilton. The network still resulted in connectivity issues for heavy vehicles, so certain centroids had to have special connectors that contained only the heavy truck mode and connected to the nearest road that allowed heavy trucks. The capacity on the highways and ramps were also bumped up by 10% in order to remove the restriction that was in place as a zero order approximation. (e.g. 1800 pcu/hour/lane to 2000 pcu/hour/lane).</p>
+<h3 id="peak-hour-factor-auto">Peak Hour Factor Auto</h3>
+<p>When finding the Peak Hour Factors for the AM and PM time periods for auto a $0.067603/km charge with a $50/hour value of time were used. Various different Peak Period Factors were then tested out. For each Peak Period
+Factor the following was done</p>
+<div class="math">
+\[
+\Delta_x = (\text{Emme Volume})_x - (\text{Observed Peak Hour Volume in Time Period})_x
+
+\]</div>
+<p>Where \( x \) is a countpost.</p>
+<div class="math">
+\[
+\text{Average Error} = \dfrac{\sum_{x}{\Delta_x}}{\text{Count}(\Delta_x)}
+
+\]</div>
+<p>This was then plotted on a graph for both the AM and the PM, shown below in Figure 1 and Figure 2. The point at which the Average Error
+is 0 is then taken to be the Peak Period Factor.</p>
+<p><img src="images/Freight/AvgErrorAM.png" alt="alt text" title="Average Error AM"></p>
+<h4 id="figure-1---average-countpost-error-based-on-ppf-in-the-am"><em>Figure 1 - Average Countpost Error based on PPF in the AM</em></h4>
+<p><img src="images/Freight/AvgErrorPM.png" alt="alt text" title="Average Error AM"></p>
+<h4 id="figure-2---average-countpost-error-based-on-ppf-in-the-pm"><em>Figure 2 - Average Countpost Error based on PPF in the PM</em></h4>
+<p>The peak hour factor from this method was found to be 0.46 and 0.39 for the AM and PM respectively. When comparing these numbers to the 2016 TTS Trip starts,
+they seem to get AM correct but the PM appears to be too high. For comparison, the TTS peak hour factors which were 0.469 and 0.307. This is likely due to
+the known under-reporting of non-work, non-school trips in the 2016 TTS. In the AM time period, most of the trips are work based, so the demand provides good results when
+compared to the stations counts. However, in the PM due to the under-reporting of TTS, the Peak Hour Factor is forced to be higher in order to try to match the counts from the count posts.</p>
+<h3 id="peak-period-factor-and-peak-hour-factor-freight">Peak Period Factor and Peak Hour Factor Freight</h3>
+<p>Since the freight model only provides freight demand data for a 12.5 hour period, it was necessary to break it in to time periods and peak hours for each time period in order to assign the freight into Emme.
+Table 2 summarizes the calculations that were done.</p>
+<h4 id="table-2---freight-factors"><em>Table 2 - Freight factors</em></h4>
+<table>
+<thead>
+<tr>
+<th>Adjustment Factors</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vehicle   Class</td>
+<td>Light</td>
+<td>Medium</td>
+<td>Heavy</td>
+</tr>
+<tr>
+<td>12.5 Factor   (06:30-19:00)</td>
+<td>0.78</td>
+<td>0.78</td>
+<td>0.66</td>
+</tr>
+<tr>
+<td>Off Peak   Factor (19:00-06:30)</td>
+<td>0.22</td>
+<td>0.22</td>
+<td>0.34</td>
+</tr>
+<tr>
+<td>Off Peak   Factor Per Half Hour</td>
+<td>0.009565</td>
+<td>0.009565</td>
+<td>0.014783</td>
+</tr>
+<tr>
+<td>13 Hour   Factor (06:00-19:00)</td>
+<td>0.789565</td>
+<td>0.789565</td>
+<td>0.674783</td>
+</tr>
+<tr>
+<td>AM Factor   (06:00-09:00)</td>
+<td>0.185851</td>
+<td>0.159685</td>
+<td>0.135086</td>
+</tr>
+<tr>
+<td>MD Factor   (09:00-15:00)</td>
+<td>0.355817</td>
+<td>0.423595</td>
+<td>0.364802</td>
+</tr>
+<tr>
+<td>PM Factor   (15:00-19:00)</td>
+<td>0.247897</td>
+<td>0.206285</td>
+<td>0.174895</td>
+</tr>
+<tr>
+<td>EV Factor   (19:00-23:59)</td>
+<td>0.095652</td>
+<td>0.095652</td>
+<td>0.147826</td>
+</tr>
+<tr>
+<td>AM PHF</td>
+<td>0.375068</td>
+<td>0.419648</td>
+<td>0.362608</td>
+</tr>
+<tr>
+<td>MD PHF</td>
+<td>0.177191</td>
+<td>0.171329</td>
+<td>0.176942</td>
+</tr>
+<tr>
+<td>PM PHF</td>
+<td>0.284042</td>
+<td>0.325995</td>
+<td>0.317223</td>
+</tr>
+<tr>
+<td>EV PHF</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+<p>The 12.5 Hour Factor is given by the Freight Model, the documentation for which is also provided. Uniform distribution is assumed to occur in the Off Peak Period from 19:00-06:30. This uniform distribution is
+then used to find a 13 hour factor that neatly fits into the AM, MD, and PM Time Periods of GTAModel. The time period factor for AM, MD, and PM was then found by multiplying the 13 hour factor by the sum
+of the number of vehicles in the time period divided by the total number of trucks in the 13 hours. The EV time period happens in the Off Peak time period so is assumed to have uniform distribution.
+The Off Peak Factor per Half Hour was multiplied by 10 (for the 5 hour EV period) in order to obtain EV Factor.</p>
+<p>The Peak Hour Factor (PHF) for trucks was found using the count station data. A simple rolling hour window was used to find the maximum volume
+in an hour for each time period. This was then divided by the sum of the volume of the volume in the time period in order to obtain the Peak Hour Factor (PHF).</p>
+<h3 id="toll-perception-estimation-framework">Toll Perception Estimation Framework</h3>
+<p>The model system was set up with the 2016 407 tolls but no link costs in order to estimate the Toll perception factor in $/hr for each vehicle class.
+A higher Toll Perception Factor means that the toll cost does not matter much, while a lower perception means that the cost matters a lot. The perception parameter was
+fixed to be the same for both AM and PM and was allowed to float between $15/hr and $100/hr.</p>
+<p>The fitness function was set up using the following formula</p>
+<p>\( \text{Fitness} = 0.49\text{AM} + 0.33\text{PM} \)</p>
+<p>Where</p>
+<div class="math">
+\[
+\text{Period} = \dfrac{\text{Sum}(Error Auto)}{\text{Count}(Error Auto)} + \dfrac{\text{Sum}(Error Light)}{\text{Count}(Error Light)} + \dfrac{\text{Sum}(Error Medium)}{\text{Count}(Error Medium)} + \dfrac{\text{Sum}(Error Heavy)}{\text{Count}(Error Heavy)}
+
+\]</div>
+<div class="math">
+\[
+Error = (Observed - Modelled)^2
+
+\]</div>
+<p>The error was calculated for each station, summed up for each time period, and divided by the number of stations in that time period to obtain the fitness. A lower fitness value implies a better model,
+with 0 being a perfect model. The same method was done for the PM time period.</p>
+<h3 id="initial-results">Initial Results</h3>
+<p>The results from the run showed that the lowest fitness for this was found to be 1193. There was not too much variation between even the lowest perceptions and the highest perception.
+There were some trends though, Auto perception generally found that being in the mid $30/hour range to minimize the error. Light trucks showed the highest Value of Time which would make
+sense as they carry professional workers. Medium and Heavy vehicles show values that are a little higher than auto.</p>
+<h3 id="tts-peak-hour-factors">TTS Peak Hour Factors</h3>
+<p>During this process, there was discussions regarding a new PM model for GTAModelV4.1 which would help to fill in the missing TTS trips during that time period. This would lead to the Peak Period Factors as currently
+calculated to be too peaky for the PM since new demand would be added and therefore the model would be able to hit counts without bumping up the Peak Hour Factors. This led to a new estimation run with the TTS
+Peak Period Factors being used instead of the ones calculated in the method above for Auto vehicles only.</p>
+<p>The results for this show similar results as compared to the first model. The distribution pattern of Auto, Medium and Heavy vehicles being in a similar range with only light commercial vehicles being higher
+also held in this estimation.  The lowest fitness result was 1188, which is slightly lower than the first model, but the difference in value is very minor. In this model however, light commercial vehicles
+seemed to have a preference for a significant increase in the VOT while the other classes showed smaller increases.</p>
+<h3 id="summary">Summary</h3>
+<p>In order to calibrate the new auto assignment with freight, input data was collected for auto vehicles and freight vehicles from transit counts. These counts were used to establish the Peak Period Factors as
+well as the Peak Hour Factors for freight vehicles. Two different models were then evaluated, one with Peak Hour Auto Factors from count station and Emme data, and the other with TTS auto Peak Hour Factors.</p>
+<p>Both of these models shared similarities especially with regards to the pattern of perception values that show better results. Further analysis of the results show that while there are definitely <strong>wrong</strong>
+peak period factors, there appears to be a valid range in the values that can be used. Overall there was not too much difference between the worst performing numbers and the highest performing numbers
+in terms of its Root Mean Squared Error fitness values.</p>
+<p>After discussions, it was decided to use the Peak Period Factor from TTS due to the possible future inclusion of the PM model into GTAModelV4.1. The chosen set of parameters, while not the lowest fitness value,
+was one that was felt to be the most reasonable set of values that performed well as well. The values were  $50.99/hour, $76.02/hour, $37.96/hour and $67.06/hour for Auto, Light, Medium, and Heavy vehicles respectively.
+This corresponded to a fitness value of 1192.488.</p>
+<h2 id="gtamodel-v40">GTAModel V4.0</h2>
+<h3 id="assignment-parameters">Assignment Parameters</h3>
+<p>Two route major parameters needed to be calibrated for the auto assignment: the peak hour factor, and the toll perception factor.</p>
+<h4 id="peak-hour-factor">Peak Hour Factor</h4>
+<p>For assignment, trips are aggregated over several hours (e.g. 3 hours for the AM peak period), but must be factored down into a single peak hour for assignment.</p>
+<table>
+<thead>
+<tr>
+<th>Time Period</th>
+<th>Peak Hour Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AM</td>
+<td>0.437</td>
+</tr>
+<tr>
+<td>Mid-Day</td>
+<td>0.1667</td>
+</tr>
+<tr>
+<td>PM</td>
+<td>0.385</td>
+</tr>
+<tr>
+<td>EV</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td>ON</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="outputs">Outputs</h3>
+<p>The traffic assignment procedure produces three output matrices: auto in-vehicle travel time (AIVTT), OD average trips costs (in $), and OD average trip tolls (also in $). The auto costs matrix encompass several per-km components of auto ownership costs, including gasoline and maintenance. See the Input section below for more details.</p>
+<h3 id="inputs">Inputs</h3>
+<h4 id="road-tolls">Road Tolls</h4>
+<p>In 2011, Highway 407 was the only road with tolls on it in the model area. 407ETR (the company which has leased the road) uses a per-km toll, changing by time-of-day, by vehicle-class, and by location: a ‘light’ fare zone running from Hamilton to the Highway 403 interchange in Oakville, and a ‘regular’ fare zone across the remaining highway.   Table 2 407 toll rates details the fare amounts, which were blended in order to apply them to the model time periods which differ from those used by the tolling company.</p>
+<p><img src="images/407Tolls.png" alt="alt text" title="407 Tolls"></p>
+<h4 id="link-costs">Link Costs</h4>
+<p>Trip average costs are stored in a link attribute, and aggregated to the OD during the assignment. The per-link value used in the base model is <code>$0.153/km</code> and includes:</p>
+<ul>
+<li>10.12 ¢/km gasoline cost</li>
+<li>3.11 ¢/km maintenance cost</li>
+<li>2.11 ¢/km tire replacement</li>
+</ul>
+<h4 id="demand-matrices">Demand Matrices</h4>
+<p>Base matrices for the model – used to calibrate the assignment model – were extracted from the 2011 TTS. Auto driver and motorcycle trips were included, but not taxi or auto passenger trips.</p>
+<h3 id="sola-vs-standard-traffic-assignment">SOLA VS. Standard Traffic Assignment</h3>
+<p>Emme 4.1 introduced a new implementation of the Standard Traffic Assignment procedure used in previous versions; this new version is referred to as SOLA: Second-Order Linear Approximation. The SOLA Traffic Assignment procedure converges in fewer iterations compared to the Standard procedure (resulting in faster model performance) making it an attractive option for this model.</p>
+<p>The SOLA tool was compared against the Standard tool to ensure consistency of results. The two tools were run to the same convergence criterion: relative gap of 10-3, which SOLA reached in 70 iterations compared to the Standard tool’s 145 iterations. OD travel times were identical; when plotted on a scatterplot the resulting linear REGULARression had a slope of 1.0 and an R2 of 1.0. This is expected, given that both traffic assignments strive to equilibrate travel times across all paths for each OD pair. Volumes on links were also plotted on a scatterplot (see Figure 14 a comparison between SOLA and traditional road assignment on links). The overall consistency is good with a slope of 0.9996 and an R2 of 0.9998, with higher-volume links showing better convergence than lower-volumes ones. This result is expected, since the two procedures converged to slightly different solutions of link flows.</p>
+<p><img src="images/SOLAGraph.png" alt="alt text" title="SOLA Graph"></p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/auto_assignment.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

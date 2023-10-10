@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Place-of-Residence Place-of-Work (PoRPoW) | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Place-of-Residence Place-of-Work (PoRPoW) | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/porpow.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="place-of-residence-place-of-work-porpow">Place-of-Residence Place-of-Work (PoRPoW)</h1>
+
+<p>After your <a href="transit_assignment.html">network assignment</a> models are prepared and have generated the initial
+level-of-service matrices, the next step is to calibrate the PoRPoW models.  Our calibration will
+focus on the aggregate PoRPoW models, one for each occupation category and full-time / part-time
+employment.  If you are not similar with these models please review their documentation
+<a href="../model_design/porpow.html">here</a>.</p>
+<p>You can find the Professional Full-Time model in GTAModel V4.1 at
+<code>Resources/Professional FT Probabilities/PoRPoW</code>.  The other occupation and employment
+categories are located similarly.</p>
+<p>Inside of each PoRPoW model's <code>Friction</code> module you will be able to create K-Factors between
+planning districts by adding, or modifying, the modules in the <code>KFactors</code> module list.</p>
+<p>Each K-Factor has the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origin PDs</td>
+<td>The planning districts to select if the person lives in the   given home zone.</td>
+</tr>
+<tr>
+<td>Destination PDs</td>
+<td>The planning districts to select if the person would work in   the given work zone.</td>
+</tr>
+<tr>
+<td>Factor</td>
+<td>The multiplicative factor to apply to the friction for the   defined home zone's and work zone's planning districts.</td>
+</tr>
+</tbody>
+</table>
+<p>If a planning district OD is defined more than once, the K-Factors will be multiplied together.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you have created additional planning districts you may need to update these K-Factors
+origin and destination planning districts to remain within the initial
+calibration provided by TMG.</p>
+</div>
+<p>In order to validate the results GTAModel V4.1 will save the results of the
+final aggregate models to the output directory <code>Validation/PoRPoW/Compare/</code> in that
+directory you will see three folders: <code>PD</code>, <code>Region</code>, and <code>Zone</code>.  Each of these directories
+will have a matrix containing the \( Model_{occemp} - TTS_{occemp} \) at the given aggregation.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/porpow.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

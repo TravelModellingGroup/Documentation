@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Parking | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Parking | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/parking.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="parking">Parking</h1>
+
+<p>Starting in <code>GTAModel V4.2</code> the parking costs have been separated from the <a href="network.html">Network Scenario</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<p>The scenario contains a single file, <code>ParkingCosts.csv</code>.  This file contains the following eight columns in order:</p>
+<ul>
+<li>ZoneNumber - The TAZ that this row represents.</li>
+<li>StartOfDay - Time time of day, in minutes from midnight, that the &quot;daytime&quot; starts.</li>
+<li>DailyHourly - The cost per hour that will be charged during the &quot;daytime&quot;.</li>
+<li>DailyMax - The maximum price that a person can pay during the &quot;daytime&quot;.</li>
+<li>StartOfNight - The start time, in minutes from midnight, of when &quot;nighttime&quot; starts.</li>
+<li>NightlyHourly - The cost per hour that will be charged during the &quot;nighttime&quot;.</li>
+<li>NightlyMax - The maximum price that a person can pay during the &quot;nighttime&quot;.</li>
+<li>FullDayMax - The maximum price that a person can pay during regardless of time period.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Make sure that all of your costs are inflated/deflated to your model's base year dollars.</p>
+</div>
+<p>All TAZ that are not defined as assumed to have no parking costs.</p>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>To create a new scenario, make a copy of the scenario you wish to start from.  When editing the <code>ParkingCosts.csv</code> go to the TAZ that you wish to alter
+the time periods or the prices during them.  When entering in your policy make sure to deflate the currency to match your model's base year.  For
+models based on GTAModel V4.0 that would be 2011, and for V4.1, and V4.2, 2016.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/parking.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

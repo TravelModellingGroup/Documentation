@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Transit Assignment | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Transit Assignment | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/transit_assignment.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="transit-assignment">Transit Assignment</h1>
+
+<p>The first step recommended is to calibrate the Transit Assignment models. If you are not familiar with these models please review their documentation
+<a href="../model_design/transit_assignment.html">here</a>.</p>
+<p>You can find the Transit Assignment model in GTAModel V4.1 at
+<code>Pre Run/Execute Transit Assignment</code> or <code>Post Iteration/Run Network Assignments</code>. Inside each Transit Assignment model, there are 6 modules that you may calibrate with as shown below:</p>
+<ol>
+<li>Fare-based Transit Network (FBTN)</li>
+<li>Boarding Penalities</li>
+<li>Transit Demand</li>
+<li>Walk Perceptions</li>
+<li>Surface Transit Speed Updating Models (STSU)</li>
+<li>Transit Time Functions (TTF)</li>
+</ol>
+<h4 id="fare-based-transit-network-fbtn">Fare-based Transit Network (FBTN)</h4>
+<p>You can change the fare scheme by modifying the <em>Fares.xml</em> file in <code>Generate FBTN</code> module, which is stored in the input directory <code>Scenario-Transit Fares/Base</code>.</p>
+<p>In the Emme network, it is assumed that boarding and transfer fares are stored in the link attribute '<em>@lfare*', and in-line fares are store in the transit segment attribute '</em>@sfare*'.</p>
+<h4 id="boarding-penalities">Boarding Penalities</h4>
+<p>The mode and agency-specific boarding penalty scheme is adopted to minimize the Root-Mean-Square Error (RMSE) of observed and modelled boardings/alightings. You can find the list of modules to adjust the boarding penality for a specific mode or agency in <code>Assign Boarding Penalities</code>. Each mode or agency module contains five parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In Vehicle Time Perception</td>
+<td>Ratio of perceived travel time compared to true travel time</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Name of the specific mode/agency</td>
+</tr>
+<tr>
+<td>Line Filter</td>
+<td>To filter the transit lines for the specific agency</td>
+</tr>
+<tr>
+<td>Mode Filter</td>
+<td>To filter the transit lines for the specific mode</td>
+</tr>
+<tr>
+<td>Penalty</td>
+<td>Boarding penalty to apply for the mode/agency</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transit-demand">Transit Demand</h4>
+<p>You can change the transit demand matrix in <code>Import Transit Demand</code> module, which is generated from <code>Mode Choice/Post Household Iteration/</code> and stored in the output directory <code>Demand</code>.</p>
+<h4 id="walk-perceptions">Walk Perceptions</h4>
+<p>A list of modules to change the walk perception can be found in <code>Transit Assignment/Classes</code> for 5 types of links, including <code>Toronto/Non-Toronto</code>, <code>PD1</code>, and <code>Toronto/Non-Toronto Centroid Connectors</code>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The detailed description of the five types of links can be found <a href="../model_design/transit_assignment.html#estimation-and-calibration">here</a>.</p>
+</div>
+<p>Each module contains two parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filter</td>
+<td>An filter expression for links that the perception applies to</td>
+</tr>
+<tr>
+<td>Walk Perception Value</td>
+<td>Walk perception on links</td>
+</tr>
+</tbody>
+</table>
+<h4 id="surface-transit-speed-updating-models-stsu">Surface Transit Speed Updating Models (STSU)</h4>
+<p>You can modify the surface transit speed updating models in <code>Surface Transit Speed Model</code> module. GTAModel V4.1 has included <code>Local Bus</code>, <code>GO Bus</code>, and <code>Streetcar</code>. You may add as many <code>SurfaceTransitSpeed</code> modules as needed. Each module contains 7 parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alighting Duration</td>
+<td>Alighting time in <em>seconds per passenger</em></td>
+</tr>
+<tr>
+<td>Boarding Duration</td>
+<td>Boarding time in <em>seconds per passenger</em></td>
+</tr>
+<tr>
+<td>Default Duration</td>
+<td>Default duration time in <em>seconds per stop</em></td>
+</tr>
+<tr>
+<td>Global EROW Speed</td>
+<td>The speed to use in segments that have Exclusive Right of Way for transit and do not have @erow_speed defined. This includes accelaration and decelaration time.</td>
+</tr>
+<tr>
+<td>Line Filter Expression</td>
+<td>To determine which lines will get surface transit speed updating applied to them (Leave it BLANK to select all lines)</td>
+</tr>
+<tr>
+<td>Mode Filter Expression</td>
+<td>To determine which modes will get surface transit speed updating applied to them (Leave this and Line Filter BLANK to select all lines)</td>
+</tr>
+<tr>
+<td>Transit Auto Correlation</td>
+<td>The multiplier to auto time in order to find transit time (i.e., the ratio of Transit Running Time to Auto Time)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="transit-time-functions-ttf">Transit Time Functions (TTF)</h4>
+<p>A list of modules to change the Transit Time Functions (TTF) can be found in <code>TTF</code> module. Currently in GTAModel V4.1, there are five types of TTF functions to apply for various services/modes.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>A more detailed introduction to TTF functions can be found <a href="../model_design/transit_assignment.html#congestion-delay-functions">here</a>.</p>
+</div>
+<p>Each module contains three parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Congestion Exponent</td>
+<td>The congestion exponent term to apply to this TTF</td>
+</tr>
+<tr>
+<td>Congestion Perception</td>
+<td>The congestion perception to apply to this TTF</td>
+</tr>
+<tr>
+<td>TTF</td>
+<td>The TTF number to assign to (e.g., 1 means TTF1)</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/transit_assignment.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

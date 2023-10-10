@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add the toolbox to EMME | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add the toolbox to EMME | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/ExtractSubarea/AddTMGToolbox2Emme.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="add-the-toolbox-to-emme"><strong>Add the toolbox to EMME</strong></h1>
+
+<h2 id="download-resources-needed-to-complete-this-tutorial"><strong>Download resources needed to complete this tutorial</strong></h2>
+<p>TMGToolbox (*.MTBX) files
+<ul>
+<li> <a href="https://tmg.utoronto.ca/files/tutorials/3b.TMGToolbox_MTBX_Python3.zip">Toolbox is compatible with EMME 4.6.0+</a></li>
+<li> <a href="https://tmg.utoronto.ca/files/tutorials/3a.TMGToolbox_MTBX.zip">Toolbox is compatible with EMME 4.4.4.2</a></li>
+</ul>
+<h2 id="add-the-toolbox-to-emme-modeller"><strong>Add the toolbox to Emme Modeller</strong></h2>
+<p>a.	Open Emme modeller</p>
+<figure>
+    <img src="images/open_modeller.png" alt="Open Modeller in Emme Tools" style="width:600px;">
+    <figcaption text-align="center">Figure 1: Modeller in Emme Tools</figcaption>
+</figure>
+<p>b.	Click “Add a toolbox…”</p>
+ <figure>
+    <img src="images/add_toolbox.png" alt="Add Downloaded TMG Toolbox" style="width:600px;">
+    <figcaption text-align="center">Figure 2: Add Downloaded TMG Toolbox</figcaption>
+</figure>
+<p>c.	Choose the .mtbx file path, enter a title and set the namespace to “tmg”</p>
+  <figure>
+    <img src="images/set_toolbox_file_path.png" alt="Set file path, title and namespace " style="width:400px;">
+    <figcaption text-align="center">Figure 3: Set new toolbox file path, title and namespace </figcaption>
+</figure>
+<p>d.	Check to confirm the toolbox has been added and close the modeller</p>
+ <figure>
+    <img src="images/confirm_toolbox_added.png" alt=" Verify TMG Toolbox is added" style="width:600px;">
+    <figcaption text-align="center">Figure 4: Verify TMG Toolbox is added</figcaption>
+</figure>
+<h2 id="launch-emme-notebook"><strong>Launch Emme Notebook</strong></h2>
+<p>a. Launch EMME notebook</p>
+<figure>
+    <img src="images/launch_notebook.png" alt="Launch EMME notebook" style="width:400px;">
+    <figcaption text-align="center">Figure 5: Launch EMME notebook </figcaption>
+</figure>
+<p>b. Create a new Python notebook and rename</p>
+<figure>
+    <img src="images/create_and_rename_notebook.png" alt="Create and rename a new python EMME notebook" style="width:400px;">
+    <figcaption text-align="center">Figure 6: Create and rename a new python EMME notebook </figcaption>
+</figure>
+<p>c. You should get the below page (here we renamed to TMG Workshop – Export Subarea)</p>
+<figure>
+    <img src="images/notebook_ready.png" alt="Notebook ready for coding" style="width:600px;">
+    <figcaption text-align="center">Figure 7: EMME notebook ready for coding </figcaption>
+</figure>
+<p>d. We are ready to start writing the subarea tool JSON parameters.</p>
+<h2 id="next-steps"><strong>Next Steps</strong></h2>
+<p>Now that Emme is setup, next step is to continue to</p>
+<ul>
+     <li> [Export Subarea Tutorial](ExportSubarea.md) if you are using Emme notebook or </li>
+     <li> [Add Export Subarea Tool to XTMF](AddSubareaTool2XTMF.md) if you are using XTMF</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/ExtractSubarea/AddTMGToolbox2Emme.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

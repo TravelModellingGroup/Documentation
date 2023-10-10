@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ITourDependentMode | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ITourDependentMode | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tour_dependent_mode.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="itourdependentmode">ITourDependentMode</h1>
+
+<p>The <code>ITourDependentMode</code> interface is based on the <a href="tasha_mode.html">ITashaMode</a> interface
+however it also includes an additional method <code>CalculateTourDependentUtility</code> which
+allows you to compute an additional systematic utility given the complete trip chain.
+This is used for GTAModel's Drive Access Transit mode as in order to chose which
+station they will drive to depends on two different trips.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="calculatetourdependentutility">CalculateTourDependentUtility</h3>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Calculates the tour dependent portion of the utility for the trip
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;chain&quot;&gt;The trip chain to evaluate&lt;/param&gt;
+/// &lt;param name=&quot;tripIndex&quot;&gt;The index in the chain that we are computing&lt;/param&gt;
+/// &lt;param name=&quot;dependentUtility&quot;&gt;The utility to add to the independent portion of the utility&lt;/param&gt;
+/// &lt;param name=&quot;onSelection&quot;&gt;A function that can act on the trip chain.  This will be executed before passenger mode is evaluated.&lt;/param&gt;
+/// &lt;returns&gt;True if the tour is feasible&lt;/returns&gt;
+bool CalculateTourDependentUtility(ITripChain chain, int tripIndex, out float dependentUtility, out Action&lt;Random, ITripChain&gt; onSelection);
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>For our example we will create a new bike mode where the utility of using the bike depends on how far away from home you are.</p>
+<pre><code class="lang-cs">using System;
+using XTMF;
+using Tasha.Common;
+using TMG;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;This mode applies a cost for how long the tour is in addition to a standard bike mode.&quot;)]
+    public sealed class BikeExample : ITourDependentMode
+    {
+        [RunParameter(&quot;BetaTourTime&quot;, -0.1f, &quot;The utility applied to the tour&quot;)]
+        public float BetaTourTime;
+
+        [RunParameter(&quot;BetaDistanceTravelled&quot;, -0.01f, &quot;The utility of distance travelled using this mode per KM.&quot;)]
+        public float BetaDistanceTravelled;
+
+        public bool CalculateTourDependentUtility(ITripChain chain, int tripIndex, out float dependentUtility, out Action&lt;Random, ITripChain&gt; onSelection)
+        {
+            var tripChainLength = chain.Trips[chain.Trips.Count - 1].ActivityStartTime - chain.Trips[0].TripStartTime;
+            if (IsFirstTrip(chain, tripIndex))
+            {
+                dependentUtility = tripChainLength.ToMinutes() * BetaTourTime;
+            }
+            else
+            {
+                dependentUtility = 0.0f;
+            }
+            onSelection = null;
+            return true;
+        }
+
+        private bool IsFirstTrip(ITripChain chain, int currentTripIndex)
+        {
+            for (int i = 0; i &lt; currentTripIndex; i++)
+            {
+                if (chain.Trips[i].Mode == this)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /* ITashaMode Implementation */
+
+        [RootModule]
+        public ITravelDemandModel Root;
+
+        public string NetworkType { get; set; }
+
+        public bool NonPersonalVehicle =&gt; true;
+
+        public float CurrentlyFeasible { get; set; } = 1.0f;
+
+        [DoNotAutomate]
+        public IVehicleType RequiresVehicle =&gt; null;
+
+        [RunParameter(&quot;Mode Name&quot;, &quot;BikeExample&quot;, &quot;The name of this mode.&quot;)]
+        public string ModeName { get; set; }
+
+        [RunParameter(&quot;Variance Scale&quot;, 1.0f, &quot;The scale for variance used for variance testing.&quot;)]
+        public double VarianceScale { get; set; }
+
+        public float CalculateV(IZone origin, IZone destination, Time time)
+        {
+            return BetaDistanceTravelled * (Root.ZoneSystem.Distances[origin.ZoneNumber, destination.ZoneNumber] / 1000.0f);
+        }
+
+        public double CalculateV(ITrip trip)
+        {
+            return CalculateV(trip.OriginalZone, trip.DestinationZone, trip.ActivityStartTime);
+        }
+
+        public float Cost(IZone origin, IZone destination, Time time)
+        {
+            return 0f;
+        }
+
+        public bool Feasible(IZone origin, IZone destination, Time time)
+        {
+            return true;
+        }
+
+        public bool Feasible(ITrip trip)
+        {
+            return true;
+        }
+
+        public bool Feasible(ITripChain chain)
+        {
+            return true;
+        }
+
+        public Time TravelTime(IZone origin, IZone destination, Time time)
+        {
+            float averageSpeed = 15.0f * 1000.0f / 60.0f;
+            float distance = Root.ZoneSystem.Distances[origin.ZoneNumber, destination.ZoneNumber] / 1000.0f;
+            // Assume that we are travelling at 15km/h
+            return Time.FromMinutes(distance / averageSpeed);
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tour_dependent_mode.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

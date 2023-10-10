@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Generate Hypernetwork From Schema | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Generate Hypernetwork From Schema | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Generate/GenerateHypernetworkFromSchema.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="generate-hypernetwork-from-schema"><strong>Generate Hypernetwork From Schema</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the TMG FBTN From Schema Multiclass Tool in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Generate Hypernetwork From Schema tool generates a hyper-network to support fare-based transit assignment (FBTA) for at least one fare class, from an XML schema file. <code>GenerateHypernetworkFromSchema</code> reports to the logbook links and segments with negative fare values for further inspection. Please consult the <a href="http://tmg.utoronto.ca/doc/1.6/gtamodel/user_guide/file_formats/fare_schema_file_specification.html">TMG fare schema specification documentation</a>.</p>
+<p>Temporary storage requirements for <code>GenerateHypernetworkFromSchema</code>:</p>
+<blockquote>
+<ul>
+<li>One transit line extra attribute,</li>
+<li>One node extra attribute.</li>
+</ul>
+</blockquote>
+<h2 id="hyper-network-generation-procedure">Hyper Network Generation Procedure</h2>
+<p>The concept of a hyper network is that each agency has its own “layer” of virtual links and nodes, which are only connected to the base network by auxiliary transit (walk) links that contain the transit fare cost.</p>
+<p>The map below shows base layer of a transport network.</p>
+<figure>
+    <img src="images/base_network.png" alt="Example Base Layer">
+    <figcaption>Figure 1: Base Network Layer without Transit Layers</figcaption>
+</figure>
+<p>In this implementation, this has been generalized to have each transit line belong to a “group” (instead of a hard-coded operator), in order to give the procedure more flexibility. The groups are specified using a fare schema file (see next section for details). The main assumption of this approach is that transfers between lines within the same group are free (unless a boarding cost is applied during assignment). To generate the appropriate hyper-network, six steps are followed:</p>
+<ol>
+<li>Transit lines are classified into groups based on the fare schema file.</li>
+<li>The network is pre-processed. The procedure attaches to each node two sets of data: groups which are stopping at the node, and groups which are passing through the node. The two sets are mutually exclusive. Two groups of (non-zone) nodes are identified:
+a.	Road (or Surface) nodes are connected to at least one link with the auto mode.
+b.	Transit (or Station) nodes are connected to links with only transit or walk modes.</li>
+<li>Surface nodes are processed first. For each group using a surface node (either stopping at or passing through), a new virtual node is created. The base node’s attributes are copied over. For groups stopping at the node, the associated virtual node is connected using walk links to the base node and to each other. These walk links are indexed for later use .</li>
+<li>The same procedure is followed for station nodes, except that virtual nodes are only created when two or more groups use the station node . This is done as station nodes already exist in their own layer in the network (e.g. subway links and nodes), and therefore do not need to “moved” over to a new layer. Any existing connected walk links are indexed appropriately.</li>
+<li>Virtual surface nodes and virtual station nodes are connected to each other using walk links.</li>
+<li>Finally, each transit line is moved over to its appropriate layer in the hyper network. In-vehicle links are created between virtual nodes when none exist. The image below shows an 3D layer representing how the Hyper Network would look like in a pictorial representation.</li>
+</ol>
+<figure>
+    <img src="images/hyper_network.png" alt="Example Hyper Network Layer">
+    <figcaption>Figure 2: Example 3D Hyper Network showing Generated Transit Layers</figcaption>
+</figure>
+<p>It should be noted that, currently, no effort is made to make the network look visually appealing. Virtual nodes are given the exact same coordinates as their base node, and virtual links copy the same shape as their base links. Therefore, the created hyper-network appears to be identical to the base network – since the virtual nodes and links overlap the base precisely.</p>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>GenerateHypernetworkFromSchema</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Generate&quot; -&gt; &quot;Generate Hypernetwork From Schema&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Generate/generate_hypernetwork_from_schema.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update (and delete this warning) the location where Generate Hypernetwork From Schema tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>GenerateHypernetworkFromSchema</code> tool can be set by the users. This tool is called <code>GenerateHypernetworkFromSchema</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>GenerateHypernetworkFromSchema</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+parameters = {
+    &quot;base_scenario&quot;: 1,
+    &quot;new_scenario&quot;: 2,
+	&quot;new_scenario_title&quot;: &quot;new_scenario_name&quot;,
+    &quot;station_connector_flag&quot;: True,
+    &quot;transfer_mode&quot;: &quot;t&quot;,
+    &quot;virtual_node_domain&quot;: 100000,
+    &quot;base_schema_file&quot;: &quot;TestFiles/base_fares.xml&quot;,
+    &quot;fare_classes&quot;: [
+        {&quot;link_fare_attribute&quot;: &quot;@lfare&quot;, &quot;segment_fare_attribute&quot;: &quot;@sfare&quot;, &quot;schema_file&quot;: &quot;TestFiles/fares.xml&quot;}
+    ],
+}
+generate_time_period_networks = _MODELLER.tool(&quot;tmg2.Generate.generate_time_period_networks&quot;)
+generate_time_period_networks(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-generate-hypernetwork-from-schema">Module Parameter Explanation: &quot;Generate Hypernetwork From Schema&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Base Scenario <code>integer</code></td>
+<td style="text-align: left;">The number of the Emme BASE (i.e. non-FBTN-enabled) scenario</td>
+</tr>
+<tr>
+<td style="text-align: left;">New Scenario <code>integer</code></td>
+<td style="text-align: left;">The number of the EMME scenario where Hypernetwork will be created</td>
+</tr>
+<tr>
+<td style="text-align: left;">New Scenario Title <code>string</code></td>
+<td style="text-align: left;">The title of the EMME scenario where Hypernetwork will be created</td>
+</tr>
+<tr>
+<td style="text-align: left;">Station Connector Flag <code>boolean</code></td>
+<td style="text-align: left;">Should centroid connectors be automatically integrated with stations?</td>
+</tr>
+<tr>
+<td style="text-align: left;">Transfer Mode <code>string</code></td>
+<td style="text-align: left;">The mode ID to assign to new virtual connector links</td>
+</tr>
+<tr>
+<td style="text-align: left;">Virtual Node Domain <code>integer</code></td>
+<td style="text-align: left;">All created virtual nodes will have IDs higher than this number. This will not override an existing node</td>
+</tr>
+<tr>
+<td style="text-align: left;">Base Schema File <code>string</code></td>
+<td style="text-align: left;">XML Base Schema File</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-fare-classes">Sub-Module Parameter Explanation: &quot;Fare Classes&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Link Fare Attribute <code>string</code></td>
+<td style="text-align: left;">A LINK extra attribute in which to store the transfer and boarding fares</td>
+</tr>
+<tr>
+<td style="text-align: left;">Segment Fare Attribute <code>string</code></td>
+<td style="text-align: left;">A TRANSIT SEGMENT extra attribute in which to store the in-line fares</td>
+</tr>
+<tr>
+<td style="text-align: left;">Schema File <code>string</code></td>
+<td style="text-align: left;">XML Fare Schema File</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Generate/GenerateHypernetworkFromSchema.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

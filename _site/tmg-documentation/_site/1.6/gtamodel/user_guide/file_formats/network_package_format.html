@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Network Package (*.nwp) File Format | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Network Package (*.nwp) File Format | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/network_package_format.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="network-package-nwp-file-format">Network Package (*.nwp) File Format</h1>
+
+<p>The network package format is a compressed file with .NWP extension, stores all network elements and information in an Emme scenario. Elements of a network such as modes, nodes and links, turns, transit vehicles, lines, and segments from the Emme database are stored in this format.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The NWP file does not contain the strategies used in the transit assignment.</p>
+</div>
+<p>The <code>NWP</code> file also ensures that the database attributes, relational integrity, hierarchy, and organization in the network are maintained.</p>
+<h2 id="network-attributes"><strong>Network Attributes</strong></h2>
+<p>The <code>NWP</code> file can contain three types of network attributes as defined within the Emme database namely:</p>
+<ul>
+<li>Standard attributes - predefined attributes eg. link length</li>
+<li>Extra attributes - user defined attributes eg. @toll, @gate, etc.</li>
+<li>Network assignment result attributes - automatically written to the network after a network assignment is completed, e.g. transit volumes on line segments, auto volumes on turns, etc.</li>
+</ul>
+<h2 id="exporting-the-network-package-file"><strong>Exporting the Network Package File</strong></h2>
+<p><code>NWP</code> files can be exported from a scenario using XTMF1 and Emme Modeller, see <a href="https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportNetworkPackage.html">documentation</a></p>
+<p>Codes used to export .NWP files from an Emme scenario can be found <a href="https://github.com/TravelModellingGroup/TMGToolbox/blob/dev/TMGToolbox/src/input_output/export_network_package.py">here</a>.</p>
+<h2 id="importing-the-network-package-file"><strong>Importing the Network Package File</strong></h2>
+<p><code>NWP</code> files can be imported into an Emme scenario via XTMF1 and Emme Modeller, see <a href="https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ImportNetworkPackage.html">documentation</a></p>
+<p>The code used to import .NWP files into an Emme scenario can be found <a href="https://github.com/TravelModellingGroup/TMGToolbox/blob/dev/TMGToolbox/src/input_output/import_network_update.py">here</a>.</p>
+<h2 id="file-specification"><strong>File Specification</strong></h2>
+<p><code>NWP</code> files can be &quot;unzipped&quot; using a software package like &quot;7zip&quot; or even windows
+(by changing the extension from &quot;.nwp&quot; to &quot;.zip&quot;. After unzipping, the individual files
+can be examined or even modified according to the end user's goals. The files can be then
+be &quot;zipped&quot; again and the extension changed back to &quot;.nwp&quot; for use in the tool.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Manually editing the files in this manner is only recommended for advanced users.</p>
+</div>
+<p>An <code>NWP</code> file at minimum contains the following:</p>
+<ul>
+<li>aux_transit_results.csv - optional</li>
+<li>base.211</li>
+<li>exatt_links.241 - optional</li>
+<li>exatt_nodes.241 - optional</li>
+<li>exatt_segments.241 - optional</li>
+<li>exatt_transit_lines.241 - optional</li>
+<li>exatts.241 - optional</li>
+<li>functions.411</li>
+<li>info.txt</li>
+<li>link_results.csv - optional</li>
+<li>modes.201</li>
+<li>segment_results.csv - optional</li>
+<li>shapes.251</li>
+<li>transit.221</li>
+<li>turns.231</li>
+<li>turn_results.csv - optional</li>
+<li>vehicles.202</li>
+<li>version.txt</li>
+</ul>
+<p>For all of the non-extra attribute numbered file extensions they share a common file format.
+They are all UTF-8 text files where the first letter of the line gives it meaning.</p>
+<ul>
+<li>c - This line is a comment and you can ignore the rest of the line</li>
+<li>t - The line sets what type of data that follows.</li>
+<li>a - Add data, the columns of which depends on what type of data that is being loaded</li>
+<li>a* - Add zone centroid.</li>
+<li>m - modify</li>
+<li>d - delete</li>
+<li>r - Remove assigned values for link vertices for the given link.</li>
+</ul>
+<h3 id="aux_transit_resultscsv">aux_transit_results.csv</h3>
+<p>This optional file is only included in NWP's that contain the results of a transit assignment.  This
+CSV file comes with three columns in the given order:</p>
+<ul>
+<li><code>i</code> - The origin node number of the link</li>
+<li><code>j</code> - The destination node number of the link</li>
+<li><code>aux_transit_volume</code> - The amount of people walking on that link</li>
+</ul>
+<h3 id="base211">base.211</h3>
+<p>The base.211 contains the nodes and links of the network.</p>
+<p>For lines representing nodes it the following columns:</p>
+<ul>
+<li><code>Node</code> - The number of the node, if the second character of the line is <code>*</code> then it is a centroid.</li>
+<li><code>X-coord</code> - The X coordinate in UTM</li>
+<li><code>Y-coord</code> - The Y coordinate in UTM</li>
+<li><code>Data1</code> - Internally called ui1, this is not used in GTAModel</li>
+<li><code>Data2</code> - Internally called ui2, this is not used in GTAModel</li>
+<li><code>Data3</code> - Internally called ui3, this is not used in GTAModel</li>
+<li><code>Label</code> - Optional text documentation for the node</li>
+</ul>
+<p>For lines representing links it has the following columns:</p>
+<ul>
+<li><code>From</code> - The node number the link originates from.</li>
+<li><code>To</code> - The node number the link terminates at.</li>
+<li><code>Length</code> - The length of the link, in KMs.  This does not have to be the same as the straight line
+distance between the origin and destination nodes.</li>
+<li><code>Modes</code> - The list of auto and transit modes that are allowed to take this link.</li>
+<li><code>Typ</code> - The 'Type' of the link.  We code this where the first
+digit is the region number, and the last two are the planning district.</li>
+<li><code>Lan</code> - The number of lanes for the link.</li>
+<li><code>VDF</code> - The volume-delay-function index to use when doing road assignment.</li>
+<li><code>Data1</code> - <code>ul1</code> Unused in GTAModel.</li>
+<li><code>Data2</code> - <code>ul2</code> GTAModel uses this for the free flow speed of the road.</li>
+<li><code>Data3</code> - <code>ul3</code> GTAModel uses this for the link's hourly capacity per lane.</li>
+</ul>
+<p>For this file whitespace separates the columns.</p>
+<pre><code>t nodes
+c   Node          X-coord          Y-coord   Data1   Data2   Data3 Label
+a*     1           636296          4836132       0       0       0 0001
+</code></pre>
+<pre><code>t links
+c   From     To  Length Modes        Typ Lan VDF   Data1   Data2   Data3
+a      1  10202 .231191 chijfedHIJKv 101 2.0  90       0      40    9999
+</code></pre>
+<h3 id="exatt_links241">exatt_links.241</h3>
+<p>This file contains the extra attributes for the network's links.  As with all extra attribute
+files the particular columns in this file will depend on how your network/model has been setup.
+In all cases though, the first two columns will be <code>inode</code> and <code>jnode</code> giving us the node numbers
+for the beginning and end of the link. The remaining columns contain all of the
+exported extra attribute values.</p>
+<p>For this file columns are separated by commas.</p>
+<p>Below is an example row from a GTAModel run:</p>
+<pre><code>   inode,   jnode, @checked,@gas_cost,@gas_perception,   @lfare,@link_cost,   @lkcap,   @lkspd,@ramp_toll,    @stn1,    @stn2,    @toll,@toll_perception,@toll_zone_1,@toll_zone_2,   @walkp,    @z407,@z407ramp,@ramp_toll_auto,@ramp_toll_light,@ramp_toll_heavy,@toll_zone_1_auto,@toll_zone_1_light,@toll_zone_1_heavy,@toll_zone_2_auto,@toll_zone_2_light,@toll_zone_2_heavy,@toll_auto,@toll_light,@toll_heavy,@auto_volume,@light_volume,@medium_volume,@heavy_volume
+       1,   10202,0,0,0,0,0,9999,40,0,0,0,0,0,0,0,3.967,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7.904747,0.06545971,0.1845006,0.02531471
+</code></pre>
+<h3 id="exatt_nodes241">exatt_nodes.241</h3>
+<p>This file contains the extra attributes for the network's nodes. As with all extra attribute
+files the particular columns in this file will depend on how your network/model has been setup.
+In all cases though, the first column will be <code>inode</code> giving us the node number that these
+attributes represent.</p>
+<p>For this file columns are separated by commas.</p>
+<p>Below is an example row from a GTAModel run:</p>
+<pre><code>   inode,    @frac,    @gofz,   @hfrac,@stationlabel,    @stop,@transfer
+       1,0,0,0.5,0,0,0
+</code></pre>
+<h3 id="exatt_segments241">exatt_segments.241</h3>
+<p>This file contains the extra attributes for the network's transit segments.  As with all extra attribute
+files the particular columns in this file will depend on how your network/model has been setup.
+In all cases though, the first three columns will be <code>line</code>, <code>inode</code> and <code>jnode</code>
+giving us the name of the transit line and, node numbers for the beginning and end of the link.
+The name of the transit line will be surrounded by single quotes e.g. <code>'lineName'</code>.
+The remaining columns contain all the exported extra attribute values.</p>
+<p>For this file columns are separated by commas.</p>
+<p>Below is an example row from a GTAModel run.</p>
+<pre><code>    line,   inode,   jnode,loop_idx,@erow_speed,   @sfare,   @tstop,@boardings,@alightings,   @ccost
+'B001Aa',  110474,  108900,       1,0,0,1,3.300489,0,0.220854
+</code></pre>
+<h3 id="exatt_transit_lines241">exatt_transit_lines.241</h3>
+<p>This file contains the extra attributes for the network's transit lines.  As with all extra attribute
+files the particular columns in this file will depend on how your network/model has been setup.
+In all cases though, the first column will be <code>line</code> giving us the name of the transit line.
+The name of the transit line will be surrounded by single quotes e.g. <code>'lineName'</code>.
+The remaining columns contain all the exported extra attribute values.</p>
+<p>For this file columns are separated by commas.</p>
+<p>Below is an example row from a GTAModel run.</p>
+<pre><code>    line,   @doors,    @ehdw,@shape_id
+'B001Aa',0,17.475,10178
+</code></pre>
+<h3 id="exatts241">exatts.241</h3>
+<p>This file, unless the rest of the files starting with exatt, defines the names of all of the extra attributes.  This is done
+by enumerating the extra attributes, one per line, with three columns <code>name</code>, <code>type</code>, and <code>default</code>.  There is also a fourth column
+that is not named that contains a description for the extra attribute.</p>
+<ul>
+<li><code>name</code> - The name of the extra attribute, no quotes.</li>
+<li><code>type</code> - The type of the extra attribute (<code>NODE</code>, <code>LINK</code>,<code>TRANSIT_LINE</code>, or <code>TRANSIT_SEGMENT</code>) without quotes.</li>
+<li><code>default</code> - The default value (floating point number) to assign to the extra attribute.</li>
+<li>(unnamed) - A description, surrounded by quotes, for the extra attribute</li>
+</ul>
+<p>For this file columns are separated by commas.</p>
+<p>Below is an example row from a GTAModel run:</p>
+<pre><code>@stationlabel,NODE,0.0,'Station Centroid Label'
+</code></pre>
+<h3 id="functions411">functions.411</h3>
+<p>This file contains all of the volume-delay-functions and transit-segment-time functions. For information about
+the format of the volume-delay-functions please consult your EMME documentation. Before any functions can be
+defined the line <code>t functions</code> must be read in so EMME knows to expect functions.  For GTAModel's specification
+the following terms are used:</p>
+<ul>
+<li><code>ul2</code> - The free flow road speed.</li>
+<li><code>volau</code> - The volume on the road link in passenger car equivalent units (PCUs).</li>
+<li><code>volad</code> - Additional volume applied to the link.  GTAModel assumes this is zero.</li>
+<li><code>el1</code> - This will be assigned to the public transit volume running on the link stored in PCUs.</li>
+<li><code>lanes</code> - The number of lanes on the link.</li>
+<li><code>ul3</code> - The capacity per hour per lane of the link.</li>
+<li><code>us1</code> - The speed of the transit vehicle for the particular transit segment.</li>
+<li><code>speed</code> - The assigned transit line speed, one value per line.</li>
+</ul>
+<p>Below is an example where the volume-delay-function 11 is assigned.</p>
+<pre><code>a fd11 =(length * 60 / ul2) * ((1 + put((volau + volad + el1) / (lanes * ul3))
+         ^ 6) * (get(1) .le. 1) + (6 * get(1) - 4) * (get(1) .gt. 1))
+</code></pre>
+<p>Below is an example of TTF1 being assigned:</p>
+<pre><code>a ft1  =(length * 60 / us1)
+</code></pre>
+<h3 id="infotxt">info.txt</h3>
+<p>This file provides additional information about the NWP.  It contains four lines.
+The first line is a user-set description of the network package.
+The second line is the file-path of the &quot;emmebank&quot; file that contained the scenario.
+The third line is the name of the scenario that the NWP was exported from.
+The fourth line is a time-stamp of when it was exported.</p>
+<h3 id="link_resultscsv">link_results.csv</h3>
+<p>This file is only generated if the network has had a road assignment executed on it.  It contains results from that assignment,
+in particular the <code>volau</code>, <code>volad</code>, and the auto travel times for each link.  The file has five column <code>i</code>, <code>j</code>, <code>auto_volume</code>,
+<code>additional_volume</code>, and <code>auto_time</code>. The volumes are in passenger car equivalent units (PCUs), and the time is in minutes. <code>i</code>
+and <code>j</code> are the origin and destination nodes respectively.</p>
+<p>For this file columns are separated by commas.</p>
+<h3 id="modes201">modes.201</h3>
+<p>This file stores the auto and transit modes that are used in the network.</p>
+<ul>
+<li><code>id</code> - The single character code used for this mode.</li>
+<li><code>description</code> - The name of the mode surrounded by single quotes.</li>
+<li><code>mode_type</code> - (1: Auto Mode, 2: Transit, 3:auxiliary Transit, 4:Auxilalry Auto)</li>
+<li><code>colour</code> - Only used for auto modes or auxiliary transit, not used by GTAModel.</li>
+<li><code>cost_time_coeff</code> - Only used for auto modes or auxiliary transit, not used by GTAModel.</li>
+<li><code>cost_distance_coeff</code> - Only used for auto modes or auxiliary transit, not used by GTAModel.</li>
+<li><code>energy_time_coeff</code> - Only used for auto modes or auxiliary transit, not used by GTAModel.</li>
+<li><code>energy_distance_coeff</code> - Only used for auto modes or auxiliary transit, not used by GTAModel.</li>
+<li><code>speed_factor</code> - Only used for auxiliary transit, the walking speed in KM/h.</li>
+</ul>
+<p>For this file columns are separated by whitespace.</p>
+<p>Below is an example of the Auto, auxiliary Auto, Transit, and auxiliary transit mode types respectively:</p>
+<pre><code>a c 'car'      1   1   0.00   0.00   0.00   0.00
+a h 'HOV2+'    4   1
+a b 'Bus'      2   1
+a w 'Walk'     3   1   0.00   0.00   0.00   0.00          4.0
+</code></pre>
+<h3 id="segment_resultscsv">segment_results.csv</h3>
+<p>This optional file contains the results for each transit segment for scenarios that have completed a transit assignment.</p>
+<ul>
+<li><code>line</code> - The name of the transit line, no quotes.</li>
+<li><code>i</code> - The node number of where the transit segment starts.</li>
+<li><code>j</code> - The node number of where the transit segment ends.</li>
+<li><code>loop</code> - The 1-indexes number of times that the transit line has passed this link.</li>
+<li><code>transit_boardings</code> - The number of passengers that board the transit vehicle at the i-node of this segment.</li>
+<li><code>transit_time</code> - The time it takes for the transit vehicle to cross the segment.</li>
+<li><code>transit_volume</code> - The total number of transit rides that cross this transit segment.</li>
+</ul>
+<h3 id="shapes251">shapes.251</h3>
+<p>This file contains vertices that allow modifying a link's shape.
+This file starts off with some commenting, and then is followed by the command
+<code>t linkvertices</code> to let EMME know that the following commands will operate on vertices.
+Before assigning values to each node a remove command is issued using
+the <code>r</code> command followed by the link's origin and destination node numbers separated
+by a space. The for each vertex along the link
+a row is added using the <code>a</code> command followed by the link's origin and destination
+node numbers, the 1-indexed index for this vertex, and the X and Y positions to set
+for this point.  All columns are separated by spaces.</p>
+<p>Below is an example of a line with 4 vertices:</p>
+<pre><code>r 10003 10021
+a 10003 10021 1 618529.2793299129 4829038.890250599
+a 10003 10021 2 618733.692422647 4829107.15724172
+a 10003 10021 3 618895.0067818061 4829161.03072789
+a 10003 10021 4 619215.6329387979 4829268.10891315
+</code></pre>
+<h3 id="transit221">transit.221</h3>
+<p>This file contains the definition for all transit lines and transit segments. It starts
+off with the command <code>t lines</code> to let EMME know that we are going to be interacting
+with the transit lines.</p>
+<p>The loading of transit lines is then done in two steps.  The first line adds in
+line level information with the columns:</p>
+<ul>
+<li><code>Line</code> - The name of the transit line with single quotes around it e.g. <code>'B001Aa'</code>.</li>
+<li><code>Mod</code> - The mode the transit line uses.</li>
+<li><code>Veh</code> - The index in the vehicle table that the line uses.</li>
+<li><code>Headwy</code> - The line's headway in minutes.</li>
+<li><code>Speed</code> - The average speed of the transit line.</li>
+<li><code>Description</code> - A description, with single quotes around it, usually containing the line's name.</li>
+<li><code>Data1</code> - <code>ut1</code>, a user defined value that is not currently used in GTAModel.</li>
+<li><code>Data2</code> - <code>ut2</code>, a user defined value that is not currently used in GTAModel.</li>
+<li><code>Data3</code> - <code>ut3</code>, a user defined value that is not currently used in GTAModel.</li>
+</ul>
+<pre><code>a'B001Aa' b  12  22.50  18.65 'Queen A'                 0      9      9
+</code></pre>
+<p>This entry for the line is then immediately followed by a new line with the text <code>  path=no</code> (two spaces in front)
+and is then followed by an entry to for each transit segment record with an example below:</p>
+<pre><code>   110474      dwt=+0.22   ttf=4      us1=30.019   us2=1   us3=0
+</code></pre>
+<p>Note that there are three spaces before the first column.  The first column is the index of the origin node index
+for the transit segment. The second is the dwell time for the link.  If the dwell time starts with a <code>+</code> then people are
+allowed to board at that location.  If the dwell time starts with a <code>#</code> then it is does not allow boarding or alighting.</p>
+<p>The final row for the segment information only contains the last origin node number, and the amount of time that each bus will spend for
+a layover.  An example is below, note that there are three spaces before the origin node number as the rest of the segments:</p>
+<pre><code>    110469        lay=0.00
+</code></pre>
+<h3 id="turn_resultscsv">turn_results.csv</h3>
+<p>This file contains will be generated if the exported scenario has a road assignment completed.  It contains the information
+about the volume of passenger car equivalent units that take the turn.</p>
+<ul>
+<li>i - The node number for the node where the vehicle comes from going to the intersection.</li>
+<li>j - The node number where the intersection is.</li>
+<li>k - The node number where the turn goes to.</li>
+<li>auto_volume - The auto volume in passenger car equivalent units (PCUs) that take this turn.</li>
+<li>additional_volume - The additional volume in passenger car equivalent units (PCUs) that take this turn, GTAModel does not use this.</li>
+<li>auto_time - 0 if the turn is allowed, -1 if the turn is not allowed.</li>
+</ul>
+<h3 id="turns231">turns.231</h3>
+<p>This file contains the definition of turns in the network.</p>
+<ul>
+<li><code>At</code> - The node number for the node where the vehicle comes from going to the intersection.</li>
+<li><code>From</code> - The node number where the intersection is.</li>
+<li><code>To</code> - The node number where the turn goes to.</li>
+<li><code>TPF</code> - The turning penalty function to use.  0 if there is no penalty, -1 if there are no turns allowed, and</li>
+<li><code>Data1</code> - <code>up1</code>, a user defined value that is not currently used in GTAModel.</li>
+<li><code>Data2</code> - <code>up2</code>, a user defined value that is not currently used in GTAModel.</li>
+<li><code>Data3</code> - <code>up3</code>, a user defined value that is not currently used in GTAModel.</li>
+</ul>
+<p>Below is an example row:</p>
+<pre><code>a  10005  12235  12235     0      0      0      0
+</code></pre>
+<h3 id="vehicles202">vehicles.202</h3>
+<p>This file contains the list of all transit vehicles in the network.</p>
+<ul>
+<li><code>id</code> - The index to use for this transit vehicle.</li>
+<li><code>description</code> - A description of the vehicle surrounded with single quotes.</li>
+<li><code>mode</code> - The single letter code for the mode that will use this vehicle.</li>
+<li><code>fleet_size</code> - The number of vehicles of this type that will be in the network, GTAModel does not use this.</li>
+<li><code>seated_capacity</code> - The number of people that can sit in the vehicle, GTAModel does not use this.</li>
+<li><code>total_capacity</code> - The total number of people that can be in the vehicle.</li>
+<li><code>cost_time_coeff</code> - Not used by GTAModel.</li>
+<li><code>cost_distance_coeff</code> - Not used by GTAModel.</li>
+<li><code>energy_time_coeff</code> - Not used by GTAModel.</li>
+<li><code>energy_distance_coeff</code> - Not used by GTAModel.</li>
+<li><code>auto_equivalent</code> - This value will set how many passenger car equivalent units (PCUs) that this vehicle will remove
+of road capacity during road assignment per run.</li>
+</ul>
+<p>Below is an example row:</p>
+<pre><code>a  17 'GoBus'    g    999    55    55   0.00   0.00   0.00   0.00   2.50
+</code></pre>
+<h3 id="versiontxt">version.txt</h3>
+<p>The version file is a standard UTF-8 text file with two lines.  The first line contains the NWP format version number.
+The second line contains the version of EMME that was used to export the NWP, for example <code>Emme 4.4.2.0 (64-bit)</code>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/file_formats/network_package_format.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

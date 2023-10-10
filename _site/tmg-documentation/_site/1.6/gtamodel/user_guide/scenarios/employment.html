@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Employment | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Employment | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/employment.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="employment">Employment</h1>
+
+<p>The employment scenario contains land-use information regarding the jobs each TAZ contains.  These jobs
+are broken done further by the number by classifying them with occupation type and employment status, whether
+or they are done at home, and if they are held by a person who lives outside of the simulation.</p>
+<p>In addition to jobs the employment scenario also often includes input files for the Truck models.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<p>For employment you have the following file and directories:</p>
+<ul>
+<li>EmpOccRates: A folder containing a CSV file for each employment category rate of jobs belonging to the category.</li>
+<li>ExternalRates: A folder containing a CSV file for each employment category with the rate of jobs belonging to external workers.</li>
+<li>WaHRates: A folder containing a CSV file for each employment category with the rate of jobs belonging to workers who work from home.</li>
+<li>TotalEmploymentByZone.csv: This file contains a CSV mapping each zone to the total employment contained within.</li>
+</ul>
+<p>Each directory contains either files, corresponding to each of the four occupations and Full-Time or Part-Time.  The four occupations
+are:</p>
+<ul>
+<li>P - Professional / Managerial</li>
+<li>G - General / Clerical Office Worker</li>
+<li>S - Sales / Retail</li>
+<li>M - Manufacturing / Construction</li>
+</ul>
+<p>This gives us a file name of <code>PF.csv</code> as Professional-Full-Time.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>All rates in the default GTAModel V4.1+ are computed at the zonal level.</p>
+</div>
+<p>If your version of GTAModel contains a freight/truck model the input files will be either in a directory called <code>Freight</code> or <code>TruckModel</code>.</p>
+<p>Contained within this truck directory will be the following files:</p>
+<ul>
+<li>AM_Directional.csv - A matrix given planning districts to control the flow of medium and heavy trucks.  It has three columns: OriginPD, DestinationPD, and a Factor to apply.</li>
+<li>cbd.csv - This file gives each TAZ a ratio of how much of a &quot;CBD&quot; (central business district) it is.</li>
+<li>emp_xy.csv - This file gives how much employment of each two-digit NAICS code there is for each TAZ.</li>
+<li>est_xy.csv - This file gives how many establishments of each two-digit NAICS code there is for each TAZ.</li>
+<li>External-Heavy.csv - This contains how many heavy trucks we are expecting to come (and go out) for the external zones.</li>
+<li>External-Light.csv - This contains how many light trucks we are expecting to come (and go out) for the external zones.</li>
+<li>External-Medium.csv - This contains how many medium trucks we are expecting to come (and go out) for the external zones.</li>
+<li>PM_Directional.csv - A matrix given planning districts to control the flow of medium and heavy trucks.  It has three columns: OriginPD, DestinationPD, and a Factor to apply.</li>
+<li>rural.csv - This file gives each TAZ a ratio of how much of is it classified as rural.</li>
+<li>Special-Heavy.csv - This contains how many heavy trucks we are expecting to come (and go out) for the special generator zones.</li>
+<li>Special-Light.csv - This contains how many light trucks we are expecting to come (and go out) for the special generator zones.</li>
+<li>Special-Medium.csv - This contains how many heavy trucks we are expecting to come (and go out) for the special generator zones.</li>
+<li>suburban.csv - This file gives each TAZ a ratio of how much of is it classified as suburban.</li>
+<li>total_households.csv - The total number of households in each TAZ.</li>
+<li>urban.csv - This file gives each TAZ a ratio of how much of is it classified as urban (but not CBD).  It has two columns, TAZ, the ratio [0.0-1.0]</li>
+</ul>
+<p>The sum for each TAZ for <code>cbd.csv</code>, <code>rural.csv</code>, <code>suburban.csv</code>, and <code>urban.csv</code> should add up to one.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>In older versions of GTAModel if you accidentally add an extra column to any
+of the two column CSV files the vector might not be loaded in correctly.</p>
+</div>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>When we create a new employment scenario the only file that we modify is
+<code>TotalEmplyomentByZone.csv</code>, which is updated with updated total jobs by TAZ.  In very special cases you may wish to also modify the
+ratios within <code>EmpOccRates</code>, for example if you are transforming a TAZ into a large shopping mall from an old industrial facility you
+will want to change the employment-occupation rates to include more sales instead of manufacturing.</p>
+<p>This still leaves the question of what to do with the Truck model inputs.  On the employment side we can apply
+some rates based on the changes made to <code>TotalEmploymentByZone.csv</code>.  The establishment files however are another story, they
+do not increase linearly with population.  TMG is currently exploring the topic however, for the meantime it is most common to
+keep the establishments constant across scenarios.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/employment.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

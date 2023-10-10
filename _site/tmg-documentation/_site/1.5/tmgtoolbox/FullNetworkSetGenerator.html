@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Full Network Set Generator | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Full Network Set Generator | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/tmgtoolbox/FullNetworkSetGenerator.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="full-network-set-generator">Full Network Set Generator</h1>
+
+<p>This tool takes a &quot;Base Scenario&quot; and creates time period specific networks (AM, MD, PM, EV, ON). It also cleans those networks for use in Auto and Transit assignments. For more information on the tool algorithm and the various components within the tool please visit the <a href="https://tmg.utoronto.ca/doc/1.5/gtamodel/full_network_generator.html">Full Network Set Generator Page</a></p>
+<h2 id="opening-the-tool-with-modeller">Opening the Tool with Modeller</h2>
+<p>This module can be found in Emme Modeller. Navigate to &quot;TMG Toolbox&quot; -&gt; &quot;Network Editing&quot; -&gt; &quot;Full Network Set Generator&quot;. Double click the module to open it in Emme Modeller.</p>
+<h2 id="using-the-tool-with-modeller">Using the Tool with Modeller</h2>
+<p>The &quot;Base Scenario&quot; is the scenario that contains all the information (other than headways and speeds for transit lines) for the different time periods.</p>
+<h3 id="data-files">Data Files</h3>
+<h4 id="transit-service-table">Transit Service Table</h4>
+<p>This file contains trip starts and trip ends for transit lines. It uses a csv file with three columns</p>
+<ul>
+<li><strong>emme_id</strong>: This is the id of the transit line in Emme</li>
+<li><strong>trip_depart</strong>: the departure time of the trip from the initial stop in a hh:mm format</li>
+<li><strong>trip_arrive</strong>: the arrival time of the trip to the final destination in a hh:mm format</li>
+</ul>
+<h4 id="data-for-non-service-table-lines-optional">Data for non-service table lines (optional)</h4>
+<p>This file contains information for transit lines that do not have any entries in the &quot;Transit service table&quot; file. It is again a .csv file with the following columns</p>
+<ul>
+<li><strong>emme_id</strong>: This is the id of the transit line in Emme</li>
+<li><strong>xxxx_hdw</strong>: This is the headway column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_hdw&quot; column will contain the headways for the time period starting at 6:00 AM.
+-<strong>xxxx_spd</strong>: This is the speed column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_spd&quot; column will contain the speeds for the time period starting at 6:00 AM.</li>
+</ul>
+<p>If more than one time period is being created by this tool at the same time, the last two columns can be repeated for all time periods being created.</p>
+<blockquote>
+<p>Transit Lines that do not have an entry in either the Service Table file or the Data for Non-Service Table Lines file will be deleted from the time period specific networks. If a line is present in both files, the Data for Non-Service Table Lines file will take precedent.</p>
+</blockquote>
+<blockquote>
+<p>The standard GTAModelV4 time periods are as follows:
+6:00 AM - 8:59 AM -- AM
+9:00 AM - 2:59 PM -- MD
+3:00 PM - 6:59 PM -- PM
+7:00 PM - 11:59 PM -- EV
+12:00 AM - 5:59 AM -- ON</p>
+</blockquote>
+<h4 id="aggregation-type-selection">Aggregation Type Selection</h4>
+<p>This csv file contains the transit lines and how the headway is to be calculated for each line if a Transit Service Table file is used for that line. It contains two columns</p>
+<ul>
+<li><strong>emme_id</strong>: this is the id of the transit line in Emme</li>
+<li><strong>agg_type</strong>: this is the headway calculation method. It can either be 'naive' or 'average'</li>
+</ul>
+<blockquote>
+<p>Headway calculation methods are detailed as follows. For example if line &quot;T501&quot; has 3 departures in the AM period (6 AM- 9AM) at 8:01, 8:11, and 8:31.
+The Naive aggregation approach would simply take the number of departures in a time period. For line &quot;T501&quot; the naive aggregation approach would say that 3 hour AM period means 180 minutes. 180/3 = 60 minute headways.
+The average aggregation method looks at the time in between departures and takes the average of that time. For line &quot;T501&quot;, the average approach would say that the time in between departures is 10 and 20 mins, the average of which is 15 minutes. The headway is then imputed as 15 minutes.</p>
+</blockquote>
+<h4 id="batch-line-editing-optional">Batch Line Editing (optional)</h4>
+<p>This file allows the user to make changes to specific lines as specified by the filter. This is a csv file file that has at least the following three columns.</p>
+<ul>
+<li><strong>filter</strong></li>
+<li><strong>x_hdwchange</strong>: x is the scenario number</li>
+<li><strong>x_spdchange</strong>: x is the scenario number</li>
+</ul>
+<p>Additional headway and speed pairs can be added for more scenarios.</p>
+<h4 id="default-aggregation-type">Default Aggregation Type</h4>
+<p>This lets the user choose the aggregation types for lines that are not specifically identified in the &quot;Aggregation Type Selection&quot; csv file.</p>
+<h3 id="scenarios">Scenarios</h3>
+<ul>
+<li><strong>Overwrite Full Scenarios</strong>: This box allows the tool to overwrite scenarios that already exist</li>
+<li><strong>Publish Network</strong>: This publishes the networks</li>
+<li><strong>Use Custom Scenario List</strong>: This uses the &quot;Custom Scenario List&quot; box rather than the scenario list</li>
+<li><strong>Custom Scenario List</strong>: Definitions for a custom set of scenarios. Use the following syntax. The .nup file is optional.
+Syntax: [Uncleaned scenario number] : [Cleaned scenario number] : [Uncleaned scenario description] : [Cleaned scenario description] : [Scenario start] : [Scenario End] : [.nup file]
+Use integer hours for start and end times. For Example 2:30 PM = 1430</li>
+</ul>
+<blockquote>
+<p>For each time period, there is an uncleaned and cleaned scenario. The uncleaned scenario is simply the Base scenario but with time period specific headways and speeds for the transit lines. The cleaned network removes cosmetic nodes and links in order to decrease processing times and allow for the creation of a transit fare hypernetwork.</p>
+</blockquote>
+<ul>
+<li><strong>Time Period List</strong>
+The tool then asks for the definitions of the scenarios being created, the scenario numbers, as well as the start and end times for each scenario.</li>
+</ul>
+<h3 id="transfer-modes">Transfer Modes</h3>
+<p>These are the modes that are there to transfer between transit lines and transit agencies.</p>
+<h3 id="network-filters">Network Filters</h3>
+<p>These filters are all used to clean the networks from the Uncleaned Scenario to the cleaned scenario.</p>
+<h4 id="node-filter-attribute">Node Filter Attribute</h4>
+<p>The node filter attribute will only remove candidate nodes whose attribute value != 0. Select 'No attribute' to remove all candidate nodes.</p>
+<h4 id="stop-filter-attribute">Stop Filter Attribute</h4>
+<p>The stop filter attribute will remove candidate transit stop nodes whose attribute value != 0. Select 'No attribute' to preserve all transit stops</p>
+<h4 id="connector-filter-attribute">Connector Filter Attribute</h4>
+<p>The connector filter attribute will remove centroid connectors attached to candidate nodes whose attribute value != 0. Select 'No attribute' to preserve all centroid connectors</p>
+<h4 id="line-filter-expression">Line Filter Expression</h4>
+<p>The set of lines that are selected here will have prorated transit speeds input into us1.</p>
+<h3 id="aggregation-functions">Aggregation Functions</h3>
+<p>This lets the tool know how to handle segments, nodes and links when they are cleaned in the network. For example if a cosmetic node is removed and the links that are connected to the node are merged, what should happen to the attributes of those links. It might be obvious that the length should be summed, but the other attributes are much more up to the users judgement.</p>
+<p>The syntax is as follows
+&quot;[attribute name] : [function], ...&quot;</p>
+<p>Separate (attribute-function) pairs with a comma or new line. Either the Emme Desktop attribute names (e.g. 'lanes') or the Modeller API names (e.g. 'num_lanes') can be used. Accepted functions are:</p>
+<ul>
+<li>first - Uses the first element's attribute</li>
+<li>last - Uses the last element's attribute</li>
+<li>sum - Add the two attributes</li>
+<li>avg - Averages the two attributes</li>
+<li>avg_by_length - Average the two attributes, weighted by link length</li>
+<li>min - The minimum of the two attributes</li>
+<li>max - The maximum of the two attributes</li>
+<li>and - Boolean AND</li>
+<li>or - Boolean OR</li>
+<li>force - Forces the tool to keep the node if the two attributes are different</li>
+</ul>
+<p>The default function for unspecified extra attributes is 'sum.'</p>
+<h2 id="using-the-tool-with-xtmf">Using the Tool with XTMF</h2>
+<p>The tool is called &quot;FullNetworkSetGenerator&quot;. It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.</p>
+<h3 id="attribute-aggregator">Attribute Aggregator</h3>
+<p>This is a string which specifies how to handle links and segments when they are merged. For example if a cosmetic node is removed and the links that are connected to the node are merged, what should happen to the attributes of those links. It might be obvious that the length should be summed, but the other attributes are much more up to the users judgement.</p>
+<p>The syntax is as follows
+&quot;[attribute name] : [function], ...&quot;</p>
+<p>Separate (attribute-function) pairs with a comma. Either the Emme Desktop attribute names (e.g. 'lanes') or the Modeller API names (e.g. 'num_lanes') can be used. Accepted functions are:</p>
+<ul>
+<li>first - Uses the first element's attribute</li>
+<li>last - Uses the last element's attribute</li>
+<li>sum - Add the two attributes</li>
+<li>avg - Averages the two attributes</li>
+<li>avg_by_length - Average the two attributes, weighted by link length</li>
+<li>min - The minimum of the two attributes</li>
+<li>max - The maximum of the two attributes</li>
+<li>and - Boolean AND</li>
+<li>or - Boolean OR</li>
+<li>force - Forces the tool to keep the node if the two attributes are different</li>
+</ul>
+<p>The default function for unspecified extra attributes is 'sum.'</p>
+<h3 id="base-scenario-number">Base Scenario Number</h3>
+<p>The scenario number from which Full Network Set Generator will build its time period out from.</p>
+<h3 id="connector-filter-attribute-1">Connector Filter Attribute</h3>
+<p>The connector filter attribute will remove centroid connectors attached to candidate nodes whose attribute value != 0. Input &quot;None&quot; to preserve all centroid connectors</p>
+<h3 id="default-aggregation">Default Aggregation</h3>
+<p>The default method to calculate headways for lines that are not in the &quot;Transit Aggregation Selection Table&quot;</p>
+<h3 id="line-filter-expression-1">Line Filter Expression</h3>
+<p>The line that this network filter expression will select will have transit speeds prorated and input into us1.</p>
+<h3 id="node-filter-expression">Node Filter Expression</h3>
+<p>The node filter attribute will only remove candidate nodes whose attribute value != 0. Select 'No attribute' to remove all candidate nodes.</p>
+<h3 id="stop-filter-attribute-1">Stop Filter Attribute</h3>
+<p>The stop filter attribute will remove candidate transit stop nodes whose attribute value != 0. Select 'No attribute' to preserve all transit stops</p>
+<h3 id="transfer-modes-1">Transfer Modes</h3>
+<p>These are the modes that are there to transfer between transit lines and transit agencies.</p>
+<h3 id="additional-transit-alternative-table">Additional Transit Alternative Table</h3>
+<p>Additional files containing hwo to modify transit aschedules. Each will be applied in order. They should use the same format as the &quot;Transit Alternative Table&quot; ie  a .csv file with the following columns</p>
+<ul>
+<li><strong>emme_id</strong>: This is the id of the transit line in Emme</li>
+<li><strong>xxxx_hdw</strong>: This is the headway column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_hdw&quot; column will contain the headways for the time period starting at 6:00 AM.
+-<strong>xxxx_spd</strong>: This is the speed column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_spd&quot; column will contain the speeds for the time period starting at 6:00 AM.</li>
+</ul>
+<p>Additional <strong>xxxx_hdw</strong> and <strong>xxxx_spd</strong> columns should be specified for all time periods that need to be modified.</p>
+<p>It is added by adding in the appropriate module in XTMF under it and then selecting the file location.</p>
+<h3 id="batch-edit-file">Batch Edit File</h3>
+<p>This file allows the user to make changes to specific lines as specified by the filter. This is a csv file file that has at least the following three columns.</p>
+<ul>
+<li><strong>filter</strong></li>
+<li><strong>x_hdwchange</strong>: x is the scenario number</li>
+<li><strong>x_spdchange</strong>: x is the scenario number</li>
+</ul>
+<p>Additional headway and speed pairs can be added for more scenarios.</p>
+<p>It is added by adding in the appropriate module in XTMF and then selecting the file location.</p>
+<h3 id="time-periods">Time Periods</h3>
+<p>The time periods that will be generated by Full Network Set Generator. Each module added here will be a Time Period Module.</p>
+<h4 id="time-period-module-start-time">Time Period Module Start Time</h4>
+<p>This is the start time of the time period. Use the hh:mm format</p>
+<h4 id="time-period-module-end-time">Time Period Module End Time</h4>
+<p>The time period ends the millisecond before the time specified here. Use the hh:mm format</p>
+<h4 id="time-period-uncleaned-scenario-number">Time Period Uncleaned Scenario Number</h4>
+<p>The scenario number to use for the uncleaned scenario in this time period</p>
+<h4 id="time-period-uncleaned-scenario-description">Time Period Uncleaned Scenario Description</h4>
+<p>The scenario description to use for the uncleaned scenario in this time period</p>
+<h4 id="time-period-cleaned-scenario-number">Time Period Cleaned Scenario Number</h4>
+<p>The scenario number to use for the cleaned scenario in this time period</p>
+<h4 id="time-period-cleaned-scenario-description">Time Period Cleaned Scenario Description</h4>
+<p>The scenario description to use for the cleaned scenario in this time period</p>
+<blockquote>
+<p>The difference between cleaned and uncleaned scenario lies mostly with the removal of cosmetic nodes and links in the cleaned version. For more information see the documentation referred to in the following link: <a href="https://tmg.utoronto.ca/doc/1.5/gtamodel/full_network_generator.html">Full Network Set Generator Page</a></p>
+</blockquote>
+<h4 id="transit-aggregation-selection-table">Transit Aggregation Selection Table</h4>
+<p>A csv file is added here using the appropriate XTMF module.</p>
+<p>The csv file contains the transit lines and how the headway is to be calculated for each line if a Transit Service Table file is used for that line. It contains two columns</p>
+<ul>
+<li><strong>emme_id</strong>: this is the id of the transit line in Emme</li>
+<li><strong>agg_type</strong>: this is the headway calculation method. It can either be 'naive' or 'average'</li>
+</ul>
+<blockquote>
+<p>For more details on the calculation of headways, see above in the section &quot;Aggregation Type Selection&quot;</p>
+</blockquote>
+<h4 id="transit-alternative-table">Transit Alternative Table</h4>
+<p>A csv file is added here using the appropriate XTMF module and then selecting the file location. The csv file contains the following columns</p>
+<ul>
+<li><strong>emme_id</strong>: This is the id of the transit line in Emme. Transit lines that do not have an entry in the Transit Service Table need to have an entry here or they will not be present in the time periods that will be generated.</li>
+<li><strong>xxxx_hdw</strong>: This is the headway column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_hdw&quot; column will contain the headways for the time period starting at 6:00 AM.
+-<strong>xxxx_spd</strong>: This is the speed column corresponding to the time period starting with &quot;xxxx&quot; in a &quot;hhmm&quot; format. For example: The &quot;0600_spd&quot; column will contain the speeds for the time period starting at 6:00 AM.</li>
+</ul>
+<p>Additional <strong>xxxx_hdw</strong> and <strong>xxxx_spd</strong> columns should be specified for all time periods that need to be modified.</p>
+<h4 id="transit-service-table-1">Transit Service Table</h4>
+<p>A csv file is added here using the appropriate XTMF module and then selecting the file location.
+This file contains trip starts and trip ends for transit lines. It uses a csv file format with the following three columns</p>
+<ul>
+<li><strong>emme_id</strong>: This is the id of the transit line in Emme</li>
+<li><strong>trip_depart</strong>: the departure time of the trip from the initial stop in a hh:mm format</li>
+<li><strong>trip_arrive</strong>: the arrival time of the trip to the final destination in a hh:mm format</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/tmgtoolbox/FullNetworkSetGenerator.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

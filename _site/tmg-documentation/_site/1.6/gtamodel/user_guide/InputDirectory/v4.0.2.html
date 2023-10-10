@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>GTAModel V4.0.2 Input Directory | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="GTAModel V4.0.2 Input Directory | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/InputDirectory/v4.0.2.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gtamodel-v402-input-directory">GTAModel V4.0.2 Input Directory</h1>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4.0.2 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.
+The scenario names are not required to be the same between the different scenario folders.</p>
+</div>
+<h2 id="activity-distributions">Activity Distributions</h2>
+<p>This directory contains the information on how to generate activity episodes.  Between runs these files should not change unless it has been recalibrated.</p>
+<h2 id="base-year-matrix">Base Year Matrix</h2>
+<p>Files contained in this directory are used for estimation and validation purposes.</p>
+<p>The folder <code>AccessStationInitialCapacities</code> contains a CSV vector for each time period with the ratio of the number of parking
+spots for each station that are occupied.</p>
+<h2 id="estimation">Estimation</h2>
+<p>This directory contains the parameters used to estimate the different models contained within GTAModel.</p>
+<h2 id="estimation-result">Estimation Result</h2>
+<p>This directory contains the results of the estimation process for GTAModel V4.<br>
+The mode choice algorithm�s parameters are read in from this directory.<br>
+For re-calibration you can edit the mode choice�s values, please contact TMG before doing this though for guidance.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In GTAModel V4.0 the mode choice estimation results are used in order to setup the parameters for the run.  Starting in
+GTAModel V4.1 the parameters are directly integrated into the model system.</p>
+</div>
+<h2 id="scenario-employment">Scenario-Employment</h2>
+<ul>
+<li>EmpOccRates: A folder containing a CSV file for each employment category rate of jobs belonging to the category.</li>
+<li>ExternalRates: A folder containing a CSV file for each employment category with the rate of jobs belonging to external workers.</li>
+<li>WaHRates: A folder containing a CSV file for each employment category with the rate of jobs belonging to workers who work from home.</li>
+<li>TotalEmploymentByZone.csv: This file contains a CSV mapping each zone to the total employment contained within.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>All rates in the default GTAModel V4.0.2 are computed at the planning district level. Some versions of the model have
+changed this to work at the zonal level.</p>
+</div>
+<h2 id="scenario-network">Scenario-Network</h2>
+<p>Each year contains a file called BaseNetwork.nwp containing the master network.  Each scenario then contains a set of files
+that are used for generating the time period networks.  More information can be found <a href="../file_formats/network_scenario_format.html">here</a> describing their format.</p>
+<h2 id="scenario-population">Scenario-Population</h2>
+<ul>
+<li>HouseholdData:
+<ul>
+<li>Households.csv:</li>
+<li>Persons.csv:</li>
+</ul>
+</li>
+<li>WorkerCategories: For each occupation and employment category a CSV file is exists containing with three columns:
+Zone, WorkerCategory, and the ratio of that worker category for the given zone.</li>
+<li>ZonalResidence: For each occupation and employment category a CSV exists containing two columns:
+Zone, and the number of workers in that zone that work within the GTHA and the number of non-roaming workers of that
+category living in that zone.</li>
+<li>ZoneData:
+<ul>
+<li>Zones.csv: Contains information related to each zone in the zone system.  A detailed description of the format can be found <a href="../file_formats/zones_file_format.html">here</a>.</li>
+<li>Zones.zfc: A binary cached version of the Zones.csv.  Starting in XTMF1.5 this file is no longer created during the model run.</li>
+<li>Regions.csv: A CSV file with two columns: (Zone, Region).  Each zone can only belong to a single region.  External zones
+should be absent or given a region number of 0.</li>
+</ul>
+</li>
+</ul>
+<h2 id="scenario-stations">Scenario-Stations</h2>
+<ul>
+<li>StationCapacity.csv: A CSV file with the columns in the order of Zone and Capacity for each station zone.</li>
+</ul>
+<h2 id="scenario-transit-fares">Scenario-Transit Fares</h2>
+<ul>
+<li>Fare Rules.xml: An XML file in the <a href="../file_formats/fare_schema_file_specification.html">fare schema format</a> describing the fare policies
+when initially boarding or transferring between transit agencies.</li>
+<li>York_Region_Zone: A folder containing a shapefile that shows the different fare zones for York Region.</li>
+</ul>
+<h2 id="school">School</h2>
+<ul>
+<li>BaseYearStudentLinkages-Elementry.csv: A square CSV matrix of home zone to school zone linkages from TTS
+for the elementary school aged students.</li>
+<li>BaseYearStudentLinkages-Highschool.csv: A square CSV matrix of home zone to school zone linkages from TTS
+for the highschool aged students.</li>
+<li>BaseYearStudentLinkages-PostSecondary.csv: A square CSV matrix of home zone to school zone linkages from TTS
+for the post secondary aged students.</li>
+<li>ElementaryStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.</li>
+<li>HighschoolStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.</li>
+<li>UniversityStudentsByZone2011.csv: A CSV vector containing the number of students from TTS by home zone.</li>
+</ul>
+<h2 id="validation">Validation</h2>
+<ul>
+<li>RoadCounts
+<ul>
+<li>Screenline Mapping 2.csv: This file contains a mapping of screenline names to the station numbers within
+TMG's base year network.  This file is used in the model system.</li>
+<li>Screenline Mapping.csv: This file contains the same mapping of screenline names to the station numbers
+with the addition of local screenline names and local station ids.</li>
+</ul>
+</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/InputDirectory/v4.0.2.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

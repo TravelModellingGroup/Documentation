@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Export Boarding And Alighting | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Export Boarding And Alighting | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Export/ExportBoardingAndAlighting.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="export-boarding-and-alighting"><strong>Export Boarding And Alighting</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.5.1+ and XTMF2.</p>
+</div>
+<p>The Export Boarding And Alighting tool extracts total number of boardings and alightings on each transit stop.  <code>ExportBoardingAndAlighting</code> is a tool that is used to process Assigned Networks coming out of a GTAModel run.</p>
+<p>Latest version of this tool includes the ability to:</p>
+<blockquote>
+<ul>
+<li>Receive JSON object parameters from XTMF2 containing location to input files, output files, and EMME scenario containing assigned network (from GTAModel) to process</li>
+<li>Receive JSON file parameters from Python API call containing location to input files, output files, and EMME scenario containing assigned network (from GTAModel) to process (see parameter Script Example below)</li>
+<li>The input file is a comma-separated values (CSV) file containing id of stop of interest and description of stop (eg. station name), if available</li>
+</ul>
+</blockquote>
+<h2 id="tool-flow"><strong>Tool Flow</strong></h2>
+<p>To run this tool, parameters can be provided by the user through the XTMF2 GUI or as python API call.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This tool only works if scenario has transit result.</p>
+</div>
+<figure>
+    <img src="images/boarding_alighting.drawio.svg" alt="Export Boarding and Alighting Flowchart">
+    <figcaption>Figure 1: Export Boarding and Alighting Flowchart</figcaption>
+</figure>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>ExportBoardingAndAlighting</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Export&quot; -&gt; &quot;Export Boarding And Alighting&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Export/export_boarding_and_alighting.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>ExportBoardingAndAlighting</code> tool can be set by the users. This tool is called <code>ExportBoardingAndAlighting</code>. In <strong>XTMF2</strong>, it is available to add within a model system.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>ExportBoardingAndAlighting</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import inro.modeller as _m
+_MODELLER = _m.Modeller()
+&quot;&quot;&quot;
+    sample inputs.csv
+        id, station_desc
+        100, Keele
+        322, Union
+&quot;&quot;&quot;
+parameters = {
+    &quot;scenario_number&quot;: 5,
+    &quot;input_file&quot;: &quot;node_of_interest.csv&quot;,
+    &quot;export_file&quot;: &quot;stops_boarding_alightings_PM.csv&quot;,
+    &quot;write_to_file&quot;: False
+}
+export_board_and_alight = _MODELLER.tool(&quot;tmg2.Export.export_boarding_and_alighting&quot;)
+export_board_and_alight(parameters)
+</code></pre>
+<h3 id="module-parameter-explanation-assign-traffic">Module Parameter Explanation: &quot;Assign Traffic&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Scenario Number <code>integer</code></td>
+<td style="text-align: left;">The scenario number to execute against</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input File <code>string</code></td>
+<td style="text-align: left;">CSV file path containing id of stop of interest and description of stop (eg. station_desc), if available, to read from</td>
+</tr>
+<tr>
+<td style="text-align: left;">Output File <code>string</code></td>
+<td style="text-align: left;">CSV file path right output to. The output has the following header <code>&quot;node_id&quot;, &quot;boardings&quot;, &quot;alightings&quot;, &quot;x&quot;, &quot;y&quot;, &quot;station&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Write to File <code>boolean</code></td>
+<td style="text-align: left;">Set to <code>true</code> if you have your node ids of interest or <code>false</code> if you want the tool to use the nodes of interest from network in specified scenario</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Export/ExportBoardingAndAlighting.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

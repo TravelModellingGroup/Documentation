@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Model Outputs | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Model Outputs | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/model_outputs.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="model-outputs">Model Outputs</h1>
+
+<p>Modelling travel demand allows us to forecast alternative scenarios.</p>
+<p>The planning agencies typically extract out the following types of data:</p>
+<ol>
+<li>Mode share/split</li>
+<li>Public transit ridership</li>
+<li>Vehicle Kilometres Travelled (VTKs)</li>
+<li>Road congestion</li>
+</ol>
+<p>In this document we will cover the outputs for a standard GTAModel V4 model system.  Your
+model system provider might include additional outputs, or perhaps remove some.  If
+you have received your model system from someone outside of TMG, please consult their
+User's Guide for anything not found here.</p>
+<h2 id="overview">Overview</h2>
+<p>To extract out this data the base models will output the following:</p>
+<ol>
+<li>Assigned Networks - Network Packages (NWP) files for each time period containing the final assigned road and transit scenarios.</li>
+<li>Demand - For each time period a set of <a href="../file_formats/emme_binary_matrix.html">MTX</a> matrices</li>
+<li>LOS Matrices - For each time period a set of <a href="../file_formats/emme_binary_matrix.html">MTX</a> matrices</li>
+<li><a href="../file_formats/microsim.html">Microsimulation Results</a> - A set of CSV files that give the low level details from TASHA
+for Households, Persons, Trips, Mode Choice, Station Choice, and linkages between driver and passenger.</li>
+<li>Screenlines</li>
+<li>StationAccess - For each time period and station the number of people using the station and the total capacity of the drive access station.</li>
+</ol>
+<h2 id="assigned-networks">Assigned Networks</h2>
+<p>In the assigned networks output directory you will find nine network package files.  Each time
+period will have both a Road and Transit NWP file available except for overnight which will only have a road assignment.
+These network package files can then be used for post-processing for customized analyses.  To use a NWP you can use the
+TMGToolbox, contained in XTMF's Modules directory, from EMME modeller and run the tool Import Network Package.</p>
+<h2 id="demand">Demand</h2>
+<p>The demand folder contains the demand going into their respective assignments.  For auto assignment there is demand
+for auto passenger, light, medium, and heavy trucks.  This demand is in peak-hour PCU units.  For PCUs they are
+1, 1, 1.75, 2.5, respectively for auto, light, medium and heavy trucks respectively.  The transit demand is stored in
+peak-period numbers.  Each demand matrix is prefixed with the time period's 2 letter code.</p>
+<p>In V4.2, you will also find an Airport directory.  This will contain for each time period the demand, that has already been added
+to the other demand matrices, of different types of demand.</p>
+<ul>
+<li>NBR - Non-Business Resident</li>
+<li>NBV - Non-Business Visitor</li>
+<li>BR - Business Resident</li>
+<li>BV - Business Visitor</li>
+</ul>
+<p>For a more detailed explanation of the airport model click <a href="../../model_design/airport_model.html">here</a>.</p>
+<h2 id="los-matrices">LOS Matrices</h2>
+<p>This directory contains origin to destination matrices containing travel time and cost information generated for the final iteration.
+The directory is broken down by the five time periods and each contain:</p>
+<ul>
+<li>acost - The cost it takes to travel between zones, this includes tolls and gas costs in base year dollars.</li>
+<li>aivtt - The auto in vehicle travel times in minutes.</li>
+<li>atoll - The tolls paid to travel between zones in base year dollars.</li>
+<li>tfare - The transit fares paid to travel between zones in in base year dollars.</li>
+<li>tivtt - The transit in-vehicle travel times in minutes.</li>
+<li>tptt - The perceived transit travel times between zones.  You can think of this as utils normalized in minutes.</li>
+<li>twait - The amount of time spent waiting between zones in minutes.</li>
+<li>twalk - The amount of time spent walking between zones in minutes.</li>
+</ul>
+<h2 id="microsim-results">Microsim Results</h2>
+<p>This directory contains the microsim data from the model run.  You can find detailed information about
+this dataset <a href="../file_formats/microsim.html">here</a>.</p>
+<h2 id="screenlines">Screenlines</h2>
+<p>This folder contains counts for screenlines and stations for each time period. For the files <code>AM.csv</code>, <code>MD.csv</code>, <code>PM.csv</code>, and <code>EV.csv</code> you will
+have a CSV file with columns in order:</p>
+<ul>
+<li>Screenline - The name of the screenline that is being reported.</li>
+<li>nStations - The number of count stations contained in the network for this screenline.</li>
+<li>nMissing - The number of countposts for the screenline that was not found in the network.</li>
+<li>AutoVolume - The total PCUs that cross the screenline.</li>
+<li>AdditionalVolume - The total of the additional demand (in PCUs) crossing the screenline.</li>
+</ul>
+<p>The rest of the files contain count post results stored in CSV files with two columns:</p>
+<ul>
+<li>Countpost - The unique numerical identifier that describes a countpost with a pariticular direction.</li>
+<li>Auto Volume - The counts stored in PCU units for that countpost.</li>
+</ul>
+<p>Each auto class, Auto, Light, Medium, Heavy have their counts in their own files stored by time period.</p>
+<h2 id="station-access">Station Access</h2>
+<p>The station access folder contains four files, one for each time period, containing the amount of
+parking space demand there is for each station zone.</p>
+<ul>
+<li>Zone - The zone number used for the station in the network.</li>
+<li>Factor - The demand divided by the capacity.</li>
+<li>Demand - The number of cars the simulation wants to park at the station.</li>
+<li>Capacity - The total number of parking spots for the station.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The parking capacity model uses a soft cap so you will likely find some stations that have a factor
+over one.</p>
+</div>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now that we have an understanding of how GTAModel's outputs work we recommend going <a href="../overview.html">back to the overview</a> and seeing what you want to explore next.
+In most cases you will need to start <a href="../overview.html#creating-alternative-scenarios">preparing new scenarios</a>.  Alternatively you might be more interested in learning
+how to <a href="../overview.html#integrating-custom-code">program modules to integrate into GTAModel</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/model_outputs.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

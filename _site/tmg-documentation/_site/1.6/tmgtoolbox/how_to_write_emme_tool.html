@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>How to write Emme tools | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="How to write Emme tools | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/how_to_write_emme_tool.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="how-to-write-emme-tools">How to write Emme tools</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The TMG toolbox in Emme is Python-based, of which the source code can be found at <a href="https://github.com/TravelModellingGroup/TMGToolbox">GitHub</a>. The tools are open-source licensed under GPL3 and can be accessed through Emme Modeller or XTMF.</p>
+<blockquote>
+<p>Modeller is a Python interface to Emme and its associated processes, which can be interacted with using its mouse-driven graphical interface (GUI) or using Python commands.<br>
+<img src="images/Modeller_structure.png" alt="alt text" title="Modeller Interface">
+<br></p>
+</blockquote>
+<p>Custom tools can be created for running through the Modeller GUI, simply by sub-classing <code>inro.modeller.Tool()</code>. A Tool is a Python object, it has</p>
+<ul>
+<li>a <strong><code>run()</code></strong> method which executes the tool's function</li>
+<li>a <strong><code>page()</code></strong> method which produces the tool's interface</li>
+<li>a <strong><code>__call__()</code></strong> method which works with XTMF</li>
+</ul>
+<p>Tools can also be configured to report progress by implementing the <code>percent_completed(min, max, value)</code> method.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the tools to be called from <strong>XTMF</strong>, the attribute names used in the <code>__call__()</code> method need to be the same as in the parameter list. Four types of parameters are supported, which are <code>float</code>, <code>integer</code>, <code>string</code>, and <code>bool</code>.</p>
+</div>
+<h2 id="set-up">Set up</h2>
+<p>Tools or scripts for Emme begin with the loading of the modeller library:</p>
+<p><code>import inro.modeller as _m</code></p>
+<p>The Modeller Object is obtained through the library:</p>
+<p><code>_M = _m.Modeller()</code></p>
+<p>The Modeller Object contains linkages to a particular Emme Project:</p>
+<ul>
+<li><p>to return an App object (Emme application), referring to the current Emme Desktop process:
+<code>_M.desktop</code></p>
+</li>
+<li><p>to return an Emmebank object, referring to the active databank for the Emme Project:
+<code>_M.emmebank</code></p>
+</li>
+<li><p>to return the currently-selected primary scenario:
+<code>_M.scenario</code></p>
+</li>
+<li><p>to return the tool specified by the namespace argument:
+<code>_emmetool =_M.tool(namespace='ToolNameSpace')</code></p>
+</li>
+<li><p>to return a library ('module'):
+<code>_util = _M.module('tmg.common.utilities')</code></p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>ToolNameSpace</strong> is the full, unique name for a given INRO standard tool, which distinguishes it from third-party tools, such as the TMG Toolbox. An example will be <code>_ExtendedAssignmentTool =_M.tool('inro.emme.transit_assignment.extended_transit_assignment')</code>.</p>
+<p>Modules in <strong>tmg.common</strong> folder contain a variety of helpful 'mini-functions' for Python scripting.</p>
+</div>
+<h2 id="logbook">Logbook</h2>
+<p>To write an entry to the Logbook, an example is as below. The optional value keyword argument accepts a string of HTML, which allows users to attach custom reports:</p>
+<pre><code>_m.logbook_write(&quot;Hello World&quot;, value=None)
+</code></pre>
+<p>To &quot;indent&quot; one level in the Logbook, use the <code>with</code> statement. All other logbook entries written inside the context will be subsequently indented:</p>
+<pre><code>with _m.logbook_trace(&quot;Trace level one&quot;):
+    _m.logbook_write(&quot;Logbook write level two&quot;)
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Modeller's <strong>PageBuilder</strong> object can be used to help generate HTML for reports to the Logbook. Reports can contain tables, charts, or even images of model results. Several tools in the TMG Toolbox produce reports to the Logbook.</p>
+</div>
+<h2 id="tool-page-builder">Tool Page Builder</h2>
+<p>The <strong><code>ToolPageBuilder</code></strong> is a class designed to facilitate building HTML interfaces for Tools.</p>
+<p>In order for the Modeller GUI to set tool inputs, each input needs to be declared as an <strong><code>Attribute</code></strong>, with a given type ('declared').</p>
+<p>The <strong><code>ToolPageBuilder</code></strong> can then be instructed to add inputs for each <strong><code>Attribute</code></strong>, with a variety of selection types: File browsers, text boxes, radio buttons, and comboboxes.</p>
+<h2 id="common-objects">Common Objects</h2>
+<h3 id="matrix--matrixdata">Matrix &amp; MatrixData</h3>
+<p><strong>Matrix</strong> object is obtained through the Emmebank object. All matrix formats are supported, including Scalar, Origin, Destination, and Full matrices. The Matrix object itself includes metadata only, such as id, timestamp, type, and description. Actual matrix values must be accessed through the special <strong>MatrixData</strong> object.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Many INRO tools (such as the Matrix Calculator) only require the matrix ID, which is not the same as the Matrix object.</p>
+</div>
+<p><strong>MatrixData</strong> object represents an in-RAM copy of matrix values (i.e. just the numbers but not the name). It can be obtained using <code>get_data(scenario_id=None)</code> method of a <strong>Matrix</strong> object, and can also be 'saved' back to the disk using the <code>set_data(matrix_data, scenario_id=None)</code> method of a <strong>Matrix</strong> object.</p>
+<h3 id="network">Network</h3>
+<p><strong>Network</strong> object is an in-RAM representation of an Emme network. It manages access, deletion, and creation of network elements, and does so very quickly (as compared to the Network Editor).</p>
+<p>In Emme, networks use a load/save system. <strong>Network</strong> objects are loaded into Python from a Scenario object using <code>get_network()</code>, and the Emme databank is not updated until the Network is saved into a Scenario using <code>publish_network()</code>.</p>
+<p>There are 7 network elements, which can be accessed, iterated through, created, or removed from the <strong>Network</strong> object. Their relationship is as shown below:<br>
+<img src="images/NetworkElements.png" alt="alt text" title="Network Elements">
+<br></p>
+<p>Each network element has a set of <em>standard</em> and <em>extra</em> attributes. For example, the <em>Link</em> object has the following <em>standard</em> attributes: length, type, num_lanes, volume_delay_func, data1, data2, and data3. <em>Extra</em> attribute values (which are started with '@') must be accessed using the `[attribute_name]` notation, since '@' is a special character in Python.</p>
+<p>Example:</p>
+<pre><code>link_1 = network.link(20055,20056)
+
+# to access the length of the link
+length_link_1 = link_1.length
+length_link_1 = link_1['length']
+
+# to access an extra attribute of the link
+toll_link_1 = link_1['@toll']
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>ExtraAttribute</strong> objects are managed by the <strong>Scenario</strong> object, since each Emme scenario can have distinct sets of extra attributes.</p>
+</div>
+<p>Most tools which require an extra attribute input only require its ID, not the extra attribute object itself!</p>
+<p>The <strong>Node</strong> object can represent both regular nodes and centroids, which can be distinguished using the <code>is_centroid</code> attribute (True for centroids, False otherwise). Similarly, <code>is_intersection</code> attribute can be used to flag nodes which are the k-node of a <strong>Turn</strong> object. The <code>vertices</code> attribute of <strong>Link</strong> objects contains a List of (x, y) tuples. Since tuples are immutable in Python, the only way to change link vertices is to replace them entirely.</p>
+<p><strong>Segments</strong> can be accessed in forward order (starting from 0) or in backwards order (starting with the hidden segment from -1). The <code>segments(include_hidden=False)</code> method is the only iterator method which accepts an argument. Namely, a Boolean flag to indicate whether the iterator should also include the final hidden segment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>The<code>volume_delay_func</code> attribute references the ID of the link's VDF, not the <strong>Function</strong> object itself.</li>
+<li>The <strong>Network</strong> object only supports deletion and creation of transit lines. There is currently no support for partial editing.</li>
+</ul>
+</div>
+<h3 id="function">Function</h3>
+<p>Databank functions also have corresponding objects in the Modeller API, and can be accessed from the <strong>Emmebank</strong> object using the <code>function()</code> method. All function types are represented, including:</p>
+<ul>
+<li>Volume-delay function (VDF)</li>
+<li>Transit time function (TTF)</li>
+<li>Turn penalty function (TPF)</li>
+</ul>
+<h2 id="a-simple-tool-example">A Simple Tool Example</h2>
+<pre><code>import inro.modeller as _m
+_M = _m.Modeller()
+_tmgTPB = _M.module('tmg.common.TMG_tool_page_builder')
+
+class HelloWorld(_m.Tool()):
+  version = '1.0.0'
+  def __init__(self):
+    self.Scenario = _M.scenario
+
+  def page(self):
+    pb = _tmgTPB.TmgToolPageBuilder(self, 
+             title=&quot;Hello World v%s&quot; % self.version,
+             description=&quot;Prints out a Hello world for each entry point.&quot;,
+             branding_text=&quot;- TMG Toolbox&quot;)
+    return pb.render()
+
+  def run(self):
+    print &quot;Hello World, Modeller!&quot;
+
+  def __call__(self, parameters):
+    print &quot;Hello World, XTMF&quot; 
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/how_to_write_emme_tool.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Initial Configuration | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Initial Configuration | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/initial_configuration.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="initial-configuration">Initial Configuration</h1>
+
+<p>In this section we will setup the inputs and EMME databases required for running GTAModel V4.</p>
+<h2 id="gtamodel-v4-inputs">GTAModel V4 Inputs</h2>
+<p>In order to run GTAModel you will require inputs that describe the land-use, population, and network configuration.
+You can find a full outlining of the input directories for various versions
+<a href="../InputDirectory/index.html">here</a>.  To get the input files for your base model
+please contact TMG and they will prepare it for download or give you the internal network file path for the input folder.</p>
+<h2 id="setting-up-the-emme-run-databases">Setting up the EMME Run Databases</h2>
+<p>Now that we have EMME installed and are able to run the software we can create one of the databases that GTAModel will require to execute its network assignments.  You can
+find detailed information on how to do this, and setup the TMGToolbox for EMME <a href="../Network/emme_project_setup.html">here</a>.  <strong>Please make sure to link to the TMGToolbox that
+came with your copy of XTMF</strong> unless you are testing custom tools or are working from TMG's development branch.</p>
+<p>Now that you have a working database we will make enough copies of the EMME project and database to work with your model system.
+For models coming from TMG based on GTAModel V4.0 this will be four, for GTAModel V4.1+ this will be two.
+specified otherwise.  If your model system is coming from a consulting firm instead of TMG please consult their
+model documentation to see how they have setup their run databanks.</p>
+<h2 id="setting-up-the-model-system">Setting up the Model System</h2>
+<p>Now that we have the environment setup we can continue with preparing the model system.  The following section
+will walk you through importing the model system and configuring it for your first run.  For general information
+on using XTMF please click <a href="../../../xtmf/getting_familiar_with_xtmf.html">here</a>.</p>
+<h3 id="importing-the-model-system">Importing the Model System</h3>
+<p>Now that we have the software and input files ready to run, we can setup a new project and import the base model system
+into XTMF.</p>
+<p>The first step is to make sure that you have a copy of your model system either from TMG or your consulting firm.
+This will be an XML file that describes how all of the modules fit together.</p>
+<p>Once we have our model system file our next step is to open XTMF.  In order to do this you will need to open
+the directory that you extracted XTMF to earlier and run the program <code>XTMF.GUI.exe</code>.  Windows might give you
+a warning that you are running a program from the internet.  Depending on your version of Windows see if there
+is an option that says run anyways and select it.  If you are still having problems running XTMF please
+contact TMG for assistance.</p>
+<p>With XTMF open you will now be able to create a new project and import the model system.  From the Start
+screen select <code>Create a new project</code>.  This will bring up dialog to enter in the project's name.  Once you
+have selected a name you will be presented with the project's screen.  On the bottom right you will see a &quot;+&quot;
+button, press it and a set of options will pop-up.  Select the option <code>Import Model System From File</code>.  You will
+then be directed to select the XML model system file provided by TMG or your consulting firm.  After selecting the file
+you will be prompted to give the model system a name within your project.</p>
+<h3 id="initial-configuration-1">Initial Configuration</h3>
+<p>Now that we have the model system imported we are going to need to fix some file paths so it will work
+on our machine. Our first step is to open the model system.  You can do this by double clicking on the
+model system that we just imported under the <em>Model Systems</em> list on the left hand side of the project's page.
+This will bring up the model system's screen.</p>
+<p>On the left hand side of the screen you will see a tree that represents the model system's modules.  On the right
+you will initial see the Quick Parameters. Once you have clicked on a module a second set of parameters will popup
+that are specific to that particular module.</p>
+<p>After setting up EMME and your input directory the model system should be configured properly to execute your
+first model run.</p>
+<h4 id="emme">EMME</h4>
+<p>In most configurations you will see two quick parameters named <code>Emme Project 1</code> and
+<code>Emme Project 2</code>.  We will need to change these two file paths to match the EMME projects that were created previously.
+<code>Emme Project 1</code> will be used to run the AM MD (mid day), and ON time period. <code>Emme Project 2</code> will be used for the PM
+and EV (evenning) time periods.  To set the paths you can either copy in the path manually, or follow one of the following
+techniques for loading in a file path.  Press ctrl+f to bring up the file select dialog and navigate to the <code>.emp</code> file
+in the EMME project directory, or drag and drop the <code>.emp</code> file from file explorer.</p>
+<p>If you have multiple versions of EMME installed on your machine you may want to specify which version of EMME you would like
+to use.  If you want to do this navigate to <code>Resources</code> inside of modules and select the child module <code>Emme Project</code>.
+Inside of that module you can then alter the <code>EmmePath</code> parameter to the installation directory of the version you want.
+For example if you want to use EMME 4.4.4.2, and assuming that it has been installed to the default path, you would enter
+<code>C:\Program Files\INRO\Emme\Emme 4\Emme-4.4.4.2</code> into the parameter.</p>
+<h4 id="input-directory">Input Directory</h4>
+<p>You will also need to setup the location of the input directory that you have previously obtained from TMG or your
+consultant.  First select the root (top) module to bring up its parameters.  From its parameters on the right go to
+<code>Input Base Directory</code> and then enter in the path that you have stored those files to.  You can do this by either
+manually entering in the path, or by pressing ctrl+d to bring up the select directory dialog and navigate to the
+input directory.</p>
+<h2 id="next-step">Next Step</h2>
+<p>Now that we have all of our files in place, and we have our run databanks we can now <a href="executing_a_run.html">execute our first run</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/initial_configuration.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

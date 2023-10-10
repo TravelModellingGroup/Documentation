@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ITashaModeChoice | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ITashaModeChoice | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_modechoice.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="itashamodechoice">ITashaModeChoice</h1>
+
+<p>The ITashaModeChoice interface is used to implement a new mode choice algorithm
+for TASHA.</p>
+<h2 id="methods">Methods</h2>
+<h3 id="iterationfinished">IterationFinished</h3>
+<p>This function is called by the ITashaRuntime when it completes an iteration.</p>
+<pre><code class="lang-cs">void IterationFinished(int iteration, int totalIterations);
+</code></pre>
+<h3 id="iterationstarted">IterationStarted</h3>
+<p>This function is called by the ITashaRuntime when the iteration is starting.
+The zone system and network level of service data will have already been loaded.</p>
+<pre><code class="lang-cs">void IterationStarted(int iteration, int totalIterations);
+</code></pre>
+<h3 id="loadonetimelocaldata">LoadOneTimeLocalData</h3>
+<p>This function is called by the ITashaRuntime after the zone system has been loaded.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Load the data that the Mode Choice needs to initialize
+/// &lt;/summary&gt;
+void LoadOneTimeLocalData();
+</code></pre>
+<h3 id="run">Run</h3>
+<p>This method is called for each household in parallel.  All code
+called by this method must be thread-safe.  The implementation will
+be expected to set each Trip's Mode and ModesChosen array with
+selected modes.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Run the mode choice on the given household
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;household&quot;&gt;&lt;/param&gt;
+bool Run(ITashaHousehold household);
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>The following is a simple example of a mode choice module that assigns everyone
+to use the Auto mode from TASHA.</p>
+<pre><code class="lang-cs">using XTMF;
+using Tasha.Common;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;An example mode choice implementation&quot;)]
+    public sealed class MyModeChoice : ITashaModeChoice
+    {
+        [RootModule]
+        public ITashaRuntime Root;
+
+        public void LoadOneTimeLocalData()
+        {
+            // If there is data that the mode choice needs to load after the zone system finishes you can
+            // do that here.
+        }
+
+        public void IterationStarted(int iteration, int totalIterations)
+        {
+        }
+
+        public bool Run(ITashaHousehold household)
+        {
+            var autoMode = Root.AutoMode;
+            foreach(var person in household.Persons)
+            {
+                foreach(var tripChain in person.TripChains)
+                {
+                    foreach(var trip in tripChain.Trips)
+                    {
+                        trip.Mode = autoMode;
+                        for(int i = 0; i &lt; trip.ModesChosen.Length; i++)
+                        {
+                            trip.ModesChosen[i] = autoMode;
+                        }
+                    }
+                }
+            }
+        }
+
+        public void IterationFinished(int iteration, int totalIterations)
+        {
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/tasha_modechoice.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Overview | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Overview | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/overview.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="overview">Overview</h1>
+
+<p>This document will walk you through the steps of setting up your programming
+environment, going through the interfaces that GTAModel exposes for interfacing in
+new modules, and going through some examples of modules designed for GTAModel.</p>
+<p>This document will assume that you are familiar with the C# and the .Net Framework.</p>
+<h2 id="programming-environment">Programming Environment</h2>
+<p>To start programming custom modules for XTMF you will need to setup your environment
+you can click <a href="../../../xtmf/programming/index.html">here</a> for documentation regarding how
+to setup your programming environment and create your first modules for XTMF.</p>
+<p>In addition to the standard XTMF interfaces you will also need to add references to
+<code>TashaInterfaces.dll</code> in your custom module library project to access the interfaces
+designed specifically for GTAModel.</p>
+<h2 id="example-code">Example Code</h2>
+<p>The following items are small tutorials that go over implementing common interfaces.  A full list of
+interfaces can be found in the <a href="#gtamodel-interfaces">following section</a>.</p>
+<ul>
+<li><a href="examples/counting_activities.html">Counting Activities</a> - This example will walk you through
+writing a new module using the IPostHousehold interface.  It will execute at the after GTAModel
+has finished processing each household through the scheduler and mode choice algorithms allowing keeping
+track of how each activity type was generated by the scheduler.</li>
+<li><a href="examples/new_mode.html">New Mode</a> - This example will walk you through the process of creating a new mode
+for GTAModel's mode choice algorithm.  In for this example, we will implement a model for a teleporter.</li>
+</ul>
+<h2 id="gtamodel-interfaces">GTAModel Interfaces</h2>
+<p>Beyond the standard interfaces for XTMF you will also be able to implement modules for integration below.
+The High Level Interfaces will let you access data while TASHA streams through, or implement your own
+scheduler and mode choice from scratch.</p>
+<h3 id="high-level-iterfaces">High Level Iterfaces</h3>
+<p>The following interfaces are used for integrating into TASHA's processing pipeline, or in one case
+re-implementing that pipeline without breaking compatability with other modules.</p>
+<ul>
+<li><p><a href="interfaces/access_station_choice_model.html">IAccessStationChoiceModel</a> - Using this
+interface you can implement a new access station choice model and integrate it into the
+current Drive-Access-Transit model.</p>
+</li>
+<li><p><a href="interfaces/location_choice_model.html">ILocationChoiceModel</a> - Using this interface you can
+implement a new location choice model for TASHA.  This module is responsible for
+picking discrete the destinations for other, market, and work-based-business activities when
+constructing the schedule.</p>
+</li>
+<li><p><a href="interfaces/parking_cost.html">IParkingCost</a> - This interface is extended to implement a
+new model for computing parking costs given the gap between two activities.</p>
+</li>
+<li><p><a href="interfaces/post_household.html">IPostHousehold</a> - This interface executes after the scheduler
+and mode choice have finished executing each household.</p>
+</li>
+<li><p><a href="interfaces/post_iteration.html">IPostIteration</a> - This interface executes after all households have
+been processed through the scheduler and mode choice.</p>
+</li>
+<li><p><a href="interfaces/post_scheduler.html">IPostScheduler</a> - This interface executes after the scheduler has
+finished each household but before mode choice has executed.</p>
+</li>
+<li><p><a href="interfaces/pre_iteration.html">IPreIteration</a> - This interface executes before any household has
+been processed for the current outer-loop.</p>
+</li>
+<li><p><a href="interfaces/tasha_mode.html">ITashaMode</a> - This interface is extended to implement a new mode
+that can be chosen by TASHA.</p>
+</li>
+<li><p><a href="interfaces/tasha_modechoice.html">ITashaModeChoice</a> - This interface provides interopability
+for the ITashaRuntime to use different mode choice algorithms.</p>
+</li>
+<li><p><a href="interfaces/tasha_runtime.html">ITashaRuntime</a> - This interface provides interopability for
+modules to target a generic TASHA interface without binding to a particular implementation.
+Though unexpected, this could be replaced to modify/extend the standard workflow of TASHA.</p>
+</li>
+<li><p><a href="interfaces/tasha_scheduler.html">ITashaScheduler</a> - This interface provides interopability
+for switching between different scheduler implementations for TASHA.</p>
+</li>
+<li><p><a href="interfaces/post_household_iteration.html">IPostHouseholdIteration</a> - Using this interface
+you can implement a module that runs after the mode choice has finished processing a single
+mode choice iteration through the household.  This allows you to see the combination of
+modes, access choice data, and other extremely detailed data that is recycled between
+the iterations of mode choice.</p>
+</li>
+<li><p><a href="interfaces/tour_dependent_mode.html">ITourDependentMode</a> - This interface allows you to
+implement a mode where the utility of a trip using this mode changes depending
+on the tours composition.  An example of this is the Drive Access Choice model
+where the utility of that mode requires the knowledge of both the access and
+egress portions of the tour.</p>
+</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/overview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

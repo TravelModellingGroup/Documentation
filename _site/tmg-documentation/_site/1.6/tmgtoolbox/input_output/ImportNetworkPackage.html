@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Import Network Package | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Import Network Package | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportNetworkPackage.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="import-network-package">Import Network Package</h1>
+
+<p>This tool allows the user to import a network into Emme using an NWP file (network package file)</p>
+<h2 id="opening-the-tool-with-modeller">Opening the Tool with Modeller</h2>
+<p>This module can be found in Emme Modeller. Navigate to &quot;TMG Toolbox&quot; -&gt; &quot;Input Output&quot; -&gt; &quot;Import Network Package&quot;. Double click the module to open it in Emme Modeller.</p>
+<h2 id="using-the-tool-with-modeller">Using the Tool with Modeller</h2>
+<h3 id="network-package-file">Network Package File</h3>
+<p>Under &quot;Network Package File&quot;, click &quot;Browse&quot; to open the file explorer and navigate to the Network Package (NWP) file that you wish to import into the scenario.</p>
+<blockquote>
+<p>An NWP file is a zip file that contains all the information in an Emme Network including the results of an assignment. It does not contain the strategies used in the transit assignment however.  NWP files can be &quot;unzipped&quot; using a software package like &quot;7zip&quot; or even windows (by changing the extension from &quot;.nwp&quot; to &quot;.zip&quot;. After unzipping, the individual files can be examined or even modified according to the end users goals. The files can be then be &quot;zipped&quot; again and the extension changed back to &quot;.nwp&quot; for use in the tool. Manually editing the files in this manner is only recommended for advanced users.
+An NWP file at minimum contains the following:
+version.txt
+info.txt
+base.211
+functions.411
+modes.201
+shapes.251
+transit.221
+turns.231
+vehicles.202</p>
+<p>The following are extra attribute related files which are optional
+exatts.241
+exatt_transit_lines.241
+exatt_segments.241
+exatt_nodes.241
+exatt_links.241</p>
+<p>The following are assignment results related files which are optional
+aux_transit_results.csv
+link_results.csv
+segment_results.csv
+turn_results.csv</p>
+</blockquote>
+<h3 id="new-scenario-number">New Scenario Number</h3>
+<p>Under &quot;New Scenario Number&quot;, the scenario number that you want to import the network into can be entered. This scenario number can be one that is already defined in the project or a new scenario altogether</p>
+<blockquote>
+<p>If the scenario is already defined in the project, select the number and then click away to expose the &quot;Overwrite Scenario&quot; option. Since the scenario is already defined, the option will need to be selected in order to overwrite the defined scenario with the imported Network Package</p>
+</blockquote>
+<h3 id="scenario-description">Scenario Description</h3>
+<p>The &quot;Scenario Description&quot; allows the scenario name to be selected.</p>
+<h3 id="skip-the-merging-of-functions">Skip the merging of functions?</h3>
+<p>Select the checkbox to skip the merging of functions (i.e., the functions in current Emmebank will remain the same).</p>
+<h3 id="optional-function-conflict-option">(Optional) Function Conflict Option</h3>
+<p><strong>Ignore this part if 'Skip the merging of functions' is checked, since no adding/changes will be made.</strong></p>
+<p>The &quot;Function Conflict Option&quot; describes how to reconcile the functions present in the project with the new functions that are present in the network package that is being imported. For example if 'fd1' is already defined in the project as &quot;length * 60/ul2&quot;, but in the NWP, function 'fd1' is defined as &quot;length * 60/ul3&quot;, this tells the module how to handle these conflicts.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>For Non-conflict (Non-existing) Functions</th>
+<th>For Conflict (Existing) Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EDIT</td>
+<td>Add new functions</td>
+<td>User will decide to keep existing or use new functions</td>
+</tr>
+<tr>
+<td>RAISE</td>
+<td>No change</td>
+<td>No change (Warning will be given)</td>
+</tr>
+<tr>
+<td>PRESERVE</td>
+<td>Add new functions</td>
+<td>Keeping existing functions and ignore new functions</td>
+</tr>
+<tr>
+<td>OVERWRITE</td>
+<td>Add new functions</td>
+<td>Use new functions and drop existing functions</td>
+</tr>
+</tbody>
+</table>
+<h4 id="edit-option">Edit Option</h4>
+<p>This opens a GUI which shows all the functions that have conflicts. It shows both the function in the Emme Project and the function in the NWP. It then allows the user to select which one they want to keep.</p>
+<h4 id="raise-option">Raise Option</h4>
+<p>This stops the tool if any conflicts are found</p>
+<h4 id="preserve-option">Preserve Option</h4>
+<p>This keeps the functions as defined in the Emme Project if any conflicts exist</p>
+<h4 id="overwrite-option">Overwrite Option</h4>
+<p>This overwrites any function defined in the Emme Project with the function in the NWP if a conflict exists.</p>
+<h5 id="example">Example</h5>
+<ul>
+<li>Current Emmebank: fd1 = length*50</li>
+<li>Importing Emmebank: fd1 = length*100; fd2 = length/6</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Results for fd1</th>
+<th>Results for fd2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EDIT</td>
+<td>will ask user to choose the desired definition for fd1</td>
+<td>fd2 will be added</td>
+</tr>
+<tr>
+<td>RAISE</td>
+<td>fd1 = length*50, warning will occur</td>
+<td>no fd2 will be added</td>
+</tr>
+<tr>
+<td>PRESERVE</td>
+<td>fd1 = length*50</td>
+<td>fd2 will be added</td>
+</tr>
+<tr>
+<td>OVERWRITE</td>
+<td>fd1 = length*100</td>
+<td>fd2 will be added</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-the-tool-with-xtmf">Using the Tool with XTMF</h2>
+<p>The tool is called &quot;ImportNetworkPackage&quot;. It is available to add under ExecuteToolsFromModellerResource or EmmeToolsToRun.</p>
+<h3 id="add-functions">Add functions</h3>
+<p>This flag allows the user to specify whether they want to add functions (including non conflicting ones) on import</p>
+<h3 id="function-conflict-option">Function Conflict Option</h3>
+<p>The &quot;Function Conflict Option&quot; describes how to reconcile the functions present in the project with the new functions that are present in the network package that is being imported. For example if 'fd1' is already defined in the project as &quot;length* 60/ul2&quot;, but in the NWP, function 'fd1' is defined as &quot;length * 60/ul3&quot;, this tells the module how to handle these conflicts. In all options, functions that do not have a conflict will be added.</p>
+<h4 id="raise-option-1">Raise Option</h4>
+<p>This stops the tool if any conflicts are found</p>
+<h4 id="preserve-option-1">Preserve Option</h4>
+<p>This keeps the functions as defined in the Emme Project if any conflicts exist</p>
+<h4 id="overwrite-option-1">Overwrite Option</h4>
+<p>This overwrites any function defined in the Emme Project with the function in the NWP if a conflict exists.</p>
+<h3 id="scenario-id">Scenario Id</h3>
+<p>The scenario number in which to import the network package into. If the scenario is already defined, it will overwrite it. If it is not defined, then it will be created.</p>
+<h3 id="scenario-name">Scenario Name</h3>
+<p>The name of the scenario that will have the network package can be defined here.</p>
+<h3 id="network-package">Network Package</h3>
+<p>The location of the stored network package file (NWP) should be defined here using the appropriate modules.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/input_output/ImportNetworkPackage.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Convert Script To Tool | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Convert Script To Tool | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeScripting/ConvertScriptToTool.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="convert-script-to-tool">Convert Script To Tool</h1>
+
+<p>With our completed script from the section <a href="WritingAScript.html">Writing A Script</a> we can now convert
+that script into a tool.  For reference the script is below:</p>
+<pre><code class="lang-python">import six
+m = inro.modeller.Modeller()
+databank = m.emmebank
+scenario = databank.scenario(1)
+network = scenario.get_network()
+
+delta_x = 10_000
+delta_y = -20_000
+
+# Update the nodes
+for node in network.nodes():
+    node.x = node.x + delta_x
+    node.y = node.y + delta_y
+
+# Update the vertices
+for link in network.links():
+    # Get a copy of the vertices
+    vertices = link.vertices
+    for i in range(len(link.vertices)):
+        vertices[i] = (vertices[i][0] + delta_x,  vertices[i][1] + delta_y)
+    # You must assign the list back to vertices since it is a copy
+    link.vertices = vertices
+
+# And finally save the network
+scenario.publish_network(network)
+print(&quot;Done&quot;)
+</code></pre>
+<p>The first thing we will do is start with the basic template of a tool:</p>
+<pre><code class="lang-python">import inro.modeller
+
+class MoveNetwork(inro.modeller.Tool()):
+
+    def __init__(self):
+        pass
+
+    def page(self):
+        pb = inro.modeller.ToolPageBuilder(
+            self,
+            title=&quot;Move Network&quot;,
+            description=&quot;Move the network.&quot;,
+            runnable=True,
+            branding_text=&quot;Example&quot;,
+        )
+        return pb.render()
+
+    def run(self):
+        pass
+
+</code></pre>
+<p>This initial shell gives us the name of our tool, <code>MoveNetwork</code> and creates the initial three
+member functions.  The <code>__init__</code> function will be called when the tool is loaded by modeller.
+<code>page</code> will be called then and can be used to provide Modeller with an interface for the tool.
+For the moment that text is going to be fixed to a simple title. <code>run</code> will be called when the
+user presses the <code>Run</code> button in Modeller's interface.</p>
+<p>We can now then integrate in our script:</p>
+<pre><code class="lang-python">import six
+import inro.modeller
+
+class MoveNetwork(inro.modeller.Tool()):
+
+    Scenario_Number = inro.modeller.Attribute(int)
+    Delta_X = inro.modeller.Attribute(float)
+    Delta_Y = inro.modeller.Attribute(float)
+
+    def __init__(self):
+        self.Scenario_Number = 1
+        self.Delta_X = 0
+        self.Delta_Y = 0
+
+    def page(self):
+        pb = inro.modeller.ToolPageBuilder(
+            self,
+            title=&quot;Move Network&quot;,
+            description=&quot;Move the network.&quot;,
+            runnable=True,
+            branding_text=&quot;Example&quot;,
+        )
+        return pb.render()
+
+    def run(self):
+        m = inro.modeller.Modeller()
+        databank = m.emmebank
+        scenario = databank.scenario(self.Scenario_Number)
+        network = scenario.get_network()
+        
+        delta_x = self.Delta_X
+        delta_y = self.Delta_Y
+        
+        # Update the nodes
+        for node in network.nodes():
+            node.x = node.x + delta_x
+            node.y = node.y + delta_y
+        
+        # Update the vertices
+        for link in network.links():
+            # Get a copy of the vertices
+            vertices = link.vertices
+            for i in range(len(link.vertices)):
+                vertices[i] = (vertices[i][0] + delta_x,  vertices[i][1] + delta_y)
+            # You must assign the list back to vertices since it is a copy
+            link.vertices = vertices
+        
+        # And finally save the network
+        scenario.publish_network(network)
+        print(&quot;Done&quot;)
+
+</code></pre>
+<p>Given this structure our next goal is to start allowing the user modify our variables.  <code>delta_x</code>, <code>delta_y</code>, and
+the scenario number are good candidates to move into things the user can set.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeScripting/ConvertScriptToTool.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

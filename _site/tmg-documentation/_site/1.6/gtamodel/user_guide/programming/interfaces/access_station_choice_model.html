@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>IAccessStationChoice | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="IAccessStationChoice | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/access_station_choice_model.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="iaccessstationchoice">IAccessStationChoice</h1>
+
+<p>The access station choice models are used by the drive access transit mode. To create your own access
+station choice model for DAT you will need to implement the <code>Tasha.Common.IAccessStationChoiceModel</code>
+interface in <code>TashaInterfaces.dll</code>.</p>
+<h2 id="methods">Methods</h2>
+<p>Below are the functions that will need to be implemented to build functional
+access station choice model.</p>
+<h3 id="load">Load</h3>
+<p>This function will be called before the drive access transit mode evaluates any utilities by
+calling <code>ProduceResults</code>.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Call this before using the module
+/// &lt;/summary&gt;
+void Load()
+</code></pre>
+<h3 id="produceresult">ProduceResult</h3>
+<p>This function will be called when a tour needs to be evaluated.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Get a result for the given data
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;data&quot;&gt;The data to use to process the result&lt;/param&gt;
+/// &lt;returns&gt;A result based on the given data&lt;/returns&gt;
+Pair&lt;IZone[], float[]&gt; ProduceResult(ITripChain data);
+</code></pre>
+<h3 id="unload">Unload</h3>
+<p>This function gets called when the TASHA iteration is ending, and when the DAT is
+going to clear out its own memory.  Use this to release any resources or
+temporary buffers that use things like the zone system, or level of service
+data.</p>
+<pre><code class="lang-cs">/// &lt;summary&gt;
+/// Call this after you have finished using this module, or between iterations
+/// &lt;/summary&gt;
+void Unload();
+</code></pre>
+<h2 id="example-code">Example Code</h2>
+<p>For this example we will implement a barebones access station choice model.  For simplicity
+it takes in a single parameter that contains the station zones and assigns a uniform distribution
+to them.  It also requests XTMF to only allow this module to work within a Model System Template
+that implements the ITravelDemandModel interface allowing it to access the zone system.</p>
+<pre><code class="lang-cs">using Datastructures;
+using System.Linq;
+using XTMF;
+using Tasha.Common;
+
+namespace Example
+{
+    [ModuleInformation(Description = &quot;An example access station choice model implementation&quot;)]
+    public sealed class MyAccessStationChoiceModel : IAccessStationChoice
+    {
+        [RunParameter(&quot;StationZones&quot;, &quot;1-10&quot;, typeof(RangeSet), &quot;The zones to use as stations.&quot;)]
+        public RangeSet StationZones;
+    
+        [RootModule]
+        public ITravelDemandModel Root;
+    
+        private IZone[] _stationZones;
+    
+        public void Load()
+        {
+            var zoneSystem = Root.ZoneSystem.ZoneArray;
+            _stationZones = StationZones.SelectMany(range =&gt; range.EnumerateInclusive()
+                                            .Select(zoneNumber =&gt; zoneSystem[zoneNumber))
+                                        .ToArray();
+        }
+    
+        public Pair&lt;IZone[], float[]&gt; ProduceResult(ITripChain data)
+        {
+            var results = new float[_stationZones.Length];
+            Array.Fill(results, 1.0f);
+            return new Pair&lt;IZone[], float[]&gt;(_stationZones, results);
+        }
+    
+        public void Unload()
+        {
+            _stationZones = null;
+        }
+
+        /* Below is the standard XTMF IModule interface implementation */
+
+        public string Name { get; set; }
+
+        public float Progress { get; set; }
+
+        public bool RuntimeValidation(ref string error)
+        {
+            return true;
+        }
+
+        public Tuple&lt;byte, byte, byte&gt; ProgressColour { get { return new Tuple&lt;byte, byte, byte&gt;(50, 150, 50); } }
+    }
+}
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/programming/interfaces/access_station_choice_model.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

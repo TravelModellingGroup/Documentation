@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Basic Python | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Basic Python | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/EmmeScripting/BasicPython.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="basic-python">Basic Python</h1>
+
+<p>In this step we will do a quick overview of some of the most common
+operations in python.</p>
+<h2 id="1-import-six">1. Import six</h2>
+<p>Before we really get started, we will import a library named six.  This library
+will include a bunch of functions into Python2 instances allowing us to
+write code that will work in both Python 2 and Python 3.</p>
+<pre><code class="lang-python">import six
+</code></pre>
+<h2 id="2-hello-world">2. Hello World</h2>
+<p>The first program anyone writes in a new language is <code>Hello World</code>.  This program
+writes to the console the text &quot;Hello, World!&quot;.</p>
+<p>Code:</p>
+<pre><code class="lang-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">Hello, World!
+</code></pre>
+<h2 id="3-comment-codes">3. Comment Codes</h2>
+<p>When programming it is important to not just write what you want the computer
+to do, but also leave artifacts for future programmers, often yourself, to
+help the reader understand why you wrote the code you did. We call these
+artifacts interlaced in our code &quot;comments&quot;.</p>
+<pre><code class="lang-python"># This is an example of a comment
+</code></pre>
+<h2 id="4-declaring-a-variable">4. Declaring a Variable</h2>
+<p>Code:</p>
+<pre><code class="lang-python">x = 1
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">1
+</code></pre>
+<h2 id="5-basic-arithmetic">5. Basic Arithmetic</h2>
+<p>Now that we know how to create a variable our next step is learning how to manipulate them.
+In Python when we use the equals sign it does not mean equality but assign.  This will be exemplified
+below</p>
+<p>Code:</p>
+<pre><code class="lang-python">x = 1
+print(x)
+# Add two to x and assign it to x
+x = x + 2
+print(x)
+# Subtract one from x and assign it to x
+x = x - 1
+print(x)
+# Divide 2 from x and assign it to x
+x = x / 2
+print(x)
+# Multiply four and x and assign it to x
+x = x * 4
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">1
+3
+2
+1.0
+4.0
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using Python 2 you might notice that your outputs do not have a decimal place.  In this version of
+Python the division operator performs &quot;integer division&quot;, rounding down to the nearest integer number. In Python
+3 that type of operation has been moved to the operator <code>//</code>.  To get floating point division in Python 2 you can
+add a decimal place to a constant if you are using one or cast, which we will show later, a number to the type
+<code>float</code>.</p>
+</div>
+<h2 id="6-comparisons">6. Comparisons</h2>
+<p>Besides arithmetic one of the most common things that you will do will be to compare values.  Python supports the
+following comparison operators:</p>
+<ul>
+<li><code>==</code> - Equality</li>
+<li><code>&gt;</code> - Greater Than</li>
+<li><code>&gt;=</code> - Greater Than or Equal</li>
+<li><code>&lt;</code> - Less Than</li>
+<li><code>&lt;=</code> - Less Thank or Equal To</li>
+<li><code>and</code> - True if both sides resolve to <code>True</code></li>
+<li><code>or</code> - True if either side resolves to <code>True</code></li>
+</ul>
+<p>Code:</p>
+<pre><code class="lang-python">print(1 &lt; 2)
+print((1 &lt; 2) and (2 &lt; 1))
+print((1 &lt;= 2) and (2 &lt;= 1))
+print((1 &lt; 2) or (2 &lt; 1))
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">True
+False
+True
+True
+</code></pre>
+<h2 id="7-if--elif--else">7. IF / Elif / Else</h2>
+<p>As we start to write more advanced code we will run into cases where what we
+need to execute depends on the value of a variable.  To do this in Python
+we can use an <code>if</code> statement.  The <code>if</code> statement is composed of an
+if clause followed by optional <code>elif</code>s and finally a single optional <code>else</code> clause.</p>
+<p>The <code>if</code> and <code>elif</code> clauses follow this format:</p>
+<pre><code class="lang-python">if &lt;condition&gt;:
+    # Code that only executes if the condition is True here
+    pass
+</code></pre>
+<p>In the following code we will compare against a variable <code>x</code> and only print out
+if x is less than 1, exactly one, or greater than one.  You can modify <code>x</code> to
+see that one of the branches is taken and then execution resumes once
+we have moved back our tabbing.</p>
+<p>Code:</p>
+<pre><code class="lang-python">x = 1
+if x &lt; 1:
+    print(&quot;x is less than one&quot;)
+elif x == 1:
+    print(&quot;x is exactly one&quot;)
+else:
+    print(&quot;x is greater than one&quot;)
+print(&quot;After if&quot;)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">x is exactly one
+After if
+</code></pre>
+<h2 id="8-for-loops">8. For Loops</h2>
+<p>Often we want to execute the same code multiple times, we call this iteration.
+One of the most common ways to iterate is to use a <code>for</code> loop.</p>
+<p>The code below will iterate over the values 0 to, and including, 4 and print them out to console.
+This is done using a function called range.  This function will generate values in the range
+[0, N) where N is the value passed into the function, in our case 5.</p>
+<p>Code:</p>
+<pre><code class="lang-python">for x in range(5):
+  print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">0
+1
+2
+3
+4
+</code></pre>
+<h2 id="9-while-loop">9. While Loop</h2>
+<p>There is another type of loop called a <code>while</code> loop.  This loop continues to
+iterate as long as the condition is true.  In our example below it iterates until x is
+5.</p>
+<pre><code class="lang-python">x = 0
+while x &lt; 5:
+    print(x)
+    x += 1
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">0
+1
+2
+3
+4
+</code></pre>
+<h2 id="10-list">10. List</h2>
+<p>One of the simplest data structures in Python is a list. Below is an
+example of one that contain the numbers 1 to 5.</p>
+<p>Code:</p>
+<pre><code class="lang-python">x = [1,2,3,4,5]
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">[1, 2, 3, 4, 5]
+</code></pre>
+<p>Lists are a useful tool when we need to store more than one thing together in a group.
+You can also do useful things such as <code>append</code> new items to the end of a list, or combine
+two lists together.</p>
+<p>Code:</p>
+<pre><code class="lang-python">x = [1,2,3,4,5]
+# Add 6 to the end of the list
+x.append(6)
+print(x)
+y = [7, 8]
+# Combine the two lists
+x = x + y
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">[1, 2, 3, 4, 5, 6]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+<h2 id="11-dictionary">11. Dictionary</h2>
+<p>The other most common data structure in Python is a dictionary.  A dictionary provides a mapping
+between a key to a single value.  Below is an example of a dictionary that has some numeric keys
+that are mapped to some example strings containing names.</p>
+<pre><code class="lang-python">x = {
+    1 : &quot;Williams&quot;,
+    2 : &quot;Amit&quot;,
+    3 : &quot;Eric&quot;
+}
+</code></pre>
+<p>We can add an additional name to that dictionary using the following code:</p>
+<pre><code class="lang-python">x[4] = &quot;James&quot;
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">{1: 'Williams', 2: 'Amit', 3: 'Eric', 4: 'James'}
+</code></pre>
+<h2 id="12-functions">12. Functions</h2>
+<p>The code that we have explored so far have been linear, running from the top, possibly iterating, and then eventually
+stopping at the bottom.  What we are going to write next allows us to execute the same code from potentially different places.</p>
+<p>In the following code we will write a function called <code>print_added</code> that takes in two parameters named <code>x</code> and <code>y</code>.  We will
+then call this function with the values of <code>a</code> and <code>b</code>, then iterate another variable <code>x</code>, which is not the same as the <code>x</code> inside
+of our function, with the values of [0,3).</p>
+<pre><code class="lang-python">def print_added(x, y):
+    temp = x + y
+    print(temp)
+
+a = 1
+b = 2
+print_added(a, b)
+for x in range(3):
+    print_added(a, x)
+</code></pre>
+<pre><code class="lang-output">3
+1
+2
+3
+</code></pre>
+<p>We can also implement function that are able to return values.</p>
+<p>Code:</p>
+<pre><code class="lang-python">def add(x, y):
+    return x + y
+
+x = add(1, 2)
+print(x)
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-console">3
+</code></pre>
+<h2 id="13-classes">13. Classes</h2>
+<p>The next level of abstraction that we will cover in Python are classes.  A <code>class</code> is a grouping of data
+and operations that allows us to help simplify the design of a system by restricting, as much as we can,
+correlation within the class.</p>
+<p>Below we will write a simple class that implements a stack data structure.</p>
+<pre><code class="lang-python">class Stack:
+    def __init__(self):
+        self._data = []
+
+    def push(self, value):
+        self._data.append(value)
+
+    def pop(self):
+        if len(self._data) &gt; 0:
+            return self._data.pop()
+        else:
+            return 0
+</code></pre>
+<p>In our case, if there is no data left to pop we will just continue to return zeros.</p>
+<p>You can also extend the functionality of a class through inheritance.</p>
+<pre><code class="lang-python">class FancyStack(Stack):
+    def fancy_push(self):
+        self._data.append(&quot;fancy&quot;)
+</code></pre>
+<p>We can use this class with the following code:</p>
+<pre><code class="lang-python">x = FancyStack()
+x.fancy_push()
+# Note: Don't use member variables directly if they start with an underscore
+print(x._data)
+</code></pre>
+<pre><code class="lang-console">['fancy']
+</code></pre>
+<h2 id="next-steps">Next Steps</h2>
+<p>While this is far from a complete course on how to write in Python, you now have been introduced to enough of the language to start
+writing your own scripts to automate EMME.  The next step in the tutorial is a review of the <a href="EMMEClassStructure.html">EMME Class Structures</a>.
+This will teach you how different EMME concepts are related.  If you already have a firm grasp on how EMME is organized you can instead
+skip ahead to <a href="WritingAScript.html">Writing A Script</a> where we will walk through writing a script that moves an EMME network.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tutorials/EmmeScripting/BasicPython.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

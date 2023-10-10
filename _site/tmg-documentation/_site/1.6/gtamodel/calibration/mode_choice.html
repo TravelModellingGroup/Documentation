@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Mode Choice | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Mode Choice | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/mode_choice.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="mode-choice">Mode Choice</h1>
+
+<p>Once all of the activity location choices have been calibrated the next step is to work on the mode choice model.  If you are
+not familiar with GTAMode's mode choice model you can find its documentation <a href="../model_design/mode_choice.html">here</a>.</p>
+<h3 id="parameter-locations">Parameter Locations</h3>
+<h5 id="gtamodel-v41">GTAModel V4.1</h5>
+<p>To edit the mode choice parameters in GTAModel V4.1, you will directly change the parameters within the model system.  The modes
+are located in three places in the model system, <code>Auto Mode</code>, <code>Other Modes</code>, and <code>Shared Modes</code>.</p>
+<h5 id="gtamodel-v40">GTAModel V4.0</h5>
+<p>For GTAModel V4.0, the mode choice parameters are loaded in from <code>EstimationResult/ModeChoice/EstimationResults.csv</code>. Inside
+of the <code>EstimationResults.csv</code> file are a series of rows containing the estimated parameters for the mode choice model.
+The first row contains a header with the generation the parameter set was from, its fitness value, and continuing with all of
+the parameter paths (module names separated by '.'s, with the final segment being the name of the parameter).  Only the second row
+will be used for the parameter values.</p>
+<h3 id="calibration-steps">Calibration Steps</h3>
+<p>The first the to calibrate the mode choice model is to modify the modal constants to balance the number of trips by mode globally.  In
+TMG provided GTAModels the Auto mode will have its constants fixed to zero.  In order to avoid parameter scaling, please leave this mode
+with zero constants.  Each mode has size constants, one for each person category, and a constant for an intrazonal trip.  The intrazonal
+constant is additive to the appropriate person category.</p>
+<p>After the modes are balanced globally the next step is to add/modify the <code>Time Period Constants</code>.  If the time period
+has not already been added you will need to do so.  Make sure to set the start and end time parameters to match the time period by
+changing the parameters of the module accordingly.  Given the correct time period, check the <code>Spatial Constants</code> to see if
+a parameter already exists for the OD that you wish to modify.  All modifications are done at a planning district to planning district
+level.  For these parameters it is traditional to use the format <code>1-4,6:5,7-16</code> where the colon breaks up the two range sets, on the
+left the origin and on the right hand side the destination range set.  If you add additional calibration constants
+make sure that if you add OD's that overlap that the more specific term comes first in the list or it will be ignored as the first
+module that satisfies the criteria will be selected.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When working with the <code>Time Period Constants</code> remember that by modifying a parameter in any time period, the chosen modes in the other
+time periods will also be modified as tours containing the modified mode will now be more attractive.</p>
+</div>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/calibration/mode_choice.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

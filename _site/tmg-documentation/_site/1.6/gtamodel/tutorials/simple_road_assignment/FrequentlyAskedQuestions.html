@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Frequently Asked Questions | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Frequently Asked Questions | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/tutorials/simple_road_assignment/FrequentlyAskedQuestions.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="frequently-asked-questions"><strong>Frequently Asked Questions</strong></h1>
+
+<h2 id="q1-a-tool-could-not-be-found">Q1) A tool could not be found</h2>
+<p><img src="images/Slide52.JPG" alt="alt text" title="A tool with the following namespace could not be found"><br>
+You will need to add the TMG toolbox to the target Emme project: <a href="https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/index.html#adding-the-toolbox">How to Add TMG Toolbox?</a> <br>
+Remember to save the project setting once you are done with the toolbox add-in.
+<br>
+<br></p>
+<h2 id="q2-not-enough-room-for-extra-attributes">Q2) Not enough room for extra attributes</h2>
+<p><img src="images/Slide53.JPG" alt="alt text" title="Not enough room for extra attributes"><br>
+<br>
+You will need to increase the number of Extra Attribute Values in Emme Modeller:
+<img src="images/Slide54.JPG" alt="alt text" title="Increase the number of Extra Attribute Values"><br>
+<br></p>
+<h2 id="q3-matrix-zones-not-compatible-with-scenario">Q3) Matrix zones not compatible with scenario</h2>
+<p><img src="images/Slide55.JPG" alt="alt text" title="Matrix zones not compatible with scenario"><br>
+You will need to change the model system by adding and modifying modules in order to convert the matrix into your zone system.<br></p>
+<h4 id="step-1-add-a-new-module-to-the-tools-under-to-execute">Step 1: Add a new module to the <strong>Tools</strong> under <strong>To Execute</strong></h4>
+<p><img src="images/Slide56.JPG" alt="alt text" title="Add a new module to the Tools under To Execute"><br></p>
+<h4 id="step-2-move-the-new-module-up">Step 2: Move the new module up</h4>
+<p>XTMF executes the modules in order, hence we need to convert the matrix before loading it into Emme.
+<img src="images/Slide57.JPG" alt="alt text" title="Move the new module up"><br></p>
+<h4 id="step-3-choose-resource-for-matrix-to-save-and-convertmatrixintozonesystem-for-data-source">Step 3: Choose &quot;Resource&quot; for <strong>Matrix To Save</strong>, and &quot;ConvertMatrixIntoZoneSystem&quot; for <strong>Data Source</strong></h4>
+<p><img src="images/Slide58.JPG" alt="alt text" title="Data Source Modules"><br></p>
+<h4 id="step-4-choose-loademme4binarymatrixinmatrixzonesystem-for-source-and-enter-the-information-for-the-matrix-file-sub-module">Step 4: Choose &quot;LoadEMME4BinaryMatrixInMatrixZoneSystem&quot; for <strong>Source</strong> and Enter the information for the <em>Matrix File</em> sub-module</h4>
+<p><img src="images/Slide59.JPG" alt="alt text" title="Source Modules"><br></p>
+<h4 id="step-5-specify-the-name-of-the-converted-matrix-eg-amauto_2mtx">Step 5: Specify the name of the converted matrix (e.g., <em>AMAuto_2.mtx</em>)</h4>
+<p><img src="images/Slide60.JPG" alt="alt text" title="Output File"><br></p>
+<h4 id="step-6-remember-to-change-the-matrix-file-under-extra-attribute-context-manager-module">Step 6: Remember to change the <em>Matrix File</em> under <strong>Extra Attribute Context Manager</strong> module</h4>
+<p>This is to use the newly converted matrix instead of the original matrix. (Note: Enter the name of the newly converted matrix rather than choosing one since it does not exist yet.)
+<img src="images/Slide61.JPG" alt="alt text" title="Change the Loaded Matrix"><br></p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/tutorials/simple_road_assignment/FrequentlyAskedQuestions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

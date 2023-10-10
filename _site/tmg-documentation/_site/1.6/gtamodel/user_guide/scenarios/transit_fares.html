@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Transit Fares | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Transit Fares | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/transit_fares.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="transit-fares">Transit Fares</h1>
+
+<p>These scenarios allow you to change the public transit fare policy.  This scenario is used in order
+to create a transit hyper-network used for fare based congested transit assignment.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<ul>
+<li>Fare Rules.xml</li>
+<li>York_Region_Zones
+<ul>
+<li>York_Region_Zones.dbf</li>
+<li>York_Region_Zones.prj</li>
+<li>York_Region_Zones.sbn</li>
+<li>York_Region_Zones.sbx</li>
+<li>York_Region_Zones.shp</li>
+<li>York_Region_Zones.shx</li>
+</ul>
+</li>
+</ul>
+<h3 id="fare-rulesxml">Fare Rules.xml</h3>
+<p>This <a href="../file_formats/fare_schema_file_specification.html">Fare Rules.xml file</a> contains a
+set of policies that allows you to generate costs for:</p>
+<ul>
+<li>Initial Boarding</li>
+<li>Transfers</li>
+<li>Zone Crossings</li>
+<li>In-Vehicle Distances</li>
+</ul>
+<h3 id="york_region_zones">York_Region_Zones</h3>
+<p>This <a href="https://en.wikipedia.org/wiki/Shapefile">shapefile</a> provides the boundaries for the
+three fare zones for York Region.  This file is references in the standard 2011 and 2016
+<code>Fare Rules.xml</code> files from TMG.</p>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>To create a new scenario the first thing you would do is clone an existing scenario, preferably
+from the same year that you are wanting to simulate, and then edit the <code>Fare Rules.xml</code> file.</p>
+<p>The changes that you would make are going to be very specific to the scenario at hand, but for
+an example let's reduce the price of the DRT by 10%.</p>
+<p>Below is the V4.2 2016 definition for DRT.  We have an initial boarding cost of <span class="math">\(2.06 (in 2016\)</span>).</p>
+<pre><code class="lang-xml">    &lt;!-- Durham Transit --&gt;
+    &lt;fare cost=&quot;2.06&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;DRT&lt;/group&gt;
+    &lt;/fare&gt;
+	&lt;fare cost=&quot;-1.41&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;DRT&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+</code></pre>
+<p>Reducing the initial boarding by 10% we would get:</p>
+<pre><code class="lang-xml">    &lt;!-- Durham Transit --&gt;
+    &lt;fare cost=&quot;1.854&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;DRT&lt;/group&gt;
+    &lt;/fare&gt;
+	&lt;fare cost=&quot;-1.41&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;DRT&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+</code></pre>
+<p>This however leaves open the question about how we would deal with transfers to and from GO Rail.
+With the reduced fare price, we often scale back the discount by the same ratio.</p>
+<pre><code class="lang-xml">    &lt;!-- Durham Transit --&gt;
+    &lt;fare cost=&quot;1.854&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;DRT&lt;/group&gt;
+    &lt;/fare&gt;
+	&lt;fare cost=&quot;-1.269&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;DRT&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+</code></pre>
+<p>When building your fare policy, you will need to make sure that there are no links with
+negative costs.  <strong>If the network does end up with negative costs the model system will crash.</strong></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Your model is calibrated to a base year.  All costs going into this file need to be inflated/deflated
+into those base year dollars!</p>
+</div>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/transit_fares.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

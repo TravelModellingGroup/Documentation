@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Renaming and Importing GTFS Line Data | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Renaming and Importing GTFS Line Data | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeImportGTFS/RenamingAndUploadingLines.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="renaming-and-importing-gtfs-line-data">Renaming and Importing GTFS Line Data</h1>
+
+<p>Before the GTFS data is imported into the network, it needs to be updated to match our coding standard.
+This makes it a lot easier to work with.</p>
+<h2 id="steps">Steps</h2>
+<ol>
+<li>Open Routes.txt in excel</li>
+<li>Use Data &gt; Text to Columns</li>
+<li>Add leading T and zeros in excel
+<ol>
+<li>Leading TS for subways, still 6 digits long</li>
+</ol>
+</li>
+</ol>
+<p>To help with the renaming of the routes, we have created a script that can be made into a tool in Emme
+using python. The script is referenced below.</p>
+<pre><code class="lang-python"># Get list of transit line names to be changed
+
+import inro.modeller as m
+import csv
+
+_m = m.Modeller()
+databank = _m.emmebank
+scenario = databank.scenario(14)
+network = scenario.get_network()
+
+with open('network_names.csv', mode='w', newline='') as csvfile:
+    filewriter = csv.writer(csvfile)
+    filewriter.writerow(['Old Name', 'New Name'])
+    
+    for line in network.transit_lines():
+
+        if line.id[0] == &quot;T&quot;:
+            filewriter.writerow([line.id])
+
+
+# Rename Transit Lines using CSV of fixed names
+
+import inro.modeller as m
+import pandas as pd
+
+_m = m.Modeller()
+databank = _m.emmebank
+scenario = databank.scenario(14)
+network = scenario.get_network()
+
+#Replace filepath below with appropriate location of the Fixed Names CSV file location.
+
+file_path = r&quot;Documents\python edited GTFS\Fixed Names.csv&quot;
+
+def replace_name(network, old, new, delay):
+    
+    line = network.transit_line(old)
+    check = network.transit_line(new)
+    
+    if line is not None:
+        if check is not None:
+            delay.append((old, new))
+            return
+    
+        line.id = new
+    return
+
+    
+with open(file_path, &quot;r&quot;) as f:
+    
+    header = True
+    delay = []
+    
+    for line in f.readlines():
+        if header == True:
+            header = False
+            continue
+        parts = line.split(&quot;,&quot;)
+        if len(parts) &gt;= 2:
+            original = parts[0].strip()
+            new = parts[1].strip()
+            replace_name(network, original, new, delay)
+    
+    while len(delay) &gt; 0: 
+    
+        new_delay = []
+
+        for line in delay:
+            replace_name(network, line[0], line[1], new_delay)
+        
+        if len(delay) == len(new_delay):
+            print(&quot;bad lines:&quot; )
+            for line in new_delay:
+                print(line)
+            raise Exception(&quot;raise exception&quot;)
+            
+        delay = new_delay
+
+    
+scenario.publish_network(network)
+
+</code></pre>
+<p>After the naming is done, the GTFS data can now be imported in the network.</p>
+<h2 id="steps-1">Steps</h2>
+<ol>
+<li>Data management &gt; Network &gt; Transit &gt; Import from GTFS</li>
+<li>Browse directory for folder containing lines</li>
+<li>Necessary documents are:
+<ol>
+<li>Agency.txt</li>
+<li>Calendar.txt</li>
+<li>Calendar_dates.txt</li>
+<li>Routes.txt</li>
+<li>Shapes.txt</li>
+<li>Stop_times.txt</li>
+<li>Stops.txt</li>
+<li>Trips.txt</li>
+</ol>
+</li>
+</ol>
+<figure>
+    <img src="Images/RenamingAndUploadingLines.png" alt="Add Module">
+    <figcaption text-align="center">Figure 1: Renaming and Uploading GTFS Lines</figcaption>
+</figure>
+    
+<p>Next proceed to set time and day service details.</p>
+<ol>
+<li>Select day that ensures lines are representative of usual service</li>
+<li>Do not select a holiday or weekend</li>
+<li>Select whole day time period to ensure all time periods are represented
+<ol>
+<li>00:00 Start time</li>
+<li>23:59 End time</li>
+</ol>
+</li>
+</ol>
+<figure>
+    <img src="Images/SetDayAndTime.png" alt="Add Module">
+    <figcaption text-align="center">Figure 2: Set Day and Time</figcaption>
+</figure>
+<p>That done, proceed to do the following</p>
+<ol>
+<li>Select all route types for upload</li>
+<li>Trams, Metros, and Buses</li>
+<li>Select correct agency</li>
+<li>Select all routes to be uploaded</li>
+<li>Click the arrow next to <code>Select</code> to highlight all boxes</li>
+</ol>
+<figure>
+    <img src="Images/ImportingRouteTypes.png" alt="Add Module">
+    <figcaption text-align="center">Figure 3: Importing Route Types</figcaption>
+</figure>
+<p>Now Select user created Route name, Trip ID, and Stop name network fields, all other network fields are optional and not used in GTAModel</p>
+<figure>
+    <img src="Images/SelectingUserCreatedRoutesandTripIds.png" alt="Add Module">
+    <figcaption text-align="center">Figure 4: Selecting User Created Routes and Trip Ids</figcaption>
+</figure>
+<h2 id="next-steps">Next Steps</h2>
+<p>Now we are ready to select the different vehicle types in our network.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/EmmeImportGTFS/RenamingAndUploadingLines.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

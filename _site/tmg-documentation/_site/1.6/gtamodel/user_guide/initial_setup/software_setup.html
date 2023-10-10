@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Software Setup | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Software Setup | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/software_setup.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="software-setup">Software Setup</h1>
+
+<p>This section will walk you through installing and setting up
+all of the software required to execute GTAModel V4 and the process for importing the base model.</p>
+<p>To run GTAModel V4 you will require the following software packages:</p>
+<ol>
+<li><strong>XTMF</strong> - The eXensible Travel Modelling Framework is a software package <a href="https://github.com/TravelModellingGroup/XTMF">created</a>
+by TMG for creating and executing model systems. For more details please reference the XTMF
+documentation at <a href="../../../xtmf/index.html">here</a></li>
+<li><strong>EMME</strong> - A software package created by <a href="https://www.inrosoftware.com">INRO</a> for modelling road and transit networks.</li>
+<li><strong>TMGToolbox1 for EMME</strong> - A set of tools <a href="https://github.com/TravelModellingGroup/TMGToolbox">created</a> by TMG to automate EMME for GTAModel.</li>
+</ol>
+<p>Instructions for downloading and setting them up are contained in the following sections.</p>
+<h2 id="xtmf">XTMF</h2>
+<p>The <a href="https://github.com/TravelModellingGroup/XTMF/releases">eXtensible Travel Modelling Framework (XTMF)</a> is a software package created by TMG that is used for creating, estimating,
+calibrating, and running model systems.  The following instructions will go over the simple steps for running XTMF on your machine. First you will need
+to <a href="https://github.com/TravelModellingGroup/XTMF/releases">download the latest copy available off of github</a>.  When going through the releases there is a compiled build
+of each release in the assets zipped.  To run this on your local PC you can extract it to any directory.  TMG recommend extracting it to a folder called <code>XTMF</code> in your <code>Documents</code> folder.</p>
+<p>If you are not running an updated Windows 10+ operating system you may also need to <a href="https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48">install .Net Framework 4.8</a>
+or download it as an optional <code>Windows Update</code>.</p>
+<h2 id="emme">EMME</h2>
+<p>EMME is a software package that GTAModel will use for executing both its road and transit macro network assignments.  The following subsections will go through the process of
+installing, authorizing, connecting to a license server, and finally using EMME to setup a database for GTAModel to use.</p>
+<h3 id="installing-the-software">Installing the Software</h3>
+<p>The first software package that we will require is EMME. If you do not have admin access on the machine you are setting GTAModel up on, please
+contact your IT admin staff. To run GTAModel please <a href="https://www.inrosoftware.com/en/account/downloads/">download</a>
+the latest installer for EMME.  If you do not have an INRO account, please contact someone from TMG or DMG for assistance.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you are using an EMME license service over the network you will also need to disable the local service called <code>INRO License Service</code> from starting up otherwise you will
+be unable to connect.</p>
+</div>
+<p>Once you have finished installing EMME you will also need to get an authorization file before you can run the software.  To get an authorization file you will need to open the
+<code>INRO Software Manager</code>, often found in your system tray, and select the <code>Authorizations</code> tab.  Once there, in the EMME tab, click the <code>Add Authorization</code> button.  This will then
+open up the wizard for adding an authorization.  If you have already been provided an authorization file select so, otherwise select that you will need to request one <code>Over the Internet</code>.
+The Wizard will then ask for your authorization code.  This code will need to be provided by your IT admin or from the Data Management Group (DMG).  After entering in the authorization code
+your default web browser will launch taking you to INRO's website.  From there you will need to log into your INRO account in order to confirm that you want to request the Authorization file.
+After confirming that you do in fact want the file it will be emailed to the associated email address to your INRO account.  Save the authorization file to disk and then continue with the Wizard
+selecting the file for use.  <strong>Make sure that the newly added authorization's radio button is selected before continuing on.</strong></p>
+<h3 id="getting-a-license">Getting a License</h3>
+<p>Now that we have EMME installed and have an authorization the next step is to connect to our license server.  If you have a local key you can skip this step, otherwise if you are
+using the DMG license server please follow their instructions for installing <a href="https://www.chiark.greenend.org.uk/%7Esgtatham/putty/latest.html">PuTTY</a> and creating a shortcut to log
+into their license VPN.</p>
+<p>At this point you should be able to manually connect and get a license.  <strong>It is recommended to switch this over to <code>Automatic</code> so that in the future if you are not using EMME you will
+not consume a license by accident.</strong></p>
+<h2 id="next-step">Next Step</h2>
+<p>Now that our software is setup, our next step is to <a href="initial_configuration.html">configure the software</a>.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/initial_setup/software_setup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

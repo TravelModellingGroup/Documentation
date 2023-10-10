@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Full Network Set Generator | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Full Network Set Generator | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/full_network_generator.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="full-network-set-generator">Full Network Set Generator</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Full Network Set Generator (henceforth referred to as <strong>Generator</strong>) is a tool designed to eliminate many of the standard steps in the TMG workflow. Before, a full base network would need to be divided into time period networks and then all those networks would need to be cleaned before GTAModel could be run. This meant that,in order to prepare a new base network for packaging to a client, one would need to run over 15 tool instances. Now, that is one tool. The goal is that clients will be able to run this tool themselves, eliminating the need to package all five time period networks.</p>
+<h2 id="general-algorithm">General Algorithm</h2>
+<p><strong>Generator</strong> calls other TMG tools, including <em>Create Transit Time Period</em>, <em>Prorate Transit Speeds</em>, <em>Remove Extra Links</em>, and <em>Remove Extra Nodes</em>. The general framework is shown below.</p>
+<p><img src="images/FullNetworkSetGenerator.png" alt="alt text" title="Full Network Generator Framework"></p>
+<h2 id="create-transit-time-period">Create Transit Time Period</h2>
+<p>The first external tool called by <strong>Generator</strong> is <em>Create Transit Time Period</em>, referred to henceforth as <strong>CTTP</strong>.</p>
+<p>CTTP is a useful tool that generates new scenarios for different time periods and uses a service table (a list of trips times) to generate headways and speeds for transit lines in each of those periods. Currently, this tool is run five separate times.</p>
+<p>The parameters and default values for CTTP are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Scenario</td>
+<td>Primary scenario</td>
+<td>The scenario corresponding to the full base network that the user would like to work from</td>
+</tr>
+<tr>
+<td>New Scenario Number</td>
+<td>-</td>
+<td>Scenario number to store the time period network</td>
+</tr>
+<tr>
+<td>New Scenario Description</td>
+<td>-</td>
+<td>Title for the new scenario</td>
+</tr>
+<tr>
+<td>Transit Service Table File</td>
+<td>-</td>
+<td>File location for the service table. <br> The service table should be organized with the following header: <em>emme_id</em>, <em>trip_depart</em>, and <em>trip_arrive</em>.</td>
+</tr>
+<tr>
+<td>Alternative Data File (Optional)</td>
+<td>-</td>
+<td>File location for alternative data file, containing headways and speeds for transit lines that are not listed in the service table or for which the user would like to override service table data. <br> The alternative data file should be organized with the following header: <em>emme_id</em>, <em>xxxx_hdw</em>, and <em>xxxx_spd</em>, where <em>xxxx</em> corresponds to the start time of the time period to associate the data with. There can be multiple pairs of hdw/spd data in the *.csv file, with different values for xxxx. <br> Note: Transit lines with a headway of ‘9999’ will be deleted from the time period network. Transit lines with a headway of ‘0’ will not be modified in the time period network.</td>
+</tr>
+<tr>
+<td>Agg Type Selection File</td>
+<td>-</td>
+<td>This file specifies, for each line, what type of aggregation to use – naïve or average. <em>Naïve</em> sums up all trips in a time period and divides by the time period length; <em>Average</em> averages all headways throughout the period. <br> The aggregation type selection file should be organized with the following header: <em>emme_id</em> and <em>agg_type</em>. This file can be generated using '<em>Create Aggregation Selection File</em>'.</td>
+</tr>
+<tr>
+<td>Default Agg</td>
+<td>naïve</td>
+<td>Specifies which aggregation type to use for lines NOT listed in <em>Agg Type Selection File</em>.</td>
+</tr>
+<tr>
+<td>Time Period Start</td>
+<td>-</td>
+<td>Start of the time period. User integer time, e.g., 2:30PM should be 1430.</td>
+</tr>
+<tr>
+<td>Time Period End</td>
+<td>-</td>
+<td>End of the time period. User integer time, e.g., 2:30PM should be 1430.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Generator</strong> calls this tool five times. By default, <strong>Generator</strong> uses the default <strong>CTTP</strong> values apart from those listed below. In <strong>Generator</strong>, these values are stored in <em>Scen#UnNumber</em>, <em>Scen#UnDescription</em>, <em>Scen#Start</em>, and <em>Scen#End</em>, where # varies from 1 to 5.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>New Scenario Number <br> (Scen#UnNumber)</th>
+<th>New Scenario Description <br> (Scen#UnDescription)</th>
+<th>Time Period Start <br> (Scen#Start)</th>
+<th>Time Period End <br> (Scen#End)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>AM Uncleaned</td>
+<td>600</td>
+<td>900</td>
+</tr>
+<tr>
+<td>2</td>
+<td>20</td>
+<td>MD Uncleaned</td>
+<td>900</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>30</td>
+<td>PM Uncleaned</td>
+<td>1500</td>
+<td>1900</td>
+</tr>
+<tr>
+<td>4</td>
+<td>40</td>
+<td>EV Uncleaned</td>
+<td>1900</td>
+<td>2400</td>
+</tr>
+<tr>
+<td>5</td>
+<td>49</td>
+<td>ON Uncleaned</td>
+<td>0</td>
+<td>600</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prorate-transit-speed">Prorate Transit Speed</h2>
+<p>The next external call is to <strong>Prorate Transit Speed</strong>. This tool takes overall transit line speeds and apportions speeds to individual transit segments (stored in <em>us1</em>) based on the link free flow speed (<em>ul2</em>). The parameters and default values are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Generator Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scenario</td>
+<td>Primary Scenario</td>
+<td>10; 20; 30; 40; 49</td>
+<td>The scenario to apply the tool to. <strong>Generator</strong> applies this tool to the scenarios created by <strong>CTTP</strong> in the previous step (i.e., Scen#UnNumber).</td>
+</tr>
+<tr>
+<td>Line Filter Expression</td>
+<td>-</td>
+<td>'line=______ xor line=TS____ xor line=GT____'</td>
+<td>The transit lines to apply the tool to. By default, <strong>Generator</strong> applies this tool to all transit lines except for TTC subways and GO trains due to hand-coded <em>us1</em> values.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove-extra-links">Remove Extra Links</h2>
+<p><strong>Remove Extra Links</strong> is a tool that cleans the network of unnecessary or detrimental links. This is done in several steps:</p>
+<ul>
+<li>Links which have no transit lines but only transit modes are deleted.</li>
+<li>Non-connector dead-end links are removed.</li>
+<li>Links with transfer modes that do not connect two stations, or connect a station to the road network are deleted. Links of this nature which have other, non-transfer modes are not deleted; however, the transfer modes are removed from these links. Retaining transfer modes on these links can result in agents being able to bypass paying a fare in the hypernetwork.</li>
+</ul>
+<p>The default parameters are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Generator Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Scenario</td>
+<td>Primary Scenario</td>
+<td>10; 20; 30; 40; 49</td>
+<td>The scenario to be cleaned. <strong>Generator</strong> applies this tool to the scenarios created by <strong>CTTP</strong> (i.e., Scen#UnNumber).</td>
+</tr>
+<tr>
+<td>Transfe Mode List</td>
+<td>t, u, y</td>
+<td>'tuy'</td>
+<td>Modes used to transfer between transit stops, or to transit stops. <br> Default list contains three modes: <strong>t</strong>-Transfer between two transit lines for the same transit agency, <strong>u</strong>-Transfer between two different transit agencies, <strong>y</strong>-Walk between park &amp; ride lot and a transit station.</td>
+</tr>
+<tr>
+<td>New Scenario Flag</td>
+<td>True</td>
+<td>True</td>
+<td>If True, new scenario will be created. If False, current scenario will be overwritten.</td>
+</tr>
+<tr>
+<td>New Scenario ID</td>
+<td>-</td>
+<td>11; 21; 31; 41; 50</td>
+<td>To store the cleaned scenario to. From Scen#Number in <strong>Generator</strong>.</td>
+</tr>
+<tr>
+<td>New Scenario Description</td>
+<td>-</td>
+<td>AM Cleaned; MD Cleaned; PM Cleaned; EV Cleaned; ON Cleaned</td>
+<td>Title for the cleaned scenario. From Scen#Desciption in <strong>Generator</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove-extra-nodes">Remove Extra Nodes</h2>
+<p>Remove Extra Nodes is a tool that “cleans” the network of all cosmetic nodes. For example, a node that does not connect to a centroid connector, is not an intersection and is not a transit stop will be removed. Using extra attributes, the set of nodes to be removed can be expanded to allow for removal of, for example, certain transit stops. This tool is necessary in order to allow for a hypernetwork to be generated that does not exceed the node limit. The default values are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Generator Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base Scenario</td>
+<td>Primary Scenario</td>
+<td>10; 20; 30; 40; 49</td>
+<td>The scenario to be cleaned. <strong>Generator</strong> applies this tool to the scenarios created by <strong>CTTP</strong> (i.e., Scen#UnNumber).</td>
+</tr>
+<tr>
+<td>Node Filter Attribute ID</td>
+<td>No attribute</td>
+<td>No attribute</td>
+<td>Extra attribute used to change the selection of nodes. By default, all nodes will be accepted.</td>
+</tr>
+<tr>
+<td>Stop Filter Attribute ID</td>
+<td>No attribute</td>
+<td>No attribute</td>
+<td>Extra attribute used to change the selection of transit stops. By default, all stops will be accepted. Recommended to use *@stop* (all nodes value = 1) to allow for removal of some transit stops, otherwise node limit will be exceeded in hypernetwork.</td>
+</tr>
+<tr>
+<td>Connnector Filter Attribute ID</td>
+<td>No attribute</td>
+<td>No attribute</td>
+<td>Extra attribute used to allow removal of selected nodes attached to connectors. Will remove affected connectors.</td>
+</tr>
+<tr>
+<td>Attribute Aggregator String</td>
+<td>'vdf: force, <br> length: sum, <br> type: first, <br> lanes: avg, <br> ul1: avg, <br> ul2: force, <br> ul3: avg, <br> dwt: sum, <br> dwfac: force, <br> ttf: force, <br> us1: avg_by_length, <br> us2: avg, <br> us3: avg, <br> ui1: avg, <br> ui2: avg, <br> ui3: avg'</td>
+<td>'vdf: force, <br> length: sum, <br> type: first, <br> lanes: force, <br> ul1: avg, <br> ul2: force, <br> ul3: force, <br> dwt: sum, <br> dwfac: force, <br> ttf: force, <br> us1: avg_by_length, <br> us2: avg, <br> us3: avg, <br> ui1: avg, <br> ui2: avg, <br> ui3: avg, <br> @stn1: force, <br> @stn2: force'</td>
+<td>Choose which functions to apply to attributes when combining affected links. Will apply <em>avg</em> to all extra attributes if not specified.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-notes">Other Notes</h2>
+<p>All user-defined attributes in <strong>Generator</strong> feed into the external calls and are listed in the above sections with the exception of one – <strong>OverwriteScenarioFlag</strong>. If this is set as True (by default, it is False), any selected already-occupied scenario will be deleted prior to calling the external tools.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/model_design/full_network_generator.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

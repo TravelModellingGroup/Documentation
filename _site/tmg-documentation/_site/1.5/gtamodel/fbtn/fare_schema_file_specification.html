@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Fare Schema File Specification | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Fare Schema File Specification | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/fbtn/fare_schema_file_specification.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="fare-schema-file-specification">Fare Schema File Specification</h1>
+
+<p>The new TMG implementation uses a fare schema file, implemented in Extensible Markup Language (XML). XML is a widely-used, hierarchical format which is human-readable. The fare schema file specification prescribes 3 collections of items necessary for generating the hyper-network : <groups>, <zones>, and &lt;fare_rules&gt;.</zones></groups></p>
+<h2 id="groups">Groups</h2>
+<p>Contains a list of transit line groupings. Conceptually, these groupings can be distinct transit agencies (e.g., TTC, GO Transit), but could also be distinct sub-groups of one agency (e.g. TTC Regular vs. TTC Downtown Express). It is important that ALL transit lines belong to a group to ensure proper behaviour when modelling transit. Also important to note is that each group will become its own “layer” in the hyper network generation procedure. Fewer groups reduces the size of the hyper network which, in trials, have surpassed maximum size allowed by the standard Emme license.</p>
+<p>Each group element contains a set of transit line selector expressions (used by Emme’s Network Calculator) to select its lines. Groups are processed IN ORDER, so if a line meets the criteria for multiple groups, it will be assigned to the LAST group in the schema file. Each group must have a unique ID.</p>
+<pre><code class="lang-xml">&lt;group id=&quot;TTC Regular&quot;&gt;
+    &lt;selection&gt;line=T_____&lt;/selection&gt;
+&lt;/group&gt;
+&lt;group id=&quot;TTC DT Express&quot;&gt;
+    &lt;selection&gt;line=T14___&lt;/selection&gt;
+&lt;/group&gt;
+</code></pre>
+<h2 id="station-groups-station-centroids--psuedozones">Station Groups (Station Centroids / Psuedozones)</h2>
+<p>An optional list of station group elements. Each station group element associates a set of network zone centroids with a line group. When doing so, “initial boarding” fare rules will be applied to links going from a station centroid directly to a stop of the associated line group. In this manner, trips departing from station centroids / psuedozones (which are often used in models to permit park-and-ride to transit) will accrue the correct initial boarding fare.</p>
+<p>Each element has two attributes: for and selection. The former attribute associates the element with a line group; while the second selects which zones belong to the group. Note that each centroid can only be associated with a single line group; nodes selected more than once will be associated with the last station group loaded.</p>
+<pre><code class="lang-xml">&lt;station_group for=&quot;GO Transit&quot; selection=&quot;i=9700,9800&quot;/&gt;
+</code></pre>
+<h2 id="zones">Zones</h2>
+<p>An optional element containing a list of fare zones and a list of shapefiles. Each node in the network can be assigned to a single zone. If a node meets the requirements for multiple zones it will be assigned to the LAST zone in the schema file (similar to groups). Each zone must have a unique ID.</p>
+<p>Two different types of fare zones are supported: node_selection and from_shapefile.  Node selection zones apply a set of node selector expressions (used by Emme’s Network Calculator). Zones loaded from shapefile reference an FID (feature ID) in one of the included shapefile elements.</p>
+<pre><code class="lang-xml">&lt;shapefile id=&quot;1&quot; path=&quot;D:/Workspace/08 GTAModel V4/Data/Fares/York_Region_Zones.shp&quot; /&gt;
+    
+    &lt;zone id=&quot;Toronto&quot; type=&quot;node_selection&quot;&gt;
+    	&lt;node_selector&gt;i=10000,20000&lt;/node_selector&gt;
+    &lt;/zone&gt;
+    &lt;zone id=&quot;York 1&quot; type=&quot;from_shapefile&quot;&gt;
+    	&lt;from_shapefile id=&quot;1&quot; FID=&quot;1&quot; /&gt;
+    &lt;/zone&gt;
+
+</code></pre>
+<h2 id="fare-rules">Fare Rules</h2>
+<p>Contains a list of fare rules to be applied to the hyper network once it has been generated. Each fare rule element has an associated cost and type, and sub-elements to determine which links or segments it applied to.</p>
+<p>During processing, fare rules are applied in order; with each fare rule’s cost being added to its selected links or transit segments. This is an important distinction, as it allows fare rule costs to be negative, so long as the resulting summed value is greater than zero.</p>
+<p>For example, Hamilton Street Railway (HSR) has an initial fare of $1.65 , with a special “co-fare” of $0.50 to GO Transit, which discounts the initial fare when riders transfer to GO train stations using HSR. To model this, two fare rules are required:</p>
+<ul>
+<li>A fare of $1.65 applied to all links incoming to HSR’s “layer” of the transit network.</li>
+<li>A negative fare of $1.15 applied to links transferring from HSR to GO and from GO to HSR.</li>
+</ul>
+<p>So, when egressing from GO to HSR, the on-link fare is $1.65 - $1.15 = $0.50, which is the appropriate co-fare. In the other direction, the discount is actually applied to the access-link to GO Transit, which uses an initial fare of $3.55. This works out to be $3.55 - $1.15 = $2.40; which is the resulting discount for transferring to GO.</p>
+<h3 id="initial-boarding-rule-group-in_zone">Initial Boarding Rule (group, [in_zone])</h3>
+<p>Initial boarding rules have their cost applied to all LINKS inbound to the layer of the specified group. This rule can be further restricted to applying only to links starting from a specified ZONE.</p>
+<pre><code class="lang-xml">&lt;fare cost=&quot;1.98&quot; type=&quot;initial_boarding&quot;&gt;
+    &lt;group&gt;TTC Regular&lt;/group&gt;
+&lt;/fare&gt;
+
+&lt;fare cost=&quot;0.15&quot; type=&quot;initial_boarding&quot;&gt;
+    &lt;group&gt;TTC Regular&lt;/group&gt;
+    &lt;in_zone&gt;York 1&lt;/in_zone&gt;
+&lt;/fare&gt;
+</code></pre>
+<h3 id="transfer-from_group-to_group-bidirectional-false">Transfer (from_group, to_group, [bidirectional= False])</h3>
+<p>Transfer rules have their cost applied to all LINKS connecting one group’s layer to another’s. By default, this rule is applied one-way (to links ‘from’ to ‘to’) but can also be set to bidirectional (also applied to links ‘to’ to ‘from’).</p>
+<pre><code class="lang-xml">&lt;fare cost=&quot;-2.23&quot; type=&quot;transfer&quot;&gt;
+	&lt;from_group&gt;HSR&lt;/from_group&gt;
+	&lt;to_group&gt;Burlington Transit&lt;/to_group&gt;
+&lt;/fare&gt;
+
+&lt;fare cost=&quot;-1.28&quot; type=&quot;transfer&quot;&gt;
+	&lt;from_group&gt;MiWay&lt;/from_group&gt;
+	&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+	&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+&lt;/fare&gt;
+</code></pre>
+<h3 id="zone-crossing-rule-group-from_zone-to_zone-bidirectional-false">Zone Crossing Rule (group, from_zone, to_zone, [bidirectional= False])</h3>
+<p>Zone crossing rules have their cost applied to all SEGMENTS whose i-node belong to the specified from-zone and whose j-node belong to the specified to-zone, for the specified group. Like transfer rules, they too can be applied in a bidirectional fashion.</p>
+<pre><code class="lang-xml">
+&lt;fare cost=&quot;2.13&quot; type=&quot;zone_crossing&quot;&gt;
+    &lt;group&gt;TTC Regular&lt;/group&gt;
+    &lt;from_zone&gt;Toronto&lt;/from_zone&gt;
+    &lt;to_zone&gt;York 1&lt;/to_zone&gt;
+&lt;/fare&gt;
+
+&lt;fare cost=&quot;1.00&quot; type=&quot;zone_crossing&quot;&gt;
+	&lt;group&gt;YRT&lt;/group&gt;
+	&lt;from_zone&gt;York 1&lt;/from_zone&gt;
+	&lt;to_zone&gt;York 2&lt;/to_zone&gt;
+	&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+&lt;/fare&gt;
+
+
+</code></pre>
+<h3 id="distance-in-vehicle-rule-group">Distance In-Vehicle Rule (group)</h3>
+<p>Distance in-vehicle rules have their cost applied to all SEGMENTS belonging to their specified group. This cost is multiplied by the segment LENGTH attribute (inherited from the segment’s link) – in other words, the cost attribute is specified in $ per km.</p>
+<pre><code class="lang-xml">
+&lt;fare cost=&quot;0.0825&quot; type=&quot;distance_in_vehicle&quot;&gt;
+    &lt;group&gt;GO Transit&lt;/group&gt;
+&lt;/fare&gt;
+
+</code></pre>
+<h1 id="usage-and-performance">Usage and Performance</h1>
+<p>This section will cover how to use the above specification to generate new fare scenarios, as well as how to use the FBTN to run transit assignments.</p>
+<h2 id="constructing-new-fare-scenarios">Constructing New Fare Scenarios</h2>
+<p>The fare rule types specified in the Fare Schema File (FSF) can be combined to generate flexible fare scenarios to test. Fare costs are applied to two types of network elements – Links and Transit Segments – saved into user-specified Extra Attributes. Rules in the FSF are applied sequentially and additively; if a link or transit segment meets the criteria for multiple rules, the resulting value will be the sum of the costs. See Section 3.3 for an example of how these rules can be set up.</p>
+<p>Internally, the tool indexes Links and Segments while creating the FBTN. Links are indexed into a table whose rows and columns correspond to the group number (where 0 represents the base network). For example, if the TTC is group 1, then the grid at [0, 1] contain all of the links from the base network to the TTC virtual layer. A similar table indexes Segments based on which zones they cross.</p>
+<p>This framework leaves room for future extensibility, should new fare rule types be required.</p>
+<h2 id="limitations">Limitations</h2>
+<p>There are limits to the types of fare rules that can be expressed using the above framework. Rules that are time-dynamic, that require information about the time that has elapsed since the beginning of a path, are not possible to model within Emme’s time-static framework. Rules which apply to different classes of passenger (e.g. student and/or senior fares) are not supported by this framework, although it might be possible to model using multiple Emme assignments. Finally, rules which require origin-to-destination information, or access-point-to-egress-point (e.g. GO transit fare zones) are not possible to model without access to the path-building algorithm, which Emme does not provide. However the last rules can be approximated using either in-vehicle distance or using zone-crossing rules.</p>
+<h2 id="transit-assignment">Transit Assignment</h2>
+<p>The generated FBTN is compatible with Emme Transit Assignment tools (Standard, Extended, Congested, etc.), although the Standard Transit Assignment cannot be used to run fare-based transit assignment (FBTA). It is easy enough to configure the Extended Transit Assignment tool (and the others) to run an FBTA: Use the Link Extra Attribute containing transfer fares and an Auxiliary transit cost (with the appropriate perception factor), and use the Transit Segment Extra Attribute containing in-vehicle fares as an In-vehicle cost (with the appropriate perception factor). See Figure 1 below for an example.</p>
+<p><img src="images/1.png" alt="alt text" title="Figure 1"></p>
+<h2 id="performance">Performance</h2>
+<p>There are no significant performance issues when using this tool. The FBTN generation procedure took approximately 30 seconds to run on the TMG machines. A non-FBTA was run on the resulting network and there were no noticeable lags in the performance.</p>
+<p>An important detail to note: while developing this tool, TMG staff ran into issues with network size. The procedure required more nodes than a Size 13 license permitted. To address this issue, another tool was developed to reduce the node requirements by deleting mid-block nodes while preserving link attributes. Over 3,000 nodes were removed from the 2012 Base Network, which was sufficient to successfully run the FBTN generation procedure.</p>
+<p>A separate tool to estimate the required network size has also been developed.</p>
+<h1 id="base-fare-schema">Base Fare Schema</h1>
+<p>In creating the base fare schema file, 2012 fare prices were obtained from every GTHA transit agency. However, these data are what each agency shows to the public and do not reflect what is actually paid per-ride. A different value must be calculated, which blends the effects of different fare media: cash, tokens, and monthly passes. Fortunately, the TTC was able to provide a figure for average adult fare, which was used to pro-rate the unit price for 10 tickets for other agencies. This data is summarized in Table 1 below.</p>
+<p>The full base schema is transcribed in Appendix A.</p>
+<h2 id="co-fares-and-transfers">Co-fares and Transfers</h2>
+<p>With the exception of the TTC, all agencies offer a lower co-fare when transferring to and from GO Transit. These have been implemented as negative-cost fare rules, where the initial boarding fare is subtracted from the co-fare to get the difference applied to the appropriate transfer links. These co-fares are documented in Table 1.</p>
+<p>Additionally, several non-Toronto agencies accept free transfers from each other (for example, Hamilton and Burlington). However, these are usually restricted by time of trip (e.g. within a two-hour period from the original time of purchase). This is just not possible to model within a time-static framework, and so these free transfers were omitted from the base schema.</p>
+<p>TODO</p>
+<h2 id="ttc-downtown-express-ttc-routes-in-york-region">TTC Downtown Express, TTC Routes in York Region</h2>
+<p>The TTC operates a handful of premium routes as “Downtown Express” routes: 141, 142, 143, 144, and 145. In addition to the normal TTC initial boarding fare, an additional fare of $2.70 is required (if transferring from the TTC). Boardings from other agencies or first boardings are required the initial TTC fare plus the surcharge, which works out to be $4.68. A negative cost rule is applied when transferring from TTC to DT Express (and vice-versa) routes to account for having paid the TTC fare already.</p>
+<p>Additionally, the TTC operates a number of routes north of Steeles Avenue, which is the official N/S boundary between Toronto and York Region. Passengers on-board pay an additional surcharge to cross in to or out from York Region. Within York Region, passengers pay YRT price for the initial boarding (the difference between YRT and TTC is $0.15), and must pay the surcharge when crossing Steeles.</p>
+<h2 id="yrt-fare-zones">YRT Fare Zones</h2>
+<p>YRT divides York Region into three fare zones (1, 2, and 3). The boundaries between the fare zones are fairly wide (containing several stops), where the $1.00 surcharge is applied only if a passenger’s trip starts on one side of the fare boundary and ends on the other side. This “soft boundary” is not possible to model using Emme, since it involves knowing both end of the trip in advance (see GO Transit below), and so it is approximated using a “hard” zone crossing halfway through the soft boundary. Figure 2 below illustrates the location of each of the YRT fare zone boundaries. The boundary between Zone 1 and Zone 2 follows King Road, while the boundary between Zone 2 and Zone 3 follows Ravenshore Road.</p>
+<p><img src="images/2.png" alt="alt text" title="Figure 2"></p>
+<h2 id="go-transit">GO Transit</h2>
+<p>GO Transit fares work on a zone system, where the cost of a ticket depends on which station one boards at and which station one alights at – the cost paid per ticket was provided as an origin-destination matrix. This is difficult to model from the route-choice perspective given the constructive nature of path-building. Therefore GO fares are approximated as a per-km fare, with an initial boarding fare.</p>
+<p>The initial fare comes directly from the fare matrix and is the minimum cost of a GO trip and also the cost of travelling within a single zone.</p>
+<p>The per-km fare was estimated using linear regression, based on the network distance between fare zones; where the network distance is the minimum shortest path distance between GO stations/stops in each zone.  If between two zones there existed a path using just railway links, that path’s distance was used. Figure 3 shows the results of the linear regression.</p>
+<p>The actual fares used in the estimation were blended across different fare media, since the given fares were for cash-only (the highest price). Data from Metrolinx indicated that 60% of GO riders paid using a PRESTO card, realizing a 17.5% discount on the ticket price. It was assumed that the remaining 40% of riders paid by cash. With this blending, the final applied initial boarding fare was $4.07, and the final per-km fare was $0.0825 (8.28 cents).</p>
+<p>TODO</p>
+<h1 id="appendix-a-transcribed-2012-fare-schema-file">Appendix A: Transcribed 2012 Fare Schema File</h1>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;root&gt;
+  &lt;version number=&quot;1.0&quot; /&gt;
+
+  &lt;groups&gt;
+    &lt;group id=&quot;TTC Regular&quot;&gt;
+    	&lt;selection&gt;line=T_____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;TTC DT Express&quot;&gt;
+    	&lt;selection&gt;line=T14___&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;GO Transit&quot;&gt;
+    	&lt;selection&gt;mode=rg&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;DRT&quot;&gt;
+    	&lt;selection&gt;line=D_____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;YRT&quot;&gt;
+    	&lt;selection&gt;line=Y_____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;MiWay&quot;&gt;
+    	&lt;selection&gt;line=M_____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;Brampton Transit&quot;&gt;
+    	&lt;selection&gt;line=B_____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;Oakville Transit&quot;&gt;
+    	&lt;selection&gt;line=HO____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;Burlington Transit&quot;&gt;
+    	&lt;selection&gt;line=HB____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;Milton Transit&quot;&gt;
+    	&lt;selection&gt;line=HM____&lt;/selection&gt;
+    &lt;/group&gt;
+    &lt;group id=&quot;HSR&quot;&gt;
+      &lt;selection&gt;line=W_____&lt;/selection&gt;
+    &lt;/group&gt;
+  &lt;/groups&gt;
+
+  &lt;zones&gt;
+    &lt;shapefile id=&quot;1&quot; path=&quot;D:/...YorkZones.shp&quot;/&gt;
+
+    &lt;zone id=&quot;Toronto&quot; type=&quot;node_selection&quot;&gt;
+    	&lt;node_selector&gt;i=10000,20000&lt;/node_selector&gt;
+    &lt;/zone&gt;
+    &lt;zone id=&quot;York 1&quot; type=&quot;from_shapefile&quot;&gt;
+    	&lt;from_shapefile id=&quot;1&quot; FID=&quot;1&quot; /&gt;
+    &lt;/zone&gt;
+    &lt;zone id=&quot;York 2&quot; type=&quot;from_shapefile&quot;&gt;
+    	&lt;from_shapefile id=&quot;1&quot; FID=&quot;0&quot; /&gt;
+    &lt;/zone&gt;
+    &lt;zone id=&quot;York 3&quot; type=&quot;from_shapefile&quot;&gt;
+    	&lt;from_shapefile id=&quot;1&quot; FID=&quot;2&quot; /&gt;
+    &lt;/zone&gt;
+  &lt;/zones&gt;
+
+  &lt;station_groups&gt;
+  	&lt;station_group for=&quot;GO Transit&quot; selection=&quot;i=9700,9800&quot;/&gt;
+  	&lt;station_group for=&quot;TTC Regular&quot; selection=&quot;i=9800,9900&quot;/&gt;
+  &lt;/station_groups&gt;
+
+
+  &lt;fare_rules&gt;
+    &lt;!--TTC (Toronto Transit Commission)--&gt;
+    &lt;fare cost=&quot;1.98&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;TTC Regular&lt;/group&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;4.68&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;TTC DT Express&lt;/group&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;-1.98&quot; type=&quot;transfer&quot;&gt;
+    	&lt;from_group&gt;TTC Regular&lt;/from_group&gt;
+    	&lt;to_group&gt;TTC DT Express&lt;/to_group&gt;
+    	&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;0.15&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;TTC Regular&lt;/group&gt;
+    	&lt;in_zone&gt;York 1&lt;/in_zone&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;2.13&quot; type=&quot;zone_crossing&quot;&gt;
+    	&lt;group&gt;TTC Regular&lt;/group&gt;
+    	&lt;from_zone&gt;Toronto&lt;/from_zone&gt;
+    	&lt;to_zone&gt;York 1&lt;/to_zone&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;1.98&quot; type=&quot;zone_crossing&quot;&gt;
+    	&lt;group&gt;TTC Regular&lt;/group&gt;
+    	&lt;from_zone&gt;York 1&lt;/from_zone&gt;
+    	&lt;to_zone&gt;Toronto&lt;/to_zone&gt;
+    &lt;/fare&gt;
+    
+    &lt;!-- GO Transit Fares --&gt;
+    &lt;fare cost=&quot;4.07&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;GO Transit&lt;/group&gt;
+    &lt;/fare&gt;
+    &lt;fare cost=&quot;0.0825&quot; type=&quot;distance_in_vehicle&quot;&gt;
+    	&lt;group&gt;GO Transit&lt;/group&gt;
+    &lt;/fare&gt;
+    
+    &lt;!-- Durham Transit --&gt;
+    &lt;fare cost=&quot;2.06&quot; type=&quot;initial_boarding&quot;&gt;
+    	&lt;group&gt;DRT&lt;/group&gt;
+    &lt;/fare&gt;
+	&lt;fare cost=&quot;-1.41&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;DRT&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- York Region --&gt;
+	&lt;fare cost=&quot;2.13&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;YRT&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.38&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;YRT&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;1.00&quot; type=&quot;zone_crossing&quot;&gt;
+		&lt;group&gt;YRT&lt;/group&gt;
+		&lt;from_zone&gt;York 1&lt;/from_zone&gt;
+		&lt;to_zone&gt;York 2&lt;/to_zone&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;1.00&quot; type=&quot;zone_crossing&quot;&gt;
+		&lt;group&gt;YRT&lt;/group&gt;
+		&lt;from_zone&gt;York 2&lt;/from_zone&gt;
+		&lt;to_zone&gt;York 3&lt;/to_zone&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- MiWay --&gt;
+	&lt;fare cost=&quot;1.98&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;MiWay&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.28&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;MiWay&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- Brampton Transit --&gt;
+	&lt;fare cost=&quot;2.09&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;Brampton Transit&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.44&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;Brampton Transit&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- Oakville Transit --&gt;
+	&lt;fare cost=&quot;2.27&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;Oakville Transit&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.62&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;Oakville Transit&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- Burlington Transit --&gt;
+	&lt;fare cost=&quot;2.23&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;Burlington Transit&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.58&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;Burlington Transit&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-2.23&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;HSR&lt;/from_group&gt;
+		&lt;to_group&gt;Burlington Transit&lt;/to_group&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- Milton Transit --&gt;
+	&lt;fare cost=&quot;1.83&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;Milton Transit&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.23&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;Milton Transit&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+	&lt;!-- HSR --&gt;
+	&lt;fare cost=&quot;1.65&quot; type=&quot;initial_boarding&quot;&gt;
+		&lt;group&gt;HSR&lt;/group&gt;
+	&lt;/fare&gt;
+	&lt;fare cost=&quot;-1.15&quot; type=&quot;transfer&quot;&gt;
+		&lt;from_group&gt;HSR&lt;/from_group&gt;
+		&lt;to_group&gt;GO Transit&lt;/to_group&gt;
+		&lt;bidirectional&gt;True&lt;/bidirectional&gt;
+	&lt;/fare&gt;
+	
+  &lt;/fare_rules&gt;
+&lt;/root&gt;
+
+</code></pre>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/fbtn/fare_schema_file_specification.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Setup | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Setup | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/PopSynIII/setup.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../../public/main.js'
+    import { init } from './../../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="setup">Setup</h1>
+
+<p>To setup PopSynIII we are going to need to install mysql, setup the database that we will use, install the Visual Studio C Runtime, and finally the Java Runtime Environment.</p>
+<h2 id="dependencies">Dependencies</h2>
+<ol>
+<li>MySql Server 5.5.64, which you can download from <a href="https://tmg.utoronto.ca/files/PopulationSynthesis/mysql-5.5.62-winx64.msi">here</a>.</li>
+<li>Visual Studio C Runtime, which you can download from <a href="https://tmg.utoronto.ca/files/PopulationSynthesis/vcredist_x64.exe">here</a>.</li>
+<li>Java JRE 7, which you can download from <a href="https://tmg.utoronto.ca/files/PopulationSynthesis/jre-7u80-windows-x64.exe">here</a></li>
+<li>Base Input files from TMG.</li>
+</ol>
+<h2 id="installing-mysql">Installing MySQL</h2>
+<p>When installing MySQL make sure use the following settings.</p>
+<ol>
+<li>Select &quot;Launch the MySQL Instance Configuration Wizard&quot;</li>
+<li>Select &quot;Next&quot;</li>
+<li>Select Detailed Configuration</li>
+<li>Select Developer Machine</li>
+<li>Select &quot;Multifunctional Database&quot;</li>
+<li>Select Manual Setting and include at least as many connections as you have CPU cores.</li>
+<li>Enable TCP/IP networking.  Make sure to disable Port 3306 in the firewall.  Do not enable a firewall exception for this unless your database is on a server other than the one that will run PopSynIII.</li>
+<li>Select &quot;Standard Character Set&quot;.</li>
+<li>Select &quot;Include Bin Directory in Windows PATH&quot;.</li>
+<li>Select Modify Security Settings and set the root password.  Do not allow root access from remote machines.</li>
+<li>Press Execute and MySQL will install itself.</li>
+</ol>
+<h2 id="setting-up-the-database">Setting up the Database</h2>
+<p>Once you have installed MySQL run the following commands to create the database used by PopSynIII.</p>
+<p>First we are going to log into the mysql server.  Enter the following command.  Once it has run it will prompt you for the root user's password that we setup during the installation.</p>
+<blockquote>
+<p>mysql -u root -p</p>
+</blockquote>
+<p>Next we are going to create the database.</p>
+<blockquote>
+<p>CREATE DATABASE TorontoPopSynIII;</p>
+</blockquote>
+<p>Now that we have the database setup we can exit mysql with the following command.</p>
+<blockquote>
+<p>exit</p>
+</blockquote>
+<h2 id="install-visual-studio-c-runtime">Install Visual Studio C Runtime</h2>
+<p>For the Visual Studio C Runtime just follow the default settings in the installer.</p>
+<h2 id="install-java-runtime-environment-7">Install Java Runtime Environment 7</h2>
+<p>Install the JRE 7 revision 80 with default settings.  Other revisions and versions of Java have been found to be incompatible.  A link to the JRE used by TMG can be found above.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/PopulationSynthesis/PopSynIII/setup.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

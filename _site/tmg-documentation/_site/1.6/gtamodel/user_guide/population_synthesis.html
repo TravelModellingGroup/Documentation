@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Population Synthesis | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Population Synthesis | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/population_synthesis.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="population-synthesis-1-6">
+<h1 id="population-synthesis">Population Synthesis</h1>
+
+<h2 id="overview">Overview</h2>
+<p>GTAModelV4 has a population synthesized from the TTS (Transportation for Tomorrow Survey) records.</p>
+<h3 id="required-software-and-dependencies">Required Software and Dependencies</h3>
+<ol>
+<li>MySql Server 5.5 or greater</li>
+<li>Python V3 or greater with required package dependencies dependencies</li>
+</ol>
+<h3 id="installation-and-setup">Installation and Setup</h3>
+<h4 id="mysql-server-installation">Mysql Server Installation</h4>
+<p>If you do not have a copy of MySQL Server - an installer is available for download at <a href="https://dev.mysql.com/downloads/mysql/.">https://dev.mysql.com/downloads/mysql/.</a> A minimum version of version 5.5 of the Community Edition is required.</p>
+<p>During the installation process, keep note of the server isntallation's root password that you provide. A valid database user and password is required is required to connect to the database server.</p>
+<h5 id="server-configuration">Server Configuration</h5>
+<p>It may be necessary to increase the size of the <code>max_allowed_packet</code> property before running the server. This property can be set in the server's configuration file. On Windows, the default property file loaded is <code>my.ini</code>, located in the root of the server installation directory.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For more information about this server variable, please see the MySql documentation at <a href="https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_allowed_packet.">https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_max_allowed_packet.</a></p>
+</div>
+<h5 id="creating-a-database">Creating a Database</h5>
+<p>Apart from the MySQL Server installation, a database must be created with the proper access privileges for the user account used to connect to the server.</p>
+<p>(TODO)</p>
+<h4 id="python-installation">Python Installation</h4>
+<p>A valid installation of Python 3.5+ is required. Python can be downloaded at <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> or using the anaconda distrubtion: <a href="https://www.anaconda.com/distribution/">https://www.anaconda.com/distribution/</a>. The Anaconda distrubtion is preferred, as there are some performance improvements available that are applicable to the packages used in gtamodel_popsyn (pandas, numpy).</p>
+<h5 id="installing-package-dependencies">Installing Package Dependencies</h5>
+<p>Restore package requirements with pip:</p>
+<pre><code class="lang-sh">
+&gt;pip install -r requirements.txt
+
+</code></pre>
+<h4 id="input-configuration">Input Configuration</h4>
+<p>GTAModel's population synthesis procedure requires defining its inputs through a JSON formatted configuration file. A blank / schema version of the required input format is provided for guidance in creating the properly structured input.</p>
+<p>The default configuration JSON has the following format:</p>
+<pre><code class="lang-json">{
+	&quot;DatabaseName&quot;: &quot;&quot;,
+	&quot;DatabasePassword&quot;: &quot;&quot;,
+	&quot;DatabaseUser&quot;: &quot;&quot;,
+	&quot;DatabaseServer&quot;: &quot;&quot;,
+	&quot;PersonsSeedFile&quot;: &quot;&quot;,
+	&quot;HouseholdsSeedFile&quot;: &quot;&quot;,
+	&quot;OutputFolder&quot;: &quot;&quot;,
+	&quot;MazLevelControls&quot;: &quot;&quot;,
+	&quot;TazLevelControls&quot;: &quot;&quot;,
+	&quot;MetaLevelControls&quot;: &quot;&quot;,
+	&quot;Java64Path&quot;: &quot;C:\\Path\\To\\Jre&quot;,
+	&quot;PopSyn3SettingsFile&quot;: &quot;runtime\\config\\settings.xml&quot;,
+	&quot;CategoryMapping&quot;: {
+		&quot;Persons&quot;: [
+			{
+				&quot;FieldName&quot;: &quot;&quot;,
+				&quot;FieldValue&quot;: &quot;&quot;,
+				&quot;MappedValue&quot;: 0
+			}
+		],
+		&quot;Households&quot;: [
+			{
+				&quot;FieldName&quot;: &quot;&quot;,
+				&quot;FieldValue&quot;: &quot;&quot;,
+				&quot;MappedValue&quot;: 0
+			}
+		]
+	}
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Configuration Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DatabaseName</td>
+<td>The database name to be used during the population synthesis procedure.</td>
+</tr>
+<tr>
+<td>DatabasePassword</td>
+<td>The password to be used to connect to the database.</td>
+</tr>
+<tr>
+<td>DatabaseUser</td>
+<td>The user account to be used to connect to the database.</td>
+</tr>
+<tr>
+<td>DatabaseServer</td>
+<td>The IP address or host name of the database server.</td>
+</tr>
+<tr>
+<td>PersonsSeedFile</td>
+<td>File path to the persons seed data to be used. This file is expected to be in CSV format.</td>
+</tr>
+<tr>
+<td>HouseholdsSeedFile</td>
+<td>File path to the households seed data to be used. This file is expected to be in CSV format.</td>
+</tr>
+<tr>
+<td>OutputFolder</td>
+<td>Path to the folder where all output files will be written, including log files.</td>
+</tr>
+<tr>
+<td>MazLevelControls</td>
+<td>Input file path specifying control totals at MAZ level of geography. This file is autogenerated as part of the preconfiguration setup.</td>
+</tr>
+<tr>
+<td>TazLevelControls</td>
+<td>Input file path specifying control totals at TAZ level of geography. This file is autogenerated as part of the preconfiguration setup.</td>
+</tr>
+<tr>
+<td>MetaLevelControls</td>
+<td>Input file path specifying control totals at the META or regional level of geography. This file is autogenerated as part of the preconfiguration setup.</td>
+</tr>
+<tr>
+<td>Java64Path</td>
+<td>Path location of an available JRE installation. There is no need to specify the installation bin folder, only the base path of the installation.</td>
+</tr>
+<tr>
+<td>PopSyn3SettingsFile</td>
+<td>File location of the settings configuration file used by PopSyn3. This is an XML document that is transformed to include configuration values specified in config.json alongside other PopSyn3 specific configuration values.</td>
+</tr>
+<tr>
+<td>Category Mapping</td>
+<td>Contains a list of mapping values for households and persons that transforms input attributes from a character value to an integer mapping</td>
+</tr>
+</tbody>
+</table>
+<h2 id="population-synthesis-procedure">Population Synthesis Procedure</h2>
+<h3 id="pre-processing-input-data">Pre-processing Input Data</h3>
+<h3 id="starting-a-run">Starting a Run</h3>
+<p>The python module <code>gtamodel_popsyn</code> is used from the command line to perform all steps required to complete the population synthesis. The default behaviour when executing the <code>gtamodel_popsyn</code> module from the command line is perform all steps of the synthesis procedure:</p>
+<ol>
+<li>Input transformations.</li>
+<li>Control total calculations.</li>
+<li>Synthesize records.</li>
+<li>Write synthesized records to file.</li>
+<li>Generate a summary report.</li>
+</ol>
+<p>There are various several command line arguments available when running the module to target a specific step of the synthesis procedure. Command line arguments and their descriptions are listed below.</p>
+<pre><code class="lang-console">	usage: __main__.py [-h] [-c CONFIG] [-i] [-d] [-o OUTPUT_ONLY]
+					[-r VALIDATION_REPORT_ONLY]
+
+	optional arguments:
+	-h, --help            show this help message and exit
+	-c CONFIG, --config CONFIG
+							Path of the configuration file to use.
+	-i, --input-process-only
+							Only generate synthesis files and don't run synthesis
+							procedure.
+	-d, --database-only   Only initialize the database and tables required for
+							PopSyn3.
+	-o OUTPUT_ONLY, --output-only OUTPUT_ONLY
+							Only write synthesized population from existing
+							database data.
+	-r VALIDATION_REPORT_ONLY, --validation-report-only VALIDATION_REPORT_ONLY
+							Only generate a summary report from existing output
+							files. Pass the generated output folder to use.
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please ensure that your MySQL server is started before starting the synthesis procedure.</p>
+</div>
+<h2 id="post-processing">Post-Processing</h2>
+<p>Post-processing is performed automatically in the standard execution of the gtamodel_popsyn module. To specifically target the post-processining step of <code>gtamodel_popsyn</code>, use either the <code>-r</code> or <code>-o</code> command line arguments to only generate a report, or only generate output files.</p>
+<p>When choosing to create the validation report only, the path to a previous run is required as part of the command line arguments. The relative path to the output folder is necessary.</p>
+<h3 id="output-files">Output Files</h3>
+<p>After the population synthesis procedure has completed, the synthesized population will be written to the output folder specified in the configuration settings.</p>
+<h4 id="population-files">Population Files</h4>
+<h5 id="households">Households</h5>
+<h5 id="persons">Persons</h5>
+<h5 id="zonal-residence">Zonal Residence</h5>
+<h5 id="employment-and-occupation-vectors">Employment and Occupation Vectors</h5>
+<h4 id="log-files">Log Files</h4>
+<p>Logginging information from different stages of execution are appended to several different log files in the output directory: 1. event.log - Output from PopSyn3 2. post-process.log - Output from the post process stage of execution. 3. pre-process.log - Output from the pre-process stage of execution. 4. run.log - Output during execution, which contains a mix of GTAModel specific information alongside PopSyn3 output information.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/population_synthesis.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

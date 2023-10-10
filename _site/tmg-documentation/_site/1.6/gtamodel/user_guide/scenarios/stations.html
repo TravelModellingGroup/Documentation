@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Stations | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Stations | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/stations.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="stations">Stations</h1>
+
+<p>A station scenario is setup to specify how much parking is available at a transit station.  For a parson to drive or get driven to or from the station
+in GTAModel that station is required to have its parking defined in this file, and that parking capacity must be greater than zero.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In GTAModel V4 input data is organized into the <em>Scenario folders</em> with the following structure,
+<em>Scenario-Directory</em>/<em>RunYear</em>/<em>ScenarioName</em>.</p>
+</div>
+<h2 id="contained-files">Contained Files</h2>
+<p>Each scenario contains a single file called <code>StationCapacity.csv</code>.  This file is a simple CSV file containing two columns ZoneNumber, and Capacity.</p>
+<h2 id="creating-a-new-scenario">Creating a New Scenario</h2>
+<p>In order to create a new access station in the model you will need to follow the following steps.
+Each access station model is expected to have a unique zone number in the range 9000-9999.
+It is possible to define a different node range for access stations however the model system has been configured for this range by default.
+The following instructions are for model systems that are not multi-run configured.
+To add a new access station to in a multi-run configuration you will need to follow the same changes except targeting the correct forecasting directory.
+These directories will be described in another section.</p>
+<h3 id="add-station-to-to-the-zone-system">Add Station to to the Zone System</h3>
+<p><code>GTAModel V4.1+</code>: To add a new zone to the zone system simply edit your <code>BaseNetwork.nwp</code> in your <a href="network.html">Scenario-Network</a> to include the new zone.</p>
+<p><code>GTAModel V4.0</code>: Inside of the folder <code>ZoneData</code> there is a file called <code>Zones.csv</code> which contains information about each zone in the model.
+Station zones should have the planning district of 0, and be supplied with the correct spatial coordinates to match the network model.</p>
+<h3 id="add-station-to-stationcapacitycsv">Add Station to StationCapacity.csv</h3>
+<p>Now that we have added the new station to the zone system, we are now able to include it as an option for Drive-Access-Transit, Passenger-Access-Transit, and Passenger-Egress-Transit.
+To do this clone the scenario you wish to base your new scenario from and copy it into the correct year's directory. Next, edit the file <code>StationCapacity.csv</code>.
+Inside of it you will need to add to the first column the new zone number, and in the second the parking capacity for that station.  To allow a station to be selected it will require
+a parking capacity greater than zero.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Make sure to not add a third column accidently or some versions of GTAModel may not load the file correctly!</p>
+</div>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/user_guide/scenarios/stations.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

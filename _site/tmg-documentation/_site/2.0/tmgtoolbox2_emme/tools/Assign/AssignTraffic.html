@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Assign Traffic | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Assign Traffic | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Assign/AssignTraffic.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="assign-traffic"><strong>Assign Traffic</strong></h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tool works with Emme version 4.5.1+, XTMF2, and produces results similar to the Multi Class Road Assignment tool in XTMF1/TMGToolbox1.</p>
+</div>
+<p>The Assign Traffic tool executes a multi-class road assignment which allows for the generalized penalty of road tolls. <code>AssignTraffic</code> is a toll-based road assignment tool.</p>
+<p>Latest version of this tool includes the ability to:</p>
+<blockquote>
+<ul>
+<li>Increase resolution of analysis by adding link volume attributes</li>
+<li>Allow for multi-threaded matrix calculation in 4.2.1+</li>
+<li>Receive JSON object parameters from XTMF2</li>
+<li>Receive JSON file parameters from Python API call</li>
+</ul>
+</blockquote>
+<h2 id="tool-flowchart"><strong>Tool Flowchart</strong></h2>
+<p>To run the this tool, parameters can be provided by the modeller through the XTMF2 GUI or as python API call. The diagram below shows the flow of how the <code>AssignTraffic</code> tool works.</p>
+<figure>
+    <img src="images/assign_traffic_flow.svg" alt="Assign Traffic Flowchart">
+    <figcaption>Figure 1: Assign Traffic Flowchart</figcaption>
+</figure>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p><code>AssignTraffic</code> tool is not callable from Emme Modeller. It is intended and only to be called from XTMF2 or via a python API call.</p>
+<p>The tool can be found in &quot;TMG Toolbox 2&quot; -&gt; &quot;Assign&quot; -&gt; &quot;Assign Traffic&quot;. You can
+find the code for this tool <a href="https://github.com/TravelModellingGroup/TMG.EMME/blob/master/TMG.EMME/TMGToolbox2/src/Assign/assign_traffic.py">here</a>.</p>
+<h2 id="using-the-tool-with-xtmf2"><strong>Using the Tool with XTMF2</strong></h2>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>NOTE TMG Modeller</strong>: Update the location where Assign Traffic tool could be found when within the model system in XTMF2.</p>
+</div>
+<p>Using XTMF2 graphical user interface, parameters (defined below) needed to run the <code>AssignTraffic</code> tool can be set by the users. This tool is called <code>AssignTraffic</code>. In <strong>XTMF2</strong>, it is available to add within a model system under <em><strong>ExecuteToolsFromModellerResource</strong></em> or <em><strong>EmmeToolsToRun</strong></em>.</p>
+<h2 id="using-the-tool-from-an-external-python-api-call"><strong>Using the Tool from an External Python API Call</strong></h2>
+<p>You can call the <code>AssignTraffic</code> by calling the python API. Below is a script sample.</p>
+<p><strong>Script Example</strong></p>
+<pre><code class="lang-python">import AssignTraffic as assignTransit
+parameters = {
+    &quot;background_transit&quot;: True,
+    &quot;br_gap&quot;: 0,
+    &quot;iterations&quot;: 100,
+    &quot;norm_gap&quot;: 0,
+    &quot;performance_flag&quot;: True,
+    &quot;r_gap&quot;: 0,
+    &quot;run_title&quot;: &quot;road assignment&quot;,
+    &quot;scenario_number&quot;: 1,
+    &quot;sola_flag&quot;: True,
+    &quot;mixed_use_ttf_ranges&quot; : [
+        {
+            start : 3,
+            stop : 128
+        }
+    ],
+    &quot;traffic_classes&quot;: [
+        {
+            &quot;name&quot;: &quot;traffic class 1&quot;,
+            &quot;mode&quot;: &quot;c&quot;,
+            &quot;demand_matrix&quot;: &quot;mf10&quot;,
+            &quot;time_matrix&quot;: &quot;mf0&quot;,
+            &quot;cost_matrix&quot;: &quot;mf4&quot;,
+            &quot;toll_matrix&quot;: &quot;mf0&quot;,
+            &quot;peak_hour_factor&quot;: 1,
+            &quot;volume_attribute&quot;: &quot;@auto_volume1&quot;,
+            &quot;link_toll_attribute&quot;: &quot; @toll&quot;,
+            &quot;toll_weight&quot;: 1,
+            &quot;link_cost&quot;: 0,
+            &quot;path_analyses&quot;: [
+                {
+                    &quot;attribute_id&quot;: &quot;1&quot;,
+                    &quot;aggregation_matrix&quot;: &quot;&quot;,
+                    &quot;aggregation_operator&quot;: &quot;max&quot;,
+                    &quot;lower_bound&quot;: &quot;7&quot;,
+                    &quot;upper_bound&quot;: &quot;7&quot;,
+                    &quot;path_selection&quot;: &quot;all&quot;,
+                    &quot;multiply_path_prop_by_demand&quot;: &quot;7&quot;,
+                    &quot;multiply_path_prop_by_value&quot;: &quot;7&quot;,
+                    &quot;analysis_attributes&quot;: &quot;&quot;,
+                    &quot;analysis_attributes_matrix&quot;: &quot;mf0&quot;,
+                }
+            ],
+        }
+    ],
+}
+assignTransit(parameters) 
+</code></pre>
+<h3 id="module-parameter-explanation-assign-traffic">Module Parameter Explanation: &quot;Assign Traffic&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter <code>type</code></th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Background Transit <code>boolean</code></td>
+<td style="text-align: left;">Set this to FALSE to not assign transit vehicles on the roads.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Best Relative Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iterations <code>integer</code></td>
+<td style="text-align: left;">The maximum number of iterations to run.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Normalized Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Performance Mode <code>boolean</code></td>
+<td style="text-align: left;">Set this to FALSE to leave a free core for other work, recommended leaving set to TRUE.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Relative Gap <code>float</code></td>
+<td style="text-align: left;">The minimum gap required to terminate the algorithm.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Run Title <code>string</code></td>
+<td style="text-align: left;">The name of the run to appear in the logbook</td>
+</tr>
+<tr>
+<td style="text-align: left;">Scenario Number <code>integer</code></td>
+<td style="text-align: left;">The scenario number to execute against</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mixed Used TTF Ranged <code>range set</code></td>
+<td style="text-align: left;">The TTFs where transit vehicles will occupy some capacity on links. The ranges are inclusive.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation--traffic-classes">Sub-Module Parameter Explanation:  &quot;Traffic Classes&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cost Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix number e.g. &quot;mf4&quot; to save the total cost into.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Demand Matrix <code>string</code></td>
+<td style="text-align: left;">The id of the demand matrix to use.</td>
+</tr>
+<tr>
+<td style="text-align: left;">LinkCost <code>float</code></td>
+<td style="text-align: left;">The penalty in minutes per dollar to apply when traversing a link.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mode <code>string</code></td>
+<td style="text-align: left;">The mode for this class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix number to save in vehicle travel times.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Toll Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix to save the toll costs into.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Toll Weight <code>string</code></td>
+<td style="text-align: left;">to be updated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">TollAttributeID <code>string</code></td>
+<td style="text-align: left;">The attribute containing the road tolls for this class of vehicle.</td>
+</tr>
+<tr>
+<td style="text-align: left;">VolumeAttribute <code>string</code></td>
+<td style="text-align: left;">The name of the attribute to save the volumes into (or None for no saving).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Peak Hour Factor <code>float</code></td>
+<td style="text-align: left;">A factor to apply to the demand in order to build a representative hour.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sub-module-parameter-explanation-traffic-classes---path-analysis">Sub-Module Parameter Explanation: &quot;Traffic Classes -&gt; Path Analysis&quot;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Aggregation Matrix <code>string</code></td>
+<td style="text-align: left;">The matrix number to store the results into.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Attribute ID <code>string</code></td>
+<td style="text-align: left;">The attribute to use for analysis.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lower Bound for Path Selector <code>string</code></td>
+<td style="text-align: left;">The number to use for the lower bound in path selection, or None if using all paths</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiply Path Proportion By Analyzed Demand <code>string</code></td>
+<td style="text-align: left;">Choose whether to multiply the path proportion by the analyzed demand.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiply Path Proportion By Path Value <code>string</code></td>
+<td style="text-align: left;">Choose whether to multiply the path proportion by the path value.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Operator <code>string</code></td>
+<td style="text-align: left;">The operator to use to aggregate the matrix. Example: '+' for emissions, 'max' for select link analysis. <code>Full list of operators that can be used: +, -, *, /, %, .max., .min.</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Paths to Select <code>string</code></td>
+<td style="text-align: left;">The paths that will be used for analysis.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Upper Bound for Path Selector <code>string</code></td>
+<td style="text-align: left;">The number to use for the upper bound in path selection, or None if using all paths.</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/2.0/tmgtoolbox2_emme/tools/Assign/AssignTraffic.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

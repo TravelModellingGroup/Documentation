@@ -1,0 +1,1245 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Mode Choice Parameters | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Mode Choice Parameters | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/guides/mode_choice_parameters.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="mode-choice-parameters">Mode Choice Parameters</h1>
+
+<h3 id="gtamodel-v401">GTAModel V4.0.1</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Drive.ProfessionalTimeFactor</td>
+<td>-0.05916234</td>
+</tr>
+<tr>
+<td>Passenger.ProfessionalTimeFactor</td>
+<td>-0.05916234</td>
+</tr>
+<tr>
+<td>WAT.ProfessionalTimeFactor</td>
+<td>-0.05395848</td>
+</tr>
+<tr>
+<td>DAT.ProfessionalTimeFactor</td>
+<td>-0.05395848</td>
+</tr>
+<tr>
+<td>Walk.ProfessionalWalkTimeFactor</td>
+<td>-0.07711395</td>
+</tr>
+<tr>
+<td>Auto Drive.ProfessionalTravelCostFactor</td>
+<td>2.307699</td>
+</tr>
+<tr>
+<td>Passenger.ProfessionalTravelCostFactor</td>
+<td>2.307699</td>
+</tr>
+<tr>
+<td>Carpool.ProfessionalTravelCostFactor</td>
+<td>2.307699</td>
+</tr>
+<tr>
+<td>WAT.ProfessionalTravelCostFactor</td>
+<td>2.307699</td>
+</tr>
+<tr>
+<td>DAT.ProfessionalTravelCostFactor</td>
+<td>2.307699</td>
+</tr>
+<tr>
+<td>Auto Drive.GeneralTimeFactor</td>
+<td>-0.05887038</td>
+</tr>
+<tr>
+<td>Passenger.GeneralTimeFactor</td>
+<td>-0.05887038</td>
+</tr>
+<tr>
+<td>WAT.GeneralTimeFactor</td>
+<td>-0.03110208</td>
+</tr>
+<tr>
+<td>DAT.GeneralTimeFactor</td>
+<td>-0.03110208</td>
+</tr>
+<tr>
+<td>Walk.GeneralWalkTimeFactor</td>
+<td>-0.05196954</td>
+</tr>
+<tr>
+<td>Auto Drive.GeneralTravelCostFactor</td>
+<td>4.411608</td>
+</tr>
+<tr>
+<td>Passenger.GeneralTravelCostFactor</td>
+<td>4.411608</td>
+</tr>
+<tr>
+<td>Carpool.GeneralTravelCostFactor</td>
+<td>4.411608</td>
+</tr>
+<tr>
+<td>WAT.GeneralTravelCostFactor</td>
+<td>4.411608</td>
+</tr>
+<tr>
+<td>DAT.GeneralTravelCostFactor</td>
+<td>4.411608</td>
+</tr>
+<tr>
+<td>Auto Drive.SalesTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>Passenger.SalesTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>WAT.SalesTimeFactor</td>
+<td>-0.05999999</td>
+</tr>
+<tr>
+<td>DAT.SalesTimeFactor</td>
+<td>-0.05999999</td>
+</tr>
+<tr>
+<td>Walk.SalesWalkTimeFactor</td>
+<td>-0.08</td>
+</tr>
+<tr>
+<td>Auto Drive.SalesTravelCostFactor</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>Passenger.SalesTravelCostFactor</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>Carpool.SalesTravelCostFactor</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>WAT.SalesTravelCostFactor</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>DAT.SalesTravelCostFactor</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>Auto Drive.ManufacturingTimeFactor</td>
+<td>-0.025</td>
+</tr>
+<tr>
+<td>Passenger.ManufacturingTimeFactor</td>
+<td>-0.025</td>
+</tr>
+<tr>
+<td>WAT.ManufacturingTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>DAT.ManufacturingTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>Walk.ManufacturingWalkTimeFactor</td>
+<td>-0.0795026</td>
+</tr>
+<tr>
+<td>Auto Drive.ManufacturingTravelCostFactor</td>
+<td>4.467576</td>
+</tr>
+<tr>
+<td>Passenger.ManufacturingTravelCostFactor</td>
+<td>4.467576</td>
+</tr>
+<tr>
+<td>Carpool.ManufacturingTravelCostFactor</td>
+<td>4.467576</td>
+</tr>
+<tr>
+<td>WAT.ManufacturingTravelCostFactor</td>
+<td>4.467576</td>
+</tr>
+<tr>
+<td>DAT.ManufacturingTravelCostFactor</td>
+<td>4.467576</td>
+</tr>
+<tr>
+<td>Auto Drive.StudentTimeFactor</td>
+<td>-0.02500554</td>
+</tr>
+<tr>
+<td>Passenger.StudentTimeFactor</td>
+<td>-0.02500554</td>
+</tr>
+<tr>
+<td>WAT.StudentTimeFactor</td>
+<td>-0.025</td>
+</tr>
+<tr>
+<td>DAT.StudentTimeFactor</td>
+<td>-0.025</td>
+</tr>
+<tr>
+<td>Walk.StudentWalkTimeFactor</td>
+<td>-0.06874701</td>
+</tr>
+<tr>
+<td>Auto Drive.StudentTravelCostFactor</td>
+<td>4.136304</td>
+</tr>
+<tr>
+<td>Passenger.StudentTravelCostFactor</td>
+<td>4.136304</td>
+</tr>
+<tr>
+<td>Carpool.StudentTravelCostFactor</td>
+<td>4.136304</td>
+</tr>
+<tr>
+<td>WAT.StudentTravelCostFactor</td>
+<td>4.136304</td>
+</tr>
+<tr>
+<td>DAT.StudentTravelCostFactor</td>
+<td>4.136304</td>
+</tr>
+<tr>
+<td>Auto Drive.NonWorkerStudentTimeFactor</td>
+<td>-0.04281025</td>
+</tr>
+<tr>
+<td>Passenger.NonWorkerStudentTimeFactor</td>
+<td>-0.04281025</td>
+</tr>
+<tr>
+<td>WAT.NonWorkerStudentTimeFactor</td>
+<td>-0.04441047</td>
+</tr>
+<tr>
+<td>DAT.NonWorkerStudentTimeFactor</td>
+<td>-0.04441047</td>
+</tr>
+<tr>
+<td>Auto Drive.NonWorkerStudentTravelCostFactor</td>
+<td>2.518626</td>
+</tr>
+<tr>
+<td>Passenger.NonWorkerStudentTravelCostFactor</td>
+<td>2.518626</td>
+</tr>
+<tr>
+<td>Carpool.NonWorkerStudentTravelCostFactor</td>
+<td>2.518626</td>
+</tr>
+<tr>
+<td>WAT.NonWorkerStudentTravelCostFactor</td>
+<td>2.518626</td>
+</tr>
+<tr>
+<td>DAT.NonWorkerStudentTravelCostFactor</td>
+<td>2.518626</td>
+</tr>
+<tr>
+<td>Walk.NonWorkerStudentWalkTimeFactor</td>
+<td>-0.07584688</td>
+</tr>
+<tr>
+<td>Bicycle.ProfessionalTimeFactor</td>
+<td>-0.05</td>
+</tr>
+<tr>
+<td>Bicycle.GeneralTimeFactor</td>
+<td>-0.07129218</td>
+</tr>
+<tr>
+<td>Bicycle.SalesTimeFactor</td>
+<td>-0.08975243</td>
+</tr>
+<tr>
+<td>Bicycle.ManufacturingTimeFactor</td>
+<td>-0.09</td>
+</tr>
+<tr>
+<td>Bicycle.StudentTimeFactor</td>
+<td>-0.05000027</td>
+</tr>
+<tr>
+<td>Bicycle.NonWorkerStudentTimeFactor</td>
+<td>-0.08924273</td>
+</tr>
+<tr>
+<td>Carpool.ProfessionalTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>Carpool.GeneralTimeFactor</td>
+<td>-0.1473659</td>
+</tr>
+<tr>
+<td>Carpool.SalesTimeFactor</td>
+<td>-0.1949916</td>
+</tr>
+<tr>
+<td>Carpool.ManufacturingTimeFactor</td>
+<td>-0.0820694</td>
+</tr>
+<tr>
+<td>Carpool.StudentTimeFactor</td>
+<td>-0.06</td>
+</tr>
+<tr>
+<td>Carpool.NonWorkerStudentTimeFactor</td>
+<td>-0.1866848</td>
+</tr>
+<tr>
+<td>Auto Drive.IntrazonalConstant</td>
+<td>-0.4263166</td>
+</tr>
+<tr>
+<td>Auto Drive.IntrazonalTripDistanceFactor</td>
+<td>-0.2</td>
+</tr>
+<tr>
+<td>Auto Drive.MarketFlag</td>
+<td>0.000193005</td>
+</tr>
+<tr>
+<td>Auto Drive.OtherFlag</td>
+<td>0.1240342</td>
+</tr>
+<tr>
+<td>DAT.ProfessionalConstant</td>
+<td>-5.273836</td>
+</tr>
+<tr>
+<td>DAT.GeneralConstant</td>
+<td>-5.426715</td>
+</tr>
+<tr>
+<td>DAT.SalesConstant</td>
+<td>-6.408837</td>
+</tr>
+<tr>
+<td>DAT.ManufacturingConstant</td>
+<td>-7.191842</td>
+</tr>
+<tr>
+<td>DAT.StudentConstant</td>
+<td>-6.731684</td>
+</tr>
+<tr>
+<td>DAT.NonWorkerStudentConstant</td>
+<td>-7.816881</td>
+</tr>
+<tr>
+<td>DAT.MarketFlag</td>
+<td>1.33121</td>
+</tr>
+<tr>
+<td>DAT.OtherFlag</td>
+<td>3</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.1-2:4,6.Constant</td>
+<td>3.574048</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.1-5,7:16.Constant</td>
+<td>6.486717</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.2:4,6-1.Constant</td>
+<td>3.61784</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.5,7:16-1.Constant</td>
+<td>2.061518</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.2:16-2:16.Constant</td>
+<td>1.576768</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>9.838028</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>-3.701068</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>5.63769</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.17:24-1.Constant</td>
+<td>7.086971</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.17:24-2:16.Constant</td>
+<td>-5.037863</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.37:40-1.Constant</td>
+<td>8.199997</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.37:40-2:16.Constant</td>
+<td>-3.099748</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.1:16-17:24.Constant</td>
+<td>5</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.AM.Spatial Constants.1:16-37:40.Constant</td>
+<td>5.498158</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.1-2:4,6.Constant</td>
+<td>-4.350848</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.1-5,7:16.Constant</td>
+<td>1.72883</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.2:4,6-1.Constant</td>
+<td>-5.499819</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.5,7:16-1.Constant</td>
+<td>-1.876227</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.2:16-2:16.Constant</td>
+<td>-5.833488</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>3.998503</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>2.46388</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>2.346438</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.17:24-1.Constant</td>
+<td>2</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.17:24-2:16.Constant</td>
+<td>3.299931</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.37:40-1.Constant</td>
+<td>2.369527</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.37:40-2:16.Constant</td>
+<td>3.090384</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.1:16-17:24.Constant</td>
+<td>4.677023</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.MD.Spatial Constants.1:16-37:40.Constant</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.1-2:4,6.Constant</td>
+<td>1.079556</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.1-5,7:16.Constant</td>
+<td>6.799975</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.2:4,6-1.Constant</td>
+<td>2.957051</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.5,7:16-1.Constant</td>
+<td>-5.778471</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.2:16-2:16.Constant</td>
+<td>-2.665964</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>-2.150325</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>-1.515693</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>3.954249</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.17:24-1.Constant</td>
+<td>-3.999882</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.17:24-2:16.Constant</td>
+<td>-0.4184185</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.37:40-1.Constant</td>
+<td>-1.450495</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.37:40-2:16.Constant</td>
+<td>5.293771</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.1:16-17:24.Constant</td>
+<td>3.57715</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.PM.Spatial Constants.1:16-37:40.Constant</td>
+<td>6.3</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.1-2:4,6.Constant</td>
+<td>-4.199972</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.1-5,7:16.Constant</td>
+<td>-3.952302</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.2:4,6-1.Constant</td>
+<td>-3.905787</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.5,7:16-1.Constant</td>
+<td>-5.999998</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.2:16-2:16.Constant</td>
+<td>-5.2057</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>-6</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>3.623374</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>3.793377</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.17:24-1.Constant</td>
+<td>4.162495</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.17:24-2:16.Constant</td>
+<td>2.610485</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.37:40-1.Constant</td>
+<td>-5.999969</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.37:40-2:16.Constant</td>
+<td>5.998931</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.1:16-17:24.Constant</td>
+<td>3.11337</td>
+</tr>
+<tr>
+<td>DAT.Time Period Constants.EV.Spatial Constants.1:16-37:40.Constant</td>
+<td>4.14296</td>
+</tr>
+<tr>
+<td>DAT.ToActivityDensityFactor</td>
+<td>5.276306</td>
+</tr>
+<tr>
+<td>DAT.ToHomeDensityFactor</td>
+<td>6.62E-05</td>
+</tr>
+<tr>
+<td>DAT.Zonal Density For Activities.SCurve.Offset X</td>
+<td>-999.9998</td>
+</tr>
+<tr>
+<td>DAT.Zonal Density For Activities.SCurve.Stretch</td>
+<td>0.004335304</td>
+</tr>
+<tr>
+<td>DAT.Zonal Density For Home.SCurve.Offset X</td>
+<td>-302.2195</td>
+</tr>
+<tr>
+<td>DAT.Zonal Density For Home.SCurve.Stretch</td>
+<td>1.00E-06</td>
+</tr>
+<tr>
+<td>WAT.ProfessionalConstant</td>
+<td>0.992895</td>
+</tr>
+<tr>
+<td>WAT.GeneralConstant</td>
+<td>-0.429375</td>
+</tr>
+<tr>
+<td>WAT.SalesConstant</td>
+<td>2.270185</td>
+</tr>
+<tr>
+<td>WAT.ManufacturingConstant</td>
+<td>0.253778</td>
+</tr>
+<tr>
+<td>WAT.StudentConstant</td>
+<td>1.522267</td>
+</tr>
+<tr>
+<td>WAT.NonWorkerStudentConstant</td>
+<td>-0.999894</td>
+</tr>
+<tr>
+<td>WAT.ToActivityDensityFactor</td>
+<td>5.966829</td>
+</tr>
+<tr>
+<td>WAT.ToHomeDensityFactor</td>
+<td>6</td>
+</tr>
+<tr>
+<td>WAT.Zonal Density For Activities.SCurve.Offset X</td>
+<td>-982.8162</td>
+</tr>
+<tr>
+<td>WAT.Zonal Density For Activities.SCurve.Stretch</td>
+<td>0.004981351</td>
+</tr>
+<tr>
+<td>WAT.Zonal Density For Home.SCurve.Offset X</td>
+<td>-270.0085</td>
+</tr>
+<tr>
+<td>WAT.Zonal Density For Home.SCurve.Stretch</td>
+<td>1.00E-06</td>
+</tr>
+<tr>
+<td>WAT.MarketFlag</td>
+<td>-1.5</td>
+</tr>
+<tr>
+<td>WAT.OtherFlag</td>
+<td>-1.1</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.1-1.Constant</td>
+<td>0.387583</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.1-2:16.Constant</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.2:16-1.Constant</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.2:16-2:16.Constant</td>
+<td>0.669877</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>9.331137</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>1.853476</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>-0.349768</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.41:46-41:46.Constant</td>
+<td>0.259051</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.17:24-1.Constant</td>
+<td>6.8</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.17:24-2:16.Constant</td>
+<td>1.899999</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.37:40-1.Constant</td>
+<td>7.4613701</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.37:40-2:16.Constant</td>
+<td>-4.499661</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.1:16-17:24.Constant</td>
+<td>-0.030817</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.AM.Spatial Constants.1:16-37:40.Constant</td>
+<td>-0.92560691</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.1-1.Constant</td>
+<td>1.406478</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.1-2:16.Constant</td>
+<td>-0.145805</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.2:16-1.Constant</td>
+<td>2.487634</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.2:16-2:16.Constant</td>
+<td>0.2218477</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>5.60053</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>0.280919</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>-2.906944</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.41:46-41:46.Constant</td>
+<td>-0.021208</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.17:24-1.Constant</td>
+<td>6.2</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.17:24-2:16.Constant</td>
+<td>-0.254717</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.37:40-1.Constant</td>
+<td>4.191214</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.37:40-2:16.Constant</td>
+<td>0.280424</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.1:16-17:24.Constant</td>
+<td>-0.1</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.1:16-37:40.Constant</td>
+<td>-4.210821</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.MD.Spatial Constants.17:40-17:40.Constant</td>
+<td>-1.2</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.1-1.Constant</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.1-2:16.Constant</td>
+<td>-0.2619922</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.2:16-1.Constant</td>
+<td>1.495626</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.2:16-2:16.Constant</td>
+<td>-1.4168414</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>-0.2</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>-1.642812</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>-1.8836355</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.41:46-41:46.Constant</td>
+<td>-2.1130184</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.17:24-1.Constant</td>
+<td>1.817512</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.17:24-2:16.Constant</td>
+<td>-1.363944</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.37:40-1.Constant</td>
+<td>-0.5360582</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.37:40-2:16.Constant</td>
+<td>-7.199192</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.1:16-17:24.Constant</td>
+<td>-1.9</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.1:16-37:40.Constant</td>
+<td>1</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.PM.Spatial Constants.17:40-17:40.Constant</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.1-1.Constant</td>
+<td>0.083661</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.1-2:16.Constant</td>
+<td>0.182768</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.2:16-1.Constant</td>
+<td>0.891857</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.2:16-2:16.Constant</td>
+<td>-1.994835</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.25:36,41:46-1.Constant</td>
+<td>1.359471</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.25:36,41:46-2:16.Constant</td>
+<td>-2.498622</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.1:16-25:36,41:46.Constant</td>
+<td>-0.8974941</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.41:46-41:46.Constant</td>
+<td>-3.340949</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.17:24-1.Constant</td>
+<td>5.099557</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.17:24-2:16.Constant</td>
+<td>-6.103677</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.37:40-1.Constant</td>
+<td>5.324991</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.37:40-2:16.Constant</td>
+<td>-5.834309</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.1:16-17:24.Constant</td>
+<td>-0.518083</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.1:16-37:40.Constant</td>
+<td>2.684529</td>
+</tr>
+<tr>
+<td>WAT.Time Period Constants.EV.Spatial Constants.17:40-17:40.Constant</td>
+<td>-3.5</td>
+</tr>
+<tr>
+<td>Carpool.ProfessionalConstant</td>
+<td>-3.601356</td>
+</tr>
+<tr>
+<td>Carpool.GeneralConstant</td>
+<td>-1.0000105</td>
+</tr>
+<tr>
+<td>Carpool.SalesConstant</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>Carpool.ManufacturingConstant</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>Carpool.StudentConstant</td>
+<td>-3.994874</td>
+</tr>
+<tr>
+<td>Carpool.NonWorkerStudentConstant</td>
+<td>-2.250983</td>
+</tr>
+<tr>
+<td>Carpool.IntrazonalConstant</td>
+<td>-2.066999</td>
+</tr>
+<tr>
+<td>Carpool.IntrazonalTripDistanceFactor</td>
+<td>-0.1894509</td>
+</tr>
+<tr>
+<td>Carpool.MarketFlag</td>
+<td>-0.5</td>
+</tr>
+<tr>
+<td>Carpool.OtherFlag</td>
+<td>-0.499978</td>
+</tr>
+<tr>
+<td>Walk.ProfessionalConstant</td>
+<td>1.762014</td>
+</tr>
+<tr>
+<td>Walk.GeneralConstant</td>
+<td>1.342873</td>
+</tr>
+<tr>
+<td>Walk.SalesConstant</td>
+<td>-0.5</td>
+</tr>
+<tr>
+<td>Walk.ManufacturingConstant</td>
+<td>-0.499218056</td>
+</tr>
+<tr>
+<td>Walk.StudentConstant</td>
+<td>1.90337</td>
+</tr>
+<tr>
+<td>Walk.NonWorkerStudentConstant</td>
+<td>-0.49999748</td>
+</tr>
+<tr>
+<td>Walk.MarketFlag</td>
+<td>-4.390767</td>
+</tr>
+<tr>
+<td>Walk.OtherFlag</td>
+<td>-4.4</td>
+</tr>
+<tr>
+<td>Walk.SchoolFlag</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>Walk.ChildFlag</td>
+<td>1.954054</td>
+</tr>
+<tr>
+<td>Walk.YouthFlag</td>
+<td>-0.3517197</td>
+</tr>
+<tr>
+<td>Walk.YoungAdultFlag</td>
+<td>0.3929504</td>
+</tr>
+<tr>
+<td>Walk.NoVehicleFlag</td>
+<td>2.452245</td>
+</tr>
+<tr>
+<td>Walk.DriversLicenseFlag</td>
+<td>-2.356651</td>
+</tr>
+<tr>
+<td>Walk.Time Period Constants.Morning.Spatial Constants.PD1.Constant</td>
+<td>0.840247</td>
+</tr>
+<tr>
+<td>Walk.Time Period Constants.Morning.Spatial Constants.AllOthers.Constant</td>
+<td>-0.4</td>
+</tr>
+<tr>
+<td>Walk.Time Period Constants.Afternoon.Spatial Constants.PD1.Constant</td>
+<td>2.717806</td>
+</tr>
+<tr>
+<td>Walk.Time Period Constants.Afternoon.Spatial Constants.AllOthers.Constant</td>
+<td>-2.72E-01</td>
+</tr>
+<tr>
+<td>Bicycle.ProfessionalConstant</td>
+<td>-2.699949</td>
+</tr>
+<tr>
+<td>Bicycle.GeneralConstant</td>
+<td>-1.954511</td>
+</tr>
+<tr>
+<td>Bicycle.SalesConstant</td>
+<td>-2.56204</td>
+</tr>
+<tr>
+<td>Bicycle.ManufacturingConstant</td>
+<td>-2.513897</td>
+</tr>
+<tr>
+<td>Bicycle.StudentConstant</td>
+<td>-2.1941</td>
+</tr>
+<tr>
+<td>Bicycle.NonWorkerStudentConstant</td>
+<td>-2.7</td>
+</tr>
+<tr>
+<td>Bicycle.IntrazonalConstant</td>
+<td>-7</td>
+</tr>
+<tr>
+<td>Bicycle.MarketFlag</td>
+<td>-0.500005</td>
+</tr>
+<tr>
+<td>Bicycle.OtherFlag</td>
+<td>-2.4097905</td>
+</tr>
+<tr>
+<td>Bicycle.SchoolFlag</td>
+<td>3.498083</td>
+</tr>
+<tr>
+<td>Bicycle.ChildFlag</td>
+<td>1.937962</td>
+</tr>
+<tr>
+<td>Bicycle.YouthFlag</td>
+<td>-2.5</td>
+</tr>
+<tr>
+<td>Bicycle.YoungAdultFlag</td>
+<td>-2.5</td>
+</tr>
+<tr>
+<td>Schoolbus.Constant</td>
+<td>-0.702725363</td>
+</tr>
+<tr>
+<td>Schoolbus.AgeFactor</td>
+<td>-3.65E-13</td>
+</tr>
+<tr>
+<td>Schoolbus.DistanceFactor</td>
+<td>-0.1487966</td>
+</tr>
+<tr>
+<td>Schoolbus.IntrazonalConstant</td>
+<td>-1.84E-05</td>
+</tr>
+<tr>
+<td>Schoolbus.Spatial Constants.Toronto.Constant</td>
+<td>-0.8348144</td>
+</tr>
+<tr>
+<td>Schoolbus.Time Period Constants.Morning.Spatial Constants.All.Constant</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Schoolbus.Time Period Constants.Afternoon.Spatial Constants.All.Constant</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>Passenger.ProfessionalConstant</td>
+<td>2.419049</td>
+</tr>
+<tr>
+<td>Passenger.GeneralConstant</td>
+<td>-5.397849</td>
+</tr>
+<tr>
+<td>Passenger.SalesConstant</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Passenger.ManufacturingConstant</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Passenger.StudentConstant</td>
+<td>-1.1642628</td>
+</tr>
+<tr>
+<td>Passenger.NonWorkerStudentConstant</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td>Passenger.IntrazonalDriverConstant</td>
+<td>3.601599</td>
+</tr>
+<tr>
+<td>Passenger.IntrazonalDriverTripDistanceFactor</td>
+<td>-0.1999976</td>
+</tr>
+<tr>
+<td>Passenger.IntrazonalPassengerTripDistanceFactor</td>
+<td>-0.009890129</td>
+</tr>
+<tr>
+<td>Passenger.SchoolFlag</td>
+<td>-1.14285</td>
+</tr>
+<tr>
+<td>Passenger.ShareAPointFlag</td>
+<td>4.506497323</td>
+</tr>
+<tr>
+<td>Passenger.ShareBothPointsFlag</td>
+<td>5.475422</td>
+</tr>
+<tr>
+<td>Passenger.PassengerHasLicenseFlag</td>
+<td>-1.988702</td>
+</tr>
+<tr>
+<td>Passenger.MarketFlag</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Passenger.OtherFlag</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/guides/mode_choice_parameters.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

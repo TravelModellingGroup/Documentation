@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Generate Transit Line Itineraries From GTFS | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Generate Transit Line Itineraries From GTFS | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/network_editing/GTFS_utilities/GenerateTransitLinesfromGTFS.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="generate-transit-line-itineraries-from-gtfs"><strong>Generate Transit Line Itineraries From GTFS</strong></h1>
+
+<p>This tool is used to generate transit line itineraries from GTFS data. It is assumed that most GTFS are matched to a network node and unmatched stops will be ignored.</p>
+<p>The <em>'routes'</em> file of the GTFS feed must define two additional columns:</p>
+<ul>
+<li><strong>emme_id</strong>: the Emme transit line id (up to the first 5 characters)</li>
+<li><strong>emme_vehicle</strong>: the Emme vehicle number used by the line</li>
+<li>(Optional) <strong>emme_descr</strong>: the Emme description of the lines</li>
+</ul>
+<blockquote>
+<p>Note: if both <em>'routes.txt'</em> and <em>'routes.csv'</em> are defined in the GTFS folder, the CSV file will be used.</p>
+</blockquote>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Network Editing&quot; -&gt; &quot;GTFS Utilities&quot; -&gt; &quot;Generate Transit Lines from GTFS&quot;</p>
+<h3 id="base-scenario">Base Scenario</h3>
+<p>Select the scenario to execute against. Only one scenario at a time can be selected.</p>
+<h3 id="maximum-inter-stop-links">Maximum Inter-stop Links</h3>
+<p>Specify the maximum number of links between stops. Lines requiring paths longer than the maximum will not be added but will be reported in the logbook.</p>
+<h3 id="link-priority-attribute">Link Priority Attribute</h3>
+<p>Select the factor to be applied to link speeds.</p>
+<blockquote>
+<p>It is recommended to use an attribute with a default value of 1.0 instead of 0.0.</p>
+</blockquote>
+<h3 id="gtfs-folder">GTFS Folder</h3>
+<p>Select the folder that conatins the GTFS feed files.</p>
+<h3 id="stop-to-node-file">Stop-to-Node File</h3>
+<p>Select the *.csv file that contains Stop IDs and the corresponding Emme Node IDs. The default file format assumes that the first column is <em>Stop ID</em> and the second column is <em>Node ID</em>. More information on how to generate the Stop-to-Node file can be found <a href="GTFSEmmeNodeMap.html">here</a>.</p>
+<h3 id="tool-outputs">TOOL OUTPUTS</h3>
+<h4 id="new-scenario">New Scenario</h4>
+<p>Select the scenario ID to publish the new network.</p>
+<h4 id="new-scenario-title">New Scenario Title</h4>
+<p>Specify the title of the new scenario.</p>
+<h4 id="transit-service-table">Transit Service Table</h4>
+<p>Select &quot;Browse...&quot; to navigate to the location of the output folder and specify the file name to store the output service table file (*.csv).</p>
+<h4 id="mapping-file">Mapping file</h4>
+<p>Select &quot;Browse...&quot; to navigate to the location of the output folder and specify the file name to store the *.csv file that maps between EMME ID and GTFS Trip ID.</p>
+<h4 id="publish-network">Publish network</h4>
+<p>Check the box the publish the network to the new scenario. Leave unchecked for debugging. Default is checked.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is not callable from XTMF. Please use Emme Modeller.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/network_editing/GTFS_utilities/GenerateTransitLinesfromGTFS.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

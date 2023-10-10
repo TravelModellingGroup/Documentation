@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Getting Familiar with XTMF | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Getting Familiar with XTMF | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/getting_familiar_with_xtmf.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="getting-familiar-1-6">
+<h1 id="getting-familiar-with-xtmf">Getting Familiar with XTMF</h1>
+
+<h2 id="the-xtmf-interface">The XTMF Interface</h2>
+<p>XTMF 1.6 in its most basic form functions as a single window user experience. The interface allows the user
+to work with projects and model systems, the underlying format of the XTMF work-flow. Multiple model systems
+and projects can be active at the same time.</p>
+<p><img src="images/xtmf_1.png" alt="alt text" title="The Initial XTMF Interface"></p>
+<h3 id="window-menu">Window Menu</h3>
+<p>XTMF 1.5 now uses a single global menu for all user-end operations. Pressing the hamburger menu icon in the top
+left of the XTMF window will open the side-bar menu. The side-bar menu has everything from creating new projects to launching
+the scheduler window for an overview of all active and completed model system runs.</p>
+<h3 id="start-window">Start Window</h3>
+<p>Projects are designed to help organize your work-flow within XTMF.  Projects contain multiple model systems and provide logical grouping of model system runs.  In order to run a model system, it must also contained within a project.</p>
+<p>After you have selected ‘Create a new project’ you will be prompted to enter a name.
+Project names do have some restrictions. The name entry dialog will inform you if the name entered is invalid.</p>
+<p>Otherwise you can just press Enter or click on the button ‘OK’ to create the new project.  Once project creation is completed, the interface will automatically navigate to the newly created project page.</p>
+<h3 id="help-window">Help Window</h3>
+<p>The XTMF help window enumerates all modules that have been identified (and loaded) from the file system. Navigating through
+the module list will display its properties in the right hand pane. The documentation text included with the module is provided
+on a module-level bases. If documentation is missing for a specific module, it is the responsibility of the module author to provide
+any documentation related text for its proper usage within XTMF.</p>
+<h2 id="xtmf-settings">XTMF Settings</h2>
+<h3 id="working-with-multiple-xtmf-installations">Working with Multiple XTMF Installations</h3>
+<p>In most cases you will only have a single installation of XTMF.  There are cases when people want more than one installation of XTMF.  Normally each user on a given machine will have their own unique configuration unless a local XTMF configuration is saved in the XTMF’s installation directory.  In order to do this, you will need to create a configuration file called ‘LocalXTMFConfiguration.xml’ in the root of the installation directory.  If this is detected XTMF will prioritize this configuration over the standard user configuration location.  Doing this requires that the user have access to the installation directory.</p>
+<p>XTMF 1.3 added the ability to create a local configuration from the settings page. After creating a local configuration, the application will reload under the new context. The settings page provides information about which configuration file is being used by XTMF. In the event a local configuration exists, an option is provided to remove the occurrence and revert to the shared XTMF configuration. The local configuration will be created under the name ‘Configuration.xml’.</p>
+<h3 id="changing-the-look-and-feel-of-xtmf">Changing the Look and Feel of XTMF</h3>
+<p>Version 1.5 of XTMF offers the ability for users to change the appearance of their XTMF interface with palettes and swatches provided by the underlying &quot;Material&quot; look and feel. Under the Settings page,
+users are free to choose from a multitude of primary and accent colours. In addition to primary and accent colours, a light and dark theme setting is also available. A dark theme will replace all window backgrounds
+with a close-to-black colour, whereas the light theme will maintain the standard light - white colours for the backgrounds.</p>
+<h3 id="creating-a-custom-interface-customization">Creating a Custom Interface Customization</h3>
+<p>XTMF no longer provides support for customization which was available in 1.3 Please use the built-in colour and palette chooser when deciding on a new customization.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/xtmf/getting_familiar_with_xtmf.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

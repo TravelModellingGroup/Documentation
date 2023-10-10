@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Export Transit Screenline Results | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Export Transit Screenline Results | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/ExportTransitScreenlineResults.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="export-transit-screenline-results"><strong>Export Transit Screenline Results</strong></h1>
+
+<p>This tool is used to aggregate transit volumes for a specified line filter based on a given screenline aggregation file. <em>For auto volumes, please see 'Export Screenline Results' tool.</em></p>
+<blockquote>
+<p>A <em>screenline</em> is defined as a collection of count stations, while a <em>count station</em> is encoded in a link extra attribute. A count station can belong to one or more screenlines.</p>
+<p>The <em>screenline definition file</em> structure assumes a header line followed by lines. For example,</p>
+<table>
+<thead>
+<tr>
+<th>Screenline GID</th>
+<th>Station GID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1001I</td>
+<td>100002</td>
+</tr>
+<tr>
+<td>T1001I</td>
+<td>100012</td>
+</tr>
+<tr>
+<td>T1001I</td>
+<td>100022</td>
+</tr>
+<tr>
+<td>T1001O</td>
+<td>100004</td>
+</tr>
+<tr>
+<td>T1001O</td>
+<td>100014</td>
+</tr>
+<tr>
+<td>T1001O</td>
+<td>100024</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h2 id="using-the-tool-with-modeller"><strong>Using the Tool with Modeller</strong></h2>
+<p>The tool can be found in &quot;TMG Toolbox&quot; -&gt; &quot;Analysis&quot; -&gt; &quot;Transit&quot; -&gt; &quot;Export Transit Screenline Results&quot;</p>
+<h3 id="scenario">Scenario</h3>
+<p>Select the scenario to execute against. Only one scenario at a time can be selected.</p>
+<h3 id="countpost-attribute">Countpost Attribute</h3>
+<p>Select the link attribute that contains the countpost ID numbers.</p>
+<h3 id="alternate-countpost-attribute">Alternate Countpost Attribute</h3>
+<p>(Optional) The alternate link attribute that contains countpost ID numbers for multiple posts per link.</p>
+<h3 id="count-pedestrians-instead-of-transit">Count Pedestrians instead of transit</h3>
+<p>Check the box to count pedestrian volume (volax) instead of transit volume (voltr).</p>
+<h3 id="line-filter-expression">Line Filter Expression</h3>
+<p>Write the expression in the correct EMME format to filter transit lines. Default is All.</p>
+<h3 id="representative-hour-factor">Representative Hour Factor</h3>
+<p>The representative hour factor for the screenlines. Default is 2.04.</p>
+<h3 id="screenline-definitions-file">Screenline Definitions File</h3>
+<p>Select &quot;Browse...&quot; to navigate to the location of the screenline definition file (*.csv).</p>
+<h3 id="export-file">Export File</h3>
+<p>Select &quot;Browse...&quot; to navigate to the target folder to store the output CSVs.</p>
+<h2 id="using-the-tool-with-xtmf"><strong>Using the Tool with XTMF</strong></h2>
+<p>The tool is called &quot;ExportTransitScreenlines&quot;.  It is available to add under <em>ExecuteToolsFromModellerResource</em> or <em>EmmeToolsToRun</em>.</p>
+<h3 id="alternate-countpost-attribute-flag">Alternate Countpost Attribute Flag</h3>
+<p>(Optional) The ID of an alternate link extra attribute containing countpost ids if two countposts share a link.</p>
+<h3 id="countpost-attribute-flag">Countpost Attribute Flag</h3>
+<p>The ID of a link extra attribute containing countpost ids (need to include the '@' symbol, e.g., *@stn1*).</p>
+<h3 id="export-pedestrians">Export Pedestrians</h3>
+<p>Select <em>TRUE</em> to count pedestrian volume (volax) rather than transit volume (voltr).</p>
+<h3 id="line-filter-expression-1">Line Filter Expression</h3>
+<p>Write the expression to filter transit lines. Default is All.</p>
+<h3 id="representative-hour-factor-1">Representative Hour Factor</h3>
+<p>Default is 2.04.</p>
+<h3 id="scenario-number">Scenario Number</h3>
+<p>The number of the Emme scenario to execute against.</p>
+<h3 id="save-to">Save To</h3>
+<p>Select the location to store the CSV results.</p>
+<h3 id="screenline-definitions">Screenline Definitions</h3>
+<p>Select the location of the screenline definition file.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/tmgtoolbox/analysis/transit/ExportTransitScreenlineResults.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

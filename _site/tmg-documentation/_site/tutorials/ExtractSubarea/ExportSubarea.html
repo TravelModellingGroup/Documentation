@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Export Subarea Tool | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Export Subarea Tool | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/ExtractSubarea/ExportSubarea.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../public/main.js'
+    import { init } from './../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="export-subarea-tool"><strong>Export Subarea Tool</strong></h1>
+
+<p>The <code>ExportSubareaTool</code> is used to export the road network from a regional network, the <code>ExportSubareaTool</code> extracts the traversal demand matrices, link volumes, turn volumes, transit network (optional), and traffic and transit traversal demand matrices (optional). To learn more about the subarea network, visit the <a href="https://tmg.utoronto.ca/doc/2.0/tmgtoolbox2_emme/tools/Export/ExportSubareaNetwork.html">TMG Export Subarea Tool Documentation</a>.</p>
+<p>In this workshop, we are going to learn how to use the TMG <code>ExportSubareaTool</code> to export a subarea from a regional network.</p>
+<h2 id="download-resources-needed-to-complete-this-tutorial"><strong>Download resources needed to complete this tutorial</strong></h2>
+<ol>
+<li><p>Regional Network (*.NWP) file</p>
+ <ul>
+     <li> [Frabitztown regional network package file](https://tmg.utoronto.ca/files/tutorials/1.frabiztown.zip)</li>
+ </ul>
+</li>
+<li><p>ShapeFile (*.SHP) representing subarea to export</p>
+ <ul>
+     <li> Polygon [Shapefile](https://tmg.utoronto.ca/files/tutorials/2.frabiztown_shapefile.zip) of the subarea within Frabitztown</li>
+ </ul>
+</li>
+<li><p>TMGToolbox (*.MTBX) files</p>
+ <ul>
+     <li> [Toolbox is compatible with EMME 4.6.0+](https://tmg.utoronto.ca/files/tutorials/3b.TMGToolbox_MTBX_Python3.zip)</li>
+     <li> [Toolbox is compatible with EMME 4.4.4.2](https://tmg.utoronto.ca/files/tutorials/3a.TMGToolbox_MTBX.zip)</li>
+ </ul>
+</li>
+<li><p>Completed <a href="https://tmg.utoronto.ca/files/tutorials/4.export_subarea_model_system.zip">XTMF Model System file(*.XML)</a></p>
+</li>
+<li><p>Sample <a href="https://tmg.utoronto.ca/files/tutorials/5.sample_output_folder.zip">subarea output folder </a></p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Adding Export Subarea Tool to XTMF requires XTMF 1.11+.</p>
+</div>
+<h2 id="set-up-xtmf-or-emme-modeller"><strong>Set up XTMF or Emme Modeller</strong></h2>
+<p>The subarea tool can be added to the Emme Modeller or XTMF.</p>
+<ul>
+    <li> [Export Subarea Tutorial](ExportSubarea.md) if you are using Emme notebook or </li>
+    <li> [Add Export Subarea Tool to XTMF](AddSubareaTool2XTMF.md) if you are using XTMF</li>
+</ul>
+<h2 id="frabitztown-regional-network"><strong>Frabitztown Regional Network</strong></h2>
+<p>In this workshop, we will be exporting a subarea road &amp; transit network from the Frabitztown network.</p>
+<figure>
+    <img src="images/frabitztown.png" alt="Frabitztown Regional Network" style="width:600px;">
+    <figcaption text-align="center">Figure 1: Frabitztown Regional Network</figcaption>
+</figure>
+<h3 id="preparing-inputs-into-the-tmg-export-subarea-tool"><strong>Preparing inputs into the TMG Export Subarea tool</strong></h3>
+<p><strong>1. Define the node extra attribute (@nflag) used to hold the subarea definition</strong></p>
+<li> Before running the Export subarea tool we must identify the nodes of the subarea we want to export from the regional network. The extra attribute @nflag is set to 1 representing the subarea or 0 otherwise.</li>
+<li> If the regional network does not already have a node extra attribute defining the subarea, then there are various ways to define the subarea. </li>
+<li> The TMGToolbox Export Subarea Tool provides an optional method to define the subarea within a network using polygon shape files. To do this, the TMG ExportSubareaTool
+create an extra node attribute (e.g. @nflag) from the polygon ShapeFile provided, and set it to either 0 or 1 to define the subarea.</li>
+<figure>
+    <img src="images/frabitztown_shapefile.png" alt="Subarea Polygon ShapeFile within Frabitztown Network" style="width:600px;">
+    <figcaption text-align="center">Figure 2: Subarea Polygon ShapeFile within Frabitztown Network</figcaption>
+</figure>
+<p><strong>2. Define link attribute (@gate) used to hold the gate information.</strong></p>
+<li> If the regional network does not have gate information defined, supplying all the centroid connections within the subarea as input parameters into the TMGToolbox Export Subarea Tool creates gate information for your network.</li>
+<li> In this workshop, we will be setting the parameters i subarea link selection and j subarea link selection to all the centroid connections within the subarea. i.e. </li>
+<pre><code class="lang-python">    &quot;i_subarea_link_selection&quot;: &quot;i=21,24 or i=27,28 or i=31,34&quot;, 
+    &quot;j_subarea_link_selection&quot;: &quot;j=21,24 or j=27,28 or j=31,34”
+</code></pre>
+<figure>
+    <img src="images/frabitztown-subarea-centroids.png" alt="Centroids within the subarea used to create gate link information" style="width:600px;">
+    <figcaption text-align="center">Figure 3: Centroids within the subarea</figcaption>
+</figure>
+<h2 id="start-coding"><strong>Start Coding</strong></h2>
+<h3 id="prepare-export-subarea-tool-json-parameters"><strong>Prepare Export Subarea tool JSON parameters</strong></h3>
+<p>So far we have prepared</p>
+<ul>
+    <li>The needed input files (network files, shapeFiles, etc.)</li>
+    <li> Identified all the centroid connections within our subarea to use for gate link selection</li>
+</ul>
+Now we are going to prepare the JSON parameters needed to successfully run the subarea tool. Below is a sample parameter script. Parameter explanation can be found in the [Export Subarea Tool Documentation](https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html)
+<pre><code class="lang-python">
+#parameters
+scenario_number = &quot;1&quot;
+
+#Import Network Package parameters
+network_file = &quot;test.nwp&quot;
+conflict_option = &quot;OVERWRITE&quot;
+scenario_name = &quot;Frabitztown&quot;
+
+# Import Binary Matrix parameters
+matrix_type = 4
+matrix_number = &quot;10&quot;
+import_file =  &quot;Test0.25.mtx&quot;
+matrix_description = &quot;demand matrix&quot;
+
+# Export Subarea Tool parameters
+modes = &quot;c&quot;
+demand_matrix_id = &quot;mf10&quot;
+time_matrix_id = &quot;mf0&quot;
+cost_matrix_id = &quot;mf0&quot;
+toll_matrix_id = &quot;mf1&quot;
+peak_hour_factor = &quot;1&quot;
+link_cost = &quot;0&quot;
+toll_weight = &quot;1&quot;
+iterations = 4
+r_gap = 0
+br_gap = 0
+norm_gap = 0
+shape_file_location = &quot;frab_shape/frab_border.shp&quot;
+i_subarea_link_selection = &quot;i&quot;
+j_subarea_link_selection = &quot;j&quot;
+subarea_gate_attribute = &quot;@gate&quot;
+subarea_node_attribute = &quot;@nflag&quot;
+create_node_flag_from_shapefile = True
+create_gate_attrib = True
+extract_transit = True
+output_folder = &quot;Subarea5&quot;
+performance_flag = True
+run_title = &quot;road assignment&quot;
+link_toll_attribute_id = &quot;@toll&quot;
+name_string = &quot;traffic class 1&quot;
+result_attributes = &quot;@auto_volume1&quot;
+background_transit = True
+on_road_ttf_ranges = &quot;3-128&quot;
+max_cores = 16 # XTMF 1.12+
+</code></pre>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><strong>Export Subarea Tool parameters require editing:</strong>
+<ul>
+<li> Follow the code along exercise to fix export subarea tool parameters.</li>
+<li> Frabitztown network does not have transit result stored.</li>
+</ul>
+</div>
+<h3 id="add-the-tmgtoolbox-to-emme-modeller"><strong>Add the TMGToolbox to Emme Modeller</strong></h3>
+<p>Follow this link to learn how to <a href="../../1.6/tmgtoolbox/index.html#adding-the-toolbox">add TMGToolbox to the Emme Modeller</a>.</p>
+<h3 id="code-along-exercise"><strong>Code Along Exercise</strong></h3>
+<p>Complete the following exercise to get the correct parameters above</p>
+<ol>
+<li><p>Copy the above parameters into the EMME notebook</p>
+</li>
+<li><p>Edit the three Export Subarea Tool parameters above to match the following:</p>
+<pre><code class="lang-python">    i_subarea_link_selection = &quot;i=21,24 or i=27,28 or i=31,34&quot;
+    j_subarea_link_selection = &quot;j=21,24 or j=27,28 or j=31,34&quot;
+    extract_transit = False 
+</code></pre>
+</li>
+<li><p>Add the script below to the below the parameters and run script</p>
+<pre><code class="lang-python">
+    import_matrix = m.tool(&quot;tmg.input_output.import_binary_matrix&quot;)
+    import_network = m.tool(&quot;tmg.input_output.import_network_package&quot;)
+    export_subarea_network = m.tool(&quot;tmg.input_output.export_subarea_tool&quot;)
+
+    import_network(network_file, scenario_number, conflict_option)
+
+    import_matrix(matrix_type, matrix_number,import_file,scenario_number,matrix_description)
+
+    export_subarea_network(
+        scenario_number,
+        modes,
+        demand_matrix_id,
+        time_matrix_id,
+        cost_matrix_id,
+        toll_matrix_id,
+        peak_hour_factor,
+        link_cost,
+        toll_weight,
+        iterations,
+        r_gap,
+        br_gap,
+        norm_gap,
+        shape_file_location,
+        i_subarea_link_selection,
+        j_subarea_link_selection,
+        subarea_gate_attribute,
+        subarea_node_attribute,
+        create_node_flag_from_shapefile,
+        create_gate_attrib,
+        extract_transit,
+        output_folder,
+        performance_flag,
+        run_title,
+        link_toll_attribute_id,
+        name_string,
+        result_attributes,
+        background_transit,
+        on_road_ttf_ranges,
+        max_cores  # XTMF 1.12+
+    )
+</code></pre>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Running this tool within XTMF makes it much easier to manage. Learn more on how to set up the Export Subarea tool within
+XTMF/TMGToolbox and within a GTAModel System
+<a href="https://tmg.utoronto.ca/doc/1.6/tmgtoolbox/input_output/ExportSubareaTool.html#tutorial---how-to-add-the-tool-within-xtmf">here</a>.</p>
+</div>
+<h3 id="output---export-subarea-tool"><strong>Output - Export Subarea Tool</strong></h3>
+<p>The tool outputs a folder that contains a new database containing only the network of the subarea. After loading the emmebank into Emme, the subarea of the Frabitztown regional network looks like</p>
+<figure>
+    <img src="images/frabitztown-subarea-network.png" alt="Frabitztown Subarea Network" style="width:600px;">
+    <figcaption text-align="center">Figure 4: Frabitztown Subarea Network</figcaption>
+</figure>
+<p>Detailed analysis of the trips into and out of the Frabitztown subarea.</p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/tutorials/ExtractSubarea/ExportSubarea.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

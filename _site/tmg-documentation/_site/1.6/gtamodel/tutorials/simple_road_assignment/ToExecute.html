@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>To Execute | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="To Execute | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/tutorials/simple_road_assignment/ToExecute.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../../public/main.js'
+    import { init } from './../../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="to-execute"><strong>To Execute</strong></h1>
+
+<h2 id="1-add-the-module-to-execute-standardtmg-emme-tools">1. Add the Module to Execute Standard/TMG Emme Tools</h2>
+<ul>
+<li>Step 1: Add &quot;ExecuteToolsFromModellerResource&quot; module to &quot;To Execute&quot;<br>
+<img src="images/Slide27.JPG" alt="alt text" title="ExecuteToolsFromModellerResource Module">
+<br>
+<br></li>
+<li>Step 2: Select &quot;ResourceLookup&quot; for <strong>Emme Modeller</strong> module<br>
+<img src="images/Slide28.JPG" alt="alt text" title="Select ResourceLookup Module">
+<br>
+<br></li>
+<li>Step 3: Enter the same name as the <em>Resource Name</em> of the target Emme Project file loaded before (i.e., &quot;Emme Project&quot;)<br>
+<img src="images/Slide29.JPG" alt="alt text" title="Enter the Resource Name">
+<br>
+<br>
+<br></li>
+</ul>
+<h2 id="2-import-network-package">2. Import Network Package</h2>
+<ul>
+<li>Step 1: Add &quot;ImportNetworkPackage&quot; module to <strong>Tools</strong><br>
+<img src="images/Slide30.JPG" alt="alt text" title="ImportNetworkPackage Module">
+<br>
+<br></li>
+<li>Step 2: Enter the parameter values of the <em>Import Network Package</em> module.<br>(Note: Values below are examples only, you may customize any field.)<br>
+<img src="images/Slide31.JPG" alt="alt text" title="Parameter values of the module">
+<br>
+<br></li>
+<li>Step 3: Choose &quot;FilePathFromOutputDirectory&quot; for <strong>Network Package</strong> module<br>
+<img src="images/Slide32.JPG" alt="alt text" title="FilePathFromOutputDirectory Module">
+<br>
+<br></li>
+<li>Step 4: Select the <em>Network Package file</em> (*.nwp) to load into the target Emme project file for use<br>
+<img src="images/Slide33.JPG" alt="alt text" title="Select the Network Package file">
+<br>
+<br>
+<br></li>
+</ul>
+<h2 id="3-load-attributes-for-road-assignment">3. Load Attributes for Road Assignment</h2>
+<ul>
+<li>Step 1: Add a new &quot;ExtraAttributeContextManager&quot; module to <strong>Tools</strong>, and customize the module parameters.<br>
+<img src="images/Slide34.JPG" alt="alt text" title="ExtraAttributeContextManager Module">
+<br>
+<br></li>
+<li>Step 2: Add the extra attributes to <em>Attribute To Create</em>* module and right click each attribute to rename it<br>
+<img src="images/Slide35.JPG" alt="alt text" title="Add the extra attributes">
+<br>
+<br></li>
+<li>Step 3: Add the following tools to <strong>Emme Tools To Run</strong> module (the tools will be executed in order): <br>
+<img src="images/Slide36.JPG" alt="alt text" title="Add the tools">
+<ol>
+<li>Calc407Tolls (Calculate 407 Tolls)
+<img src="images/Slide37.JPG" alt="alt text" title="Calc407Tolls"><br></li>
+<li>ImportBinaryMatrixIntoEmme (Import Demand Matrix)
+<img src="images/Slide38.JPG" alt="alt text" title="ImportBinaryMatrixIntoEmme"><br></li>
+<li>TollAttributeRoadAssignment (Road Assignment Settings), parameter 'On Road TTFs' is missing from the example image, leave as default value 3-128. Leave 'Tallies' sub-module empty
+<img src="images/Slide39.JPG" alt="alt text" title="TollAttributeRoadAssignment"><br></li>
+<li>ExportBinaryMatrixFromEmme (Export Auto Travel Cost Matrix)
+<img src="images/Slide40.JPG" alt="alt text" title="Export ACOST Matrix"><br></li>
+<li>ExportBinaryMatrixFromEmme (Export Auto Travel Time Matrix)
+<img src="images/Slide41.JPG" alt="alt text" title="Export AIVTT Matrix"><br></li>
+</ol>
+</li>
+</ul>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.6/gtamodel/tutorials/simple_road_assignment/ToExecute.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

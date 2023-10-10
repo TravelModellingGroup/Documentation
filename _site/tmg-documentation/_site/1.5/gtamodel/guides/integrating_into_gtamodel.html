@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Integrating into GTAModel | Travel Modelling Group Documentation </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Integrating into GTAModel | Travel Modelling Group Documentation ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/guides/integrating_into_gtamodel.md/#L1">
+  </head>
+
+  <script type="module">
+    import options from './../../../public/main.js'
+    import { init } from './../../../public/docfx.min.js'
+    init(options)
+  </script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/tmg.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="integrating-into-gtamodel">Integrating into GTAModel</h1>
+
+<h2 id="overview">Overview</h2>
+<p>Sometimes you might want to extract out data from GTAModel V4.0 that just isn’t easily available from the default model system.  In some cases modules already exist that can be added to the model system to accomplish this.  If possible please try to re-use modules, or contact TMG with a request for a feature enhancement to one.  If TMG is unable to satisfy the request you can follow the programming guide in the XTMF documentation to learn how to create your own modules in conjunction with this chapter to learn where integration has been made available.</p>
+<p><img src="images/17.png" alt=" XMF 1.0 showing the integration options for GTAModel V4.0.1" title="Figure 17"></p>
+<h2 id="pre-run">Pre-Run</h2>
+<p>Pre Run contains all of the modules that need to be executed before the main model system executes.  You can use this to automatically copy files.  In GTAModel V4.0.1 we use it to do the base EMME auto and transit assignments so we have travel time data ready for the main model.  If for instance you wished to analyze the resulting EMME assignments you could add validation modules after the EMME assignments have run.</p>
+<p>Modules must implement the <em>ISelfContainedModel</em> interface to integrate into this section.</p>
+<h2 id="pre-iteration">Pre-Iteration</h2>
+<p>Pre Iterations contains all of the modules that need to be executed before the main iteration happens, including the loading of households.  Only Pre Run modules, the loading of the zone system, and network data will execute before Pre Iteration modules.  Currently in GTAModel V4.0.1 we compute the aggregate PoRPoS, PoRPoW, and airport models at this stage.</p>
+<p>Modules must implement the <em>Tasha.Common.IPreIteration</em> interface in order to integrate into this section.</p>
+<h2 id="post-scheduler">Post-Scheduler</h2>
+<p>Post scheduler contains all modules that need to integrate into the model after a schedule has been defined but before modes have been assigned via the mode choice.  GTAModel V4.0 currently does not contain any modules of this kind.  This primary need for this interface would be for mutating the trip chains before they get into the mode choice algorithm which has been used in the validation of the model’s code previously.</p>
+<p>Modules must implement the <code>Tasha.Common.IPostScheduler</code> interface in order to integrate into this section.</p>
+<h2 id="post-household">Post Household</h2>
+<p>Post Household contains all of the modules that need to access the household’s data after it has been finished by both the scheduler and mode choice algorithms.  Currently GTAModel V4.0.1 uses this to generate the EMME demand matrices and aggregate validation data.  This is by far the most common point to integrate into GTAModel V4.0.</p>
+<p>Modules must implement the <code>Tasha.Common.IPostHousehold</code> interface in order to integrate into this section.</p>
+<h2 id="post-iteration">Post Iteration</h2>
+<p>Post Iteration modules execute after an iteration has finished execution.  In GTAModel V4.0 this is where we compute station capacity factors, run the main EMME network assignments and aggregate the mode split data by regions and planning districts.
+Modules must implement the <code>Tasha.Common.IPostIteration</code> interface in order to integrate into this section.</p>
+<h2 id="post-household-iteration">Post Household Iteration</h2>
+<p>Post Household Iteration modules are the lowest level of integration into the mode choice possible.  It is advised to avoid using this if another interface would have sufficed.  Currently researchers and students are using this interface to do detailed model integration with extremely detailed outputs from mode choice such as the conflicts for auto allocation, greenhouse gas emissions, and the separation between schedule optimal, assigned, and recovered utilities.</p>
+<p>The difference between this interface and post household is that in application Tasha can do more than one household iteration when solving a household’s schedule in order to provide a smoother assignment to the network layer.  Since memory requirements to keep all of these choices active between iterations is infeasible today it is recycled for each household iteration.  Integrating an analysis in-between household iterations allows us to recover this otherwise lost data.</p>
+<p>Modules must implement the <code>Tasha.Common.IPostHouseholdIteration</code> interface in order to integrate into this section.  The modules are located as sub-modules of the mode choice model.</p>
+<h2 id="order-of-execution">Order of Execution</h2>
+<p>The following diagram shows the order of execution for the points of integration into GTAModel V4.0.</p>
+<p><img src="images/18.png" alt="The order of execution for the main GTAModel integration points" title="Figure 18"></p>
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/TravelModellingGroup/Documentation/blob/master/tmg-documentation/1.5/gtamodel/guides/integrating_into_gtamodel.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+        
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ©2017-2023, Travel Modelling Group, University of Toronto
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
