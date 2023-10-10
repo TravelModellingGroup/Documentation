@@ -45,7 +45,9 @@ databank = _m.emmebank
 scenario = databank.scenario(14)
 network = scenario.get_network()
 
-file_path = r"C:\Users\waterh14\Documents\TTC Project Data\2023 GTFS (from Herman)\GTFS\python edited GTFS\Fixed Names.csv"
+#Note:Replace the file location below with the directory where the Fixed Names CSV file is located
+
+file_path = r"C:\Users\mukukaje\Documents\Fixed Names.csv"
 
 def replace_name(network, old, new, delay):
     
