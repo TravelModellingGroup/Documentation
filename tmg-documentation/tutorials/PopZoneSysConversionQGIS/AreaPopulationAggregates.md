@@ -1,4 +1,4 @@
-# Area Population Agregates
+# Area Population Aggregates
 
 We will now continue our work in excel and copy our data from QGIS to excel.
 
@@ -15,15 +15,15 @@ We will now continue our work in excel and copy our data from QGIS to excel.
 <figure>
     <img src="images/PopulationOfDAs.png"
         alt="Add Module"/>
-    <figcaption text-align="center">Figure 1: Population Of Dissemnitaion Areas</figcaption>
+    <figcaption text-align="center">Figure 1: Population Of Dissemination Areas</figcaption>
 </figure>
     
 
 
 <figure>
-    <img src="images/PopulationInTrafficZoneAgregate.png"
+    <img src="images/PopulationInTrafficZoneAggregate.png"
         alt="Add Module"/>
-    <figcaption text-align="center">Figure 2: Population In Traffic Zone Agregates</figcaption>
+    <figcaption text-align="center">Figure 2: Population In Traffic Zone Aggregates</figcaption>
 </figure>
 
 

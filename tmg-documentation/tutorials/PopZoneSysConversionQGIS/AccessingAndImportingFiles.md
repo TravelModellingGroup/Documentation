@@ -1,6 +1,6 @@
 # Accessing And Importing Files
 
-Before we can begin our zone system conversion. We will first need to visit the StatsCan website and the DMG website in order to
+Before we can begin our zone system conversion. We will first need to visit the Statcan website and the DMG website in order to
 download the files we will need. The steps on how to do this are outlined below.
 
 ## Steps
@@ -11,7 +11,7 @@ download the files we will need. The steps on how to do this are outlined below.
 2.	Import both zone systems into QGIS as separate vector layers.
  1. Import only the .shp files and save them to ensure that the attribute table is editable.
 3.	Open the attribute table of both shapefiles and use the field calculator to find the area of each zone.
- 1. Create a new field or column in the attribute table called system_area and set it to `$area/1000000` to get the area in km^2.
+ 1. Create a new field or column in the attribute table called system_area and set it to `$area/1000000` to get the area in `km^2`.
 
 <figure>
     <img src="images/CreatingNewShapefileAttributes.png"
