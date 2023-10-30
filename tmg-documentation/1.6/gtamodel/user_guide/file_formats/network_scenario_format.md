@@ -19,6 +19,12 @@ Additional headway and speed pairs can be added for more scenarios, such as the 
 |--------|--------|--------|--------|--------|
 |line=T501|1|1|0.5|1|
 
+> [!Warning]
+> In GTAModel V4.1+ if the transit line is going to go through Surface Transit Speed Updating, 
+> such as bus routes, the speed attribute will be overridden during transit assignment.
+> If you wish to control a bus line's speed you will need to work with the `@erow_speed` transit segment extra attribute
+> setting it to the speed you wish for the segment in km/h otherwise the global EROW speed will be applied.
+
 
 ## Aggregation (.csv)
 This file is the Transit Aggregation Selection Table, which contains the transit lines and how the headway is to be calculated for each line if a Transit Service Table file is used for that line. It contains two columns:
@@ -57,6 +63,12 @@ Additional xxxx_hdw and xxxx_spd columns should be specified for all time period
 > [!Warning]
 > If you set a speed to 0, whether or not if the TTF uses line speed, the line will be ignored from the alt file for that time period.
 > If there is no record of the line in the service table, _**then the line will be deleted**_!
+
+> [!Warning]
+> In GTAModel V4.1+ if the transit line is going to go through Surface Transit Speed Updating, 
+> such as bus routes, the speed attribute will be overridden during transit assignment.
+> If you wish to control a bus line's speed you will need to work with the `@erow_speed` transit segment extra attribute
+> setting it to the speed you wish for the segment in km/h otherwise the global EROW speed will be applied.
 
 
 ## Service Table (.csv)
