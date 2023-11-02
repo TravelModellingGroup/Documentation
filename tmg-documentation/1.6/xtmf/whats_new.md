@@ -63,8 +63,18 @@ Change Log:
 * Fix renaming a model system that is not loaded. by @JamesVaughan in [207](https://github.com/TravelModellingGroup/XTMF/pull/207)
 * Removed self update. by @JamesVaughan in [208](https://github.com/TravelModellingGroup/XTMF/pull/208)
 * Fixed tab overhang by @JamesVaughan in [209](https://github.com/TravelModellingGroup/XTMF/pull/209)
+* Fix regression when copying and pasting a model system by @JamesVaughan in [210](https://github.com/TravelModellingGroup/XTMF/pull/210)
+* Removed debug counter for dropped work episodes in a spin-lock by @JamesVaughan in [211](https://github.com/TravelModellingGroup/XTMF/pull/211)
+* added ability to change default auto time attribute by @wdiogu in [213](https://github.com/TravelModellingGroup/XTMF/pull/213)
+* Copy attribute c# by @wdiogu in [214](https://github.com/TravelModellingGroup/XTMF/pull/214)
+* Fix model system reflection when in debug mode. by @JamesVaughan in [215](https://github.com/TravelModellingGroup/XTMF/pull/215)
+* Fix QParameter and Module Parameter Filter Width by @JamesVaughan in [216](https://github.com/TravelModellingGroup/XTMF/pull/216)
+* Fix ParkingCost by @JamesVaughan in [217](https://github.com/TravelModellingGroup/XTMF/pull/217)
+* STTA Path Analysis by @JamesVaughan in [218](https://github.com/TravelModellingGroup/XTMF/pull/218)
+* Implemented STTA Traversal Analysis by @JamesVaughan in [219](https://github.com/TravelModellingGroup/XTMF/pull/219)
+* Fix Exporting and Renaming model systems before they are loaded. by @JamesVaughan in [220](https://github.com/TravelModellingGroup/XTMF/pull/220)
 
-Full Changelog: [1.11.1414...1.12.1418](https://github.com/TravelModellingGroup/XTMF/compare/1.11.1414...1.12.1418)
+Full Changelog: [1.11.1414...1.12.1418](https://github.com/TravelModellingGroup/XTMF/compare/1.11.1414...1.12.1420)
 
 ## Version 1.11
 
