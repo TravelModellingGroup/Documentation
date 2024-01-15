@@ -151,7 +151,20 @@ _Visitors (No. of observations = 4149; Adjusted Rho2 = 0.0561)_
 |     B_LogSEmployment             |     0.25     |     0.042      |     5.95      |     2.6e-09     |     0.0429          |     5.83           |     5.49e-09        |     4.2e-14         |
 |     B_Logsum                     |     0.699    |     0.0478     |     14.6      |     0           |     0.0583          |     12             |     0               |     0               |
 
+### Party Size
 
+When we run the mode choice we are computing the probability of the different types of mode by the party that is going to the airport.
+In order to work with the generation rates however, you will need to convert between parties to individual persons.  The code will
+automatically do this or you given the expected party sizes by mode parameters.  For GTAModel V4.2 the following Party Sizes are used
+from the table below.
+
+|Mode | Average Party Size |
+|-----|--------------------|
+|Auto    | 2.018496|
+|Transit	| 1.928261|
+|Passenger (Driver is not in party)	| 2.031799|
+|Rideshare	| 1.780388|
+|Other	| 3.878676|
 
 ## GTAModel V4.0
 
