@@ -75,6 +75,12 @@ This file was added starting in GTAModel V4.1.0. The columns are as follows:
 * weight
   * The factor to apply to scale this trip to scale the trip for the global population
   * This will be the same as the person's weight
+* JointTourRep `(XTMF 1.13+)`
+    * -1 if this is not a joint tour.
+    * If it is a joint tour. the person id of the person who is making the choices.
+* JointTourRepTripId `(XTMF 1.13+)`
+    * -1 if this is not a joint tour.
+    * If it is a joint tour, the trip id is of the representatives associated trip.
 
 ## Trip_Modes.csv
 
