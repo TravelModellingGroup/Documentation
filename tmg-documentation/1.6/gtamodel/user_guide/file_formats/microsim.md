@@ -55,6 +55,8 @@ This file was added starting in GTAModel V4.1.0. The columns are as follows:
   * If the zone is 0, then they have not been assigned a school zone
 * weight
   * The person's expansion factor to scale the agent to the global population
+* telecommuter `(XTMF 1.13+) optional`
+    * 1 if the person decided to telecommute today, 0 otherwise.
 
 ## Trips.csv
 
