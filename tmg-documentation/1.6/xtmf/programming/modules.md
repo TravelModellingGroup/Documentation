@@ -229,28 +229,33 @@ Below we have a simple 'Hello World' module implementing a ModelSystemTemplate f
 using System;
 using XTMF;
 
-namespace MyModules
+namespace MyModules;
+
+[ModuleInformation(Description="A hello world module.")]
+public class MyModule : IModelSystemTemplate
 {
-    [ModuleInformation(Description="A hello world module.")]
-    public class MyModule : IModelSystemTemplate
+    public string Name { get; set; }
+    
+    public void Start()
     {
-        public string Name {get;set;}
-        
-        public void Start()
-        {
-            Console.WriteLine("Hello World");
-        }
-
-        public Tuple<byte, byte, byte> ProgressColour => new Tuple<byte, byte, byte>( 50, 150, 50 );
-        public bool RuntimeValidation(ref string error) => true;
-
-        [Parameter("Input Base Directory", "Input", "The directory relative to the Run Directory where all of the input is kept." )]
-        public string InputBaseDirectory {get;set;}
-        // The OutputBaseDirectory property has been deprecated.
-        public string OutputBaseDirectory {get;set;}
-        public bool ExitRequest => false;        
+        Console.WriteLine("Hello World");
     }
+
+    public bool ExitRequest() => false;
+    
+    public Tuple<byte, byte, byte> ProgressColour => new Tuple<byte, byte, byte>( 50, 150, 50 );
+    
+    public bool RuntimeValidation(ref string? error) => true;
+
+    [Parameter("Input Base Directory", "Input", "The directory relative to the Run Directory where all of the input is kept." )]
+    public string InputBaseDirectory { get; set; }
+    
+    // The OutputBaseDirectory property has been deprecated.
+    public string OutputBaseDirectory { get; set; }
+           
+    public float Progress { get; set; }
 }
+
 ```
 
 Assuming you are familiar with C#, you will quickly see that we have an attribute attached to the class that provides
