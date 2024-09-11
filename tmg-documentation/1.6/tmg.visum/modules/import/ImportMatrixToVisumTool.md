@@ -1,15 +1,16 @@
-# Import Matrix To Visum
+# Import Matrix to Visum Tool
+
 
 Takes a matrix currently loaded in memory and stores it into a Matrix
 within Visum given an associated number.  If the matrix does not
-exist it will be created.
+exist it will be created.  This module takes in the VISUM instance 
+from the current tool context.
 
 ## SubModules
 
 | SubModule Name | Type | Description                            |
 |-------|---------------|----------------------------------------|
 |ToSave| `IDataSource<SparseTwinindex<float>`| The matrix to store into Visum. |
-|Visum|`IDataSource<VisumInstance>`| The VISUM instance to import the matrix to.|
 
 ## Parameters
 
