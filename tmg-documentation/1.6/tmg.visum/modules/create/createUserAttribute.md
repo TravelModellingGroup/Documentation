@@ -7,5 +7,5 @@ Create the user attribute if it does not exist.
 | Parameter Name | Type | Description |
 |----------------|------|-------------|
 |Attribute Name|`string`| The name of the attribute to create.|
-|Network Object Type|`NetworkObjectType`| The of network object to create the attribute for.|
+|Network Object Type|`NetworkObjectType`| The network object to create the attribute for.|
 
