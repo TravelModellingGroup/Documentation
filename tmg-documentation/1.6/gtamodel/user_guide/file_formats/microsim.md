@@ -84,6 +84,22 @@ This file was added starting in GTAModel V4.1.0. The columns are as follows:
     * -1 if this is not a joint tour.
     * If it is a joint tour, the trip id is of the representatives associated trip.
 
+The origin and destination activities are as follows:
+
+| Activity    | Description |
+|-------------|-------------|
+| PrimaryWork | The main work activity episode going to the assigned work location for the individual.|
+| SecondaryWork | A work activity episode not going to the primary work location. |
+| WorkBasedBusiness | A work location not going to the main work location, such as a business meeting. |
+| School | A school activity episode. |
+| Market | A market activity episode. |
+| JointMarket| A market activity episode that is part of a joint tour. |
+| IndividualOther| An activity episode that is not work, school, or market. |
+| JointOther| An activity episode that is not work, school, or market and is part of a joint tour. |
+| Home | The home activity episode. |
+| ReturnFromWork | A purposeful return home activity episode from work, such as lunch. |
+
+
 ## Trip_Modes.csv
 
 * household_id
