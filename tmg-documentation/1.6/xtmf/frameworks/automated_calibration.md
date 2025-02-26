@@ -84,6 +84,7 @@ This takes in five matrices in order to update the parameter.
 
 #### Parameters
 
+* **Change Weight** - A multiplier for the amount of change to apply. Lower this if there are multiple targets targeting a similar system to set priorities.
 * **Minimum Value** - The minimum value the target parameter is allowed to be set to.
 * **Maximum Value** - The maximum value the target parameter is allowed to be set to.
 * **Parameter Is Ratio** - Set this to true if the parameter is being applied to a ratio instead of
@@ -103,6 +104,7 @@ This takes in two scalars, one for the probability of the target, and one for th
 
 #### Parameters
 
+* **Change Weight** - A multiplier for the amount of change to apply. Lower this if there are multiple targets targeting a similar system to set priorities.
 * **Minimum Value** - The minimum value the target parameter is allowed to be set to.
 * **Maximum Value** - The maximum value the target parameter is allowed to be set to.
 
