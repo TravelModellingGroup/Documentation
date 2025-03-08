@@ -14,7 +14,7 @@ Each variable is the summation of both access and egress trips.
 $$
 \begin{split}
 V_A = & \beta_{atime}(atime) + \beta_{cost}(acost_A + ParkingCost_{A_x} + tfare_A) + \beta_{tivtt}(preceivedTransitTime_A)\\\\
-& + \beta_{capacity}(Capacity_A) + \beta_{ClosenstStation}(ClosestStation_A)
+& + \beta_{capacity}(Capacity_A) + \beta_{ClosestStation}(ClosestStation_A)
 \end{split}
 
 $$
