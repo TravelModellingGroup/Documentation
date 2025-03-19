@@ -11,6 +11,7 @@ The population scenario contains the households and persons agents that will be 
 * HouseholdData
     * Households.csv
     * Persons.csv
+    * Trips.csv (Optional, used only for observed data.)*
 * WorkerCategories (V4.0)
 * ZonalResidence
 * ZoneData
