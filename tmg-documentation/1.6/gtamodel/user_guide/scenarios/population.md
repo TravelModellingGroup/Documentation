@@ -25,6 +25,8 @@ The population scenario contains the households and persons agents that will be 
 
 ### HouseholdData/Households.csv
 
+All trip records need to be sorted so that the `HouseholdId` are sorted ascending.
+
 The household records are stored in a CSV file with the following columns in order, identical to the input seed's format:
 
 * HouseholdId
@@ -51,6 +53,8 @@ The household records are stored in a CSV file with the following columns in ord
     * 7 - Decline / don't know
 
 ### HouseholdData/Persons.csv
+
+All person records need to be sorted so that the `HouseholdId`, and `PersonNumber` are sorted ascending.
 
 The person records are stored in a CSV file with the following columns in order, identical to the input seed's format:
 
@@ -94,6 +98,38 @@ The person records are stored in a CSV file with the following columns in order,
 * ExpansionFactor
     * The factor to expand this record up to get the full population.
 
+### HouseholdData/Trips.csv
+
+`Optional, used only for observed data.`
+
+All trip records need to be sorted so that the `HouseholdId`, `PersonNumber`, and `TripNumber` are sorted ascending.
+
+The trips records are stored in a CSV file with the following columns in order:
+
+* HouseholdId
+    * The household id for the person making the trip.
+* Person Number
+    * The id for the person making the trip.
+* TripNumber
+    * The unique trip number for the person. Trip numbers should be in order.
+* StartTime
+    * The start time of the trip in the format [hh][mm] with the minutes always being at least 2 digits.  For example `900` is 9:00 AM and `1305` is 1:05 PM.
+* Mode
+    * The mode code for the trip. These 1 letter codes correspond to the TripChainLoader's "Mode Conversion" parameter.
+* PurposeOrigin
+    * The purpose of the trip's origin.  Purpose codes are below.
+* ZoneOrigin
+    * The TAZ of the trip's origin.
+* PurposeDestination
+    * The purpose of the trip's destination.  Purpose codes are below.
+* ZoneDestination
+    * The TAZ of the trip's destination.
+* JointTourID
+    * A unique id within the household for the joint tour, -1 if it is not a joint tour.
+* JointTourRep
+    * The person number of who is the representative of this joint tour, -1 if it is not a joint tour.
+
+
 ### ZonalResidence/*.csv
 
 * HomeZone
@@ -117,7 +153,7 @@ Each of the files will contain the following columns
 ## Creating a New Scenario
 
 To create a new population scenario you will need to run your [population synthesis algorithm](../PopulationSynthesis/index.md).
-Your population synthesis alogrithm should provide you with your new `HouseholdData`, `WorkerCategories` (if your model requires it),
+Your population synthesis algorithm should provide you with your new `HouseholdData`, `WorkerCategories` (if your model requires it),
 and `ZonalResidence` directories.  
 
 For the `ZoneData` directory you will need to do the following:
