@@ -20,6 +20,9 @@ For models coming from TMG based on GTAModel V4.0 this will be four, for GTAMode
 specified otherwise.  If your model system is coming from a consulting firm instead of TMG please consult their
 model documentation to see how they have setup their run databanks.
 
+For more information about setting up EMME please refer to the EMME documentation
+[here](../Network/emme_project_setup.md).
+
 ## Setting up the Model System
 
 Now that we have the environment setup we can continue with preparing the model system.  The following section

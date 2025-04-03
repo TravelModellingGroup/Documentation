@@ -45,16 +45,6 @@ your default web browser will launch taking you to INRO's website.  From there y
 After confirming that you do in fact want the file it will be emailed to the associated email address to your INRO account.  Save the authorization file to disk and then continue with the Wizard
 selecting the file for use.  **Make sure that the newly added authorization's radio button is selected before continuing on.**
 
-### Getting a License
-
-Now that we have EMME installed and have an authorization the next step is to connect to our license server.  If you have a local key you can skip this step, otherwise if you are
-using the DMG license server please follow their instructions for installing [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and creating a shortcut to log
-into their license VPN.
-
-At this point you should be able to manually connect and get a license.  **It is recommended to switch this over to `Automatic` so that in the future if you are not using EMME you will
-not consume a license by accident.**
-
-
 ## Next Step
 
 Now that our software is setup, our next step is to [configure the software](initial_configuration.md).
