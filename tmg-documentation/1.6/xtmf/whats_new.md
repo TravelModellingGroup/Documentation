@@ -1,5 +1,159 @@
 # What's new in XTMF 
 
+## Version 1.14
+
+## New Features
+
+* Updated to .Net 9
+* EMME 2024 and 2025 support
+* STTA now supports changing the number of lanes
+* [Improved Automated Calibration Framework](frameworks/automated_calibration.md)
+* Able to run a previous run.
+* Improved Output Console Window
+* Custom utility matrices for location choice
+* Custom utility matrices for V4Modes.
+* Improved performance on modern CPU architectures
+* Updated Keyboard shortcuts
+  * When selecting a module you can now press `ctrl+P` to switch to that module's parameters.  Press Escape to move control back to the modules, twice if you have a filter on the module parameters.  The same control flow works for quick parameters but with the shortcut of `ctrl+Q`.
+* Improved error messages when running into TTF0's when trying to do a transit assignment
+* When generating the fare based hyper-network, having a fare group with 0 transit lines no longer causes a crash, instead a warning is sent to console.
+* PoRPoS now supports custom age groups.
+* Custom attributes are now supported when loading in Households, Persons, and Trips for easier third-party module development.
+* You can now copy a module's parameters to the clipboard and paste it into a spreadsheet.  This option is inside the parameter context menu under the category `Parameters`.
+
+## Breaking Changes
+
+* When updating a model system from XTMF 1.12 or before, you will need to zero out `Tasha.V4Modes.Bicycle`'s `MarketFlag`, `Other Flag`, and `SchoolFlag`.  These parameters were previously existed but were not used in utility calculations.
+
+
+## Setting up EMME 2024/2025
+
+EMME 2024 and EMME 2025 use a new version of Python 3.11.  In order to support that XTMF 1.14 ships with three different versions of the TMGToolbox.
+
+* `Modules/TMG_Toolbox.mtbx` - Use this for EMME 4.4.5.1 and before
+* `Modules/TMG_Toolbox_Python3.mtbx` - Use this for EMME 4.6 to EMME 2023 (EMME 4.5 is not supported)
+* `Modules/TMG_Toolbox_Python311.mtbx` - Use this for EMME 2024 and EMME 2025
+
+### Change Log
+
+* [Added Income Class filters](https://github.com/TravelModellingGroup/XTMF/pull/277)
+* [Fix keydown deadlock when renaming dropdown parameter.](https://github.com/TravelModellingGroup/XTMF/pull/278)
+* [Load Microsim Observed Mode](https://github.com/TravelModellingGroup/XTMF/pull/279)
+* [Implemented custom utilities for location choice](https://github.com/TravelModellingGroup/XTMF/pull/280)
+* [Add remainders for hourly matrices.](https://github.com/TravelModellingGroup/XTMF/pull/281)
+* [Added Calibration Modules](https://github.com/TravelModellingGroup/XTMF/pull/282)
+* [Lookup Input Directory value using the default parameter name.](https://github.com/TravelModellingGroup/XTMF/pull/283)
+* [Update version number to 1.14](https://github.com/TravelModellingGroup/XTMF/pull/284)
+* [Limit selected modules to visible ones](https://github.com/TravelModellingGroup/XTMF/pull/285)
+* [More Age Categories for PoRPoS](https://github.com/TravelModellingGroup/XTMF/pull/286)
+* [Add Zone System Mask Vector Module](https://github.com/TravelModellingGroup/XTMF/pull/287)
+* [Update to .Net 9](https://github.com/TravelModellingGroup/XTMF/pull/288)
+* [Updated to .Net 9 locks.](https://github.com/TravelModellingGroup/XTMF/pull/289)
+* [Add current Calibration run's progress to host's progress](https://github.com/TravelModellingGroup/XTMF/pull/290)
+* [Add modules to intercept a matrix and store it to disk when being loaded.](https://github.com/TravelModellingGroup/XTMF/pull/291)
+* [Implement clone for modules in collections.](https://github.com/TravelModellingGroup/XTMF/pull/292)
+* [Add option to copy parameters to clipboard](https://github.com/TravelModellingGroup/XTMF/pull/293)
+* [Remove Undefined Behavior in OD Math with bad variables/literals](https://github.com/TravelModellingGroup/XTMF/pull/294)
+* [Low probability target update](https://github.com/TravelModellingGroup/XTMF/pull/295)
+* [Add more debugging information during calibration](https://github.com/TravelModellingGroup/XTMF/pull/296)
+* [Adds parameter to select mask selection logic](https://github.com/TravelModellingGroup/XTMF/pull/297)
+* [Add variable number of lanes for STTA](https://github.com/TravelModellingGroup/XTMF/pull/298)
+* [Implement StringList's CopyTo Method](https://github.com/TravelModellingGroup/XTMF/pull/299)
+* [Fix Setting Root Description](https://github.com/TravelModellingGroup/XTMF/pull/300)
+* [Added Multiplier for Probability Targets' Change](https://github.com/TravelModellingGroup/XTMF/pull/301)
+* [Add AssignParameterOffset.](https://github.com/TravelModellingGroup/XTMF/pull/302)
+* [Update for EMME 2024.](https://github.com/TravelModellingGroup/XTMF/pull/303)
+* [Add access station congestion term for DAT.](https://github.com/TravelModellingGroup/XTMF/pull/304)
+* [Fix v/c for DAT to re-compute between iterations.](https://github.com/TravelModellingGroup/XTMF/pull/305)
+* [Allow modifying and running Previous Runs.](https://github.com/TravelModellingGroup/XTMF/pull/306)
+* [Fix Pow function to deal with negative bases and integer exponents.](https://github.com/TravelModellingGroup/XTMF/pull/307)
+* [Add Custom Attributes When Loading Households](https://github.com/TravelModellingGroup/XTMF/pull/308)
+* [Update Readme](https://github.com/TravelModellingGroup/XTMF/pull/309)
+* [Allow Custom Columns to have data other than floats](https://github.com/TravelModellingGroup/XTMF/pull/310)
+* [Fix reflecting on unloaded model systems](https://github.com/TravelModellingGroup/XTMF/pull/311)
+* [Fix FMA for AVX512](https://github.com/TravelModellingGroup/XTMF/pull/312)
+* [Check ModeName when loading trip chains for observed mode.](https://github.com/TravelModellingGroup/XTMF/pull/313)
+* [Update Parameter Editing Workflow](https://github.com/TravelModellingGroup/XTMF/pull/314)
+* [Update ModelRun Console to limit number of lines](https://github.com/TravelModellingGroup/XTMF/pull/315)
+* [Update modeller bridge to be more resilient in the case a tool is not found.](https://github.com/TravelModellingGroup/XTMF/pull/316)
+* [Fix Ctrl+W for HelpDialog](https://github.com/TravelModellingGroup/XTMF/pull/317)
+* [Synchronize TMGToolbox 2025.04.07](https://github.com/TravelModellingGroup/XTMF/pull/318)
+
+
+**[Full Changelog](https://github.com/TravelModellingGroup/XTMF/compare/1.13.1444...1.14.1447)**: 
+
+## Version 1.13
+
+### New Features
+* Automatic calibration subsystem.
+* Support for [VISUM 2024](https://github.com/TravelModellingGroup/TMG.Visum)
+* Updated to .Net 8.
+* AVX-512 Code paths for increased performance on modern CPU architectures
+* Fixed error in GTAModelV4.2 parking cost calculation.
+* Increased performance on high core-count machines.
+* Added more calibration constant options for GTAModelV4 modes.
+* Updated TMGToolbox for EMME.
+* Added initial Telecommuting model for GTAModelV4.
+
+A full list of changes within XTMF are below.
+
+Support for EMME 2024 is not available yet.
+
+### Change Log
+* [.Net 8](https://github.com/TravelModellingGroup/XTMF/pull/221)
+* [Added Vector512 code paths for VectorHelper classes.](https://github.com/TravelModellingGroup/XTMF/pull/222)
+* [Allow FNSG without Cleaned Networks](https://github.com/TravelModellingGroup/XTMF/pull/223)
+* [Cleanup Model System Display](https://github.com/TravelModellingGroup/XTMF/pull/224)
+* [Fix XTMF.Run to work with new Delayed Project Loading](https://github.com/TravelModellingGroup/XTMF/pull/225)
+* [Fixed descriptions for LoadZoneSystemFromNWP](https://github.com/TravelModellingGroup/XTMF/pull/226)
+* [Add Time Bins from File](https://github.com/TravelModellingGroup/XTMF/pull/227)
+* [Added status messages to ChainEMMETools](https://github.com/TravelModellingGroup/XTMF/pull/228)
+* [Added a max transit perceived time for Auto Ownership](https://github.com/TravelModellingGroup/XTMF/pull/229)
+* [Add Telecommuting and module for RateBasedTelecommuting](https://github.com/TravelModellingGroup/XTMF/pull/230)
+* [Add Max and Min ODMath Functions.](https://github.com/TravelModellingGroup/XTMF/pull/231)
+* [Add Max Transit time to DriveLicenseModel](https://github.com/TravelModellingGroup/XTMF/pull/232)
+* [Added Party Size logic for 2020Airport Model](https://github.com/TravelModellingGroup/XTMF/pull/233)
+* [Add AO OverSufficient Threshold Modifier](https://github.com/TravelModellingGroup/XTMF/pull/234)
+* [Removed having tolls explicitly defined in the tooling as this ends up in contention with the other STTA analyses.](https://github.com/TravelModellingGroup/XTMF/pull/235)
+* [Fix EMME infinite conversions for tptt going from float to time and back](https://github.com/TravelModellingGroup/XTMF/pull/236)
+* [Quick Fixes](https://github.com/TravelModellingGroup/XTMF/pull/237)
+* [Update Publishing to .Net 8.](https://github.com/TravelModellingGroup/XTMF/pull/238)
+* [Add Child and Youth Constants for WAT](https://github.com/TravelModellingGroup/XTMF/pull/239)
+* [Parameter Fixes](https://github.com/TravelModellingGroup/XTMF/pull/240)
+* [Set a maximum age to use the school bus.](https://github.com/TravelModellingGroup/XTMF/pull/241)
+* [Add max auto travel time to auto ownership](https://github.com/TravelModellingGroup/XTMF/pull/242)
+* [Remove unused usings](https://github.com/TravelModellingGroup/XTMF/pull/243)
+* [Fixed recent projects](https://github.com/TravelModellingGroup/XTMF/pull/244)
+* [PADUM Modules](https://github.com/TravelModellingGroup/XTMF/pull/245)
+* [Add XTMF Version Number to Model Systems and Projects](https://github.com/TravelModellingGroup/XTMF/pull/246)
+* [Code Cleanup](https://github.com/TravelModellingGroup/XTMF/pull/247)
+* [Fixed the name of the program being launched.](https://github.com/TravelModellingGroup/XTMF/pull/248)
+* [Added functions to provide 512bit and 256 bit accelerated exp](https://github.com/TravelModellingGroup/XTMF/pull/249)
+* [Added bounds checking for exp](https://github.com/TravelModellingGroup/XTMF/pull/250)
+* [Vectorized Log](https://github.com/TravelModellingGroup/XTMF/pull/251)
+* [Vectorized implementation of PoW](https://github.com/TravelModellingGroup/XTMF/pull/252)
+* [Added AVX512 for Multiplying 4 numbers](https://github.com/TravelModellingGroup/XTMF/pull/253)
+* [Added additional options for IfNaN and ZoneSystemMatrix](https://github.com/TravelModellingGroup/XTMF/pull/254)
+* [Added Joint Tour Columns for Microsim](https://github.com/TravelModellingGroup/XTMF/pull/255)
+* [Stop XTMF Run Host from writing error log](https://github.com/TravelModellingGroup/XTMF/pull/256)
+* [Fix reporting for PAT and PET station choices in Microsim](https://github.com/TravelModellingGroup/XTMF/pull/257)
+* [Relative Paths for Working Directory](https://github.com/TravelModellingGroup/XTMF/pull/258)
+* [No Telecommuter Attribute](https://github.com/TravelModellingGroup/XTMF/pull/259)
+* [Add telecommuter to LoadMicrosimHouseholds](https://github.com/TravelModellingGroup/XTMF/pull/260)
+* [Optimize NaN Checks when saving EMME Matrix](https://github.com/TravelModellingGroup/XTMF/pull/261)
+* [Fix NaN Check](https://github.com/TravelModellingGroup/XTMF/pull/262)
+* [Validation Report Modules](https://github.com/TravelModellingGroup/XTMF/pull/263)
+* [Missing Model System](https://github.com/TravelModellingGroup/XTMF/pull/264)
+* [Added Additional Student Reports](https://github.com/TravelModellingGroup/XTMF/pull/265)
+* [Fixed TASHA report durations and mode choice](https://github.com/TravelModellingGroup/XTMF/pull/266)
+* [Automatic Calibration](https://github.com/TravelModellingGroup/XTMF/pull/267)
+* [OptimizeLocks](https://github.com/TravelModellingGroup/XTMF/pull/268)
+* [Removes the Unused Option](https://github.com/TravelModellingGroup/XTMF/pull/269)
+* [Fixed Linked Parameters not being saved during a model run.](https://github.com/TravelModellingGroup/XTMF/pull/270)
+* [Fix Create Matrices](https://github.com/TravelModellingGroup/XTMF/pull/271)
+* [Added a module to generate the hourly facilitate passenger trips.](https://github.com/TravelModellingGroup/XTMF/pull/272)
+* [Null Zone Reports](https://github.com/TravelModellingGroup/XTMF/pull/273)
+
 ## Version 1.12
 
 > [!WARNING]
@@ -9,7 +163,7 @@
 > files into the `Modules` directory of your XTMF installation folder.
 
 
-New Features:
+### New Features:
 * Supports EMME 2023.
 * Updated to .Net 7.0.
 * Fixed regression in the transit assignment tool.
@@ -18,7 +172,7 @@ New Features:
 * Improved performance of GTAModel V4 when running on high core count machines.
 
 
-Change Log:
+### Change Log
 * Update references to XTMF 1.12. by @JamesVaughan in [160](https://github.com/TravelModellingGroup/XTMF/pull/160)
 * Stta xtmf1 by @wdiogu in [161](https://github.com/TravelModellingGroup/XTMF/pull/161)
 * Edit parameters by @wdiogu in [162](https://github.com/TravelModellingGroup/XTMF/pull/162)
