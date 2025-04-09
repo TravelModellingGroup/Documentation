@@ -13,3 +13,10 @@ Del | Model System, Project, Module | Delete selected item
 Ctrl+S | Model System | Export (as) selected model system
 Ctrl+S | Model System (Edit) | Save open model system
 Ctrl+D | Module | Disable selected module
+Ctrl+P | Module | Switch to module parameters
+Ctrl+Q | Module | Switch to quick parameters
+Ctrl+F | Parameter | Search for a file to use for the parameter
+Ctrl+D | Parameter | Search for a directory to use for the parameter
+Ctrl+O | Parameter | Open the file that the parameter is referring to
+Ctrl+Z | Module, Parameter | Undo last action
+Ctrl+Y | Module, Parameter | Redo last action
