@@ -38,7 +38,15 @@ The access station choice model is described here.
 
 ### WAT (Walk-Access-Transit)
 
-Walk access transit primarily represents all public transportation trips that do not involve driving to and leaving a vehicle at a station.  This includes both walking to a station/stop and being dropped off as a passenger to a station/stop.  In the future we will look at designing the passenger mode to encompass the latter functionality.
+`V4.0`
+
+Walk access transit primarily represents all public transportation trips that do not involve driving to and leaving a vehicle at a station.  This includes both walking to a station/stop and being dropped off as a passenger to a station/stop.
+In the future we will look at designing the passenger mode to encompass the latter functionality.
+
+`V4.1+`
+
+Walk access transit represents trips where both the access and egress legs of the trip are done using active transportation modes, such as walking or cycling, and where
+at least one public transit vehicle is used for the trip.
 
 ### Walk
 
