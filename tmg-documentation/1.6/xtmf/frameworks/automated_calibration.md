@@ -65,6 +65,32 @@ per iteration.
 * **Minimum Value** - The minimum value the target parameter is allowed to be set to.
 * **Maximum Value** - The maximum value the target parameter is allowed to be set to.
 
+### Probability Vector Target
+
+`XTMF 1.15+`
+
+This target is used when you want to compare the sum of two vectors.
+The vectors are expressed in real values where both the modelled and
+the observed are normalized by their respective Total vectors.
+
+#### SubModules
+
+This takes in five matrices in order to update the parameter.
+* **Observed Total** - A matrix containing the total number of observations for each cell.
+* **Observed Selection** - A matrix containing the number of observations that were selected for each cell. 
+* **Model Total** - A matrix containing the total number of generated observations for each cell.
+* **Model Selection** - A matrix containing the number of generated observations that were selected for each cell.
+* **Mask** -  A matrix with the values of 0 or 1.  If the value is 0, the cell will be ignored.
+
+#### Parameters
+
+* **Change Weight** - A multiplier for the amount of change to apply. Lower this if there are multiple targets targeting a similar system to set priorities.
+* **Minimum Value** - The minimum value the target parameter is allowed to be set to.
+* **Maximum Value** - The maximum value the target parameter is allowed to be set to.
+* **Parameter Is Ratio** - Set this to true if the parameter is being applied to a ratio instead of
+    a constant multiplied against a variable.
+* **Only Mask Selection** - Only apply the mask to both of the observed and modelled selection vector. This can be useful
+    when trying to calibration a location choice model.
 
 ### Probability Matrix Target
 
