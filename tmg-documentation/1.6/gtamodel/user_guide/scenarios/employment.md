@@ -66,6 +66,14 @@ When we create a new employment scenario the only file that we modify is
 ratios within `EmpOccRates`, for example if you are transforming a TAZ into a large shopping mall from an old industrial facility you
 will want to change the employment-occupation rates to include more sales instead of manufacturing.
 
+> [!WARNING]
+> If you are adding employment to a zone that previously had no employment
+> it is good practice to make sure that your EmpOccRates file(s) have an entry for that zone with a distribution.
+> TMG's default is to use the planning districts average employment for zones with less than 
+> 20 records from the travel survey.
+> 
+> *If no entry has a non-zero value, no employment will be assigned to the zone.*
+
 This still leaves the question of what to do with the Truck model inputs.  On the employment side we can apply
 some rates based on the changes made to `TotalEmploymentByZone.csv`.  The establishment files however are another story, they
 do not increase linearly with population.  TMG is currently exploring the topic however, for the meantime it is most common to
