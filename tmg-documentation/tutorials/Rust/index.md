@@ -8,25 +8,19 @@ a focus on reliability, speed, and maintainability. Its expressive syntax, rich 
 and modern tooling make Rust suitable for both system-level development and high-level application programming.
 
 
-## Documenation Tutorial 
-The rust documentation:  
+## The rust documentation:  
 
-This link is the rust book that goes into the basics of how to use Rust going into its basic syntax, type system and the ownership, borrowed and reference model.  
+* [Rust Book](https://doc.rust-lang.org/cargo/) - This link is the rust book that goes into the both the basics and advanced concepts of how to use Rust. 
+* [Rustlings](https://rustlings.rust-lang.org/) - An online (or optionally offline) tool to learn Rust through a series of problems.
 
-https://doc.rust-lang.org/cargo/ 
+## Installation Instruction: 
 
-Another documentation that can be helpful is this tool to install and download  
-
-https://rustlings.rust-lang.org/ 
-
-## Installation Instruction:  
 
 ### Tools Needed:  
 
-- The only tool needed is Visual Studio or visual studio code. Those code editors can be installed from the following:  
-
+- You do need a code editor and choose any code editor of your choosing. The two recommended code editors are Visual Studio(Windows)
+or Visual Studio Code. Download links provided below:  
 - https://code.visualstudio.com/download 
-- https://code.visualstudio.com/ 
 - https://visualstudio.microsoft.com/downloads/
 
 
@@ -40,11 +34,6 @@ The main page will then give you the terminal command lines needed to install Ru
 ### Installing Rust on Windows:  
 On Windows will provide excecuable files you can directly download from the website and then double click to install. 
 With respect to Windows you may need to instal some additioanl dependices like the C++ development environment which you can easily download from the Visual Studio environment. 
-
-Note: If your on a Windows Subsystem for Linux (WSL) you can install Rust from the following command using the terminal. 
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
 
 ### Installing Rust on Linux command  
 ```
