@@ -1,5 +1,6 @@
-﻿# Rust
+﻿# Overview
 
+## Rust
 Rust is a strongly typed, memory-safe system programming language designed to ensure high performance without sacrificing 
 safety. It emphasizes concurrent programming, providing mechanisms to prevent data races at compile time. 
 Rust’s ownership model, combined with strict compile-time checks, allows developers to write robust and efficient code with 
@@ -7,7 +8,7 @@ a focus on reliability, speed, and maintainability. Its expressive syntax, rich 
 and modern tooling make Rust suitable for both system-level development and high-level application programming.
 
 
-# Documenation Tutorial 
+## Documenation Tutorial 
 The rust documentation:  
 
 This link is the rust book that goes into the basics of how to use Rust going into its basic syntax, type system and the ownership, borrowed and reference model.  
@@ -18,9 +19,9 @@ Another documentation that can be helpful is this tool to install and download
 
 https://rustlings.rust-lang.org/ 
 
-# Installation Instruction:  
+## Installation Instruction:  
 
-## Tools Needed:  
+### Tools Needed:  
 
 - The only tool needed is Visual Studio or visual studio code. Those code editors can be installed from the following:  
 
@@ -50,8 +51,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
 ```
 
-
-# Cargo  
+## Cargo  
 
 Cargo is Rust’s official efficient build system and package manager. Cargo is responsible for installing and managing packages  for a given project.  Cargo makes it easy to create, manage and build Rust projects.  
 The following commands are useful:
