@@ -1,8 +1,10 @@
 ﻿# Rust
 
-Rust is  a strongly typed, statically compiled systems language guaranteeing memory safety.  Rust is a low level programming language designed with two main features: 
-- Performance: Rust is blazingly fast and is memory efficient without a garbage collector. 
-- Reliablility: Rust has a rich type system and ownership model that makes it memory and thread safe.  
+Rust is a strongly typed, memory-safe system programming language designed to ensure high performance without sacrificing 
+safety. It emphasizes concurrent programming, providing mechanisms to prevent data races at compile time. 
+Rust’s ownership model, combined with strict compile-time checks, allows developers to write robust and efficient code with 
+a focus on reliability, speed, and maintainability. Its expressive syntax, rich standard library, 
+and modern tooling make Rust suitable for both system-level development and high-level application programming.
 
 
 # Documenation Tutorial 
@@ -23,8 +25,8 @@ https://rustlings.rust-lang.org/
 - The only tool needed is Visual Studio or visual studio code. Those code editors can be installed from the following:  
 
 - https://code.visualstudio.com/download 
-
 - https://code.visualstudio.com/ 
+- https://visualstudio.microsoft.com/downloads/
 
 
 ## Installing Rust Instructions 
