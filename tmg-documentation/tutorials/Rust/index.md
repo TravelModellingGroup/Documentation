@@ -18,10 +18,10 @@ and modern tooling make Rust suitable for both system-level development and high
 
 ### Tools Needed:  
 
-- You do need a code editor and choose any code editor of your choosing. The two recommended code editors are Visual Studio(Windows)
+You do need a code editor and choose any code editor of your choosing. The two recommended code editors are Visual Studio(Windows)
 or Visual Studio Code. Download links provided below:  
-- https://code.visualstudio.com/download 
-- https://visualstudio.microsoft.com/downloads/
+* [Visual Studio Code](https://code.visualstudio.com/download) - Windows, Mac and Linux
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/) - Windows only
 
 
 ## Installing Rust Instructions 
@@ -32,18 +32,20 @@ The main installation instructions can be found at this link:
 The main page will then give you the terminal command lines needed to install Rust depending on your system and machine configurations.
 
 ### Installing Rust on Windows:  
-On Windows will provide excecuable files you can directly download from the website and then double click to install. 
-With respect to Windows you may need to instal some additioanl dependices like the C++ development environment which you can easily download from the Visual Studio environment. 
+On Windows, the application is distributed as a downloadable executable file. After downloading it from the website, 
+you can install it by double‑clicking the file. 
+ 
 
-### Installing Rust on Linux command  
+
+### Installing Rust on Linux:
+On Linux, the application gives you a command you can copy paste into your terminal and click enter to run. 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh 
 ```
 
 ## Cargo  
-
-Cargo is Rust’s official efficient build system and package manager. Cargo is responsible for installing and managing packages  for a given project.  Cargo makes it easy to create, manage and build Rust projects.  
-The following commands are useful:
+Cargo is Rust’s official build system and package manager, providing an efficient way to install, manage, and compile project dependencies. It streamlines the process of creating, organizing, and building Rust projects.
+The following commands are particularly useful:
 
 To create a new project that will create a folder with the base template files: 
 ```> cargo new hello_world
