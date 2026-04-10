@@ -1,6 +1,11 @@
 # Fare Schema File Specification
 
-The new TMG implementation uses a fare schema file, implemented in Extensible Markup Language (XML). XML is a widely-used, hierarchical format which is human-readable. The fare schema file specification prescribes 3 collections of items necessary for generating the hyper-network: [groups](#groups), [zones](#zones), and [fare_rules](#fare-rules).
+The new TMG implementation uses a fare schema file, implemented in Extensible Markup Language (XML). XML is a widely-used, hierarchical format which is human-readable. The
+fare schema file specification prescribes 3 collections of items necessary for generating the hyper-network: [groups](#groups), [zones](#zones), and [fare_rules](#fare-rules).
+
+> [!NOTE]
+> For Mutli-class transit assignment each class gets its own XML file that contains its own `<fare_rules>` section.
+> For more information go to [Appendix C: Multiclass Example](#appendix-c-multiclass-example).
 
 ## Groups
 
@@ -527,3 +532,223 @@ The actual fares used in the estimation were blended across different fare media
 
 ## Appendix B: 2016 Full Fares
 ![alt text](images/5.png "2016 Full Fares")
+
+## Appendix C: Multiclass Example
+
+### Base Schema File
+
+Below is an example of a Multi-class Schema file.
+
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <version number="1.1" />
+
+  <groups>
+    <group id="TTC Regular">
+    	<selection>line=T_____</selection>
+    </group>
+    <group id="TTC DT Express">
+    	<selection>line=T14___</selection>
+    </group>
+    <group id="GO Transit">
+    	<selection>mode=rg</selection>
+    </group>
+    <group id="DRT">
+    	<selection>line=D_____</selection>
+    </group>
+    <group id="YRT">
+    	<selection>line=Y_____</selection>
+    </group>
+    <group id="MiWay">
+    	<selection>line=M_____</selection>
+    </group>
+    <group id="Brampton Transit">
+    	<selection>line=B_____</selection>
+    </group>
+    <group id="Oakville Transit">
+    	<selection>line=HO____</selection>
+    </group>
+    <group id="Burlington Transit">
+    	<selection>line=HB____</selection>
+    </group>
+    <group id="Milton Transit">
+    	<selection>line=HM____</selection>
+    </group>
+    <group id="HSR">
+      <selection>line=W_____</selection>
+    </group>
+  </groups>
+
+  <zones>
+    <shapefile id="1" path="York_Region_Zones/York_Region_Zones.shp" />
+    
+    <zone id="Toronto" type="node_selection">
+    	<node_selector>i=10000,20000</node_selector>
+    </zone>
+    <zone id="York 1" type="from_shapefile">
+    	<from_shapefile id="1" FID="1" />
+    </zone>
+    <zone id="York 2" type="from_shapefile">
+    	<from_shapefile id="1" FID="0" />
+    </zone>
+    <zone id="York 3" type="from_shapefile">
+    	<from_shapefile id="1" FID="2" />
+    </zone>
+  </zones>
+  
+  <station_groups>
+  	<station_group for="GO Transit" selection="i=9700,9800"/>
+  	<station_group for="TTC Regular" selection="i=9800,9900"/>
+  </station_groups>
+  
+</root>
+
+```
+
+
+### Fare Class Schema File
+
+Below is an example of a class-specific Fare schema file.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <version number="1.1" />
+
+  <fare_rules>
+    <!--TTC (Toronto Transit Commission)-->
+    <fare cost="2.60" type="initial_boarding">
+    	<group>TTC Regular</group>
+    </fare>
+    <fare cost="5.20" type="initial_boarding">
+    	<group>TTC DT Express</group>
+    </fare>
+    <fare cost="-2.60" type="transfer">
+    	<from_group>TTC Regular</from_group>
+    	<to_group>TTC DT Express</to_group>
+    	<bidirectional>True</bidirectional>
+    </fare>
+    <fare cost="0.20" type="initial_boarding">
+    	<group>TTC Regular</group>
+    	<in_zone>York 1</in_zone>
+    </fare>
+    <fare cost="2.80" type="zone_crossing">
+    	<group>TTC Regular</group>
+    	<from_zone>Toronto</from_zone>
+    	<to_zone>York 1</to_zone>
+    </fare>
+    <fare cost="2.60" type="zone_crossing">
+    	<group>TTC Regular</group>
+    	<from_zone>York 1</from_zone>
+    	<to_zone>Toronto</to_zone>
+    </fare>
+    
+    <!-- GO Transit Fares -->
+    <fare cost="4.07" type="initial_boarding">
+    	<group>GO Transit</group>
+    </fare>
+    <fare cost="0.0825" type="distance_in_vehicle">
+    	<group>GO Transit</group>
+    </fare>
+    
+    <!-- Durham Transit -->
+    <fare cost="2.90" type="initial_boarding">
+    	<group>DRT</group>
+    </fare>
+	<fare cost="-2.15" type="transfer">
+		<from_group>DRT</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- York Region -->
+	<fare cost="2.80" type="initial_boarding">
+		<group>YRT</group>
+	</fare>
+	<fare cost="-2.05" type="transfer">
+		<from_group>YRT</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	<fare cost="1.00" type="zone_crossing">
+		<group>YRT</group>
+		<from_zone>York 1</from_zone>
+		<to_zone>York 2</to_zone>
+		<bidirectional>True</bidirectional>
+	</fare>
+	<fare cost="1.00" type="zone_crossing">
+		<group>YRT</group>
+		<from_zone>York 2</from_zone>
+		<to_zone>York 3</to_zone>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- MiWay -->
+	<fare cost="2.50" type="initial_boarding">
+		<group>MiWay</group>
+	</fare>
+	<fare cost="-1.80" type="transfer">
+		<from_group>MiWay</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- Brampton Transit -->
+	<fare cost="2.65" type="initial_boarding">
+		<group>Brampton Transit</group>
+	</fare>
+	<fare cost="-2.00" type="transfer">
+		<from_group>Brampton Transit</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- Oakville Transit -->
+	<fare cost="2.65" type="initial_boarding">
+		<group>Oakville Transit</group>
+	</fare>
+	<fare cost="-2.00" type="transfer">
+		<from_group>Oakville Transit</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- Burlington Transit -->
+	<fare cost="2.50" type="initial_boarding">
+		<group>Burlington Transit</group>
+	</fare>
+	<fare cost="-1.85" type="transfer">
+		<from_group>Burlington Transit</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	<fare cost="-2.50" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>Burlington Transit</to_group>
+	</fare>
+	
+	<!-- Milton Transit -->
+	<fare cost="2.40" type="initial_boarding">
+		<group>Milton Transit</group>
+	</fare>
+	<fare cost="-1.70" type="transfer">
+		<from_group>Milton Transit</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+	<!-- HSR -->
+	<fare cost="2.00" type="initial_boarding">
+		<group>HSR</group>
+	</fare>
+	<fare cost="-1.50" type="transfer">
+		<from_group>HSR</from_group>
+		<to_group>GO Transit</to_group>
+		<bidirectional>True</bidirectional>
+	</fare>
+	
+  </fare_rules>
+</root>
+```
