@@ -12,7 +12,7 @@ Even following all of these steps PopSynIII will sometimes randomly crash.  Make
 
 ## Operation
 
-You can follow the instructions [here](Setup.md) to learn how to setup all of PopSynIII's dependencies.
+You can follow the instructions [here](setup.md) to learn how to setup all of PopSynIII's dependencies.
 
 Once everything is setup you can review the input directory [here](InputDirectory.md) and follow the instructions for forecasting [here](Forecasting.md).
 
