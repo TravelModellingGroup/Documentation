@@ -6,14 +6,10 @@ Part of the development of public-domain tools that are willingly adopted by new
 
 ## **XTMF2** - The eXtensible Travel Modelling Framework v2
 
-The eXtensible Travel Modelling Framework 2 (XTMF2) is an open-source (GPLv3) software platform developed by the University of Toronto to build model systems through the composition and configuration of different modules. This means that all modules used to construct GTAModel V4.0 have their code available for inspection or recompilation
+The eXtensible Travel Modelling Framework 2 (XTMF2) is an open-source (GPLv3) software platform developed by the University of Toronto to build model systems through the composition and configuration of different modules. Documentation for XTMF2 can be found [here](xtmf2/index.md).
 
 ## **TMGToolBox2 for Emme** - The eXtensible Travel Modelling Framework v2
 
 The TMG Toolbox 2 is a suite of Python 3 tools written for Emme transportation planning software. Emme itself is a product of INRO Consultants, Inc.; however the TMG Toolbox 2 is open-source under GPL3.0 (see license file for full text)
 
 The TMG Toolbox is developed by the Travel Modelling Group at the University of Toronto. The authors hope that this toolbox will improve the practise of operational transportation planning by facilitating advanced analyses of travel demand forecasting models implemented in Emme.
-
-## **GTAModelV4.0**
-
-Documentation for TMG's GTAModelV4.0 documentation.
