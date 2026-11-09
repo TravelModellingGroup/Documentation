@@ -13,6 +13,7 @@ Use `IfWithContextA/F` if you need the context passed into the condition as well
 | `IfF<Return>` | `BaseFunction<Return>` | `If.cs` |
 | `IfWithContextA<Context>` | `BaseAction<Context>` | `If.cs` |
 | `IfWithContextF<Context, Return>` | `BaseFunction<Context, Return>` | `If.cs` |
+| `IfUnset<Return>` | `BaseFunction<Return>` | `If.cs` |
 
 ## IfA
 
@@ -98,6 +99,25 @@ Base type: `BaseAction<Context>`
 | Name | Type | Required | Default | Description |
 | --- | --- | --- | --- | --- |
 | `Condition` | `IFunction<Context, bool>?` | `true` | `true` | The condition to invoke to see if the true or false path is taken. |
+
+## IfUnset<Return>
+
+Base type: `BaseFunction<Return>`
+
+Returns the value from `Value` when it is set.  Otherwise, returns the value from `If Unset`.
+
+### SubModules
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `Value` | `IFunction<Return>?` | `false` | The value to check if it is unset. |
+| `If Unset` | `IFunction<Return>` | `true` | The value to return if the original value is unset. |
+
+### Parameters
+
+| Name | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
+| - | - | - | - | - |
 
 ## IfWithContextF<Context, Return>
 
